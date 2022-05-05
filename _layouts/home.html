@@ -1,0 +1,17 @@
+--- 
+layout: default 
+--- 
+
+
+<div class="home">
+	<p>
+		<homepage_body_highlight>
+			{{- site.description | escape -}}
+		</homepage_body>
+	</p>
+
+	{%- include module_list.html -%} <br> 
+	{%- include retired_list.html -%} <br> 
+	{%- include writing_list.html -%} <br> 
+	
+</div>

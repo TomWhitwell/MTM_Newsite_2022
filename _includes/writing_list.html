@@ -1,0 +1,20 @@
+ 
+<p>
+	<homepage_mid>
+		Talking & writing: 
+	</homepage_mid>
+</p>
+{% for item in site.pages%} {% if item.pods %} {% for pods in item.pods%} 
+<p>
+	<div class="main">
+		<a href="{{pods.link}}">
+			<homepage_mid_highlight>
+				{{pods.title}}
+			</homepage_mid_highlight>
+			<homepage_mid>
+				{{pods.description}} ➔
+			</homepage_mid>
+		</a>
+	</div>
+</p>
+{% endfor %} {% endif %} {% endfor %} 

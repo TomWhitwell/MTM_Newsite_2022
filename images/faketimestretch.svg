@@ -1,0 +1,68 @@
+<svg width="658pt" height="100pt"
+ viewBox="0.00 0.00 657.89 100.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<defs>
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 96)">
+
+<!-- adenvelope -->
+<g id="node1" class="node">
+<title>adenvelope</title>
+<path fill="none" stroke="#000000" d="M21.1469,-.5C21.1469,-.5 173.4387,-.5 173.4387,-.5 179.4387,-.5 185.4387,-6.5 185.4387,-12.5 185.4387,-12.5 185.4387,-24.5 185.4387,-24.5 185.4387,-30.5 179.4387,-36.5 173.4387,-36.5 173.4387,-36.5 21.1469,-36.5 21.1469,-36.5 15.1469,-36.5 9.1469,-30.5 9.1469,-24.5 9.1469,-24.5 9.1469,-12.5 9.1469,-12.5 9.1469,-6.5 15.1469,-.5 21.1469,-.5"/>
+<text text-anchor="middle" x="18.8969" y="-14.9" font-family="Times,serif" font-size="14.00" fill="#000000"> </text>
+<polyline fill="none" stroke="#000000" points="28.6469,-.7 28.6469,-36.5 "/>
+<text text-anchor="middle" x="84.6599" y="-14.9" font-family="Times,serif" font-size="14.00" fill="#000000">AD ENVELOPE</text>
+<polyline fill="none" stroke="#000000" points="140.6729,-.7 140.6729,-36.5 "/>
+<text text-anchor="middle" x="163.0558" y="-14.9" font-family="Times,serif" font-size="14.00" fill="#000000">OUT</text>
+</g>
+<!-- radiomusic -->
+<g id="node4" class="node">
+<title>radiomusic</title>
+<path fill="none" stroke="#000000" d="M242.5856,-21.7C242.5856,-21.7 431.8304,-21.7 431.8304,-21.7 437.8304,-21.7 443.8304,-27.7 443.8304,-33.7 443.8304,-33.7 443.8304,-59.3 443.8304,-59.3 443.8304,-65.3 437.8304,-71.3 431.8304,-71.3 431.8304,-71.3 242.5856,-71.3 242.5856,-71.3 236.5856,-71.3 230.5856,-65.3 230.5856,-59.3 230.5856,-59.3 230.5856,-33.7 230.5856,-33.7 230.5856,-27.7 236.5856,-21.7 242.5856,-21.7"/>
+<text text-anchor="middle" x="260.7511" y="-54.7" font-family="Times,serif" font-size="14.00" fill="#000000">RESET</text>
+<polyline fill="none" stroke="#000000" points="230.5856,-46.5 290.9166,-46.5 "/>
+<text text-anchor="middle" x="260.7511" y="-29.9" font-family="Times,serif" font-size="14.00" fill="#000000">START</text>
+<polyline fill="none" stroke="#000000" points="290.9166,-21.7 290.9166,-71.3 "/>
+<text text-anchor="middle" x="344.9906" y="-42.7" font-family="Times,serif" font-size="14.00" fill="#000000">RADIO MUSIC</text>
+<polyline fill="none" stroke="#000000" points="399.0646,-21.7 399.0646,-71.3 "/>
+<text text-anchor="middle" x="421.4475" y="-42.7" font-family="Times,serif" font-size="14.00" fill="#000000">OUT</text>
+</g>
+<!-- adenvelope&#45;&gt;radiomusic -->
+<g id="edge2" class="edge">
+<title>adenvelope:e&#45;&gt;radiomusic:w</title>
+<path fill="none" stroke="#c0c0c0" d="M185.2928,-19.5C185.2928,-19.5 207.6849,-26.9158 220.9802,-31.3189"/>
+<polygon fill="#c0c0c0" stroke="#c0c0c0" points="219.9923,-34.6786 230.5856,-34.5 222.193,-28.0335 219.9923,-34.6786"/>
+</g>
+<!-- audiooutput -->
+<g id="node2" class="node">
+<title>audiooutput</title>
+<path fill="none" stroke="#000000" d="M491.8304,-27.5C491.8304,-27.5 637.8922,-27.5 637.8922,-27.5 643.8922,-27.5 649.8922,-33.5 649.8922,-39.5 649.8922,-39.5 649.8922,-51.5 649.8922,-51.5 649.8922,-57.5 643.8922,-63.5 637.8922,-63.5 637.8922,-63.5 491.8304,-63.5 491.8304,-63.5 485.8304,-63.5 479.8304,-57.5 479.8304,-51.5 479.8304,-51.5 479.8304,-39.5 479.8304,-39.5 479.8304,-33.5 485.8304,-27.5 491.8304,-27.5"/>
+<text text-anchor="middle" x="495.214" y="-41.9" font-family="Times,serif" font-size="14.00" fill="#000000">IN</text>
+<polyline fill="none" stroke="#000000" points="510.5976,-27.7 510.5976,-63.5 "/>
+<text text-anchor="middle" x="570.4949" y="-41.9" font-family="Times,serif" font-size="14.00" fill="#000000">AUDIO OUTPUT</text>
+<polyline fill="none" stroke="#000000" points="630.3922,-27.7 630.3922,-63.5 "/>
+<text text-anchor="middle" x="640.1422" y="-41.9" font-family="Times,serif" font-size="14.00" fill="#000000"> </text>
+</g>
+<!-- oscillator -->
+<g id="node3" class="node">
+<title>oscillator</title>
+<path fill="none" stroke="#000000" d="M12,-55.5C12,-55.5 182.5856,-55.5 182.5856,-55.5 188.5856,-55.5 194.5856,-61.5 194.5856,-67.5 194.5856,-67.5 194.5856,-79.5 194.5856,-79.5 194.5856,-85.5 188.5856,-91.5 182.5856,-91.5 182.5856,-91.5 12,-91.5 12,-91.5 6,-91.5 0,-85.5 0,-79.5 0,-79.5 0,-67.5 0,-67.5 0,-61.5 6,-55.5 12,-55.5"/>
+<text text-anchor="middle" x="9.75" y="-69.9" font-family="Times,serif" font-size="14.00" fill="#000000"> </text>
+<polyline fill="none" stroke="#000000" points="19.5,-55.7 19.5,-91.5 "/>
+<text text-anchor="middle" x="71.047" y="-69.9" font-family="Times,serif" font-size="14.00" fill="#000000">OSCILLATOR</text>
+<polyline fill="none" stroke="#000000" points="122.594,-55.7 122.594,-91.5 "/>
+<text text-anchor="middle" x="158.5898" y="-69.9" font-family="Times,serif" font-size="14.00" fill="#000000">SQUARE</text>
+</g>
+<!-- oscillator&#45;&gt;radiomusic -->
+<g id="edge3" class="edge">
+<title>oscillator:e&#45;&gt;radiomusic:w</title>
+<path fill="none" stroke="#ffa500" stroke-dasharray="5,2" d="M194.2928,-74.5C194.2928,-74.5 210.676,-67.2773 221.4274,-62.5375"/>
+<polygon fill="#ffa500" stroke="#ffa500" points="222.8473,-65.7366 230.5856,-58.5 220.0234,-59.3314 222.8473,-65.7366"/>
+</g>
+<!-- radiomusic&#45;&gt;audiooutput -->
+<g id="edge1" class="edge">
+<title>radiomusic:e&#45;&gt;audiooutput:w</title>
+<path fill="none" stroke="#000000" stroke-width="2" d="M443.8304,-46.5C443.8304,-46.5 458.9804,-46.5 469.6327,-46.5"/>
+<polygon fill="#000000" stroke="#000000" stroke-width="2" points="469.8613,-50.0001 479.8613,-46.5 469.8613,-43.0001 469.8613,-50.0001"/>
+</g>
+</g>
+</defs>
+</svg>

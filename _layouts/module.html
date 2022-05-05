@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+      
+       {% if page.wide-image == "true" %}
+      <div class="img-wide" style="background-image: url({{page.image}});">
+    {% else %}
+      <div class="img-normal" style="background-image: url({{page.image}});">
+    {% endif %}
+
+    
+    </div>
+      
+    
+      <h1>{{page.pars.size}} things to know about {{page.module-name}}</h1><p></p>
+      
+      <p>
+      {{page.size}} | 
+      {{page.depth}} deep | 
+      {{page.supply}}
+ <br>
+
+{% if page.designed %}
+<br>Designed {{page.designed}}
+{% endif %}
+{% if page.designed and page.updated %}
+Updated {{page.updated}}
+{% endif %}
+
+
+<br> 
+ {% if page.mgrid %}
+<a href="{{page.mgrid}}">Modular Grid</a> |
+{% endif %}
+{% if page.github %}
+<a href="{{page.github}}">Github</a> |
+{% else %}
+<a href="https://github.com/TomWhitwell">Github (soon)</a> |
+{% endif %}
+{% if page.schematic %}
+<a href="{{page.schematic}}">Schematic</a> |
+{% else %}
+<a href="https://github.com/TomWhitwell">Schematic (soon)</a> |
+{% endif %}
+{% if page.yt %}
+      <a href="#videos">Videos</a>
+      {% endif %}
+      
+       {% if page.thonk-url %}
+       <br><a href="{{page.thonk-url}}">Buy now from Thonk</a>
+         {% endif %}
+      
+
+<ol>
+{% for pars in page.pars %} 
+<li>{{pars}}</li>
+{% endfor %} 
+   </ol>     
+        {{ content }}
+        
+      
+      
+      <a id="videos"> </a>
+      {% for youtubes in page.yt %}  
+      <br>{{youtubes.title}}</br>
+<P>    <iframe class="iframe" src="https://www.youtube.com/embed/{{youtubes.link}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</p>
+       {% endfor %}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

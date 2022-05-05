@@ -1,0 +1,20 @@
+ 
+<p>
+	<homepage_body>
+		Instruments and modules: 
+	</homepage_body>
+</p>
+{% assign ordered_modules = site.eurorack_modules | sort:"order" %} {% for module in ordered_modules %} 
+<p>
+	<div class="main">
+		<a href="{{module.url}}">
+			<h1>
+				{{module.overlay}}{{module.module-name}}
+			</h1>
+			<homepage_body>
+				{{module.excerpt}} ➔
+			</homepage_body>
+		</a>
+	</div>
+</p>
+{% endfor %} 
