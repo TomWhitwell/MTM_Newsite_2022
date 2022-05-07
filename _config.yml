@@ -18,14 +18,16 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Music Thing Modular
+
 email: tom@musicthing.co.uk
 description: >- # this means to ignore newlines until "baseurl:"
   Open source electronic musical instruments. Designed in London, made in Brighton, built and used by musicians around the world.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+instagram_username: tomwhitwell
 twitter_username: musicthing
 github_username:  tomwhitwell
+author: Tom Whitwell
 
 # Build settings
 theme: minima
@@ -54,7 +56,9 @@ plugins:
 #   - vendor/ruby/
 
 collections:
-  eurorack_modules:
+  devices:
+    output: true
+  expanders:
     output: true
   retired:
     output: true

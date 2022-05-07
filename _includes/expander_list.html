@@ -1,10 +1,10 @@
 <p>
 	<homepage_mid>
-		Retired: 
+		Expanders & accessories: 
 	</homepage_mid>
 </p>
 
-{% assign ordered_modules = site.retired | sort:"order" %} {% for module in ordered_modules %} 
+{% assign ordered_modules = site.expanders | sort:"order" %} {% for module in ordered_modules %} 
 <p>
 	<div class="main">
 		<a href="{{module.url}}">
@@ -12,7 +12,7 @@
 				{{module.overlay}}{{module.module-name}} 
 			</homepage_mid_highlight>
 			<homepage_mid>
-				{{module.excerpt}}➔ 
+				{{module.excerpt}} ➔ 
 			</homepage_mid>
 		</a>
 	</div>

@@ -10,17 +10,23 @@
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
       
-       {% if page.wide-image == "true" %}
-      <div class="img-wide" style="background-image: url({{page.image}});">
+    {% if page.wide-image == "true" %}
     {% else %}
-      <div class="img-normal" style="background-image: url({{page.image}});">
+    <div class="img-normal" style="background-image: url({{page.image}});">    </div>
     {% endif %}
 
     
-    </div>
+
       
     
       <h1>{{page.pars.size}} things to know about {{page.module-name}}</h1><p></p>
+
+    {% if page.wide-image == "true" %}
+   <br> <div class="img-wide" style="background-image: url({{page.image}});">  <br>  </div><br>
+    {% else %}
+    {% endif %}
+
+
       
       <p>
       {{page.size}} | 
@@ -43,19 +49,19 @@ Updated {{page.updated}}
 {% if page.github %}
 <a href="{{page.github}}">Github</a> |
 {% else %}
-<a href="https://github.com/TomWhitwell">Github (soon)</a> |
+<a href="mailto:tom@musicthing.co.uk?subject=Please send me {{page.module-name}} Design Files">Request Design Files</a> |
 {% endif %}
 {% if page.schematic %}
 <a href="{{page.schematic}}">Schematic</a> |
 {% else %}
-<a href="https://github.com/TomWhitwell">Schematic (soon)</a> |
+<a href="mailto:tom@musicthing.co.uk?subject=Please send me a {{page.module-name}} Schematic">Request Schematic</a> |
 {% endif %}
 {% if page.yt %}
       <a href="#videos">Videos</a>
       {% endif %}
       
        {% if page.thonk-url %}
-       <br><a href="{{page.thonk-url}}">Buy now from Thonk</a>
+       <br><br><a href="{{page.thonk-url}}" class="buy-btn">Available from Thonk</a>
          {% endif %}
       
 

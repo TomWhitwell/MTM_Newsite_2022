@@ -18,6 +18,10 @@ mgrid: "https://www.modulargrid.net/e/music-thing-modular-turing-machine-mk-ii"
 github: "https://github.com/TomWhitwell/TuringMachine"
 schematic: "/collateral/TuringMachine_schematic.pdf"
 
+sitemap:
+    priority: 0.7
+    changefreq: 'monthly'
+    lastmod: 2013-03-29T12:49:30-05:00
 
 yt:
 - 

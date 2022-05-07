@@ -68,15 +68,24 @@ img {
   float:right
 }
 
+// .img-wide {
+//   width: calc(40vw + 40px);
+//   max-width:600px;
+//   height: 600px;
+//   background-position: top center;
+//   background-repeat: no-repeat;
+//   background-size:contain;
+//   float:right
+// }
+
 .img-wide {
-  width: calc(40vw + 40px);
-  max-width:600px;
+  width: 100%;
   height: 600px;
   background-position: top center;
   background-repeat: no-repeat;
   background-size:contain;
-  float:right
 }
+
 
 .img-header{
 width: calc(50vw);
@@ -177,16 +186,16 @@ color: $brand-color;
  * Links
  */
 a {
-  color: $brand-color;
+  color: $link-color;
   text-decoration: none;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    color: $visited-color;
   }
 
   &:hover {
-    color: $brand-color;;
-    text-decoration: none;
+    color: brighten($link-color, 15%);;
+    text-decoration: underline;
   }
 
   .social-media-list &:hover {
@@ -196,6 +205,25 @@ a {
       text-decoration: none;
     }
   }
+}
+
+
+.buy-btn {
+  background-color: darken($link-color, 30%);
+  color: white;
+  padding: 7px 10px;
+  text-decoration: none;
+}
+
+.buy-btn:hover {
+  background-color: $link-color;
+  text-decoration: none;
+}
+
+.buy-btn:visited {
+  background-color: darken($visited-color, 30%);
+  color: white;
+  text-decoration: none;
 }
 
 

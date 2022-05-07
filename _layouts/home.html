@@ -5,12 +5,13 @@ layout: default
 
 <div class="home">
 	<p>
-		<homepage_body_highlight>
+		<homepage_mid_highlight>
 			{{- site.description | escape -}}
-		</homepage_body>
+		</homepage_mid>
 	</p>
 
 	{%- include module_list.html -%} <br> 
+	{%- include expander_list.html -%} <br> 
 	{%- include retired_list.html -%} <br> 
 	{%- include writing_list.html -%} <br> 
 	
