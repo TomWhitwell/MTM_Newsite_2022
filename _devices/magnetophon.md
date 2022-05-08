@@ -3,9 +3,10 @@ layout: module
 order: 8
 title:  "Magnetophon Cassette Head Eurorack Module DIY"
 module-name: "Magnetophon"
+designed: "February 2017"
 image: "/images/magnetophon_600.png" 
 wide-image: "false" 
-excerpt: "is a cassette player without the transport mechanism." 
+excerpt: "is a cassette player without the transport mechanism" 
 # overlay: "NEW "
 thonk-url: "https://www.thonk.co.uk/shop/magnetophon/?utm_source=MTM&utm_campaign=magnetophon" 
 size: "4 HP"

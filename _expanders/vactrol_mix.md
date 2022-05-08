@@ -6,8 +6,8 @@ module-name: "Turing: Vactrol Mix"
 categories: eurorack
 image: "/images/vactrol-mix_600.png"
 wide-image: "true" 
-
-excerpt: "which is my personal favourite." 
+designed: "March 2015"
+excerpt: "random looping mix sequencer" 
 # overlay: "NEW"
 thonk-url: "https://www.thonk.co.uk/shop/vactrol-mix/?utm_source=MTM&utm_campaign=VactrolMix" 
 size: "10 HP"

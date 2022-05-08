@@ -29,6 +29,10 @@ twitter_username: musicthing
 github_username:  tomwhitwell
 author: Tom Whitwell
 
+
+# Google Analytics
+google_analytics: UA-25728206-1
+
 # Build settings
 theme: minima
 plugins:
@@ -61,4 +65,6 @@ collections:
   expanders:
     output: true
   retired:
+    output: true
+  extras:
     output: true

@@ -5,7 +5,7 @@ order: 2
 module-name: "Spring Reverb Expander"
 categories: eurorack
 image: /images/spring2-expander_600.png 
-excerpt: " experimental flexibility." 
+excerpt: " experimental flexibility" 
 # overlay: "NEW"
 thonk-url: "https://www.thonk.co.uk/shop/mtm-spring-expander-kit/?utm_source=MTM&utm_campaign=SpringExpander" 
 size: "3 HP"

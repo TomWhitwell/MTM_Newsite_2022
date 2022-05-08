@@ -4,7 +4,9 @@ title:  "Pulses rhythm expander for Turing Machine Eurorack DIY"
 module-name: "Turing: Pulses"
 categories: eurorack
 image: /images/pulses_600.png
-excerpt: " eleven rhythmic outputs for wONkY drum patterns." 
+updated: "January 2016"
+designed: "January 2013"
+excerpt: " eleven rhythmic outputs for wONkY drum patterns" 
 # overlay: "NEW"
 thonk-url: "https://www.thonk.co.uk/shop/pulses-mk-ii-full-kit/?utm_source=MTM&utm_campaign=PulsesPage" 
 side-desc: "DIY random looping sequencer in Eurorack format"

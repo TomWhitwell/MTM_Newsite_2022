@@ -1,12 +1,12 @@
 ---
 layout: module
-order: 1
+order: 3
 title:  "Control Big Knob Eurorack Module DIY"
 module-name: "Control"
 designed: "June 2020" 
 image: "/images/control_600.png"
 wide-image: "true" 
-excerpt: "is four big finger-friendly knobs for precise & playable tweaking." 
+excerpt: "is four big finger-friendly knobs for precise & playable tweaking" 
 # overlay: "Coming Soon: "
 thonk-url: "https://www.thonk.co.uk/shop/mtm-control/?utm_source=MTM&utm_campaign=Control" 
 size: "18 HP"

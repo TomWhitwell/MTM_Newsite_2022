@@ -29,9 +29,18 @@
 
       
       <p>
+      
+      {% if page.size %}
       {{page.size}} | 
+      {% endif %}
+      
+      {% if page.depth %}
       {{page.depth}} deep | 
+      {% endif %}
+    
+      {% if page.supply %}
       {{page.supply}}
+            {% endif %}
  <br>
 
 {% if page.designed %}
@@ -61,7 +70,14 @@ Updated {{page.updated}}
       {% endif %}
       
        {% if page.thonk-url %}
-       <br><br><a href="{{page.thonk-url}}" class="buy-btn">Available from Thonk</a>
+       <br><br><a href="{{page.thonk-url}}" class="buy-btn">
+       {% if page.thonk-button %}
+      {{page.thonk-button}}
+       {% else %}
+       Available from Thonk
+         {% endif %}
+      
+       </a>
          {% endif %}
       
 

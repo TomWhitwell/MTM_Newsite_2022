@@ -3,9 +3,10 @@ layout: module
 order: 1
 title:  "Volts CV expander for Turing Machine Eurorack DIY"
 module-name: "Turing: Volts"
+designed: "June 2016"
 categories: eurorack
 image: /images/volts_600.png
-excerpt: "steerable CV output with five pots." 
+excerpt: "steerable CV output with five pots" 
 # overlay: "NEW"
 thonk-url: "https://www.thonk.co.uk/shop/mtm-turing-volts-kit/" 
 size: "4 HP"

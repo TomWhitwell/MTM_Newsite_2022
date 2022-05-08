@@ -1,10 +1,11 @@
 ---
 layout: module
-order: 2
+order: 1
 title:  "Mini Drive Eurorack Module DIY"
 module-name: "Mini Drive"
+designed: "2020"
 image: "/images/minidrive_600.png" 
-excerpt: "is just a simple, great sounding, overdrive module inspired by the Minimoog." 
+excerpt: "is just a simple, great sounding, overdrive module inspired by the Minimoog" 
 # overlay: "NEW "
 thonk-url: "https://www.thonk.co.uk/shop/mini-drive/?utm_source=MTM&utm_campaign=Graphic" 
 size: "4 HP"

@@ -1,13 +1,13 @@
 ---
 layout: module
-order: 3
+order: 2
 title:  "Turing Machine Random Looping Sequencer Eurorack DIY Project"
 module-name: "Turing Machine"
 designed: "2012"
 updated: "2016"
 categories: eurorack
 image: /images/turing_600.png
-excerpt: "is a very popular DIY random sequencer. It uses logic chips to spit out basslines and melodies." 
+excerpt: "is a very popular DIY random sequencer. It uses logic chips to spit out basslines and melodies" 
 # overlay: "NEW"
 thonk-url: "https://www.thonk.co.uk/shop/turingmkii/?utm_source=MTM" 
 side-desc: "DIY random looping sequencer in Eurorack format"

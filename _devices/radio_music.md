@@ -7,7 +7,7 @@ title:  "Radio Music Eurorack Sampler Module"
 module-name: "Radio Music"
 categories: eurorack
 image: /images/radio-music_600.png
-excerpt: "is a sampler pretending to be a radio, inspired by John Cage & Stockhausen."
+excerpt: "is a sampler pretending to be a radio, inspired by John Cage & Stockhausen"
 # overlay: "NEW"
 
 thonk-url: "https://www.thonk.co.uk/shop/radio-music-full-diy-kit/?utm_source=MTM&utm_campaign=RadioMusic"

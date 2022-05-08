@@ -1,0 +1,24 @@
+ 
+<p>
+	<homepage_mid>
+		Music Thing Modular Reading List: 
+	</homepage_mid>
+</p>
+{% for item in site.pages%} {% if item.books %} {% for books in item.books | sort: books.author-last  %} 
+<p>
+	<div class="main">
+		<a href="{{books.link}}">
+			<homepage_mid>
+						{{books.author-first}} {{books.author-last}}: 
+									</homepage_mid>
+			<homepage_mid_highlight>
+				{{books.title}}
+			</homepage_mid_highlight>
+
+		</a>
+	</div>
+</p>
+{% endfor %} {% endif %} {% endfor %} 
+
+
+
