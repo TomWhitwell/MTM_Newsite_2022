@@ -1,5 +1,7 @@
 ---
 layout: module
+permalink: /Easel-Proto/
+
 order: 12
 title:  "Buchla Music Easel Prototype Proto Board"
 module-name: "Easel Proto"
@@ -25,7 +27,7 @@ pars:
 - "But you can do more than just save patches: build an LFO, and patch that wherever you like. Attach an Arduino and generate euclidean pulse streams. Randomise things that can’t normally be randomised. This proto board is designed for hacking, not for preset storage (although of course you can do both)."
 - It includes space for 3 x banana jacks, 2 x switches, 3 x potentiometers (with the supporting circuitry). 
 - If you add pin headers and rows of resistors (as shown above) it becomes a patchbay for on-the-fly rewiring and prototyping your prototypes." 
-- "This is a good introduction to the proto board: <a href=/collateral/Music_Easel_hacking_for_beginners.pdf>Music Easel Hacking for Beginners</a>."
+- "This is a good introduction to the proto board: <a href=../collateral/Music_Easel_hacking_for_beginners.pdf>Music Easel Hacking for Beginners</a>."
 
 
 

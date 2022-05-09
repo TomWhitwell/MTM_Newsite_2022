@@ -1,5 +1,7 @@
 ---
 layout: module
+permalink: /Control/
+
 order: 3
 title:  "Control Big Knob Eurorack Module DIY"
 module-name: "Control"

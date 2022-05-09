@@ -12,7 +12,7 @@
       
     {% if page.wide-image == "true" %}
     {% else %}
-    <div class="img-normal" style="background-image: url({{page.image | relative_url }});">    </div>
+    <div class="img-normal" aria-label="Image of {{page.module-name}} by Music Thing Modular" style="background-image: url({{page.image | relative_url }});">    </div>
     {% endif %}
 
     
@@ -22,8 +22,8 @@
       <h1>{{page.pars.size}} things to know about {{page.module-name}}</h1><p></p>
 
     {% if page.wide-image == "true" %}
-<!--    <br> <div class="img-wide" style="background-image: url({{page.image | relative_url }});">  <br>  </div><br> -->
-   <br> <img style="width: 100%" src={{page.image | relative_url }}>  <br>  <br>
+
+   <br> <img style="width: 100%" alt="Image of {{page.module-name}} by Music Thing Modular" src={{page.image | relative_url }}>  <br>  <br>
 
     {% else %}
     {% endif %}
@@ -43,7 +43,6 @@
       {% if page.supply %}
       {{page.supply}}
             {% endif %}
- <br>
 
 {% if page.designed %}
 <br>Designed {{page.designed}}
@@ -53,34 +52,41 @@ Updated {{page.updated}}
 {% endif %}
 
 
-<br> 
- {% if page.mgrid %}
-<a href="{{page.mgrid}}">Modular Grid</a> |
-{% endif %}
-{% if page.github %}
-<a href="{{page.github}}">Github</a> |
-{% else %}
-<a href="mailto:tom@musicthing.co.uk?subject=Please send me {{page.module-name}} Design Files">Request Design Files</a> |
-{% endif %}
-{% if page.schematic %}
-<a href="{{page.schematic | relative_url }}">Schematic</a> |
-{% else %}
-<a href="mailto:tom@musicthing.co.uk?subject=Please send me a {{page.module-name}} Schematic">Request Schematic</a> |
+
+
+{% if page.mgrid %}
+<br> <a href="{{page.mgrid}}">Modular Grid</a> |
 {% endif %}
 {% if page.yt %}
-      <a href="#videos">Videos</a>
-      {% endif %}
+<a href="#videos">Videos</a>
+{% endif %}
+
+
+{% if page.github %}
+<br><a href="{{page.github}}">Github</a> |
+{% else %}
+<br><a href="mailto:tom@musicthing.co.uk?subject=Please send me {{page.module-name}} Design Files">Request Design Files</a> |
+{% endif %}
+
+
+
+{% if page.schematic %}
+<a href="{{page.schematic | relative_url }}">Schematic</a> 
+{% else %}
+<a href="mailto:tom@musicthing.co.uk?subject=Please send me a {{page.module-name}} Schematic">Request Schematic</a> 
+{% endif %}
+
+
       
-       {% if page.thonk-url %}
-       <br><br><a href="{{page.thonk-url}}" class="buy-btn">
-       {% if page.thonk-button %}
-      {{page.thonk-button}}
-       {% else %}
-       Available from Thonk
-         {% endif %}
-      
-       </a>
-         {% endif %}
+{% if page.thonk-url %}
+<br><br><a href="{{page.thonk-url}}" class="buy-btn">
+{% if page.thonk-button %}
+{{page.thonk-button}}
+{% else %}
+Available from Thonk
+{% endif %}
+</a>
+{% endif %}
       
 
 <ol>

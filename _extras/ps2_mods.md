@@ -17,7 +17,7 @@ This is a simple hack to add CV control over the delay time/shift amount (the Fi
 
 **Theory**
 
-The Fine/Manual pot is a voltage divider, with +2v on one side, and +7v on the other. We’re going to re-route that voltage to the 3.5mm socket switch. If a plug is inserted into the socket, the voltage from the pot is replaced by the voltage from our modular. Here’s the [Boss PS-2 Schematic](/collateral/roland_ps-2_ET.pdf).
+The Fine/Manual pot is a voltage divider, with +2v on one side, and +7v on the other. We’re going to re-route that voltage to the 3.5mm socket switch. If a plug is inserted into the socket, the voltage from the pot is replaced by the voltage from our modular. Here’s the [Boss PS-2 Schematic](../collateral/roland_ps-2_ET.pdf).
 
 **Parts**
 

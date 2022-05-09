@@ -1,5 +1,7 @@
 ---
 layout: module
+permalink: /Spring-Reverb/
+
 order: 6
 title:  "Spring Reverb DIY module for Eurorack Modular"
 module-name: "Spring"
@@ -7,7 +9,7 @@ designed: "2013"
 updated: "2017"
 categories: eurorack
 image: /images/spring2_600.png
-excerpt: "is a fun, versatile spring reverb for modular, built for experimentation" 
+excerpt: "is a fun, versatile spring reverb for modular" 
 # overlay: "NEW"
 thonk-url: "https://www.thonk.co.uk/shop/turingmkii/?utm_source=MTM" 
 size: "6 HP"

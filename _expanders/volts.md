@@ -1,6 +1,8 @@
 ---
 layout: module
 order: 1
+permalink: /Turing-Volts-Expander/
+
 title:  "Volts CV expander for Turing Machine Eurorack DIY"
 module-name: "Turing: Volts"
 designed: "June 2016"

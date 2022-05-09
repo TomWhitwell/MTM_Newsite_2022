@@ -1,5 +1,6 @@
 ---
 layout: module
+permalink: /Magnetophon/
 order: 8
 title:  "Magnetophon Cassette Head Eurorack Module DIY"
 module-name: "Magnetophon"

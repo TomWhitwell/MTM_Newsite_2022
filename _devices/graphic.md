@@ -1,5 +1,7 @@
 ---
 layout: module
+permalink: /Graphic-EQ/
+
 order: 8
 title:  "Graphic EQ Eurorack Module DIY"
 module-name: "Graphic EQ"

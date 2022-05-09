@@ -1,12 +1,14 @@
 ---
 layout: module
+permalink: /Startup/
+
 order: 4
 title:  "Startup Eurorack Module DIY"
 module-name: "Startup"
 designed: "February 2019" 
 image: "/images/startup_600.png" 
 wide-image: "false" 
-excerpt: "is a headphone amp, mixer & clock in 4hp, the perfect way to start a small Eurorack case" 
+excerpt: "is a headphone amp, mixer & clock in 4hp, perfect for a small Eurorack case" 
 # overlay: "NEW "
 thonk-url: "https://www.thonk.co.uk/shop/startup/?utm_source=MTM&utm_campaign=Startup" 
 size: "4 HP"

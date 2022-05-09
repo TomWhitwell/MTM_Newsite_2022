@@ -1,6 +1,8 @@
 ---
 layout: module
 order: 2
+permalink: /Turing-Machine/
+
 title:  "Turing Machine Random Looping Sequencer Eurorack DIY Project"
 module-name: "Turing Machine"
 designed: "2012"
@@ -83,18 +85,18 @@ never go back to a sequence that has changed."
 - "Electronically, the circuit was inspired by the long history of shift register pseudorandom synth circuits, including the <a href=https://www.youtube.com/watch?v=YZVyl8HkxWU>Triadex Muse</a>, <a href=https://www.youtube.com/watch?v=5TlowXdSR_8>Buchla 266 Source of Uncertainty</a> and <a href=http://mamonu.weebly.com/wiard-noisering.html>Grant Richter's Noisering</a>.</li>
 <li class=articleList>Musically, the module was inspired by 60s and 70s minimalist process music by people like Steve Reich, Terry Riley or Philip Glass: 
 <i>“I am interested in perceptible processes. I want to be able to hear the process happening throughout the music.To facilitate closely detailed listening a musical process should happen extremely gradually.”</i> Steve Reich, <a href=http://musicgrad.ucsd.edu/~dwd/2014_music14/reich.pdf>Music as a Gradual Process</a>, 1968"
-- "While designing the Turing Machine, I compiled this <a href=/collateral/Random-Reading-List.pdf>Random Reading List</a> which includes notes on the history of random sequence generators from Marvin Minsky's Muse to Don Buchla's Source of Uncertainty to Doepfer's A-149 module. "
+- "While designing the Turing Machine, I compiled this <a href=../collateral/Random-Reading-List.pdf>Random Reading List</a> which includes notes on the history of random sequence generators from Marvin Minsky's Muse to Don Buchla's Source of Uncertainty to Doepfer's A-149 module. "
 - "Tony Surgeon is a long-time Turing Machine user. <a href=https://vimeo.com/225625900>In this workshop from 2016</a> he shows how he uses it to generate sequences which are then looped on an Octatrack."
 - "Turing Machine is open source, which has inspired many offshoots, alternative panels and third party expanders, including:
 <ul>
-<li>Mystic Circuits' <a href=http://www.mysticcircuits.com/p/vert.html>Vert</a> and <a href=http://www.mysticcircuits.com/p/switches.html>Switches</a>
+<li>Mystic Circuits' <a href=https://www.mysticcircuits.com/product/vert>Vert</a> and <a href=https://www.mysticcircuits.com/product/leaves-black-panel-limited-edition>Leaves</a>
 <li>Grayscale Modular's <a href=https://www.modulargrid.net/e/grayscale-permutation-18hp-black>Permutation</a>
 <li>Magpie Modular's crazy <a href=https://store.magpiemodular.com/collections/all-panels/products/music-thing-modular-turing-machine-ver-2-panel>combo panels</a>
 <li>Software Turing Machines inside the <a href=http://ornament-and-cri.me/>Ornament & Crime</a> module, <a href=https://mqtthiqs.github.io/parasites/frames.html>Frames Parasites firmware</a>, <a href=https://www.native-instruments.com/en/reaktor-community/reaktor-user-library/entry/show/10173/>Reactor Blocks</a>, <a href=https://github.com/stellare-modular/vcv-rack/releases>VCV Rack Modules</a> and even <a href=https://mutable-instruments.net/modules/marbles/>Mutable Instruments' Marbles</a>. 
 </ul>
 "
 - "The Turing Machine is definitely <i>not</i> a real Turing Machine <a href=https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/turing-machine/one.html>the way Alan Turing explained it</a>. The name is vaguely relevant because the module uses a loop of data being changed, but the similarity ends there."
-- "The <a href=/collateral/TuringRev1Docs.pdf>original Mk1 documentation</a> contains more detail about how the Turing Machine works, including a block diagram."
+- "The <a href=../collateral/TuringRev1Docs.pdf>original Mk1 documentation</a> contains more detail about how the Turing Machine works, including a block diagram."
 - "The Turing Machine is a fairly straightforward through-hole DIY build, but it's fairly dense and takes a while to complete, so probably shouldn't be a first DIY project (I always recommend Mikrophonie or Mini Drive as first builds). Build documents are <a href=https://www.thonk.co.uk/shop/turingmkii/?utm_source=MTM&utm_campaign=TuringMain>available from Thonk</a>. If you get stuck, the <a href=https://github.com/TomWhitwell/TuringMachine/issues?utf8=%E2%9C%93&q=is%3Aissue>Github Issue List</a> is probably the best place to start - remember to check closed issues as well as open ones. "
 
 

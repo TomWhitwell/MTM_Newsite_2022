@@ -25,7 +25,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 
 # Paths
 baseurl: "/qwertyuiop" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+# baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://tomwhitwell.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Socials 
@@ -74,3 +75,12 @@ collections:
     output: true
   extras:
     output: true
+    
+    
+# seo 
+title: "Music Thing Modular"
+description: "Open source DIY electronic musical instruments: Eurorack, Buchla, Modular Synths" 
+twitter:
+  username: musicthing
+  card: summary
+logo: "/images/mtm_logo_sq_600.png"

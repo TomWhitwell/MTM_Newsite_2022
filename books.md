@@ -72,7 +72,7 @@ output: false
 
 <homepage_mid><br>David Byrne: <a href="https://www.amazon.co.uk/s/ref=nb_sb_noss?&field-keywords=Byrne%20How%20Music%20Works%20&tag=musicthing-21">How Music Works </a></homepage_mid>
 
-<homepage_mid><br> Various: <a href="https://publication-studio.myshopify.com/products/fowre-1-synthesizers">Fowre #1: Synthesizers </a></homepage_mid>
+<homepage_mid><br> Various: <a href="https://www.publicationstudio.biz/books/fowre-1-synth/">Fowre #1: Synthesizers </a></homepage_mid>
 
 <homepage_mid><br>Julian Cope: <a href="https://www.amazon.co.uk/s/ref=nb_sb_noss?&field-keywords=Cope%20Copendium%20&tag=musicthing-21">Copendium </a></homepage_mid>
 
@@ -91,8 +91,6 @@ output: false
 <homepage_mid><br>Daniel Spoerri: <a href="https://www.amazon.co.uk/s/ref=nb_sb_noss?&field-keywords=Spoerri%20An%20Anecdoted%20Topography%20of%20Chance&tag=musicthing-21">An Anecdoted Topography of Chance</a></homepage_mid>
 
 <homepage_mid><br>Various: <a href="https://www.amazon.co.uk/s/ref=nb_sb_noss?&field-keywords=Various%20Sense%20Sound%20Sound%20Sense%20-%20Fluxus%20Music%20Scores%20%26%20Records&tag=musicthing-21">Sense Sound Sound Sense - Fluxus Music Scores & Records</a></homepage_mid>
-
-<homepage_mid><br>Sound Threshold: <a href="http://soundandmusic.org/projects/cut-splice-transmission-book">Cut & Splice: Transmission </a></homepage_mid>
 
 <homepage_mid><br>Various: <a href="http://spectorbooks.com/black-mountain-0">Black Mountain: An Interdisciplinary Experiment, 1933 –1957</a></homepage_mid>
 
@@ -210,7 +208,7 @@ output: false
 
 <homepage_mid><br>Robert Barry: <a href="https://www.amazon.co.uk/s/ref=nb_sb_noss?&field-keywords=Barry%20The%20Music%20of%20the%20Future%20&tag=musicthing-21">The Music of the Future </a></homepage_mid>
 
-<homepage_mid><br>Kim Bjorn: <a href="https://www.pushturnmove.com/">Push Turn Move </a></homepage_mid>
+<homepage_mid><br>Kim Bjorn: <a href="https://bjooks.com/">Push Turn Move, Patch & Tweak</a></homepage_mid>
 
 <homepage_mid><br>Stefan Szczelkun: <a href="https://www.amazon.co.uk/s/ref=nb_sb_noss?&field-keywords=Szczelkun%20Improvisation%20Rites%3A%20%3A%20from%20John%20Cage%E2%80%99s%20%E2%80%98Song%20Books%E2%80%99%20to%20the%20Scratch%20Orchestra%E2%80%99s%20%E2%80%98Nature%20Study%20Notes%E2%80%99&tag=musicthing-21">Improvisation Rites:: from John Cage’s ‘Song Books’ to the Scratch Orchestra’s ‘Nature Study Notes’</a></homepage_mid>
 

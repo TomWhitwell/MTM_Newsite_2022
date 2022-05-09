@@ -1,5 +1,7 @@
 ---
 layout: module
+permalink: /Turing-Pulse-Expander/
+
 title:  "Pulses rhythm expander for Turing Machine Eurorack DIY"
 module-name: "Turing: Pulses"
 categories: eurorack

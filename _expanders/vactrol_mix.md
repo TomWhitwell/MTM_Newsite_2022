@@ -1,10 +1,12 @@
 ---
 layout: module
 order: 1
+permalink: /Turing-Vactrol-Mix-Expander/
+
 title:  "Vactrol Mix expander for Turing Machine Eurorack DIY"
 module-name: "Turing: Vactrol Mix"
 categories: eurorack
-image: "/images/vactrol-mix_600.png"
+image: "/images/v-mix-square-900.png"
 wide-image: "true" 
 designed: "March 2015"
 excerpt: "random looping mix sequencer" 
@@ -33,7 +35,7 @@ pars:
 
 - "The Vactrol Mix is DC coupled, so you can also rhythmically cut up DC sources; mix LFOs at different speeds with audio rate oscilllators, and frequency modulating a pair of oscillators using the two outputs. "
 
-- "This module was inspired by <a href=https://github.com/TomWhitwell/TuringMixExpander/wiki/Grant-Richter's-Electro-Optical-Mixer>Grant Richter's Cadavre Exquis voltage controlled mixer</a>, which was inspired by André Breton's surrealist game <a href=https://en.wikipedia.org/wiki/Exquisite_corpse>Exquisite Corpse</a>. Richter's mixer also inspired the <a href=http://www.makenoisemusic.com/modules/rxmx>RxMx module by Make Noise</a>. "
+- "This module was inspired by <a href=https://github.com/TomWhitwell/TuringMixExpander/wiki/Grant-Richter's-Electro-Optical-Mixer>Grant Richter's Cadavre Exquis voltage controlled mixer</a>, which was inspired by André Breton's surrealist game <a href=https://en.wikipedia.org/wiki/Exquisite_corpse>Exquisite Corpse</a>. Richter's mixer also inspired the <a href=https://www.makenoisemusic.com/modules/rxmx-legacy>RxMx module by Make Noise</a>. "
 
 - "<a href=https://www.facebook.com/TheHiggins>Jonathan Higgins</a>, on Facebook: There isn't a patch I don't use it on. People often thing you can only use it for crazy stereo percussion (which it is amazing at). But I also often patch all four outputs from the humpback filter into it for evolving stereo drones."
 

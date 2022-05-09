@@ -36,10 +36,10 @@ Anyway, the kit comes with rather minimal instructions – [this document](https
     6.  Bolt the main board into place, then go round doing all the wiring. This takes ages. There will also be point-to-point wiring on the main board (the bundle of twisted yellow wires running over the big capacitors) that is easier to do when the board is in place.
     7.  Then you get to the scariest bit – connecting up all the high-voltage cables from the transformers. Check and check and check again.
     8.  My power transformer came with 220v, 230v and 240v connections. After a lot of research and measuring my mains voltage I discovered that we have 240v in Britain (it turns out that European harmonisation on 230v is essentially a myth), so I used that connection.
-    9.  The last major bit of wiring are the filament/heater connections – these are the thick green twisted wires over the top of the tube sockets (some people do them first, beneath the other connections). [This series of videos](https://www.youtube.com/watch?v=7O0_dlKkzSE) explains the process well with a nifty drill-twist tip.
+    9.  The last major bit of wiring are the filament/heater connections – these are the thick green twisted wires over the top of the tube sockets (some people do them first, beneath the other connections). 
     10.  Connect up the mains cable – inserting the little strain relief grommet thing was the hardest single thing in the whole build.
     11.  You’re now at the terrifying point when you realise you’ve finished, and there is nothing further to do but checking, rechecking, rechecking. Sleep on it, if you can bear it.
-    12.  [This manual from Mojotone](http://www.mojotone.com/manuals/BF%20Princeton%20Reverb.pdf) has sensible advice about a two-stage power up.
+    12.  [This manual from Mojotone](https://www.mojotone.com/manuals/Princeton_Reverb_Manual.pdf) has sensible advice about a two-stage power up.
         1.  With no tubes but the speaker connected. I did this, the pilot light glowed, and there was blissful silence – no strange pops or puffs of smoke or fire or all the lights in the house going out.
         2.  Finally with the tubes in place. I turned on the power, watched the tubes starting to glow, and heard just the tiniest bit of hum from the speaker. After checking the chassis and guitar input weren’t live, I plugged in a guitar and… it worked.
     13.  Finally, mount it in the cabinet and feel like the smuggest person on the planet.

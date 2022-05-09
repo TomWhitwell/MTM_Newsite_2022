@@ -1,5 +1,7 @@
 ---
 layout: module
+permalink: /Simple-EQ/
+
 order: 9
 title:  "Simple EQ Baxandall Tilt SMD DIY Eurorack Module"
 designed: "March 2014"

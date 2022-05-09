@@ -1,5 +1,7 @@
 ---
 layout: module
+permalink: /Spring-Expander/
+
 title:  "Spring Reverb Expander for Eurorack DIY"
 order: 2
 module-name: "Spring Reverb Expander"

@@ -1,5 +1,7 @@
 ---
 layout: module
+permalink: /Easel-Clock/
+
 order: 12
 title:  "Buchla Music Easel Clock In Out Expansion Card"
 module-name: "Easel Clock"

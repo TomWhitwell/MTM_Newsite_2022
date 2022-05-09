@@ -1,5 +1,7 @@
 ---
 layout: module
+permalink: /Radio-Music/
+
 order: 4
 designed: 2014
 updated: 2017
@@ -7,7 +9,7 @@ title:  "Radio Music Eurorack Sampler Module"
 module-name: "Radio Music"
 categories: eurorack
 image: /images/radio-music_600.png
-excerpt: "is a sampler pretending to be a radio, inspired by John Cage & Stockhausen"
+excerpt: "is a sampler pretending to be a radio, inspired by John Cage"
 # overlay: "NEW"
 
 thonk-url: "https://www.thonk.co.uk/shop/radio-music-full-diy-kit/?utm_source=MTM&utm_campaign=RadioMusic"
@@ -47,9 +49,9 @@ pars:
 - "Like a radio, the module works on a series of banks and stations. Each of the 16 banks can contain many different stations. Each station is an audio file stored in a folder on the SD card. Choose a bank by pressing and holding the RESET switch. Choose a station by turning the STATION knob or plugging a voltage into TUNE."
 - "Radio Music runs on a <a href=https://www.pjrc.com/teensy/>Teensy</a> 3.1 (or 3.2) microcontroller, which is programmed by USB and runs a very well documented Arduino-like language, so it's easy to hack."
 - "Because the audio streams from the SD card, it can handle long files easily. In the default setting, it switches between long recordings just as if they were radio stations — as if the audio was playing in the background."
-- "There are multiple alternative firmwares for Radio Music <a href=https://github.com/TomWhitwell/RadioMusic/wiki/Alternative-firmware-for-Radio-Music>documented in the github</a>, including: <ul> <li>Chord Organ is just an alternative firmware for Radio Music, but is also available as a separate module. You can turn a RM into a CO (or vice versa) at any time using a normal Micro USB cable. </li>
+- "There are multiple alternative firmwares for Radio Music <a href=https://github.com/TomWhitwell/RadioMusic/wiki/Alternative-firmware-for-Radio-Music>documented in the github</a>, and on <a href=https://www.voltagecontrollab.com/2016/10/25/radio-music-alternative-firmware/>Voltage Control Lab</a> including: <ul> <li>Chord Organ is just an alternative firmware for Radio Music, but is also available as a separate module. You can turn a RM into a CO (or vice versa) at any time using a normal Micro USB cable. </li>
 <li><a href=https://www.modwiggler.com/forum/viewtopic.php?p=2623815#2623815>Telharfauxnium</a> is an additive synthesis firmware.  </li>
-<li>James Carruthers of <a href=http://www.nobots.co.uk/>Nobots</a> has written <a href=https://youtu.be/PAdvAgUA8U8?t=50s>several different firmwares</a>, including a cool 808 drum machine</a>
+<li>James Carruthers has written <a href=https://github.com/jamescarruthers/RadioMusicAltFirmware>several different firmwares</a>, including a cool 808 drum machine</a>
 </li><li>
 I often use this <a href=https://www.youtube.com/watch?v=znC3cyozuME>Loop Divider</a> firmware to sync everything to loops in a small case.</li></ul>"
 

@@ -1,6 +1,8 @@
 ---
 layout: module
 order: 6
+permalink: /Chord-Organ/
+
 title:  "Chord Organ Eurorack Module DIY"
 module-name: "Chord Organ"
 designed: 2017
@@ -8,7 +10,7 @@ image: "/images/chord-organ_600.png"
 wide-image: "false" 
 excerpt: "is the easiest way to get chords from a modular synth" 
 # overlay: "NEW "
-thonk-url: "https://www.thonk.co.uk/shop/  /?utm_source=MTM&utm_campaign=Graphic" 
+thonk-url: "https://www.thonk.co.uk/shop/chordorgan/" 
 size: "4 HP"
 depth: "40mm"
 supply: "75mA"

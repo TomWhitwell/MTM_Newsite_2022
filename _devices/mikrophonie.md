@@ -1,5 +1,7 @@
 ---
 layout: module
+permalink: /Mikrophonie/
+
 order: 5
 title:  "Eurorack Module DIY"
 module-name: "Mikrophonie"
