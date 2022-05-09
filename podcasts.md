@@ -6,7 +6,7 @@ output: false
 pods:
 
 - 
- link: "/books.html"
+ link: "books.html"
  title: The Music Thing Modular Reading List
 
 
@@ -103,21 +103,20 @@ pods:
  date: 2016 
 
 - 
- link: "/extras/dr55_mods.html"
+ link: "extras/dr55_mods.html"
  title: "Kick drum mods"
  description: "on a Boss DR-55 drum machine"
  date: 2015
 
 
-
 -
- link: "/extras/princeton.html"
+ link: "extras/princeton.html"
  title: "Slow Electronics"
  description: "What I learned building a Princeton Reverb amp"
  date: 2015
  
 - 
- link: "/extras/ps2_mods.html"
+ link: "extras/ps2_mods.html"
  title: "Adding CV control to a"
  description: "Boss PS-2 Delay Pedal"
  date: 2015

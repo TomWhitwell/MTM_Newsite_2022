@@ -4,7 +4,7 @@
 		Music Thing Modular Reading List: 
 	</homepage_mid>
 </p>
-{% for item in site.pages%} {% if item.books %} {% for books in item.books | sort: books.author-last  %} 
+{% for item in site.pages%} {% if item.books %} {% for books in item.books  %} 
 <p>
 	<div class="main">
 		<a href="{{books.link}}">
@@ -19,6 +19,4 @@
 	</div>
 </p>
 {% endfor %} {% endif %} {% endfor %} 
-
-
 

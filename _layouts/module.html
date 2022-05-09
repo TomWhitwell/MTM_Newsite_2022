@@ -12,7 +12,7 @@
       
     {% if page.wide-image == "true" %}
     {% else %}
-    <div class="img-normal" style="background-image: url({{page.image}});">    </div>
+    <div class="img-normal" style="background-image: url({{page.image | relative_url }});">    </div>
     {% endif %}
 
     
@@ -22,7 +22,9 @@
       <h1>{{page.pars.size}} things to know about {{page.module-name}}</h1><p></p>
 
     {% if page.wide-image == "true" %}
-   <br> <div class="img-wide" style="background-image: url({{page.image}});">  <br>  </div><br>
+<!--    <br> <div class="img-wide" style="background-image: url({{page.image | relative_url }});">  <br>  </div><br> -->
+   <br> <img style="width: 100%" src={{page.image | relative_url }}>  <br>  <br>
+
     {% else %}
     {% endif %}
 
@@ -61,7 +63,7 @@ Updated {{page.updated}}
 <a href="mailto:tom@musicthing.co.uk?subject=Please send me {{page.module-name}} Design Files">Request Design Files</a> |
 {% endif %}
 {% if page.schematic %}
-<a href="{{page.schematic}}">Schematic</a> |
+<a href="{{page.schematic | relative_url }}">Schematic</a> |
 {% else %}
 <a href="mailto:tom@musicthing.co.uk?subject=Please send me a {{page.module-name}} Schematic">Request Schematic</a> |
 {% endif %}

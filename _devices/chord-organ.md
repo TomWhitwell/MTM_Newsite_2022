@@ -40,13 +40,13 @@ pars:
 - "The top knob chooses the chord shape (Major, Minor, Drop 3 9th). The bottom knob chooses the root note. Both can be CV controlled."
 - "The <a href=http://polyfather.com/chord_organ/>latest firmware</a> now includes: 
 <ul>
-<li class='articleList'>A choice of 12 waveforms (the original just had four) 
+A choice of 12 waveforms (the original just had four) 
 </li>
-<li class='articleList'>Program chords by uploading MIDI files 
+Program chords by uploading MIDI files 
 </li>
-<li class='articleList'>Easy to use <a href='http://polyfather.com/chord_organ/'>configuration page</a>. 
+Easy to use <a href='http://polyfather.com/chord_organ/'>configuration page</a>. 
 </li>
-<li class='articleList'>Alternative tuning support by dropping standard Scala files onto the SD card (<a href='https://github.com/TomWhitwell/Chord-Organ/releases'>installation details</a>). 
+Alternative tuning support by dropping standard Scala files onto the SD card (<a href='https://github.com/TomWhitwell/Chord-Organ/releases'>installation details</a>). 
 </li>
 </ul>"
 - "There’s a long history of press-button-to-get-chord instruments; accordions, the <a href=https://www.youtube.com/watch?v=eoJY599SfU0>Suzuki Omnichord</a>, the <a href=https://www.youtube.com/watch?v=cRyb02mfrdY>Autoharp</a>, or all those auto-accompaniment electronic keyboards that you used to see.

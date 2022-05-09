@@ -3,7 +3,7 @@
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}"><img src="/images/MTM_Horiz.svg" class="img-header"></a>
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}"><img src="{{ site.baseurl }}/images/MTM_Horiz.svg" class="img-header"></a>
     
 
     {%- if page_paths -%}
@@ -18,9 +18,9 @@
         </label>
 
         <div class="trigger">
-        <a class="page-link" href="/index.html#writing">Talking & Writing</a>
-        <a class="page-link" href="/about/">About</a>
-        <a class="page-link" href="https://www.thonk.co.uk/brand/music-thing-modular/">BUY</a>
+        <a class="page-link" href="{{ site.baseurl }}/index.html#writing">Talking & Writing</a>
+        <a class="page-link" href="{{ site.baseurl }}/about/">About</a>
+        <a class="page-link " href="https://www.thonk.co.uk/brand/music-thing-modular/">Buy</a>
 
         </div>
       </nav>

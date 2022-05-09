@@ -4,7 +4,7 @@ order: 3
 title:  "Control Big Knob Eurorack Module DIY"
 module-name: "Control"
 designed: "June 2020" 
-image: "/images/control_600.png"
+image: "/images/control_900.png"
 wide-image: "true" 
 excerpt: "is four big finger-friendly knobs for precise & playable tweaking" 
 # overlay: "Coming Soon: "

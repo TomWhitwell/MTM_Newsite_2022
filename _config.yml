@@ -19,11 +19,17 @@
 # in the templates via {{ site.myvariable }}.
 
 
-email: tom@musicthing.co.uk
 description: >- # this means to ignore newlines until "baseurl:"
   Open source electronic musical instruments. Designed in London, made in Brighton, built and used by musicians around the world.
-baseurl: "" # the subpath of your site, e.g. /blog
+  
+
+# Paths
+baseurl: "/qwertyuiop" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+# Socials 
+email: tom@musicthing.co.uk
 instagram_username: tomwhitwell
 twitter_username: musicthing
 github_username:  tomwhitwell

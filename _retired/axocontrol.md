@@ -20,4 +20,4 @@ Axo Control was a simple control board for the Axoloti audio board. It was retir
 
 [Details and design files are available at Github](https://github.com/TomWhitwell/Axo-Control). 
 
-![AxoControl](/images/axoloti_600.png)
+![AxoControl]({{'/images/axoloti_900.png' | relative_url}} )

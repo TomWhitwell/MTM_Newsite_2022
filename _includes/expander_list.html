@@ -8,7 +8,7 @@
 {% assign ordered_modules = site.expanders | sort:"order" %} {% for module in ordered_modules %} 
 <p>
 	<div class="main">
-		<a href="{{module.url}}">
+		<a href="{{module.url | relative_url }}">
 			<homepage_mid_highlight>
 				{{module.overlay}}{{module.module-name}} 
 			</homepage_mid_highlight>

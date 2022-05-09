@@ -7,7 +7,7 @@
 {% assign ordered_modules = site.devices | sort:"order" %} {% for module in ordered_modules %} 
 <p>
 	<div class="main">
-		<a href="{{module.url}}">
+		<a href="{{module.url | relative_url }}">
 			<h1>
 				{{module.overlay}}{{module.module-name}}
 			</h1>
