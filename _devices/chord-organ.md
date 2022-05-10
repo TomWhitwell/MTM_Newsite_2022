@@ -1,6 +1,6 @@
 ---
 layout: module
-order: 6
+order: 15
 permalink: /Chord-Organ/
 
 title:  "Chord Organ Eurorack Module DIY"
@@ -20,8 +20,13 @@ schematic: "collateral/RM_schematic1.pdf"
 yt:
 
 -
+ link: "ebt4xdJwV1Y"
+ title: "My first Chord Organ demo in a little lunchbox case"
+
+-
  link: "iN9SFpnXebw"
  title: "MylarMelodies builds a Chord Organ live"
+
 
 - 
   link: "7WcdZXow7Ow"
@@ -32,6 +37,9 @@ yt:
 - 
   link: "-KxItwUJRFw"
   title: "Build video and demo from Synth DIY Guy"
+
+
+
 
 
 pars:

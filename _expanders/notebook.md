@@ -2,7 +2,7 @@
 layout: module
 permalink: /Workshop-Notebook/
 
-title:  "Pulses rhythm expander for Turing Machine Eurorack DIY"
+title:  "Workshop Notebook for Eurorack DIY Design"
 module-name: "Workshop Notebook"
 categories: eurorack
 image: /images/bookfront_askew3.jpg
@@ -12,6 +12,7 @@ designed: "July 2019"
 excerpt: " paper-based module design tool" 
 # overlay: "NEW"
 thonk-url: "https://www.thonk.co.uk/shop/mtm-book/" 
+hide-design: "true"
 
 
 pars: 

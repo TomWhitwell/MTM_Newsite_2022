@@ -2,7 +2,7 @@
 layout: module
 permalink: /Startup/
 
-order: 4
+order: 13
 title:  "Startup Eurorack Module DIY"
 module-name: "Startup"
 designed: "February 2019" 
@@ -14,8 +14,9 @@ thonk-url: "https://www.thonk.co.uk/shop/startup/?utm_source=MTM&utm_campaign=St
 size: "4 HP"
 depth: "25 mm"
 supply: "40 mA"
-mgrid: "https://www.modulargrid.net/"
+mgrid: "https://www.modulargrid.net/e/music-thing-modular-startup-grey-panel"
 schematic: "/collateral/Startup-schematic.pdf"
+manual: "/collateral/Startup_Rev1_Manual.pdf"
 yt:
 - 
   link: "UX0aK-eW-f0"
@@ -35,9 +36,8 @@ pars:
 - "One of the inspirations behind the module was <a href=https://www.soundonsound.com/people/jim-sutherland-producing-aberfeldy>this ancient interview with Scottish folk band Aberfeldy</a>
 which describes recording an entire band album acoustically with one microphone, where the band had to mix as they recorded by moving around the room. "
 - "The headphone amp is a powerful, low-noise amplifier based on the well known <a href=https://tangentsoft.net/audio/cmoy/>Cmoy</a> circuit, but with the advantage of running on +/-12v rather than a 9v battery. It should be able to drive any headphones with ease, and can also be used as a line out. The outputs share one amp so expect some volume drop or other odd-ness when using two headphones. Please be <a href=https://www.youtube.com/watch?v=gIzSZH6oqeM>very careful</a> with volume levels when using headphones with modular synths, which can produce unpredictable signals."
-- "The clock takes a few minutes to get used to. The PDF Quick Start Manual is the best place to start. Tap the left-hand button to set a tempo. It just needs two taps to set the tempo. The Mode light comes on (or off) while tap tempo is ‘listening’. The fastest rate is as fast as you can tap, and the slowest rate is one pulse every three seconds."
-- "The clock takes a few minutes to get used to. Again, the PDF Quick Start Manual is the best place to start. Tap the left-hand button to set a tempo. It just needs two taps to set the tempo. The Mode light comes on (or off) while tap tempo is ‘listening’. The fastest rate is as fast as you can tap, and the slowest rate is one pulse every three seconds. 
-The Diviply output produces a clock related to the main tap clock. Tap the (right hand) button to select a faster division (or multiplication), hold to select a slower clock. The 'Mode' light will blink when the division changes. You can see this in action <a href=https://www.instagram.com/p/Bu3Et2yFK39/>in this Instagram clip</a>."
+- "The clock takes a few minutes to get used to. The <a href=../collateral/Startup_Rev1_Manual.pdf>PDF Quick Start Manual</a> is the best place to start. Tap the left-hand button to set a tempo. It just needs two taps to set the tempo. The Mode light comes on (or off) while tap tempo is ‘listening’. The fastest rate is as fast as you can tap, and the slowest rate is one pulse every three seconds."
+- "The Diviply output produces a clock related to the main tap clock. Tap the (right hand) button to select a faster division (or multiplication), hold to select a slower clock. The 'Mode' light will blink when the division changes. You can see this in action <a href=https://www.instagram.com/p/Bu3Et2yFK39/>in this Instagram clip</a>."
 - "The clock divider has two modes: When the the mode light is off, clocks coming out from Diviply are Even; ratios of 2,4,8,16. When the light is on, they are odd; 1, 3, 6. Switch modes by holding 'Tap'. "
 - "Instead of the longest 'odd' divisions there is a kind of Easter Egg - four Phase modes. Here the Diviply output lags behind the Tap output, catching up every 8, 16, 48 or 96 pulses (in other words, Diviply sends 7 pulses in the time Tap sends 8 pulses, and so on). The details are in the PDF. <a href=https://www.instagram.com/p/Bu5nQTyFQv-/>This Instagram clip</a> shows a pattern that syncs every 8 steps, with a stereo output being driven by two Radio Musics. "
 - "Startup is supplied as a pre-populated PCB with surface mount components, with a kit of thru-hole parts. It's a dense board (LOTS of sockets) but is a satisfying, quick build. It's not ideal as a first build but we've successfully had first-time solderers build the module at workshops."

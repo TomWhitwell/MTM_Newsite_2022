@@ -24,7 +24,7 @@ yt:
 
 pars: 
 - "This is a very simple passive expander for the revised Spring module, which brings the phono connections to the front panel — ideal for smaller cases — and adds a simple mix control to blend real spring tanks with the solid state reverb 'brick'."
-- "The main reverb module has phono sockets on the back, so you can put a reverb tank inside your modular case. Often, you might want to mount the spring tank outside the case; for small cases, or for access to the springs — stroking them or muting them or ‘preparing’ them in some way. This little 3hp expander makes that simple. It’s reversible, so you can arrange the cables how you like."
+- "The main reverb module has phono sockets on the back, so you can put a reverb tank inside your modular case. Often, you might want to mount the spring tank outside the case; for small cases, or for access to the springs — stroking them or muting them or ‘preparing’ them in some way. This little 3hp expander makes that simple."
 - "The panel is designed to be reversible, depending how you want to arrange the cable to your spring tank."
 - "The expander also has a simple mix pot to blend the spring and brick reverbs together — this is a really nice effect, particularly when using feedback."
 - "Weird patch trick: If you use the expander with a brick, but without a spring connected to the front or back of the module, the spring drive circuit will overdrive massively (the spring pickup is part of the feedback loop of an op amp, so without it you get open loop gain). Fading across to spring and playing with feedback and EQ can get some really crunchy, squeaky extreme distortion that can be quite controllable with the blend control."

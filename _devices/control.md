@@ -2,7 +2,7 @@
 layout: module
 permalink: /Control/
 
-order: 3
+order: 12
 title:  "Control Big Knob Eurorack Module DIY"
 module-name: "Control"
 designed: "June 2020" 
@@ -15,6 +15,7 @@ size: "18 HP"
 depth: "24 mm"
 supply: "52 mA"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-control"
+schematic: "/collateral/control_schematic_1.2.pdf"
 
 yt:
 - 
@@ -22,7 +23,7 @@ yt:
   title: "Great build video from Synth DIY Guy"
 - 
   link: "qls51A1kAvI"
-  title: "Detailed build video, by me on my messy desk"
+  title: "Detailed build video by me on my messy desk"
 - 
   link: "vRWVPjUEyNo"
   title: "Short but lovely clip of Marcus Fischer playing a prototype Control"

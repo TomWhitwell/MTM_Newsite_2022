@@ -2,7 +2,7 @@
 layout: module
 permalink: /Easel-Clock/
 
-order: 12
+order: 30
 title:  "Buchla Music Easel Clock In Out Expansion Card"
 module-name: "Easel Clock"
 designed: 2021
@@ -18,6 +18,7 @@ thonk-button: "COMING SOON"
 # mgrid: "https://www.modulargrid.net/e/music-thing-modular-chord-organ"
 # github: "https://github.com/TomWhitwell/Chord-Organ"
 # schematic: "collateral/RM_schematic1.pdf"
+hide-design: "true"
 
 
 pars:

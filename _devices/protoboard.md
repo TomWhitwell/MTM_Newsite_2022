@@ -2,7 +2,7 @@
 layout: module
 permalink: /Easel-Proto/
 
-order: 12
+order: 31
 title:  "Buchla Music Easel Prototype Proto Board"
 module-name: "Easel Proto"
 designed: 2022
@@ -18,6 +18,8 @@ thonk-button: "COMING SOON"
 # mgrid: "https://www.modulargrid.net/e/music-thing-modular-chord-organ"
 # github: "https://github.com/TomWhitwell/Chord-Organ"
 # schematic: "collateral/RM_schematic1.pdf"
+manual: "collateral/Music_Easel_hacking_for_beginners.pdf"
+hide-design: "true"
 
 
 pars:

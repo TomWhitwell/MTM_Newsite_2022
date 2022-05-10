@@ -2,7 +2,7 @@
 layout: module
 permalink: /Mikrophonie/
 
-order: 5
+order: 16
 title:  "Eurorack Module DIY"
 module-name: "Mikrophonie"
 image: "/images/mikrophonie_600.png" 
@@ -19,14 +19,26 @@ github: "https://github.com/TomWhitwell/Mikrophonie"
 schematic: "/collateral/Mikrophonie-Schematic.pdf"
 yt:
 - 
-  link: ""
-  title: ""
+  link: "EwOx5rDguJo"
+  title: "DivKid's quick introduction"
 - 
-  link: ""
-  title: ""
+  link: "GQ_bLAqGKEA"
+  title: "Leafcutter John's Mikrophonie workout"
 - 
-  link: ""
-  title: ""
+  link: "gv-hvCK81gs"
+  title: "Build video from Synth DIY Guy"
+  
+- 
+  link: "qwv4aq1Mpa4"
+  title: "Hydrophone demo"
+  
+- 
+  link: "PsawWhYBWSg"
+  title: "Scanner at the Mikrophonie"
+  
+- 
+  link: "BQGxMFqcdnY"
+  title: "Clear, detailed build video from New Electronic Frontier"
 
 pars:
 - "Mikrophonie is a microphone preamp with a piezo contact mic built into the panel. It is an easy way to bring environmental noise and feedback into a modular system, inspired by the early days of electroacoustic music in Paris and Cologne, and by the contact microphone and phonograph cartridge experiments of John Cage, Gordon Mumma, Robert Ashley and Nicholas Collins."

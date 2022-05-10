@@ -2,7 +2,7 @@
 layout: module
 permalink: /Graphic-EQ/
 
-order: 8
+order: 19
 title:  "Graphic EQ Eurorack Module DIY"
 module-name: "Graphic EQ"
 designed: "November 2017" 
@@ -14,7 +14,7 @@ size: "6 HP"
 depth: "25mm"
 supply: "77mA"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-graphic-eq"
-github: "https://github.com/TomWhitwell/TuringMachine"
+github: "https://github.com/TomWhitwell/Graphic/"
 schematic: "https://musicthing.co.uk/collateral/graphic_schematic.pdf"
 yt:
 - 
@@ -37,7 +37,7 @@ pars:
 - "The <a href=http://www.effectsbay.com/2015/11/guest-post-boss-ge-7-low-noise-modification/>problem with the Boss GE-7</a> is noise. A 7-band equaliser needs at least 9 op-amps. In 1981 when the GE-7 was designed, op-amps used a fair amount of power. To get the pedal working from a 9v battery, the designers used TL022 chips, which drew just 10mA in total, but have pretty poor noise specifications. Cutting frequencies works fine, but boosting high frequencies adds a lot of hiss. This module is much quieter."
 - "It uses NE5532 op-amps, and is based on a design in <a href=https://amzn.to/2wTCfmn>Douglas Self's masterful 'Small Signal Audio Design'</a>. The 5532 isn't some boutique audiophile chip, but it's clean and works really well in this context."
 - "The 5 x NE5532s in this module draw 7.8ma each, a total of 39ma from the chips, generating a little bit of warmth - you might be able to feel it on the panel. With 7 x LEDs, total current draw is around 77ma. If you're worried about current draw, you can you can pull the LEDs out of their sockets in the sliders and replace them as you like. If you're really worried, you could pull out the LEDs and replace the 5532s with TL072s, which would reduce the draw to just 14mA."
-- "The default EQ range is a good general Hi-fi spread, with a bit of bass-shaping and a wide 16khz boost to add 'air'."
+- "The default EQ range is a good general hi-fi spread, with a bit of bass-shaping and a wide 16khz boost to add 'air'."
 - "You can modify the EQ range yourself by changing a few resistors and capacitors. If you want to do this, find an '<a href=https://www.ebay.co.uk/sch/i.html?_nkw=0805+resistor+capacitor&_sacat=0>0805 Resistor and Capacitor Sample Book</a>' from EBay. Calculating the ranges is fiddly: you want to select a frequency, a gain range, and a Q (width of the band) and obviously they're all interdependent."
 - "The board is designed with 3 spaces for tuning caps for each channel, so you have space to experiment, combining caps to find precise values. Many are left empty in the default build."
 - "Some frequency ranges found while researching this module:
@@ -59,7 +59,7 @@ Serge Resonant EQ: 29hz 61hz 115hz 218hz 411hz 777hz 1.5khz 2.8khz 5.2khz 11khz
 Moog 914 Filter Bank: 'Low' 125hz 175hz 250hz 350hz 500hz 700hz 1khz 1.4khz 2khz 2.8khz 4khz 5.6khz 'high'
 </li>
  </ul>"
-- "If you feed the out back into the input, you can get the module to feedback, oscillating at the centre frequencies (find out if your components match the calculations)"
-- "If you're assembling the pre-built kit from Thonk (definitely the most sensible way to go) make sure you follow the instructions carefully - this is a dense board, so you're working around some tiny components."
+- "If you feed the out back into the input, you can get the module to feedback, oscillating at the centre frequencies (find out if your components match the calculations). Experiment with inverting or boosting the signal in the feedback loop."
+- "If you're assembling the pre-built kit from Thonk make sure you follow the instructions carefully - this is a dense board, so you're working around some tiny components."
 ---
 

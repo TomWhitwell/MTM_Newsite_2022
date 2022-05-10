@@ -2,7 +2,7 @@
 layout: module
 permalink: /Mini-Drive/
 
-order: 1
+order: 10
 title:  "Mini Drive Eurorack Module DIY"
 module-name: "Mini Drive"
 designed: "2020"
@@ -13,6 +13,7 @@ thonk-url: "https://www.thonk.co.uk/shop/mini-drive/?utm_source=MTM&utm_campaign
 size: "4 HP"
 depth: "25 mm"
 supply: "40 mA"
+schematic: "collateral/mini_drive_Rev1_Schematic.pdf"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-mini-drive"
 yt:
 - 
@@ -36,7 +37,7 @@ pars:
 - "Even if you've never put together a DIY kit before, Mini Drive is a great way to start. Most of the components are tiny surface mount parts that are pre-soldered, so you only have to attach four sockets, one potentiometer, a power header and the incandescent bulb. It's a quick but satisfying build that's ideal for beginners."
 - "It's a simple discrete circuit: three transistors for the audio, three more to drive the incandescent overdrive bulb."
 - "The input section comes from my Fender Princeton Reverb amplifier. With only one cable plugged in, there's a lower gain input and a higher gain input. When two cables are plugged in, they're both mixed equally."
-- "The two outputs are identical. There are lots of ways to use the two ins & outs to <a hreft=https://youtu.be/skCWKC8ckVU?t=163>create interesting feedback patches</a>."
+- "The two outputs are identical. There are lots of ways to use the two ins & outs to <a href=https://youtu.be/skCWKC8ckVU?t=163>create interesting feedback patches</a>."
 - "If you just patch the Mini Drive into itself it becomes a very crude oscillator, with frequency influenced by the gain settings. Try adding clocks or oscillators to the other input to see what happens."
 - "With any feedback patch, phase is important. If the signal gets quieter when gain is increased, it’s probably because the signals are 180° out of phase. To correct this, reverse the phase using an inverter, or an attenuverter (like those in MakeNoise Maths). Alternatively, try routing it through another module to see what happens."
 

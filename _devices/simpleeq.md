@@ -2,7 +2,7 @@
 layout: module
 permalink: /Simple-EQ/
 
-order: 9
+order: 20
 title:  "Simple EQ Baxandall Tilt SMD DIY Eurorack Module"
 designed: "March 2014"
 module-name: "Simple EQ"
@@ -16,7 +16,7 @@ depth: "25mm"
 supply: "20mA"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-simple-eq"
 github: "https://github.com/TomWhitwell/SimpleEQ"
-# schematic: "/collateral/simple_eq.pdf
+schematic: "/collateral/simple_eq.pdf"
 
 
 pars:
@@ -31,7 +31,7 @@ pars:
 - "Constructed with a handful of (relatively large) 1206 capacitors and
     resistors, it's the perfect first project if you want to learn SMD
     soldering, and it comes with <a href=https://thonk.co.uk/documents/simple-eq-kit/Simple_EQ_build_doc-v1.3.pdf>a detailed build guide</a> from Thonk."
-- "Here is <a herf=https://b.meso.tokyo/post/158856776659/mtm-simple-eq-diy>a nice illustrated build guide and demo</a> from Mesomesona in Tokyo."
+- "Here is <a href=https://b.meso.tokyo/post/158856776659/mtm-simple-eq-diy>a nice illustrated build guide and demo</a> from Mesomesona in Tokyo."
 - "This is a fairly simple build, but if you have any issues, the best
     way to get help is to check the <a href=https://github.com/TomWhitwell/SimpleEQ/issues>GitHub Issue
     List</a>, and remember to check closed issues as well as open ones."

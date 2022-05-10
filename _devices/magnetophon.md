@@ -1,7 +1,7 @@
 ---
 layout: module
 permalink: /Magnetophon/
-order: 8
+order: 17
 title:  "Magnetophon Cassette Head Eurorack Module DIY"
 module-name: "Magnetophon"
 designed: "February 2017"
@@ -32,7 +32,7 @@ yt:
 
 pars:
 - "Magnetophon is a cassette player without the transport mechanism — a mono cassette head in the panel and a NAB equalised amplifier circuit, this is a tool for experiments with tape."
-- "With a mono cassette head in the panel and a NAB equalised amplifier circuit, Magnetophon is a tool for experiments with tape. Try rubbing old cassette tapes on the panel, or attach a head on a wire to recreate <a href=http://www.medienkunstnetz.de/works/random-access/images/3/>Nam June Paik’s Random Access</a> or Laurie Anderson’s Tape-Bow Violin."
+- "Magnetophon is a tool for experiments with tape. Try rubbing old cassette tapes on the panel, or attach a head on a wire to recreate <a href=http://www.medienkunstnetz.de/works/random-access/images/3/>Nam June Paik’s Random Access</a> or <a href=https://www.youtube.com/watch?v=sFh4UpBmo-Y>Laurie Anderson’s Tape-Bow Violin</a>."
 - "NAB stands for National Association of Broadcasters. Their <a href=http://www.richardhess.com/tape/history/NAB/NAB_Reel_Tape_Standard_1965_searchable.pdf>Reel-to-Reel Standard of 1965</a> specifies how tape heads should be amplified. If you plug a tape head into a microphone pre-amp, you get a very tinny sound with no low frequencies at all. Tape playback amplifiers (like the one in this module) boost bass by up to 10dB at 16Hz, while cutting highs by up to 20dB at 20kHz. Tape recorders apply the opposite curve when recording to tape."
 - "Don't expect a handheld cassette head rubbing against free-running tape to sound very hi-fi. It turns out all that head alignment and bias adjustment stuff wasn't BS after all."
 

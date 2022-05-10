@@ -37,7 +37,7 @@ pars:
 
 - "This module was inspired by <a href=https://github.com/TomWhitwell/TuringMixExpander/wiki/Grant-Richter's-Electro-Optical-Mixer>Grant Richter's Cadavre Exquis voltage controlled mixer</a>, which was inspired by André Breton's surrealist game <a href=https://en.wikipedia.org/wiki/Exquisite_corpse>Exquisite Corpse</a>. Richter's mixer also inspired the <a href=https://www.makenoisemusic.com/modules/rxmx-legacy>RxMx module by Make Noise</a>. "
 
-- "<a href=https://www.facebook.com/TheHiggins>Jonathan Higgins</a>, on Facebook: There isn't a patch I don't use it on. People often thing you can only use it for crazy stereo percussion (which it is amazing at). But I also often patch all four outputs from the humpback filter into it for evolving stereo drones."
+- "Jonathan Higgins, on Facebook: 'There isn't a patch I don't use it on. People often thing you can only use it for crazy stereo percussion (which it is amazing at). But I also often patch all four outputs from the humpback filter into it for evolving stereo drones.'"
 
 
 - "The Vactrol Mix is a very straightforward through-hole DIY build.  If you get stuck, the <a href=https://github.com/TomWhitwell/TuringMixExpander/issues>Github Issue List</a> is probably the best place to start - remember to check closed issues as well as open ones. "

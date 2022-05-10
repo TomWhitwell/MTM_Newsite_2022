@@ -14,7 +14,7 @@ thonk-url: "https://www.thonk.co.uk/shop/voltages-expander/?utm_source=MTM&utm_c
 size: "12 HP"
 depth: "25mm"
 supply: "40mA"
-mgrid: "hhttps://www.modulargrid.net/e/music-thing-modular-voltages-"
+mgrid: "https://www.modulargrid.net/e/music-thing-modular-voltages--"
 github: "https://github.com/TomWhitwell/Voltages-Expander"
 schematic: "/collateral/Turing-Expander-Schematic-PDFs.pdf"
 

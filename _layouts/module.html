@@ -61,6 +61,8 @@ Updated {{page.updated}}
 <a href="#videos">Videos</a>
 {% endif %}
 
+{% unless page.hide-design %}
+
 
 {% if page.github %}
 <br><a href="{{page.github}}">Github</a> |
@@ -76,7 +78,7 @@ Updated {{page.updated}}
 <a href="mailto:tom@musicthing.co.uk?subject=Please send me a {{page.module-name}} Schematic">Request Schematic</a> 
 {% endif %}
 
-
+{% endunless %}
       
 {% if page.thonk-url %}
 <br><br><a href="{{page.thonk-url}}" class="buy-btn">
