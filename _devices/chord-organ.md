@@ -48,13 +48,13 @@ pars:
 - "Chord Organ and Radio Music are identical modules; you can convert one to the other by installing new firmware over USB - <a href=https://medium.com/music-thing-modular-notes/chord-organ-the-easiest-way-to-get-simple-chords-from-a-modular-synth-2f48684fdb9a>details on how to install the firmware</a> - and go back just as easily."
 - "<a href=https://www.youtube.com/watch?v=ebt4xdJwV1Y>This video shows</a> what you can do with a Chord Organ in a simple little case. Here the chord shape and root note are sequenced by an expanded Turing Machine and filtered through a <a href=https://www.thonk.co.uk/shop/humpback/?utm_source=MTM&utm_campaign=ChordOrgan>God's Box Humpback Filter</a>."
 - "The top knob chooses the chord shape (Major, Minor, Drop 3 9th). The bottom knob chooses the root note. Both can be CV controlled."
-- "The <a href=http://polyfather.com/chord_organ/>latest firmware</a> now includes: 
+- "The <a href=https://polyfather.com/chord_organ/>latest firmware</a> now includes: 
 <ul>
 A choice of 12 waveforms (the original just had four) 
 </li>
 Program chords by uploading MIDI files 
 </li>
-Easy to use <a href='http://polyfather.com/chord_organ/'>configuration page</a>. 
+Easy to use <a href='https://polyfather.com/chord_organ/'>configuration page</a>. 
 </li>
 Alternative tuning support by dropping standard Scala files onto the SD card (<a href='https://github.com/TomWhitwell/Chord-Organ/releases'>installation details</a>). 
 </li>

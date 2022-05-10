@@ -24,9 +24,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   
 
 # Paths
-baseurl: "/qwertyuiop" # the subpath of your site, e.g. /blog
-# baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tomwhitwell.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# baseurl: "/qwertyuiop" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.musicthing.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Socials 
@@ -83,3 +83,4 @@ twitter:
   username: musicthing
   card: summary
 logo: "/images/mtm_logo_sq_600.png"
+google_site_verification: "zLp8mdba59uABzJ9VodIsi-9mb3_L7cs0Sl_mW6Fc2A"
