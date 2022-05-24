@@ -24,8 +24,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   
 
 # Paths
-baseurl: "/MTM_Newsite_2022" # the subpath of your site, e.g. /blog
-url: "https://tomwhitwell.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://musicthing.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 # Socials 
