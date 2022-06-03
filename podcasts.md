@@ -15,6 +15,13 @@ pods:
   title: "Why We Bleep 5"
   description: "on creativity and momentum"
   date: 2022
+  
+- 
+  link: "https://github.com/TomWhitwell/TRS-Midi-Tester"
+  title: "TRS Midi Tester "
+  description: "tiny gadget for checking Type A & Type B midi"
+  date: 2022
+  
 -
  link: "https://www.youtube.com/watch?v=wldkKVG1BS0"
  title: "Why We Bleep 4"
