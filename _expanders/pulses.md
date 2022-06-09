@@ -54,6 +54,11 @@ polyrhythms come easily."
 
 
 yt:
+
+- 
+  link: "-Q6dXbtNh0Q"
+  title: "Mylar Melodies Ten Years of Turing"
+
 - 
   link: "Le26BIqB8Y8"
   title: "DivKid explains the Turing Machine & expanders"

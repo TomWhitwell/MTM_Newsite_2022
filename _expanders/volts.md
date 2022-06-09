@@ -29,6 +29,11 @@ pars:
 - "Volts is a very straightforward through-hole DIY build, that would be a good first DIY project. If you get stuck, the <a href=https://github.com/TomWhitwell/Volts/issues>Volts Github Issue List</a> or the <a href=https://github.com/TomWhitwell/TuringMachine/issues>main Turing Machine issue list</a> are probably the best places to start, although very few people have ever had difficulty with this module. "
 
 yt:
+
+- 
+  link: "-Q6dXbtNh0Q"
+  title: "Mylar Melodies Ten Years of Turing"
+
 - 
   link: "Le26BIqB8Y8"
   title: "DivKid explains the Turing Machine & expanders"

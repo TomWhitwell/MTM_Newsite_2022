@@ -43,6 +43,11 @@ pars:
 - "The Vactrol Mix is a very straightforward through-hole DIY build.  If you get stuck, the <a href=https://github.com/TomWhitwell/TuringMixExpander/issues>Github Issue List</a> is probably the best place to start - remember to check closed issues as well as open ones. "
 
 yt:
+
+- 
+  link: "-Q6dXbtNh0Q"
+  title: "Mylar Melodies Ten Years of Turing"
+
 - 
   link: "Le26BIqB8Y8"
   title: "DivKid explains the Turing Machine & expanders"
