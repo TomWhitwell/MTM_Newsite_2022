@@ -32,6 +32,10 @@ yt:
   title: "Mylar Melodies Ten Years of Turing"
 
 - 
+  link: "va2XAdFtmeU"
+  title: "How the Turing Machine actually works"
+
+- 
   link: "Le26BIqB8Y8"
   title: "DivKid explains the Turing Machine better than I can"
 - 
