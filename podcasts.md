@@ -127,7 +127,14 @@ pods:
  title: "Adding CV control to a"
  description: "Boss PS-2 Delay Pedal"
  date: 2015
+
+- 
+ link: "extras/wurli_mods.html"
+ title: "Adding an effects loop to a"
+ description: "Wurlitzer EP-200 Electric Piano"
+ date: 2015
  
+
 -
  link: "https://medium.com/cuepoint/why-do-all-records-sound-the-same-830ba863203"
  title: "Why do all records sound the same?"
