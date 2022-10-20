@@ -24,6 +24,7 @@ hide-design: "true"
 pars:
 - "This is a very simple compact way to get clock signals in and out of the Buchla Music Easel."
 - "It takes a clock input — perhaps from a Korg Volca, Roland Boutique, Teenage Engineering Pocket Operator, a Eurorack Synth or a vintage drum machine — scales the pulse correctly and lets you send that pulse to drive the sequencer, random clock, envelope generator or pulser."
+- "Just pure analog pulses, no MIDI shenanigans here."  
 - "At the same time, it takes the Pulser clock, scales it to a safe +5v level, and outputs that through a 3.5mm socket to drive other devices (like Volcas or Boutiques or Pocket Operators). "
 - "This is a very compact ready-assembled expander with pleasingly high quality Grayhill switches."
 - "Because of the internal normalisation on the Music Easel, it's not always completely intuitive what's going on. For example, if you send the external clock to the Pulser, with the Sequencer driven by the Pulser, then the 'Sequence' switch on the expander won't do anything." 
