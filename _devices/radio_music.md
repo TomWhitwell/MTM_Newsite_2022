@@ -20,7 +20,7 @@ depth: "40mm"
 supply: "75mA"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-radio-music"
 github: "https://github.com/TomWhitwell/RadioMusic"
-schematic: "/collateral/TuringMachine_schematic.pdf"
+schematic: "/collateral/RM_schematic1.pdf"
 manual: "https://github.com/TomWhitwell/RadioMusic/wiki"
 
 yt:
