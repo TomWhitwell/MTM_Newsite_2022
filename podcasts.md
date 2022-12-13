@@ -11,6 +11,12 @@ pods:
 
 
 - 
+  link: "https://github.com/TomWhitwell/MTM_Speaker_One"
+  title: "Speaker One"
+  description: "notes on making my first speakers"
+  date: 2022
+  
+- 
   link: "https://www.youtube.com/watch?v=wGH6XuM_9ac"
   title: "Why We Bleep 5"
   description: "on creativity and momentum"
