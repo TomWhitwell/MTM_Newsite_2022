@@ -2,7 +2,7 @@
 layout: module
 permalink: /Move/
 
-order: 3
+order: 4
 title:  "Move Eurorack Module DIY"
 module-name: "Move"
 designed: "2022"
