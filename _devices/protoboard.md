@@ -2,15 +2,14 @@
 layout: module
 permalink: /Easel-Proto/
 
-order: 31
+order: 6
 title:  "Buchla Music Easel Prototype Proto Board"
 module-name: "Easel Proto"
 designed: 2022
 image: "/images/protoboard_600.png" 
 wide-image: "true" 
 excerpt: "is a DIY-friendly prototype card for the Buchla Music Easel" 
-overlay: "NEW "
-thonk-url: "https://www.thonk.co.uk/product-category/mtm-music-easel/" 
+thonk-url: "https://www.thonk.co.uk/shop/music-thing-modular-easel-proto//" 
 thonk-button: "BUY"
 # size: "n/a"
 # depth: "n/a"

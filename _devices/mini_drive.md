@@ -2,11 +2,11 @@
 layout: module
 permalink: /Mini-Drive/
 
-order: 10
+order: 1
 title:  "Mini Drive Eurorack Module DIY"
 module-name: "Mini Drive"
 designed: "2020"
-image: "/images/minidrive_600.png" 
+image: "/images/minidrive-black_600.png" 
 excerpt: "is just a simple, great sounding, overdrive module inspired by the Minimoog" 
 # overlay: "NEW "
 thonk-url: "https://www.thonk.co.uk/shop/mini-drive/?utm_source=MTM&utm_campaign=Minidrive" 
@@ -15,7 +15,12 @@ depth: "25 mm"
 supply: "40 mA"
 schematic: "collateral/mini_drive_Rev1_Schematic.pdf"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-mini-drive"
+
 yt:
+- 
+  link: "yrwLULspzpE"
+  title: "DivKid's brilliant Distortion Masterclass"
+
 - 
   link: "skCWKC8ckVU"
   title: "Patch guide with my voice and someone else's hands"

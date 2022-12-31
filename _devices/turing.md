@@ -1,6 +1,6 @@
 ---
 layout: module
-order: 11
+order: 5
 permalink: /Turing-Machine/
 
 title:  "Turing Machine Random Looping Sequencer Eurorack DIY Project"

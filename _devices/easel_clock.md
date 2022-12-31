@@ -2,14 +2,13 @@
 layout: module
 permalink: /Easel-Clock/
 
-order: 30
+order: 7
 title:  "Buchla Music Easel Clock In Out Expansion Card"
 module-name: "Easel Clock"
 designed: 2021
 image: "/images/easel-clock_900_L.png" 
 wide-image: "true" 
 excerpt: "gets clocks in and out of a Buchla Music Easel" 
-overlay: "NEW "
 thonk-url: "https://www.thonk.co.uk/product-category/mtm-music-easel/" 
 thonk-button: "BUY"
 # size: "n/a"
