@@ -28,6 +28,7 @@ output: false
 * SAMD21 Chip, BMI160 6-axis Inertial Measurement Unit, 8mb external flash  
 * Issues: 
   * Hardware midi Type B only
+  * Different LED pins - if you have a device with the 2nd LED always lit, you need specially compiled firmware for Proto 3.1 - ask if you need it 
   * Prototype-grade PCBs and silkscreen 
   * Spacer at the back is 4mm, not 3mm = small gap behind switches and USB 
   
