@@ -18,8 +18,13 @@ output: false
   
 ## Which version do I have? 
 
+### Late 2022: Text on back panel = 8mu Proto 3.2
+* Latest beta hardware, unchanged for Rev 1
+* SAMD21 Chip, BMI160 6-axis Inertial Measurement Unit, 8mb external flash  
+* Issues: 
+  * Prototype-grade PCBs and silkscreen 
+
 ### Summer 2022: Text on back panel = 8mu Proto 3.1
-* Latest beta hardware
 * SAMD21 Chip, BMI160 6-axis Inertial Measurement Unit, 8mb external flash  
 * Issues: 
   * Hardware midi Type B only
