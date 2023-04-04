@@ -91,6 +91,19 @@ Available from Thonk
 {% endif %}
       
 
+{% if page.manual-url %}
+<br><br><a href="{{page.manual-url}}" class="buy-btn">
+{% if page.manual-text %}
+{{page.manual-text}}
+{% else %}
+Download Manual
+{% endif %}
+</a>
+{% endif %}
+      
+
+
+
 <ol>
 {% for pars in page.pars %} 
 <li>{{pars}}</li>

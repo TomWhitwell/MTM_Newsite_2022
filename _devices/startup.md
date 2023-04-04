@@ -16,7 +16,8 @@ depth: "25 mm"
 supply: "40 mA"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-startup-grey-panel"
 schematic: "/collateral/Startup-schematic.pdf"
-manual: "/collateral/Startup_Rev1_Manual.pdf"
+manual-url: "/collateral/Startup_Rev1_Manual.pdf"
+manual-text: "Download Manual"
 yt:
 - 
   link: "UX0aK-eW-f0"

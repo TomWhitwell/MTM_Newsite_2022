@@ -15,7 +15,7 @@ depth: "25 mm"
 supply: "40 mA"
 schematic: "collateral/Move_Rev1_Schematic.pdf"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-move"
-manual: "collateral/Move_Manual_2022.pdf"
+manual-url: "collateral/Move_Manual_2022.pdf"
 
 yt:
 - 

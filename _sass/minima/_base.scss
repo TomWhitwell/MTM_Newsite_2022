@@ -29,6 +29,25 @@ body {
 }
 
 
+body_doc {
+  font-weight: 400;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+     -moz-font-feature-settings: "kern" 1;
+       -o-font-feature-settings: "kern" 1;
+          font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+}
+
+
+
+
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -130,6 +149,12 @@ ol li {
 }
 
 ul li {
+    margin-left:0px;
+    padding-bottom: 0px;
+}
+
+ul ul li {
+    margin-left:30px;
     padding-bottom: 0px;
 }
 
