@@ -346,6 +346,12 @@ Editor:
 Firmware: 
 * 31 March 2023: v1.0.1 
     * Improve the range output by accelerometer / gesture channels, so they can reach 127 and better match the fader channels 
+    
+{% include linkedHeading.html heading="Thank you" level=3 %}
+* This is a very open source project that would not have been possible without the help and support of many people, including: Tom Armitage, Steve, Will Isaacs and everyone at Thonk, Marc Weidenbaum, Mylar Melodies, John Edgar Park,  Mark Lentczner, Konstantine Fioretos, Steven Noreyko, Brian Crabtree, Sean Hellfritsch, Brendon Cassidy and the 16n crew, Thea Flowers, the Adafruit family, PCBCart, OSHport, and all the beta testers. 
+
+
+
 
  
 
