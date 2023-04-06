@@ -95,7 +95,11 @@ output: false
 
 {% include linkedHeading.html heading="9. Finish it off " level=3 %}
 * Screw on the back panel with four m2 screws 
-* Attach the rubber fader caps. This is always super fiddly and I don't have any good advice here! 
+* Attach the rubber fader caps. Lightly squeeze the rubber caps between your fingers for 20-30 seconds. This warms them up and makes them more malleable to get on the faders.
+* The 8mu was designed to be hand-held, but here are a few ideas about mounting your 8mu. 
+    * Use stick-on rubber feet if you're putting it on something that might scratch
+    * [Non-slip silicone gel pads](https://www.amazon.co.uk/DyNamic-Transparent-Silicone-Multifunction-Non-Slip/dp/B07HCFHMFM) work well for safe semi permanent mounting on keyboards, desks or walls. 
+    * Velcro tape works for stompbox-style mounting 
 * That's it, make yourself a cup of tea to celebrate. 
 
 {% include linkedHeading.html heading="User Manual " level=2 %}

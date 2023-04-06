@@ -41,9 +41,10 @@ pars:
 - "The accelerometer inside the 8mu is a Bosch BMI160, which is also used in <a href=https://dartslab.jpl.nasa.gov/References/pdf/2019-mars-heli.pdf>NASA's Ingenuity Mars Helicopter</a>."
 - "Use a non-slip silicone gel pad to stick an 8mu to the top of a keyboard or Nord Micro Modular or whatever." 
 - "You never need to go near any code to use 8mu, it's configurable from the web editor, and easy to update with drag-and-drop files." 
-- "But 8mu is also designed to be open and hackable. It can be re-programmed in Arduino or Circuit Python code, and makes a good platform for experimenting with algorithmic music generation. You could probably add OSC control, and can even output (loud and gnarly) audio from the 3.5mm MIDI port."
+- "But 8mu is also designed to be open and <a href=https://www.musicthing.co.uk/8mu#hacker-s-guide>hackable</a>. It can be re-programmed in Arduino or Circuit Python code, and makes a good platform for experimenting with algorithmic music generation. You could probably add OSC control, and can even output (loud and gnarly) audio from the 3.5mm MIDI port."
 - "This project started in April 2019, when Marc Weidenbaum posted this message: <i>This is my occasional \"Isn't there some sorta readily available very small MIDI controller, like the size of a cellphone, with a couple buttons, a couple faders, a couple knobs?\" post.</i>, then mentioned the <a href=https://www.switch-science.com/products/2394/>k4b4 mk2</a> as an example tiny DIY kit. I made a <a href=https://disquiet.com/2020/04/05/have-midi-will-travel/>little MIDI controller</a> for him, but for myself, I really wanted something smaller and thinner. Over the next few years, a simple board with 8 faders sprouted buttons round the edges, an accelerometer, LEDs shining through the faders and a neat web editor. That, and the global chip shortage, is why it took so long."
 - "The long, long process of developing 8mu inspired <a href=https://www.musicthing.co.uk/Control/>Control</a>, and looking at <a href=https://medium.com/music-thing-modular-notes/make-knob-twiddling-great-again-47065a346c2>Human-Sized Musical Interfaces</a> and The Cult of Big Knobs."
+- "8mu is 81 x 47mm. The body is 13mm tall, or 24mm with the faders and fader caps. It weighs 65g." 
 
 ---
 
