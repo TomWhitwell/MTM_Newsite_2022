@@ -67,6 +67,8 @@ output: false
 {% include linkedHeading.html heading="5. Screw on the front panel " level=3 %}
 * Don't solder anything yet! 
 * Put the front panel in place, and add the 18 x m2 screws. 
+* The perfect size is a 2.5mm philips screwdriver but 3.0mm works well. 2.0mm is the standard 'glasses' size screwdriver and that works ok, but can damage the screws if you try and go too tight with it.
+
 
 [![8mu construction - back of board before soldering](/images/8mu_build/thumbs/8-back.JPG)](/images/8mu_build/8-back.JPG)
 
