@@ -97,6 +97,7 @@ output: false
 
 {% include linkedHeading.html heading="9. Finish it off " level=3 %}
 * Screw on the back panel with four m2 screws 
+* DON'T WORRY if you have a couple of spare screws left - Thonk put in extras in case you drop one. 
 * Attach the rubber fader caps. Lightly squeeze the rubber caps between your fingers for 20-30 seconds. This warms them up and makes them more malleable to get on the faders.
 * The 8mu was designed to be hand-held, but here are a few ideas about mounting your 8mu. 
     * Use stick-on rubber feet if you're putting it on something that might scratch
