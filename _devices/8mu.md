@@ -9,8 +9,8 @@ designed: "April 2019 - February 2023"
 image: "/images/8mu_900_card.png"
 wide-image: "true" 
 excerpt: "is a hackable midi controller that's smaller than a credit card" 
-overlay: "SOON: "
-thonk-url: "https://www.thonk.co.uk/shop/music-thing-modular-8mu-croydon-workshop/" 
+overlay: "NEW "
+thonk-url: "https://www.thonk.co.uk/shop/music-thing-8mu/" 
 # size: "18 HP"
 # depth: "24 mm"
 # supply: "52 mA"
@@ -22,6 +22,13 @@ manual-text: "Open the 8mu Documentation Site"
 
 
 
+yt:
+- 
+  link: "ueXzfG8FJ7Q"
+  title: "8mu video synthesis (skip to 21 mins)"
+- 
+  link: "_gs63_gteq8"
+  title: "8mu with 1010music Bluebox"
 
 pars:
 - "8mu is a pocket-sized MIDI controller, slightly smaller than a credit card."

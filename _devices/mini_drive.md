@@ -2,7 +2,7 @@
 layout: module
 permalink: /Mini-Drive/
 
-order: 1
+order: 3
 title:  "Mini Drive Eurorack Module DIY"
 module-name: "Mini Drive"
 designed: "2020"

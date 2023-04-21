@@ -2,13 +2,13 @@
 layout: module
 permalink: /London-Drive/
 
-order: 2
+order: 3
 title:  "London Drive Eurorack Module DIY"
 module-name: "London Drive"
 designed: "2022"
 image: "/images/london_drive-black_600.png" 
 excerpt: "is another simple, great sounding overdrive, this time inspired by the VCS3" 
-overlay: "NEW "
+#overlay: "NEW "
 thonk-url: "https://www.thonk.co.uk/shop/london-drive/" 
 size: "4 HP"
 depth: "25 mm"
