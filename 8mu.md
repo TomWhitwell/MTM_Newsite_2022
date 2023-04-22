@@ -161,8 +161,8 @@ TIP: You might want to go to the [8mu Editor](https://tomwhitwell.github.io/Smit
 * To install a firmware upgrade
     * Double click the TINY button next to the USB cable until a folder called MTM_BOOT appears on your desktop. 
     * NB: The double clicking is tricky! Try a bit faster or a bit slower. 
-    * Drop the UF2 file onto that folder, the device will reboot and MT_BOOT will disappear. 
-    * Once the led is smoothly fading, the MT_BOOT folder should appear. 
+    * Drop the UF2 file onto that folder, the device will reboot and MTM_BOOT will disappear. 
+    * Once the led is smoothly fading, the MTM_BOOT folder should appear. 
     * This will probably cause an 'Disk Not Ejected Properly' error, don't worry about it.  
     * NB: In early versions of MacOS Ventura, this [dragging method produces an error](https://blog.adafruit.com/2022/10/31/uploading-uf2-files-with-macos-13-0-ventura-apple-microbit_edu-raspberry_pi-circuitpython/). You may have to copy the .uf2 files on the bootloader using terminal: `cp -X [source].uf2 [destination]`
 
@@ -252,12 +252,12 @@ TIP: You might want to go to the [8mu Editor](https://tomwhitwell.github.io/Smit
 * Go to 'Tools > Board' and select 'Music Thing M0 Plus' 
 * You should now be able to select the 8mu in your 'Tools > Port' list as something like /dev/cu/usbmodem14401 (on a Mac) and upload as normal. 
 * If you want to use the accelerometer or MIDI, install the libraries in the 8mu firmware or the hello world.  
-* If you have trouble uploading from the IDE, double click the Reset button and mount MT_BOOT before uploading. 
+* If you have trouble uploading from the IDE, double click the Reset button and mount MTM_BOOT before uploading. 
 
 {% include linkedHeading.html heading="Use Circuit Python with 8mu" level=3 %}
 You can switch between Arduino and Circuit Python easily. Install CP by dropping a .uf2 file onto the bootloader (described below). Switch back to Arduino by installing Arduino code from the IDE. The CP filesystem normally remains in place on the external flash memory. 
-* Double click the reset button until MT_BOOT appears 
-* Drop the MTM M0 Plus Circuit Python .uf2 bootloader into MT_BOOT
+* Double click the reset button until MTM_BOOT appears 
+* Drop the MTM M0 Plus Circuit Python .uf2 bootloader into MTM_BOOT
 * The device will reboot and CIRCUITPY will appear on your desktop 
 * You can now drop files into CIRCUITPY as normal ([Get started with Circuit Python](https://learn.adafruit.com/welcome-to-circuitpython))
 
@@ -274,8 +274,8 @@ You can switch between Arduino and Circuit Python easily. Install CP by dropping
 
 {% include linkedHeading.html heading="Reinstall stock firmware" level=3 %}
 * [Download the latest firmware version](https://github.com/TomWhitwell/Smith-Kakehashi/releases)
-* Double click the reset button until MT_BOOT appears  
-* Drop the latest firmware file (for example 8mu_0_1_5.uf2 ) onto MT_BOOT 
+* Double click the reset button until MTM_BOOT appears  
+* Drop the latest firmware file (for example 8mu_0_1_5.uf2 ) onto MTM_BOOT 
 
 {% include linkedHeading.html heading="Ideas and Examples" level=3 %}
 * What could you do with a little fader/accelerometer/MIDI box? 
@@ -310,21 +310,21 @@ SCENARIO A:
 
 SCENARIO B:
 * LEDS: Slowly flashing LED next to FADE8
-* USB: A folder called MT_BOOT appears on the desktop 
+* USB: A folder called MTM_BOOT appears on the desktop 
 * RESULT: The board has the SAMD Bootloader but nothing else ❌
-* ACTION: Drop the 8mu firmware file onto MT_BOOT
+* ACTION: Drop the 8mu firmware file onto MTM_BOOT
 
 SCENARIO C:
 * LEDS: No Leds Lit 
 * USB: A folder called CIRCUITPY appears on the desktop 
 * RESULT: The board has the Circuit Python Firmware but no 8mu firmware ❌
-* ACTION: Doubleclick the reset button so that MT_BOOT appears on your desktop, drop the 8mu firmware file onto MT_BOOT 
+* ACTION: Doubleclick the reset button so that MTM_BOOT appears on your desktop, drop the 8mu firmware file onto MTM_BOOT 
 
 SCENARIO D:
 * LEDS: Flash on power connection, but no random LED flashes 
 * USB: No folder mounts, Editor page is visible, but every channel is marked “Channel 0” 
 * RESULT: Circuit Python has not installed the Flash file system ❌
-* ACTION: Doubleclick the reset button so that MT_BOOT appears on your desktop, add the 8mu Circuit Python Firmware. Wait 30 seconds. Doubleclick again, and drop the 8mu firmware onto MT_BOOT 
+* ACTION: Doubleclick the reset button so that MTM_BOOT appears on your desktop, add the 8mu Circuit Python Firmware. Wait 30 seconds. Doubleclick again, and drop the 8mu firmware onto MTM_BOOT 
 
 SCENARIO E: 
 * LEDS: Flash on power connection, then random occasional LED flashes when board is touched
