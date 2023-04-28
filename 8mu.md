@@ -17,6 +17,7 @@ output: false
 
 
 ## Documentation 
+* **[Getting started with soldering](/extras/soldering.html)**
 * **[Build Guide](#build-guide)** 
 * **[User Manual](#user-manual)**  
 * **[Hacker's Guide](#hacker-s-guide)**  
@@ -43,6 +44,7 @@ output: false
 {% include linkedHeading.html heading="2. Start putting it together " level=3 %}
 
 * Assembly is pretty straightforward: Soldering on 8 faders, then screwing on the front and back panels 
+* If you've never soldered before [here are some links and videos to get you started](/extras/soldering.html)
 * Still, take it slow, ensure everything is mechanically lined up before you solder anything in place. 
 * NB: your board will not have all the little gold dots seen in the photos - they were just a prototyping error.  
 * IMPORTANT: The faders go on the top of the board, next to the 3.5mm MIDI socket. Most of the small components and chips are on the bottom of the board. 

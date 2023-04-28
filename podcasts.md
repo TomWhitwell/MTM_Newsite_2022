@@ -10,6 +10,12 @@ pods:
  title: The Music Thing Modular Reading List
 
 
+-
+ link: "extras/soldering.html"
+ title: "Soldering for beginners"
+ description: "How to solder if you've never soldered before"
+ date: 2023
+
 - 
   link: "https://github.com/TomWhitwell/MTM_Speaker_One"
   title: "Speaker One"
