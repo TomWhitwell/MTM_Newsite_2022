@@ -257,7 +257,7 @@ TIP: You might want to go to the [8mu Editor](https://tomwhitwell.github.io/Smit
 * If you have trouble uploading from the IDE, double click the Reset button and mount MTM_BOOT before uploading. 
 
 {% include linkedHeading.html heading="Use Circuit Python with 8mu" level=3 %}
-You can switch between Arduino and Circuit Python easily. Install CP by dropping a .uf2 file onto the bootloader (described below). Switch back to Arduino by installing Arduino code from the IDE. The CP filesystem normally remains in place on the external flash memory. 
+You can switch between Arduino and Circuit Python easily. Install CP by dropping [this Circuit Python firmware .uf2 file](https://github.com/TomWhitwell/8mu_Public/tree/main/Bootloaders/Circuit%20Python/uF2/CP_7_3_3_FOR_8mu_Rev1) onto the bootloader (described below). Switch back to Arduino by installing Arduino code from the IDE. The CP filesystem normally remains in place on the external flash memory. 
 * Double click the reset button until MTM_BOOT appears 
 * Drop the MTM M0 Plus Circuit Python .uf2 bootloader into MTM_BOOT
 * The device will reboot and CIRCUITPY will appear on your desktop 
