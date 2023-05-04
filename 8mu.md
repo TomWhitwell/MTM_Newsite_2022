@@ -345,6 +345,7 @@ SCENARIO E:
 {% include linkedHeading.html heading="Release notes " level=3 %}
 
 Editor: 
+* 4 May 2023: V2.0.0: Complete rebuild by Tom Armitage, faster and more stable but no new functionality. 
 * 31 March 2023: v1.0.1: 
     * Fixes issue when changing banks while in edit mode, where Bank 1 could be read by the editor as another bank number, causing a world of confusion. 
 
