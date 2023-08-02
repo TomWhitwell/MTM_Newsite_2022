@@ -17,7 +17,7 @@ thonk-button: "BUY"
 # mgrid: "https://www.modulargrid.net/e/music-thing-modular-chord-organ"
 # github: "https://github.com/TomWhitwell/Chord-Organ"
 # schematic: "collateral/RM_schematic1.pdf"
-manual-url: "collateral/Music_Easel_hacking_for_beginners.pdf"
+manual-url: "/collateral/Music_Easel_hacking_for_beginners.pdf"
 hide-design: "true"
 
 
