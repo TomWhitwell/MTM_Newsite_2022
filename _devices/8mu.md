@@ -1,7 +1,7 @@
 ---
 layout: module
 permalink: /8mu_page/
-
+ 
 order: 1
 title:  "8mu Midi Controller DIY"
 module-name: "8mu"
