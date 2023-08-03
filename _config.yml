@@ -26,6 +26,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 # Paths
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://musicthing.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
+default_image_path: /images/mtm-logo_200.png
 
 
 # Socials 
