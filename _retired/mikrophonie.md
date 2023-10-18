@@ -1,16 +1,15 @@
 ---
 layout: module
-permalink: /Mikrophonie/
+permalink: /Mikrophonie_2014/
 
 order: 16
 title:  "Eurorack Module DIY"
-module-name: "Mikrophonie"
+module-name: "Mikrophonie 2014"
 image: "/images/mikrophonie_600.png" 
 wide-image: "false" 
 designed: "2014"
 excerpt: "is a contact mic and preamp for your modular" 
 # overlay: "NEW "
-thonk-url: "https://www.thonk.co.uk/shop/mtm-mikrophonie-kit/" 
 size: "4 HP"
 depth: "25mm"
 supply: "20mA"
