@@ -40,7 +40,7 @@ pars:
 - "Since the first Mikrophonie in 2014, it's become one of the most popular eurorack DIY projects (spotted in <a href=https://thevinylfactory.com/news/ryuichi-sakamoto-death/>Ryuichi Sakamoto</a>'s modular)."
 - "The original Mikrophonie was a very simple design: Just a contact mic and a pre-amp in a raw textured panel. In 2016, Émilie Gillet took the original open-source design and completely re-designed it, creating <a href=https://pichenettes.github.io/mutable-instruments-documentation/modules/ears/>Ears</a>, with cleaner amplification and added envelope follower and gate outputs. Branded 'Mutable Music Things' it was an improvement in every way." 
 - "Since Mutable Instruments <a href=https://www.gearnews.com/mutable-instruments-no-new-modules-and-production-shutting-down/>closed in 2022</a>, Ears hasn't been available, so this 2023 edition Mikrophonie (you might call it Mikrophonie 3) takes Émilie's design, moves the LEDs to more sensible places and boosts the gain a little."
-- "In other words, Mikrophonie + Ears = this new Mikrophonie." 
+- "In other words, Mikrophonie + Ears + louder = this new Mikrophonie." 
 
 - "Mikrophonie comes with a pre-soldered surface-mount circuit board, so is a very simple and satisfying build, perfect for a first project. The <a href=https://www.instagram.com/explore/tags/mikrophonie/>Instagram #mikrophonie tag</a> is a great source of ideas and inspiration and confidence-boosting successful builds."
 - "The panel is PCB with patches of raw fibreglass and raised gold-plated traces. Rubbing it with a finger or a plectrum creates quite a wide range of sounds. The back of the panel is plated and grounded for shielding."
