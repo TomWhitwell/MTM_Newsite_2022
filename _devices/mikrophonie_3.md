@@ -4,7 +4,7 @@ permalink: /Mikrophonie/
 
 order: 1
 title:  "Eurorack Module DIY"
-module-name: "Mikrophonie"
+module-name: "Mikrophonie v3"
 image: "/images/microphonie_2023_both_600.png" 
 wide-image: "false" 
 designed: "2023"
