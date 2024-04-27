@@ -9,7 +9,10 @@ date: "August 2015"
 
 ---
  
-This month I had a few days off and built a hand-wired tube amp from scratch. It was a [AA1164 Blackface kit from Tube Amp Doctor](https://www.tubeampdoctor.com/en/blackface-14-reverb-aa1164-style-amp-kit) in Germany. Essentially it’s a retro-perfect mid ’60s Princeton Reverb. And yes, the kit is very expensive. You can buy a [brand new Fender Princeton Reverb](http://www.thomann.de/gb/fender_68_custom_princeton_reverb.htm) for less than the price of the kit, but if you do that you’ll miss out on the experience of doing it yourself.
+This month I had a few days off and built a hand-wired tube amp from scratch. 
+
+
+It was a [AA1164 Blackface kit from Tube Amp Doctor](https://www.tubeampdoctor.com/en/blackface-14-reverb-aa1164-style-amp-kit) in Germany. Essentially it’s a retro-perfect mid ’60s Princeton Reverb. And yes, the kit is very expensive. You can buy a [brand new Fender Princeton Reverb](http://www.thomann.de/gb/fender_68_custom_princeton_reverb.htm) for less than the price of the kit, but if you do that you’ll miss out on the experience of doing it yourself.
 
 The arguments about PCB vs traditional manufacture (the new Princetons [look like this](http://smg.photobucket.com/user/stratdev/media/57%20Twin%20Reissue/web_8297.jpg.html) inside) are probably 90% snake oil and pseudoscience, but there is a very powerful placebo effect in listening to an amp you built yourself. To me, the amp sounds great – very 3D and hi-fi with huge bass and bright highs, very little hum (although hiss from the retro carbon-composition resistors is audible) spectacularly deep spring reverb and big warm tremolo.
 
