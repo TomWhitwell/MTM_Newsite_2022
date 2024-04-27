@@ -9,7 +9,7 @@ date: "August 2015"
 
 ---
  
-This month I had a few days off and built a hand-wired tube amp from scratch. 
+This month (August 2015) I had a few days off and built a hand-wired tube amp from scratch. 
 
 
 It was a [AA1164 Blackface kit from Tube Amp Doctor](https://www.tubeampdoctor.com/en/blackface-14-reverb-aa1164-style-amp-kit) in Germany. Essentially it’s a retro-perfect mid ’60s Princeton Reverb. And yes, the kit is very expensive. You can buy a [brand new Fender Princeton Reverb](http://www.thomann.de/gb/fender_68_custom_princeton_reverb.htm) for less than the price of the kit, but if you do that you’ll miss out on the experience of doing it yourself.
