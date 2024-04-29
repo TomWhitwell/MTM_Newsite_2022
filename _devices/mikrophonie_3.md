@@ -16,7 +16,7 @@ depth: "25mm"
 supply: "20mA"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-mikrophonie-2017-new-panel-design"
 github: "https://github.com/TomWhitwell/Mikrophonie"
-schematic: "/collateral/Mikrophonie_2023-Schematic.pdf"
+schematic: "/collateral/mikrophonie_2023-Schematic.pdf"
 yt:
 - 
   link: "EwOx5rDguJo"
