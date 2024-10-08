@@ -6,7 +6,7 @@ order: 14
 designed: 2014
 updated: 2017
 title:  "Radio Music Eurorack Sampler Module"
-module-name: "Radio Music"
+module-name: "Radio Music mk1"
 categories: eurorack
 image: /images/radio-music_600.png
 excerpt: "is a sampler pretending to be a radio, inspired by John Cage"

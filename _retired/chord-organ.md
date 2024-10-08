@@ -4,7 +4,7 @@ order: 15
 permalink: /Chord-Organ/
 
 title:  "Chord Organ Eurorack Module DIY"
-module-name: "Chord Organ"
+module-name: "Chord Organ mk1"
 designed: 2017
 image: "/images/chord-organ_600.png" 
 wide-image: "false" 
