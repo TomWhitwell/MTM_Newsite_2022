@@ -34,7 +34,7 @@ github: "https://github.com/TomWhitwell/"
 Music Thing Modular Workshop System is a complete modular synth. It is slightly smaller than a hardback book. It comes in a foam-lined hard case. 
 
 
-It will be available exclusively as a DIY kit from Thonk, with the first small batch arriving before the end of 2024, costing around £400 (including sales taxes). 
+It will be [available exclusively as a DIY kit from Thonk](https://www.thonk.co.uk/workshopsystem/), with the first small batch arriving before the end of 2024, costing around £400 (including sales taxes). 
 
 To find out more about the Workshop System:  
 * **Subscribe to the [Workshop System newsletter](https://workshopsystem.substack.com/)** — monthly-ish, for owners and the owner-curious
