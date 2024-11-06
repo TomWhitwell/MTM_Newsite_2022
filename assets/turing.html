@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turing Machine Config</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
+
+
+
+
+
+	<style>
+	  body
+	  {
+	  font-family: "Fragment Mono", monospace;
+	  font-weight: 400;
+	  font-style: normal;
+	  font-size:13px;
+	  background-color: white;
+	  }
+	  #content
+	  {
+		  margin: 0px auto;
+	  }
+
+	  #messages
+	  {
+      font-size:14px;
+		  margin-top:40px;
+      padding:10px;
+      border-color:black;
+      border: 1px dotted black;
+	  }
+
+    #smalltype
+	  {
+      font-size:11px;
+      color:#AAA;
+      display:inline;
+	  }
+
+
+    #saveslots
+	  {
+      font-size:14px;
+      padding:10px;
+	  }
+
+	  h1 {font-weight:normal;}
+
+    textarea#formula  
+    {  
+	    font-family: "Fragment Mono", monospace;
+      font-weight: 400;
+      font-size: 25px;   
+      color: blue;
+      resize: none;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid #727272; 
+    }
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  textarea#formula {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 769px) {
+  textarea#formula {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+
+	  select
+	  {
+	  font-family: "Fragment Mono", monospace;
+	  font-weight: 400;
+	  font-style: normal;
+	  font-size:20px;
+	  background-color: white;
+	  color: blue;
+	  border: none;
+	  padding: 0px;
+	  appearance:none;
+	  border-bottom: blue dotted 1px;
+	  }
+
+	  button
+	  {
+	  font-family: "Fragment Mono", monospace;
+	  font-weight: 400;
+	  font-style: normal;
+	  font-size:15px;
+	  background-color: white;
+	  color:  black;
+	  border: 1px solid blue;
+	  padding: 10px 20px;
+	  margin-top: 20px;
+	  /* box-shadow: red 3px 3px 0px;*/
+	  position: relative; top: 0px; left:0px;
+	  transition: top 0.075s, left 0.075s, box-shadow 0.075s;
+	  }
+
+
+	  button:hover
+	  {
+		  color:white;
+      background-color:blue;
+      border-color:black;
+	  }
+	  button:active:not(:disabled)
+	  {
+		  position: relative; top: 2px; left:2px;
+		  box-shadow: blue 1px 1px 0px;
+	  }
+	  button:ensabled
+	  {
+		  color: #A0A0A0;
+		  box-shadow: none;
+		  border: 1px solid #A0A0A0;
+	  }
+	  button:enabled
+	  {
+		  color: #A0A0A0;
+		  box-shadow: none;
+		  border: 1px solid #A0A0A0;
+	  }
+	  
+      button.active {
+      background-color: blue;
+      color: white;
+    }
+
+	  
+	  .jack
+	  {
+		  font-style:italic;
+	  }
+	  .sentence {margin-top: 2em; margin-bottom:2em;}
+    
+#content
+{
+	max-width:900px;
+	margin:0px auto;
+}
+
+#deviceStatus {
+  display: inline;
+  color: blue;
+}
+
+#turingmessages {
+  display: inline;
+  color: blue;
+}
+
+#serialmonitor {
+  display: inline;
+  color: blue;
+}
+
+#connect {
+font-size:14px;
+}
+
+
+
+h3 {
+  font-family: "Fragment Mono", monospace;
+	  font-weight: 800;
+	  font-style: bold;
+	  font-size:15px;
+    display: inline;
+}
+
+	</style>
+
+
+</head>
+<body>
+  <div id="content">
+  <h1>Turing Machine Configuration</h1>
+  <p>  
+  </p>
+
+  <button id="connect">Connect to MTM Computer (RP2040)</button>
+  <br><br><br>
+
+  <br>
+  <div id="saveslots">
+  <b>Z Switch Up:</b><br>
+  Scale:
+  <button groupid="0" valueid="0">Chrom</button> 
+  <button groupid="0" valueid="1">Major</button> 
+  <button groupid="0" valueid="2">Minor</button> 
+  <button groupid="0" valueid="3">Minor Pent</button> 
+  <button groupid="0" valueid="4">Dorian</button> 
+  <button groupid="0" valueid="5">Pelog</button> 
+  <button groupid="0" valueid="6">Wholetone</button> 
+
+  <br>
+  Notes: 
+  <button groupid="1" valueid="0">Scale</button> 
+  <button groupid="1" valueid="1">1-3-5</button> 
+  <button groupid="1" valueid="2">1-5</button> 
+  <button groupid="1" valueid="3">1-3-5-6</button> 
+  <button groupid="1" valueid="4">1-3-5-7</button> 
+  <br>
+  Octave range: 
+  <button groupid="2" valueid="0">+1</button> 
+  <button groupid="2" valueid="1">+2</button> 
+  <button groupid="2" valueid="2">+3</button> 
+  <button groupid="2" valueid="3">+4</button> 
+  
+  <br>
+Pulse Out length : 
+  <button groupid="3" valueid="0">Blip</button> 
+  <button groupid="3" valueid="1">25%</button> 
+  <button groupid="3" valueid="2">50%</button> 
+  <button groupid="3" valueid="3">75%</button> 
+  <button groupid="3" valueid="4">Full</button> 
+  <button groupid="3" valueid="5">← → Short</button> 
+  <button groupid="3" valueid="6">← → Long</button> 
+  <br>
+  Output 2 loop length : 
+  <button groupid="4" valueid="0">-1</button> 
+  <button groupid="4" valueid="1">Same</button> 
+  
+  
+  </br>
+<br></br>
+<hr>
+<p>
+
+  Z Switch Middle:<br>
+    Scale:
+  <button groupid="5" valueid="0">Chrom</button> 
+  <button groupid="5" valueid="1">Major</button> 
+  <button groupid="5" valueid="2">Minor</button> 
+  <button groupid="5" valueid="3">Minor Pent</button> 
+  <button groupid="5" valueid="4">Dorian</button> 
+  <button groupid="5" valueid="5">Pelog</button> 
+  <button groupid="5" valueid="6">Wholetone</button> 
+      <br>
+   Notes: 
+  <button groupid="6" valueid="0">Scale</button> 
+  <button groupid="6" valueid="1">1-3-5</button> 
+  <button groupid="6" valueid="2">1-5</button> 
+  <button groupid="6" valueid="3">1-3-5-6</button> 
+  <button groupid="6" valueid="4">1-3-5-7</button> 
+  <br>
+  Octave range: 
+  <button groupid="7" valueid="0">+1</button> 
+  <button groupid="7" valueid="1">+2</button> 
+  <button groupid="7" valueid="2">+3</button> 
+  <button groupid="7" valueid="3">+4</button> 
+
+  <br>
+Pulse Out length : 
+  <button groupid="8" valueid="0">Blip</button> 
+  <button groupid="8" valueid="1">25%</button> 
+  <button groupid="8" valueid="2">50%</button> 
+  <button groupid="8" valueid="3">75%</button> 
+  <button groupid="8" valueid="4">Full</button> 
+  <button groupid="8" valueid="5">← → Short</button> 
+  <button groupid="8" valueid="6">← → Long</button> 
+  
+  <br>
+  Output 2 loop length : 
+  <button groupid="9" valueid="0">-1</button> 
+  <button groupid="9" valueid="1">Same</button> 
+
+<br></br>
+<hr><p>
+
+  <br><p>
+ CV/Audio Modulation Output range: 
+  <button groupid="10" valueid="0">+/-6V</button> 
+  <button groupid="10" valueid="1">+/-3V</button> 
+  <button groupid="10" valueid="2">+6V</button> 
+  <button groupid="10" valueid="3">+3V</button> 
+  </div>
+  <br></br>
+<hr><p>
+<p>Turing Machine Program Card v.<span id="versionNumber"></span></p>
+<p>Unique card ID: <span id="cardID"></span></p>
+
+
+  <p></p>
+
+  <div id="messages">
+  Device Status: <div id="deviceStatus"></div>
+  <p></p>
+  This computer says: <div id="turingmessages"></div>
+  <p></p>
+  Workshop Computer replies: <div id="serialmonitor"></div>
+  </div>
+
+  <br><br>
+  <p>Usage: Click "Connect to MTM Computer" and select "Pico" from the dialog box. Make sure you don't already have an open Serial connection (like the Serial Monitor in the Arduino IDE).</p>
+  <p>Code reworked from a project by Matt Kuebrich.</p>
+
+<div class=""></div> 
+<img src="http://localhost:4000/images/computer_io_key.png">
+  </p>
+
+  <script>
+    let port;
+    let writer;
+    let reader; // Added reader variable
+initializeButtonListeners();
+
+    async function connectToSerial() {
+      try {
+        // Clear the serialmonitor div
+        document.getElementById('serialmonitor').textContent = '';
+
+        port = await navigator.serial.requestPort();
+        await port.open({ baudRate: 115200 });
+
+        const encoder = new TextEncoderStream();
+        const writableStreamClosed = encoder.readable.pipeTo(port.writable);
+        writer = encoder.writable.getWriter();
+
+        document.getElementById('deviceStatus').textContent = 'Connected to MTM Computer';
+        console.log('Connected to device');
+
+        // Add the event listener here
+        
+        // Ensure that the port is fully ready before sending data
+        if (port.writable && writer) {
+          await writer.write("GET_VERSION\n");
+          document.getElementById('turingmessages').textContent += 'Requesting Version Number...';
+
+          // Send GET_VALS to request current settings
+          await writer.write("GET_VALS\n");
+          document.getElementById('turingmessages').textContent += ' Requesting Values...';
+        } else {
+          console.error('Port is not writable or writer not ready');
+        }
+    
+        
+        reader = port.readable.getReader();
+        readLoop();
+      } catch (error) {
+        document.getElementById('deviceStatus').textContent = 'Error connecting to device';
+        console.error('Error connecting to device: ', error);
+      }
+    }
+
+
+// document.getElementById('getVersion').addEventListener('click', async () => {
+//   if (!writer) {
+//     document.getElementById('deviceStatus').textContent = 'You must connect to a device first!';
+//     console.error('You must connect to a device first!');
+//     return;
+//   }
+// 
+//   try {
+//     await writer.write("GET_VERSION\n");  // Send command to get version
+//     document.getElementById('turingmessages').textContent = 'Requesting Version Number...';
+//   } catch (error) {
+//     console.error('Error sending GET_VERSION command: ', error);
+//   }
+// });
+
+
+let printHistory = [];
+const maxPrintCount = 1; // Maximum number of prints to display
+
+
+// READ LOOP 
+// Initialize a buffer to store incoming data
+let buffer = "";
+
+async function readLoop() {
+  while (true) {
+    const { value, done } = await reader.read();
+    if (done) {
+      console.log('Disconnected');
+      port = null;
+      reader = null;
+      break;
+    }
+
+    // Decode the incoming data and add it to the buffer
+    const data = new TextDecoder().decode(value);
+    buffer += data;
+
+    // Process each complete line (assuming messages are separated by newlines)
+    let lines = buffer.split("\n");
+    console.log(lines);
+    // Keep the last (possibly incomplete) line in the buffer
+    buffer = lines.pop();
+
+    // Process each complete message line
+    for (let line of lines) {
+
+      if (line.startsWith("_SET")) {
+        
+        // Parse variable number and value, e.g., '_SET:0_VAL:4'
+        let match = line.match(/^_SET:(\d+)_VAL:(\d+)/);
+        if (match) {
+          let varNum = parseInt(match[1]);
+          let val = parseInt(match[2]);
+
+          // Update UI based on varNum and val
+          updateUI(varNum, val);
+        } else {
+          console.error('Failed to parse data:', line);
+        }
+      } else if (line.startsWith("Version Number:")) {
+        document.getElementById('versionNumber').textContent = line.replace("Version Number: ", "").trim();
+        console.log("Found version number");
+      } else if (line.startsWith("_SEED:")) {
+        document.getElementById('cardID').textContent = line.replace("_SEED:", "").trim();
+        console.log("Found card ID");
+
+      } else {
+        // Handle other messages
+        printHistory.push(line);
+        if (printHistory.length > maxPrintCount) {
+          printHistory.shift();
+        }
+        document.getElementById('serialmonitor').textContent = printHistory.join('');
+      }
+    }
+  }
+}
+
+// function updateUI(varNum, val) {
+//   // Get all buttons with the matching groupid
+//   console.log("looking for button ${varNum} ${val}")
+//   const buttons = document.querySelectorAll(`button[groupid="${varNum}"]`);
+//   
+//   // Clear existing active states for this group
+//   buttons.forEach(button => button.classList.remove('active'));
+// 
+//   // Select the button with the matching valueid within the specified groupid
+//   const selectedButton = document.querySelector(`button[groupid="${varNum}"][valueid="${val}"]`);
+//   if (selectedButton) {
+//     selectedButton.classList.add('active');
+//   } else {
+//     console.error(`Button not found for groupid=${varNum} and valueid=${val}`);
+//   }
+// 
+// }
+
+function updateUI(varNum, val) {
+  // Select all buttons within the specified group
+  const buttons = document.querySelectorAll(`button[groupid="${varNum}"]`);
+  
+  // Clear any existing active states within this group
+  buttons.forEach(button => button.classList.remove('active'));
+
+  // Select the exact button with the matching groupid and valueid
+  const selectedButton = document.querySelector(`button[groupid="${varNum}"][valueid="${val}"]`);
+  
+  if (selectedButton) {
+    selectedButton.classList.add('active');
+  } else {
+    console.error(`Button not found for groupid=${varNum} and valueid=${val}`);
+  }
+}
+
+
+
+  async function sendDataCommand(commandNumber, value) {
+  if (!writer) {
+    document.getElementById('deviceStatus').textContent = 'You must connect to a device first!';
+    console.error('You must connect to a device first!');
+    return;
+  }
+
+  const command = `_SET:${commandNumber}_VAL:${value}\n`;
+
+  try {
+    await writer.write(command);
+    document.getElementById('turingmessages').textContent = `Message sent`;
+    console.log(`${command} sent`);
+  } catch (error) {
+    document.getElementById('turingmessages').textContent = `Error sending ${command}`;
+    console.error(`Error sending ${command}: `, error);
+  }
+}
+
+
+// Function to initialize button event listeners
+function initializeButtonListeners() {
+  // Select all buttons with a 'groupid' and 'valueid' attribute
+  const buttons = document.querySelectorAll('button[groupid][valueid]');
+  
+  buttons.forEach(button => {
+    button.addEventListener('click', async () => {
+      // Get groupid and valueid from the button
+      const commandNumber = button.getAttribute('groupid');
+      const value = button.getAttribute('valueid');
+      
+      // Construct the _SET command
+      const command = `_SET:${commandNumber}_VAL:${value}\n`;
+
+      // Send the command
+      try {
+        await writer.write(command);
+        await writer.write("GET_VALS\n");
+        document.getElementById('turingmessages').textContent = `Message sent`;
+        console.log(`${command} sent`);
+      } catch (error) {
+        document.getElementById('turingmessages').textContent = `Error sending ${command}`;
+        console.error(`Error sending ${command}: `, error);
+      }
+    });
+  });
+}
+
+
+  async function sendSaveCommand(commandNumber) {
+  if (!writer) {
+    document.getElementById('deviceStatus').textContent = 'You must connect to a device first!';
+    console.error('You must connect to a device first!');
+    return;
+  }
+
+  const command = `_SAVE${commandNumber}\n`;
+
+  try {
+    await writer.write(command);
+    document.getElementById('turingmessages').textContent = `Message sent`;
+    console.log(`Save command${commandNumber} sent`);
+  } catch (error) {
+    document.getElementById('turingmessages').textContent = `Error sending save command${commandNumber}`;
+    console.error(`Error sending save command${commandNumber}: `, error);
+  }
+}
+
+    document.getElementById('connect').addEventListener('click', connectToSerial);
+
+
+
+
+
+    navigator.serial.addEventListener('disconnect', (event) => {
+      if (port === event.target) {
+        document.getElementById('deviceStatus').textContent = 'Device disconnected';
+        console.log('MTM Computer disconnected');
+        port = null;
+        writer = null;
+        reader = null;
+      }
+    });
+  </script>
+
+  </div>
+</body>
+
+</html>
