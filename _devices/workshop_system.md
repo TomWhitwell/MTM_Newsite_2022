@@ -17,8 +17,8 @@ thonk-url: "https://www.thonk.co.uk/"
 # mgrid: "https://www.modulargrid.net/e/music-thing-modular-control"
 github: "https://github.com/TomWhitwell/"
 # schematic: "/collateral/8mu_schematic.pdf"
-# manual-url: "/8mu"
-# manual-text: "Open the 8mu Documentation Site"
+manual-url: "/Workshop_Manual/"
+manual-text: "Workshop System Manual"
 
 
 
@@ -40,6 +40,8 @@ To find out more about the Workshop System:
 * **Subscribe to the [Workshop System newsletter](https://workshopsystem.substack.com/)** — monthly-ish, for owners and the owner-curious
 * **[Join the waitlist now at Thonk](https://www.thonk.co.uk/workshopsystem/)**
 * **Follow [@musicthingmodular on Instagram](https://www.instagram.com/musicthingmodular/)** 
+* **Read the [Workshop System Quick Start Guide](/Workshop_Quick_Start/)** 
+
 
 ![Music Thing Workshop System being played in Cornwall](/images/900_jess_square.jpg)
 

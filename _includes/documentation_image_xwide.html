@@ -1,0 +1,4 @@
+<figure onclick="conditionalOpenLightbox('{{ include.filename | relative_url  }}')" class="documentation-image-xwide">
+<img src="{{ include.filename | resize: '1200x1200>' | relative_url  }}" alt="{{ include.alt | default: 'Image' }}" style="width: 100%;">
+    <figcaption style="text-align: center;">{{ include.caption }}</figcaption>
+</figure>

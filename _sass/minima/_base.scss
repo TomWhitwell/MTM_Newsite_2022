@@ -379,3 +379,86 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
+
+/* Added 27-10-24 */
+
+/* Lightbox overlay */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Image styling inside the overlay */
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+/* Close button */
+.lightbox-overlay .close-lightbox {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    color: black;
+    font-size: 3em;
+}
+
+
+.documentation-image-xwide{
+    position: relative;
+    width: 140%;
+    right: -20%; /* Adjust this value to control how far the image floats over the edge */
+    left: -20%; /* Adjust this value to control how far the image floats over the edge */
+    
+       @media (max-width: 768px) {
+        width: 100%;
+        float: none;
+        margin: 0 0 1.5em 0;
+        right: 0;
+        left: 0;
+
+    }
+}
+
+
+
+
+
+.documentation-image {
+    float: right;
+    width: 50%; /* 1/2 of the container on larger screens */
+    margin: 0 0 1.5em -5%;
+    clear: both;
+    position: relative;
+    right: -10%; /* Adjust this value to control how far the image floats over the edge */
+
+
+    img {
+        width: 100%; /* Image will scale to the width of the figure */
+        border-radius: 4px;
+    }
+
+    figcaption {
+        text-align: center;
+        font-size: 0.7em;
+        margin-top: 0.5em;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        width: 100%;
+        float: none;
+        margin: 0 0 1.5em 0;
+        right: 0; /* Adjust this value to control how far the image floats over the edge */
+
+    }
+}
