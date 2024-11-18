@@ -222,7 +222,7 @@ h3 {
   <button groupid="2" valueid="3">+4</button> 
   
   <br>
-Pulse Out length : 
+Pulse Out length: 
   <button groupid="3" valueid="0">Blip</button> 
   <button groupid="3" valueid="1">25%</button> 
   <button groupid="3" valueid="2">50%</button> 
@@ -231,6 +231,15 @@ Pulse Out length :
   <button groupid="3" valueid="5">← → Short</button> 
   <button groupid="3" valueid="6">← → Long</button> 
   <br>
+  Pulse 1 Mode: 
+  <button groupid="11" valueid="0">Clock</button> 
+  <button groupid="11" valueid="1">Pulse</button> 
+  <br>
+  Pulse 2 Mode: 
+  <button groupid="12" valueid="0">Clock</button> 
+  <button groupid="12" valueid="1">Pulse</button> 
+  <br>
+  
   Output 2 loop length : 
   <button groupid="4" valueid="0">-1</button> 
   <button groupid="4" valueid="1">Same</button> 
@@ -273,7 +282,15 @@ Pulse Out length :
   <button groupid="8" valueid="4">Full</button> 
   <button groupid="8" valueid="5">← → Short</button> 
   <button groupid="8" valueid="6">← → Long</button> 
-  
+  <br>
+
+  Pulse 1 Mode: 
+  <button groupid="13" valueid="0">Clock</button> 
+  <button groupid="13" valueid="1">Pulse</button> 
+  <br>
+  Pulse 2 Mode: 
+  <button groupid="14" valueid="0">Clock</button> 
+  <button groupid="14" valueid="1">Pulse</button> 
   <br>
   Output 2 loop length : 
   <button groupid="9" valueid="0">-1</button> 
@@ -358,21 +375,6 @@ initializeButtonListeners();
     }
 
 
-// document.getElementById('getVersion').addEventListener('click', async () => {
-//   if (!writer) {
-//     document.getElementById('deviceStatus').textContent = 'You must connect to a device first!';
-//     console.error('You must connect to a device first!');
-//     return;
-//   }
-// 
-//   try {
-//     await writer.write("GET_VERSION\n");  // Send command to get version
-//     document.getElementById('turingmessages').textContent = 'Requesting Version Number...';
-//   } catch (error) {
-//     console.error('Error sending GET_VERSION command: ', error);
-//   }
-// });
-
 
 let printHistory = [];
 const maxPrintCount = 1; // Maximum number of prints to display
@@ -437,23 +439,6 @@ async function readLoop() {
   }
 }
 
-// function updateUI(varNum, val) {
-//   // Get all buttons with the matching groupid
-//   console.log("looking for button ${varNum} ${val}")
-//   const buttons = document.querySelectorAll(`button[groupid="${varNum}"]`);
-//   
-//   // Clear existing active states for this group
-//   buttons.forEach(button => button.classList.remove('active'));
-// 
-//   // Select the button with the matching valueid within the specified groupid
-//   const selectedButton = document.querySelector(`button[groupid="${varNum}"][valueid="${val}"]`);
-//   if (selectedButton) {
-//     selectedButton.classList.add('active');
-//   } else {
-//     console.error(`Button not found for groupid=${varNum} and valueid=${val}`);
-//   }
-// 
-// }
 
 function updateUI(varNum, val) {
   // Select all buttons within the specified group
@@ -471,8 +456,6 @@ function updateUI(varNum, val) {
     console.error(`Button not found for groupid=${varNum} and valueid=${val}`);
   }
 }
-
-
 
   async function sendDataCommand(commandNumber, value) {
   if (!writer) {
