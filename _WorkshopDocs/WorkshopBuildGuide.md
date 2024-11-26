@@ -11,6 +11,93 @@ order: 0
 
 {% include linkedHeading.html heading="Build Guide " level=1 %}
 
+Build order 
+1. REMEMBER, AT THE END OF THIS YOU'LL NEED A USB-C POWER SUPPLY 
+1. Assemble the case 
+    * Replace the pins 
+    * Attach the foam 
+    * Attach the sticker 
+    * Stick on the rubber feet 
+1. Assemble the PSU 
+    * Screw on the standoffs 
+    * Stick on the rubber Feet 
+    * Sign and date the PSU 
+    * Make a note of the serial number 
+1. Soldering the contact mic   
+    * Attach piezo to the front panel 
+        * Stick it on with some tape 
+        * Solder it 
+1. Getting to know the components  
+    * Warning, some things are slightly different 
+    * A quick look at the finished thing 
+        * Pots 
+        * Switches 
+        * LEDs 
+        * Pushbuttons 
+        * SD card slot 
+    * Understanding power headers 
+    * Understanding potentiometers 
+    * Understanding switches
+    * Understanding LEDs 
+    * Understanding sockets 
+1. Assembling the first board 
+	* Before you start
+		* Solder all the power headers *video storage ran out* 
+		* Put one nut onto each switch 
+    * Build the VCO 
+    * Place the pots 
+		* Tall and short 
+        * Metal and plastic 
+	* Place the screw trimmers 
+		* Screws on the left 
+    * Place the Sockets 
+        * Note the green socket 
+    * Connect to the front panel 
+        * Careful with the screw trimmers 
+        * Add a couple of nuts 
+        * Check parallel and all through the holes 
+        * Check Trimmers are straight 
+    * Solder 1 point on each component 
+        * Check again! 
+    * Solder all the other points 
+        * Check you haven't missed any 
+	* VCO is done 
+1. Assembling the other boards 
+    * Process is exactly the same 
+    * Things to watch out for on each board 
+    * Computer 
+        * LEDS
+            * Use a bit of tape or blu-tak to line them up to the panel 
+            * Ensure the long legs go through the + side 
+            * Don't rush it, it's annoying to fix later
+        * SD Card Connector 
+            * Maybe do this separately if you're nervous 
+            * Use a bit of tape or blu-tak to hold it in place 
+            * Very small pins, be careful 
+		* Switch
+			* NB This is ON-OFF-MOM
+			* Orientation is important 
+	* Mix 
+		* Two types of switches
+		* Quite cramped switches and LEDs 
+		* Quite dense set of pots
+		* Simple enough now you’re more confident
+		* If you're struggling at all, do it in two stages - switches then LEDs 
+    * VCF 
+		* Definitely the fiddliest board mechanically
+		* ON-ON switches are tricky to nudge through the panel
+		* Lots of tight LEDs around the Amplifier knob 
+		* Assemble this in three stages
+		* First: Sockets, LEDs and switches 
+		* Second: Take the panel off and do pushbuttons 
+		* Finally, once you're happy, connect the Contact Microphone 
+1. Assemble into the PSU and testing - don't put on all the nuts yet 
+1. Final assembly - nuts and screws 
+
+
+
+
+
 {% include linkedHeading.html heading="Understanding the parts" level=2 %}
 * The Workshop System kit includes: 
     * Four printed circuit boards: Computer, VCO Oscillators, VCF Filters, Mixer. Each of these needs to populated with bigger through-hole components 
@@ -27,6 +114,20 @@ order: 0
 * Fortunately, the circuit boards are already populated with over 650 tiny components. Your job is to attach the interface elements: pots, knobs, switches, sockets (so many sockets), and LEDs.  
 * This pretty straightforward, but you do need to get it right.  
 * A few parts of the build are counter-intuitive, so please read this all carefully. If anything is unclear, contact support@thonk.co.uk, ask for help, send photos.  
+
+{% include linkedHeading.html heading="Understanding power headers" level=4 %}
+
+{% include documentation_image.html filename="images/WS_Power_header.jpg" caption="Check that your power headers go out the back, like this" %}
+
+
+
+
+* There are 4 x power headers, one for each PCB 
+* Attach these first, before doing anything else 
+* Power Headers come out of the back of each module - on the opposite side to the pots and sockets 
+* This means that solder points are on the front of the PCB, next to the tiny surface mount components 
+* If you are in any doubt at all, please check before soldering - support@thonk.co.uk 
+* Every time we run a workshop, someone puts the power header on the wrong side, and it's very annoying to fix! 
 
 {% include linkedHeading.html heading="Understanding pots" level=4 %}
 * There are four different types of pot in the workshop system. 

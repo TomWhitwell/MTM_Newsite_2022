@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bytebeat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
+
+
+
+
+
+	<style>
+	  body
+	  {
+	  font-family: "Fragment Mono", monospace;
+	  font-weight: 400;
+	  font-style: normal;
+	  font-size:13px;
+	  background-color: white;
+	  }
+	  #content
+	  {
+		  margin: 0px auto;
+	  }
+
+	  #messages
+	  {
+      font-size:14px;
+		  margin-top:40px;
+      padding:10px;
+      border-color:black;
+      border: 1px dotted black;
+	  }
+
+    #smalltype
+	  {
+      font-size:11px;
+      color:#AAA;
+      display:inline;
+	  }
+
+
+    #saveslots
+	  {
+      font-size:14px;
+      padding:10px;
+	  }
+
+	  h1 {font-weight:normal;}
+
+    textarea#formula  
+    {  
+	    font-family: "Fragment Mono", monospace;
+      font-weight: 400;
+      font-size: 25px;   
+      color: blue;
+      resize: none;
+      box-sizing: border-box;
+      padding: 10px;
+      border: 1px solid #727272; 
+    }
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  textarea#formula {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 769px) {
+  textarea#formula {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+
+	  select
+	  {
+	  font-family: "Fragment Mono", monospace;
+	  font-weight: 400;
+	  font-style: normal;
+	  font-size:20px;
+	  background-color: white;
+	  color: blue;
+	  border: none;
+	  padding: 0px;
+	  appearance:none;
+	  border-bottom: blue dotted 1px;
+	  }
+
+	  button
+	  {
+	  font-family: "Fragment Mono", monospace;
+	  font-weight: 400;
+	  font-style: normal;
+	  font-size:15px;
+	  background-color: white;
+	  color:  black;
+	  border: 1px solid blue;
+	  padding: 10px 20px;
+	  margin-top: 20px;
+	  /* box-shadow: red 3px 3px 0px;*/
+	  position: relative; top: 0px; left:0px;
+	  transition: top 0.075s, left 0.075s, box-shadow 0.075s;
+	  }
+
+
+	  button:hover
+	  {
+		  color:white;
+      background-color:blue;
+      border-color:black;
+	  }
+	  button:active:not(:disabled)
+	  {
+		  position: relative; top: 2px; left:2px;
+		  box-shadow: blue 1px 1px 0px;
+	  }
+	  button:disabled
+	  {
+		  color: #A0A0A0;
+		  box-shadow: none;
+		  border: 1px solid #A0A0A0;
+	  }
+	  button:disabled
+	  {
+		  color: #A0A0A0;
+		  box-shadow: none;
+		  border: 1px solid #A0A0A0;
+	  }
+	  
+	  .jack
+	  {
+		  font-style:italic;
+	  }
+	  .sentence {margin-top: 2em; margin-bottom:2em;}
+    
+#content
+{
+	max-width:900px;
+	margin:0px auto;
+}
+
+#deviceStatus {
+  display: inline;
+  color: blue;
+}
+
+#bytebeatmessages {
+  display: inline;
+  color: blue;
+}
+
+#serialmonitor {
+  display: inline;
+  color: blue;
+}
+
+#connect {
+font-size:14px;
+}
+
+
+
+h3 {
+  font-family: "Fragment Mono", monospace;
+	  font-weight: 800;
+	  font-style: bold;
+	  font-size:15px;
+    display: inline;
+}
+
+	</style>
+
+
+</head>
+<body>
+  <div id="content">
+  <h1>Bytebeat</h1>
+  <p>  
+  </p>
+
+  <button id="connect">Connect to MTM Computer</button>
+  <br><br><br>
+  <textarea id="formula" rows="4" cols="70">t>>5|(t>>2)*(t>>2)</textarea><br>
+  <button id="send">Send Formula <div id = "smalltype">(Shift + Return)</div></button> 
+
+
+  <br>
+  <div id="saveslots">
+  Save to slot:
+  <button id="saveslot1">1</button> 
+  <button id="saveslot2">2</button> 
+  <button id="saveslot3">3</button> 
+  <button id="saveslot4">4</button> 
+  <button id="saveslot5">5</button> 
+  <button id="saveslot6">6</button> 
+  <button id="clear">Clear All</button> 
+  <button id="loadDefaults">Load Default Formulas</button>
+  </div>
+
+  <p></p>
+
+  <div id="messages">
+  Device Status: <div id="deviceStatus"></div>
+  <p></p>
+  Bytebeat Messages: <div id="bytebeatmessages"></div>
+  <p></p>
+  Serial Monitor: <div id="serialmonitor"></div>
+  </div>
+
+  <br><br>
+  <p>Usage: Click "Connect to MTM Computer" and select "Pico" from the dialog box. Make sure you don't already have an open Serial connection (like the Serial Monitor in the Arduino IDE).</p>
+
+  Set the MTM Computer's Z toggle switch is set to the middle position which enables the "user" bytebeat bank. Knob X changes between the 6 "user" formulas.
+
+  <p>Enter your <a href="http://canonical.org/~kragen/bytebeat/">bytebeat</a> formula. The variable p1 can be used and controlled with the Knob Y on the MTM Computer.
+  The variable w can also be used and represented the bytebeat output. As this is used recursively, it can lead to some noisy/chaotic results.</p>
+
+  <p>After the formula is sent, it will immediately start playing on the Computer. To save a formula so it will always be available (even after the Computer is powered off),
+    click on a save slot from 1-6. To wipe the slots completely, click "Clear All" and to load 6 nice sounding bytebeats into the user banks, click "Load Default Formulas".<div class=""></div> 
+  </p>
+
+  <script>
+    let port;
+    let writer;
+    let reader; // Added reader variable
+
+    async function connectToSerial() {
+      try {
+        // Clear the serialmonitor div
+        document.getElementById('serialmonitor').textContent = '';
+
+        port = await navigator.serial.requestPort();
+        await port.open({ baudRate: 115200 });
+
+        const encoder = new TextEncoderStream();
+        const writableStreamClosed = encoder.readable.pipeTo(port.writable);
+        writer = encoder.writable.getWriter();
+
+        document.getElementById('deviceStatus').textContent = 'Connected to MTM Computer';
+        console.log('Connected to device');
+
+        // Add the event listener here
+        reader = port.readable.getReader();
+        readLoop();
+      } catch (error) {
+        document.getElementById('deviceStatus').textContent = 'Error connecting to device';
+        console.error('Error connecting to device: ', error);
+      }
+    }
+
+
+
+
+let printHistory = [];
+const maxPrintCount = 1; // Maximum number of prints to display
+
+async function readLoop() {
+  while (true) {
+    const { value, done } = await reader.read();
+    if (done) {
+      console.log('Disconnected');
+      port = null;
+      reader = null;
+      break;
+    }
+
+    const data = new TextDecoder().decode(value);
+    printHistory.push(data);
+
+    // Keep only the last maxPrintCount prints
+    if (printHistory.length > maxPrintCount) {
+      printHistory.shift();
+    }
+
+    document.getElementById('serialmonitor').textContent = printHistory.join('');
+  }
+}
+
+    async function sendFormula() {
+      if (!writer) {
+        document.getElementById('deviceStatus').textContent = 'You must connect to a device first!';
+        console.error('You must connect to a device first!');
+        return;
+      }
+
+      const formula = document.getElementById('formula').value;
+      try {
+        await writer.write(formula + '\n');
+        document.getElementById('bytebeatmessages').textContent = 'Formula Sent';
+        console.log('Formula sent: ', formula);
+      } catch (error) {
+        document.getElementById('bytebeatmessages').textContent = 'Error sending formula';
+        console.error('Error sending formula: ', error);
+      }
+    }
+
+
+    const defaultFormulas = [
+  't>>5|(t>>2)*(t>>2)',
+  '(t<<1)^((t<<1)+(t>>7)&t>>12)',
+  't*5&(t>>7)|t*3&(t*4>>10)',
+  '(t*(7+(1^5&t>>10)))|t>>2',
+  '(t>>7|t|t>>6)*10+4*(t&t>>13|t>>6)',
+  '(43*(t|t>>11)&255)*(8|~t>>6&55)>>6'
+];
+
+async function loadDefaultFormulas() {
+  if (!writer) {
+    document.getElementById('deviceStatus').textContent = 'You must connect to a device first!';
+    console.error('You must connect to a device first!');
+    return;
+  }
+
+  try {
+    for (let i = 0; i < 6; i++) {
+      await writer.write(defaultFormulas[i] + '\n');
+      await writer.write(`_SAVE${i+1}\n`);
+    }
+    document.getElementById('bytebeatmessages').textContent = 'Default formulas loaded to all slots';
+    console.log('Default formulas loaded to all slots');
+  } catch (error) {
+    document.getElementById('bytebeatmessages').textContent = 'Error loading default formulas';
+    console.error('Error loading default formulas: ', error);
+  }
+}
+
+
+
+    async function clearEEPROM() {
+  if (!writer) {
+    document.getElementById('deviceStatus').textContent = 'You must connect to a device first!';
+    console.error('You must connect to a device first!');
+    return;
+  }
+
+  try {
+    await writer.write('_CLEAR\n');
+    document.getElementById('deviceStatus').textContent = 'Clear command sent';
+    console.log('Save command2 sent');
+  } catch (error) {
+    document.getElementById('deviceStatus').textContent = 'Error sending clear command';
+    console.error('Error sending clear command: ', error);
+  }
+}
+
+
+
+  async function sendSaveCommand(commandNumber) {
+  if (!writer) {
+    document.getElementById('deviceStatus').textContent = 'You must connect to a device first!';
+    console.error('You must connect to a device first!');
+    return;
+  }
+
+  const command = `_SAVE${commandNumber}\n`;
+
+  try {
+    await writer.write(command);
+    document.getElementById('bytebeatmessages').textContent = `Save command${commandNumber} sent`;
+    console.log(`Save command${commandNumber} sent`);
+  } catch (error) {
+    document.getElementById('bytebeatmessages').textContent = `Error sending save command${commandNumber}`;
+    console.error(`Error sending save command${commandNumber}: `, error);
+  }
+}
+
+    document.getElementById('connect').addEventListener('click', connectToSerial);
+    document.getElementById('send').addEventListener('click', sendFormula);
+    document.getElementById('saveslot1').addEventListener('click', () => sendSaveCommand(1));
+    document.getElementById('saveslot2').addEventListener('click', () => sendSaveCommand(2));
+    document.getElementById('saveslot3').addEventListener('click', () => sendSaveCommand(3));
+    document.getElementById('saveslot4').addEventListener('click', () => sendSaveCommand(4));
+    document.getElementById('saveslot5').addEventListener('click', () => sendSaveCommand(5));
+    document.getElementById('saveslot6').addEventListener('click', () => sendSaveCommand(6));
+    document.getElementById('clear').addEventListener('click', clearEEPROM);
+    document.getElementById('loadDefaults').addEventListener('click', loadDefaultFormulas);
+
+
+
+    document.getElementById('formula').addEventListener('keydown', (event) => {
+      if ((event.ctrlKey || event.metaKey || event.shiftKey) && event.key === 'Enter') {
+        event.preventDefault();
+        sendFormula();
+      }
+    });
+
+    navigator.serial.addEventListener('disconnect', (event) => {
+      if (port === event.target) {
+        document.getElementById('deviceStatus').textContent = 'Device disconnected';
+        console.log('MTM Computer disconnected');
+        port = null;
+        writer = null;
+        reader = null;
+      }
+    });
+  </script>
+
+  </div>
+</body>
+
+</html>
