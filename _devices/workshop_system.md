@@ -9,7 +9,7 @@ designed: "October 2024"
 image: "/images/900-workshopsystem-full-straight-headphones-red.jpg"
 wide-image: "true" 
 excerpt: "is a complete DIY modular synth that's smaller than a hardback book" 
-overlay: "SOON: "
+overlay: "NEW: "
 thonk-url: "https://www.thonk.co.uk/" 
 # size: "42 HP"
 # depth: "24 mm"
@@ -34,7 +34,7 @@ manual-text: "Workshop System Manual"
 Music Thing Modular Workshop System is a complete modular synth. It is slightly smaller than a hardback book. It comes in a foam-lined hard case. 
 
 
-It will be [available exclusively as a DIY kit from Thonk](https://www.thonk.co.uk/workshopsystem/), with the first small batch arriving before the end of 2024, costing around £400 (including sales taxes). 
+It is [available exclusively as a DIY kit from Thonk](https://www.thonk.co.uk/workshopsystem/), with the first small batch launched in November 25th 2024. 
 
 To find out more about the Workshop System:  
 * **Subscribe to the [Workshop System newsletter](https://workshopsystem.substack.com/)** — monthly-ish, for owners and the owner-curious
