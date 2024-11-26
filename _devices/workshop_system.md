@@ -34,7 +34,7 @@ manual-text: "Workshop System Manual"
 Music Thing Modular Workshop System is a complete modular synth. It is slightly smaller than a hardback book. It comes in a foam-lined hard case. 
 
 
-It is [available exclusively as a DIY kit from Thonk](https://www.thonk.co.uk/workshopsystem/), with the first small batch launched in November 25th 2024. 
+At present, it is [available exclusively as a DIY kit from Thonk](https://www.thonk.co.uk/workshopsystem/). 
 
 To find out more about the Workshop System:  
 * **Subscribe to the [Workshop System newsletter](https://workshopsystem.substack.com/)** — monthly-ish, for owners and the owner-curious
