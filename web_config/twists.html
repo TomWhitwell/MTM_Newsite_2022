@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/webmidi@latest/dist/iife/webmidi.iife.min.js"></script>
+
+	<script lang="javascript">
+
+  window.addEventListener('DOMContentLoaded',function () {
+
+      var selects = document.getElementsByTagName("select");
+      for (var i=0; i<selects.length; i++)
+      {
+          selects[i].setAttribute("onchange", "OngoingSelectChange(this)");
+      }
+  });
+
+  function OngoingSelectChange(e)
+  {
+    OnSelectChange(e);
+  }
+  const SYSEX_INDEX_MANUFACTURER = 1;
+  const SYSEX_INDEX_COMMAND = 2;
+  const SYSEX_INDEX_LENGTH = 3;
+  const SYSEX_MANUFACTURER_DEV = 125;
+  const SYSEX_COMMAND_PREVIEW = 1;
+  const SYSEX_COMMAND_WRITE_FLASH = 2;
+  const SYSEX_COMMAND_READ = 3;
+  const SYSEX_COMMAND_READ_CARD_RELEASE = 4;
+  
+
+  function SetButtonDisabled(state)
+  {
+    var buttons = document.getElementsByTagName("button");
+    for (var i=0; i<buttons.length; i++)
+      {
+      buttons[i].disabled = state;
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded',function () {
+    
+    if (window.isSecureContext && typeof navigator.requestMIDIAccess === 'function')
+    {
+      // Enable WEBMIDI.js and trigger the onEnabled() function when ready
+      WebMidi.enable({sysex: true}).then(ConnectToComputer).catch(err => alert(err));
+      WebMidi.addListener("connected",ConnectToComputer);
+      WebMidi.addListener("disconnected",ConnectToComputer);
+      WebMidi.addListener("portschanged",ConnectToComputer);
+    }
+    else
+    {
+
+      document.getElementById("messages").innerHTML =
+        'Could not access web MIDI - not supported or insecure context';
+      SetButtonDisabled(true);
+
+    }
+  });
+
+
+  var outpt;
+  var inpt;
+
+
+  function OnSelectChange(e)
+  {
+    var rsed = GetSysExFromDOM();
+    var sed = [SYSEX_COMMAND_PREVIEW, rsed.length].concat(rsed);
+    outpt.sendSysex(SYSEX_MANUFACTURER_DEV, sed);
+  }
+
+  function ConnectToComputer()
+  {
+    var connectedOut = false, connectedIn=false;
+    WebMidi.outputs.forEach((device, index) =>
+      {
+        //console.log(`Output {index}: ${device.name}`);
+        if (device.name.indexOf('Computer') != -1)
+        {
+          outpt = WebMidi.outputs[index];
+          connectedOut = true;
+        }
+      });
+
+    WebMidi.inputs.forEach((device, index) =>
+      {
+        //console.log(`Input: {index}: ${device.name}`);
+        if (device.name.indexOf('Computer') != -1)
+        {
+          inpt = WebMidi.inputs[index];
+          connectedIn = true;
+        }
+      });
+
+    var connected = connectedOut && connectedIn;
+    
+    if (connected)
+      document.getElementById("messages").innerHTML = '';
+    else
+      document.getElementById("messages").innerHTML = 'Could not connect to Computer';
+    
+    SetButtonDisabled(!connected);
+
+    if (connected)
+    {
+      ReadFromComputer();
+    }
+  }
+
+  function SendToComputer()
+  {
+    var rsed = GetSysExFromDOM();
+    var sed = [SYSEX_COMMAND_WRITE_FLASH, rsed.length].concat(rsed);
+    //console.log(sed);
+    outpt.sendSysex(SYSEX_MANUFACTURER_DEV, sed);
+  }
+  function ReadFromComputer()
+  {
+    // Prepare a listener for what the Computer will send
+    var receivedData = Array();
+    inpt.addOneTimeListener("sysex", e => {
+      if (e.message.dataBytes[0]==SYSEX_COMMAND_READ)
+      {
+        //console.log(e);
+        var receivedConfig = e.message.dataBytes.slice(2);
+        SetDOMFromSysEx(receivedConfig);
+      }
+    });
+
+    // Send request for data
+    outpt.sendSysex(SYSEX_MANUFACTURER_DEV, [SYSEX_COMMAND_READ]);
+  }
+
+  function SetDOMFromSysEx(receivedConfig)
+  {
+    // Get SysEx data string from state of <select> tags.
+    var sents = document.getElementsByClassName("sentence");
+    for (var j=0; j<sents.length; j++)
+    {
+      var offset = sents[j].getAttribute("data-offset");
+      var selects = sents[j].getElementsByTagName("select");
+      for (var i=0; i<selects.length; i++)
+      {
+        if (window.getComputedStyle(selects[i].parentElement).getPropertyValue('display') != 'none')
+        {
+          selects[i].value = receivedConfig[offset];
+          offset++;
+        }
+      }
+    }
+  }
+
+  function GetSysExFromDOM()
+  {
+    // Get SysEx data string from state of <select> tags.
+      var cd = document.getElementById("sentence_container");
+      var numbytes = cd.getAttribute("data-size");
+
+      var sysEx = new Array(numbytes)
+      for (var j=0; j<numbytes; j++)
+          sysEx[j]=0x60;
+      var sents = document.getElementsByClassName("sentence");
+      for (var j=0; j<sents.length; j++)
+      {
+          var offset = sents[j].getAttribute("data-offset");
+          var selects = sents[j].getElementsByTagName("select");
+          for (var i=0; i<selects.length; i++)
+          {
+              if (window.getComputedStyle(selects[i].parentElement).getPropertyValue('display') != 'none')
+              {
+                  sysEx[offset]=Number(selects[i].options[selects[i].selectedIndex].value);
+                  offset++;
+              }
+          }
+      }
+      return sysEx;
+  }
+
+</script>
+	<style>
+	  body
+	  {
+	  font-family: "Fragment Mono", monospace;
+	  font-weight: 400;
+	  font-style: normal;
+	  font-size:20px;
+	  background-color: white;
+	  }
+	  #content
+	  {
+		  margin: 0px auto;
+	  }
+	  #messages
+	  {
+		  font-size:16px;
+		  font-style:italic;
+		  color: #A0A0A0;
+		  margin:20px;
+	  }
+	  h1 {font-weight:normal;}
+	  select
+	  {
+	  font-family: "Fragment Mono", monospace;
+	  font-weight: 400;
+	  font-style: normal;
+	  font-size:20px;
+	  background-color: white;
+	  color: red;
+	  border: none;
+	  padding: 0px;
+	  appearance:none;
+	  border-bottom: red dotted 1px;
+	  }
+
+	  button
+	  {
+	  font-family: "Fragment Mono", monospace;
+	  font-weight: 400;
+	  font-style: normal;
+	  font-size:20px;
+	  background-color: white;
+	  color:  black;
+	  border: 1px solid red;
+	  padding: 10px 20px;
+	  margin:20px;
+	  box-shadow: red 3px 3px 0px;
+	  position: relative; top: 0px; left:0px;
+	  transition: top 0.075s, left 0.075s, box-shadow 0.075s;
+	  }
+
+
+	  button:hover
+	  {
+		  color:red;
+	  }
+	  button:active:not(:disabled)
+	  {
+		  position: relative; top: 2px; left:2px;
+		  box-shadow: red 1px 1px 0px;
+	  }
+	  button:disabled
+	  {
+		  color: #A0A0A0;
+		  box-shadow: none;
+		  border: 1px solid #A0A0A0;
+	  }
+	  button:disabled
+	  {
+		  color: #A0A0A0;
+		  box-shadow: none;
+		  border: 1px solid #A0A0A0;
+	  }
+	  
+	  .jack
+	  {
+		  font-style:italic;
+	  }
+	  .sentence {margin-top: 2em; margin-bottom:2em;}
+#content
+{
+	max-width:900px;
+	margin:0px auto;
+}
+	</style>
+  </head>
+  <body>
+	<div id="content">
+	  <h1>10: Twists</h1>
+	  <p>A port of Mutable Instruments Braids</p>
+    <div data-size="9" id="sentence_container">
+    <div class="sentence" data-offset="1">
+      Macro Oscillator Shape 1
+      <select id="select_0">
+        <option value="0">CSAW</option>
+        <option value="1">/\-_</option>
+        <option value="2">//-_</option>
+        <option value="3">FOLD</option>
+        <option value="4">UUUU</option>
+        <option value="5">SUB-</option>
+        <option value="6">SUB/</option>
+        <option value="7">SYN-</option>
+        <option value="8">SYN/</option>
+        <option value="9">//x3</option>
+        <option value="10">-_x3</option>
+        <option value="11">/\x3</option>
+        <option value="12">SIx3</option>
+        <option value="13">RING</option>
+        <option value="14">////</option>
+        <option value="15">//UU</option>
+        <option value="16">TOY*</option>
+        <option value="17">ZLPF</option>
+        <option value="18">ZPKF</option>
+        <option value="19">ZBPF</option>
+        <option value="20">ZHPF</option>
+        <option value="21">VOSM</option>
+        <option value="22">VOWL</option>
+        <option value="23">VFOF</option>
+        <option value="24">HARM</option>
+        <option value="25">FM  </option>
+        <option value="26">FBFM</option>
+        <option value="27">WTFM</option>
+        <option value="28">PLUK</option>
+        <option value="29">BOWD</option>
+        <option value="30">BLOW</option>
+        <option value="31">FLUT</option>
+        <option value="32">BELL</option>
+        <option value="33">DRUM</option>
+        <option value="34">KICK</option>
+        <option value="35">CYMB</option>
+        <option value="36">SNAR</option>
+        <option value="37">WTBL</option>
+        <option value="38">WMAP</option>
+        <option value="39">WLIN</option>
+        <option value="40">WTx4</option>
+        <option value="41">NOIS</option>
+        <option value="42">TWNQ</option>
+        <option value="43">CLKN</option>
+        <option value="44">CLOU</option>
+        <option value="45">PRTC</option>
+        <option value="46">QPSK</option>
+      </select>
+    </div>
+    <div class="sentence" data-offset="2">
+      Macro Oscillator Shape 2
+      <select id="select_1">
+        <option value="0">CSAW</option>
+        <option value="1">/\-_</option>
+        <option value="2">//-_</option>
+        <option value="3">FOLD</option>
+        <option value="4">UUUU</option>
+        <option value="5">SUB-</option>
+        <option value="6">SUB/</option>
+        <option value="7">SYN-</option>
+        <option value="8">SYN/</option>
+        <option value="9">//x3</option>
+        <option value="10">-_x3</option>
+        <option value="11">/\x3</option>
+        <option value="12">SIx3</option>
+        <option value="13">RING</option>
+        <option value="14">////</option>
+        <option value="15">//UU</option>
+        <option value="16">TOY*</option>
+        <option value="17">ZLPF</option>
+        <option value="18">ZPKF</option>
+        <option value="19">ZBPF</option>
+        <option value="20">ZHPF</option>
+        <option value="21">VOSM</option>
+        <option value="22">VOWL</option>
+        <option value="23">VFOF</option>
+        <option value="24">HARM</option>
+        <option value="25">FM  </option>
+        <option value="26">FBFM</option>
+        <option value="27">WTFM</option>
+        <option value="28">PLUK</option>
+        <option value="29">BOWD</option>
+        <option value="30">BLOW</option>
+        <option value="31">FLUT</option>
+        <option value="32">BELL</option>
+        <option value="33">DRUM</option>
+        <option value="34">KICK</option>
+        <option value="35">CYMB</option>
+        <option value="36">SNAR</option>
+        <option value="37">WTBL</option>
+        <option value="38">WMAP</option>
+        <option value="39">WLIN</option>
+        <option value="40">WTx4</option>
+        <option value="41">NOIS</option>
+        <option value="42">TWNQ</option>
+        <option value="43">CLKN</option>
+        <option value="44">CLOU</option>
+        <option value="45">PRTC</option>
+        <option value="46">QPSK</option>
+      </select>
+    </div>
+    <div class="sentence" data-offset="3">
+      Macro Oscillator Shape 3
+      <select id="select_2">
+        <option value="0">CSAW</option>
+        <option value="1">/\-_</option>
+        <option value="2">//-_</option>
+        <option value="3">FOLD</option>
+        <option value="4">UUUU</option>
+        <option value="5">SUB-</option>
+        <option value="6">SUB/</option>
+        <option value="7">SYN-</option>
+        <option value="8">SYN/</option>
+        <option value="9">//x3</option>
+        <option value="10">-_x3</option>
+        <option value="11">/\x3</option>
+        <option value="12">SIx3</option>
+        <option value="13">RING</option>
+        <option value="14">////</option>
+        <option value="15">//UU</option>
+        <option value="16">TOY*</option>
+        <option value="17">ZLPF</option>
+        <option value="18">ZPKF</option>
+        <option value="19">ZBPF</option>
+        <option value="20">ZHPF</option>
+        <option value="21">VOSM</option>
+        <option value="22">VOWL</option>
+        <option value="23">VFOF</option>
+        <option value="24">HARM</option>
+        <option value="25">FM  </option>
+        <option value="26">FBFM</option>
+        <option value="27">WTFM</option>
+        <option value="28">PLUK</option>
+        <option value="29">BOWD</option>
+        <option value="30">BLOW</option>
+        <option value="31">FLUT</option>
+        <option value="32">BELL</option>
+        <option value="33">DRUM</option>
+        <option value="34">KICK</option>
+        <option value="35">CYMB</option>
+        <option value="36">SNAR</option>
+        <option value="37">WTBL</option>
+        <option value="38">WMAP</option>
+        <option value="39">WLIN</option>
+        <option value="40">WTx4</option>
+        <option value="41">NOIS</option>
+        <option value="42">TWNQ</option>
+        <option value="43">CLKN</option>
+        <option value="44">CLOU</option>
+        <option value="45">PRTC</option>
+        <option value="46">QPSK</option>
+      </select>
+    </div>
+    <div class="sentence" data-offset="4">
+      Macro Oscillator Shape 4
+      <select id="select_3">
+        <option value="0">CSAW</option>
+        <option value="1">/\-_</option>
+        <option value="2">//-_</option>
+        <option value="3">FOLD</option>
+        <option value="4">UUUU</option>
+        <option value="5">SUB-</option>
+        <option value="6">SUB/</option>
+        <option value="7">SYN-</option>
+        <option value="8">SYN/</option>
+        <option value="9">//x3</option>
+        <option value="10">-_x3</option>
+        <option value="11">/\x3</option>
+        <option value="12">SIx3</option>
+        <option value="13">RING</option>
+        <option value="14">////</option>
+        <option value="15">//UU</option>
+        <option value="16">TOY*</option>
+        <option value="17">ZLPF</option>
+        <option value="18">ZPKF</option>
+        <option value="19">ZBPF</option>
+        <option value="20">ZHPF</option>
+        <option value="21">VOSM</option>
+        <option value="22">VOWL</option>
+        <option value="23">VFOF</option>
+        <option value="24">HARM</option>
+        <option value="25">FM  </option>
+        <option value="26">FBFM</option>
+        <option value="27">WTFM</option>
+        <option value="28">PLUK</option>
+        <option value="29">BOWD</option>
+        <option value="30">BLOW</option>
+        <option value="31">FLUT</option>
+        <option value="32">BELL</option>
+        <option value="33">DRUM</option>
+        <option value="34">KICK</option>
+        <option value="35">CYMB</option>
+        <option value="36">SNAR</option>
+        <option value="37">WTBL</option>
+        <option value="38">WMAP</option>
+        <option value="39">WLIN</option>
+        <option value="40">WTx4</option>
+        <option value="41">NOIS</option>
+        <option value="42">TWNQ</option>
+        <option value="43">CLKN</option>
+        <option value="44">CLOU</option>
+        <option value="45">PRTC</option>
+        <option value="46">QPSK</option>
+      </select>
+    </div>
+    <div class="sentence" data-offset="5">
+      Macro Oscillator Shape 5
+      <select id="select_4">
+        <option value="0">CSAW</option>
+        <option value="1">/\-_</option>
+        <option value="2">//-_</option>
+        <option value="3">FOLD</option>
+        <option value="4">UUUU</option>
+        <option value="5">SUB-</option>
+        <option value="6">SUB/</option>
+        <option value="7">SYN-</option>
+        <option value="8">SYN/</option>
+        <option value="9">//x3</option>
+        <option value="10">-_x3</option>
+        <option value="11">/\x3</option>
+        <option value="12">SIx3</option>
+        <option value="13">RING</option>
+        <option value="14">////</option>
+        <option value="15">//UU</option>
+        <option value="16">TOY*</option>
+        <option value="17">ZLPF</option>
+        <option value="18">ZPKF</option>
+        <option value="19">ZBPF</option>
+        <option value="20">ZHPF</option>
+        <option value="21">VOSM</option>
+        <option value="22">VOWL</option>
+        <option value="23">VFOF</option>
+        <option value="24">HARM</option>
+        <option value="25">FM  </option>
+        <option value="26">FBFM</option>
+        <option value="27">WTFM</option>
+        <option value="28">PLUK</option>
+        <option value="29">BOWD</option>
+        <option value="30">BLOW</option>
+        <option value="31">FLUT</option>
+        <option value="32">BELL</option>
+        <option value="33">DRUM</option>
+        <option value="34">KICK</option>
+        <option value="35">CYMB</option>
+        <option value="36">SNAR</option>
+        <option value="37">WTBL</option>
+        <option value="38">WMAP</option>
+        <option value="39">WLIN</option>
+        <option value="40">WTx4</option>
+        <option value="41">NOIS</option>
+        <option value="42">TWNQ</option>
+        <option value="43">CLKN</option>
+        <option value="44">CLOU</option>
+        <option value="45">PRTC</option>
+        <option value="46">QPSK</option>
+      </select>
+    </div>
+    <div class="sentence" data-offset="6">
+      Macro Oscillator Shape 6
+      <select id="select_5">
+        <option value="0">CSAW</option>
+        <option value="1">/\-_</option>
+        <option value="2">//-_</option>
+        <option value="3">FOLD</option>
+        <option value="4">UUUU</option>
+        <option value="5">SUB-</option>
+        <option value="6">SUB/</option>
+        <option value="7">SYN-</option>
+        <option value="8">SYN/</option>
+        <option value="9">//x3</option>
+        <option value="10">-_x3</option>
+        <option value="11">/\x3</option>
+        <option value="12">SIx3</option>
+        <option value="13">RING</option>
+        <option value="14">////</option>
+        <option value="15">//UU</option>
+        <option value="16">TOY*</option>
+        <option value="17">ZLPF</option>
+        <option value="18">ZPKF</option>
+        <option value="19">ZBPF</option>
+        <option value="20">ZHPF</option>
+        <option value="21">VOSM</option>
+        <option value="22">VOWL</option>
+        <option value="23">VFOF</option>
+        <option value="24">HARM</option>
+        <option value="25">FM  </option>
+        <option value="26">FBFM</option>
+        <option value="27">WTFM</option>
+        <option value="28">PLUK</option>
+        <option value="29">BOWD</option>
+        <option value="30">BLOW</option>
+        <option value="31">FLUT</option>
+        <option value="32">BELL</option>
+        <option value="33">DRUM</option>
+        <option value="34">KICK</option>
+        <option value="35">CYMB</option>
+        <option value="36">SNAR</option>
+        <option value="37">WTBL</option>
+        <option value="38">WMAP</option>
+        <option value="39">WLIN</option>
+        <option value="40">WTx4</option>
+        <option value="41">NOIS</option>
+        <option value="42">TWNQ</option>
+        <option value="43">CLKN</option>
+        <option value="44">CLOU</option>
+        <option value="45">PRTC</option>
+        <option value="46">QPSK</option>
+      </select>
+    </div>
+
+    <div class="sentence" data-offset="7">
+      AD VCA
+      <select id="select_6">
+        <option value="0">NO</option>
+        <option value="1">YES</option>
+      </select>
+    </div>
+
+    <div class="sentence" data-offset="8">
+      AD Attack
+      <select id="select_7">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+      </select>
+    </div>
+    
+    <div class="sentence" data-offset="9">
+      AD Decay
+      <select id="select_8">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+      </select>
+    </div>  
+  </div>
+
+	  <div style='margin-top:2em;'>
+		<button onClick='SendToComputer()'>Save to flash card</button>
+	  </div>
+	  <div id='messages'>
+	  </div>
+	</div>
+  </body>
+  
+
+</html>
