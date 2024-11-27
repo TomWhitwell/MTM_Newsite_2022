@@ -37,8 +37,8 @@ Music Thing Modular Workshop System is a complete modular synth. It is slightly 
 At present, it is [available exclusively as a DIY kit from Thonk](https://www.thonk.co.uk/workshopsystem/). 
 
 To find out more about the Workshop System:  
+* **[Buy now at Thonk](https://www.thonk.co.uk/workshopsystem/)**
 * **Subscribe to the [Workshop System newsletter](https://workshopsystem.substack.com/)** — monthly-ish, for owners and the owner-curious
-* **[Join the waitlist now at Thonk](https://www.thonk.co.uk/workshopsystem/)**
 * **Follow [@musicthingmodular on Instagram](https://www.instagram.com/musicthingmodular/)** 
 * **Read the [Workshop System Quick Start Guide](/Workshop_Quick_Start/)** 
 
