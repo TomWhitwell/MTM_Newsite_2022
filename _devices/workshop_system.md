@@ -28,7 +28,6 @@ manual-text: "Workshop System Manual"
 ![Music Thing Workshop System in a black case with some headphones](/images/900-workshopsystem-full-straight-headphones-colour-2.jpg)
 
 
-
 <h1>	<homepage_body>Music Thing Modular Workshop System</homepage_body></h1>
 <br>
 Music Thing Modular Workshop System is a complete modular synth. It is slightly smaller than a hardback book. It comes in a foam-lined hard case. 
@@ -36,11 +35,16 @@ Music Thing Modular Workshop System is a complete modular synth. It is slightly 
 
 At present, it is [available exclusively as a DIY kit from Thonk](https://www.thonk.co.uk/workshopsystem/). 
 
+ <a href="https://www.thonk.co.uk/workshopsystem/" class="buy-btn">BUY NOW</a>&nbsp;&nbsp;
+ <a href="/Workshop_System_Build_Guide/" class="buy-btn">Build Guide</a>&nbsp;&nbsp;
+ <a href="/Workshop_Quick_Start/" class="buy-btn">Quick Start Guide</a>
+
 To find out more about the Workshop System:  
 * **[Buy now at Thonk](https://www.thonk.co.uk/workshopsystem/)**
+* **[Read the Workshop System Quick Start Guide](/Workshop_Quick_Start/)** 
+<!-- * **[Learn more about the Computer, and available program cards](/Computer_Program_Cards/)**  -->
 * **Subscribe to the [Workshop System newsletter](https://workshopsystem.substack.com/)** — monthly-ish, for owners and the owner-curious
 * **Follow [@musicthingmodular on Instagram](https://www.instagram.com/musicthingmodular/)** 
-* **Read the [Workshop System Quick Start Guide](/Workshop_Quick_Start/)** 
 
 
 ![Music Thing Workshop System being played in Cornwall](/images/900_jess_square.jpg)

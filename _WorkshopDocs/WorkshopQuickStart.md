@@ -5,6 +5,7 @@ output: false
 page-name: "Quick Start Guide" 
 permalink: "/Workshop_Quick_Start/"
 order: -1
+title:  "Music Thing Workshop System Quick Start Guide"
 
 
 ---
