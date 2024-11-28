@@ -16,11 +16,11 @@ https://youtu.be/M3mMAsjv3QE?si=SlriylUZx2sPlxuQ
 
 {% include linkedHeading.html heading="Workshop System Build Guide " level=1 %}
 \
-The Workshop System might be the most complicated thing you’ve ever built. Even for an experienced DIYer, there’s a lot to put together. But it's relatively quick (2-4 hours) and a very satisfying build.  \
+The Workshop System is a complete modular synth that you can build in an evening or two. \
 \
-The circuit boards are pre-populated with over 650 tiny components. Your job is to attach the interface elements: pots, knobs, switches, sockets (so many sockets), and LEDs.\
+The four circuit boards are pre-populated with over 650 tiny components. Your job is to attach the interface elements: pots, knobs, switches, sockets (so many sockets), and LEDs.\
 \
-A few parts of the build are counter-intuitive, so please read this all carefully. If anything is unclear, contact [support@thonk.co.uk](mailto:support@thonk.co.uk?subject=Workshop%20System%20Build%20Advice), ask for help on the Discord, send photos.  
+A few parts of the build are slightly counter-intuitive, so please read this all carefully. If anything is unclear, contact [support@thonk.co.uk](mailto:support@thonk.co.uk?subject=Workshop%20System%20Build%20Advice), ask for help on the Discord, send photos.  
 
 {% include linkedHeading.html heading="TL;DR Summary for new or nervous builders " level=2 %}  
 * If you've never soldered before, practise on something else — I always recommend [8mu](https://www.musicthing.co.uk/8mu_page/) or [Mikrophonie](https://www.musicthing.co.uk/Mikrophonie/).
