@@ -80,7 +80,10 @@ collections:
   WorkshopDocs:
     output: true
     
-    
+
+markdown: kramdown
+
+
 # seo 
 title: "Music Thing Modular"
 twitter:

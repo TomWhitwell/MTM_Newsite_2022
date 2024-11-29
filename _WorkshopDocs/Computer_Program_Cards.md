@@ -13,24 +13,63 @@ order: 2
 # Program Cards and the Computer
  &nbsp;
  
- {% include linkedHeading.html heading="MIDI" level=2 %}
+ 
+Computer is a simple but capable music computer,  inspired by the early music studios like [EMS Studios](https://www.facebook.com/BBCArchive/videos/383617947753333/) in London and [Bell Labs](https://www.youtube.com/watch?v=mT3U98cFqSs) where computers were used to control analog oscillators and filters, compose algorithmic music and generate waveforms. 
 
+Because it's 2024, Computer is powerful enough to do audio effects, sequencing and connecting with other devices over USB.  
+
+Computer loads programs stored on tiny custom-made program cards, very slightly larger than Micro SD cards. It has has three pairs of inputs and outputs: for Audio/CV, for precision control voltages for pitch, and for pulses. 
+
+Computer's CPU is a RP2040 32-bit 133mhz dual core microprocessor. It has 264K of RAM. Program cards store either 2mb or 16mb.  
+
+Program cards contain the entire memory of the Computer, and can be written in any language that is compatible with the RP2040, including Arduino, C++, and Circuit Python. 
+
+{% include linkedHeading.html heading="Available Program Cards" level=3 %}
+ 
+{% include linkedHeading.html heading="Official Music Thing Packs" level=3 %}
+
+
+{% include linkedHeading.html heading="Packs from other people " level=3 %}
+
+
+{% include linkedHeading.html heading="Downloadable work in progress" level=3 %}
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ {% include linkedHeading.html heading="00 Simple MIDI" level=2 %}
   {% include documentation_image.html filename="images/WS_MIDI_Ableton.jpg" caption="The MIDI card shows up over USB Midi as an input AND an output" %}
-  
-  [This Instagram Reel explains the MIDI card in 90 seconds](https://www.instagram.com/reel/DBjZivNN67D/)
+
+by: Tom Whitwell Version: 0.5.0
+
+Simple MIDI turns the Computer into a simple USB midi interface to send and receive MIDI.  
+\
+It receives 2 x channels of MIDI information from the computer: Gate + Note + Continuous Controller.  
+\
+And it sends 8 channels of MIDI from the system, so  you can control the computer from the system: 
+* 3 Knobs  
+* 1 Switch  
+* 4 CV inputs  
+The MIDI card is also where calibration happens. This card lets you fine-tune the Computer's CV outputs. Other cards (like Turing Machine and Reverb+) can read that calibration data so they can also play in turne.  
+\
+[This Instagram Reel explains the MIDI card in 90 seconds](https://www.instagram.com/reel/DBjZivNN67D/)
   
 
 
- {% include linkedHeading.html heading="Turing Machine" level=2 %}
+ {% include linkedHeading.html heading="03 Turing Machine" level=2 %}
   {% include documentation_image.html filename="images/WS_Turing_Editor.jpg" caption="The Turing Machine Card has four configurable Turing Machine random looping sequencers" %}
-
- <a href="/web_config/turing.html" class="buy-btn">Launch the Turing Machine Web Editor</a>
+by: Tom Whitwell Version: 0.1.0  
+<a href="/web_config/turing.html" class="buy-btn">Launch the Turing Machine Web Editor</a>
  
 [Here's a quick demo of the Turing Machine card on Instagram](https://www.instagram.com/reel/DCTmBretEFf/) 
  
- {% include linkedHeading.html heading="Reverb+" level=2 %}
- {% include documentation_image.html filename="images/WS_Reverb+_Editor.jpg" caption="Reverb+ works as an excellent mid-fi reverb, but is much, much, much more than that." %}
-
+ {% include linkedHeading.html heading="20 Reverb+" level=2 %}
+ {% include documentation_image.html filename="images/WS_Reverb+_Editor.jpg" caption="Reverb+ works as an excellent mid-fi reverb, but is much, much, much more than that." %}  
+by: Chris Johnson Version: 0.1.0  
 <a href="/web_config/reverb.html" class="buy-btn">Launch the Reverb+ Web Editor</a>
 
 

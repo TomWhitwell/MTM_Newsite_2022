@@ -39,7 +39,7 @@ A few parts of the build are slightly counter-intuitive, so please read this all
 * If you understand all that, it's a very straightforward build. You'll probably be fine. 
 
 {% include linkedHeading.html heading="Contents" level=2 %}
-1. **[What do I need to build the Workshop System?]()**
+1. **[What do I need to build the Workshop System?](#what-do-i-need-to-build-the-workshop-system)**
 1. **[Assemble the case](#assemble-the-case)**
 1. **[Assemble the power supply](#assemble-the-power-supply)**
 1. **[Prepare the front panel](#prepare-the-front-panel)**   
