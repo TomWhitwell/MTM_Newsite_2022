@@ -65,9 +65,9 @@ Apart from the kit, you'll need:
 * A USB-C PD power supply that can give 15 Volts, to power the system when you're finished. [Full power details](/Workshop_Quick_Start/#power-supply). 
 * A soldering iron. Something with temperature control and a clean fine tip. It doesn't need to be tiny, but shouldn't be huge. 
 * Solder, either leaded or unleaded, with the soldering iron set to the appropriate temperature 
-* A tip cleaner, I use brass shavings, some people use a sponge 
+* A tip cleaner, I use brass wool, some people use a sponge 
 * A small cross-head screwdriver 
-* Some tape or blu-tack to hold parts in place. I use thin [Kapton](https://en.wikipedia.org/wiki/Kapton) tape which is heat resistant, but you can use any kind of masking tape. 
+* Some tape or blu-tack to hold parts in place. I use thin [Kapton](https://en.wikipedia.org/wiki/Kapton) tape which is cheap and heat resistant, but you can use any kind of masking tape. 
 * A Sharpie or something else to sign the PSU board 
 * Some double-sided tape or epoxy glue to attach the label to the case 
 * Enough light and magnification so you can see small things clearly
