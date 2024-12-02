@@ -17,7 +17,7 @@ Computer is a simple but capable music computer,  inspired by the early music st
 
 Because it's 2024, Computer is powerful enough to do audio effects, sequencing and connecting with other devices over USB.  
 
-Computer loads programs stored on tiny custom-made program cards, very slightly larger than Micro SD cards. It has has three pairs of inputs and outputs: for Audio/CV, for precision control voltages for pitch, and for pulses. 
+Computer loads programs stored on tiny custom-made program cards, very slightly larger than Micro SD cards. It has three pairs of inputs and outputs: for Audio/CV, for precision control voltages for pitch, and for pulses. 
 
 To find out about new program cards subscribe to the free [Workshop System Newsletter](https://workshopsystem.substack.com/). 
 
