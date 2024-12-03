@@ -98,7 +98,7 @@ To calibrate the oscillators you need:
 * Are the two notes in tune? 
 * No? If the high octave is flat, turn the little gold screw one turn clockwise. And vice-versa. 
 * Yes? Try a two octave gap and continue until the whole keyboard feels in tune. 
-* Calibrate the Computer once you've finished, using the instructions above.
+* [Calibrate the Computer](#how-to-calibrate-the-computer) once you've finished, using the instructions above.
   
 {% include linkedHeading.html heading="Long version" level=4 %}    
 * Set up your Workshop System so you can listen to the top oscillator 
@@ -116,6 +116,6 @@ To calibrate the oscillators you need:
 * Repeat the process until you are happy. Retune, play an octave, turn the gold trimmer. 
 * Repeat the process with the bottom oscillator. 
 * When I calibrated oscillators from the first batch, I normally had to turn about three turns clockwise to get close. Your experiences may be different. 
-* Calibrate the Computer once you've finished, using the instructions above.
+* [Calibrate the Computer](#how-to-calibrate-the-computer) once you've finished, using the instructions above.
 
  
