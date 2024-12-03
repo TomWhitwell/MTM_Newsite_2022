@@ -198,7 +198,8 @@ The Workshop System has thirteen modules:
 * These are versatile Voltage Controlled Slopes, loosely based on the [Serge VCS](https://www.timstinchcombe.co.uk/index.php?pge=vcs) circuit. 
 * In Loop mode they work like a low frequency oscillator, with the shape set by the left hand switch. 
 * Outside loop mode, they become an envelope generator. Patch a pulse from Computer to the input (⭡), set the shape switch to falling, and use the knob to set the decay time. 
-* They can also add glide or portamento to changing voltages, or work as a simple envelope follower. 
+* Short pulses can only really trigger Slopes in Falling mode. In Rise or Up/Down, they make the signal rise, but only as long at they're active — not very much. 
+* Slopes can also add glide or portamento to changing voltages, or work as a simple envelope follower. 
 * The top slope is linear, the bottom is exponential — so it responds faster. You can change both responses by cutting or closing traces on the back of the circuit board. 
 {% include linkedHeading.html heading="Mix" level=3 %}
 * Simply a four channel stereo mixer with two headphone amps
