@@ -86,9 +86,12 @@ And it sends 8 channels of MIDI from the system, so  you can control the compute
 
 The MIDI card is also where calibration happens. This card lets you fine-tune the Computer's CV outputs. Other cards (like Turing Machine and Reverb+) can read that calibration data so they can also play in tune.  
 
+[Click here for the full calibration process](/Workshop_System_Calibration/)
+
 When connected by USB-C to a computer, the Workshop System will show up as *Workshop System MIDI*, both inputs and outputs. 
 
 If you have trouble connecting via MIDI, try turning the power off and on on the Workshop System, or reconnecting the USB cable at the Computer end. And, of course, check you're using a USB-C cable that can transmit data, not just power. 
+
 
 <div style="clear: both;"></div>
 
@@ -117,7 +120,8 @@ The Turing Machine was [launched by Music Thing Modular in 2012](https://www.mus
 * The Y knob is a *Diviply* control for the right hand outputs. It divides or multiplies the clock signal 
 * Flip the Z switch up or down to select different settings for the pitch and pulse outputs. Think of this as two modes which can be set up in the web editor, where you can control scales, pulse lengths and many other things. 
 * Every program card has a unique serial number. This number is used to initialise the random number system in the Turing Machine. This means that every Turing Machine card will sound slightly different. It also means that if you start a Turing Machine card in locked position, it will always play the same pattern until it is randomised. 
-* The Turing Machine card takes it's calibration from the MIDI card, so if the pitch outputs aren't in tune, you may need to calibrate Computer. 
+
+The Turing Machine card takes it's calibration from the MIDI card, so if the pitch outputs aren't in tune, you'll need to [calibrate the Computer](/Workshop_System_Calibration/)
  
  <div style="clear: both;"></div>
 

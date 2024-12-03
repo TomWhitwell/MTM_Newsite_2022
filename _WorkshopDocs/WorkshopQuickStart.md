@@ -157,7 +157,7 @@ The Workshop System has thirteen modules:
 * These are simple triangle-core oscillators based on classic synth circuits from the 1970s, updated with modern components.  
 * It's a nice sounding circuit that is particularly good for FM. You can make  bell-like sounds with a bit of FM and Ring Mod. 
 * Each FM input is connected to the other oscillator's sine wave output. 
-* The small trimmers are for calibration. These aren't ultra-precise oscillators but they are temperature compensated and can be calibrated for 4-5 octaves if you have the patience. 
+* The small trimmers are for calibration. These aren't ultra-precise oscillators but they are temperature compensated and can be calibrated for 3-4 octaves if you have the patience. 
 {% include linkedHeading.html heading="Stereo In" level=3 %}
 * Plug anything in here - a laptop or phone, drum machine, shortwave radio or Walkman. It will boost the signal to modular level. Use the volume control on the device if it's too loud. 
 {% include linkedHeading.html heading="Ring Mod" level=3 %}
@@ -209,11 +209,8 @@ The Workshop System has thirteen modules:
 {% include documentation_image.html filename="images/WS-calibrate.jpg" caption="NB: You do not need one of these to calibrate the Workshop System" %}
 * The Workshop System has been designed to require minimal calibration. 
 * You don't need to calibrate the system before using it. 
-* Calibration is only required for precise volt per octave tuning when using the MIDI card. 
-* You do not require any specialist equipment to calibrate the system - just a tuner, which can be an app or built into your DAW. 
-* Calibration takes place in the MIDI card.
-* It's also possible to calibrate the SineSquare Oscillators to track precisely, if you are using CV keyboards or sequencers. This is not necessary if you only use Computer or MIDI to sequence your system. 
-* CALIBRATION VIDEO TO COME
+* Calibration is only required for precise volt per octave tuning when using the MIDI card, or using the SineSquare oscillators with external keyboards or sequencers. 
+* [Full calibration details and video](/Workshop_System_Calibration/). 
 
 {% include linkedHeading.html heading="Modifying and personalising your system" level=2 %}
 * The Workshop System is designed to be open and hackable, there are many ways to modify it. 

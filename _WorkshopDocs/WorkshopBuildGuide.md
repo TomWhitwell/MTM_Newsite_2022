@@ -238,10 +238,12 @@ Build your boards in this order:
 * Connect power and test the board. [Test details in the quick start guide](../Workshop_Quick_Start/).
 * If everything is working, add nuts to the pots, switches and sockets, and screw the front panel to the spacers.
 * Congratulations, you've made a Workshop System. 
+* Enjoy playing with it, and at some point you can think about [Calibration](/Workshop_System_Calibration/). 
 
 {% include linkedHeading.html heading="Troubleshooting" level=2 %}
 If something isn't working...
 * **Slopes don't loop** If neither Slope loops, this is a sign that the USB power supply is not giving 15 volts, just 5 Volts or 9 Volts. Check with another supply. 
+* **Sometimes the Slope LEDs flicker when I touch the switch** I'm not completely sure why this happens, but it's normal.  
 * **An LED doesn't light** Most likely that LED is not properly soldered, or has been soldered the wrong way around. Inverted LEDs in Slopes behave very oddly. 
 * **Computer won't connect to a computer** Before doing anything else, ensure that your USB-C cable can pass data. Some cables only pass power. 
 * **A module behaves strangely: too loud, out of control** Sometimes this is a sign that a potentiometer pin hasn't been soldered, or is short-circuited. 
