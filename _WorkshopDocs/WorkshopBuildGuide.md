@@ -102,7 +102,7 @@ Apart from the kit, you'll need:
 {% include documentation_image.html filename="images/WS_Panel_Prepare.jpg" caption="Solder the piezo microphone to the back of the front panel" %}
 * [VIDEO LINK: Soldering the piezo mic](https://www.youtube.com/watch?v=M3mMAsjv3QE&t=922s)
 * Before soldering the rest of the kit, attach the small brass piezo microphone to the front panel. 
-* You can use solder or epoxy to do this
+* You can use solder or epoxy or superglue to do this
 * The position is marked. Tape the disk down and solder the three marked points. It's quite a large area, so hold the soldering iron down for 5-10 seconds to heat it through before trying to solder. 
 * You might want to tape the wires down to keep them out of the way for the rest of the build. 
 
