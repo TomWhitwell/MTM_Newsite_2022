@@ -30,7 +30,7 @@ If it sounds good, it is good.
     * The Computer 
     * The two SineSquare Oscillators 
 * **Most people will only ever need to calibrate the Computer.** To play the Workshop System over MIDI, you need to teach the Computer to put out the right voltages for the oscillators. It doesn't matter how those oscillators are calibrated, because they only need to be in tune with the Computer. 
-* **Some people will need to calibrate the oscillators to work with other equipment.** I have a little [Arturia Keystep](https://www.arturia.com/products/hybrid-synths/keystep/overview) keyboard which has a CV Pitch output. To use that, I have to calibrate the oscillators to respond to the voltages put out by the Keystep. Once I've calibrated the oscillators, I can to go back and re-calibrate the Computer, so it puts out the same signals as the keystep. 
+* **Some people will need to calibrate the oscillators to work with other equipment.** I have a little [Arturia Keystep](https://www.arturia.com/products/hybrid-synths/keystep/overview) keyboard which has a CV Pitch output. To use that, I have to calibrate the oscillators to respond to the voltages put out by the Keystep. Once I've calibrated the oscillators, I can go back and re-calibrate the Computer, so it puts out the same signals as the keystep. 
 
 https://www.youtube.com/watch?v=FebtWwpal5A 
 
