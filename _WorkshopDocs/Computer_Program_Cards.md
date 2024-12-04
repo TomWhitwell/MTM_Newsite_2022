@@ -84,10 +84,15 @@ And it sends 8 channels of MIDI from the system, so  you can control the compute
 * 1 Switch  
 * 4 CV inputs  
 
+To connect to MIDI: 
+* Connect the front panel USB-C connection to a computer with a MIDI sequencer
+* Put the MIDI card into the Computer slot and press the little reset button next to the slot.
+* The LEDs should blink very briefly, then stop. The blinking means the card is looking for a computer, and it should find it almost immediately. 
+* If the LEDs keep blinking, the Computer has not connected over USB.
+    * Turn the Workshop System power off and on again
+    * Check you have a USB-C cable that can pass data, not just power
+
 When connected by USB-C to a computer, the Workshop System will show up as *Workshop System MIDI*, both inputs and outputs. 
-
-**If you have trouble connecting via MIDI**, try turning the power off and on on the Workshop System, or reconnecting the USB cable at the Computer end. And, of course, check you're using a USB-C cable that can transmit data, not just power. 
-
 
 The MIDI card is also where calibration happens. This card lets you fine-tune the Computer's CV outputs. Other cards (like Turing Machine and Reverb+) can read that calibration data so they can also play in tune.  
 
