@@ -48,6 +48,7 @@ To find out more about the Workshop System:
 * **[Workshop System Quick Start Guide](/Workshop_Quick_Start/)** 
 * **[Computer and Program Card Guide](/Computer_Program_Cards/)** 
 * **[Build and construction Guide](/Workshop_System_Build_Guide/)**   
+* **[Calibration Guide](/Workshop_System_Calibration/)**  
 * **Subscribe to the [Workshop System newsletter](https://workshopsystem.substack.com/)**
 * **Follow [@musicthingmodular on Instagram](https://www.instagram.com/musicthingmodular/)** 
 
