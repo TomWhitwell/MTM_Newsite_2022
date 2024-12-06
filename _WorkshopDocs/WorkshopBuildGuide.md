@@ -150,13 +150,17 @@ In [this section of the build video](https://www.youtube.com/watch?v=M3mMAsjv3QE
 * Please put the right switch in the right spot, the right way round! 
 {% include linkedHeading.html heading="Understanding LEDs" level=3 %}
 {% include documentation_image.html filename="images/WS_led.jpg" caption="On LEDs, the long leg goes to the + mark on the PCB" %}
+{% include documentation_image.html filename="images/WS_LED_placement.jpg" caption="You never need to bend out the LED legs — the legs fit into holes next to each other." %}
+
 * All the Workshop System LEDs are the same
-* Direction is very important. The long leg goes in the hole marked +. 
+* Direction is very important. The long leg goes in the hole marked +.
+* You never need to bend out the LED legs, they always go into two pins next to each other.  
 * The LEDs have flat tops which should be flush with the panel. Use a piece of tape or blu-tack to line them up before soldering, and check twice before cutting off the legs. 
 
 {% include linkedHeading.html heading="Understanding sockets" level=3 %}
 * The Workshop System has two types of sockets: Black sockets which are mono, and green sockets which are stereo.  
 * The green sockets are clearly marked, everything else is black. 
+<div style="clear: both;"></div>
 
 {% include linkedHeading.html heading="Starting to build" level=2 %}
 
