@@ -41,7 +41,8 @@ The best way to explain Computer calibration is with [this seven-minute video](h
 * To calibrate the computer you need: 
   * A MIDI card 
   * A computer with a MIDI sequencer like Ableton Live that can connect to the Workshop System over USB-C. The computer doesn't need USB-C sockets; you can use a USB-A to USB-C cable if necessary. 
-  * A tuner. Most DAWs have a built-in tuner, or you can use a phone app.  
+  * A tuner. Most DAWs have a built-in tuner, or you can use a phone app. 
+  * NB Use normal patch cables for calibration. Do not use illuminated patch cables, or Stackables that split the signal to two outputs. 
 
 * Start by connecting the Computer to your computer.  
 * Put the MIDI card into the Computer slot and press reset. 
@@ -87,7 +88,9 @@ Try not to get obsessed with this calibration process. These oscillators are not
 
 To calibrate the oscillators you need: 
   * A tuner. Most DAWs have a built-in tuner, or you can use a phone app.  
-  * A small flat head screwdriver 
+  * A small flat head screwdriver
+  * NB Use normal patch cables for calibration. Do not use illuminated patch cables, or Stackables that split the signal to two outputs. 
+ 
   * Patience and time. Please don't try to do this in a hurry or while distracted. 
   
 {% include linkedHeading.html heading="Short version" level=4 %}    
