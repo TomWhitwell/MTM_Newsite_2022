@@ -37,6 +37,7 @@ A few parts of the build are slightly counter-intuitive, so please read this all
     * Longer legs on LEDs are marked with a + symbol.
     * There are three green (stereo) sockets.  
 * If you understand all that, it's a very straightforward build. You'll probably be fine. 
+* You can [calibrate](/Workshop_System_Calibration/) your system once you've finished. 
 
 {% include linkedHeading.html heading="Contents" level=2 %}
 1. **[What do I need to build the Workshop System?](#what-do-i-need-to-build-the-workshop-system)**
