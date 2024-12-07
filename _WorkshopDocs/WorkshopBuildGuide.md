@@ -52,7 +52,10 @@ A few parts of the build are slightly counter-intuitive, so please read this all
 1. **[Build Mix](#building-mix)**
 1. **[Build the VCF](#building-the-vcf)**
 1. **[Putting it all together](#putting-it-all-together)**
+1. **[Calibration](/Workshop_System_Calibration/)**
 1. **[Troubleshooting](#troubleshooting)**
+1. **[Modifying and personalising your system](/Workshop_Quick_Start/#modifying-and-personalising-your-system)** 
+
 
 
 {% include linkedHeading.html heading="Before you start" level=2 %}
