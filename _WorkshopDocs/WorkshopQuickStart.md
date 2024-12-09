@@ -85,7 +85,7 @@ To get started, you need a power supply and some patch cables:
 
 * This is a entirely modular synthesiser, so to make any sound at all, you need patch cables.
 * Plug some headphones or a speaker to the headphone out. The two sockets are identical. Turn the big volume knob down. 
-* Plug one cable from the Oscillator, the top sine wave output (⭣) to Mix input 1 (⭡). 
+* Plug one cable from the Oscillator, the top sine wave output (↓) to Mix input 1 (↑). 
     * Turn the top FM knob right down 
     * Put the top oscillator knob to 12 o'clock. 
     * Turn the little Mix 1 knob to 12 o'clock
@@ -109,7 +109,7 @@ To get started, you need a power supply and some patch cables:
 
 {% include linkedHeading.html heading="Your third patch" level=2 %}
 {% include documentation_image.html filename="images/patch3-ringmod.jpg" caption="Patch 3: Move the  cable to Ring Mod" %}
-* Turn down both FM knobs for now, and move the patch cable from Sine and to Ring Mod Output (⭣)
+* Turn down both FM knobs for now, and move the patch cable from Sine and to Ring Mod Output (↓)
 * With the ring modulator, the bottom oscillator changes the volume of the top oscillator is. It's more interesting than you might expect.
 * Next, try patching an external source - your phone or laptop, or a drum machine - into the Ring Mod.  
 
@@ -117,8 +117,8 @@ To get started, you need a power supply and some patch cables:
 {% include linkedHeading.html heading="Patching rules" level=3 %}
 * You **cannot** damage the system by patching anything to anything else
 * You **could** potentially damage the system by poking cables or anything else into the sides of the system, damaging the components on the circuit boards. 
-* All modules have outputs: (⭣)
-* Most modules have inputs: (⭡) 
+* All modules have outputs: (↓)
+* Most modules have inputs: (↑) 
 * All inputs and outputs can be stacked with [stackables](https://tiptopaudio.com/stackcable/) or mults. For example, patch both oscillators into one filter and the two signals will be mixed. 
 * With ten patch cables, there are c. 1.5 × 10²¹ possible ways to patch the Workshop System. 
 
@@ -175,7 +175,7 @@ The Workshop System has thirteen modules:
 * The feedback control is an attenuverter. At 12 o'clock it's off, 5 o'clock and 7 o'clock are maximum. Try both directions and use the one that sounds better for each pedal. 
 {% include linkedHeading.html heading="Amplifier" level=3 %}
 * Behind the panel is a piezo contact microphone. 
-* With nothing connected to input (⭡), the sound of that mic comes from the output (⭣) if you turn up the gain. 
+* With nothing connected to input (↑), the sound of that mic comes from the output (↓) if you turn up the gain. 
 * There's a choice amplifier circuits. 
     * Mic is the clean, contact mic optimised op-amp circuit from  [Mikrophonie](https://www.musicthing.co.uk/Mikrophonie/). It's often brighter and crisper. 
     * Lofi is the simple transistor amplifier from [Mini Drive](https://www.musicthing.co.uk/Mini-Drive/). It sounds great when overdriven. 
@@ -183,7 +183,7 @@ The Workshop System has thirteen modules:
 * A normal dynamic microphone like an SM58 works well through Amplifier. 
 {% include linkedHeading.html heading="4 Voltages" level=3 %}
 * Think of this as a Minimum Viable Keyboard. Use it to control other modules. 
-* At any point, there are four different voltages coming from the four outputs (⭣). They won't change unless you move the knob or push a button. 
+* At any point, there are four different voltages coming from the four outputs (↓). They won't change unless you move the knob or push a button. 
 * If you move the knob, all those four voltages will change. Some will go up, some will go down. If you move the knob back, they'll go back. 
 * If you press a different button, all those four voltages will change. Some will go up, some will go down. If you press the previous button, they'll go back. 
 * If you press several buttons together, they won't latch, but they will produce different voltages. 
@@ -193,11 +193,11 @@ The Workshop System has thirteen modules:
 {% include documentation_image.html filename="images/WS-filt-slope.jpg" caption="Filters, slopes and mix" %}
 * These are simple, classic 1970s-style filters, designed by [Philip Goulding / Godsbox](https://godsbox.co.uk/). 
 * One output is switchable band pass or high pass. The other is always low pass. 
-* The top filter output is connected to the bottom filter input. Set the top switch to high pass and patch the bottom output (⭣) to the mixer for the MS20 dual filter setup. 
+* The top filter output is connected to the bottom filter input. Set the top switch to high pass and patch the bottom output (↓) to the mixer for the MS20 dual filter setup. 
 {% include linkedHeading.html heading="Slopes" level=3 %}
 * These are versatile Voltage Controlled Slopes, loosely based on the [Serge VCS](https://www.timstinchcombe.co.uk/index.php?pge=vcs) circuit. 
 * In Loop mode they work like a low frequency oscillator, with the shape set by the left hand switch. 
-* Outside loop mode, they become an envelope generator. Patch a pulse from Computer to the input (⭡), set the shape switch to falling, and use the knob to set the decay time. 
+* Outside loop mode, they become an envelope generator. Patch a pulse from Computer to the input (↑), set the shape switch to falling, and use the knob to set the decay time. 
 * Short pulses can only really trigger Slopes in Falling mode. In Rise or Up/Down, they make the signal rise, but only as long at they're active — not very much. 
 * Slopes can also add glide or portamento to changing voltages, or work as a simple envelope follower. 
 * The top slope is linear, the bottom is exponential — so it responds faster. You can change both responses by cutting or closing traces on the back of the circuit board. 
