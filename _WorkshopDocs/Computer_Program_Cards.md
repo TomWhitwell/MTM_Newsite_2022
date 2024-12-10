@@ -44,6 +44,9 @@ Downloadable prototypes, experiments and proofs of concept that can be loaded on
 More work-in-progress program cards at the [Workshop Computer github](https://github.com/TomWhitwell/Workshop_Computer). 
  
 {% include linkedHeading.html heading="Computer FAQ" level=2 %}
+
+* **How do I know my Computer is working?** 
+	* The Computer has no software built into it before you insert a Program Card. No LEDs will flash, nothing will happen. If you connect the Computer to a laptop via USB with no card inserted, the chip itself will create a folder on the desktop called RPI-RP2. However, you cannot install any code on Computer without inserting a Program Card. 
 * **How do I use the program cards?** 
 	* Insert the card with the gold connector facing down (matching the white symbol below the card slot!). 
 	* Tap the little reset button next to the slot to load the program.  
@@ -61,7 +64,12 @@ More work-in-progress program cards at the [Workshop Computer github](https://gi
 	* Connect a USB-C cable from the front panel USB port to your computer. 
 	* Hold down the top button, then tap and release the bottom button next to the Program Card slot. If it doesn't appear, turn the Workshop System off and on and try again. 
 	* A folder called RPI-RP2 will appear on your desktop
-	* Drag the relevant .uf2 file onto the folder. The folder will disappear, and the firmware is updated.  
+	* Drag the relevant .uf2 file onto the folder. The folder will disappear, and the firmware is updated. 
+* **Can I power the Computer from the front panel USB socket?**
+    * Yes, the computer can draw power from the front panel USB socket even if the main Workshop System power is not connected. This might be useful when copying firmware onto cards. However, the LEDs and some of the CV outputs are powered from the main system, so don't expect the Computer to work fully without the System powered. 
+* **Can I power USB things from the front panel USB socket?**
+    * Yes, but the power available is limited to ~100mA. 
+    * I was able to power a Arturia Keystep, but anything that requires more than 100mA can cause the PSU to be overloaded, which can cause an audible whining noise. The PSU has over-heating protection, so it shouldn't be damaged, but avoid overloading it.  
 * **I've lost or damaged my program cards, can I get a replacement?** 
 	* Contact [Thonk Support](mailto:support@thonk.co.uk?subject=Workshop%20System%3A%20Lost%20Program%20Cards%20)  
 * **What is Computer, really?** 
