@@ -298,7 +298,7 @@ Bytebeats can also be "live-coded" through the web interface (bytebeat.html) and
 {% include linkedHeading.html heading="78 Talker" level=2 %}  
 By [Chris Johnson](https://www.instagram.com/chris.johnson074/)  
  
-**[Download Talker .uf2 file]() <-- update** [How to install](#computer-faq)  
+**[Download Talker .uf2 file](https://github.com/TomWhitwell/Workshop_Computer/raw/refs/heads/main/releases/78_Talker/uf2%20Installer/78_Talker.uf2)** [How to install](#computer-faq)  
 
 {% include linkedHeading.html heading="Instructions:" level=3 %} 
 
