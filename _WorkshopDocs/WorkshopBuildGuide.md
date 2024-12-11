@@ -187,7 +187,7 @@ Build your boards in this order:
 {% include documentation_image.html filename="images/WS_build_vco.jpg" caption="Assemble the board and fit it to the front panel before doing any soldering" %}
 * [VIDEO LINK: Building the VCO](https://www.youtube.com/watch?v=M3mMAsjv3QE&t=2427s)
 * PCB photos: 
-    * Bare: [Front](/images/VCO_Front.JPG) [Back](/images/VCO_back.JPG)  
+    * Bare: [Front](/images/VCO_Front.JPG) [Back](/images/VCO_Back.JPG)  
     * Populated: [Front](/images/VCO_pop_front.jpg ) [Back](/images/VCO_pop_back.jpg ) [Side](/images/VCO_pop_side.jpg )
 * Use this technique for all boards:
 * First, mount all the components on the PCB, without soldering anything (apart from the power header, which is already in place) 
