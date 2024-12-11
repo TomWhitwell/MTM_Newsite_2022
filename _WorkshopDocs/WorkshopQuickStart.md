@@ -217,6 +217,8 @@ The Workshop System has thirteen modules:
 * The Workshop System is designed to be open and hackable, there are many ways to modify it. 
 {% include documentation_image.html filename="images/VCF_back.JPG" caption="The backs of each PCB are marked to show normalisation points - connect these up with hook-up wire to make reversible connections" %}
 * **Normalisation** As you get used to the system and learn ways to use it, you may want to make permanent connections rather than using a patch cable every time. Most of the sockets have switched inputs. If you solder a connector to the switch input, the signal flows into the module *unless* a socked is plugged in. This is how the FM connectors on the Oscillators work. It's easy - and reversible - to add connections to the marked connections back of the PCB. Arrows out indicate outputs, arrows in indicate inputs. Solder a wire from an output to an input, and the connection is made. 
+
+{% include documentation_image.html filename="images/WS_jumpers.png" caption="Think of these jumpers as little switches, opened and closed by adding blobs of solder like the ones in green here, or cleaning those blobs off" %}
 * **Customisation points** There are several points on the PCB where you make changes to the circuits. 
     * Slopes: Normally, as shown on the panel, the top slope is linear, the bottom slope is exponential. There are points on the PCB where you can close or open circuits to change this. 
     * Filters: The Humpbpack Filters each contain two points to make their behaviour more extreme. Close the points with solder to experiment. 
