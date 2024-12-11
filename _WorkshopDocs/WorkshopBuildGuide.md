@@ -194,12 +194,14 @@ Build your boards in this order:
 	* Ensure all pots are of the correct type and value 
 	* There is one green socket on this board 
 	* Check the screw trimmers are correctly aligned. The gold screws are marked on the PCB. 
+{% include documentation_image.html filename="images/WS_VCO_Pot_Positions.jpg" caption="Check the pot positions are correct before soldering" %}
 * Before soldering, push the PCB and components onto the panel. Add a couple of nuts to metal pots and a few sockets. 
 * Check everything is in place: trimmers can all be turned, the little gold screws are through the holes in the panel.
 * Ensure the panel is parallel to the board.  
 * Solder one point on each component. At this point, it's still easy to move any parts that are wrong. Check again for placement. 
 * Once you're happy, go back and solder all the points. 
 * Double check! At this point I normally use a magnifier to check over all the solder points, touching up any that are blobby or missing. 
+<div style="clear: both;"></div>
 {% include linkedHeading.html heading="Building Computer" level=2 %}
 {% include documentation_image.html filename="images/WS_computer_build.jpg" caption="Check everything is parallel, that LEDs are lined up, and that the tiny solder points on the SD card holder look good" %}
 * [VIDEO LINK: Building the Computer](https://www.youtube.com/watch?v=M3mMAsjv3QE&t=3664s)
