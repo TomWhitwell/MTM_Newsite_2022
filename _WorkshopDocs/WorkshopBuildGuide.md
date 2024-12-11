@@ -201,7 +201,7 @@ Build your boards in this order:
 * Solder one point on each component. At this point, it's still easy to move any parts that are wrong. Check again for placement. 
 * Once you're happy, go back and solder all the points. 
 * Double check! At this point I normally use a magnifier to check over all the solder points, touching up any that are blobby or missing. 
-<div style="clear: both;"></div>
+<div style="clear: both;"></div>        
 {% include linkedHeading.html heading="Building Computer" level=2 %}
 {% include documentation_image.html filename="images/WS_computer_build.jpg" caption="Check everything is parallel, that LEDs are lined up, and that the tiny solder points on the SD card holder look good" %}
 * [VIDEO LINK: Building the Computer](https://www.youtube.com/watch?v=M3mMAsjv3QE&t=3664s)
@@ -213,7 +213,7 @@ Build your boards in this order:
 * The switch is an ON-OFF-MOM. Check that the alignment of the switch - the momentary side - is downward, as marked on the board. 
 * Use a bit of tape or blu-tack to line LEDs up to the panel before soldering 
 * Ensure the long LED legs go through the hole marked +. Don't rush it, it's annoying to fix later
-* The SD Card is a little fiddly. Maybe do this separately, after all the other components. Use a bit of tape or blu-takk to hold it in place. It has very small pins, be careful when soldering to avoid shorts from big solder blobs.
+* The SD Card is a little fiddly. Maybe do this separately, after all the other components. Use a bit of tape or blu-tack to hold it in place. It has very small pins, be careful when soldering to avoid shorts from big solder blobs.
 
 {% include linkedHeading.html heading="Building Mix" level=2 %}
 {% include documentation_image.html filename="images/WS_build_mix.jpg" caption="Build in two stages. Do the dense switches and LEDs after the sockets and pots are in place" %}
