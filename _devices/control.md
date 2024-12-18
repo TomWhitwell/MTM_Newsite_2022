@@ -18,6 +18,12 @@ mgrid: "https://www.modulargrid.net/e/music-thing-modular-control"
 schematic: "/collateral/control_schematic_1.2.pdf"
 
 yt:
+
+
+- 
+  link: "DF2raEQU9Zg"
+  title: "Hainbach using Control in his Small Wall of Test Equipment"
+
 - 
   link: "uJXkvtaTrFw"
   title: "Great build video from Synth DIY Guy"
@@ -27,9 +33,7 @@ yt:
 - 
   link: "vRWVPjUEyNo"
   title: "Short but lovely clip of Marcus Fischer playing a prototype Control"
-- 
-  link: "qm7WCuAJPtk"
-  title: "A lot of Control in this long clip from Boodaman"
+
 
 
 pars:
