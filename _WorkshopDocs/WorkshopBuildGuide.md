@@ -252,6 +252,7 @@ Build your boards in this order:
 
 {% include linkedHeading.html heading="Troubleshooting" level=2 %}
 If something isn't working...
+* **Do not poke anything metal onto powered PCBs** The PCBs contain hundreds of very small components, and in some places, +12V and -12V traces near components that can only handle +3.3V signals. If you try to test the boards with multimeter probes while the system is powered up, there is a significant risk you'll destroy components and/or the power supply board. If you're concerned that something doesn't work, contact support@thonk.co.uk and send photographs. 
 * **Slopes don't loop** If neither Slope loops, this is a sign that the USB power supply is not giving 15 volts, just 5 Volts or 9 Volts. Check with another supply. 
 * **Sometimes the Slope LEDs flicker when I touch the switch** I'm not completely sure why this happens, but it's normal.  
 * **An LED doesn't light** Most likely that LED is not properly soldered, or has been soldered the wrong way around. Inverted LEDs in Slopes behave very oddly. 
