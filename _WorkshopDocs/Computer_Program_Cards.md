@@ -242,7 +242,7 @@ Color - Y knob
 Toggle the switch down to switch between six oscilator shapes  
 Connect over USB and use the web editor to set the six available shapes from the 47 possibilities  
 
-[Printable quick start guide](https://github.com/TomWhitwell/Hello_Computer/blob/main/releases/10_twists/10%20Twists%20Card.pdf) 
+[Printable quick start guide](https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/10_twists/10%20Twists%20Card.pdf) 
 
 [Give feedback on Twists](https://github.com/TomWhitwell/Workshop_Computer/issues/new?labels=10+Twists&title=10+Twists+Feedback&body=Here+is+some+constructive+and+creative+feedback)  
 
@@ -252,7 +252,7 @@ Connect over USB and use the web editor to set the six available shapes from the
 
 {% include linkedHeading.html heading="08 Bytebeat" level=2 %}  
 by [Matt Kuebrich](https://github.com/MattKuebrich)  
-**[Download Bytebeat .uf2 file](https://github.com/TomWhitwell/Hello_Computer/raw/refs/heads/main/releases/08_bytebeat/uf2%20Installer/08_bytebeat.ino.uf2)** [How to install](#computer-faq)  
+**[Download Bytebeat .uf2 file](https://github.com/TomWhitwell/Workshop_Computer/raw/refs/heads/main/releases/08_bytebeat/uf2%20Installer/08_bytebeat.ino.uf2)** [How to install](#computer-faq)  
 
 <a href="/web_config/bytebeat.html" class="buy-btn">Launch the Bytebeat Web Editor</a>
 
