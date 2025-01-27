@@ -206,7 +206,7 @@ Build your boards in this order:
 {% include documentation_image.html filename="images/WS_computer_build.jpg" caption="Check everything is parallel, that LEDs are lined up, and that the tiny solder points on the SD card holder look good" %}
 * [VIDEO LINK: Building the Computer](https://www.youtube.com/watch?v=M3mMAsjv3QE&t=3664s)
 * PCB photos 
-    * Bare: [Front](/images/Computer_Front.JPG) [Back](/images/Computer_back.JPG) 
+    * Bare: [Front](/images/Computer_Front.JPG) [Back](/images/Computer_Back.JPG) 
     * Populated: [Front](/images/computer_pop_front.jpg ) [Back](/images/computer_pop_back.jpg ) [Side](/images/computer_pop_side.jpg )
 * Computer is built in exactly the same way, with a few different details 
 * There are two tactile pushbutton switches. They look the same, but one is 12mm long, the other 13mm. The shorter switch goes at the top, behind the main knob. 
@@ -219,7 +219,7 @@ Build your boards in this order:
 {% include documentation_image.html filename="images/WS_build_mix.jpg" caption="Build in two stages. Do the dense switches and LEDs after the sockets and pots are in place" %}
 * [VIDEO LINK: Building Mix](https://www.youtube.com/watch?v=M3mMAsjv3QE&t=4980s)
 * PCB photos
-    * Bare: [Front](/images/Mix_Front.JPG) [Back](/images/Mix_back.JPG)  
+    * Bare: [Front](/images/Mix_Front.JPG) [Back](/images/Mix_Back.JPG)  
     * Populated: [Front](/images/mix_pop_front.jpg )  [Side](/images/mix_pop_side.jpg )
 * This is a dense board, so maybe build it in two stages. 
     * First, assemble all the pots and sockets. 
