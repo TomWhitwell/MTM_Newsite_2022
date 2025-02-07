@@ -120,7 +120,10 @@ To get started, you need a power supply and some patch cables:
 * All modules have outputs: (↓)
 * Most modules have inputs: (↑) 
 * All inputs and outputs can be stacked with [stackables](https://tiptopaudio.com/stackcable/) or mults. For example, patch both oscillators into one filter and the two signals will be mixed. 
-* With ten patch cables, there are c. 1.5 × 10²¹ possible ways to patch the Workshop System. 
+* With ten patch cables, there are c. 1.5 × 10²¹ possible ways to patch the Workshop System, although only about 70,000 of those will make much sense. 
+* Document your patches on this [handy PDF patch sheet](../collateral/Workshop_patch_sheet_A4.pdf) (created by [Tom Tebby](https://www.instagram.com/tomtebby/))
+
+
 
 
 
