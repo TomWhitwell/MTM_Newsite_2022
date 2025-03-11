@@ -25,7 +25,16 @@ manual-text: "Workshop System Manual"
 
 ---
 
-![Music Thing Workshop System in a black case with some headphones](/images/900-workshopsystem-full-straight-headphones-colour-2.jpg)
+<picture>
+  <source srcset="/images/900-workshopsystem-full-straight-headphones-colour-2.webp" type="image/webp">
+  <img src="/images/900-workshopsystem-full-straight-headphones-colour-2.jpg" 
+       alt="Music Thing Workshop System in a black case with some headphones"
+       width="900" height="600" loading="lazy" style="width: 100%; height: auto;">
+</picture>
+
+
+
+
 
 
 <h1>	<homepage_body>Music Thing Modular Workshop System</homepage_body></h1>
@@ -53,8 +62,12 @@ To find out more about the Workshop System:
 * **Follow [@musicthingmodular on Instagram](https://www.instagram.com/musicthingmodular/)** 
 
 
-![Music Thing Workshop System being played in Cornwall](/images/900_jess_square.jpg)
-
+<picture>
+  <source srcset="/images/900_jess_square.webp" type="image/webp">
+  <img src="/images/900_jess_square.jpg" 
+       alt="Music Thing Workshop System being played in Cornwall"
+       width="900" height="900" loading="lazy" style="width: 100%; height: auto;">
+</picture>
 
 {% include linkedHeading.html heading="What is the Workshop System? " level=3 %}
 
@@ -70,7 +83,12 @@ The Workshop System was designed to be useful and open:
 * A system that works with things you already have. Plug in your phone, a drum machine, a laptop, guitar pedals or a microphone. 
 * A computer that uses tiny program cards that are completely hackable. Anyone who writes code can make, share, sell their creations — sequencers, effects, interfaces.  
 
-![Music Thing Workshop System Computer section](/images/900-computer_colour.jpg)
+<picture>
+  <source srcset="/images/900-computer_colour.webp" type="image/webp">
+  <img src="/images/900-computer_colour.jpg" 
+       alt="Music Thing Workshop System Computer section"
+       width="900" height="1200" loading="lazy" style="width: 100%; height: auto;">
+</picture>
 
 {% include linkedHeading.html heading="What's inside? " level=3 %}
 
@@ -88,7 +106,12 @@ The Workshop System has 14 modules:
 * **PSU** behind the panel is a power supply that runs on USB-C PD power or professional 15-25v barrel connectors. It works from battery powerbanks and laptop adaptors, most likely something you've already got at home. 
 
 
-![Music Thing Workshop System Computer section](/images/900_leftside_angle_1_small_color.jpg)
+<picture>
+  <source srcset="/images/900_leftside_angle_1_small_color.webp" type="image/webp">
+  <img src="/images/900_leftside_angle_1_small_color.jpg" 
+       alt="Music Thing Workshop System Computer section"
+       width="900" height="900" loading="lazy" style="width: 100%; height: auto;">
+</picture>
 
 {% include linkedHeading.html heading="Workshop System FAQ " level=3 %}
 
@@ -103,7 +126,12 @@ The Workshop System has 14 modules:
 
 
 
-![Music Thing Workshop System](/images/900-full-nocase.jpg)
+<picture>
+  <source srcset="/images/900-full-nocase.webp" type="image/webp">
+  <img src="/images/900-full-nocase.jpg" 
+       alt="Music Thing Workshop System"
+       width="900" height="622" loading="lazy" style="width: 100%; height: auto;">
+</picture>
 
 
 
