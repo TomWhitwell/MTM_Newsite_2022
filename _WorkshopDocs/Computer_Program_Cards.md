@@ -26,7 +26,7 @@ To find out about new program cards subscribe to the free [Workshop System Newsl
 
 **[00 Simple MIDI](#00-simple-midi)**    
 **[03 Turing Machine](#03-turing-machine)**  
-**[20 Reverb+]()**    
+**[20 Reverb+](#20-reverb)**    
 **[88 Blank 2mb](https://www.thonk.co.uk/shop/mtm-workshop-blank-card-set/)**     
 
 
