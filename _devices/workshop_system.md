@@ -25,6 +25,36 @@ manual-text: "Workshop System Manual"
 
 ---
 
+
+<div class="floating-book">
+  <a href="collateral/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book.pdf">
+    <picture>
+      <source srcset="/images/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book_200px.webp" type="image/webp">
+      <img src="/images/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book_200px.jpg" alt="Book Cover" width="50">
+    </picture>
+    <div class="book-text">
+      <span>Little Book: What Would Someone Like Me Do with a Tiny Modular Synth?</span>
+    </div>
+  </a>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let floatingBook = document.querySelector(".floating-book");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 100) { // Adjust 100px as needed
+            floatingBook.style.opacity = "0";
+            floatingBook.style.pointerEvents = "none"; // Prevent interaction
+        } else {
+            floatingBook.style.opacity = "1";
+            floatingBook.style.pointerEvents = "auto";
+        }
+    });
+});
+</script>
+
+
 <picture>
   <source srcset="/images/900-workshopsystem-full-straight-headphones-colour-2.webp" type="image/webp">
   <img src="/images/900-workshopsystem-full-straight-headphones-colour-2.jpg" 
