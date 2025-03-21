@@ -33,7 +33,7 @@ manual-text: "Workshop System Manual"
       <img src="/images/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book_200px.jpg" alt="Book Cover" width="50">
     </picture>
     <div class="book-text">
-      <span>Little Book: What Would Someone Like Me Do with a Tiny Modular Synth?</span>
+      <span>New Zine: What Would Someone Like Me Do with a Tiny Modular Synth?</span>
     </div>
   </a>
 </div>
