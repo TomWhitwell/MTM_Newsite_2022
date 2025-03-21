@@ -26,8 +26,8 @@ manual-text: "Workshop System Manual"
 ---
 
 
-<div class="floating-book">
-  <a href="collateral/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book.pdf">
+<div class="floating-book"> 
+  <a href="https://www.musicthing.co.uk/collateral/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book.pdf">
     <picture>
       <source srcset="/images/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book_200px.webp" type="image/webp">
       <img src="/images/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book_200px.jpg" alt="Book Cover" width="50">
