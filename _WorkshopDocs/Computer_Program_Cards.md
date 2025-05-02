@@ -54,22 +54,20 @@ More work-in-progress program cards at the [Workshop Computer github](https://gi
 	* Blank cards come with space to write two numbers, so this started as a way for developers to keep track of cards. 
 	* I'm not sure what will happen when we have 99 finished cards. 
 * **I can't connect to MIDI or the web editor** 
-	* I've seen two causes of connection problems. 
-	* Sometimes you need to cycle power, rather than just pressing reset, when connecting to a computer. You can also unplug and replug at the computer end of the USB cable. 
+	* **Always cycle power**, rather than just pressing reset, when connecting to a computer. This ensures that the Workshop Computer connects to the host computer.  
 	* Some USB-C cables are power only, and cannot transmit any data. If you have one of these I'd suggest labelling it or destroying it.  
 * **How do I write a blank program card?**
 	* You will have downloaded a .uf2 file. This is the firmware. 
 	* Pull off the main knob at the top of Computer (it's stiff at first, gets easier quickly). Behind it you'll see little button recessed into the panel. 
 	* Put the card you want to write into the card slot. Check it's the right one. Printed cards are not write protected, so you can write over a Reverb+ as easily as a Blank card. 
-	* Connect a USB-C cable from the front panel USB port to your computer. 
+	* Connect a USB-C cable from the front panel USB port to your computer. Cycle power on the Workshop System to ensure the Workshop Computer connects to the computer. 
 	* Hold down the top button, then tap and release the bottom button next to the Program Card slot. If it doesn't appear, turn the Workshop System off and on and try again. 
 	* A folder called RPI-RP2 will appear on your desktop
 	* Drag the relevant .uf2 file onto the folder. The folder will disappear, and the firmware is updated. 
 * **Can I power the Computer from the front panel USB socket?**
-    * Yes, the computer can draw power from the front panel USB socket even if the main Workshop System power is not connected. This might be useful when copying firmware onto cards. However, the LEDs and some of the CV outputs are powered from the main system, so don't expect the Computer to work fully without the System powered. 
+    * No, the computer cannot draw power from the front panel USB socket. (The first batch of Workshop Computers in 2024 could be powered from the front panel, but this is no longer true.)
 * **Can I power USB things from the front panel USB socket?**
     * Yes, but the power available is limited to ~100mA. 
-    * I was able to power a Arturia Keystep, but anything that requires more than 100mA can cause the PSU to be overloaded, which can cause an audible whining noise. The PSU has over-heating protection, so it shouldn't be damaged, but avoid overloading it.  
 * **I've lost or damaged my program cards, can I get a replacement?** 
 	* Contact [Thonk Support](mailto:support@thonk.co.uk?subject=Workshop%20System%3A%20Lost%20Program%20Cards%20)  
 * **What is Computer, really?** 
@@ -94,6 +92,7 @@ And it sends 8 channels of MIDI from the system, so  you can control the compute
 
 To connect to MIDI: 
 * Connect the front panel USB-C connection to a computer with a MIDI sequencer
+* Cycle power on the Workshop System to ensure that the Workshop Computer connects to your computer. 
 * Put the MIDI card into the Computer slot and press the little reset button next to the slot.
 * The LEDs should blink very briefly, then stop. The blinking means the card is looking for a computer, and it should find it almost immediately. 
 * If the LEDs keep blinking, the Computer has not connected over USB.
