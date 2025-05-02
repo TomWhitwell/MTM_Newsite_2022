@@ -160,6 +160,7 @@ In [this section of the build video](https://www.youtube.com/watch?v=M3mMAsjv3QE
 * Direction is very important. The long leg goes in the hole marked +.
 * You never need to bend out the LED legs, they always go into two pins next to each other.  
 * The LEDs have flat tops which should be flush with the panel. Use a piece of tape or blu-tack to line them up before soldering, and check twice before cutting off the legs. 
+* NB: from 2025 onwards, kits include three tiny plastic spacers to go on the three left-hand LEDs in Computer. These can protect the legs of those LEDs from short-circuits caused by stray patch cables. [How to install the LED spacers](#building-computer)
 
 {% include linkedHeading.html heading="Understanding sockets" level=3 %}
 * The Workshop System has two types of sockets: Black sockets which are mono, and green sockets which are stereo.  
@@ -204,11 +205,14 @@ Build your boards in this order:
 <div style="clear: both;"></div>        
 {% include linkedHeading.html heading="Building Computer" level=2 %}
 {% include documentation_image.html filename="images/WS_computer_build.jpg" caption="Check everything is parallel, that LEDs are lined up, and that the tiny solder points on the SD card holder look good" %}
+{% include documentation_image.html filename="images/WS_build_Computer_LED.jpg" caption="Add the little LED spacers - only on the LED legs nearest to the edge of the system" %}
+
 * [VIDEO LINK: Building the Computer](https://www.youtube.com/watch?v=M3mMAsjv3QE&t=3664s)
 * PCB photos 
     * Bare: [Front](/images/Computer_Front.JPG) [Back](/images/Computer_Back.JPG) 
     * Populated: [Front](/images/computer_pop_front.jpg ) [Back](/images/computer_pop_back.jpg ) [Side](/images/computer_pop_side.jpg )
 * Computer is built in exactly the same way, with a few different details 
+* **LED SPACERS** From 2025 on, kits include three tiny plastic LED spacers to protect the legs of the computer LEDs from stray patch cables. Add them to the three LEDs on the left hand side of Computer, close to the edge of the PCB. Orientation of the plastic covers doesn't matter, but be careful to put the long legs through the holes marked with +. 
 * There are two tactile pushbutton switches. They look the same, but one is 12mm long, the other 13mm. The shorter switch goes at the top, behind the main knob. 
 * The switch is an ON-OFF-MOM. Check that the alignment of the switch - the momentary side - is downward, as marked on the board. 
 * Use a bit of tape or blu-tack to line LEDs up to the panel before soldering 
