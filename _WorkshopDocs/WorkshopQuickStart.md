@@ -54,7 +54,7 @@ To get started, you need a power supply and some patch cables:
 * Most laptop-friendly adaptors, and most adaptors of 45 Watts or above can supply 15 Volts. 
 * Some adaptors for smartphones can only supply 5 Volts or 9 Volts. These will not work.    
 * Adaptors with only an old-style USB-A socket will not work, even with a USB-A to USB-C cable. 
-* Many recent MacBook chargers work well, but wattage is no guarantee that they will deliver the correct voltage. Many cheap Amazon adaptors for £15 also work well. Laptop-compatible power banks (usually £40 or more) work well. 
+* Recent (post 2020) MacBook chargers work well, but earlier Apple chargers (2015-2018) did not output 15V. Wattage is no guarantee that they will deliver the correct voltage. Many cheap Amazon adaptors for £15 also work well. Laptop-compatible power banks (usually £40 or more) work well. 
 * If the specifications say the adaptor or battery can supply 15 Volts, it should work. 
 * Some very cheap power supplies from Amazon and AliExpress work fine, but are electrically noisy - putting noise into the mains and ground circuits that might be audible when recording or playing over big speakers.
 * The following models have been tested with the Workshop System (late 2024):
