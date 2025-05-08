@@ -3,13 +3,13 @@
 layout: default
 output: false
 
-permalink: /Link_Page/
+permalink: /LinkInBio/
 
 ---
 
 <style>
   body {
-    background-color: #F0F8FF;
+    background-color: #fFfBf8;
   }
 </style>
 
