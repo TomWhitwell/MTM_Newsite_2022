@@ -1,0 +1,69 @@
+- order: 1
+  link: "https://www.thonk.co.uk/shop/workshop-system/"
+  text: "BUY"
+  desc: "Workshop System kits finally back in stock" 
+- order: 2
+  link: "https://www.thonk.co.uk/shop/music-thing-8mu/"
+  text: "BUY" 
+  desc: "8mu MIDI controller kits in stock" 
+
+- order: 3
+  link: "https://www.youtube.com/watch?v=YlDGwEaBheQ"
+  text: "Card: BYO Benjolin" 
+  desc: "Full demo" 
+
+- order: 3
+  link: "https://gist.github.com/TomWhitwell/48cefdd751ad5afcd8fac66f6b6762af"
+  text: "Retro AI graphics" 
+  desc: "Prompt & Code" 
+
+- order: 4
+  link: "https://www.youtube.com/watch?v=Jmn6AmzROg0" 
+  text: "8mu"
+  desc: "Don’t buy a modular synth, buy a MIDI controller"  
+  
+- order: 5
+  link: "https://www.thonk.co.uk/shop/mtm-workshop-blank-cards-16mb/"
+  text: "BUY"
+  desc: "16mb Program Cards now available" 
+
+
+- order: 8
+  link: "https://www.instagram.com/thesynthshed/?hl=en-gb"
+  text: "Soldering workshops in London" 
+
+- order: 9
+  link: "https://www.musicthing.co.uk/collateral/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book.pdf"
+  text: "Zine" 
+  desc: "What would someone like me do with a tiny modular synth?"
+
+
+- order: 10 
+  link: "https://www.soundonsound.com/reviews/music-thing-modular-workshop-system" 
+  text: "Sound on Sound" 
+  desc: "Workshop System Review" 
+
+- order: 19
+  link: "https://dyski.co/"
+  text: "Workshops & retreats" 
+  desc: "Join the Dyski mailing list for future events" 
+
+- order: 20
+  link: "https://www.youtube.com/@MusicThingModular"
+  text: "YouTube"
+  desc: "MTM channel" 
+- order: 21
+  link: "https://www.instagram.com/musicthingmodular/"
+  text: "Instagram"
+  desc: "MTM profile" 
+- order: 22
+  link: "https://workshopsystem.substack.com/"
+  text: "Substack"
+  desc: "Workshop System Mailing List" 
+- order: 24
+  link: "https://www.youtube.com/watch?v=tovrxnn-KLM"
+  text: "Why We Bleep"
+  desc: "Tom Whitwell x Mylar Melodies ep.7" 
+- order: 25
+  link: "mailto:tom@musicthing.co.uk ?subject=Ask%20Tom%20Anything" 
+  text: "Ask Tom Anything" 
