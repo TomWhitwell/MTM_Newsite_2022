@@ -10,7 +10,6 @@ categories: eurorack
 image: /images/simple-eq_600.png
 excerpt: "is a bit like a Seventies stereo. Two channels: One with bass & treble, one with tilt" 
 # overlay: "NEW"
-thonk-url: "https://www.thonk.co.uk/shop/music-thing-modular-simple-eq-full-kit/?utm_source=MTM&utm_campaign=simpleeq" 
 size: "4 HP"
 depth: "25mm"
 supply: "20mA"

@@ -9,7 +9,6 @@ categories: eurorack
 image: /images/spring2-expander_600.png 
 excerpt: " experimental flexibility" 
 # overlay: "NEW"
-thonk-url: "https://www.thonk.co.uk/shop/mtm-spring-expander-kit/?utm_source=MTM&utm_campaign=SpringExpander" 
 size: "3 HP"
 depth: "25mm"
 supply: "0mA"

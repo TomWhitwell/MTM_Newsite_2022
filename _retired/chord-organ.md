@@ -10,7 +10,6 @@ image: "/images/chord-organ_600.png"
 wide-image: "false" 
 excerpt: "is the easiest way to get chords from a modular synth" 
 # overlay: "NEW "
-thonk-url: "https://www.thonk.co.uk/shop/chordorgan/" 
 size: "4 HP"
 depth: "40mm"
 supply: "75mA"
@@ -43,6 +42,7 @@ yt:
 
 
 pars:
+- "Sadly Chord Organ is no longer available because it relied on the Teensy 3.2 microcontroller which is no longer made." 
 - "It's perfectly possible to create chords on a modular synth, but its a pain -  lots of tuning and messing about. I wanted to create something as simple as a home organ with chord buttons. Chord Organ is exactly that; the top knob chooses a chord shape, the bottom a root note."
 - The full story of Chord Organ, including how it was inspired by a Bontempi Organ found in the street, is in <a href=https://medium.com/music-thing-modular-notes/chord-organ-the-easiest-way-to-get-simple-chords-from-a-modular-synth-2f48684fdb9a>this article over on Medium</a>. 
 - "Chord Organ and Radio Music are identical modules; you can convert one to the other by installing new firmware over USB - <a href=https://medium.com/music-thing-modular-notes/chord-organ-the-easiest-way-to-get-simple-chords-from-a-modular-synth-2f48684fdb9a>details on how to install the firmware</a> - and go back just as easily."

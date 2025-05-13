@@ -4,15 +4,13 @@ permalink: /Radio-Music/
 
 order: 14
 designed: 2014
-updated: 2017
+updated: 2025
 title:  "Radio Music Eurorack Sampler Module"
 module-name: "Radio Music mk1"
 categories: eurorack
 image: /images/radio-music_600.png
 excerpt: "is a sampler pretending to be a radio, inspired by John Cage"
 # overlay: "NEW"
-
-thonk-url: "https://www.thonk.co.uk/shop/radio-music-full-diy-kit/?utm_source=MTM&utm_campaign=RadioMusic"
 
 side-desc: "DIY sample playback module"
 size: "4 HP"
@@ -42,6 +40,8 @@ yt:
 
 
 pars:
+
+- "Sadly Radio Music is no longer available because it relied on the Teensy 3.2 microcontroller which is no longer made." 
 - "Radio Music is a virtual radio module, so it behaves a bit like a radio. It is designed to be a source of unexpected audio, not a drum loop player or a sample mangler. That said, plenty of people enjoyed it for playing drum loops or mangling samples."
 - "Radio Music has been a popular DIY project since 2014, and has been used by <a href=https://twitter.com/chris_carter_/status/562889299621076993>Chris Carter</a>, <a href=https://twitter.com/russellhaswell/status/552213743363690496>Russell Haswell</a>, <a href=https://vimeo.com/150015591>Richard Devine</a>, and <a href=https://www.youtube.com/watch?v=mfrWxACXkzs>Robin Rimbaud</a>."
 - "In 2017, the module's firmware was completely rewritten and updated, bringing new features including pitch shifting, .wav file support and a new way to configure settings on the module. You can <a href=http://polyfather.com/radio_music/>download the latest firmware here</a>, which will run on any Radio Music module. "

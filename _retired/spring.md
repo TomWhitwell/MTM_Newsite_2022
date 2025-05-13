@@ -4,14 +4,14 @@ permalink: /Spring-Reverb/
 
 order: 18
 title:  "Spring Reverb DIY module for Eurorack Modular"
-module-name: "Spring"
+module-name: "Spring Reverb Mk2"
 designed: "2013"
-updated: "2017"
+updated: "2025"
 categories: eurorack
 image: /images/spring2_600.png
 excerpt: "is a fun, versatile spring reverb for modular" 
 # overlay: "NEW"
-thonk-url: "https://www.thonk.co.uk/shop/turingmkii/?utm_source=MTM" 
+
 size: "6 HP"
 depth: "44mm"
 supply: "75mA"
@@ -32,6 +32,7 @@ yt:
 
 
 pars: 
+- "Sadly Spring is no longer available for sale. RoHS regulations in UK/EU mean we can't sell vactrols, which contain cadmium." 
 - "Spring is a flexible, easy-to-build voltage controlled DIY mono spring reverb module. Traditional guitar reverbs are tuned to the sound of the guitar and the amplifier it is played through. This circuit is different; designed to be relatively clean and hi-fi, with a lot of bass response. "
 - "I wrote a longer piece about spring reverb and this module over on Medium: <a href=https://medium.com/music-thing-modular-notes/everything-i-know-about-spring-reverb-1fb4b32abf87>Everything I know about Spring Reverb</a>."
 - "The module works with either external electromechanical reverb tanks or a solid-state reverb 'brick' from Accutronics that fits on the back of the module."

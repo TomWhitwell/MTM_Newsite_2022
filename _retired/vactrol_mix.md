@@ -11,7 +11,6 @@ wide-image: "true"
 designed: "March 2015"
 excerpt: "random looping mix sequencer" 
 # overlay: "NEW"
-thonk-url: "https://www.thonk.co.uk/shop/vactrol-mix/?utm_source=MTM&utm_campaign=VactrolMix" 
 size: "10 HP"
 depth: "30mm"
 supply: "40mA"
@@ -20,6 +19,8 @@ github: "https://github.com/TomWhitwell/TuringMixExpander"
 schematic: "/collateral/VactrolMixSchematic.pdf"
 
 pars: 
+
+- "Sadly Vactrol Mix is no longer available for sale. RoHS regulations in UK/EU mean we can't sell vactrols, which contain cadmium." 
 
 - "This expander is 4 in, 2 out vactrol matrix mixer controlled by the Turing Machine, connected around the back by a 16 pin ribbon cable. "
 
