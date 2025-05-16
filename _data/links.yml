@@ -7,6 +7,16 @@
   text: "BUY" 
   desc: "8mu MIDI controller kits in stock" 
 
+- order: 2
+  link: "https://www.musicthing.co.uk/Workshop_Quick_Start/"
+  text: "Workshop System" 
+  desc: "Quick Start Guide"
+
+- order: 3
+  link: "https://www.musicthing.co.uk/Computer_Program_Cards/"
+  text: "Workshop System" 
+  desc: "Computer Guide & Github"
+
 - order: 3
   link: "https://www.youtube.com/watch?v=YlDGwEaBheQ"
   text: "Card: BYO Benjolin" 
@@ -27,7 +37,6 @@
   text: "BUY"
   desc: "16mb Program Cards now available" 
 
-
 - order: 8
   link: "https://www.instagram.com/thesynthshed/?hl=en-gb"
   text: "Soldering workshops in London" 
@@ -36,7 +45,6 @@
   link: "https://www.musicthing.co.uk/collateral/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book.pdf"
   text: "Zine" 
   desc: "What would someone like me do with a tiny modular synth?"
-
 
 - order: 10 
   link: "https://www.soundonsound.com/reviews/music-thing-modular-workshop-system" 
