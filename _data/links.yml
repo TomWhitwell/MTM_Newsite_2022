@@ -7,12 +7,18 @@
   text: "BUY" 
   desc: "8mu MIDI controller kits in stock" 
 
-- order: 2
+- order: 3
+  link: "https://www.musicthing.co.uk/Workshop_System_Build_Guide/"
+  text: "How hard " 
+  desc: "is it to build a Workshop System?"
+
+
+- order: 6
   link: "https://www.musicthing.co.uk/Workshop_Quick_Start/"
   text: "Workshop System" 
   desc: "Quick Start Guide"
 
-- order: 3
+- order: 6
   link: "https://www.musicthing.co.uk/Computer_Program_Cards/"
   text: "Workshop System" 
   desc: "Computer Guide & Github"
