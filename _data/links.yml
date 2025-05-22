@@ -7,11 +7,19 @@
   text: "BUY" 
   desc: "8mu MIDI controller kits in stock" 
 
-- order: 3
+- order: 12
   link: "https://www.musicthing.co.uk/Workshop_System_Build_Guide/"
   text: "How hard " 
   desc: "is it to build a Workshop System?"
+- order : 4
+  link: "https://tomwhitwell.bandcamp.com/album/shortwave-scan-may-2025"
+  text: "Free sample pack "
+  desc: "Shortwave Scan May 2025" 
 
+- order: 3
+  link: "https://dyski.co/Tom-Whitwell-Radio-Music"
+  text: "Radio Music "
+  desc: "Residency in Cornwall with Music Thing, November 2025"
 
 - order: 6
   link: "https://www.musicthing.co.uk/Workshop_Quick_Start/"
