@@ -49,6 +49,11 @@
   text: "Workshops & retreats" 
   desc: "Join the Dyski mailing list for future events" 
 
+- order: 18
+  link: "https://discord.gg/j79Dk88Dms"
+  text: "Discord"
+  desc: "The Workshop System Discord Group" 
+
 - order: 20
   link: "https://www.youtube.com/@MusicThingModular"
   text: "YouTube"
