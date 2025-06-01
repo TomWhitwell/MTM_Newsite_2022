@@ -13,28 +13,15 @@
   text: "Radio Music "
   desc: "Residency in Cornwall with Music Thing, November 2025"
 
-
 - order : 4
   link: "https://tomwhitwell.bandcamp.com/album/shortwave-scan-may-2025"
   text: "Free album / sample pack "
   desc: "Shortwave Scan May 2025" 
 
 - order: 5
-  link: "https://www.youtube.com/watch?v=Jmn6AmzROg0" 
-  text: "8mu"
-  desc: "Don’t buy a modular synth, buy a MIDI controller"  
-
-
-- order: 5
   link: "https://gist.github.com/TomWhitwell/48cefdd751ad5afcd8fac66f6b6762af"
   text: "Retro AI graphics" 
   desc: "Prompt & Code" 
-
-  
-- order: 5
-  link: "https://www.thonk.co.uk/shop/mtm-workshop-blank-cards-16mb/"
-  text: "BUY"
-  desc: "16mb Program Cards now available" 
 
 
 - order: 8
@@ -57,7 +44,6 @@
   text: "How hard " 
   desc: "is it to build a Workshop System?"
 
-
 - order: 26
   link: "https://dyski.co/"
   text: "Workshops & retreats" 
@@ -71,7 +57,7 @@
   link: "https://www.instagram.com/musicthingmodular/"
   text: "Instagram"
   desc: "MTM profile" 
-- order: 22
+- order: 3
   link: "https://workshopsystem.substack.com/"
   text: "Substack"
   desc: "Workshop System Mailing List" 
