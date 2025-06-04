@@ -15,14 +15,12 @@ title:  "Music Thing Workshop Computer and Program Cards"
  {% include documentation_image.html filename="images/900-computer_colour.jpg" caption="Computer runs on tiny program cards loaded by pushing the tiny button next to the card slot" %}
 Computer is a simple but capable music computer,  inspired by the early music studios like [EMS](https://www.facebook.com/BBCArchive/videos/383617947753333/) in London and [Bell Labs](https://www.youtube.com/watch?v=mT3U98cFqSs) where computers were used to control analog oscillators and filters, compose algorithmic music and generate waveforms. 
 
-Because it's 2024, Computer is powerful enough to do audio effects, sequencing and connecting with other devices over USB.  
+Computer is powerful enough to do audio effects, sequencing and connecting with other devices over USB.  
 
-Computer loads programs stored on tiny custom-made program cards, very slightly larger than Micro SD cards. It has three pairs of inputs and outputs: for Audio/CV, for precision control voltages for pitch, and for pulses. 
+Computer loads programs stored on tiny custom-made program cards slightly larger than Micro SD cards. It has three pairs of inputs and outputs: for Audio/CV, for precision control voltages for pitch, and for pulses. 
 
-To find out about new program cards subscribe to the free [Workshop System Newsletter](https://workshopsystem.substack.com/). 
+To find out about new program cards subscribe to the free [Workshop System Newsletter](https://workshopsystem.substack.com/), or join the [Workshop System Discord](https://discord.gg/j79Dk88Dms).  
 
-{% include linkedHeading.html heading="Available Program Cards" level=3 %}
- {% include documentation_image.html filename="images/MB_program_cards_all.png" caption="Cheat sheet for MIDI, Turing Machine and Reverb+" %}
 
 **[00 Simple MIDI](#00-simple-midi)**    
 **[03 Turing Machine](#03-turing-machine)**  
@@ -30,23 +28,40 @@ To find out about new program cards subscribe to the free [Workshop System Newsl
 **[88 Blank 2mb](https://www.thonk.co.uk/shop/mtm-workshop-blank-card-set/)**     
 
 
-{% include linkedHeading.html heading="Works in progress" level=3 %}
-Downloadable prototypes, experiments and proofs of concept that can be loaded onto blank cards. Expect weirdness, slim documentation, surprises and really interesting ideas.  
+{% include linkedHeading.html heading="Program Cards works in progress" level=3 %}
 
-**[Utility Pair](https://www.chris-j.co.uk/utility_pair/)** A magical library of simple apps that can be combined into custom-made program cards.🤯.  
+**[CLICK HERE TO LEARN HOW TO PROGRAM BLANK CARDS](https://youtube.com/shorts/fYTb38B0Wsc)**
 
-**[10 Twists](#10-twists)**  A versatile digital oscillator based on Émilie Gillet's Braids.  
+**[25 Utility Pair](https://www.chris-j.co.uk/utility_pair/)** A magical library of 25 great audio effects and utilities that can be combined into 625 different custom-made program cards.  
+
+**[42 Backyard Rain](https://github.com/briandorsey/mtmws_cards/tree/main/backyard_rain)** A cozy rain ambience mix for background listening, playing rain ambience which was recorded in Brian's backyard.
+
+**[11 Goldfish](https://www.youtube.com/watch?v=pdzMC6afrHY)** Goldfish is a fantastic looper / sequencer card, designed in a very modular, patchy way. Really turns the WS into a different instrument. Download link in the video description. 
+
+**[10 Twists](#10-twists)**  A versatile digital oscillator based on Émilie Gillet's Braids. 
+
+**[37 Compulidean](https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/37_compulidean)** is a very fun Euclidean Sequencer which also features the Workshop System’s first drum machine, with gnarly 808 samples.
+
+**[55 Fifths](https://www.youtube.com/watch?v=xdUCDX7FmOA)** a fantastically melodic and quirky quantizer, pitch and pulse sequencer and VCA (Download link in the video description).
 
 **[08 Bytebeat](#08-bytebeat)**  For generating and mangling rhythmic and melodic bytebeats.  
 
+**[38 OD](https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/38_od)** is a loopy chaotic modulator with fantastically deep documentation. 
+
+**[53 Glitter](https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/53_glitter)** is a stereo granular looper with a very cool video demo featuring a Yamaha Remie. 
+
 **[78 Talker](#78-talker)**  An early proof of concept: Computer talks like a Speak & Spell.
+
+**[12 AM Coupler](https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/12_am_coupler)** Please do not attempt to use this card. It is illegal in most states. 
    
 More work-in-progress program cards at the [Workshop Computer github](https://github.com/TomWhitwell/Workshop_Computer). 
  
+ 
+{% include linkedHeading.html heading="Included Program Cards" level=3 %}
+ {% include documentation_image.html filename="images/MB_program_cards_all.png" caption="Cheat sheet for MIDI, Turing Machine and Reverb+" %}
+
 {% include linkedHeading.html heading="Computer FAQ" level=2 %}
 
-* **How do I know my Computer is working?** 
-	* The Computer has no software built into it before you insert a Program Card. No LEDs will flash, nothing will happen. If you connect the Computer to a laptop via USB with no card inserted, the chip itself will create a folder on the desktop called RPI-RP2. However, you cannot install any code on Computer without inserting a Program Card. 
 * **How do I use the program cards?** 
 	* Insert the card with the gold connector facing down (matching the white symbol below the card slot!). 
 	* Tap the little reset button next to the slot to load the program.  
@@ -57,6 +72,7 @@ More work-in-progress program cards at the [Workshop Computer github](https://gi
 	* **Always cycle power**, rather than just pressing reset, when connecting to a computer. This ensures that the Workshop Computer connects to the host computer.  
 	* Some USB-C cables are power only, and cannot transmit any data. If you have one of these I'd suggest labelling it or destroying it.  
 * **How do I write a blank program card?**
+	* [This video explains how to write blank cards in three minutes](https://youtube.com/shorts/fYTb38B0Wsc)
 	* You will have downloaded a .uf2 file. This is the firmware. 
 	* Pull off the main knob at the top of Computer (it's stiff at first, gets easier quickly). Behind it you'll see little button recessed into the panel. 
 	* Put the card you want to write into the card slot. Check it's the right one. Printed cards are not write protected, so you can write over a Reverb+ as easily as a Blank card. 
