@@ -106,7 +106,7 @@ title: "Music Thing Workshop: Name Your Price"
       const subject = encodeURIComponent("Naming my price");
       const body = encodeURIComponent(`Hello, 
       
-I'd like to buy a ${label} for £${val}. 
+I'd like to buy 1 x ${label} for £${val}. 
 
 I understand that assembled systems are built to order.
 
