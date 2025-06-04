@@ -1,3 +1,8 @@
+- order: 0
+  link: "https://www.musicthing.co.uk/NYP/"
+  text: "NEW:"
+  desc: "Workshop System NAME YOUR PRICE" 
+
 - order: 1
   link: "https://www.thonk.co.uk/shop/workshop-system/"
   text: "BUY"
