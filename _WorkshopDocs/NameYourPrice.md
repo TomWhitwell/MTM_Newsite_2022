@@ -75,18 +75,18 @@ title: "Music Thing Workshop: Name Your Price"
 </div>
 
 <div class="nyp-wrapper">
-  <picture>
+  <a href="https://www.musicthing.co.uk/workshopsystem/"><picture>
     <source srcset="/images/900_workshopsystem-side_full.webp" type="image/webp">
     <img src="/images/900_workshopsystem-side_full.jpg" 
          alt="Music Thing Workshop System Side View" 
          width="900" height="622" 
          loading="lazy" 
          style="width: 100%; height: auto;">
-  </picture>
+  </picture></a>
 
   <div id="price">£650</div>
   <input type="range" min="99" max="950" value="650" id="fader">
-  <div id="status">Full DIY Kit</div>
+  <a href="https://www.musicthing.co.uk/workshopsystem/"><div id="status">Full DIY Kit</div></a>
   <a id="buyButton" href="" target="_blank">BUY FOR THIS PRICE</a>
 </div>
 
