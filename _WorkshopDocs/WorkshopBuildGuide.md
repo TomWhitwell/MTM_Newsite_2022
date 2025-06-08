@@ -209,7 +209,7 @@ Build your boards in this order:
 
 * [VIDEO LINK: Building the Computer](https://www.youtube.com/watch?v=M3mMAsjv3QE&t=3664s)
 * PCB photos 
-    * Bare: [Front](/images/Computer_Front.JPG) [Back](/images/Computer_Back.JPG) 
+    * Bare: [Front](/images/Computer_Front.JPG) [Back](/images/Computer_back.JPG) 
     * Populated: [Front](/images/computer_pop_front.jpg ) [Back](/images/computer_pop_back.jpg ) [Side](/images/computer_pop_side.jpg )
 * Computer is built in exactly the same way, with a few different details 
 * **LED SPACERS** From 2025, kits include three tiny plastic spacers to protect the legs of Computer LEDs. Add them to the LEDs on the left hand side of Computer, close to the edge of the PCB. Orientation of the plastic spacers doesn't matter, but be careful to still put the long legs through the holes marked with +. 
