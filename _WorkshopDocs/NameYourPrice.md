@@ -1,4 +1,4 @@
----
+o---
 layout: documentation
 output: false
 page-name: "Workshop System: Name your price" 
@@ -69,7 +69,7 @@ title: "Music Thing Workshop: Name Your Price"
   color: #000;
 }
 </style>
-  <div id="status"><a href="https://www.thonk.co.uk/shop/workshop-system/">Buy the Workshop System at Thonk</a><\div>  
+  <div id="status"><a href="https://www.thonk.co.uk/shop/workshop-system/">Buy the Workshop System at Thonk</a></div>  
 {% raw %}
 <script>
   const fader = document.getElementById('fader');
