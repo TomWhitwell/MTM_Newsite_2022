@@ -85,7 +85,6 @@ title: "Music Thing Workshop: Name Your Price"
 
 
  <div id="status"><a href="https://www.thonk.co.uk/shop/workshop-system/">Buy the Workshop System at Thonk</a></div>  
-</div>
 
 
 {% raw %}
