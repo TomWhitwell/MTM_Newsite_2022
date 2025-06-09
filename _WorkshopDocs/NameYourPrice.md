@@ -9,4 +9,4 @@ title: "Music Thing Workshop: Name Your Price"
 
 The name your price experiment is now complete.  
 
-You can still [Buy a Workshop System at Thonk](https://www.thonk.co.uk/shop/workshop-system/).
+You can [learn more about the Workshop System here](https://www.musicthing.co.uk/workshopsystem/).
