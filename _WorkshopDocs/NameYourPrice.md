@@ -7,6 +7,6 @@ order: 2
 title: "Music Thing Workshop: Name Your Price"
 ---
 
-The name your price experiment has now finished.  
+The name your price experiment is now complete.  
 
 You can still [Buy a Workshop System at Thonk](https://www.thonk.co.uk/shop/workshop-system/).
