@@ -1,4 +1,4 @@
-o---
+---
 layout: documentation
 output: false
 page-name: "Workshop System: Name your price" 
