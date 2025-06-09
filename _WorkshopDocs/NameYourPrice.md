@@ -69,7 +69,25 @@ title: "Music Thing Workshop: Name Your Price"
   color: #000;
 }
 </style>
-  <div id="status"><a href="https://www.thonk.co.uk/shop/workshop-system/">Buy the Workshop System at Thonk</a></div>  
+ 
+<div class="nyp-wrapper">
+
+  <picture>
+    <source srcset="/images/900_workshopsystem-side_full.webp" type="image/webp">
+    <img src="/images/900_workshopsystem-side_full.jpg" 
+         alt="Music Thing Workshop System Side View" 
+         width="900" height="622" 
+         loading="lazy" 
+         style="width: 100%; height: auto;">
+  </picture>
+
+
+
+
+ <div id="status"><a href="https://www.thonk.co.uk/shop/workshop-system/">Buy the Workshop System at Thonk</a></div>  
+</div>
+
+
 {% raw %}
 <script>
   const fader = document.getElementById('fader');
