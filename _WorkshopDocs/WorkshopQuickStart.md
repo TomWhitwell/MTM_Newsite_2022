@@ -15,7 +15,7 @@ title:  "Music Thing Workshop System Quick Start Guide"
  
 https://youtu.be/HuTmDyN0_gE
   
-{% include documentation_image.html filename="images/900_workshopsystem-side_full.jpg" caption="The Workshop System is most comfortable inside it's little case..." %}
+{% include documentation_image.html filename="images/900_workshopsystem-side_full.jpg" caption="The Workshop System is most comfortable inside its little case..." %}
  * **[Power and connections](#1-power-and-connections)**  
 	* [Power supply](#power-supply)
 	* [Patch cables](#patch-cables)
