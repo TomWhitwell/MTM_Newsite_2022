@@ -1,6 +1,7 @@
 ---
 layout: documentation
 output: false
+hide: true
 page-name: "Workshop System: Name your price" 
 permalink: "/NYP/"
 order: 2

@@ -29,7 +29,7 @@ layout: default
   {% for collection in site.collections %}
     {% for post in site[collection.label] %}
 
-    {% unless post.published == false %}
+    {% unless post.published == false or post.hide == true %}
 
     <li><a href={{ site.url }}{{ post.url  | relative_url  }}>{{ post.title}}</li>
     {% endunless %}
