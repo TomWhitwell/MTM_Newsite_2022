@@ -1,8 +1,12 @@
-- order: 
+- order: 1
   link: "https://www.thonk.co.uk/shop/music-thing-modular-workshop-system-brighton-build-session-june-28th-2025/"
   text: "Build a Workshop System with Tom" 
   desc: "in Brighton, 28th June 2025"
 
+- order: 0
+  link: "https://youtu.be/ABbWmZOtmig"
+  text: "Mylar Melodies" 
+  desc: "Workshop System full video demo"
 
 - order: 4
   link: "https://www.thonk.co.uk/shop/mtm-control/"
