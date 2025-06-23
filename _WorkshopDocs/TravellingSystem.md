@@ -41,6 +41,7 @@ This is what you should do now:
 - Try [The Computer module](https://www.musicthing.co.uk/Computer_Program_Cards/) with the little program cards. 
 - Watch the [Mylar Melodies Demo Video](https://www.youtube.com/watch?v=ABbWmZOtmig) to see what else 
 you can do. 
+- I love it, can I keep it? No, you can [buy a kit from Thonk](https://www.thonk.co.uk/shop/workshop-system/) or [ask them to build you one](mailto:support@thonk.co.uk ?subject=I%20have%20a%20loan%20system%2C%20can%20you%20build%20me%20a%20readymade%20system%3F%20). 
 
 
 
