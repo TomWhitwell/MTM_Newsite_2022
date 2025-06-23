@@ -12,6 +12,15 @@ title:  "Tiny Travelling Modular Synths"
 ---
 
 # Tiny Travelling Modular Synth 
+<picture>
+  <source srcset="/images/TravellingSynth.webp" type="image/webp">
+  <img src="/images/TravellingSynth.jpg" 
+       alt="Music Thing Workshop System Travelling Synth"
+       width="900" height="900" loading="lazy" style="width: 100%; height: auto;">
+</picture>
+
+
+
 <br>
 Congratulations, you're on this page because some nice person has lent you a Music Thing Modular Workshop System.  
 
@@ -19,13 +28,14 @@ This is what you should do now:
 
 - **Play it** - for a couple of weeks. 
 - **Share it** - photo, video, audio - please tag [@musicthingmodular](https://www.instagram.com/musicthingmodular/)
-- **Pass it on** - to someone who will enjoy it. Ideally, do this face-to-face so you can explain the system to them. 
+- **Pass it on** - to someone who will enjoy it. Do this face-to-face so you can explain it all. 
 
 
 ## How to get started
 - Write your name in the log in the case
 - Please [DM](https://www.instagram.com/musicthingmodular/) or [email](mailto:tom@musicthing.co.uk?subject=Travelling%20System) me - I want to see where they've got to. 
 - The green cable pouch contains an international power supply and a USB-C cable: Gently pull the Workshop System out of it's case and **use the USB-C connector on the back** to power the system - the one on the Computer Module won't power the system. 
+- [EASY visual quickstart guide](../collateral/Workshop_System_Quickstart_May2025.pdf) 
 - Make [Your First Patch](https://www.musicthing.co.uk/Workshop_Quick_Start/#your-first-patch).
 - Read the [Quick Start Guide](https://www.musicthing.co.uk/Workshop_Quick_Start/).
 - Try [The Computer module](https://www.musicthing.co.uk/Computer_Program_Cards/) with the little program cards. 
@@ -52,5 +62,6 @@ The pouch contains:
 
 
 
-Have fun, 
-Tom Whitwell, Music Thing Modular 
+Have fun with it, don't hesitate to ask if you have any questions,   
+Tom Whitwell,   
+Music Thing Modular  
