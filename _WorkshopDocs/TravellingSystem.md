@@ -66,3 +66,5 @@ The pouch contains:
 Have fun with it, don't hesitate to ask if you have any questions,   
 Tom Whitwell,   
 Music Thing Modular  
+
+ps. This project was partly inspired by [The Great Internet Migratory Box of Electronics Junk](https://hackaday.com/2008/06/27/the-great-internet-migratory-box-of-electronics-junk/)
