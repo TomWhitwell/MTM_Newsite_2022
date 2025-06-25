@@ -22,7 +22,7 @@ title:  "Tiny Travelling Modular Synths"
 
 
 <br>
-Congratulations, you're on this page because some nice person has lent you a Music Thing Modular Workshop System.  
+**Congratulations**, you're on this page because some nice person has lent you a Music Thing Modular Workshop System.  
 
 This is what you should do now: 
 
@@ -30,6 +30,9 @@ This is what you should do now:
 - **Share it** - photo, video, audio - please tag [@musicthingmodular](https://www.instagram.com/musicthingmodular/)
 - **Pass it on** - to someone who will enjoy it. Do this face-to-face so you can explain it all. 
 
+
+## What is this thing? What does it do? 
+https://www.youtube.com/watch?v=ABbWmZOtmig
 
 ## How to get started
 - Write your name in the log in the case
