@@ -113,12 +113,7 @@ The Workshop System was designed to be useful and open:
 * A system that works with things you already have. Plug in your phone, a drum machine, a laptop, guitar pedals or a microphone. 
 * A computer that uses tiny program cards that are completely hackable. Anyone who writes code can make, share, sell their creations — sequencers, effects, interfaces.  
 
-<picture>
-  <source srcset="/images/900-computer_colour.webp" type="image/webp">
-  <img src="/images/900-computer_colour.jpg" 
-       alt="Music Thing Workshop System Computer section"
-       width="900" height="1200" loading="lazy" style="width: 100%; height: auto;">
-</picture>
+https://www.youtube.com/watch?v=ABbWmZOtmig
 
 {% include linkedHeading.html heading="What's inside? " level=3 %}
 
