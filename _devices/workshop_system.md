@@ -26,14 +26,14 @@ manual-text: "Workshop System Manual"
 ---
 
 
-<div class="floating-book"> 
-  <a href="https://www.musicthing.co.uk/collateral/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book.pdf">
+<div class="floating-book">
+  <a href="https://www.youtube.com/watch?v=ABbWmZOtmig">
     <picture>
-      <source srcset="/images/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book_200px.webp" type="image/webp">
-      <img src="/images/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book_200px.jpg" alt="Book Cover" width="50">
+      <source srcset="/images/MylarThumbnail_video_200px.webp" type="image/webp">
+      <img src="/images/MylarThumbnail_video_200px.jpg" alt="Book Cover" width="50">
     </picture>
     <div class="book-text">
-      <span>New Zine: What Would Someone Like Me Do with a Tiny Modular Synth?</span>
+      <span>New Video: Mylar Melodies in-depth demo of the Workshop System</span>
     </div>
   </a>
 </div>
@@ -84,6 +84,7 @@ At present, it is [available exclusively as a DIY kit from Thonk](https://www.th
 
 
 To find out more about the Workshop System:  
+* **[Zine: What Would Someone Like Me Do with a Tiny Modular Synth?](/collateral/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book.pdf)** 
 * **[Workshop System Quick Start Guide](/Workshop_Quick_Start/)** 
 * **[Computer and Program Card Guide](/Computer_Program_Cards/)** 
 * **[Build and construction Guide](/Workshop_System_Build_Guide/)**   
