@@ -218,9 +218,8 @@ Eight parameters are controlled by this interface:
 Additional sentences appear as needed to set options for the internal clocks, Turing Machine or Bernoulli gate.
 
 **Configuration notes:**
-* The configuration interface and MIDI input connect through USB. The Reverb+ card can act as either as a USB MIDI device (which is connected to USB MIDI host, such as a laptop) or as a USB MIDI host (connected to a USB MIDI device, such as an Android phone or MIDI controller/keyboard).
-    * Workshop Systems made in 2025 onwards will autodetect the whether the card should act as host or device at power on. On workshop systems from 2024, the switch position at startup sets this behaviour: switch up means USB host, switch in middle position means USB device.
-    * The configuration interface can be accessed through an Android phone or tablet using the Chrome browser. You may need to go to `Android Settings` -> `Default USB Configuration` and select `MIDI`. Connect the Android device when the Workshop System is powered off, then turn on the Workshop System power.
+* The configuration interface and MIDI input connect through USB. The Reverb+ card acts as a USB MIDI device (which is connected to USB MIDI host, such as a laptop). On Workshop System Computers made in 2025 onwards (PCB revision >= 1.1), it can also act as a USB MIDI host (connected to a USB MIDI device, such as an Android phone or MIDI controller/keyboard). Such Computers will autodetect the whether the card should act as host or device at power on.
+    * When in USB host mode, the configuration interface can be accessed through an Android phone or tablet using the Chrome browser. You may need to go to `Android Settings` -> `Default USB Configuration` and select `MIDI`. Connect the Android device when the Workshop System is powered off, then turn on the Workshop System power.
 * MIDI note pitches use CV output calibration set by the 00 Simple MIDI card.
 * Pulse outputs have gate and trigger mode: the trigger mode generates a ~2ms pulse at a rising edge of the chosen gate source, useful for triggering the Slopes module on the Workshop System.
 * The clock dividers for each output are independent (not synchronised)
