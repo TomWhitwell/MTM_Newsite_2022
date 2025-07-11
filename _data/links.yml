@@ -2,6 +2,9 @@
   link: "https://youtu.be/ABbWmZOtmig"
   text: "Mylar Melodies" 
   desc: "Workshop System full video demo"
+  
+  
+  
 
 - order: 4
   link: "https://www.thonk.co.uk/shop/mtm-control/"
@@ -11,7 +14,14 @@
 - order: 1
   link: "https://www.thonk.co.uk/shop/workshop-system/"
   text: "BUY"
-  desc: "Workshop System kits finally back in stock" 
+  desc: "Workshop System kits in stock at Thonk" 
+
+
+- order: 1
+  link: "https://www.exploding-shed.com/music-thing-modular-workshop-system/100949/"
+  text: "BUY"
+  desc: "Workshop System kits in stock at Exploding Shed" 
+
   
 - order: 2
   link: "https://www.thonk.co.uk/shop/music-thing-8mu/"
