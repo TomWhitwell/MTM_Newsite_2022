@@ -16,6 +16,16 @@
   text: "BUY"
   desc: "Workshop System kits in stock at Thonk" 
 
+- order: 5
+  link: "https://davidstelfox.bandcamp.com/album/headland"
+  text: "Read"
+  desc: "David Stelfox's book and album Headland" 
+
+- order: 5
+  link: "https://davidstelfox.bandcamp.com/album/headland"
+  text: "Read"
+  desc: "David Stelfox's book and album Headland" 
+
 
 - order: 1
   link: "https://www.exploding-shed.com/music-thing-modular-workshop-system/100949/"
@@ -28,17 +38,17 @@
   text: "BUY" 
   desc: "8mu MIDI controller kits in stock" 
 
-- order: 3
+- order: 0
   link: "https://dyski.co/Tom-Whitwell-Radio-Music"
   text: "Radio Music "
   desc: "Residency in Cornwall, November 2025"
 
-- order : 4
+- order : 8
   link: "https://tomwhitwell.bandcamp.com/album/shortwave-scan-may-2025"
   text: "Free album / sample pack "
   desc: "Shortwave Scan May 2025" 
 
-- order: 5
+- order: 12
   link: "https://gist.github.com/TomWhitwell/48cefdd751ad5afcd8fac66f6b6762af"
   text: "Retro AI graphics" 
   desc: "Prompt & Code" 
