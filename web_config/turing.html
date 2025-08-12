@@ -8,10 +8,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
 
-
-
-
-
 	<style>
 	  body
 	  {
@@ -181,10 +177,39 @@ h3 {
 	  font-size:15px;
     display: inline;
 }
-
 	</style>
 
+  <!-- Redirect to the MIDI editor if any MIDI device is available -->
+  <script>
+  (() => {
+    const midiURL = "turing2.html";
+    if (!("requestMIDIAccess" in navigator)) return;
 
+    function tryRedirect(access) {
+      const hasDevices = access.inputs.size || access.outputs.size;
+      if (hasDevices) {
+        location.replace(midiURL);
+        return true;
+      }
+      // Watch briefly for hot-plugged devices
+      const timer = setTimeout(() => (access.onstatechange = null), 3000);
+      access.onstatechange = () => {
+        if (access.inputs.size || access.outputs.size) {
+          clearTimeout(timer);
+          location.replace(midiURL);
+        }
+      };
+      return false;
+    }
+
+    navigator.requestMIDIAccess({ sysex: true })
+      .then(access => tryRedirect(access))
+      .catch(() => {
+        // Retry without sysex if the first call was blocked
+        navigator.requestMIDIAccess().then(access => tryRedirect(access));
+      });
+  })();
+  </script>
 </head>
 <body>
   <div id="content">
@@ -525,10 +550,6 @@ function initializeButtonListeners() {
 }
 
     document.getElementById('connect').addEventListener('click', connectToSerial);
-
-
-
-
 
     navigator.serial.addEventListener('disconnect', (event) => {
       if (port === event.target) {
