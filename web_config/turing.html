@@ -231,8 +231,63 @@ h3 {
   </p>
 
   <button id="connect">Connect to MTM Computer (RP2040)</button>
-  <br><br><br>
+  <br><br>
 
+
+<div id="tmwc-download"></div>
+<script>
+(function () {
+  // Create (or find) the container
+  var container = document.getElementById('tmwc-download');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'tmwc-download';
+    document.body.appendChild(container);
+  }
+
+  // Make the button element up front (so we can still show a fallback if fetch fails)
+  var btn = document.createElement('a');
+  btn.href = 'https://github.com/TomWhitwell/Turing_Machine_Workshop_Computer/releases';
+  btn.textContent = 'A new Turing Machine program card is now available: Download';
+  btn.style.backgroundColor = '#000';
+  btn.style.color = '#fff';
+  btn.style.border = '1px solid #d4af37'; // gold-ish
+  btn.style.padding = '8px 12px';
+  btn.style.textDecoration = 'none';
+  btn.style.borderRadius = '6px';
+  btn.style.fontFamily = 'system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif';
+  btn.style.display = 'inline-block';
+  btn.style.lineHeight = '1.2';
+  btn.setAttribute('role', 'button');
+
+  container.appendChild(btn);
+
+  // Fetch latest release tag and update the label
+  var apiUrl = 'https://api.github.com/repos/TomWhitwell/Turing_Machine_Workshop_Computer/releases/latest';
+  fetch(apiUrl)
+    .then(function (resp) {
+      if (!resp.ok) throw new Error('GitHub API ' + resp.status);
+      return resp.json();
+    })
+    .then(function (data) {
+      var tag = (data && (data.tag_name || data.name)) || '';
+      if (tag) {
+        btn.textContent = 'A new Turing Machine program card is now available: Download ' + tag;
+      } else {
+        btn.textContent = 'A new Turing Machine program card is now available: Download (latest release)';
+      }
+    })
+    .catch(function (err) {
+      // Keep the fallback label; log the issue for debugging
+      console.error('Could not load latest release:', err);
+      btn.textContent = 'Download (releases)';
+    });
+})();
+</script>
+
+
+
+  <br>
   <br>
   <div id="saveslots">
   <b>Z Switch Up:</b><br>
