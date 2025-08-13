@@ -4,18 +4,25 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Turing Machine Editor</title>
-  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/osp-din" type="text/css"/>
-  
-  
-  <style>
+<style>
   :root {
     --bg: #000;
     --text: #fff;
     --accent: #d4af37;
   }
 
+@font-face {
+  font-family: 'OSPDIN';
+  src: url('OSPDINDIN.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
   body {
-    font-family: 'OSPDINDIN','OSP-DIN', 'DIN Alternate', 'DIN', Arial, sans-serif; 
+font-family: 'OSPDIN', 'DIN Next', 'DIN Alternate', 'DIN Condensed',
+             'Franklin Gothic Medium', 'Segoe UI', 'Roboto', 'Helvetica Neue',
+             Arial, sans-serif;
     background-color: var(--bg);
     color: var(--text);
     margin: 0;
@@ -210,7 +217,16 @@
 }
 
   
-  
+  @media (max-width: 450px)
+{
+    body { padding: 1rem;}
+    .config-grid {gap: 1.4rem 0.7rem;}
+    button { padding: 0.4em 0.6em; }
+    .field-cell {gap: 0.3rem;}
+    visualiser { padding: 0.5em 0.9em;}
+    .field-label {padding-left: 0.7rem;}
+}
+x
   
   </style>
 </head>
@@ -333,7 +349,17 @@
       configEl.style.display = "none";
     } else {
       const previouslyDisconnected = !midiOutput;
-      midiOutput = outputs[0];
+      
+      for (var i=0; i<outputs.length; i++)
+{
+    if (outputs[i].name.includes("MTMComputer"))
+    {
+        midiOutput = outputs[i];
+        break;
+    }
+}
+
+      
       errorEl.style.display = "none";
       configEl.style.display = "grid";
       if (previouslyDisconnected) sendConfigRequest();
