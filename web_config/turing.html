@@ -179,37 +179,50 @@ h3 {
 }
 	</style>
 
-  <!-- Redirect to the MIDI editor if any MIDI device is available -->
-  <script>
-  (() => {
-    const midiURL = "turing2.html";
-    if (!("requestMIDIAccess" in navigator)) return;
 
-    function tryRedirect(access) {
-      const hasDevices = access.inputs.size || access.outputs.size;
-      if (hasDevices) {
-        location.replace(midiURL);
-        return true;
-      }
-      // Watch briefly for hot-plugged devices
-      const timer = setTimeout(() => (access.onstatechange = null), 3000);
-      access.onstatechange = () => {
-        if (access.inputs.size || access.outputs.size) {
-          clearTimeout(timer);
-          location.replace(midiURL);
-        }
-      };
-      return false;
+<!-- Redirect to the MIDI editor only if a device named "MTMComputer" is present -->
+<script>
+(() => {
+  const midiURL = "https://tomwhitwell.github.io/Turing_Machine_Workshop_Computer/";
+  if (!("requestMIDIAccess" in navigator)) return;
+
+  const TARGET = "mtmcomputer"; // case-insensitive match
+
+  function isTargetPort(port) {
+    const n = (port.name || "").toLowerCase();
+    const m = (port.manufacturer || "").toLowerCase();
+    return n.includes(TARGET) || m.includes(TARGET);
+    // For exact name match, use: return n === TARGET;
+  }
+
+  function hasTarget(access) {
+    for (const p of access.inputs.values()) if (isTargetPort(p)) return true;
+    for (const p of access.outputs.values()) if (isTargetPort(p)) return true;
+    return false;
+  }
+
+  function handleAccess(access) {
+    if (hasTarget(access)) {
+      location.replace(midiURL);
+      return;
     }
+    // Watch briefly for hot-plugged devices that match
+    const timeout = setTimeout(() => (access.onstatechange = null), 5000);
+    access.onstatechange = (e) => {
+      if (isTargetPort(e.port) || hasTarget(access)) {
+        clearTimeout(timeout);
+        location.replace(midiURL);
+      }
+    };
+  }
 
-    navigator.requestMIDIAccess({ sysex: true })
-      .then(access => tryRedirect(access))
-      .catch(() => {
-        // Retry without sysex if the first call was blocked
-        navigator.requestMIDIAccess().then(access => tryRedirect(access));
-      });
-  })();
-  </script>
+  navigator.requestMIDIAccess({ sysex: false })
+    .then(handleAccess)
+    .catch(() => { /* ignore errors (e.g., user denied) */ });
+})();
+</script>
+
+  
 </head>
 <body>
   <div id="content">
