@@ -21,7 +21,7 @@ The four circuit boards are pre-populated with over 650 tiny components. Your jo
 \
 A few parts of the build are slightly counter-intuitive, so please read this all carefully. If anything is unclear, contact [support@thonk.co.uk](mailto:support@thonk.co.uk?subject=Workshop%20System%20Build%20Advice), ask for help on the Discord, send photos.  
 
-NB: This is the build guide for kits bought after July 2025. [For earlier kits, use this version.](/WorkshopDocs/WorkshopBuildGuide_24-25.html). The difference is not electronic, but how the kits are packed by Thonk. In July 2025, new packing - more compact and easier to understand - was introduced. 
+NB: This is the build guide for kits bought after July 2025. [For earlier kits, use this version.](/WorkshopDocs/WorkshopBuildGuide_24-25.html) In July 2025, new packing was introduced - more compact and easier to understand. 
 
 {% include linkedHeading.html heading="TL;DR Summary for new or nervous builders " level=2 %}  
 * If you've never soldered before, practise on something else — I always recommend [8mu](https://www.musicthing.co.uk/8mu_page/) or [Mikrophonie](https://www.musicthing.co.uk/Mikrophonie/).
