@@ -2,56 +2,36 @@
   link: "https://youtu.be/ABbWmZOtmig"
   text: "Mylar Melodies" 
   desc: "Workshop System full video demo"
-  
-  
-  
 
-- order: 4
-  link: "https://www.thonk.co.uk/shop/mtm-control/"
-  text: "Back in stock: "
-  desc: "Control" 
-
+- order: 0
+  link: "https://dyski.co/Tom-Whitwell-Radio-Music"
+  text: "Radio Music "
+  desc: "Residency in Cornwall, November 2025"
+  
 - order: 1
   link: "https://www.thonk.co.uk/shop/workshop-system/"
   text: "BUY"
-  desc: "Workshop System kits in stock at Thonk" 
+  desc: "Workshop System kits from Thonk, shipping worldwide" 
 
-- order: 5
-  link: "https://davidstelfox.bandcamp.com/album/headland"
-  text: "Read"
-  desc: "David Stelfox's book and album Headland" 
+- order: 1
+  link: "https://www.exploding-shed.com/music-thing-modular-workshop-system/100949/"
+  text: "BUY"
+  desc: "Workshop System kits for EU from Exploding Shed" 
+
+- order: 1
+  link: "https://www.perfectcircuit.com/music-thing-modular"
+  text: "BUY"
+  desc: "Workshop System kits for USA from Perfect Circuit" 
 
 - order: 5
   link: "https://www.lulu.com/shop/oliver-divmod/patch-the-random/paperback/product-zmynwem.html?page=1&pageSize=4"
   text: "Read"
   desc: "Patch The Random v2 by Oliver/divmod" 
 
-- order: 1
-  link: "https://www.exploding-shed.com/music-thing-modular-workshop-system/100949/"
-  text: "BUY"
-  desc: "Workshop System kits in stock at Exploding Shed" 
-
-  
-- order: 2
-  link: "https://www.thonk.co.uk/shop/music-thing-8mu/"
-  text: "BUY" 
-  desc: "8mu MIDI controller kits in stock" 
-
-- order: 0
-  link: "https://dyski.co/Tom-Whitwell-Radio-Music"
-  text: "Radio Music "
-  desc: "Residency in Cornwall, November 2025"
-
 - order : 8
   link: "https://tomwhitwell.bandcamp.com/album/shortwave-scan-may-2025"
   text: "Free album / sample pack "
   desc: "Shortwave Scan May 2025" 
-
-- order: 12
-  link: "https://gist.github.com/TomWhitwell/48cefdd751ad5afcd8fac66f6b6762af"
-  text: "Retro AI graphics" 
-  desc: "Prompt & Code" 
-
 
 - order: 8
   link: "https://www.instagram.com/thesynthshed/?hl=en-gb"
@@ -62,16 +42,16 @@
   text: "Zine" 
   desc: "Why do you need a tiny modular synth?"
 
-
 - order: 10 
   link: "https://www.soundonsound.com/reviews/music-thing-modular-workshop-system" 
   text: "Sound on Sound" 
   desc: "Workshop System Review" 
 
 - order: 12
-  link: "https://www.musicthing.co.uk/Workshop_System_Build_Guide/"
-  text: "How hard " 
-  desc: "is it to build a Workshop System?"
+  link: "https://gist.github.com/TomWhitwell/48cefdd751ad5afcd8fac66f6b6762af"
+  text: "Retro AI graphics" 
+  desc: "Prompt & Code" 
+
 
 - order: 26
   link: "https://dyski.co/"
