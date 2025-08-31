@@ -8,6 +8,12 @@
   text: "Radio Music "
   desc: "Residency in Cornwall, November 2025"
   
+- order: 0.1
+  link: "https://www.youtube.com/watch?v=-fjmAFyHc2Y"
+  text: "Watch "
+  desc: "Building a Workshop system in real time (3 hrs long)"
+  
+  
 - order: 1
   link: "https://www.thonk.co.uk/shop/workshop-system/"
   text: "BUY"
