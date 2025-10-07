@@ -1,6 +1,6 @@
 ---
 
-layout: default
+layout: documentation
 output: false
 
 permalink: /RadioLinks/
