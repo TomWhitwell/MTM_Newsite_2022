@@ -17,7 +17,9 @@ permalink: /RadioLinks/
 
 https://youtu.be/nE4H1mJB0eU
 
-Favourite quote about this: _"Radio—the world’s cheapest, lightest, most powerful synthesizer. Like a Cagean jukebox, the dense emporium of New York airwaves"_ (from "Semi-Conducting: Rambles Through the Post-Cagean Thicket" by Nicolas Collins).
+
+
+_"Radio—the world’s cheapest, lightest, most powerful synthesizer. Like a Cagean jukebox, the dense emporium of New York airwaves"_ (from Semi-Conducting by Nicolas Collins).
 
 
 ## Useful links 
@@ -33,14 +35,14 @@ Favourite quote about this: _"Radio—the world’s cheapest, lightest, most pow
 ## What's on the SD Card? 
 - 
 
-## A beginner's guide to radio stuff  
+## A beginner's guide to radio  
 
 (A friend wrote to me a few months ago: _"I'm looking at getting something that will fit the bill for picking up "all sorts" via the airwaves!
 I'm not exactly sure what I actually need but I assume it falls into the category of whatever Scanner was using back in the day?"_ and this is what I replied: 
 
 Main thing I've learned is that environment is really important - In South London it's really hard to pick up anything very much - I'm not sure what it would be like in Bristol. Last weekend I was in a little cottage up a hill in Abergavenny surrounded by fields and it was much clearer - more to pick up. 
 
-**Antennas** - these are complicated and weird if you try to research them - but I've found about 6-12 feet of ordinary wire - like thin speaker wire - stripped at one end, twisted around the built-in metal extending antenna, then draped somewhere around the room - works well (pic at the bottom of my daughter doing this at the weekend) 
+**Antennas** - these are complicated and weird if you try to research them - but I've found about 6-12 feet of ordinary wire - like thin speaker wire - stripped at one end, twisted around the built-in metal extending antenna, then draped somewhere around the room - works well
 
 
 ### Bits of jargon: 
