@@ -13,11 +13,6 @@ permalink: /RadioLinks/
   }
 </style>
  
- 
-  
-
-https://youtu.be/nE4H1mJB0eU
-
 # Links for Radio Music November 2025 
 
 
@@ -36,6 +31,10 @@ _"Radio—the world’s cheapest, lightest, most powerful synthesizer. Like a Ca
 
 ## What's on the SD Card? 
 - 
+
+https://youtu.be/nE4H1mJB0eU
+
+
 
 ## A beginner's guide to radio  
 
