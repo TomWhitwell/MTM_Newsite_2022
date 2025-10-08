@@ -34,7 +34,7 @@ To find out about new program cards subscribe to the free [Workshop System Newsl
 
 **[25 Utility Pair](https://www.chris-j.co.uk/utility_pair/)** A magical library of 25 great audio effects and utilities that can be combined into 625 different custom-made program cards.  
 
-**[42 Backyard Rain](https://github.com/briandorsey/mtmws_cards/tree/main/backyard_rain)** A cozy rain ambience mix for background listening, playing rain ambience which was recorded in Brian's backyard.
+**[42 Backyard Rain](https://codeberg.org/briandorsey/mtmws_cards/src/branch/main/backyard_rain)** A cozy rain ambience mix for background listening, playing rain ambience which was recorded in Brian's backyard.
 
 **[11 Goldfish](https://www.youtube.com/watch?v=pdzMC6afrHY)** Goldfish is a fantastic looper / sequencer card, designed in a very modular, patchy way. Really turns the WS into a different instrument. Download link in the video description. 
 
