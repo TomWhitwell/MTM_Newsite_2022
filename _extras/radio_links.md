@@ -1,8 +1,7 @@
 ---
-
 layout: documentation
 output: false
-
+title: Dyski Radio Music Links
 permalink: /RadioLinks/
 
 ---
@@ -18,6 +17,15 @@ permalink: /RadioLinks/
 
 _"Radio—the world’s cheapest, lightest, most powerful synthesizer. Like a Cagean jukebox, the dense emporium of New York airwaves"_ (from Semi-Conducting by Nicolas Collins).
 
+## Housel Bay File Server 
+
+ <a href="/extras/dyski-browser.html" class="buy-btn" style="font-size:18px;    font-weight: bold;background-color: green;border-radius:1rem;padding:1rem;
+">Access the Housel Bay File Server</a>  
+
+<br>
+
+
+
 
 ## Useful links 
 
@@ -29,14 +37,14 @@ _"Radio—the world’s cheapest, lightest, most powerful synthesizer. Like a Ca
 - [Locosonus Soundmap](https://locusonus.org/soundmap/) is a different type of listening around the world 
 - A [whole world of radio theory and DIY](https://anarchy.translocal.jp/index.html) from Tetsuo Kogawa
 
-## What's on the SD Card? 
-- 
+
+## Scanner's intro to making music with radio 
 
 https://youtu.be/nE4H1mJB0eU
 
 
 
-## A beginner's guide to radio  
+## A beginner's guide to buying radio things  
 
 (A friend wrote to me a few months ago: _"I'm looking at getting something that will fit the bill for picking up "all sorts" via the airwaves!
 I'm not exactly sure what I actually need but I assume it falls into the category of whatever Scanner was using back in the day?"_ and this is what I replied: 
