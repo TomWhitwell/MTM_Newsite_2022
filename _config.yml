@@ -32,9 +32,11 @@ default_image_path: /images/mtm-logo_200.png
 # Socials 
 email: tom@musicthing.co.uk
 instagram_username: musicthingmodular
-instagram_displayname: musicthing
-twitter_username: musicthing
+instagram_displayname: instagram
 github_username:  tomwhitwell
+github_displayname:  github
+substack_displayname: newsletter
+substack_url: https://workshopsystem.substack.com/
 author: Tom Whitwell
 
 
