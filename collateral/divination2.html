@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Perlin Noise Matrix Synth – 8 Streams (4 Osc + 4 Radio)</title>
+  <link href="https://fonts.cdnfonts.com/css/seven-segment" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #111;
+      color: #eee;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      max-width: 760px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    .top-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    button {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: none;
+      background: #2a6;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    button:disabled {
+      background: #555;
+      cursor: default;
+    }
+    .status {
+      font-size: 0.8rem;
+      color: #8ac;
+    }
+
+    .controls {
+      display: flex;
+      gap: 24px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .knob {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      background: #222;
+      border-radius: 8px;
+      padding: 12px;
+      width: 130px;
+    }
+    .knob h2 {
+      font-size: 0.9rem;
+      margin: 0;
+      color: #aaa;
+    }
+    .slider {
+      writing-mode: bt-lr;
+      -webkit-appearance: slider-vertical;
+      appearance: slider-vertical;
+      height: 160px;
+      width: 24px;
+    }
+    .hyperspace-btn {
+      padding: 3px 6px;
+      font-size: 0.8rem;
+      border-radius: 4px;
+      border: none;
+      background: #ffb347;
+      color: #000;
+      cursor: pointer;
+    }
+
+    /* Seven-segment-style displays (all numbers/data) */
+    .number-display,
+    .vol-display,
+    .note-display,
+    .pan-display,
+    .extra-display {
+      font-family: "Seven Segment", "Menlo", monospace;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #ffb347;
+      background: black;
+      padding: 3px 6px;
+      border-radius: 4px;
+      border: 1px solid #553311;
+      box-shadow:
+        0 0 0 1px #000 inset,
+        0 0 0px rgba(255, 165, 0, 0.35) inset,
+        0 0 0px rgba(0, 0, 0, 0.8);
+      text-shadow:
+        0 0 0px rgba(255, 165, 0, 0.8),
+        0 0 0px rgba(255, 140, 0, 0.9);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .number-display {
+      min-width: 90px;
+      text-align: center;
+      word-break: break-all;
+    }
+
+    .stop-btn {
+      padding: 3px 6px;
+      font-size: 0.8rem;
+      border-radius: 4px;
+      border: none;
+      background: #555;
+      color: #eee;
+      cursor: pointer;
+      margin-top: 2px;
+    }
+
+    .stop-btn:hover {
+      background: #777;
+    }
+
+    .vol-bars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .vol-bar {
+      background: #222;
+      border-radius: 8px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .vol-bar-label {
+      font-size: 0.8rem;
+      color: #ddd;
+      font-weight: 600;
+    }
+    .vol-bar-track {
+      height: 8px;
+      border-radius: 4px;
+      background: #000;
+      overflow: hidden;
+    }
+    .vol-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: #ff9b31;
+      box-shadow: 0 0 0px rgba(255, 155, 49, 0.8);
+      transition: width 0.05s linear;
+    }
+    .pan-bar-track {
+      height: 6px;
+      border-radius: 3px;
+      background: #000;
+      overflow: hidden;
+      position: relative;
+    }
+    .pan-bar-fill {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background: #ff7a31;
+      box-shadow: 0 0 0px rgba(255, 122, 49, 0.9);
+      transition: left 0.05s linear, width 0.05s linear;
+    }
+
+    .extra-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2px 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1></h1>
+  <div class="top-row">
+    <p></p>
+    <div>
+      <button id="startAudio">Start Audio</button>
+      <div class="status" id="statusText">Audio not started.</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="knob">
+      <h2>Knob A</h2>
+      <input class="slider" type="range" min="-1000" max="1000" value="0" id="slider0">
+      <button class="hyperspace-btn" id="hyper0">Hyperspace</button>
+      <button class="stop-btn" id="stop0">Stop</button>
+      <div class="number-display" id="value0">0</div>
+    </div>
+    <div class="knob">
+      <h2>Knob B</h2>
+      <input class="slider" type="range" min="-1000" max="1000" value="0" id="slider1">
+      <button class="hyperspace-btn" id="hyper1">Hyperspace</button>
+      <button class="stop-btn" id="stop1">Stop</button>
+      <div class="number-display" id="value1">0</div>
+    </div>
+    <div class="knob">
+      <h2>Knob C</h2>
+      <input class="slider" type="range" min="-1000" max="1000" value="0" id="slider2">
+      <button class="hyperspace-btn" id="hyper2">Hyperspace</button>
+      <button class="stop-btn" id="stop2">Stop</button>
+      <div class="number-display" id="value2">0</div>
+    </div>
+    <div class="knob">
+      <h2>Knob D</h2>
+      <input class="slider" type="range" min="-1000" max="1000" value="0" id="slider3">
+      <button class="hyperspace-btn" id="hyper3">Hyperspace</button>
+      <button class="stop-btn" id="stop3">Stop</button>
+      <div class="number-display" id="value3">0</div>
+    </div>
+  </div>
+
+  <div class="vol-bars">
+    <!-- 8 stream visualisers -->
+    <!-- Stream 0 -->
+    <div class="vol-bar">
+      <div class="vol-bar-label">Stream 1 – Osc</div>
+      <div class="vol-bar-track"><div class="vol-bar-fill" id="volFill0"></div></div>
+      <div class="vol-display" id="volText0">vol 0.00</div>
+      <div class="note-display" id="noteText0">note —</div>
+      <div class="pan-display" id="panText0">pan 0.00</div>
+      <div class="pan-bar-track"><div class="pan-bar-fill" id="panFill0"></div></div>
+      <div class="extra-grid">
+        <div class="extra-display" id="ringText0">ring —</div>
+        <div class="extra-display" id="fmText0">fm —</div>
+        <div class="extra-display" id="delayText0">delay —</div>
+        <div class="extra-display" id="distText0">dist —</div>
+        <div class="extra-display" id="hpText0">hp —</div>
+        <div class="extra-display" id="sideText0">side —</div>
+        <div class="extra-display" id="verbText0">verb —</div>
+        <div class="extra-display" id="lfoText0">—</div>
+      </div>
+    </div>
+
+    <!-- Stream 1 -->
+    <div class="vol-bar">
+      <div class="vol-bar-label">Stream 2 – Osc</div>
+      <div class="vol-bar-track"><div class="vol-bar-fill" id="volFill1"></div></div>
+      <div class="vol-display" id="volText1">vol 0.00</div>
+      <div class="note-display" id="noteText1">note —</div>
+      <div class="pan-display" id="panText1">pan 0.00</div>
+      <div class="pan-bar-track"><div class="pan-bar-fill" id="panFill1"></div></div>
+      <div class="extra-grid">
+        <div class="extra-display" id="ringText1">ring —</div>
+        <div class="extra-display" id="fmText1">fm —</div>
+        <div class="extra-display" id="delayText1">delay —</div>
+        <div class="extra-display" id="distText1">dist —</div>
+        <div class="extra-display" id="hpText1">hp —</div>
+        <div class="extra-display" id="sideText1">side —</div>
+        <div class="extra-display" id="verbText1">verb —</div>
+        <div class="extra-display" id="lfoText1">—</div>
+      </div>
+    </div>
+
+    <!-- Stream 2 -->
+    <div class="vol-bar">
+      <div class="vol-bar-label">Stream 3 – Osc</div>
+      <div class="vol-bar-track"><div class="vol-bar-fill" id="volFill2"></div></div>
+      <div class="vol-display" id="volText2">vol 0.00</div>
+      <div class="note-display" id="noteText2">note —</div>
+      <div class="pan-display" id="panText2">pan 0.00</div>
+      <div class="pan-bar-track"><div class="pan-bar-fill" id="panFill2"></div></div>
+      <div class="extra-grid">
+        <div class="extra-display" id="ringText2">ring —</div>
+        <div class="extra-display" id="fmText2">fm —</div>
+        <div class="extra-display" id="delayText2">delay —</div>
+        <div class="extra-display" id="distText2">dist —</div>
+        <div class="extra-display" id="hpText2">hp —</div>
+        <div class="extra-display" id="sideText2">side —</div>
+        <div class="extra-display" id="verbText2">verb —</div>
+        <div class="extra-display" id="lfoText2">—</div>
+      </div>
+    </div>
+
+    <!-- Stream 3 -->
+    <div class="vol-bar">
+      <div class="vol-bar-label">Stream 4 – Osc</div>
+      <div class="vol-bar-track"><div class="vol-bar-fill" id="volFill3"></div></div>
+      <div class="vol-display" id="volText3">vol 0.00</div>
+      <div class="note-display" id="noteText3">note —</div>
+      <div class="pan-display" id="panText3">pan 0.00</div>
+      <div class="pan-bar-track"><div class="pan-bar-fill" id="panFill3"></div></div>
+      <div class="extra-grid">
+        <div class="extra-display" id="ringText3">ring —</div>
+        <div class="extra-display" id="fmText3">fm —</div>
+        <div class="extra-display" id="delayText3">delay —</div>
+        <div class="extra-display" id="distText3">dist —</div>
+        <div class="extra-display" id="hpText3">hp —</div>
+        <div class="extra-display" id="sideText3">side —</div>
+        <div class="extra-display" id="verbText3">verb —</div>
+        <div class="extra-display" id="lfoText3">—</div>
+      </div>
+    </div>
+
+    <!-- Stream 4 -->
+    <div class="vol-bar">
+      <div class="vol-bar-label">Stream 5 – NPR</div>
+      <div class="vol-bar-track"><div class="vol-bar-fill" id="volFill4"></div></div>
+      <div class="vol-display" id="volText4">vol 0.00</div>
+      <div class="note-display" id="noteText4">note —</div>
+      <div class="pan-display" id="panText4">pan 0.00</div>
+      <div class="pan-bar-track"><div class="pan-bar-fill" id="panFill4"></div></div>
+      <div class="extra-grid">
+        <div class="extra-display" id="ringText4">ring —</div>
+        <div class="extra-display" id="fmText4">fm —</div>
+        <div class="extra-display" id="delayText4">delay —</div>
+        <div class="extra-display" id="distText4">dist —</div>
+        <div class="extra-display" id="hpText4">hp —</div>
+        <div class="extra-display" id="sideText4">side —</div>
+        <div class="extra-display" id="verbText4">verb —</div>
+        <div class="extra-display" id="lfoText4">LFO—</div>
+      </div>
+    </div>
+
+    <!-- Stream 5 -->
+    <div class="vol-bar">
+      <div class="vol-bar-label">Stream 6 – KQED</div>
+      <div class="vol-bar-track"><div class="vol-bar-fill" id="volFill5"></div></div>
+      <div class="vol-display" id="volText5">vol 0.00</div>
+      <div class="note-display" id="noteText5">note —</div>
+      <div class="pan-display" id="panText5">pan 0.00</div>
+      <div class="pan-bar-track"><div class="pan-bar-fill" id="panFill5"></div></div>
+      <div class="extra-grid">
+        <div class="extra-display" id="ringText5">ring —</div>
+        <div class="extra-display" id="fmText5">fm —</div>
+        <div class="extra-display" id="delayText5">delay —</div>
+        <div class="extra-display" id="distText5">dist —</div>
+        <div class="extra-display" id="hpText5">hp —</div>
+        <div class="extra-display" id="sideText5">side —</div>
+        <div class="extra-display" id="verbText5">verb —</div>
+        <div class="extra-display" id="lfoText5">—</div>
+      </div>
+    </div>
+
+    <!-- Stream 6 -->
+    <div class="vol-bar">
+      <div class="vol-bar-label">Stream 7 – WRJA</div>
+      <div class="vol-bar-track"><div class="vol-bar-fill" id="volFill6"></div></div>
+      <div class="vol-display" id="volText6">vol 0.00</div>
+      <div class="note-display" id="noteText6">note —</div>
+      <div class="pan-display" id="panText6">pan 0.00</div>
+      <div class="pan-bar-track"><div class="pan-bar-fill" id="panFill6"></div></div>
+      <div class="extra-grid">
+        <div class="extra-display" id="ringText6">ring —</div>
+        <div class="extra-display" id="fmText6">fm —</div>
+        <div class="extra-display" id="delayText6">delay —</div>
+        <div class="extra-display" id="distText6">dist —</div>
+        <div class="extra-display" id="hpText6">hp —</div>
+        <div class="extra-display" id="sideText6">side —</div>
+        <div class="extra-display" id="verbText6">verb —</div>
+        <div class="extra-display" id="lfoText6">—</div>
+      </div>
+    </div>
+
+    <!-- Stream 7 -->
+    <div class="vol-bar">
+      <div class="vol-bar-label">Stream 8 – Orange 94.0</div>
+      <div class="vol-bar-track"><div class="vol-bar-fill" id="volFill7"></div></div>
+      <div class="vol-display" id="volText7">vol 0.00</div>
+      <div class="note-display" id="noteText7">note —</div>
+      <div class="pan-display" id="panText7">pan 0.00</div>
+      <div class="pan-bar-track"><div class="pan-bar-fill" id="panFill7"></div></div>
+      <div class="extra-grid">
+        <div class="extra-display" id="ringText7">ring —</div>
+        <div class="extra-display" id="fmText7">fm —</div>
+        <div class="extra-display" id="delayText7">delay —</div>
+        <div class="extra-display" id="distText7">dist —</div>
+        <div class="extra-display" id="hpText7">hp —</div>
+        <div class="extra-display" id="sideText7">side —</div>
+        <div class="extra-display" id="verbText7">verb —</div>
+        <div class="extra-display" id="lfoText7">—</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live speech-ish radio streams for streams 5–8 (indices 4..7) -->
+  <audio id="radio4"
+         src="https://npr-ice.streamguys1.com/live.mp3"
+         preload="none"
+         crossorigin="anonymous"></audio>
+
+  <audio id="radio5"
+         src="http://stream.live.vc.bbcmedia.co.uk/bbc_world_service"
+         preload="none"
+         crossorigin="anonymous"></audio>
+
+  <audio id="radio6"
+         src="https://direct.franceinter.fr/live/franceinter-midfi.mp3"
+         preload="none"
+         crossorigin="anonymous"></audio>
+
+  <audio id="radio7"
+         src="URL: http://stream.live.vc.bbcmedia.co.uk/bbc_arabic_radio"
+         preload="none"
+         crossorigin="anonymous"></audio>
+
+  <script>
+    // ---------- Perlin-ish 3D value noise ----------
+    function smoothstep(t) {
+      return t * t * (3 - 2 * t);
+    }
+    function hash32(x) {
+      x = x | 0;
+      x ^= x >>> 16;
+      x = Math.imul(x, 0x7feb352d);
+      x ^= x >>> 15;
+      x = Math.imul(x, 0x846ca68b);
+      x ^= x >>> 16;
+      return x >>> 0;
+    }
+    function latticeHash3(ix, iy, iz) {
+      const x = ix | 0;
+      const y = iy | 0;
+      const z = iz | 0;
+      const h = hash32(
+        (Math.imul(x, 73856093) ^
+         Math.imul(y, 19349663) ^
+         Math.imul(z, 83492791)) | 0
+      );
+      return (h & 0xffff) / 32768.0 - 1.0;
+    }
+    function valueNoise3(x, y, z) {
+      const X = Math.floor(x), Y = Math.floor(y), Z = Math.floor(z);
+      const fx = x - X, fy = y - Y, fz = z - Z;
+      const u = smoothstep(fx), v = smoothstep(fy), w = smoothstep(fz);
+      const c000 = latticeHash3(X  , Y  , Z  );
+      const c100 = latticeHash3(X+1, Y  , Z  );
+      const c010 = latticeHash3(X  , Y+1, Z  );
+      const c110 = latticeHash3(X+1, Y+1, Z  );
+      const c001 = latticeHash3(X  , Y  , Z+1);
+      const c101 = latticeHash3(X+1, Y  , Z+1);
+      const c011 = latticeHash3(X  , Y+1, Z+1);
+      const c111 = latticeHash3(X+1, Y+1, Z+1);
+      const x00 = c000 + (c100 - c000) * u;
+      const x10 = c010 + (c110 - c010) * u;
+      const x01 = c001 + (c101 - c001) * u;
+      const x11 = c011 + (c111 - c011) * u;
+      const y0 = x00 + (x10 - x00) * v;
+      const y1 = x01 + (x11 - x01) * v;
+      return y0 + (y1 - y0) * w;
+    }
+
+    // ---------- Minor pentatonic scale: C minor pent across octaves ----------
+    // Degrees (relative semitones): 0, 3, 5, 7, 10 => C, Eb, F, G, Bb
+    const PENT_DEGREES = [0, 3, 5, 7, 10];
+    const PENT_OCTAVES = 6;      // number of octaves of this pattern
+    const PENT_ROOT_MIDI = 36;   // C2 as root
+
+    const cMajorFreqs = [];   // reused names, but now it's minor pentatonic
+    const cMajorLabels = [];
+
+    (function buildMinorPentScale() {
+      const noteNames = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+      for (let oct = 0; oct < PENT_OCTAVES; oct++) {
+        for (let d = 0; d < PENT_DEGREES.length; d++) {
+          const midi = PENT_ROOT_MIDI + oct * 12 + PENT_DEGREES[d];
+          const freq = 440 * Math.pow(2, (midi - 69) / 12);
+          cMajorFreqs.push(freq);
+          const noteName = noteNames[midi % 12];
+          const nOct = Math.floor(midi / 12) - 1;
+          cMajorLabels.push(noteName + nOct);
+        }
+      }
+    })();
+
+    // ---------- Knob state ----------
+    const NUM_KNOBS = 4;
+    const knobValues = new Int32Array(NUM_KNOBS);
+    const knobAccum  = new Float32Array(NUM_KNOBS);
+    const SLIDER_MAX = 1000;
+
+    const sliderEls = [];
+    const valueEls  = [];
+    const hyperBtns = [];
+    const stopBtns  = [];
+
+    for (let i = 0; i < NUM_KNOBS; i++) {
+      sliderEls[i] = document.getElementById("slider" + i);
+      valueEls[i]  = document.getElementById("value" + i);
+      hyperBtns[i] = document.getElementById("hyper" + i);
+      stopBtns[i]  = document.getElementById("stop" + i);
+
+      valueEls[i].textContent = "0";
+
+      hyperBtns[i].addEventListener("click", () => {
+        const rndUnsigned = (Math.random() * 0xFFFFFFFF) >>> 0;
+        knobValues[i] = rndUnsigned | 0;
+        knobAccum[i] = 0;
+        valueEls[i].textContent = knobValues[i].toString();
+      });
+
+      if (stopBtns[i]) {
+        stopBtns[i].addEventListener("click", () => {
+          sliderEls[i].value = 0;
+          knobAccum[i] = 0;
+        });
+      }
+    }
+
+    // ---------- UI display arrays ----------
+    const NUM_STREAMS = 8;
+    const volFills = [], volTexts = [], noteTexts = [], panTexts = [], panFills = [];
+    const ringTexts = [], fmTexts = [], delayTexts = [];
+    const distTexts = [], hpTexts = [], sideTexts = [], verbTexts = [], lfoTexts = [];
+
+    for (let i = 0; i < NUM_STREAMS; i++) {
+      volFills[i]  = document.getElementById("volFill" + i);
+      volTexts[i]  = document.getElementById("volText" + i);
+      noteTexts[i] = document.getElementById("noteText" + i);
+      panTexts[i]  = document.getElementById("panText" + i);
+      panFills[i]  = document.getElementById("panFill" + i);
+      ringTexts[i] = document.getElementById("ringText" + i);
+      fmTexts[i]   = document.getElementById("fmText" + i);
+      delayTexts[i]= document.getElementById("delayText" + i);
+      distTexts[i] = document.getElementById("distText" + i);
+      hpTexts[i]   = document.getElementById("hpText" + i);
+      sideTexts[i] = document.getElementById("sideText" + i);
+      verbTexts[i] = document.getElementById("verbText" + i);
+      lfoTexts[i]  = document.getElementById("lfoText" + i);
+    }
+
+    // ---------- Noise-space mapping ----------
+    const SCALE_X    = 1.0 / 5000.0;
+    const SCALE_Y    = 1.0 / 7000.0;
+    const SCALE_Z_K2 = 1.0 / 20000.0;
+    const SCALE_Z_K3 = 1.0 / 30000.0;
+    const SLICE_SPACING = 0.35;
+
+    function noiseCoordsForStream(streamIndex) {
+      const k0 = knobValues[0];
+      const k1 = knobValues[1];
+      const k2 = knobValues[2];
+      const k3 = knobValues[3];
+      const x = k0 * SCALE_X;
+      const y = k1 * SCALE_Y;
+      const z = streamIndex * SLICE_SPACING +
+                k2 * SCALE_Z_K2 +
+                k3 * SCALE_Z_K3;
+      return { x, y, z };
+    }
+
+    function computeVolumeForStream(i) {
+      const c = noiseCoordsForStream(i);
+      const n = valueNoise3(c.x, c.y, c.z);
+      let v = (n * 0.5) + 0.5;
+      return Math.pow(v, 1.2);
+    }
+
+    // NEW: octave + degree chosen independently from separate noise fields
+    function computeNoteIndexForStream(i) {
+      const c = noiseCoordsForStream(i);
+
+      // Octave noise
+      const nOct = valueNoise3(c.x + 7.31, c.y - 4.87, c.z + 2.19);
+      let tOct = (nOct * 0.5) + 0.5;
+      tOct = Math.max(0, Math.min(0.9999, tOct));
+      const octIndex = Math.floor(tOct * PENT_OCTAVES);
+
+      // Degree noise, with different offsets so it moves independently
+      const nDeg = valueNoise3(c.x - 9.99, c.y + 13.37, c.z - 21.21);
+      let tDeg = (nDeg * 0.5) + 0.5;
+      tDeg = Math.max(0, Math.min(0.9999, tDeg));
+      const degIndex = Math.floor(tDeg * PENT_DEGREES.length);
+
+      const idx = octIndex * PENT_DEGREES.length + degIndex;
+      return idx;
+    }
+
+    function computePanForStream(i) {
+      const c = noiseCoordsForStream(i);
+      const n = valueNoise3(c.x - 3.14, c.y + 1.23, c.z - 5.67);
+      let pan = Math.max(-1, Math.min(1, n));
+      return Math.sign(pan) * Math.pow(Math.abs(pan), 0.8);
+    }
+    function computeRingDepthForStream(i) {
+      const c = noiseCoordsForStream(i);
+      const n = valueNoise3(c.x + 11.11, c.y + 22.22, c.z + 33.33);
+      let t = (n * 0.5) + 0.5;
+      t = Math.max(0, Math.min(1, t));
+      return Math.pow(t, 1.5);
+    }
+    function computeRingRatioForStream(i) {
+      const c = noiseCoordsForStream(i);
+      const n = valueNoise3(c.x - 44.44, c.y + 55.55, c.z - 66.66);
+      let t = (n * 0.5) + 0.5;
+      t = Math.max(0, Math.min(1, t));
+      const octaves = 4;
+      return 0.25 * Math.pow(2, t * octaves);
+    }
+    function computeFmAmountForStream(i) {
+      const c = noiseCoordsForStream(i);
+      const n = valueNoise3(c.x + 77.77, c.y - 88.88, c.z + 99.99);
+      let t = (n * 0.5) + 0.5;
+      t = Math.max(0, Math.min(1, t));
+      const maxDeviationHz = 300;
+      return Math.pow(t, 2) * maxDeviationHz;
+    }
+    function computeDelaySendForStream(i) {
+      const c = noiseCoordsForStream(i);
+      const n = valueNoise3(c.x - 12.34, c.y + 56.78, c.z - 90.12);
+      let t = (n * 0.5) + 0.5;
+      t = Math.max(0, Math.min(1, t));
+      return Math.pow(t, 1.3) * 0.7;
+    }
+    function computeDistSendForStream(i) {
+      const c = noiseCoordsForStream(i);
+      const n = valueNoise3(c.x + 101.1, c.y - 202.2, c.z + 303.3);
+      let t = (n * 0.5) + 0.5;
+      t = Math.max(0, Math.min(1, t));
+      return Math.pow(t, 1.4) * 0.9;
+    }
+    function computeHpSendForStream(i) {
+      const c = noiseCoordsForStream(i);
+      const n = valueNoise3(c.x - 404.4, c.y + 505.5, c.z - 606.6);
+      let t = (n * 0.5) + 0.5;
+      t = Math.max(0, Math.min(1, t));
+      return Math.pow(t, 1.3) * 0.9;
+    }
+    function computeSideSendForStream(i) {
+      const c = noiseCoordsForStream(i);
+      const n = valueNoise3(c.x + 707.7, c.y - 808.8, c.z + 909.9);
+      let t = (n * 0.5) + 0.5;
+      t = Math.max(0, Math.min(1, t));
+      return Math.pow(t, 1.5) * 0.8;
+    }
+    function computeVerbSendForStream(i) {
+      const c = noiseCoordsForStream(i);
+      const n = valueNoise3(c.x - 111.1, c.y - 222.2, c.z + 333.3);
+      let t = (n * 0.5) + 0.5;
+      t = Math.max(0, Math.min(1, t));
+      return Math.pow(t, 1.1) * 0.9;
+    }
+
+    // ---------- Master tempo (Perlin-driven, 30–180 bpm, damped) ----------
+    let masterBpm = 90;
+    let masterPhase = 0; // 0..1
+
+    function computeMasterTempoTargetBpm() {
+      const k0 = knobValues[0];
+      const k1 = knobValues[1];
+      const k2 = knobValues[2];
+      const k3 = knobValues[3];
+      const x = k0 * 1.0 / 20000.0;
+      const y = k1 * 1.0 / 25000.0;
+      const z = k2 * 1.0 / 30000.0 + k3 * 1.0 / 40000.0;
+      const n = valueNoise3(x + 123.45, y - 67.89, z + 10.11);
+      let t = (n * 0.5) + 0.5; // 0..1
+      t = Math.max(0, Math.min(1, t));
+      const minBpm = 30;
+      const maxBpm = 180;
+      return minBpm + t * (maxBpm - minBpm);
+    }
+
+    // ---------- LFO per stream ----------
+    // Slower, all sub-multiples of master clock
+    const LFO_RATIOS = [
+      1/3, 1/2, 1, 2, 1/4,1/6, 1/8, 1/7, 1/16, 1/8, 1/32, 1/64
+    ];
+
+    function computeLfoParamsForStream(i) {
+      const c = noiseCoordsForStream(i);
+
+      // On/Off – no bias towards on (~50%)
+      const nOn = valueNoise3(c.x + 201.1, c.y - 302.2, c.z + 403.3);
+      const tOn = (nOn * 0.5) + 0.5;
+      const lfoOn = tOn > 0.5;
+
+      // Shape with ~60% square
+      const nShape = valueNoise3(c.x - 504.4 + i, c.y + 605.5 - i, c.z - 706.6 + (i*145));
+      const tShape = (nShape * 0.5) + 0.5;
+      let shape = "square";
+      if (tShape < 0.6) {
+        shape = "square";
+      } else if (tShape < 0.8) {
+        shape = "sawDown";
+      } else if (tShape < 0.9) {
+        shape = "sawUp";
+      } else {
+        shape = "triangle";
+      }
+
+      // Rate ratio – each stream has its own ratio from the field
+      const nRate = valueNoise3(c.x + 807.7+i, c.y - 908.8-i, c.z + 1009.9+i);
+      let tRate = (nRate * 0.5) + 0.5;
+      tRate = Math.max(0, Math.min(0.9999, tRate));
+      const idx = Math.floor(tRate * LFO_RATIOS.length);
+      const ratio = LFO_RATIOS[idx];
+
+      // Cut: ~70% chance when LFO is on (hard on/off gating)
+      const nCut = valueNoise3(c.x - 111.2, c.y + 222.3, c.z - 333.4);
+      const tCut = (nCut * 0.5) + 0.5;
+      const cut = lfoOn && (tCut > 0.3);
+
+      // Depth (if not cut, bias toward larger depths, min ~0.3)
+      const nDepth = valueNoise3(c.x + 444.5, c.y - 555.6, c.z + 666.7);
+      let tDepth = (nDepth * 0.5) + 0.5;
+      tDepth = Math.max(0, Math.min(1, tDepth));
+      const minDepth = 0.3;
+      const shaped = minDepth + (1 - minDepth) * Math.pow(tDepth, 0.5);
+      const depth = cut ? 1.0 : shaped;
+
+      return { on: lfoOn, shape, ratio, cut, depth };
+    }
+
+    function lfoWave(shape, phase) {
+      phase = phase - Math.floor(phase);
+      if (shape === "square") {
+        return phase < 0.5 ? 0.0 : 1.0;
+      } else if (shape === "sawDown") {
+        return 1.0 - phase;
+      } else if (shape === "sawUp") {
+        return phase;
+      } else { // triangle
+        return phase < 0.5 ? (phase * 2.0) : (2.0 - phase * 2.0);
+      }
+    }
+
+    // ---------- Audio setup ----------
+    let audioCtx = null, masterGain = null, delayNode = null, delayFeedbackGain = null;
+    let distBusIn = null, distShaper = null;
+    let hpBusIn = null, hpFilter = null;
+    let sideBusIn = null, sidePanner = null;
+    let verbBusIn = null, verbDelay = null, verbFeedback = null, verbTone = null;
+
+    const streamGains   = new Array(NUM_STREAMS);
+    const streamPanners = new Array(NUM_STREAMS);
+    const ringOscs       = new Array(NUM_STREAMS);
+    const ringDepthGains = new Array(NUM_STREAMS);
+    const ringGains      = new Array(NUM_STREAMS);
+    const fmFilters      = new Array(NUM_STREAMS);
+    const delaySendGains = new Array(NUM_STREAMS);
+    const distSendGains  = new Array(NUM_STREAMS);
+    const hpSendGains    = new Array(NUM_STREAMS);
+    const sideSendGains  = new Array(NUM_STREAMS);
+    const verbSendGains  = new Array(NUM_STREAMS);
+    const carrierOscs    = new Array(NUM_STREAMS);
+
+    const streamVolumes   = new Float32Array(NUM_STREAMS);
+    const streamNoteIndex = new Int16Array(NUM_STREAMS);
+
+    let audioStarted = false;
+    const statusText = document.getElementById("statusText");
+    const startButton = document.getElementById("startAudio");
+
+    function makeWaveshaperCurve(amount = 2.5) {
+      const n = 1024;
+      const curve = new Float32Array(n);
+      const k = typeof amount === "number" ? amount : 2.5;
+      for (let i = 0; i < n; i++) {
+        const x = (i * 2) / n - 1;
+        curve[i] = ((1 + k) * x) / (1 + k * Math.abs(x));
+      }
+      return curve;
+    }
+
+    startButton.addEventListener("click", () => {
+      if (audioStarted) return;
+      startAudio();
+    });
+
+    function startAudio() {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      masterGain = audioCtx.createGain();
+      masterGain.gain.value = 0.5;
+      masterGain.connect(audioCtx.destination);
+
+      delayNode = audioCtx.createDelay(2.0);
+      delayNode.delayTime.value = 0.35;
+      delayFeedbackGain = audioCtx.createGain();
+      delayFeedbackGain.gain.value = 0.4;
+      delayNode.connect(delayFeedbackGain);
+      delayFeedbackGain.connect(delayNode);
+      delayNode.connect(masterGain);
+
+      distBusIn = audioCtx.createGain();
+      distBusIn.gain.value = 0.01;
+      distShaper = audioCtx.createWaveShaper();
+      distShaper.curve = makeWaveshaperCurve(3.5);
+      distShaper.oversample = "4x";
+      distBusIn.connect(distShaper);
+      distShaper.connect(masterGain);
+
+      hpBusIn = audioCtx.createGain();
+      hpBusIn.gain.value = 1.0;
+      hpFilter = audioCtx.createBiquadFilter();
+      hpFilter.type = "highpass";
+      hpFilter.frequency.value = 800;
+      hpFilter.Q.value = 0.7;
+      hpBusIn.connect(hpFilter);
+      hpFilter.connect(masterGain);
+
+      sideBusIn = audioCtx.createGain();
+      sideBusIn.gain.value = 1.0;
+      sidePanner = audioCtx.createStereoPanner();
+      sidePanner.pan.value = 0.9;
+      sideBusIn.connect(sidePanner);
+      sidePanner.connect(masterGain);
+
+      verbBusIn = audioCtx.createGain();
+      verbBusIn.gain.value = 1.0;
+      verbDelay = audioCtx.createDelay(3.0);
+      verbDelay.delayTime.value = 0.7;
+      verbFeedback = audioCtx.createGain();
+      verbFeedback.gain.value = 0.5;
+      verbTone = audioCtx.createBiquadFilter();
+      verbTone.type = "lowpass";
+      verbTone.frequency.value = 4000;
+      verbTone.Q.value = 0.4;
+      verbBusIn.connect(verbDelay);
+      verbDelay.connect(verbFeedback);
+      verbFeedback.connect(verbDelay);
+      verbDelay.connect(verbTone);
+      verbTone.connect(masterGain);
+
+      for (let i = 0; i < NUM_STREAMS; i++) {
+        let srcNode;
+        if (i < 4) {
+          const osc = audioCtx.createOscillator();
+          osc.type = "sine";
+          osc.frequency.value = 220;
+          osc.start();
+          srcNode = osc;
+          carrierOscs[i] = osc;
+        } else {
+          const mediaEl = document.getElementById("radio" + i);
+          if (mediaEl) {
+            mediaEl.crossOrigin = "anonymous";
+            mediaEl.loop = true;
+            mediaEl.play();
+            srcNode = audioCtx.createMediaElementSource(mediaEl);
+          }
+        }
+
+        const ringGain = audioCtx.createGain();
+        ringGain.gain.value = 1.0;
+        const ringOsc = audioCtx.createOscillator();
+        ringOsc.type = "sine";
+        ringOsc.frequency.value = 4;
+        const ringDepthGain = audioCtx.createGain();
+        ringDepthGain.gain.value = 0.0;
+        ringOsc.connect(ringDepthGain);
+        ringDepthGain.connect(ringGain.gain);
+
+        const fmFilter = audioCtx.createBiquadFilter();
+        fmFilter.type = "bandpass";
+        fmFilter.frequency.value = 1000;
+        fmFilter.Q.value = 1.0;
+
+        const gain = audioCtx.createGain();
+        gain.gain.value = 0.0;
+        const panNode = audioCtx.createStereoPanner();
+        panNode.pan.value = 0.0;
+
+        const delaySend = audioCtx.createGain(); delaySend.gain.value = 0.0;
+        const distSend  = audioCtx.createGain(); distSend.gain.value  = 0.0;
+        const hpSend    = audioCtx.createGain(); hpSend.gain.value    = 0.0;
+        const sideSend  = audioCtx.createGain(); sideSend.gain.value  = 0.0;
+        const verbSend  = audioCtx.createGain(); verbSend.gain.value  = 0.0;
+
+        if (srcNode) {
+          srcNode.connect(ringGain);
+          ringGain.connect(fmFilter);
+          fmFilter.connect(gain);
+        }
+
+        // amplitude gain is before pan & all sends
+        gain.connect(panNode);
+        panNode.connect(masterGain);
+        panNode.connect(delaySend);
+        panNode.connect(distSend);
+        panNode.connect(hpSend);
+        panNode.connect(sideSend);
+        panNode.connect(verbSend);
+
+        delaySend.connect(delayNode);
+        distSend.connect(distBusIn);
+        hpSend.connect(hpBusIn);
+        sideSend.connect(sideBusIn);
+        verbSend.connect(verbBusIn);
+
+        ringOsc.start();
+
+        streamGains[i]      = gain;
+        streamPanners[i]    = panNode;
+        ringOscs[i]         = ringOsc;
+        ringDepthGains[i]   = ringDepthGain;
+        ringGains[i]        = ringGain;
+        fmFilters[i]        = fmFilter;
+        delaySendGains[i]   = delaySend;
+        distSendGains[i]    = distSend;
+        hpSendGains[i]      = hpSend;
+        sideSendGains[i]    = sideSend;
+        verbSendGains[i]    = verbSend;
+      }
+
+      audioStarted = true;
+      startButton.disabled = true;
+      statusText.textContent = "Audio running. Move sliders or hit Hyperspace.";
+      requestAnimationFrame(updateLoop);
+    }
+
+    let lastFrameTime = performance.now();
+
+    function updateLoop(now) {
+      const VOL_SMOOTH = 0.15;
+      const PAN_TC  = 0.02;
+      const FREQ_TC = 0.02;
+      const PARAM_TC = 0.05;
+      const AMP_TC = 0.02; // amplitude slew to avoid clicks
+      const DEADZONE = 0.05;
+
+      const dt = (now - lastFrameTime) / 1000 || (1 / 60);
+      lastFrameTime = now;
+
+      // ---- Knobs as rate controls ----
+      for (let i = 0; i < NUM_KNOBS; i++) {
+        const pos = sliderEls[i].valueAsNumber;
+        const norm = pos / SLIDER_MAX;
+        const absNorm = Math.abs(norm);
+
+        if (absNorm > DEADZONE) {
+          const sign = Math.sign(norm);
+          const mag = (absNorm - DEADZONE) / (1 - DEADZONE);
+          const BASE_STEPS_PER_SECOND = 1;
+          const MAX_STEPS_PER_SECOND  = 4000;
+          const stepsPerSecond =
+            BASE_STEPS_PER_SECOND +
+            mag * mag * (MAX_STEPS_PER_SECOND - BASE_STEPS_PER_SECOND);
+          const steps = stepsPerSecond * dt;
+          knobAccum[i] += sign * steps;
+          while (knobAccum[i] >= 1.0) {
+            knobValues[i] += 1;
+            knobAccum[i] -= 1.0;
+          }
+          while (knobAccum[i] <= -1.0) {
+            knobValues[i] -= 1;
+            knobAccum[i] += 1.0;
+          }
+        }
+        valueEls[i].textContent = knobValues[i].toString();
+      }
+
+      // ---- Master tempo / phase update ----
+      const targetBpm = computeMasterTempoTargetBpm();
+      const TEMPO_SMOOTH = 0.01; // heavy damping
+      masterBpm += (targetBpm - masterBpm) * TEMPO_SMOOTH;
+      const beatsPerSecond = masterBpm / 60.0;
+      masterPhase += beatsPerSecond * dt;
+      masterPhase = masterPhase - Math.floor(masterPhase);
+
+      if (audioStarted) {
+        statusText.textContent =
+          "Audio running. BPM " + masterBpm.toFixed(1);
+      }
+
+      // ---- Per-stream mapping ----
+      for (let i = 0; i < NUM_STREAMS; i++) {
+        const targetVol = computeVolumeForStream(i);
+        const currentVol = streamVolumes[i];
+        const baseVol = currentVol + (targetVol - currentVol) * VOL_SMOOTH;
+        streamVolumes[i] = baseVol;
+
+        const noteIdx = computeNoteIndexForStream(i);
+        const freq = cMajorFreqs[noteIdx];
+        const label = cMajorLabels[noteIdx];
+
+        const pan = computePanForStream(i);
+
+        const ringDepth = computeRingDepthForStream(i);
+        const ringRatio = computeRingRatioForStream(i);
+        const fmAmount  = computeFmAmountForStream(i);
+        const delaySend = computeDelaySendForStream(i);
+        const distSend  = computeDistSendForStream(i);
+        const hpSend    = computeHpSendForStream(i);
+        const sideSend  = computeSideSendForStream(i);
+        const verbSend  = computeVerbSendForStream(i);
+
+        // LFO params for this stream (independent per-stream clock divider)
+        const lfo = computeLfoParamsForStream(i);
+        lfoTexts[i].textContent = `r=${lfo.ratio.toFixed(3)}`;
+
+        const lfoPhase = masterPhase * lfo.ratio;
+        const rawLfo = lfoWave(lfo.shape, lfoPhase);
+        const lfoVal = (lfo.on ? rawLfo : 1.0);
+        const depth = lfo.on ? 1.0 : 0.0;
+
+        // amplitude factor: baseVol * mix between 1 (no LFO) and lfoVal
+        const modVol = baseVol * (1.0 - depth + depth * lfoVal);
+
+        if (audioStarted) {
+          if (streamGains[i]) {
+            // Slewed amplitude to avoid clicks
+            streamGains[i].gain.setTargetAtTime(
+              modVol,
+              audioCtx.currentTime,
+              AMP_TC
+            );
+          }
+          if (i < 4 && carrierOscs[i]) {
+            carrierOscs[i].frequency.setTargetAtTime(
+              freq,
+              audioCtx.currentTime,
+              FREQ_TC
+            );
+          }
+          if (streamPanners[i]) {
+            streamPanners[i].pan.setTargetAtTime(
+              pan,
+              audioCtx.currentTime,
+              PAN_TC
+            );
+          }
+          if (ringOscs[i] && ringDepthGains[i]) {
+            ringDepthGains[i].gain.setTargetAtTime(
+              ringDepth,
+              audioCtx.currentTime,
+              PARAM_TC
+            );
+            const ringFreq = i < 4 ? freq * ringRatio : 1 + ringRatio * 30;
+            ringOscs[i].frequency.setTargetAtTime(
+              ringFreq,
+              audioCtx.currentTime,
+              PARAM_TC
+            );
+          }
+          if (fmFilters[i]) {
+            const base = i < 4 ? freq : 1000;
+            const targetF = base + fmAmount;
+            fmFilters[i].frequency.setTargetAtTime(
+              targetF,
+              audioCtx.currentTime,
+              PARAM_TC
+            );
+            fmFilters[i].Q.setTargetAtTime(
+              i < 4 ? 1.0 : 0.8,
+              audioCtx.currentTime,
+              PARAM_TC
+            );
+          }
+          if (delaySendGains[i]) {
+            delaySendGains[i].gain.setTargetAtTime(
+              delaySend,
+              audioCtx.currentTime,
+              PARAM_TC
+            );
+          }
+          if (distSendGains[i]) {
+            distSendGains[i].gain.setTargetAtTime(
+              distSend,
+              audioCtx.currentTime,
+              PARAM_TC
+            );
+          }
+          if (hpSendGains[i]) {
+            hpSendGains[i].gain.setTargetAtTime(
+              hpSend,
+              audioCtx.currentTime,
+              PARAM_TC
+            );
+          }
+          if (sideSendGains[i]) {
+            sideSendGains[i].gain.setTargetAtTime(
+              sideSend,
+              audioCtx.currentTime,
+              PARAM_TC
+            );
+          }
+          if (verbSendGains[i]) {
+            verbSendGains[i].gain.setTargetAtTime(
+              verbSend,
+              audioCtx.currentTime,
+              PARAM_TC
+            );
+          }
+        }
+
+        // ---- UI ----
+        const volPercent = (modVol * 100).toFixed(1) + "%";
+        volFills[i].style.width = volPercent;
+        volTexts[i].textContent = "vol " + modVol.toFixed(3);
+        noteTexts[i].textContent = label + " (" + freq.toFixed(1) + " Hz)";
+        panTexts[i].textContent = "pan " + pan.toFixed(3);
+        const panFill = panFills[i];
+        const widthPercent = Math.abs(pan) * 50;
+        const leftPercent = pan >= 0 ? 50 : 50 - widthPercent;
+        panFill.style.left = leftPercent + "%";
+        panFill.style.width = widthPercent + "%";
+
+        ringTexts[i].textContent =
+          "ring " + ringDepth.toFixed(2) + " r=" + ringRatio.toFixed(2);
+        fmTexts[i].textContent =
+          "fm dev " + fmAmount.toFixed(1) + "hz";
+        delayTexts[i].textContent =
+          "dl " + delaySend.toFixed(2);
+        distTexts[i].textContent =
+          "dist " + distSend.toFixed(2);
+        hpTexts[i].textContent =
+          "hp " + hpSend.toFixed(2);
+        sideTexts[i].textContent =
+          "side " + sideSend.toFixed(2);
+        verbTexts[i].textContent =
+          "verb " + verbSend.toFixed(2);
+
+let lfoEffect = 1.0;
+if (baseVol > 1e-4) {
+  lfoEffect = modVol / baseVol;   // 0..1-ish (could be higher if you change mapping)
+}
+
+// Show current effect and raw LFO value
+// lfoEffect: 1.00 = no change, 0.00 = fully off
+// rawLfo:    instantaneous LFO waveform (0..1 or whatever your shape outputs)
+// lfoTexts[i].textContent =
+//   `LFO=${lfoEffect.toFixed(2)} `;
+
+        streamNoteIndex[i] = noteIdx;
+      }
+
+      requestAnimationFrame(updateLoop);
+    }
+
+    requestAnimationFrame(updateLoop);
+  </script>
+</body>
+</html>
