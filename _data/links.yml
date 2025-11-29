@@ -23,6 +23,12 @@
   text: "BUY"
   desc: "Workshop System kits for USA from Perfect Circuit" 
 
+- order: 2
+  link: "https://vincentmaurer.de/patch-notes/"
+  text: "NEW"
+  desc: "Play a Workshop System online"
+
+
 - order: 5
   link: "https://www.lulu.com/shop/oliver-divmod/patch-the-random/paperback/product-zmynwem.html?page=1&pageSize=4"
   text: "Read"
