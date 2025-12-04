@@ -783,7 +783,7 @@
       masterGain.connect(audioCtx.destination);
 
       delayNode = audioCtx.createDelay(2.0);
-      delayNode.delayTime.value = 0.35;
+      delayNode.delayTime.value = 0.65;
       delayFeedbackGain = audioCtx.createGain();
       delayFeedbackGain.gain.value = 0.4;
       delayNode.connect(delayFeedbackGain);
