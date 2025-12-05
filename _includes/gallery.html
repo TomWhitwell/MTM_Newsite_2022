@@ -1,0 +1,42 @@
+
+
+{% assign images = include.images %}
+{% if images and images.size > 0 %}
+  {% assign gallery_name = include.id | default: 'gallery-' | append: images.size %}
+
+  <div class="mtm-gallery" data-gallery-name="{{ gallery_name | escape }}">
+    <div class="mtm-gallery__frame">
+      {% for img in images %}
+        <figure
+          class="mtm-gallery__slide{% if forloop.first %} is-active{% endif %}"
+          data-index="{{ forloop.index0 }}"
+        >
+          <img
+            src="{{ img.src | relative_url }}"
+            alt="{{ img.alt | default: '' | escape }}"
+            class="mtm-gallery__image"
+            loading="lazy"
+          >
+          {% if img.caption %}
+            <figcaption class="mtm-gallery__caption">
+              {{ img.caption }}
+            </figcaption>
+          {% endif %}
+        </figure>
+      {% endfor %}
+
+      {% if images.size > 1 %}
+        <button
+          class="mtm-gallery__nav mtm-gallery__nav--prev"
+          type="button"
+          aria-label="Previous image"
+        >〈</button>
+        <button
+          class="mtm-gallery__nav mtm-gallery__nav--next"
+          type="button"
+          aria-label="Next image"
+        >〉</button>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

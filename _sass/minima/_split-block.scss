@@ -1,0 +1,78 @@
+/* Split blocks (image + text)
+   --------------------------- */
+
+/* Tweak these to adjust the split globally */
+$mtm-split-image-width: 60%; // e.g. 40% image / 60% text
+$mtm-split-text-width: 40%;
+
+.mtm-split {
+  display: flex;
+  align-items: center;
+  gap: $spacing-unit * 1.5;
+  margin: $spacing-unit * 2 0;
+}
+
+/* Orientation variants */
+.mtm-split--left {
+  flex-direction: row;
+}
+
+.mtm-split--right {
+  flex-direction: row-reverse;
+}
+
+.mtm-split__image {
+  flex: 0 1 $mtm-split-image-width;  // allow shrink
+  max-width: $mtm-split-image-width;
+}
+
+.mtm-split__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.mtm-split__content {
+  flex: 0 1 $mtm-split-text-width;   // allow shrink
+  max-width: $mtm-split-text-width;
+}
+
+/* Typography, matching your general style */
+
+.mtm-split__title {
+  font-size: 28px;         // same as your h1 size
+  line-height: 1.1;
+  margin: 0 0 $spacing-unit / 3;
+  color: $brand-color;
+}
+
+.mtm-split__subtitle {
+  margin: 0;
+  font-size: 1rem;
+  line-height: $base-line-height;
+  color: $text-color;
+}
+
+/* Responsive: stack on small screens */
+
+@media (max-width: 700px) {
+  .mtm-split {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mtm-split--right {
+    flex-direction: column; // ignore right/left on mobile
+  }
+
+  .mtm-split__image,
+  .mtm-split__content {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .mtm-split__content {
+    margin-top: $spacing-unit;
+  }
+}

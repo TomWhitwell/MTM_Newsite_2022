@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content page-content--landing" aria-label="Content">
+
+      <section class="landing-hero js-landing-hero">
+        <div
+          class="landing-hero__bg"
+          {% if page.hero_image %}
+          style="background-image: url('{{ page.hero_image | relative_url }}');"
+          {% endif %}>
+        </div>
+
+        <div class="landing-hero__content">
+          <div class="landing-hero__overlay">
+            {% if page.hero_content %}
+              {{ page.hero_content | markdownify }}
+            {% endif %}
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-more">
+        <div class="wrapper">
+          {{ content }}
+        </div>
+      </section>
+
+    </main>
+
+    <!-- YouTube lightbox -->
+    <div class="yt-lightbox" id="yt-lightbox" aria-hidden="true">
+      <div class="yt-lightbox__backdrop"></div>
+      <div class="yt-lightbox__dialog" role="dialog" aria-modal="true" aria-label="Video player">
+        <button class="yt-lightbox__close" type="button" aria-label="Close video">&times;</button>
+        <div class="yt-lightbox__frame"></div>
+      </div>
+    </div>
+
+
+
+
+    {%- include footer.html -%}
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var hero = document.querySelector('.js-landing-hero');
+      if (!hero) return;
+
+      var bg = hero.querySelector('.landing-hero__bg');
+      if (!bg) return;
+
+      var ticking = false;
+
+      function update() {
+        ticking = false;
+
+        // No parallax on small screens
+        if (window.matchMedia('(max-width: 900px)').matches) {
+          bg.style.transform = 'translateY(0)';
+          return;
+        }
+
+        var rect = hero.getBoundingClientRect();
+        var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        // If hero is completely above or below the viewport, reset
+        if (rect.bottom <= 0 || rect.top >= viewportHeight) {
+          bg.style.transform = 'translateY(0)';
+          return;
+        }
+
+        // Progress through hero: 0 at top, 1 when bottom reaches top of viewport
+        var progress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
+
+        // Max vertical shift for the background (tweak 0.3 to taste)
+        var maxShift = rect.height * 0.3;
+        var translateY = progress * maxShift;
+
+        bg.style.transform = 'translateY(' + translateY + 'px)';
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(update);
+          ticking = true;
+        }
+      }
+
+      // Initial position
+      update();
+      window.addEventListener('scroll', onScroll);
+      window.addEventListener('resize', onScroll);
+    });
+    </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var lightbox = document.getElementById('yt-lightbox');
+  if (!lightbox) return;
+
+  var frameContainer = lightbox.querySelector('.yt-lightbox__frame');
+  var closeBtn = lightbox.querySelector('.yt-lightbox__close');
+  var backdrop = lightbox.querySelector('.yt-lightbox__backdrop');
+
+  function openLightbox(videoId) {
+    if (!videoId) return;
+    var src = 'https://www.youtube.com/embed/' + encodeURIComponent(videoId) + '?autoplay=1';
+    frameContainer.innerHTML =
+      '<iframe src="' + src + '" ' +
+      'title="YouTube video player" ' +
+      'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
+      'allowfullscreen></iframe>';
+    lightbox.classList.add('is-visible');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-visible');
+    lightbox.setAttribute('aria-hidden', 'true');
+    frameContainer.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  // Click handler for any element with data-yt-id (our link)
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest('[data-yt-id]');
+    if (!link) return;
+
+    var videoId = link.getAttribute('data-yt-id');
+    if (!videoId) return;
+
+    event.preventDefault();
+    openLightbox(videoId);
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (backdrop) backdrop.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && lightbox.classList.contains('is-visible')) {
+      closeLightbox();
+    }
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Simple gallery logic: each gallery is independent
+  var galleries = document.querySelectorAll('.mtm-gallery');
+
+  galleries.forEach(function (gallery) {
+    var slides = gallery.querySelectorAll('.mtm-gallery__slide');
+    if (!slides.length) return;
+
+    var current = 0;
+    var prevBtn = gallery.querySelector('.mtm-gallery__nav--prev');
+    var nextBtn = gallery.querySelector('.mtm-gallery__nav--next');
+
+    function show(index) {
+      if (!slides.length) return;
+      current = (index + slides.length) % slides.length;
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle('is-active', i === current);
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        show(current - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        show(current + 1);
+      });
+    }
+  });
+});
+</script>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,223 @@
+/* Landing pages
+   ------------- */
+
+.page-content--landing {
+  padding: 0;
+}
+
+/* Hero container */
+
+.landing-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: $text-color;
+}
+
+/* Background image that will "lag" via transform */
+
+.landing-hero__bg {
+  position: absolute;
+  inset: $spacing-unit/2 0 0 0;  // was: inset: 0;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  will-change: transform;
+  z-index: 1;
+}
+
+/* Content layer – full height, overlay aligned to bottom */
+
+.landing-hero__content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 0 $spacing-unit $spacing-unit * 2;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-end;   // overlay at the bottom on load
+}
+
+/* Overlay box */
+
+.landing-hero__overlay {
+  margin-left: auto;
+  max-width: 420px;
+
+  background: #fff;
+  color: $text-color;
+  padding: $spacing-unit * 1.2 $spacing-unit * 1.5;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid $grey-color-light;
+}
+
+/* Typography inside overlay */
+
+.landing-hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: $small-font-size;
+  color: $grey-color;
+  margin: 0 0 $spacing-unit / 4;
+}
+
+.landing-hero__headline {
+  font-size: 36px;
+  line-height: 1.1;
+  margin: 0 0 $spacing-unit / 2;
+  color: #221111;
+  display: block;
+}
+
+.landing-hero__intro {
+  margin: 0 0 $spacing-unit;
+  font-size: 1rem;
+  line-height: $base-line-height;
+}
+
+.landing-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: $spacing-unit / 2;
+}
+
+.landing-hero__button {
+  display: inline-block;
+  a { color: #ffffff; text-decoration: none; }
+  
+}
+
+.landing-hero__button--secondary {
+  background-color: transparent;
+  color: $text-color;
+  border: 1px solid $grey-color;
+
+  &:hover {
+    background-color: $grey-color-light;
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+
+.landing-hero__meta {
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+/* "More stuff below" section */
+
+.landing-more {
+  padding: $spacing-unit * 2 0;
+}
+
+
+.landing-hero__form{
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 26rem;
+}
+
+.landing-hero__form-field{
+  display: grid;
+  gap: 0.35rem;
+}
+
+.landing-hero__label{
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.landing-hero__input{
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.2);
+  color: inherit;
+}
+
+.landing-hero__checkbox{
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.landing-hero__checkbox-input{
+  margin-top: 0.15rem;
+}
+
+.landing-hero__email-row{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.landing-hero__label--inline{
+  margin: 0;
+  white-space: nowrap;
+}
+
+.landing-hero__input--inline{
+  flex: 1;
+  min-width: 12rem;
+}
+
+
+
+/* Responsive */
+
+@media (max-width: 500px) {
+  .landing-hero {
+    min-height: auto;
+    overflow: visible; // let content flow naturally
+  }
+
+  /* Top: image as a block section */
+  .landing-hero__bg {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 50vh; // tweak this if you want taller/shorter image
+    background-position: center top;
+    transform: none !important; // no parallax on small screens
+  }
+
+  /* Below: overlay as a normal section */
+  .landing-hero__content {
+    position: relative;
+    z-index: 2;
+    min-height: auto;
+    padding: $spacing-unit * 1.5 $spacing-unit $spacing-unit * 2;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .landing-hero__overlay {
+    margin: 0;
+    max-width: 100%;
+    padding: 0; // we’ll let inner text spacing handle this
+
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid $grey-color-light;
+    background: #fff;
+  }
+
+  .landing-hero__actions {
+    flex-direction: column;
+  }
+
+  .landing-hero__button {
+    text-align: center;
+  }
+}
+
+
+
+

@@ -1,0 +1,80 @@
+/* Simple image gallery
+   -------------------- */
+
+.mtm-gallery {
+  margin: $spacing-unit * 2 0;
+}
+
+.mtm-gallery__frame {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Slides */
+
+.mtm-gallery__slide {
+  margin: 0;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease-out;
+}
+
+.mtm-gallery__slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
+
+.mtm-gallery__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mtm-gallery__caption {
+  margin-top: 0.5rem;
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+/* Navigation chevrons */
+
+.mtm-gallery__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;      // no circle
+  color: #fff;                  // white chevrons
+  width: auto;
+  height: auto;
+  padding: 0 10px;              // a bit of hit area
+  cursor: pointer;
+  font-size: 60px;              // bigger < >
+  line-height: 1;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6); // keeps visible on bright images
+}
+
+.mtm-gallery__nav--prev {
+  left: 12px;
+}
+
+.mtm-gallery__nav--next {
+  right: 12px;
+}
+
+.mtm-gallery__nav:hover {
+  background: transparent;      // keep it clean on hover
+  color: #fff;
+}
+
+
+@media (max-width: 500px) {
+  .mtm-gallery__nav {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+}

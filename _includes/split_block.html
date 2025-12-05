@@ -1,0 +1,28 @@
+
+
+{%- assign align = include.align | default: 'left' -%}
+
+<section class="mtm-split mtm-split--{{ align | escape }}">
+  <div class="mtm-split__image">
+    <img
+      src="{{ include.image | relative_url }}"
+      alt="{{ include.alt | default: '' | escape }}"
+      class="mtm-split__img"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="mtm-split__content">
+    {%- if include.title -%}
+      <h2 class="mtm-split__title">
+        {{ include.title }}
+      </h2>
+    {%- endif -%}
+
+    {%- if include.subtitle -%}
+      <p class="mtm-split__subtitle">
+        {{ include.subtitle }}
+      </p>
+    {%- endif -%}
+  </div>
+</section>
