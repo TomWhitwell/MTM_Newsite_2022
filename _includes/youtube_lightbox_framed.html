@@ -1,0 +1,31 @@
+<figure class="yt-thumb yt-thumb--framed">
+  <figcaption class="yt-thumb__frame-caption">
+    <span class="yt-thumb__title">
+      {{ include.title | default: include.alt | default: 'Video' }}
+    </span>
+    {%- if include.subtitle -%}
+      <span class="yt-thumb__subtitle">
+        {{ include.subtitle }}
+      </span>
+    {%- endif -%}
+  </figcaption>
+
+  <a
+    class="yt-thumb__link"
+    href="https://www.youtube.com/watch?v={{ include.id | escape }}"
+    data-yt-id="{{ include.id | escape }}"
+  >
+    <img
+      src="{{ include.thumb | relative_url }}"
+      alt="{{ include.alt | default: 'Video' | escape }}"
+      class="yt-thumb__image"
+      loading="lazy"
+    >
+
+    <span class="yt-thumb__overlay">
+      <span class="yt-thumb__overlay-panel">
+        <span class="yt-thumb__play-icon" aria-hidden="true"></span>
+      </span>
+    </span>
+  </a>
+</figure>

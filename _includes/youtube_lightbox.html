@@ -1,0 +1,27 @@
+
+
+<figure class="yt-thumb">
+  <a
+    class="yt-thumb__link"
+    href="https://www.youtube.com/watch?v={{ include.id | escape }}"
+    data-yt-id="{{ include.id | escape }}"
+  >
+    <img
+      src="{{ include.thumb | relative_url }}"
+      alt="{{ include.alt | default: 'Video' | escape }}"
+      class="yt-thumb__image"
+      loading="lazy"
+    >
+
+    <!-- New text overlay -->
+    <span class="yt-thumb__label">
+      {{ include.alt | default: 'Video' }}
+    </span>
+
+    <span class="yt-thumb__overlay">
+      <span class="yt-thumb__overlay-panel">
+        <span class="yt-thumb__play-icon" aria-hidden="true"></span>
+      </span>
+    </span>
+  </a>
+</figure>

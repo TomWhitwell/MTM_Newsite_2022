@@ -1,0 +1,189 @@
+/* YouTube thumbnail with play overlay
+   ---------------------------------- */
+
+.yt-thumb {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.yt-thumb__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.yt-thumb__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* Text label (uses alt text) */
+.yt-thumb__label {
+  position: absolute;
+  top: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  left: 12px;
+  right: 12px;              // allow wrapping but keep some padding
+  max-width: 70%;           // don’t run all the way across
+  color: #fff;
+  font-size: 40px;          // roughly your headline size, tweak if needed
+  line-height: 1.2;
+  font-weight: $base-font-weight;
+  text-decoration: none;
+  pointer-events: none;     // clicks go through to the link
+  text-shadow: 0 0px 0px rgba(0, 0, 0, 0.6); // keeps white readable on busy frames
+}
+
+
+
+/* Overlay for play panel */
+.yt-thumb__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; // click goes through to the <a>
+}
+
+/* Black panel bottom-right, ~1/3 height */
+.yt-thumb__overlay-panel {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 33%;
+  height: 33%;
+  background: rgba(0, 00, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yt-thumb__play-icon {
+  width: 0;
+  height: 0;
+  border-left: 40px solid #fff;        // how “wide” the triangle is
+  border-top: 28px solid transparent;  // half the “height”
+  border-bottom: 28px solid transparent;
+}
+
+
+/* Hover state */
+.yt-thumb__link:hover .yt-thumb__overlay-panel {
+  background: rgba(255, 0, 0, 0.9);
+}
+
+
+/* Framed variant
+   -------------- */
+
+.yt-thumb--framed {
+  background: #000;
+  padding: 20px 24px 24px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.yt-thumb__frame-caption {
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+.yt-thumb__title {
+  display: block;
+  font-size: 24px;        // or match your site h2 size
+  line-height: 1.2;
+  font-weight: $base-font-weight;
+  margin-bottom: 4px;
+}
+
+.yt-thumb__subtitle {
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+
+/* The image inside the framed container */
+
+.yt-thumb--framed .yt-thumb__image {
+  border-radius: 2px;
+}
+
+
+
+
+/* Lightbox
+   -------- */
+
+.yt-lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.yt-lightbox.is-visible {
+  display: flex;
+}
+
+.yt-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.yt-lightbox__dialog {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  width: 90vw;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.yt-lightbox__frame {
+  width: 100%;
+  height: 100%;
+}
+
+.yt-lightbox__frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Close button */
+.yt-lightbox__close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 2;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.yt-lightbox__close:hover {
+  color: #ffd700; // tweak if you want
+}
+
+/* Mobile tweaks */
+@media (max-width: 500px) {
+  .yt-lightbox__dialog {
+    width: 100vw;
+    height: 56.25vw; // 16:9
+    max-height: 70vh;
+    max-width: 100%;
+    border-radius: 0;
+  }
+}
