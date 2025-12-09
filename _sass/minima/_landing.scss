@@ -173,33 +173,39 @@
 @media (max-width: 500px) {
   .landing-hero {
     min-height: auto;
-    overflow: visible; // let content flow naturally
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Top: image as a block section */
-  .landing-hero__bg {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    height: 50vh; // tweak this if you want taller/shorter image
-    background-position: center top;
-    transform: none !important; // no parallax on small screens
-  }
-
-  /* Below: overlay as a normal section */
+  /* Make overlay/content come first */
   .landing-hero__content {
+    order: 1;
+
     position: relative;
     z-index: 2;
     min-height: auto;
-    padding: $spacing-unit * 1.5 $spacing-unit $spacing-unit * 2;
+    padding: $spacing-unit * 1.5 $spacing-unit $spacing-unit * 1.5;
     box-sizing: border-box;
     display: block;
+  }
+
+  /* Put the hero image AFTER the overlay */
+  .landing-hero__bg {
+    order: 2;
+
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 45vh; // tweak to taste
+    background-position: center top;
+    transform: none !important;
   }
 
   .landing-hero__overlay {
     margin: 0;
     max-width: 100%;
-    padding: 0; // we’ll let inner text spacing handle this
+    padding: 0;
 
     border-radius: 0;
     border-left: 0;
