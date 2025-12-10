@@ -1,3 +1,8 @@
+  {%- if jekyll.environment == 'production' and site.google_tag_manager -%}
+    {%- include google-tag-manager-body.html -%}
+  {%- endif -%}
+
+
 <header class="site-header" role="banner">
 
   <div class="wrapper">

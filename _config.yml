@@ -43,6 +43,7 @@ author: Tom Whitwell
 
 # Google Analytics
 google_analytics: UA-25728206-1
+google_tag_manager: GTM-5JP792JJ
 
 # Build settings
 theme: minima
