@@ -56,8 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <picture>
-  <source srcset="/images/900-workshopsystem-full-straight-headphones-colour-2.webp" type="image/webp">
-  <img src="/images/900-workshopsystem-full-straight-headphones-colour-2.jpg" 
+  <img src="/images/MTM_Workshop-System-above.jpg" 
        alt="Music Thing Workshop System in a black case with some headphones"
        width="900" height="600" loading="lazy" style="width: 100%; height: auto;">
 </picture>
@@ -66,13 +65,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+<br>
 <h1>	<homepage_body>Music Thing Modular Workshop System</homepage_body></h1>
 <br>
 Music Thing Modular Workshop System is a complete modular synth. It is slightly smaller than a hardback book. It comes in a foam-lined hard case. 
 
 
-At present, it is [available exclusively as a DIY kit from Thonk](https://www.thonk.co.uk/workshopsystem/). 
+At present, it is available as a DIY kit from [Thonk](https://www.thonk.co.uk/workshopsystem/) in Brighton,  who ship worldwide, [Perfect Circuit](https://www.perfectcircuit.com/music-thing-modular-workshop-system-diy-kit.html) in California, and  [Exploding Shed](https://www.exploding-shed.com/music-thing-modular-workshop-system/100949) in Leipzig. 
+
+Workshop Systems are also available pre-assembled from [Signal Sounds](https://www.signalsounds.com/music-thing-modular-workshop-system-desktop-eurorack-synthesiser/) in Glasgow, [Perfect Circuit](https://www.perfectcircuit.com/music-thing-modular-workshop-system-assembled.html) in California and [SchneidersLaden](https://schneidersladen.de/en/music-thing-modular-workshop-system-assembled) in Berlin. 
 
  <a href="https://www.thonk.co.uk/workshopsystem/" class="buy-btn">BUY NOW</a>&nbsp;&nbsp;
  <a href="/Workshop_System_Build_Guide/" class="buy-btn">Build Guide</a>  
@@ -84,7 +85,6 @@ At present, it is [available exclusively as a DIY kit from Thonk](https://www.th
 
 
 To find out more about the Workshop System:  
-* **[Zine: What Would Someone Like Me Do with a Tiny Modular Synth?](/collateral/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book.pdf)** 
 * **[Workshop System Quick Start Guide](/Workshop_Quick_Start/)** 
 * **[Computer and Program Card Guide](/Computer_Program_Cards/)** 
 * **[Build and construction Guide](/Workshop_System_Build_Guide/)**   
