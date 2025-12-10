@@ -1,7 +1,7 @@
 ---
 layout: landing
 title: Get your free modular zine
-permalink: /ModularZine2/
+permalink: /ModularZine/
 hero_image: /images/MTM_Workshop-System-composition-1.jpg
 hero_content: |
 
