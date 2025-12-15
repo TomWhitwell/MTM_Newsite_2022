@@ -71,9 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
 Music Thing Modular Workshop System is a complete modular synth. It is slightly smaller than a hardback book. It comes in a foam-lined hard case. 
 
 
-At present, it is available as a DIY kit from [Thonk](https://www.thonk.co.uk/workshopsystem/) in Brighton,  who ship worldwide, [Perfect Circuit](https://www.perfectcircuit.com/music-thing-modular-workshop-system-diy-kit.html) in California, and  [Exploding Shed](https://www.exploding-shed.com/music-thing-modular-workshop-system/100949) in Leipzig. 
+At present, it is available as a DIY kit from [Thonk](https://www.thonk.co.uk/workshopsystem/) in Brighton,  who ship worldwide, [Perfect Circuit](https://www.perfectcircuit.com/music-thing-modular-workshop-system-diy-kit.html) in California, [Exploding Shed](https://www.exploding-shed.com/music-thing-modular-workshop-system/100949) in Leipzig and from [SchneidersKeller](https://www.schneiderskeller.co.uk/) in person from their store on Denmark Street, London. 
 
-Workshop Systems are also available pre-assembled from [Signal Sounds](https://www.signalsounds.com/music-thing-modular-workshop-system-desktop-eurorack-synthesiser/) in Glasgow, [Perfect Circuit](https://www.perfectcircuit.com/music-thing-modular-workshop-system-assembled.html) in California and [SchneidersLaden](https://schneidersladen.de/en/music-thing-modular-workshop-system-assembled) in Berlin. 
+Workshop Systems are also available pre-assembled from [Signal Sounds](https://www.signalsounds.com/music-thing-modular-workshop-system-desktop-eurorack-synthesiser/) in Glasgow, [Perfect Circuit](https://www.perfectcircuit.com/music-thing-modular-workshop-system-assembled.html) in California and [SchneidersLaden](https://schneidersladen.de/en/music-thing-modular-workshop-system-assembled) in Berlin, and on request from Thonk. 
 
  <a href="https://www.thonk.co.uk/workshopsystem/" class="buy-btn">BUY NOW</a>&nbsp;&nbsp;
  <a href="/Workshop_System_Build_Guide/" class="buy-btn">Build Guide</a>  
