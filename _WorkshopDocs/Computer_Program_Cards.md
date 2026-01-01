@@ -19,7 +19,7 @@ Computer is powerful enough to do audio effects, sequencing and connecting with 
 
 Computer loads programs stored on tiny custom-made program cards slightly larger than Micro SD cards. It has three pairs of inputs and outputs: for Audio/CV, for precision control voltages for pitch, and for pulses. 
 
-To find out about new program cards subscribe to the free [Workshop System Newsletter](https://workshopsystem.substack.com/), or join the [Workshop System Discord](https://discord.gg/NrfBAjfX62).  
+To find out about new program cards subscribe to the free [Workshop System Newsletter](https://workshopsystem.substack.com/), or join the [Workshop System Discord](/discord/).  
 
 
 **[00 Simple MIDI](#00-simple-midi)**    
