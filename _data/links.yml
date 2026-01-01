@@ -1,27 +1,43 @@
-- order: 0
+- order: 0.1
+  link: "https://dyski.co/Tom-Whitwell-Sound-Maps"
+  text: "TORONTO 2026" 
+  desc: "Sound Maps event with Dyski"
+  
+- order: 0.15
+  link: "https://www.schneiderskeller.co.uk/products/untitled-26dec_15-51"
+  text: "LONDON 2026" 
+  desc: "Introduction to Modular with SchneidersKeller"
+  
+ 
+- order: 2
   link: "https://youtu.be/ABbWmZOtmig"
   text: "Mylar Melodies" 
   desc: "Workshop System full video demo"
   
-- order: 0.1
+- order: 2
   link: "https://www.youtube.com/watch?v=-fjmAFyHc2Y"
   text: "Watch "
   desc: "Building a Workshop system in real time (3 hrs long)"
   
-- order: 1
+- order: 0.5
   link: "https://www.thonk.co.uk/shop/workshop-system/"
-  text: "BUY"
+  text: "BUY WORDLWIDE"
   desc: "Workshop System kits from Thonk, shipping worldwide" 
 
 - order: 1
   link: "https://www.exploding-shed.com/music-thing-modular-workshop-system/100949/"
-  text: "BUY"
+  text: "BUY EU"
   desc: "Workshop System kits for EU from Exploding Shed" 
 
 - order: 1
   link: "https://www.perfectcircuit.com/music-thing-modular"
-  text: "BUY"
-  desc: "Workshop System kits for USA from Perfect Circuit" 
+  text: "BUY US"
+  desc: "Workshop System Assembled + kits in US from Perfect Circuit" 
+
+- order: 1
+  link: "https://schneidersladen.de/en/music-thing-modular-workshop-system-assembled"
+  text: "BUY EU"
+  desc: "Assembled Workshop Systems in EU from SchneidersLaden" 
 
 - order: 2
   link: "https://vincentmaurer.de/patch-notes/"
@@ -57,7 +73,7 @@
   text: "Retro AI graphics" 
   desc: "Prompt & Code" 
 
-- order: 2
+- order: 12
   link: "https://dyski.co/"
   text: "Workshops & retreats" 
   desc: "Join the Dyski mailing list for future events" 
