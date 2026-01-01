@@ -91,7 +91,7 @@ To find out more about the Workshop System:
 * **[Calibration Guide](/Workshop_System_Calibration/)**  
 * **Subscribe to the [Workshop System newsletter](https://workshopsystem.substack.com/)**
 * **Follow [@musicthingmodular on Instagram](https://www.instagram.com/musicthingmodular/)** 
-* **Join the [Workshop System Discord](https://discord.gg/j79Dk88Dms)** 
+* **Join the [Workshop System Discord](https://discord.gg/NrfBAjfX62)** 
 
 
 <picture>

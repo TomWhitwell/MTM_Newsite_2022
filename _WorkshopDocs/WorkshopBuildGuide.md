@@ -62,7 +62,7 @@ NB: This is the build guide for kits bought after July 2025. [For earlier kits, 
 
 {% include linkedHeading.html heading="Before you start" level=2 %}
 * [Sign up for the Workshop System Newsletter](https://workshopsystem.substack.com/) - for new program cards, gigs, demos, patch ideas, collaboration opportunities, workshops and so on.
-* [Join the Workshop System Discord](https://discord.gg/j79Dk88Dms) - musicians and coders using and developing the system. 
+* [Join the Workshop System Discord](https://discord.gg/NrfBAjfX62) - musicians and coders using and developing the system. 
 
 {% include linkedHeading.html heading="What do I need to build the Workshop System?" level=2 %}
 Apart from the kit, you'll need: 
