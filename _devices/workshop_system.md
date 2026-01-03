@@ -3,10 +3,10 @@ layout: documentation
 permalink: /workshopsystem/
  
 order: -1
-title:  "Workshop System DIY"
+title:  "Workshop System: The Complete Modular Synth"
 module-name: "Workshop System"
 designed: "October 2024" 
-image: "/images/900-workshopsystem-full-straight-headphones-red.jpg"
+image: "/images/MTM_Workshop-System-above.jpg"
 wide-image: "true" 
 excerpt: "is a complete DIY modular synth that's smaller than a hardback book" 
 overlay: "NEW: "
@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <picture>
+  <source srcset="/images/MTM_Workshop-System-above.webp" type="image/webp">
   <img src="/images/MTM_Workshop-System-above.jpg" 
        alt="Music Thing Workshop System in a black case with some headphones"
        width="900" height="600" loading="lazy" style="width: 100%; height: auto;">
 </picture>
-
 
 
 
@@ -134,8 +134,8 @@ The Workshop System has 14 modules:
 
 
 <picture>
-  <source srcset="/images/900_leftside_angle_1_small_color.webp" type="image/webp">
-  <img src="/images/900_leftside_angle_1_small_color.jpg" 
+  <source srcset="/images/MTM_Workshop-System-composition-2.webp" type="image/webp">
+  <img src="/images/MTM_Workshop-System-composition-2.jpg" 
        alt="Music Thing Workshop System Computer section"
        width="900" height="900" loading="lazy" style="width: 100%; height: auto;">
 </picture>
@@ -154,11 +154,21 @@ The Workshop System has 14 modules:
 
 
 <picture>
-  <source srcset="/images/900-full-nocase.webp" type="image/webp">
-  <img src="/images/900-full-nocase.jpg" 
+  <source srcset="/images/MTM_Workshop-System-detail_2.webp" type="image/webp">
+  <img src="/images/MTM_Workshop-System-detail_2.jpg" 
        alt="Music Thing Workshop System"
        width="900" height="622" loading="lazy" style="width: 100%; height: auto;">
 </picture>
+
+<br>
+
+<picture>
+  <source srcset="/images/MTM_Workshop-System-detail_1.webp" type="image/webp">
+  <img src="/images/MTM_Workshop-System-detail_1.jpg" 
+       alt="Music Thing Workshop System"
+       width="900" height="622" loading="lazy" style="width: 100%; height: auto;">
+</picture>
+
 
 
 
