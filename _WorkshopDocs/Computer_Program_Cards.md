@@ -12,10 +12,11 @@ title:  "Music Thing Workshop Computer and Program Cards"
 
 
 # Program Cards and the Computer
- {% include documentation_image.html filename="images/900-computer_colour.jpg" caption="Computer runs on tiny program cards loaded by pushing the tiny button next to the card slot" %}
+ {% include documentation_image.html filename="images/MTM_Workshop-System-detail_1.jpg" caption="Computer runs on tiny program cards loaded by pushing the tiny button next to the card slot" %}
 Computer is a simple but capable music computer,  inspired by the early music studios like [EMS](https://www.facebook.com/BBCArchive/videos/383617947753333/) in London and [Bell Labs](https://www.youtube.com/watch?v=mT3U98cFqSs) where computers were used to control analog oscillators and filters, compose algorithmic music and generate waveforms. 
 
 Computer is powerful enough to do audio effects, sequencing and connecting with other devices over USB.  
+ {% include documentation_image.html filename="images/MTM_Workshop-System-stompbox_computer_cards-w-ring.jpg" caption="The system comes with Midi, Turing, Reverb+ and one blank card" %}
 
 Computer loads programs stored on tiny custom-made program cards slightly larger than Micro SD cards. It has three pairs of inputs and outputs: for Audio/CV, for precision control voltages for pitch, and for pulses. 
 
