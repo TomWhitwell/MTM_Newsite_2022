@@ -39,10 +39,10 @@
   text: "BUY EU"
   desc: "Assembled Workshop Systems in EU from SchneidersLaden" 
 
-- order: 2
+- order: 0.01
   link: "https://vincentmaurer.de/patch-notes/"
   text: "NEW"
-  desc: "Play a Workshop System online"
+  desc: "Workshop System Emulator website"
 
 - order: 2
   link: "https://www.chris-j.co.uk/utility_pair/"
