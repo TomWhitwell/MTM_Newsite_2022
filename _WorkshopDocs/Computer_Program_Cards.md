@@ -23,10 +23,14 @@ Computer loads programs stored on tiny custom-made program cards slightly larger
 To find out about new program cards subscribe to the free [Workshop System Newsletter](https://workshopsystem.substack.com/), or join the [Workshop System Discord](/discord/).  
 
 
+The Workshop System comes with these cards: 
+
 **[00 Simple MIDI](#00-simple-midi)**    
 **[03 Turing Machine](#03-turing-machine)**  
 **[20 Reverb+](#20-reverb)**    
 **[88 Blank 2mb](https://www.thonk.co.uk/shop/mtm-workshop-blank-card-set/)**     
+
+You can the latest [find free program cards to download here](https://tomwhitwell.github.io/Workshop_Computer/index.html). 
 
 
 {% include linkedHeading.html heading="Program Cards works in progress" level=3 %}
