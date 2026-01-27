@@ -59,7 +59,7 @@ To get started, you need a power supply and some patch cables:
 * Some very cheap power supplies from Amazon and AliExpress work fine, but are electrically noisy - putting noise into the mains and ground circuits that might be audible when recording or playing over big speakers.
 * The following models have been tested with the Workshop System (late 2024):
 [UGREEN 30W](https://www.amazon.co.uk/gp/product/B0C2V9LZRG) | [Anker Nano 30W](https://www.amazon.co.uk/gp/product/B0CD75QL17?th=1) | [Anker GaN 30W](https://www.amazon.co.uk/gp/product/B0B2WN1WKR?th=1) | [UGREEN 45W](https://www.amazon.co.uk/gp/product/B0BKFWD1RV/) | [BIUBOTY 45W](https://www.amazon.co.uk/gp/product/B0BPL7DFJT) | [CSHARE 30W](https://www.amazon.co.uk/gp/product/B0B2R3T791)
-* You can also power the Workshop System using barrel power: 15V to 25VDC, 2.1mm positive tip, the same spec as 4MS pods and Row Power (NB: Moog Semi-Modular power supplies are 12V and NOT compatible).
+* You can also power the Workshop System using barrel power: 15V to 22VDC, 2.1mm positive tip, the same spec as 4MS pods and Row Power (NB: Moog Semi-Modular power supplies are 12V and NOT compatible).
 
 {% include documentation_image.html filename="images/WS-barrel.jpg" caption="Or you can use professional 15-25V 2.1mm + tip barrel power " %}
 
