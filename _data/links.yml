@@ -1,12 +1,8 @@
-- order: 0.1
-  link: "https://dyski.co/Tom-Whitwell-Sound-Maps"
-  text: "TORONTO 2026" 
-  desc: "Sound Maps event with Dyski"
-  
-- order: 0.15
-  link: "https://tomwhitwell.github.io/Workshop_Computer/programs/69-trace/index.html"
+
+- order: 4
+  link: "https://tracker.musicthing.co.uk/"
   text: "NEW" 
-  desc: "Oscillographic Laser Program Card"
+  desc: "Minimal FM Tracker"
   
  
 - order: 2
