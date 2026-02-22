@@ -9,7 +9,7 @@ designed: "October 2024"
 image: "/images/MTM_Workshop-System-above.jpg"
 wide-image: "true" 
 excerpt: "is a complete DIY modular synth that's smaller than a hardback book" 
-overlay: "NEW: "
+
 thonk-url: "https://www.thonk.co.uk/" 
 # size: "42 HP"
 # depth: "24 mm"

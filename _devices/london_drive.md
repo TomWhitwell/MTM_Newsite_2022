@@ -2,7 +2,7 @@
 layout: module
 permalink: /London-Drive/
 
-order: 3
+order: 3.1
 title:  "London Drive Eurorack Module DIY"
 module-name: "London Drive"
 designed: "2022"

@@ -2,7 +2,7 @@
 layout: module
 permalink: /Twin-Drive/
 
-order: 3
+order: 3.3
 title:  "Twin Drive Eurorack Module DIY"
 module-name: "Twin Drive"
 designed: "2022"
