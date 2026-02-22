@@ -9,6 +9,51 @@ pods:
  link: "books.html"
  title: The Music Thing Modular Reading List
 
+- 
+  link: "https://www.youtube.com/watch?v=lStpN1f-AHc"
+  title: "Why We Bleep 8"
+  description: "on AI and the Synclavier"
+  date: 2026
+
+
+
+- 
+  link: "https://www.youtube.com/watch?v=0XAytmcDnBc"
+  title: "Crux Festival 2025"
+  description: "on designing interfaces and the Workshop System"
+  date: 2025
+
+- 
+  link: "https://www.youtube.com/watch?v=nE4H1mJB0eU"
+  title: "Robin Rimbaud interview"
+  description: "on using radio to make music"
+  date: 2025
+
+- 
+  link: "https://www.youtube.com/watch?v=AagM37iEIjE"
+  title: "Song Athletic x Music Thing"
+  description: "on becoming an electronics designer"
+  date: 2025
+
+- 
+  link: "https://www.youtube.com/watch?v=Kz2MFdsx19M"
+  title: "Machina Bristronica 2024"
+  description: "on the Workshop System design process"
+  date: 2025
+  
+
+- 
+  link: "https://www.youtube.com/watch?v=tovrxnn-KLM"
+  title: "Why We Bleep 7"
+  description: "on the Workshop System and radio"
+  date: 2025
+
+- 
+  link: "https://www.youtube.com/watch?v=YWhmkT8XCss"
+  title: "Why We Bleep 6"
+  description: "on Dyski and David Tudor"
+  date: 2024
+
 
 -
  link: "extras/soldering.html"
@@ -21,7 +66,8 @@ pods:
   title: "Speaker One"
   description: "notes on making my first speakers"
   date: 2022
-  
+
+
 - 
   link: "https://www.youtube.com/watch?v=wGH6XuM_9ac"
   title: "Why We Bleep 5"
@@ -41,27 +87,11 @@ pods:
  date: 2021
 
 -
- link: "https://www.youtube.com/watch?v=hpsMPEk0mLI"
- title: "Synth Design Podcast"
- description: "on community, Turing design and Prince"
- date: 2021
- 
--
- link: "https://www.youtube.com/watch?v=uA67L6YAN1E"
- title: "Knob Twiddlers Hangout"
- description: "on AI, Speedy J and my coding mentor"
- date: 2021
-
--
  link: "https://medium.com/music-thing-modular-notes/make-knob-twiddling-great-again-47065a346c2"
  title: "Human-sized musical interfaces"
- description: ""
+ description: "Why we need bigger knobs"
  date: 2020
--
- link: "https://podularmodcast.fireside.fm/tomwhitwellmtm"
- title: "Podular Modcast"
- description: "on tiny cases and getting started"
- date: 2020
+
 -
  link: "https://www.youtube.com/watch?v=a46zesS_8dw"
  title: "Why We Bleep 3"
@@ -72,7 +102,6 @@ pods:
  link: "https://www.youtube.com/watch?v=OuwIjasAGho"
  title: "Why We Bleep 2"  
  description: "on DX7s and brain-cell synths"
-
  date: 2019
 - 
  link: "https://www.youtube.com/watch?v=N18ro8nxXI4"

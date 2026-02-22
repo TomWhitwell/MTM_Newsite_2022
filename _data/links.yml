@@ -1,8 +1,12 @@
-
-- order: 4
-  link: "https://tracker.musicthing.co.uk/"
-  text: "NEW" 
-  desc: "Minimal FM Tracker"
+- order: 0.1
+  link: "https://dyski.co/Tom-Whitwell-Sound-Maps"
+  text: "TORONTO 2026" 
+  desc: "Sound Maps event with Dyski"
+  
+- order: 0.15
+  link: "https://www.schneiderskeller.co.uk/products/untitled-26dec_15-51"
+  text: "LONDON 2026" 
+  desc: "Introduction to Modular with SchneidersKeller"
   
  
 - order: 2
@@ -91,10 +95,10 @@
   link: "https://workshopsystem.substack.com/"
   text: "Substack"
   desc: "Workshop System Mailing List" 
-- order: 24
-  link: "https://www.youtube.com/watch?v=tovrxnn-KLM"
+- order: 2
+  link: "https://www.youtube.com/watch?v=lStpN1f-AHc"
   text: "Why We Bleep"
-  desc: "Tom Whitwell x Mylar Melodies ep.7" 
+  desc: "Tom Whitwell x Mylar Melodies ep.8" 
 - order: 25
   link: "mailto:tom@musicthing.co.uk ?subject=Ask%20Tom%20Anything" 
   text: "Ask Tom Anything" 
