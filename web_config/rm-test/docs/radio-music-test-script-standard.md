@@ -10,6 +10,9 @@ This script verifies the broader day-to-day behaviors described in `docs/radio-m
   - `docs/radio-music-test-script-core.md`
 
 ## Additions beyond Core
+Recommended media source:
+- run `python3 tools/generate_rm2_test_media.py --overwrite`
+- use `test-media/rm2_generated_v1/` as SD source
 
 ### Extra equipment
 - One additional microSD card (recommended: `exFAT`) for filesystem parity checks.
@@ -23,6 +26,9 @@ Add these banks to your existing Core card or a cloned card:
 - `3_identical` (same-length files)
 - `4_nonidentical` (mixed lengths/rates)
 - `7_8mu` (8mu-focused content)
+- `8_pot_density_3` (low station density)
+- `9_pot_density_30` (medium station density)
+- `10_pot_density_60` (high station density)
 
 Suggested minimum content per bank:
 - `1_formats`: WAV/AIFF/RAW representatives (valid + one invalid RAW).
@@ -30,6 +36,7 @@ Suggested minimum content per bank:
 - `3_identical`: at least 4 files with same sample rate and frame count.
 - `4_nonidentical`: at least 4 files with mixed lengths/sample rates.
 - `7_8mu`: files where start/end loop behavior is easy to hear.
+- `8/9/10` pot-density banks: generated spoken files with 3/30/60 entries.
 
 ## Logging
 For each test, record:
@@ -275,6 +282,31 @@ Expected:
 3. Confirm default `settings.txt` is recreated and playback remains normal.
 Expected:
 - clean recovery from missing settings file.
+
+## Station density and pot stability
+
+### `ST-35` Low-density station sweep (`P1`)
+1. Select bank `8_pot_density_3`.
+2. Sweep STATION slowly end-to-end 10 times.
+3. Confirm each of the 3 spoken IDs is easy to select.
+Expected:
+- all files are reliably reachable with stable transitions.
+
+### `ST-36` Medium-density station sweep (`P1`)
+1. Select bank `9_pot_density_30`.
+2. Sweep STATION slowly and then at moderate speed.
+3. Check that spoken IDs are reachable across full range.
+Expected:
+- no dead zones,
+- no persistent skipping of specific indices.
+
+### `ST-37` High-density station sweep (`P1`)
+1. Select bank `10_pot_density_60`.
+2. Sweep STATION very slowly and pause at fine increments.
+3. Repeat with station CV offset applied.
+Expected:
+- dense-bank selection remains usable,
+- no unstable toggling around index boundaries.
 
 ## Next script
 After Standard is stable, continue with:

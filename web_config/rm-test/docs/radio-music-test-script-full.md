@@ -13,6 +13,10 @@ Add for Full:
 - optional scope and extra MIDI controller for deeper diagnostics,
 - extra SD cards for card-to-card variance checks.
 
+Recommended media source:
+- run `python3 tools/generate_rm2_test_media.py --overwrite`
+- use `test-media/rm2_generated_v1/` as base pack, then add any custom edge assets.
+
 ## 1.2 Scope map
 - Format family depth: format matrix and rejection behavior.
 - Mode family depth: loop/tuner/speed/fade combinations.
@@ -76,6 +80,9 @@ At root:
 - `5_longnames`
 - `6_edgecases`
 - `7_8mu`
+- `8_pot_density_3`
+- `9_pot_density_30`
+- `10_pot_density_60`
 - `15_sparse`
 
 Leave other numeric banks absent/empty for sparse-bank behavior tests.
@@ -123,6 +130,11 @@ Structure:
 - Unsupported extension files
 - Corrupt WAV header file
 - Corrupt AIFF header file
+
+### Station-density assets (`8/9/10`)
+- `8_pot_density_3`: 3 spoken files
+- `9_pot_density_30`: 30 spoken files
+- `10_pot_density_60`: 60 spoken files
 
 ## 5.3 Settings profiles
 Prepare these root settings profiles and swap as instructed by test IDs:
@@ -872,6 +884,16 @@ This block exists to guarantee broad functional coverage, not only ambiguity hun
 - Expected:
   - No memory-corruption symptoms (random resets, impossible station jumps, frozen controls).
 
+## P2-019 Station-density pot stability sweep
+- Preconditions: use `8_pot_density_3`, `9_pot_density_30`, `10_pot_density_60`.
+- Steps:
+  1. In each bank, sweep STATION slowly, then moderately fast.
+  2. In dense banks, check reachability near both range ends and mid-point boundaries.
+  3. Repeat with small station CV offsets.
+- Expected:
+  - File reachability remains consistent as bank density increases.
+  - No persistent missing indices or unstable boundary oscillation.
+
 ## 10. P3 tests (exploratory)
 ## P3-001 2-hour stability soak
 - Steps:
@@ -903,6 +925,7 @@ This matrix ensures each subsystem element is tied to test IDs.
 | Calibration boot mode | P0-011, P1-039, P1-040 |
 | Bootloader boot mode | P0-012 |
 | Station pot | P1-001 |
+| Station-pot behavior vs bank density (3/30/60 files) | P2-019 |
 | Station CV | P1-002 |
 | Start pot | P1-003 |
 | Start CV | P1-005, P1-039 |

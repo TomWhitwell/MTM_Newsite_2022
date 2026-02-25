@@ -2,9 +2,11 @@
 
 ## Included templates
 - Bug report template:
-  - `.github/ISSUE_TEMPLATE/radio-music-bug-report.md`
+  - Canonical (GitHub): `.github/ISSUE_TEMPLATE/radio-music-bug-report.md`
+  - Raw copy/paste: [radio-music-bug-report.md.txt](../docs/templates/radio-music-bug-report.md.txt)
 - Test finding template:
-  - `.github/ISSUE_TEMPLATE/radio-music-test-finding.md`
+  - Canonical (GitHub): `.github/ISSUE_TEMPLATE/radio-music-test-finding.md`
+  - Raw copy/paste: [radio-music-test-finding.md.txt](../docs/templates/radio-music-test-finding.md.txt)
 
 ## Usage
 1. Choose the template matching what you found.

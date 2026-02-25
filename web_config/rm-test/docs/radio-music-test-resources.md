@@ -1,5 +1,18 @@
 # Radio Music Mk2 Test Resources
 
+## Local generated media pack (recommended)
+- Download ZIP:
+  - [rm2_generated_v1.zip](assets/rm2_generated_v1.zip)
+- Generator script:
+  - `tools/generate_rm2_test_media.py`
+- Validator script:
+  - `tools/validate_rm2_test_media.py`
+- Generated pack location:
+  - `test-media/rm2_generated_v1/`
+- Regenerate:
+  - `python3 tools/generate_rm2_test_media.py --overwrite`
+  - `python3 tools/validate_rm2_test_media.py`
+
 ## External audio test resources
 ## Numbers and spoken prompts
 Useful for validating station travel, intelligibility, and deterministic file ordering checks.

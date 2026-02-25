@@ -8,6 +8,10 @@ This script verifies the user-facing behavior described in `docs/radio-music-qui
 
 ## Core setup
 
+Recommended media source:
+- run `python3 tools/generate_rm2_test_media.py --overwrite`
+- copy `test-media/rm2_generated_v1/` to SD and use `0_core` first
+
 ### Equipment
 - Radio Music Mk2 in a stable Eurorack case.
 - Monitoring path (headphones or interface/monitors).

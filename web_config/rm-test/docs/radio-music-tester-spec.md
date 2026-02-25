@@ -30,6 +30,10 @@ Create a minimal deterministic set:
 - `0_core/002_voice_44k16.wav`
 - optional `1_core/000_alt_44k16.wav`
 
+Fast path:
+- run `python3 tools/generate_rm2_test_media.py --overwrite`
+- use `test-media/rm2_generated_v1/` and start with Core banks.
+
 ### 2.3 Time expectation
 - Active session: about 1-2 hours.
 - Plus soak runs started from Core script:
@@ -51,6 +55,9 @@ Add:
 - `3_identical`
 - `4_nonidentical`
 - `7_8mu`
+- `8_pot_density_3`
+- `9_pot_density_30`
+- `10_pot_density_60`
 
 ### 3.3 Time expectation
 - Active session: about 3-6 hours.

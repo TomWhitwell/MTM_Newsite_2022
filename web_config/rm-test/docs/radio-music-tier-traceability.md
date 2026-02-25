@@ -50,6 +50,7 @@ This file maps user-facing documentation claims to test IDs by tier.
 | 8mu full practical behavior | `ST-29`..`ST-33` |
 | 8mu return to local control | `ST-33A` |
 | Settings regeneration recovery | `ST-34` |
+| Station-pot density stability (3/30/60 files) | `ST-35`, `ST-36`, `ST-37` |
 
 ## Full: Module Reference -> Full Script
 
@@ -66,6 +67,7 @@ This file maps user-facing documentation claims to test IDs by tier.
 | Complete settings key behavior | `P1-035`..`P1-038`, `P1-048`..`P1-053`, `P2-011`..`P2-014` |
 | 8mu mapping, timeout, and loop/pulse interactions | `P1-8MU-001`..`P1-8MU-008`, `P2-010` |
 | Filesystem and stress limits | `P2-001`..`P2-018` |
+| Station-density pot stability stress | `P2-019` |
 | Long-run reliability | `P3-001`..`P3-003` |
 
 ## Notes

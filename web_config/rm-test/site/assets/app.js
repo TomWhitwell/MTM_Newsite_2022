@@ -48,6 +48,12 @@ const DOCS = [
     path: "../docs/radio-music-test-script-full.md",
   },
   {
+    id: "test-script-discovery",
+    title: "Test Script: Discovery",
+    group: "Testing",
+    path: "../docs/radio-music-test-script-discovery.md",
+  },
+  {
     id: "tester-spec",
     title: "Tester Setup",
     group: "Testing",
@@ -58,6 +64,18 @@ const DOCS = [
     title: "Tier Traceability",
     group: "Testing",
     path: "../docs/radio-music-tier-traceability.md",
+  },
+  {
+    id: "test-media-generation",
+    title: "Test Media Plan",
+    group: "Testing",
+    path: "../docs/radio-music-test-media-generation.md",
+  },
+  {
+    id: "test-media-download",
+    title: "Download Test Media ZIP",
+    group: "Testing",
+    path: "../docs/radio-music-test-media-download.md",
   },
   {
     id: "analysis",
@@ -75,14 +93,14 @@ const DOCS = [
     id: "template-bug-report",
     title: "Template: Bug Report",
     group: "Reporting",
-    path: "/collateral/radio-music-bug-report.txt",
+    path: "../docs/templates/radio-music-bug-report.md.txt",
     raw: true,
   },
   {
     id: "template-test-finding",
     title: "Template: Test Finding",
     group: "Reporting",
-    path: "/collateral/radio-music-test-finding.txt",
+    path: "../docs/templates/radio-music-test-finding.md.txt",
     raw: true,
   },
 ];

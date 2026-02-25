@@ -20,10 +20,14 @@ This set is organized as three user documents, each paired with a matching test 
   - `docs/radio-music-test-script-standard.md`
 - Full checks (verifies Module Reference scope):
   - `docs/radio-music-test-script-full.md`
+- Discovery bug hunt (combination/real-world stress):
+  - `docs/radio-music-test-script-discovery.md`
 
 ## Additional documents
 - Tester requirements and tier setup: `docs/radio-music-tester-spec.md`
 - Tier traceability map: `docs/radio-music-tier-traceability.md`
+- Test media generation plan: `docs/radio-music-test-media-generation.md`
+- Test media ZIP download: `docs/radio-music-test-media-download.md`
 - External file resources for testing: `docs/radio-music-test-resources.md`
 - GitHub reporting templates guide: `docs/radio-music-github-templates.md`
 - Firmware behavior analysis appendix: `docs/radio-music-analysis.md`
