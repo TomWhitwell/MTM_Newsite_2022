@@ -61,9 +61,15 @@ Main LED uses are:
   - avoid: `1.wav`, `10.wav`, `2.wav`
 
 ### 3.4 Subfolders
-Subfolders inside a bank become station entries:
+Subfolders inside a bank become station entries.
+
+`next` folders (sequential):
 - Folder name ending with `next`: sequential child selection on reset.
+
+Non-`next` folders (random):
 - Any other folder name: random child selection on reset.
+
+Nested folders:
 - Nested subfolders are supported.
 
 This lets one station represent a rotating phrase set, drum chain, or randomized variation pool.

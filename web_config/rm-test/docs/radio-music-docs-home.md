@@ -23,6 +23,7 @@ This set is organized as three user documents, each paired with a matching test 
 
 ## Additional documents
 - Tester requirements and tier setup: `docs/radio-music-tester-spec.md`
+- Tier traceability map: `docs/radio-music-tier-traceability.md`
 - External file resources for testing: `docs/radio-music-test-resources.md`
 - GitHub reporting templates guide: `docs/radio-music-github-templates.md`
 - Firmware behavior analysis appendix: `docs/radio-music-analysis.md`

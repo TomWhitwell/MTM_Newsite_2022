@@ -62,6 +62,14 @@ Expected:
 Expected:
 - root WAV is not part of station pool.
 
+### `ST-03A` RESET long-hold bank increment (`P1`)
+1. Hold RESET longer than a short tap.
+2. Continue holding to observe repeated bank increments.
+3. Release and verify selected bank.
+Expected:
+- long-hold increments bank repeatedly,
+- release leaves module in the selected bank.
+
 ### `ST-04` Subfolder random behavior (`P1`)
 1. Select station pointing to non-`next` subfolder.
 2. Trigger reset repeatedly.
@@ -169,6 +177,15 @@ Expected:
 Expected:
 - bank-local override is active only in that bank.
 
+### `ST-21A` `settings.txt` parser syntax behavior (`P1`)
+1. Write equivalent keys using varied case/spacing.
+2. Include inline `#` comments.
+3. Reboot and verify behavior.
+Expected:
+- case and spacing variants are parsed correctly,
+- comments are ignored,
+- intended values are applied.
+
 ## Display and quality
 
 ### `ST-22` `showMeter` modes (`P1`)
@@ -244,6 +261,20 @@ Expected:
 1. Connect/disconnect 8mu several times during playback.
 Expected:
 - no crash or persistent control corruption.
+
+### `ST-33A` Return to local control after 8mu activity (`P1`)
+1. Move 8mu controls, then set all sliders back to zero.
+2. Stop MIDI activity briefly.
+3. Confirm panel-only behavior is fully normal.
+Expected:
+- RM exits active remote behavior when timeout + zero-slider condition is met.
+
+### `ST-34` `settings.txt` regeneration recovery (`P2`)
+1. Remove or rename root `settings.txt`.
+2. Reboot module.
+3. Confirm default `settings.txt` is recreated and playback remains normal.
+Expected:
+- clean recovery from missing settings file.
 
 ## Next script
 After Standard is stable, continue with:

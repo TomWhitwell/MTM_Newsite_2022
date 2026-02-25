@@ -15,6 +15,10 @@ This script verifies the user-facing behavior described in `docs/radio-music-qui
 - One microSD card formatted `FAT32`.
 - 8mu connected over USB.
 
+Optional for advanced startup checks:
+- Stable 1V/oct source (for calibration completion check).
+- Known-good `.uf2` firmware file (for bootloader update-path check).
+
 ### SD content (minimal deterministic set)
 Create this exact layout:
 - `0_core/000_sine_44k16.wav`
@@ -145,6 +149,14 @@ Edit one key at a time, reboot after each:
 Expected:
 - each key change causes an audible/visible behavior change consistent with its function.
 
+### `CT-10A` Settings regeneration check (`P1`)
+1. Remove or rename root `settings.txt`.
+2. Reboot RM2.
+3. Confirm a new default `settings.txt` is created.
+Expected:
+- module recreates defaults cleanly,
+- playback remains normal after regeneration.
+
 ## 8mu (release-essential in Core)
 
 ### `CT-11` 8mu slider control (`P0`)
@@ -186,11 +198,32 @@ Expected:
 Expected:
 - calibration mode entry indication appears.
 
+### `CT-15A` Calibration completion smoke (`P1`)
+Precondition: stable 1V/oct source available.
+1. In calibration mode, patch 1V/oct to `START` CV.
+2. Capture at least two octaves.
+3. End calibration and observe result pattern.
+4. Reboot and confirm normal playback.
+Expected:
+- calibration workflow completes without crash,
+- result indication is shown,
+- module returns to normal playback.
+
 ### `CT-16` Bootloader mode entry (`P1`)
 1. Power off.
 2. Hold `RESET` + `STATION` push + `START` push while powering on.
 Expected:
 - RP2040 bootloader mode is entered.
+
+### `CT-16A` Firmware update path smoke (`P1`)
+Precondition: known-good `.uf2` firmware file available.
+1. Enter bootloader mode.
+2. Copy `.uf2` to the RP2040 boot drive.
+3. Wait for reboot.
+4. Confirm module returns to playable state.
+Expected:
+- copy/reboot path works reliably,
+- module boots and plays normally after update.
 
 ## Fault handling smoke
 
