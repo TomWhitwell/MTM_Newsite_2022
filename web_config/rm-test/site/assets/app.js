@@ -54,6 +54,12 @@ const DOCS = [
     path: "../docs/radio-music-tester-spec.md",
   },
   {
+    id: "tier-traceability",
+    title: "Tier Traceability",
+    group: "Testing",
+    path: "../docs/radio-music-tier-traceability.md",
+  },
+  {
     id: "analysis",
     title: "Firmware Analysis",
     group: "Technical",
@@ -76,7 +82,7 @@ const DOCS = [
     id: "template-test-finding",
     title: "Template: Test Finding",
     group: "Reporting",
-    path: "/collateral/radio-music-bug-report.txt",
+    path: "/collateral/radio-music-test-finding.txt",
     raw: true,
   },
 ];
