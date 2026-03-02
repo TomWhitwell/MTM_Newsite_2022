@@ -1,13 +1,7 @@
-- order: 0.1
-  link: "https://dyski.co/Tom-Whitwell-Sound-Maps"
-  text: "TORONTO 2026" 
-  desc: "Sound Maps event with Dyski"
-  
-- order: 0.15
-  link: "https://www.schneiderskeller.co.uk/products/untitled-26dec_15-51"
-  text: "LONDON 2026" 
-  desc: "Introduction to Modular with SchneidersKeller"
-  
+- order: 1
+  link: "https://tomwhitwell.github.io/Workshop_Computer/programs/18-chord-organ/index.html"
+  text: "NEW" 
+  desc: "Chord Organ-ish Workshop Program Card"
  
 - order: 2
   link: "https://youtu.be/ABbWmZOtmig"
@@ -56,7 +50,7 @@
 
 - order: 8
   link: "https://www.instagram.com/thesynthshed/?hl=en-gb"
-  text: "Soldering workshops in London" 
+  text: "Learn to solder in London" 
 
 - order: 9
   link: "https://www.musicthing.co.uk/collateral/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book.pdf"
