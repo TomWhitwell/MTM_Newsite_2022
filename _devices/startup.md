@@ -2,7 +2,7 @@
 layout: module
 permalink: /Startup/
 
-order: 13
+order: 2
 title:  "Startup Eurorack Module DIY"
 module-name: "Startup"
 designed: "February 2019" 
