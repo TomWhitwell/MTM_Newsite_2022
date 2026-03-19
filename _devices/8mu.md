@@ -2,7 +2,7 @@
 layout: module
 permalink: /8mu_page/
  
-order: 1
+order: 15
 title:  "8mu Midi Controller DIY"
 module-name: "8mu"
 designed: "April 2019 - February 2023" 

@@ -1,104 +1,115 @@
-- order: 0.1
-  link: "https://dyski.co/Tom-Whitwell-Sound-Maps"
-  text: "TORONTO 2026" 
-  desc: "Sound Maps event with Dyski"
-  
-- order: 0.15
-  link: "https://www.schneiderskeller.co.uk/products/untitled-26dec_15-51"
-  text: "LONDON 2026" 
-  desc: "Introduction to Modular with SchneidersKeller"
-  
- 
-- order: 2
-  link: "https://youtu.be/ABbWmZOtmig"
-  text: "Mylar Melodies" 
-  desc: "Workshop System full video demo"
-  
-- order: 2
-  link: "https://www.youtube.com/watch?v=-fjmAFyHc2Y"
-  text: "Watch "
-  desc: "Building a Workshop system in real time (3 hrs long)"
-  
-- order: 0.5
+- order: 01
+  link: "https://www.thonk.co.uk/shop/workshop-computer-eurorack/"
+  text: "NEW"
+  desc: "Workshop Computer kits available from Thonk, shipping worldwide" 
+
+- order: 02
+  link: "https://www.youtube.com/watch?v=D0H_VsJ15go"
+  text: "NEW"
+  desc: "DivKid's epic deep-dive into the Workshop Computer" 
+
+- order: 03
+  link: "https://www.thonk.co.uk/shop/ryk-pgm-cards-mixed/"
+  text: "NEW"
+  desc: "RYK Modular's incredible program cards for the Workshop Computer" 
+
+- order: 04
+  link: "https://tomwhitwell.github.io/Workshop_Computer/index.html"
+  text: "NEW"
+  desc: "The big list of program cards for the Workshop Computer" 
+    
+    
+- order: 20
   link: "https://www.thonk.co.uk/shop/workshop-system/"
   text: "BUY WORDLWIDE"
   desc: "Workshop System kits from Thonk, shipping worldwide" 
 
-- order: 1
+- order: 21
   link: "https://www.exploding-shed.com/music-thing-modular-workshop-system/100949/"
   text: "BUY EU"
   desc: "Workshop System kits for EU from Exploding Shed" 
 
-- order: 1
+- order: 22
   link: "https://www.perfectcircuit.com/music-thing-modular"
   text: "BUY US"
   desc: "Workshop System Assembled + kits in US from Perfect Circuit" 
 
-- order: 1
+- order: 23
   link: "https://schneidersladen.de/en/music-thing-modular-workshop-system-assembled"
   text: "BUY EU"
   desc: "Assembled Workshop Systems in EU from SchneidersLaden" 
 
-- order: 0.01
+- order: 30
+  link: "https://www.youtube.com/watch?v=lStpN1f-AHc"
+  text: "NEW"
+  desc: "Why We Bleep Tom Whitwell x Mylar Melodies ep.8" 
+
+
+- order: 40
   link: "https://vincentmaurer.de/patch-notes/"
   text: "NEW"
   desc: "Workshop System Emulator website"
 
-- order: 2
+- order: 80
+  link: "https://youtu.be/ABbWmZOtmig"
+  text: "Mylar Melodies" 
+  desc: "Workshop System full video demo"
+
+- order: 100
   link: "https://www.chris-j.co.uk/utility_pair/"
   text: "FREE"
   desc: "Utility Pair incredible talking multi-effect program cards"
 
-- order: 5
+
+- order: 120
+  link: "https://workshopsystem.substack.com/"
+  text: "Substack"
+  desc: "Workshop System Mailing List" 
+
+- order: 130
   link: "https://www.lulu.com/shop/oliver-divmod/patch-the-random/paperback/product-zmynwem.html?page=1&pageSize=4"
   text: "Read"
   desc: "Patch The Random v2 by Oliver/divmod" 
 
-- order: 8
+- order: 140
   link: "https://www.instagram.com/thesynthshed/?hl=en-gb"
   text: "Soldering workshops in London" 
 
-- order: 9
+- order: 150
   link: "https://www.musicthing.co.uk/collateral/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book.pdf"
   text: "Zine" 
   desc: "Why do you need a tiny modular synth?"
 
-- order: 10 
+- order: 160 
   link: "https://www.soundonsound.com/reviews/music-thing-modular-workshop-system" 
   text: "Sound on Sound" 
   desc: "Workshop System Review" 
 
-- order: 12
+- order: 170
   link: "https://gist.github.com/TomWhitwell/48cefdd751ad5afcd8fac66f6b6762af"
   text: "Retro AI graphics" 
   desc: "Prompt & Code" 
 
-- order: 12
+- order: 180
   link: "https://dyski.co/"
   text: "Workshops & retreats" 
   desc: "Join the Dyski mailing list for future events" 
 
-- order: 18
+- order: 190
   link: "/discord/"
   text: "Discord"
   desc: "The Workshop System Discord Group" 
 
-- order: 20
+- order: 200
   link: "https://www.youtube.com/@MusicThingModular"
   text: "YouTube"
   desc: "MTM channel" 
-- order: 21
+
+- order: 210
   link: "https://www.instagram.com/musicthingmodular/"
   text: "Instagram"
   desc: "MTM profile" 
-- order: 3
-  link: "https://workshopsystem.substack.com/"
-  text: "Substack"
-  desc: "Workshop System Mailing List" 
-- order: 2
-  link: "https://www.youtube.com/watch?v=lStpN1f-AHc"
-  text: "Why We Bleep"
-  desc: "Tom Whitwell x Mylar Melodies ep.8" 
-- order: 25
+
+- order: 220
   link: "mailto:tom@musicthing.co.uk ?subject=Ask%20Tom%20Anything" 
-  text: "Ask Tom Anything" 
+  text: "Ask Tom Anything"

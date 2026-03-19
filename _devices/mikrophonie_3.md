@@ -2,7 +2,7 @@
 layout: module
 permalink: /Mikrophonie/
 
-order: 1
+order: 3
 title:  "Eurorack Module DIY"
 module-name: "Mikrophonie v3"
 image: "/images/microphonie_2023_both_600.png" 
