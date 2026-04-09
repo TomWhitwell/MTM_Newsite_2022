@@ -1,3 +1,16 @@
+
+
+- order: 0.01
+  link: "https://www.thonk.co.uk/shop/computer-workshop-croydon/"
+  text: "LONDON" 
+  desc: "25 April: Build a Workshop Computer with Tom"
+
+- order: 0.02
+  link: "https://www.superbooth.com/en/events/details/diy-workshop-music-thing-modular.html"
+  text: "BERLIN" 
+  desc: "9 May: Build a Workshop Computer with Tom at Superbooth"
+
+
 - order: 01
   link: "https://www.thonk.co.uk/shop/workshop-computer-eurorack/"
   text: "NEW"

@@ -239,8 +239,8 @@ Additional sentences appear as needed to set options for the internal clocks, Tu
 * Up to four independent pulse outputs at different frequencies can be generated - useful for exploring polyrhythms and phasing.
 
 
- {% include linkedHeading.html heading="88 Blank" level=2 %}
- * The Blank card isn't actually blank, it's pre-programmed with a routine that flashes the LEDs as a way to test that the system is working. 
+ {% include linkedHeading.html heading="88 Blank" level=2 %} 
+ * Blank cards are now actually blank - early versions contained a LED blinking routine for testing, but that is no longer required. 
  * Blank cards can be 2Mb or 16Mb. Potentially, larger cards might be used for programs that need banks of samples or other data. 
  * The method for programming blank cards is [in the FAQ above](#computer-faq). 
 
