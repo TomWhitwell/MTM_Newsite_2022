@@ -51,6 +51,7 @@ To get started, you need a power supply and some patch cables:
 
 * The workshop system uses USB-C PD power
 * The power adaptor or battery must supply 15 Volts. 
+* We recommend the [MyVolts Wall Plug to USB PD 65W Adaptor](https://www.thonk.co.uk/shop/myvolts-usb-wallwart/) from Thonk, which works well, is very compact and comes with international plug adaptors.  
 * Most laptop-friendly adaptors, and most adaptors of 45 Watts or above can supply 15 Volts. 
 * Some adaptors for smartphones can only supply 5 Volts or 9 Volts. These will not work.    
 * Adaptors with only an old-style USB-A socket will not work, even with a USB-A to USB-C cable. 
