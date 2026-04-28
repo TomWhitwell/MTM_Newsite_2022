@@ -60,7 +60,7 @@ To get started, you need a power supply and some patch cables:
   * Many smartphone-only adaptors supply 5 Volts or 9 Volts. These will not work.    
   * Old-style USB-A sockets can not power the Workshop system, even with a USB-A to USB-C cable. 
   * Early Apple USB-C chargers (2015-2018) did not output 15V so will not work. 
-* **Portable power banks** are really fun with the Workshop System. Check documentation carefully, because most small power banks do not provide 15V. I use an Anker Nano which works well, but there are many variants to check your specifications carefully.  
+* **Portable power banks** are really fun with the Workshop System. Check documentation carefully, because most small power banks do not provide 15V. I use an Anker Nano which works well, but there are many variants to check those specs!  
 * Some very cheap power supplies from Amazon and AliExpress work, but are electrically noisy - this might be audible when recording or playing over big speakers.
 * You can also power the Workshop System using barrel power: 15V to 22VDC, 2.1mm positive tip, the same spec as 4MS pods and Row Power (NB: Moog Semi-Modular power supplies are 12V and NOT compatible).
 
