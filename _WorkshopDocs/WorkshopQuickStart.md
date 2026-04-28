@@ -49,17 +49,20 @@ To get started, you need a power supply and some patch cables:
 {% include linkedHeading.html heading="Power Supply" level=3 %}
 {% include documentation_image.html filename="images/WS-usb.jpg" caption="The USB connector on the back is for power. The slots are for cable ties, if you want to make a more permanent connection. " %}
 
-* The workshop system uses USB-C PD power
-* The power adaptor or battery must supply 15 Volts. 
+* The workshop system uses USB-C PD power at 15 Volts. 
 * We recommend the [MyVolts Wall Plug to USB PD 65W Adaptor](https://www.thonk.co.uk/shop/myvolts-usb-wallwart/) from Thonk, which works well, is very compact and comes with international plug adaptors.  
-* Most laptop-friendly adaptors, and most adaptors of 45 Watts or above can supply 15 Volts. 
-* Some adaptors for smartphones can only supply 5 Volts or 9 Volts. These will not work.    
-* Adaptors with only an old-style USB-A socket will not work, even with a USB-A to USB-C cable. 
-* Recent (post 2020) MacBook chargers work well, but the earliest Apple USB-C chargers (2015-2018) did not output 15V so will not work. Most iPhone-only chargers will not work. Wattage is no guarantee that they will deliver the correct voltage. 
-* **If the specifications say the adaptor or battery can supply 15 Volts, it should work.** If there are no specifications, you can't be sure. 
-* Some very cheap power supplies from Amazon and AliExpress work fine, but are electrically noisy - putting noise into the mains and ground circuits that might be audible when recording or playing over big speakers.
-* You can also power the Workshop System using barrel power: 15V to 22VDC, 2.1mm positive tip, the same spec as 4MS pods and Row Power (NB: Moog Semi-Modular power supplies are 12V and NOT compatible).
+* What WILL work: 
+  * Most laptop-friendly adaptors, and most adaptors of 45 Watts or above can supply 15 Volts. 
+  * If the specifications say the adaptor or battery can supply 15 Volts, it should work. 
+  * The Workshop System requires around 1.0 amps at 15 Volts - Every 15V adaptor I've ever seen can deliver this. 
+  * Recent (post 2020) MacBook and other laptop chargers normally work well.
+* What WILL NOT work:   
+  * Many smartphone-only adaptors supply 5 Volts or 9 Volts. These will not work.    
+  * Old-style USB-A sockets can not power the Workshop system, even with a USB-A to USB-C cable. 
+  * Early Apple USB-C chargers (2015-2018) did not output 15V so will not work. 
 * **Portable power banks** are really fun with the Workshop System. Check documentation carefully, because most small power banks do not provide 15V. I use an Anker Nano which works well, but there are many variants to check your specifications carefully.  
+* Some very cheap power supplies from Amazon and AliExpress work, but are electrically noisy - this might be audible when recording or playing over big speakers.
+* You can also power the Workshop System using barrel power: 15V to 22VDC, 2.1mm positive tip, the same spec as 4MS pods and Row Power (NB: Moog Semi-Modular power supplies are 12V and NOT compatible).
 
 {% include documentation_image.html filename="images/WS-barrel.jpg" caption="Or you can use professional 15-25V 2.1mm + tip barrel power " %}
 
