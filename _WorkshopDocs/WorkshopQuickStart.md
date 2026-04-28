@@ -60,12 +60,12 @@ To get started, you need a power supply and some patch cables:
   * Many smartphone-only adaptors supply 5 Volts or 9 Volts. These will not work.    
   * Old-style USB-A sockets can not power the Workshop system, even with a USB-A to USB-C cable. 
   * Early Apple USB-C chargers (2015-2018) did not output 15V so will not work. 
-* **Portable power banks** are really fun with the Workshop System. Check documentation carefully, because most small power banks do not provide 15V. I use an Anker Nano which works well, but there are many variants to check those specs!  
-* Some very cheap power supplies from Amazon and AliExpress work, but are electrically noisy - this might be audible when recording or playing over big speakers.
+* **Portable power banks** are really fun with the Workshop System. Many small power banks do not provide 15V, but some do. I use this [Anker Nano](https://www.anker.com/eu-en/products/a1259-built-in-cable-power-bank-10000mah?variant=43398799687870) which works well, but there are many variants so check those specs!  
 * The following UK models have been tested with the Workshop System (late 2024):
 [UGREEN 30W](https://www.amazon.co.uk/gp/product/B0C2V9LZRG) | [Anker Nano 30W](https://www.amazon.co.uk/gp/product/B0CD75QL17?th=1) | [Anker GaN 30W](https://www.amazon.co.uk/gp/product/B0B2WN1WKR?th=1) | [UGREEN 45W](https://www.amazon.co.uk/gp/product/B0BKFWD1RV/) | [BIUBOTY 45W](https://www.amazon.co.uk/gp/product/B0BPL7DFJT) | [CSHARE 30W](https://www.amazon.co.uk/gp/product/B0B2R3T791)
 * In the USA, the [Official Raspberry Pi 45W USB-C Power Supply from Adafruit](https://www.adafruit.com/product/6320) also provides 15V. 
 * IKEA's [UK SJÖSS 45W 2-port USB charger](https://www.ikea.com/gb/en/p/sjoess-45w-2-port-usb-charger-fast-charging-80574457/) works well, and the [EU SJÖSS 20W](https://www.ikea.com/de/de/p/sjoess-ladegeraet-mit-1-usb-ausgang-20-w-60609740/) is very cheap and also does 15v. US SJÖSS models don't have voltages listed on the Website - please let us know if they work for you.  
+* Some very cheap power supplies from Amazon and AliExpress work, but are electrically noisy - this might be audible when recording or playing over big speakers.
 * You can also power the Workshop System using barrel power: 15V to 22VDC, 2.1mm positive tip, the same spec as 4MS pods and Row Power (NB: Moog Semi-Modular power supplies are 12V and NOT compatible).
 
 {% include documentation_image.html filename="images/WS-barrel.jpg" caption="Or you can use professional 15-25V 2.1mm + tip barrel power " %}
