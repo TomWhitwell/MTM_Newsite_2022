@@ -1,16 +1,5 @@
 
 
-- order: 0.01
-  link: "https://www.thonk.co.uk/shop/computer-workshop-croydon/"
-  text: "LONDON" 
-  desc: "25 April: Build a Workshop Computer with Tom"
-
-- order: 0.02
-  link: "https://www.superbooth.com/en/events/details/diy-workshop-music-thing-modular.html"
-  text: "BERLIN" 
-  desc: "9 May: Build a Workshop Computer with Tom at Superbooth"
-
-
 - order: 01
   link: "https://www.thonk.co.uk/shop/workshop-computer-eurorack/"
   text: "NEW"
@@ -30,8 +19,7 @@
   link: "https://tomwhitwell.github.io/Workshop_Computer/index.html"
   text: "NEW"
   desc: "The big list of program cards for the Workshop Computer" 
-    
-    
+        
 - order: 20
   link: "https://www.thonk.co.uk/shop/workshop-system/"
   text: "BUY WORDLWIDE"
@@ -74,10 +62,10 @@
   desc: "Utility Pair incredible talking multi-effect program cards"
 
 
-- order: 120
+- order: 0.1
   link: "https://workshopsystem.substack.com/"
   text: "Substack"
-  desc: "Workshop System Mailing List" 
+  desc: "Workshop System Monthly Newsletter" 
 
 - order: 130
   link: "https://www.lulu.com/shop/oliver-divmod/patch-the-random/paperback/product-zmynwem.html?page=1&pageSize=4"
@@ -108,10 +96,10 @@
   text: "Workshops & retreats" 
   desc: "Join the Dyski mailing list for future events" 
 
-- order: 190
+- order: 0.2
   link: "/discord/"
   text: "Discord"
-  desc: "The Workshop System Discord Group" 
+  desc: "Workshop System Discord" 
 
 - order: 200
   link: "https://www.youtube.com/@MusicThingModular"
