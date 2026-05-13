@@ -5,6 +5,13 @@ permalink: /buy/
 title: Buy Music Thing Modular
 
 assembled:
+
+  - name: SchneidersKeller
+    region: UK
+    location: Denmark Street, London
+    url: https://www.schneiderskeller.co.uk/products/musicthing-modular-workshop-system
+    note: Assembled Workshop Systems available in-store and online.
+
   - name: Signal Sounds
     region: UK
     location: Glasgow
@@ -23,11 +30,6 @@ assembled:
     url: https://schneidersladen.de/en/music-thing-modular-workshop-system-assembled
     note: Assembled Workshop Systems for EU customers.
 
-  - name: SchneidersKeller
-    region: UK
-    location: Denmark Street, London
-    url: https://www.schneiderskeller.co.uk/products/musicthing-modular-workshop-system
-    note: Assembled Workshop Systems available in-store and online.
 
 
   - name: Thonk
