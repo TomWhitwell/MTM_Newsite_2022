@@ -34,14 +34,14 @@ assembled:
 
   - name: Thonk
     region: Worldwide
-    location: Brighton
+    location: Brighton, UK
     url: mailto:support@thonk.co.uk ?subject=Assembled%20Workshop%20System%20query&body=Hi%2C%20I'm%20interested%20in%20buying%20a%20pre-assembled%20Workshop%20System%2C%20please%20tell%20me%20how%20that%20works.
     note: Assembled systems are available on request.
 
 diy:
   - name: Thonk
     region: Worldwide
-    location: Brighton
+    location: Brighton, UK
     url: https://www.thonk.co.uk/workshopsystem/
     note: Complete DIY kits, shipping worldwide.
 
