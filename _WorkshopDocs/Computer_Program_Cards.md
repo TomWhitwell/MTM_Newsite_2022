@@ -132,29 +132,34 @@ The MIDI card is also where calibration happens. This card lets you fine-tune th
 
  {% include linkedHeading.html heading="03 Turing Machine" level=2 %}
 
- {% include documentation_image.html filename="images/MB_program_cards_turing.png" caption="Turing Machine card controls" %}
+ {% include documentation_image.html filename="images/MB_program_cards_turing_v1_5.png" caption="Turing Machine card controls for firmware v1.5" %}
 
   {% include documentation_image.html filename="images/WS_Turing_Editor.jpg" caption="The Turing Machine Card has four configurable Turing Machine random looping sequencers" %}
-by: Tom Whitwell Version: 0.1.0  
+by: Tom Whitwell Version: 1.5.3  
 
-<a href="/web_config/turing.html" class="buy-btn">Launch the Turing Machine Web Editor</a>
+<a href="https://tomwhitwell.github.io/Turing_Machine_Workshop_Computer/" class="buy-btn">Launch the Turing Machine Web Editor</a>
 
-Turing Machine turns the Workshop Computer into a random looping sequencer with two channels and multiple scales.   
+Turing Machine turns the Workshop Computer into a random looping sequencer with two channels, configurable presets and multiple scales.   
 
 [Here's a quick demo of the Turing Machine card on Instagram](https://www.instagram.com/reel/DCTmBretEFf/) 
  
 The Turing Machine was [launched by Music Thing Modular in 2012](https://www.musicthing.co.uk/Turing-Machine/), and is a very popular DIY synth project. Here's how it works: 
 
-* Clock is set by tapping the Z switch. 
+* Clock is set by tapping the Z switch down, or by patching a clock into Pulse In 1. Clocking Pulse In 1 replaces tap tempo and drives both channels.
 * In any Turing Machine, looping is controlled by the big knob.
    * At noon, the sequences are random.
    * At 5 o'clock, it locks into a repeating sequence.
    * At 7 o'clock, it double locks into a repeating sequence twice as long as the 'length' setting.
    * At 3 o'clock or 9 o'clock, it slips; looping but occasionally changing notes.
 * The X knob sets sequence length: 2,3,4,5,6,8,12 or 16 steps, indicated with slightly cryptic LED patterns. 
-* The Y knob is a *Diviply* control for the right hand outputs. It divides or multiplies the clock signal 
-* Flip the Z switch up or down to select different settings for the pitch and pulse outputs. Think of this as two modes which can be set up in the web editor, where you can control scales, pulse lengths and many other things. 
+* The Y knob is a *Diviply* control for the right hand outputs. It divides or multiplies the clock signal. CV In 1 is added to this control. 
+* Pulse In 2 clocks the right hand Turing Machine independently. When this is patched, Pulse Out 2 follows Pulse In 2.
+* CV In 2 adds a chromatic offset to both pitch CV outputs. This is experimental and not calibrated.
+* Audio/CV In 1 resets all sequences to their first step on a rising edge. This is experimental.
+* Audio/CV In 2 controls the preset switch: +1V or more selects Z up, -1V or less selects Z middle/down. This is experimental.
+* Flip the Z switch up or down to select different presets for the pitch and pulse outputs. These can be set up in the web editor, where you can control scales, octave range, pulse lengths, pulse modes, loop length and Audio/CV output range. 
 * Every program card has a unique serial number. This number is used to initialise the random number system in the Turing Machine. This means that every Turing Machine card will sound slightly different. It also means that if you start a Turing Machine card in locked position, it will always play the same pattern until it is randomised. 
+* Hold the Z switch down and tap the reset/load button to clear the internal settings. When you see a fast LED animation, release the switch.
 
 The Turing Machine card takes it's calibration from the MIDI card, so if the pitch outputs aren't in tune, you'll need to [calibrate the Computer](/Workshop_System_Calibration/)
  
