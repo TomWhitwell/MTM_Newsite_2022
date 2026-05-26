@@ -75,7 +75,7 @@ At present, it is available as a DIY kit from [Thonk](https://www.thonk.co.uk/wo
 
 Workshop Systems are also available pre-assembled from [Signal Sounds](https://www.signalsounds.com/music-thing-modular-workshop-system-desktop-eurorack-synthesiser/) in Glasgow, [Perfect Circuit](https://www.perfectcircuit.com/music-thing-modular-workshop-system-assembled.html) in California and [SchneidersLaden](https://schneidersladen.de/en/music-thing-modular-workshop-system-assembled) in Berlin, and on request from Thonk. 
 
- <a href="https://www.thonk.co.uk/workshopsystem/" class="buy-btn">BUY NOW</a>&nbsp;&nbsp;
+ <a href="https://www.musicthing.co.uk/buy/" class="buy-btn">BUY NOW</a>&nbsp;&nbsp;
  <a href="/Workshop_System_Build_Guide/" class="buy-btn">Build Guide</a>  
  
  
