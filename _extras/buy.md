@@ -30,7 +30,11 @@ assembled:
     url: https://schneidersladen.de/en/music-thing-modular-workshop-system-assembled
     note: Assembled Workshop Systems for EU customers.
 
-
+  - name: Soundgas 
+    region: UK
+    location: Derbyshire
+    url: https://soundgas.com/products/music-thing-modular-workshop-system-desktop-eurorack-synthesiser
+    note: Assembled Workshop Systems and so much beautiful vintage gear.
 
   - name: Thonk
     region: Worldwide
