@@ -1,5 +1,11 @@
 
 
+- order: 0.1
+  link: "https://www.schneiderskeller.co.uk/products/music-thing-modular-workshop-system-meetup"
+  text: "LONDON"
+  desc: "Workshop Meetup June 30th SchneidersKeller, free tickets here" 
+
+
 - order: 01
   link: "https://www.thonk.co.uk/shop/workshop-computer-eurorack/"
   text: "NEW"
