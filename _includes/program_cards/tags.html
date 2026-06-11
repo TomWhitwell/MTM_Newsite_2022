@@ -1,0 +1,39 @@
+{%- assign tag_config = site.data.program_cards.tags -%}
+{%- assign tags = include.tags -%}
+{%- if include.card_id and tag_config.assignments[include.card_id] -%}
+  {%- assign tags = tag_config.assignments[include.card_id] -%}
+{%- endif -%}
+{%- if tags and tags.size > 0 -%}
+  {%- capture tag_markup -%}
+    {%- for tag in tags -%}
+      {%- assign tag_id = tag.id | default: tag | slugify -%}
+      {%- assign tag_label = tag.label | default: tag -%}
+      {%- assign tag_color = "" -%}
+      {%- assign tag_text_color = "" -%}
+      {%- for available_tag in tag_config.available_tags -%}
+        {%- assign available_slug = available_tag.label | slugify -%}
+        {%- if available_tag.id == tag or available_tag.label == tag or available_tag.id == tag.id or available_slug == tag_id -%}
+          {%- assign tag_id = available_tag.id | slugify -%}
+          {%- assign tag_label = available_tag.label -%}
+          {%- assign tag_color = available_tag.color -%}
+          {%- assign tag_text_color = available_tag.text_color -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- assign hide_tag = false -%}
+      {%- assign tag_label_id = tag_label | slugify -%}
+      {%- for hidden_tag in include.hide_tags -%}
+        {%- assign hidden_tag_id = hidden_tag | slugify -%}
+        {%- if hidden_tag_id == tag_id or hidden_tag_id == tag_label_id -%}
+          {%- assign hide_tag = true -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- unless hide_tag -%}
+        <span class="program-card-tag program-card-tag--{{ tag_id }}"{% if tag_color or tag_text_color %} style="{% if tag_color %}--program-card-tag-bg: {{ tag_color }}; --program-card-tag-border: {{ tag_color }};{% endif %}{% if tag_text_color %} --program-card-tag-ink: {{ tag_text_color }};{% endif %}"{% endif %}>{{ tag_label }}</span>
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign tag_markup_clean = tag_markup | strip -%}
+  {%- if tag_markup_clean != "" -%}
+    <span class="program-card-tags">{{ tag_markup }}</span>
+  {%- endif -%}
+{%- endif -%}

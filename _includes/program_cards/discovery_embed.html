@@ -1,0 +1,20 @@
+{%- assign embed = site.data.program_cards.discovery.embeds.computer_program_cards -%}
+{%- assign cards = site.data.program_cards.cards -%}
+{%- if embed and embed.cards -%}
+  <aside class="program-card-mini-embed" aria-label="Program card highlights">
+    <h2>{{ embed.title | default: "Program cards" }}</h2>
+    <div class="program-card-mini-embed__list">
+      {%- for card_id in embed.cards -%}
+        {%- assign card = cards | where: "id", card_id | first -%}
+        {%- if card -%}
+          {%- assign card_summary = card.summary | default: card.description | strip_html -%}
+          <a class="program-card-mini-embed__card" href="{{ card.url | relative_url }}">
+            <strong>{{ card.release | default: card.id | split: "/" | first | split: "_" | first | strip }} {{ card.title | strip_html }}</strong>
+            {%- if card_summary and card_summary != "" -%}<span>{{ card_summary | truncate: 96 }}</span>{%- endif -%}
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    <a class="program-card-mini-embed__link" href="{{ embed.link | default: '/workshopsystem/program-cards/' | relative_url }}">{{ embed.link_text | default: "Explore all cards" }}</a>
+  </aside>
+{%- endif -%}

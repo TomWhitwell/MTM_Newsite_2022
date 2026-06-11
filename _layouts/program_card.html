@@ -1,0 +1,178 @@
+---
+layout: default
+---
+{%- assign card = site.data.program_cards.cards | where: "id", page.card_id | first -%}
+{%- assign positions = site.data.program_cards.panel_positions -%}
+{%- assign card_number = card.release | default: card.id | split: "/" | first | split: "_" | first | strip -%}
+{%- assign metadata = card.metadata -%}
+{%- assign summary = card.summary | default: card.description | strip_html -%}
+{%- assign source_url = "https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/" | append: card.id -%}
+{%- assign readme_url = "https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/" | append: card.id | append: "/README.md" -%}
+{%- assign default_discussion_url = "https://discord.com/channels/1210238368898879569/1484219323039092938" -%}
+{%- assign discussion_url = metadata.discussion_url | default: default_discussion_url -%}
+{%- assign first_video = card.videos | first -%}
+
+{%- assign control_keys = "main,x,y,z" | split: "," -%}
+{%- assign has_controls = false -%}
+{%- for key in control_keys -%}
+  {%- assign control = card.panel.controls[key] -%}
+  {%- if control and control.description and control.description != "" -%}{%- assign has_controls = true -%}{%- endif -%}
+{%- endfor -%}
+
+{%- assign has_switch_modes = false -%}
+{%- if card.switch_modes -%}
+  {%- for mode in card.switch_modes -%}
+    {%- if mode[1] and mode[1] != "" -%}{%- assign has_switch_modes = true -%}{%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+<article class="program-cards program-card-page">
+  <header class="program-card-hero">
+    <div class="program-card-hero__main">
+      {%- include program_cards/tags.html card_id=card.id tags=card.tags -%}
+      <h1><span class="program-card-page__number">{{ card_number }}</span> {{ card.title | strip_html }}</h1>
+      {%- if summary and summary != "" -%}<p>{{ summary | truncate: 240 }}</p>{%- endif -%}
+      <div class="program-card-hero__meta">
+        {%- if metadata.creator -%}<span>By {{ metadata.creator }}</span>{%- endif -%}
+        {%- if card.memory and card.memory.size -%}<span>{{ card.memory.size | upcase }} card {{ card.memory.requirement | default: "supported" }}</span>{%- endif -%}
+      </div>
+      <div class="program-card-actions" aria-label="Card actions">
+        <a class="program-card-action program-card-action--download" href="{{ source_url }}">
+          <span>Download</span>
+          {%- if metadata.version -%}<small>Firmware {{ metadata.version }}</small>{%- endif -%}
+        </a>
+        {%- if metadata.editor_url -%}
+          <a class="program-card-action program-card-action--editor" href="{{ metadata.editor_url }}">
+            <span>Launch web editor</span>
+            <small>{{ metadata.editor_note | default: "Configure this card in your browser" }}</small>
+          </a>
+        {%- endif -%}
+      </div>
+      <div class="program-card-hero__links" aria-label="Further card links">
+        <a href="{{ readme_url }}">Read more</a>
+        <a href="{{ discussion_url }}">Support &amp; questions</a>
+      </div>
+    </div>
+
+    <nav class="program-card-nav" aria-label="Program card navigation">
+      <a href="{{ '/workshopsystem/program-cards/' | relative_url }}">Program cards</a>
+      <a href="{{ '/workshopsystem/program-cards/archive/' | relative_url }}">All cards</a>
+    </nav>
+  </header>
+
+  {%- if first_video -%}
+    <section class="program-card-demo">
+      <a href="{{ first_video.url }}">
+        <span class="program-card-demo__media" aria-hidden="true">
+          <img src="https://img.youtube.com/vi/{{ first_video.id }}/hqdefault.jpg" alt="" loading="lazy">
+        </span>
+        <span class="program-card-demo__text">
+          <span>Watch</span>
+          <strong>{{ first_video.title | default: "Demo video" }}</strong>
+        </span>
+      </a>
+    </section>
+  {%- endif -%}
+
+  {%- if card.quick_start -%}
+    <section class="program-card-quick-start">
+      <h2>Quick start</h2>
+      <ol>
+        {%- for step in card.quick_start -%}<li>{{ step | strip_html }}</li>{%- endfor -%}
+      </ol>
+    </section>
+  {%- endif -%}
+
+  <div class="program-card-use">
+    <div class="program-card-use__panel">
+      {%- include program_cards/panel.html card=card -%}
+    </div>
+
+    <div class="program-card-use__reference">
+      {%- if has_controls -%}
+        <section class="program-card-section">
+          <h3>Controls</h3>
+          {%- for key in control_keys -%}
+            {%- assign control = card.panel.controls[key] -%}
+            {%- if control and control.description and control.description != "" -%}
+              <p><strong>{{ control.label | default: key | strip_html | upcase }}</strong> {{ control.description | strip_html | truncate: 220 }}</p>
+            {%- endif -%}
+          {%- endfor -%}
+        </section>
+      {%- endif -%}
+
+      {%- if has_switch_modes -%}
+        <section class="program-card-section">
+          <h3>Switch</h3>
+          {%- for mode in card.switch_modes -%}
+            {%- if mode[1] and mode[1] != "" -%}<p><strong>{{ mode[0] | capitalize }}</strong> {{ mode[1] | strip_html | truncate: 240 }}</p>{%- endif -%}
+          {%- endfor -%}
+        </section>
+      {%- endif -%}
+
+      {%- include program_cards/socket_list.html title="Inputs" sockets=card.panel.inputs positions=positions.inputs -%}
+      {%- include program_cards/socket_list.html title="Outputs" sockets=card.panel.outputs positions=positions.outputs -%}
+
+      {%- if card.leds -%}
+        <section class="program-card-section">
+          <h3>LEDs</h3>
+          {%- for led in card.leds -%}<p>{{ led | strip_html | truncate: 260 }}</p>{%- endfor -%}
+        </section>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if card.documentation -%}
+    <section class="program-card-documentation">
+      {%- if card.documentation.intro -%}
+        <div class="program-card-section">
+          <h3>Documentation</h3>
+          {{ card.documentation.intro | markdownify }}
+        </div>
+      {%- endif -%}
+      {%- if card.documentation.sections -%}
+        {%- for doc_section in card.documentation.sections -%}
+          <div class="program-card-section">
+            <h3>{{ doc_section.title }}</h3>
+            {{ doc_section.body | markdownify }}
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </section>
+  {%- endif -%}
+
+  <footer class="program-card-about">
+    <section class="program-card-section">
+      <h3>About this card</h3>
+      <dl>
+        {%- if metadata.creator -%}<div><dt>Creator</dt><dd>{{ metadata.creator }}</dd></div>{%- endif -%}
+        {%- if metadata.language -%}<div><dt>Language</dt><dd>{{ metadata.language }}</dd></div>{%- endif -%}
+        {%- if metadata.version -%}<div><dt>Version</dt><dd>{{ metadata.version }}</dd></div>{%- endif -%}
+        {%- if card.memory and card.memory.size -%}<div><dt>Card memory</dt><dd>{{ card.memory.size | upcase }} {{ card.memory.requirement | default: "supported" }}</dd></div>{%- endif -%}
+        <div><dt>Read more</dt><dd><a href="{{ readme_url }}">README in the Workshop Computer repo</a></dd></div>
+        <div><dt>Source</dt><dd><a href="{{ source_url }}">Release folder on GitHub</a></dd></div>
+        <div><dt>Support</dt><dd><a href="{{ discussion_url }}">Ask questions, contact the designer, or share feedback</a></dd></div>
+      </dl>
+    </section>
+
+    {%- if card.notes -%}
+      <section class="program-card-section">
+        <h3>Notes</h3>
+        {%- for note in card.notes -%}<p>{{ note | strip_html | truncate: 220 }}</p>{%- endfor -%}
+      </section>
+    {%- endif -%}
+
+    {%- if card.source -%}
+      <div class="program-card-data-sources">
+        <details>
+          <summary>Data sources</summary>
+          <p>
+            {%- for item in card.source -%}
+              <code title="{{ item | escape }}">{{ item | truncate: 56 }}</code>{% unless forloop.last %}, {% endunless %}
+            {%- endfor -%}
+          </p>
+        </details>
+      </div>
+    {%- endif -%}
+  </footer>
+</article>
