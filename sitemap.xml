@@ -8,7 +8,7 @@ sitemap:
 
 
   {% for post in site.posts %}
-    {% unless post.published == false %}
+    {% unless post.published == false or post.sitemap.exclude == "yes" %}
     <url>
       <loc>{{ site.url }}{{ post.url  | relative_url }}</loc>
       {% if post.sitemap.lastmod %}
@@ -63,7 +63,7 @@ sitemap:
   {% for collection in site.collections %}
     {% for post in site[collection.label] %}
 
-    {% unless post.published == false %}
+    {% unless post.published == false or post.sitemap.exclude == "yes" %}
     <url>
       <loc>{{ site.url }}{{ post.url  | relative_url  }}</loc>
       {% if post.sitemap.lastmod %}

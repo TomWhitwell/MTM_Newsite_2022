@@ -6,6 +6,7 @@ page-name: "Computer Program Cards"
 permalink: "/Computer_Program_Cards/"
 order: 2
 title:  "Music Thing Workshop Computer and Program Cards"
+description: "Workshop Computer program cards, how they work, and where to find new cards to download."
 
 
 ---
@@ -35,7 +36,8 @@ You can the latest [find free program cards to download here](https://tomwhitwel
 
 {% include linkedHeading.html heading="Program Cards works in progress" level=3 %}
 
-**[CLICK HERE TO LEARN HOW TO PROGRAM BLANK CARDS](https://youtube.com/shorts/fYTb38B0Wsc)**
+**[CLICK HERE TO LEARN HOW TO PROGRAM BLANK CARDS](https://youtube.com/shorts/fYTb38B0Wsc)**  
+**[Start from the Workshop Computer GitHub repo](https://github.com/TomWhitwell/Workshop_Computer)**
 
 **[25 Utility Pair](https://www.chris-j.co.uk/utility_pair/)** A magical library of 25 great audio effects and utilities that can be combined into 625 different custom-made program cards.  
 

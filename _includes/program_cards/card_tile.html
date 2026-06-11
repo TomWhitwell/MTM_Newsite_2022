@@ -1,0 +1,22 @@
+{%- assign card = include.card -%}
+{%- if card -%}
+  {%- assign first_video = card.videos | first -%}
+  <a class="program-card-tile{% if include.show_video and first_video %} program-card-tile--video{% endif %}" href="{{ card.url | relative_url }}">
+    {%- if include.show_video and first_video -%}
+      <span class="program-card-tile__media" aria-hidden="true">
+        <img src="https://img.youtube.com/vi/{{ first_video.id }}/hqdefault.jpg" alt="" loading="lazy">
+      </span>
+    {%- endif -%}
+    <span class="program-card-tile__head">
+      <span class="program-card-tile__title">
+        <span class="program-card-tile__number">{{ card.release | default: card.id | split: "/" | first | split: "_" | first | strip }}</span>
+        <span class="program-card-tile__name">{{ card.title | strip_html | truncate: 48 }}</span>
+      </span>
+    </span>
+    {%- assign card_summary = card.summary | default: card.description | strip_html -%}
+    {%- if card_summary and card_summary != "" -%}
+      <span class="program-card-tile__summary">{{ card_summary | truncate: 190 }}</span>
+    {%- endif -%}
+    {%- include program_cards/tags.html card_id=card.id tags=card.tags hide_tags=include.hide_tags -%}
+  </a>
+{%- endif -%}

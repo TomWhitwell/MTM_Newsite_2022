@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<div class="program-cards program-cards--archive">
+  <header class="program-cards__title">
+    <div class="program-cards__identity">
+      <span class="program-cards__identity-mark" aria-hidden="true"></span>
+      <h1>{{ page.title }}</h1>
+    </div>
+    <nav class="program-cards__links" aria-label="Program card links">
+      <a href="{{ '/workshopsystem/program-cards/' | relative_url }}">Program cards</a>
+      <a href="{{ '/workshopsystem/program-cards/install/' | relative_url }}">Installation</a>
+      <a href="https://github.com/TomWhitwell/Workshop_Computer">Make a card</a>
+    </nav>
+  </header>
+
+  <section class="program-card-archive">
+    <header class="program-card-shelf__header">
+      <h2>Complete index</h2>
+      <p>One line each, for fast scanning.</p>
+    </header>
+    <div class="program-card-archive-list">
+      {%- for card in site.data.program_cards.cards -%}
+        {%- assign card_summary = card.summary | default: card.description | strip_html -%}
+        <a class="program-card-archive-row" href="{{ card.url | relative_url }}">
+          <span class="program-card-archive-row__number">{{ card.release | default: card.id | split: "/" | first | split: "_" | first | strip }}</span>
+          <span class="program-card-archive-row__main">
+            <span class="program-card-archive-row__title">{{ card.title | strip_html }}</span>
+            {%- if card_summary and card_summary != "" -%}
+              <span class="program-card-archive-row__summary">{{ card_summary | truncate: 120 }}</span>
+            {%- endif -%}
+          </span>
+          {%- include program_cards/tags.html card_id=card.id tags=card.tags -%}
+        </a>
+      {%- endfor -%}
+    </div>
+  </section>
+</div>

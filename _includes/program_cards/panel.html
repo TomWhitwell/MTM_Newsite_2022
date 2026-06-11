@@ -1,0 +1,23 @@
+{%- assign card = include.card -%}
+{%- assign positions = site.data.program_cards.panel_positions -%}
+<figure class="program-card-panel" aria-label="Workshop Computer panel">
+  <img src="{{ '/assets/program_cards/Standalone_computer_rev1.svg' | relative_url }}" alt="Workshop Computer panel">
+  {%- for pos in positions.controls -%}
+    {%- assign item = card.panel.controls[pos.key] -%}
+    {%- if item and item.label -%}
+        <span class="program-card-panel__label program-card-panel__label--control" style="left: {{ pos.left }}%; top: {{ pos.top }}%;">{{ item.label | strip_html | truncate: 24 | newline_to_br }}</span>
+    {%- endif -%}
+  {%- endfor -%}
+  {%- for pos in positions.inputs -%}
+    {%- assign item = card.panel.inputs[pos.key] -%}
+    {%- if item and item.label -%}
+        <span class="program-card-panel__label program-card-panel__label--input" style="left: {{ pos.left }}%; top: {{ pos.top }}%;">{{ item.label | strip_html | truncate: 24 | newline_to_br }}</span>
+    {%- endif -%}
+  {%- endfor -%}
+  {%- for pos in positions.outputs -%}
+    {%- assign item = card.panel.outputs[pos.key] -%}
+    {%- if item and item.label -%}
+        <span class="program-card-panel__label program-card-panel__label--output" style="left: {{ pos.left }}%; top: {{ pos.top }}%;">{{ item.label | strip_html | truncate: 24 | newline_to_br }}</span>
+    {%- endif -%}
+  {%- endfor -%}
+</figure>

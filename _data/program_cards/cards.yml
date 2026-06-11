@@ -1,0 +1,4633 @@
+# Temporary generated card cache. Replace with Workshop_Computer release YAML when the schema lands.
+- id: 00_Simple_MIDI
+  title: Simple Midi
+  release: 00 / 0.6.6
+  summary: Takes USB midi, sends it to pulse and CV outputs, also sends knob positions
+    and CV inputs back to the computer as CC values.
+  description: Takes USB midi, sends it to pulse and CV outputs, also sends knob positions
+    and CV inputs back to the computer as CC values.
+  panel:
+    controls: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - The centre left LED will start to flash The led will start to flash more slowly
+    Now tap the toggle switch, and the LED will move to the top left LED Tap the switch
+    again, and the LED will move to the right column, in the middle.
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 00_Simple_MIDI/README.md
+  - Old versions/Simple_Midi_0_5_0/ResponsiveAnalogRead.h
+  - Old versions/Simple_Midi_0_5_0/CV.h
+  - Old versions/Simple_Midi_0_5_0/helpers.ino
+  - Old versions/Simple_Midi_0_5_0/config.h
+  - Old versions/Simple_Midi_0_5_0/calibration.h
+  - Old versions/Simple_Midi_0_5_0/Simple_Midi_0_5_0.ino
+  - Old versions/Simple_Midi_0_5_0/DACChannel.h
+  - Old versions/Simple_Midi_0_5_0/click.h
+  - Old versions/Simple_Midi_0_6_0/ResponsiveAnalogRead.h
+  - Old versions/Simple_Midi_0_6_0/CV.h
+  - https://github.com/dxinteractive/ResponsiveAnalogRead
+  - https://github.com/adafruit/Adafruit_TinyUSB_Arduino
+  - https://github.com/earlephilhower/arduino-pico
+  - https://github.com/hathach/tinyusb/pull/2492
+  slug: 00-simple-midi
+  url: "/workshopsystem/program-cards/00-simple-midi/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/00_Simple_MIDI.yml
+  metadata:
+    creator: Tom Whitwell
+    language: Arduino-Pico
+    version: 0.6.6
+    status: Working but simple
+- id: 02_comingsoon
+  title: Comingsoon
+  release: '02'
+  summary: <img width="800" height="247" alt="comingsoon" src="https://github.com/user-attachments/assets/255dd14a-e488-49f5-bb6a-a6dec16c1ffc"
+    />
+  description: <img width="800" height="247" alt="comingsoon" src="https://github.com/user-attachments/assets/255dd14a-e488-49f5-bb6a-a6dec16c1ffc"
+    />
+  panel:
+    controls: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  notes:
+  - Generated from README/metadata only; no local or fetched source was found for
+    this release.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 02_comingsoon/README.md
+  - https://github.com/user-attachments/assets/255dd14a-e488-49f5-bb6a-a6dec16c1ffc
+  slug: 02-comingsoon
+  url: "/workshopsystem/program-cards/02-comingsoon/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/02_comingsoon.yml
+- id: 03_Turing_Machine
+  title: Turing Machine
+  release: 03 / v1.5
+  summary: Turing Machine with tap tempo clock, pulse outputs and quantised CV outputs.
+  description: Turing Machine with tap tempo clock, pulse outputs and quantised CV
+    outputs.
+  panel:
+    controls:
+      main:
+        label: Mutation / Lock
+        description: sets mutation / lock. Centre keeps changing; either end settles
+          into a loop or its inverted partner.
+        source: curated
+      x:
+        label: Length
+        description: 'chooses loop length: 2, 3, 4, 5, 6, 8, 12 or 16 steps.'
+        source: curated
+      y:
+        label: Diviply
+        description: sets Channel 2 clock divide / multiply. CV In 1 moves the same
+          control.
+        source: curated
+      z:
+        label: Presets / Tap
+        source: curated
+    inputs:
+      audio_l:
+        label: Reset
+        description: Reset all six Turing streams on a rising edge.
+        source: curated
+      audio_r:
+        label: |-
+          Preset
+          CV
+        description: 'CV override for preset switch: high = Up, low = Middle.'
+        source: curated
+      cv_1:
+        label: Diviply
+        description: Diviply CV, summed with Y.
+        source: curated
+      cv_2:
+        label: |-
+          Pitch
+          Offset
+        description: Pitch offset for both pitch outputs, roughly 0-1V quantised to
+          semitones.
+        source: curated
+      pulse_1:
+        label: |-
+          Clock
+          1
+        description: External main clock; replaces tap tempo.
+        source: curated
+      pulse_2:
+        label: |-
+          Clock
+          2
+        description: Independent Channel 2 clock; overrides diviply.
+        source: curated
+    outputs:
+      audio_out_l:
+        label: |-
+          Raw
+          CV 1
+        description: Channel 1 raw Turing voltage. Range comes from the active preset.
+        source: curated
+      audio_out_r:
+        label: |-
+          Raw
+          CV 2
+        description: Channel 2 raw Turing voltage. Range comes from the active preset.
+        source: curated
+      cv_out_1:
+        label: |-
+          Pitch
+          1
+        description: Channel 1 quantised 1V/oct pitch.
+        source: curated
+      cv_out_2:
+        label: |-
+          Pitch
+          2
+        description: Channel 2 quantised 1V/oct pitch, with the CV2 offset.
+        source: curated
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: Main clock pulse, or Turing pulse if that mode is selected.
+        source: curated
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: Diviply/Turing pulse, or a mirror of Pulse In 2 when externally
+          clocked.
+        source: curated
+  switch_modes:
+    up: Preset B.
+    middle: Preset A.
+    down: Tap tempo, when Pulse In 1 is empty.
+  leds:
+  - The top four LEDs show the current Turing values for the two raw CVs and two pitch
+    CVs.
+  - The bottom pair flash with Pulse Outs 1 and 2. When X changes loop length, the
+    cluster briefly becomes a length-pattern display.
+  notes:
+  - Curated from README and bundled Rev_1_5 source.
+  source:
+  - 03_Turing_Machine/README.md
+  - 03_Turing_Machine/Rev_1_5_Code
+  slug: 03-turing-machine
+  url: "/workshopsystem/program-cards/03-turing-machine/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/03_Turing_Machine.yml
+  metadata:
+    creator: Tom Whitwell
+    language: C++ (ComputerCard)
+    version: 1.5.3
+    status: Working but Simple
+    editor_url: https://www.musicthing.co.uk/web_config/turing.html
+- id: 04_BYO_Benjolin
+  title: Byo Benjolin
+  release: 04 / 1.0
+  summary: Rungler, Chaotic VCO, Noise Source, Turing Machine, Quantizer
+  description: Rungler, Chaotic VCO, Noise Source, Turing Machine, Quantizer
+  panel:
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in main.cpp: data = AudioIn1() + 2048; // Convert to 0-4095'
+        source: code
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: If AudioIn2 is connected, use it to control the Turing Probability
+        source: code
+      cv_1:
+        label: |-
+          CV
+          1
+        description: 'Used in main.cpp: offset = CVIn1() * (KnobVal(Knob::X) - 2048)
+          >> 12;'
+        source: code
+      cv_2:
+        label: |-
+          CV
+          2
+        description: 'Used in main.cpp: vca = CVIn2() * KnobVal(Knob::Y) >> 12;'
+        source: code
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: Output rungler signal
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: Output rungler signal
+        source: code
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: Output pulse signals based on the bottom bit of each channel
+        source: code
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: Output pulse signals based on the bottom bit of each channel
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - Now we have a shift register full of bits, let's process them for output Each
+    output creates a 6 bit signal out of 3 2-bit cells (left and right on the LED
+    screen)
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - quantiser.h
+  - main.cpp
+  slug: 04-byo-benjolin
+  url: "/workshopsystem/program-cards/04-byo-benjolin/"
+  tags:
+  - id: classic
+    label: Classic
+  - id: tom
+    label: Monkey
+  tag_ids:
+  - classic
+  - tom
+  tag_labels:
+  - Classic
+  - Monkey
+  source_file: data/cards/04_BYO_Benjolin.yml
+  metadata:
+    creator: Dune Desormeaux
+    language: Pico SDK
+    version: '1.0'
+    status: Released
+- id: 05_chord_blimey
+  title: Chord Blimey!
+  release: 05 / 0.9
+  summary: Generates CV/Pulse arpeggios
+  description: Generates CV/Pulse arpeggios
+  panel:
+    controls:
+      main:
+        label: Speed
+        description: Controls arpeggio speed (note length). Faster at higher settings.
+        source: readme
+      x:
+        label: CV
+        description: Controls root note in volts (0–1V) — combined with CV In 1.
+        source: readme
+      y:
+        label: CV
+        description: Selects chord type — combined with CV In 2.
+        source: readme
+      z:
+        label: UP
+        description: 'UP: Full-length mode (all chord notes). MID: Fixed-length mode
+          (limits to selected number of steps). DOWN: Short press cycles fixed-length
+          number (1–6 steps). Long press changes arpeggiator direction.'
+        source: readme
+    inputs:
+      cv_1:
+        label: |-
+          Adds root
+          note
+        description: Adds to the root note (in volts). 1V = 1 octave.
+        source: readme
+      cv_2:
+        label: |-
+          Adds chord
+          selection
+        description: Adds to the chord selection (0–1V range).
+        source: readme
+      pulse_1:
+        label: Trigger
+        description: Starts the arpeggio when triggered. If patched from Pulse Out
+          2, the arpeggio will loop.
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Random voltage
+          0–1V
+        description: Random voltage 0–1V (changes at chord end).
+        source: readme
+      audio_out_r:
+        label: |-
+          Random voltage
+          0–1V
+        description: Random voltage 0–1V (changes at chord end).
+        source: readme
+      cv_out_1:
+        label: |-
+          Current note
+          arpeggio
+        description: Current note of the arpeggio (root + chord degree).
+        source: readme
+      cv_out_2:
+        label: |-
+          Root note
+          chord
+        description: Root note of the chord (constant for the duration of the chord).
+        source: readme
+      pulse_out_1:
+        label: |-
+          Fires each
+          note
+        description: Fires for each note in the arpeggio.
+        source: readme
+      pulse_out_2:
+        label: |-
+          Fires when
+          last
+        description: Fires when the last note of the arpeggio plays (also at startup).
+        source: readme
+  switch_modes:
+    up: Ascend through notes. 0X XX XX
+    middle: ''
+    down: Descend through notes. XX XX 0X
+  leds:
+  - LEDs | Show current step in sequence during playback. Also flash a pattern when
+    arpeggiator direction changes, or when fixed-length is adjusted. LEDs briefly
+    show a pattern for the selected mode. Mode | Description | LED Pattern
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 05_chord_blimey/README.md
+  - src/ui.cpp
+  - src/ui.h
+  - src/main.cpp
+  slug: 05-chord-blimey
+  url: "/workshopsystem/program-cards/05-chord-blimey/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/05_chord_blimey.yml
+  metadata:
+    creator: Tom Waters
+    language: C (RPi Pico SDK)
+    version: '0.9'
+    status: Mostly complete (for now)
+- id: 06_usb_audio
+  title: USB Audio & MIDI
+  release: 06 / 1.0
+  summary: 6-Channel USB Audio & MIDI firmware with CV/Gate support
+  description: 6-Channel USB Audio & MIDI firmware with CV/Gate support
+  panel:
+    controls:
+      main:
+        label: CC 1
+        description: CC 1 (Ch 1)
+        source: readme
+      x:
+        label: CC 2
+        description: CC 2 (Ch 1)
+        source: readme
+      y:
+        label: |-
+          CC 3
+          Web Interface
+        description: 'CC 3 (Ch 1) Web Interface: All settings (Sample Rate, Channel
+          Count, CV/Pulse Modes) can be adjusted using the Workshop System Web Tools.
+          The configuration can be saved to the device''s flash memory. > [!WARNING]
+          > USB 1.1 Bandwidth & Stability > > This device operates as a Full Speed
+          USB 1.1 device. Bandwidth is extremely limited, especially when combined
+          with MIDI traffic. Performance varies significantly by Operating System
+          and Host Controller. > > Tested Configurations (Testing Required): > - macOS:
+          6 Channels @ 48 kHz . > - Windows: Limited bandwidth. Usually requires reducing
+          to 6 Channels @ 24 kHz or 4 Channels @ 44.1 kHz. > - Linux: 2 channel audio
+          works up to 48kHz. 4 channel audio works up to 24kHz > > *Please test different
+          configurations/ Audio Drivers for stability on your specific system.*'
+        source: readme
+      z:
+        label: |-
+          6-Channel Audio
+          I/O
+        description: '6-Channel Audio I/O: Direct mapping of the 6 hardware channels
+          to USB Audio channels 1-6.'
+        source: readme
+    inputs:
+      audio_l:
+        label: |-
+          Stereo Passthrough
+          on
+        description: Stereo Passthrough on USB Channels 5/6.
+        source: readme
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in main.cpp: case 1: return AudioIn2() << 4;'
+        source: code
+      cv_1:
+        label: Pitch
+        description: 1V/Oct Pitch Interface (MIDI Note <-> CV).
+        source: readme
+      cv_2:
+        label: |-
+          CC Interface
+          .
+        description: CC Interface (MIDI CC <-> CV).
+        source: readme
+      pulse_1:
+        label: Gate
+        description: Gate Interface (Note On/Off <-> Pulse).
+        source: readme
+      pulse_2:
+        label: Clock
+        description: Clock/Run Interface.
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in main.cpp: case 0: AudioOut1(val >> 4); break; // Audio
+          1'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in main.cpp: case 1: AudioOut2(val >> 4); break; // Audio
+          2'
+        source: code
+      cv_out_1:
+        label: |-
+          CV
+          1
+        description: 'Used in main.cpp: case 2: CVOut1(val); break; // CV 1'
+        source: code
+      cv_out_2:
+        label: |-
+          CV
+          2
+        description: 'Used in main.cpp: case 3: CVOut2(val); break; // CV 2'
+        source: code
+  switch_modes:
+    up: 'Audio L/R: Stereo Passthrough on USB Channels 5/6. CV 1: 1V/Oct Pitch Interface
+      (MIDI Note <-> CV). CV 2: CC Interface (MIDI CC <-> CV). Pulse 1: Gate Interface
+      (Note On/Off <-> Pulse). Pulse 2: Clock/Run Interface.'
+    middle: '6-Channel Audio I/O: Direct mapping of the 6 hardware channels to USB
+      Audio channels 1-6.'
+    down: Turns off all Midi functionality, leaving only the configured USB Audio
+      channels.
+  leds:
+  - ifndef PICO_DEFAULT_UART_RX_PIN define PICO_DEFAULT_UART_RX_PIN 1 endif LED
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 06_usb_audio/README.md
+  - Rev1/mtm_computer_16mb.h
+  - src/ring_buffer.h
+  - src/quantiser.h
+  - src/main.cpp
+  - Rev1/lufa/AudioClassCommon.h
+  - Rev1/lufa/StdDescriptors.h
+  - https://github.com/vincent-maurer/
+  - https://github.com/chrisgjohnson
+  slug: 06-usb-audio
+  url: "/workshopsystem/program-cards/06-usb-audio/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/06_usb_audio.yml
+  metadata:
+    name: USB Audio & MIDI
+    creator: Vincent Maurer (vincentmaurer.de)
+    language: C++ (RPi Pico SDK)
+    version: '1.0'
+    status: Release
+    editor_url: https://vincentmaurer.de/usb-audio/midi_config.html
+- id: 07_bumpers
+  title: Bumpers
+  release: 07 / 1.0
+  summary: "'Bouncing ball' style delay and trigger generators"
+  description: "'Bouncing ball' style delay and trigger generators"
+  panel:
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: dl2 = dlLength>>6;
+        source: code
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in bumpers.cpp: int32_t uf=(AudioIn2()+2048)>>1;'
+        source: code
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in bumpers.cpp: AudioOut1(outputl>>11);'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in bumpers.cpp: AudioOut2(outputr>>11);'
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - 'Used in bumpers.cpp: LedOn(i);'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 07_bumpers/README.md
+  - src/bumpers.cpp
+  slug: 07-bumpers
+  url: "/workshopsystem/program-cards/07-bumpers/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/07_bumpers.yml
+  metadata:
+    name: Bumpers
+    creator: Chris Johnson
+    language: C++ (ComputerCard)
+    version: '1.0'
+    status: Released
+  videos:
+  - title: Bumpers demo
+    provider: youtube
+    id: MvxuzqFLGJM
+    url: https://youtube.com/watch/?v=MvxuzqFLGJM
+- id: '08_bytebeat'
+  title: '08 - bytebeat'
+  release: '08 / 0.1'
+  summary: Generates and mangles bytebeats
+  description: Generates and mangles bytebeats
+  panel:
+    controls:
+      main:
+        label: Speed
+        description: Sample Rate (Speed)
+        source: readme
+      x:
+        label: Algorithm
+        description: Bank/Formula Select
+        source: readme
+      y:
+        label: Parameter 1
+        description: Parameter 1
+        source: readme
+      z:
+        label: Algorithm
+        description: Built-in Formulas
+        source: readme
+    inputs:
+      audio_l:
+        label: |-
+          Parameter 1
+          Modulation
+        description: Parameter 1 Modulation
+        source: readme
+      audio_r:
+        label: |-
+          Parameter 2
+          Modulation
+        description: Parameter 2 Modulation
+        source: readme
+      cv_1:
+        label: Algorithm
+        description: Formula Select Modulation
+        source: readme
+      cv_2:
+        label: Speed
+        description: Sample Rate Modulation
+        source: readme
+      pulse_1:
+        label: Reset
+        description: Reset / Trigger
+        source: readme
+      pulse_2:
+        label: Reverse
+        description: Reverse
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Bytebeat
+          Out
+        description: Bytebeat Out
+        source: readme
+      audio_out_r:
+        label: |-
+          Next Bytebeat
+          Out
+        description: Next Bytebeat Out
+        source: readme
+      cv_out_1:
+        label: |-
+          ByteBeat
+          Out
+        description: ByteBeat Out (Slow)
+        source: readme
+      cv_out_2:
+        label: |-
+          ByteBeat
+          Out
+        description: ByteBeat Out (Fast)
+        source: readme
+      pulse_out_1:
+        label: 1Bit Output
+        description: 1Bit Output (Bitbeat)
+        source: readme
+      pulse_out_2:
+        label: Division t
+        description: Division of t (Use as clock for other modules?)
+        source: readme
+  switch_modes:
+    up: Built-in Formulas
+    middle: User Formulas
+    down: Reset / Trigger
+  leds:
+  - There are 36 built-in bytebeat formulas organized into 6 banks of 6, which are
+    indicated by the LEDs. The last 2 banks contain percussive/drum sounds which need
+    to be triggered with Pulse In 1.
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - '08_bytebeat/README.md'
+  - Arduino Code/08_bytebeat/ResponsiveAnalogRead.h
+  - Arduino Code/08_bytebeat/helpers.ino
+  - Arduino Code/08_bytebeat/tinyexpr_bitw.h
+  - Arduino Code/08_bytebeat/ResponsiveAnalogRead.cpp
+  - Arduino Code/08_bytebeat/formulas.h
+  - Arduino Code/08_bytebeat/08_bytebeat.ino
+  - Arduino Code/08_bytebeat/tinyexpr_bitw.c
+  - Arduino Code/08_bytebeat/formulas.cpp
+  - https://github.com/earlephilhower/arduino-pico
+  - https://github.com/MattKuebrich
+  slug: '08-bytebeat'
+  url: "/workshopsystem/program-cards/08-bytebeat/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/08_bytebeat.yml
+  metadata:
+    creator: Matt Kuebrich
+    language: C++/Arduino-Pico
+    version: '0.1'
+    status: Functional but WIP
+- id: '09_DivCom'
+  title: Divcom
+  release: '09 / 0.1'
+  summary: Comparator and VC clock divider, inspired by Serge NCOM
+  description: Comparator and VC clock divider, inspired by Serge NCOM
+  panel:
+    controls:
+      z:
+        label: Pitch
+        description: 'up for ascending steps, middle for descending steps. CV In 2
+          inverts this direction. Note: This changes only the pitch, the counter itself
+          always counts up.'
+        source: readme
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in divcom.cpp: sig = AudioIn1();'
+        source: code
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in divcom.cpp: ref += (((int32_t)AudioIn2() * scale) >>
+          11);'
+        source: code
+      cv_1:
+        label: 0V gives n
+        description: 0V gives n = 1, 5V gives the selected value.
+        source: readme
+      cv_2:
+        label: |-
+          CV
+          2
+        description: CV1 outputs whole tone steps for the counter. direction (up/down)
+          depends on the switch, CVIn2 inverts the direction
+        source: code
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in divcom.cpp: AudioOut1(compHigh ? 2047 : -2048);'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in divcom.cpp: AudioOut2(dividerHigh ? 2047 : -2048);'
+        source: code
+      pulse_out_1:
+        label: |-
+          high one
+          divider
+        description: high for one divider cycle, low for the next.
+        source: readme
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: same as comparator, but not during clock divider
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - update flipFlop output (high/low for one full cycle)
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - '09_DivCom/README.md'
+  - external:divcom/README.md
+  - external:divcom
+  - external:divcom/divcom.cpp
+  - https://github.com/divmod-audio/divcom
+  slug: '09-divcom'
+  url: "/workshopsystem/program-cards/09-divcom/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/09_DivCom.yml
+  metadata:
+    creator: divmod
+    language: C++ (RPi Pico SDK) compat. cmake.
+    version: '0.1'
+    status: Released
+- id: 10_twists
+  title: twists
+  release: 10 / 0.1
+  summary: A port of Mutable Instruments Braids with a web editor
+  description: A port of Mutable Instruments Braids with a web editor
+  panel:
+    controls: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 10_twists/README.md
+  - src/braids/quantizer_scales.h
+  - src/braids/macro_oscillator.cc
+  - src/braids/resources.h
+  - src/braids/ui.h
+  - src/braids/settings.h
+  - src/braids/excitation.h
+  - src/braids/vco_jitter_source.h
+  - src/braids/settings.cc
+  - src/braids/parameter_interpolation.h
+  - src/braids/analog_oscillator.cc
+  slug: 10-twists
+  url: "/workshopsystem/program-cards/10-twists/"
+  tags:
+  - id: updated
+    label: Updated
+  tag_ids:
+  - updated
+  tag_labels:
+  - Updated
+  source_file: data/cards/10_twists.yml
+  metadata:
+    creator: Random Works
+    language: C (RPi Pico SDK)
+    version: '0.1'
+    status: Functional but WIP
+- id: 11_goldfish
+  title: Goldfish
+  release: 11 / 1.0
+  summary: Weird delay/looper for audio and CV
+  description: Weird delay/looper for audio and CV
+  panel:
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: Read inputs
+        source: code
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: Calculate big knob + audio2 attenuversion parameter. -2048 to
+          2047.
+        source: code
+      cv_1:
+        label: |-
+          CV
+          1
+        description: Read inputs
+        source: code
+      cv_2:
+        label: |-
+          CV
+          2
+        description: Read inputs
+        source: code
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in main.cpp: AudioOut1(outL);'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in main.cpp: AudioOut2(outR);'
+        source: code
+      cv_out_1:
+        label: |-
+          CV
+          1
+        description: 'Used in main.cpp: CVOut1(outCV);'
+        source: code
+      cv_out_2:
+        label: |-
+          CV
+          2
+        description: Delay code is a mutated version of Chris Johnson's Utility Pair
+          delay code In delay mode the audio is written to the delay buffer and read
+          back with a delay time set by the big knob each output (left and right)
+          is read back with a different delay time, set by the big knob and the CV
+          input CVout2 is set to the quantised CV mix, the quantiser is also from
+          Chris Johnson's Utility Pair project
+        source: code
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: 'Used in main.cpp: PulseOut1(true);'
+        source: code
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: 'Used in main.cpp: PulseOut2(true);'
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - 'Used in main.cpp: LedBrightness(0, cabs(outL));'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - quantiser.h
+  - divider.h
+  - main.cpp
+  slug: 11-goldfish
+  url: "/workshopsystem/program-cards/11-goldfish/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/11_goldfish.yml
+  metadata:
+    creator: Dune Desormeaux
+    language: Pico SDK
+    version: '1.0'
+    status: Ready
+- id: 12_am_coupler
+  title: AM Coupler
+  release: 12 / 1.0
+  summary: AM radio transmitter / coupler
+  description: AM radio transmitter / coupler
+  panel:
+    controls:
+      main:
+        label: Pitch
+        description: Coarse RF carrier tuning, roughly from 530–1600kHz
+        source: readme
+      x:
+        label: Pitch
+        description: Fine RF carrier tuning, over roughly 25kHz
+        source: readme
+      y:
+        label: Gain
+        description: Broadcast volume (carrier modulation amount)
+        source: readme
+      z:
+        label: |-
+          RF carrier
+          on/off
+        description: RF carrier on/off
+        source: readme
+    inputs:
+      audio_l:
+        label: |-
+          Mixed provide
+          RF
+        description: Mixed to provide the RF modulator signal.
+        source: readme
+      audio_r:
+        label: |-
+          Mixed provide
+          RF
+        description: Mixed to provide the RF modulator signal.
+        source: readme
+      cv_1:
+        label: Pitch
+        description: Fine RF carrier tuning, over roughly 25kHz
+        source: readme
+      pulse_1:
+        label: |-
+          RF carrier
+          on/off
+        description: RF carrier on/off
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          stored WAV
+          file
+        description: Outputs the stored WAV file (regardless of whether there are
+          jacks in the audio inputs)
+        source: readme
+      audio_out_r:
+        label: |-
+          modulation
+          signal
+        description: Outputs the modulation signal
+        source: readme
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - 'Because the output jacks of the Computer are not designed to generate frequencies
+    much higher than audio, the RF output is generated on one of the debug connections,
+    next to the LEDs on the Computer PCB. A short length of insulated wire connected
+    to this and held next to to the antenna of an AM radio receiver, will, with some
+    tuning, transfer the sound to the radio. With a radio antenna very close to the
+    bottom-left '
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 12_am_coupler/README.md
+  - WavFile.h
+  - main.cpp
+  slug: 12-am-coupler
+  url: "/workshopsystem/program-cards/12-am-coupler/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/12_am_coupler.yml
+  metadata:
+    name: AM Coupler
+    creator: Chris Johnson
+    language: C++ (ComputerCard)
+    version: '1.0'
+    status: Released
+- id: 13_noisebox
+  title: 13 Noisebox
+  release: '13'
+  summary: <img width="615" height="1653" alt="noisecard" src="https://github.com/user-attachments/assets/c455c2f0-8165-4350-8eac-9da56125c553"
+    />
+  description: <img width="615" height="1653" alt="noisecard" src="https://github.com/user-attachments/assets/c455c2f0-8165-4350-8eac-9da56125c553"
+    />
+  panel:
+    controls:
+      main:
+        label: Algorithm
+        description: Controls which algorithm you are currently selecting.
+        source: readme
+      z:
+        label: Noise
+        description: Up toggles on a bitcrushing effect for crunchier noise. Middle
+          is default, no effects.
+        source: readme
+    inputs:
+      audio_l:
+        label: CV
+        description: Offset CV for X Knob
+        source: readme
+      audio_r:
+        label: CV
+        description: Offset CV for Y Knob
+        source: readme
+      cv_1:
+        label: Algorithm
+        description: Offset CV for the algorithm being selected.
+        source: readme
+      cv_2:
+        label: Gain
+        description: VCA - you can gate your noise with this. Also great for AM modulation
+          of the noise. With nothing plugged in, this normalizes to always being on.
+        source: readme
+      pulse_1:
+        label: Trigger
+        description: Sample and Hold trigger (to be detailed further below)
+        source: readme
+      pulse_2:
+        label: Gate
+        description: Gate to turn on and off the bitcrushing effect. Effect is on
+          when input is high.
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: Drive pulse outs from current audio polarity
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: Drive pulse outs from current audio polarity
+        source: code
+      cv_out_1:
+        label: Algorithm
+        description: Output of the noise algorithm and its current parameters. Both
+          outs have the same source. I may consider making CV Out 2 go through a rainbow
+          of noise instead.
+        source: readme
+      cv_out_2:
+        label: Algorithm
+        description: Output of the noise algorithm and its current parameters. Both
+          outs have the same source. I may consider making CV Out 2 go through a rainbow
+          of noise instead.
+        source: readme
+      pulse_out_1:
+        label: Gain
+        description: A binary gate toggled on or off if the sample and held value
+          is greater than 0. Good for random gate patterns. Again this requires a
+          clock or some signal into Pulse/CV In 5
+        source: readme
+      pulse_out_2:
+        label: Length
+        description: Realtime comparator signal from whether or not the noise sample
+          is above 0. Really glitchy PWM sound.
+        source: readme
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - Engage bit/sample rate reducer when the Z switch is Up, or when PulseIn2 gate
+    is high
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 13_noisebox/README.md
+  - main.cpp
+  - algos/CrossModRingSquare.hpp
+  - algos/ArrayOnTheRocks.hpp
+  - algos/WhoKnows.hpp
+  - algos/ExistencelsPain.hpp
+  - algos/S_H.hpp
+  - algos/CrossModRingSine.hpp
+  - algos/FMTest.hpp
+  - algos/Basurilla.hpp
+  - algos/RwalkModWave.hpp
+  - https://github.com/user-attachments/assets/c455c2f0-8165-4350-8eac-9da56125c553
+  slug: 13-noisebox
+  url: "/workshopsystem/program-cards/13-noisebox/"
+  tags:
+  - id: tom
+    label: Monkey
+  tag_ids:
+  - tom
+  tag_labels:
+  - Monkey
+  source_file: data/cards/13_noisebox.yml
+- id: 14_cvmod
+  title: CVMod
+  release: 14 / 1.0
+  summary: Quad CV delay inspired by Make Noise Multimod
+  description: Quad CV delay inspired by Make Noise Multimod
+  panel:
+    controls:
+      main:
+        label: Speed
+        description: speed of read heads. Speed matches record head when main knob
+          is at 12-o'clock (top right LED lit)
+        source: readme
+      x:
+        label: Length
+        description: duration of tape loop
+        source: readme
+      y:
+        label: Phase
+        description: phase of read heads (offset from recording head)
+        source: readme
+      z:
+        label: Reset
+        description: Reset position of read heads
+        source: readme
+    inputs:
+      audio_l:
+        label: CV
+        description: CV input
+        source: readme
+      audio_r:
+        label: Speed
+        description: speed of read heads. Speed matches record head when main knob
+          is at 12-o'clock (top right LED lit)
+        source: readme
+      cv_1:
+        label: Length
+        description: duration of tape loop
+        source: readme
+      cv_2:
+        label: Phase
+        description: phase of read heads (offset from recording head)
+        source: readme
+    outputs:
+      audio_out_l:
+        label: CV
+        description: four CV outputs
+        source: readme
+      audio_out_r:
+        label: CV
+        description: four CV outputs
+        source: readme
+      cv_out_1:
+        label: CV
+        description: four CV outputs
+        source: readme
+      cv_out_2:
+        label: CV
+        description: four CV outputs
+        source: readme
+  switch_modes:
+    up: 'toggle through read head motion types: Ramp/Saw/Triangle/Sin/Stepped'
+    middle: ''
+    down: Reset position of read heads
+  leds:
+  - 'Main Knob (+ Audio in 2): speed of read heads. Speed matches record head when
+    main knob is at 12-o''clock (top right LED lit)'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 14_cvmod/README.md
+  - cvmod.cpp
+  slug: 14-cvmod
+  url: "/workshopsystem/program-cards/14-cvmod/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/14_cvmod.yml
+  metadata:
+    name: CVMod
+    creator: Chris Johnson
+    language: C++ (ComputerCard)
+    version: '1.0'
+    status: Released
+  videos:
+  - title: CVMod demo
+    provider: youtube
+    id: OXSL_SinqrY
+    url: https://www.youtube.com/watch?v=OXSL_SinqrY
+- id: 18_chord_organ
+  title: 18 Chord Organ-ish
+  release: 18 / 0.1
+  summary: Chord Organ-ish - 16 chords, 8 voices, 1V/oct root. Inspired by Music Thing
+    Chord Organ.
+  description: Chord Organ-ish - 16 chords, 8 voices, 1V/oct root. Inspired by Music
+    Thing Chord Organ.
+  panel:
+    controls:
+      main:
+        label: CV
+        description: Chord selection (0–15). Summed with CV 1.
+        source: readme
+      x:
+        label: |-
+          Root transpose
+          .
+        description: Root transpose (semitones).
+        source: readme
+      y:
+        label: |-
+          Progression pattern
+          sele
+        description: Progression pattern selection (0–8).
+        source: readme
+      z:
+        label: |-
+          Enable glide
+          .
+        description: Enable glide (portamento).
+        source: readme
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in main.cpp: int32_t audio1 = AudioIn1();'
+        source: code
+      cv_1:
+        label: Chord CV
+        description: 'Chord CV (0V to +5V): added to Main knob for voltage-controlled
+          chord selection. Negative voltages ignored.'
+        source: readme
+      cv_2:
+        label: Root note .
+        description: Root note (1V/oct).
+        source: readme
+      pulse_1:
+        label: Trigger
+        description: 'Trigger: advances progression step and retriggers chord/reset
+          pulse.'
+        source: readme
+      pulse_2:
+        label: Trigger
+        description: Cycle waveform (sine → triangle → square → saw) on each trigger.
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Apply VCA: volumeCV is 0..2047, scale mix proportionally'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Apply VCA: volumeCV is 0..2047, scale mix proportionally'
+        source: code
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: 'Used in main.cpp: PulseOut1(true);'
+        source: code
+  switch_modes:
+    up: Enable glide (portamento).
+    middle: Disable glide.
+    down: Cycle waveform (sine → triangle → square → saw).
+  leds:
+  - LEDs 0–3 | Chord index in binary (0–15). LED 4 | Reset indicator (on while reset
+    pulse is high). LED 5 | Waveform index (brightness).
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 18_chord_organ/README.md
+  - progressions.h
+  - chords.h
+  - main.cpp
+  - lookup_tables.h
+  slug: 18-chord-organ
+  url: "/workshopsystem/program-cards/18-chord-organ/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/18_chord_organ.yml
+  metadata:
+    creator: jkeyworth
+    language: Pico SDK (C++), ComputerCard
+    version: '0.1'
+    status: Working
+- id: 20_reverb
+  title: Reverb+
+  release: 20 / 1.5
+  summary: Reverb effect, plus pulse/CV generators and MIDI-to-CV, configurable using
+    web interface.
+  description: Reverb effect, plus pulse/CV generators and MIDI-to-CV, configurable
+    using web interface.
+  panel:
+    outputs:
+      cv_out_1:
+        label: |-
+          CV
+          1
+        description: CV outputs. 0 = max voltage, 1024 = 0V, 2047 = min voltage
+        source: code
+      cv_out_2:
+        label: |-
+          CV
+          2
+        description: 'Used in reverb.c: void not_in_flash_func(CVOut2)(uint32_t val)'
+        source: code
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: TM pulse -> Pulse out
+        source: code
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: TM pulse -> Pulse out
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - Pulse outputs with LEDs
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 20_reverb/README.md
+  - bernoulligate.h
+  - reverb_dsp.h
+  - turingmachine.h
+  - sysex_sentences.h
+  - noise_gate.h
+  - reverb.c
+  - reverb_dsp.c
+  - divider.h
+  - clock.h
+  - https://github.com/chrisgjohnson
+  - https://github.com/el-visio/dattorro-verb
+  slug: 20-reverb
+  url: "/workshopsystem/program-cards/20-reverb/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/20_reverb.yml
+  metadata:
+    name: Reverb+
+    creator: Chris Johnson
+    language: C (RPi Pico SDK)
+    version: '1.5'
+    status: Released
+    editor_url: https://www.musicthing.co.uk/web_config/reverb.html
+    discussion_url: https://discord.com/channels/1210238368898879569/1484231452697694401
+- id: 21_resonator
+  title: Resonator
+  release: 21 / 1.1.1
+  summary: Karplus-Strong based sympathetic resonator. Can be used for resonant droning
+    as well as plucking sounds.
+  description: Karplus-Strong based sympathetic resonator. Can be used for resonant
+    droning as well as plucking sounds.
+  panel:
+    controls:
+      main:
+        label: Dry/wet mix
+        description: Dry/wet mix (0 = dry signal, full = wet resonator output)
+        source: readme
+      x:
+        label: |-
+          Base frequency
+          resonator
+        description: Base frequency (fundamental pitch) of the resonator
+        source: readme
+      y:
+        label: |-
+          Damping
+          amount
+        description: Damping amount (higher = more resonance/longer decay)
+        source: readme
+      z:
+        label: Up
+        description: 'Up: Tuning mode - only the fundamental string sounds Middle:
+          Normal operation Down (momentary): Advance to next chord in progression
+          Down (hold 3 seconds): Reset to factory defaults (all 18 chords)'
+        source: readme
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in main.cpp: int16_t audioIn1 = AudioIn1();'
+        source: code
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in main.cpp: int16_t audioIn2 = AudioIn2();'
+        source: code
+      cv_1:
+        label: Pitch
+        description: 1V/octave pitch control (X knob acts as fine tune when CV connected)
+        source: readme
+      cv_2:
+        label: |-
+          Damping
+          modulation
+        description: Damping modulation (adds to Y knob)
+        source: readme
+      pulse_1:
+        label: Trigger
+        description: Trigger string excitation (pluck with noise burst)
+        source: readme
+      pulse_2:
+        label: |-
+          Advance next
+          chord
+        description: Advance to next chord in progression
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: Stereo output
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: Stereo output
+        source: code
+  switch_modes:
+    up: Tuning mode - only the fundamental string sounds
+    middle: Normal operation
+    down: ''
+  leds:
+  - The 6 LEDs show the current position in the chord progression (0-17). Single LEDs
+    indicate positions 0-5, LED pairs indicate positions 6-17.
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 21_resonator/README.md
+  - generate_period_table.py
+  - main.cpp
+  - https://github.com/pichenettes/eurorack/tree/master/rings
+  slug: 21-resonator
+  url: "/workshopsystem/program-cards/21-resonator/"
+  tags:
+  - id: classic
+    label: Classic
+  tag_ids:
+  - classic
+  tag_labels:
+  - Classic
+  source_file: data/cards/21_resonator.yml
+  metadata:
+    name: Resonator
+    creator: Johan Eklund
+    language: C++ (ComputerCard)
+    version: 1.1.1
+    status: Released
+    editor_url: https://johaneklund.io/resonator
+- id: 22_sheep
+  title: Sheep
+  release: 22 / 1.1
+  summary: A time-stretching and pitch-shifting granular processor and digital degradation
+    playground with 2 fidelity options.
+  description: A time-stretching and pitch-shifting granular processor and digital
+    degradation playground with 2 fidelity options.
+  panel:
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: Record audio when not in freeze mode (freeze mode stops recording
+          but allows playback) Clip inputs to prevent overflow
+        source: code
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: Clip inputs to prevent overflow
+        source: code
+      cv_1:
+        label: |-
+          CV
+          1
+        description: 'CV1 connected: CV1 controls grain position with X knob as attenuverter
+          Read CV1 input only when grain is triggered'
+        source: code
+      cv_2:
+        label: |-
+          CV
+          2
+        description: CV2 controls pitch, Main knob is attenuverter (use center detent
+          only) No hysteresis for CV2 - apply immediately for responsive CV control
+        source: code
+      pulse_2:
+        label: |-
+          Pulse
+          2
+        description: Check Pulse Input 2 gate before triggering
+        source: code
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: Store output amplitudes for LED feedback
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in main.cpp: AudioOut2(outR);'
+        source: code
+      cv_out_1:
+        label: |-
+          CV
+          1
+        description: 'Update CV outputs CV Out 1: Current noise value (updated when
+          grains are triggered)'
+        source: code
+      cv_out_2:
+        label: |-
+          CV
+          2
+        description: 'CV Out 2: Write head position mapped to 0-5V (0 to 2047)'
+        source: code
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: Handle pulse output 1 (countdown)
+        source: code
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: Handle pulse output 2 (countdown)
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - 'Used in main.cpp: * LED Feedback:'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - main.cpp
+  slug: 22-sheep
+  url: "/workshopsystem/program-cards/22-sheep/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/22_sheep.yml
+  metadata:
+    creator: Dune Desormeaux
+    language: Pico SDK
+    version: '1.1'
+    status: Released
+- id: 23_SlowMod
+  title: Slowmod
+  release: 23 / 0.1
+  summary: Four related LFOs with per-output VCAs, cross-modulation, crossfading,
+    phase randomisation and pause control.
+  description: Chaotic quad-LFO with VCAs.
+  panel:
+    controls:
+      main:
+        label: LFO Rate
+        description: sets the speed of all four LFOs, from very slow cycles up into
+          low audio rate.
+        source: curated
+      x:
+        label: Cross Mod
+        description: sets the intensity of cross-modulation between the LFOs.
+        source: curated
+      y:
+        label: Crossfade
+        description: crossfades each output with the inverted neighbouring LFO.
+        source: curated
+      z:
+        label: Pause / Random
+        description: up pauses all LFOs; down randomises all LFO phases.
+        source: curated
+    inputs:
+      audio_l:
+        label: |-
+          VCA
+          1
+        description: VCA input for Audio Out 1. If unpatched, Audio Out 1 outputs
+          its LFO directly.
+        source: curated
+      audio_r:
+        label: |-
+          VCA
+          2
+        description: VCA input for Audio Out 2. If unpatched, Audio Out 2 outputs
+          its LFO directly.
+        source: curated
+      cv_1:
+        label: |-
+          VCA
+          3
+        description: VCA input for CV Out 1. If unpatched, CV Out 1 outputs its LFO
+          directly.
+        source: curated
+      cv_2:
+        label: |-
+          VCA
+          4
+        description: VCA input for CV Out 2. If unpatched, CV Out 2 outputs its LFO
+          directly.
+        source: curated
+      pulse_1:
+        label: Pause
+        description: Gate high pauses all LFOs, matching the switch-up pause behaviour.
+        source: curated
+      pulse_2:
+        label: |-
+          Random
+          Phase
+        description: Rising edge randomises the phase of all LFOs.
+        source: curated
+    outputs:
+      audio_out_l:
+        label: |-
+          LFO
+          1
+        description: Fastest LFO output, optionally multiplied by Audio In 1 as a
+          VCA.
+        source: curated
+      audio_out_r:
+        label: |-
+          LFO
+          2
+        description: Second LFO output, optionally multiplied by Audio In 2 as a VCA.
+        source: curated
+      cv_out_1:
+        label: |-
+          LFO
+          3
+        description: Third LFO output, optionally multiplied by CV In 1 as a VCA.
+        source: curated
+      cv_out_2:
+        label: |-
+          LFO
+          4
+        description: Slowest LFO output, optionally multiplied by CV In 2 as a VCA.
+        source: curated
+      pulse_out_1:
+        label: |-
+          Pair
+          Gate 1
+        description: Comparator-style pulse derived from the first two LFOs.
+        source: curated
+      pulse_out_2:
+        label: |-
+          Pair
+          Gate 2
+        description: Comparator-style pulse derived from the second CV-output LFO
+          pair.
+        source: curated
+  switch_modes:
+    up: Pause all LFOs.
+    middle: Run normally.
+    down: Randomise the phase of all LFOs.
+  leds:
+  - The first four LEDs follow the four LFO output phases.
+  - The bottom two LEDs follow Pulse Outs 1 and 2.
+  notes:
+  - Curated from the hosted README and checked against slowmod.h routing.
+  source:
+  - 23_SlowMod/README.md
+  - external:slowmod/README.md
+  - external:slowmod/slowmod.h
+  slug: 23-slowmod
+  url: "/workshopsystem/program-cards/23-slowmod/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/23_SlowMod.yml
+  metadata:
+    creator: divmod
+    language: C++ (RPi Pico SDK) compat. w/ cmake and Arduino IDE.
+    version: '0.1'
+    status: Released
+- id: 24_crafted_volts
+  title: Crafted Volts
+  release: 24 / (see source repo)
+  summary: Manually set control voltages (CV) with the input knobs and switch. It
+    also attenuverts (attenuates and inverts) incoming voltages.
+  description: Manually set control voltages (CV) with the input knobs and switch.
+    It also attenuverts (attenuates and inverts) incoming voltages.
+  panel:
+    controls: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - "/ Rough LED brightness correction"
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 24_crafted_volts/README.md
+  - external:mtmws_cards/crafted_volts/README.md
+  - external:mtmws_cards/crafted_volts
+  - external:mtmws_cards/crafted_volts/build.rs
+  - external:mtmws_cards/crafted_volts/src/main.rs
+  - https://codeberg.org/briandorsey/mtmws_cards/src/branch/main/crafted_volts
+  slug: 24-crafted-volts
+  url: "/workshopsystem/program-cards/24-crafted-volts/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/24_crafted_volts.yml
+  metadata:
+    creator: Brian Dorsey
+    language: Rust (Embassy framework)
+    version: "(see source repo)"
+    status: Released
+- id: 25_utility_pair
+  title: Utility Pair
+  release: 25 / 1.0
+  summary: 25 small utilities, which can be combined in pairs
+  description: 25 small utilities, which can be combined in pairs
+  panel:
+    controls: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - 'Used in main.cpp: LedOn(I+4, true);'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 25_utility_pair/README.md
+  - external:Utility-Pair/README.md
+  - external:Utility-Pair
+  - external:Utility-Pair/loops/sleigh.h
+  - external:Utility-Pair/loops/break3.h
+  - external:Utility-Pair/loops/break1.h
+  - external:Utility-Pair/loops/break5.h
+  - external:Utility-Pair/loops/break2.h
+  - external:Utility-Pair/loops/break8.h
+  - https://github.com/chrisgjohnson/Utility-Pair
+  slug: 25-utility-pair
+  url: "/workshopsystem/program-cards/25-utility-pair/"
+  tags:
+  - id: classic
+    label: Classic
+  tag_ids:
+  - classic
+  tag_labels:
+  - Classic
+  source_file: data/cards/25_utility_pair.yml
+  metadata:
+    name: Utility Pair
+    creator: Chris Johnson
+    language: C++ (ComputerCard)
+    version: '1.0'
+    status: Released
+- id: 27_Siren
+  title: Siren
+  release: 27 / 0.2
+  summary: Multi-algorithm drone oscillator. Inspired by the Forge TME Vhikk X.
+  description: Multi-algorithm drone oscillator. Inspired by the Forge TME Vhikk X.
+  panel:
+    controls:
+      z:
+        label: Seed
+        description: Position | Main Knob | X Knob | Y Knob Up | WARP (cross-mod /
+          distortion) | SPAN (frequency spread) | MORPH (waveform scan) Middle | SEED
+          (structural randomization) | SCAN (timbral morphing) | BASIS (root pitch)
+          Down | *(momentary)* Tap to cycle through oscillator banks Banks crossfade
+          over 250ms when switching, using a sample buffer and equal-power curve for
+          a smooth, gapless transition. The last 250ms of the old ba
+        source: readme
+    inputs:
+      audio_l:
+        label: Audio
+        description: Processor input — external audio is waveshaped/folded by WARP
+          and SCAN, blended by MORPH, summed with drone. Mono input creates stereo
+          output via offset processing.
+        source: readme
+      audio_r:
+        label: Pitch
+        description: SPAN modulation — external CV or audio modulates detuning/spread.
+          Patch an LFO for evolving textures or a sequencer for rhythmic spread changes.
+        source: readme
+      cv_1:
+        label: Pitch
+        description: Pitch modulation (added to BASIS)
+        source: readme
+      cv_2:
+        label: |-
+          WARP
+          modulation
+        description: WARP modulation
+        source: readme
+      pulse_1:
+        label: Gate
+        description: Gate — drone on/off
+        source: readme
+      pulse_2:
+        label: Dual-purpose
+        description: 'Dual-purpose: short pulse randomizes SEED, long hold (≥500ms)
+          cycles bank with crossfade'
+        source: readme
+    outputs:
+      audio_out_l:
+        label: Audio
+        description: Left audio output
+        source: readme
+      audio_out_r:
+        label: Audio
+        description: Right audio output
+        source: readme
+      cv_out_1:
+        label: Pitch
+        description: Pitch CV — mirrors current pitch (BASIS + CV1 modulation), centered
+          around 0V
+        source: readme
+      cv_out_2:
+        label: Gate
+        description: Envelope level — 0 when gated off, ramps up when open
+        source: readme
+      pulse_out_1:
+        label: Clock
+        description: Sub-oscillator clock — square wave at the fundamental frequency
+        source: readme
+      pulse_out_2:
+        label: |-
+          1/2 divider
+          —
+        description: 1/2 divider — square wave one octave below the fundamental
+        source: readme
+  switch_modes:
+    up: WARP (cross-mod / distortion) SPAN (frequency spread) MORPH (waveform scan)
+    middle: SEED (structural randomization) SCAN (timbral morphing) BASIS (root pitch)
+    down: "*(momentary)* Tap to cycle through oscillator banks"
+  leds:
+  - 'LED | Bank | Description Banks crossfade over 250ms when switching, using a sample
+    buffer and equal-power curve for a smooth, gapless transition. The last 250ms
+    of the old bank''s audio is buffered and crossfaded against the new bank''s output
+    — no silence gap. The LEDs show the transition: the old bank dims while the new
+    bank brightens.'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 27_Siren/README.md
+  - wavetables.h
+  - oscillators.h
+  - dsp.h
+  - main.cpp
+  - https://github.com/raspberrypi/pico-sdk
+  slug: 27-siren
+  url: "/workshopsystem/program-cards/27-siren/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/27_Siren.yml
+  metadata:
+    creator: Moses Hoyt
+    language: C++ (ComputerCard)
+    version: '0.2'
+    status: Functional but WIP
+  videos:
+  - title: Siren demo
+    provider: youtube
+    id: DORHEYpUqWU
+    url: https://youtu.be/DORHEYpUqWU
+  - title: Siren demo 2
+    provider: youtube
+    id: Lqdvu03-Lqs
+    url: https://youtu.be/Lqdvu03-Lqs
+- id: 28_eighties_bass
+  title: 30 - eighties_bass
+  release: 28 / 0.1
+  summary: Bass-oriented complete monosynth voice consisting of five detuned saw wave
+    oscillators with mixable white noise and adjustable resonant filter.
+  description: Bass-oriented complete monosynth voice consisting of five detuned saw
+    wave oscillators with mixable white noise and adjustable resonant filter.
+  panel:
+    controls: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - LEDs -- LEDs 2,4,6 represent which filter mode (LPF, BPF, HPF)
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 28_eighties_bass/README.md
+  - ResponsiveAnalogRead.h
+  - ResponsiveAnalogRead.cpp
+  - 28_eighties_bass.ino
+  - https://github.com/earlephilhower/arduino-pico
+  - https://github.com/sensorium/Mozzi
+  slug: 28-eighties-bass
+  url: "/workshopsystem/program-cards/28-eighties-bass/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/28_eighties_bass.yml
+  metadata:
+    creator: "@todbot / Tod Kurt"
+    language: arduino-pico core and Mozzi 2 library
+    version: '0.1'
+    status: Functional but WIP
+  videos:
+  - title: Eighties Bass demo
+    provider: youtube
+    id: nrKnOlx8B3g
+    url: https://youtu.be/nrKnOlx8B3g
+- id: 30_cirpy_wavetable
+  title: 30 - cirpy_wavetable
+  release: 30 / 0.1
+  summary: Wavetable oscillator that using wavetables from Plaits, Braids, and Microwave,
+  description: Wavetable oscillator that using wavetables from Plaits, Braids, and
+    Microwave,
+  panel:
+    controls: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - CV outs echo the values of wavemod and y knob LEDs reflects knob & cv position
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 30_cirpy_wavetable/README.md
+  - code.py
+  - https://github.com/todbot/Hello_Computer/releases/
+  - https://github.com/todbot/circuitpython/releases
+  - https://github.com/TomWhitwell/Hello_Computer/tree/main/Demonstrations%2BHelloWorlds/CircuitPython
+  slug: 30-cirpy-wavetable
+  url: "/workshopsystem/program-cards/30-cirpy-wavetable/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/30_cirpy_wavetable.yml
+  metadata:
+    creator: "@todbot / Tod Kurt"
+    language: Circuit Python
+    version: '0.1'
+    status: Functional but WIP
+  videos:
+  - title: Cirpy Wavetable demo
+    provider: youtube
+    id: Y7sOgAC92XU
+    url: https://youtu.be/Y7sOgAC92XU
+  - title: Cirpy Wavetable demo 2
+    provider: youtube
+    id: Nxx_5Xhv1X8
+    url: https://youtu.be/Nxx_5Xhv1X8
+- id: 31_esp
+  title: ESP
+  release: 31 / 1.0
+  summary: A MS-20-style External Signal Processor that includes a preamp, bandpass
+    filter, envelope follower, gate, and 1v/oct pitch outs.
+  description: A MS-20-style External Signal Processor that includes a preamp, bandpass
+    filter, envelope follower, gate, and 1v/oct pitch outs.
+  panel:
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: Read mono input
+        source: code
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Monitor: send band-passed audio out (or choose pre/in)'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Monitor: send band-passed audio out (or choose pre/in)'
+        source: code
+      cv_out_1:
+        label: |-
+          CV
+          1
+        description: 'Used in main.cpp: CVOut1 : 1 V/oct pitch'
+        source: code
+      cv_out_2:
+        label: |-
+          CV
+          2
+        description: 'Used in main.cpp: CVOut2 : Envelope'
+        source: code
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: 'Used in main.cpp: PulseOut1(esp.gate);'
+        source: code
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: 'Used in main.cpp: PulseOut2(trig_active);'
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - 'Used in main.cpp: uint16_t pitch_led = 0; // brightness for LED 2'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 31_esp/README.md
+  - main.cpp
+  slug: 31-esp
+  url: "/workshopsystem/program-cards/31-esp/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/31_esp.yml
+  metadata:
+    creator: Ben Regnier
+    language: C++(ComputerCard)
+    version: '1.0'
+    status: Released
+- id: 32_vink
+  title: Vink
+  release: 32 / 1.1
+  summary: Dual delay loops with sigmoid saturation for Jaap Vink / Roland Kayn style
+    feedback patching
+  description: Dual delay loops with sigmoid saturation for Jaap Vink / Roland Kayn
+    style feedback patching
+  panel:
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: 2 delay lines
+        source: code
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: 2 delay lines
+        source: code
+      cv_1:
+        label: |-
+          CV
+          1
+        description: 'Used in main.cpp: delay1_fp16 = averageWithCv(delay1_fp16, CVIn1());'
+        source: code
+      cv_2:
+        label: |-
+          CV
+          2
+        description: 'Used in main.cpp: delay2_fp16 = averageWithCv(delay2_fp16, CVIn2());'
+        source: code
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in main.cpp: AudioOut1(out1);'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in main.cpp: AudioOut2(out2);'
+        source: code
+      cv_out_1:
+        label: |-
+          CV
+          1
+        description: 'Used in main.cpp: * - CVOut1/2 : chaotic slow LFO pair'
+        source: code
+      cv_out_2:
+        label: |-
+          CV
+          2
+        description: 'Used in main.cpp: int32_t cvOut2 = lfo2 >> 20;'
+        source: code
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: 'Used in main.cpp: PulseOut1(false);'
+        source: code
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: 'Used in main.cpp: PulseOut2(false);'
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - 'Used in main.cpp: this{ PulseOut1(v); LedOn(4, v); });'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 32_vink/README.md
+  - main.cpp
+  slug: 32-vink
+  url: "/workshopsystem/program-cards/32-vink/"
+  tags:
+  - id: new
+    label: New
+  tag_ids:
+  - new
+  tag_labels:
+  - New
+  source_file: data/cards/32_vink.yml
+  metadata:
+    creator: Ben Regnier
+    language: C++(ComputerCard)
+    version: '1.1'
+    status: Functional
+  videos:
+  - title: Vink demo
+    provider: youtube
+    id: X_Bcr_HS9XM
+    url: https://www.youtube.com/watch?v=X_Bcr_HS9XM
+- id: 33_drumdrum
+  title: drumdrum
+  release: 33 / 1.2.0
+  summary: DFAM-style 8-step sequencer
+  description: DFAM-style 8-step sequencer
+  panel:
+    controls:
+      z:
+        label: Pitch
+        description: 'Position | Main Knob | X Knob | Y Knob Up (play) | Tempo | Sequence
+          length (1–8 steps) | VCO 2 pitch offset (±24 semitones) Middle (edit) |
+          Tempo | Step pitch (0–127 MIDI note) | Step velocity (0–255) Down (momentary)
+          | Short press: advance edit cursor. Long press (hold ≥500ms): toggle play/pause
+          All knobs use pickup/catchup behaviour when switching modes — the knob must
+          pass through the stored value before it takes'
+        source: readme
+    inputs:
+      cv_1:
+        label: CV
+        description: Decay CV mod (summed with stored velocity for the current step)
+        source: readme
+      cv_2:
+        label: Pitch
+        description: Global pitch transpose (±24 semitones, affects both CV Out 1
+          and Audio Out 2)
+        source: readme
+      pulse_1:
+        label: Clock
+        description: External clock input (overrides internal tempo; one step per
+          rising edge)
+        source: readme
+      pulse_2:
+        label: Reset
+        description: Reset (returns sequence to step 1 on rising edge)
+        source: readme
+    outputs:
+      audio_out_l:
+        label: Noise
+        description: White noise (continuous, always running)
+        source: readme
+      audio_out_r:
+        label: Pitch
+        description: VCO 2 pitch CV (same sequence as VCO 1, offset by Y knob in play
+          mode)
+        source: readme
+      cv_out_1:
+        label: Pitch
+        description: VCO 1 pitch (1V/oct, EEPROM-calibrated, quantised to semitones)
+        source: readme
+      cv_out_2:
+        label: CV
+        description: Velocity CV (for controlling envelope decay via Slope or similar)
+        source: readme
+      pulse_out_1:
+        label: Trigger
+        description: Step trigger (~2ms pulse each step; preview trigger when paused
+          in edit mode)
+        source: readme
+      pulse_out_2:
+        label: End Pulse
+        description: End-of-cycle trigger (fires when the sequence wraps from last
+          step back to first)
+        source: readme
+  switch_modes:
+    up: The sequencer runs, cycling through the active steps. LEDs show the current
+      playback step. Main controls the internal clock tempo (overridden when an external
+      clock is patched to Pulse In 1). X sets how many steps are active (1–8). The
+      change takes effect immediately. Length 1 hammers a single step (useful for
+      one-shot voices) — the end-of-cycle trigger fires every tick in that case. Y
+      transposes VCO 2's pitch relati
+    middle: Playback continues uninterrupted. The LEDs switch to showing the edit
+      cursor position instead of the playback position. X sets the pitch for the step
+      at the edit cursor. Y sets the velocity for that step. Short press down advances
+      the edit cursor to the next step (wraps at sequence length). Long press down
+      (hold ≥500ms) toggles play/pause. When paused, advancing the cursor fires a
+      preview trigger on Pulse Out 1 so yo
+    down: ''
+  leds:
+  - 'The 6 LEDs (2 columns, 3 rows) encode steps 1–8: `` Step 1: * . Step 5: * * .
+    . * * . . * . Step 2: * * Step 6: * * . . * * . . * * Step 3: * * Step 7: . *
+    * . * * . . * * Step 4: * * Step 8: . . * * * * . . * * `` This encoding is used
+    for playback position, edit cursor, and sequence length preview.'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 33_drumdrum/README.md
+  - shared_state.h
+  - monome_mext.c
+  - grid_ui.cpp
+  - midi_sysex.h
+  - grid_ui.h
+  - monome_mext.h
+  - midi_host.cpp
+  - midi_host.h
+  - main.cpp
+  - midi_sysex.cpp
+  - https://github.com/raspberrypi/pico-sdk
+  slug: 33-drumdrum
+  url: "/workshopsystem/program-cards/33-drumdrum/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/33_drumdrum.yml
+  metadata:
+    creator: Moses Hoyt
+    language: C++ (ComputerCard)
+    version: 1.2.0
+    status: Functional but WIP
+    editor_url: https://mohoyt.com/drumdrum.html
+- id: 34_dual_quant
+  title: DualQuantPitch
+  release: 34 / 1.0
+  summary: Dual quantised granular pitch shifter with calibrated 1V/oct CV outputs
+  description: Dual quantised granular pitch shifter with calibrated 1V/oct CV outputs
+  panel:
+    controls:
+      main:
+        label: Pitch
+        description: Global pitch offset
+        source: readme
+      x:
+        label: Pitch
+        description: Pitch offset for output A
+        source: readme
+      y:
+        label: Pitch
+        description: Pitch offset for output B
+        source: readme
+      z:
+        label: |-
+          Enable chromatic
+          quantis
+        description: Enable chromatic quantisation
+        source: readme
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: "======================================================== Audio
+          input ========================================================"
+        source: code
+      cv_1:
+        label: Pitch
+        description: Additional pitch modulation for output A
+        source: readme
+      cv_2:
+        label: Pitch
+        description: Additional pitch modulation for output B
+        source: readme
+    outputs:
+      audio_out_l:
+        label: Pitch
+        description: Pitch-shifted signal A
+        source: readme
+      audio_out_r:
+        label: Pitch
+        description: Pitch-shifted signal B
+        source: readme
+      cv_out_1:
+        label: Pitch
+        description: Quantised pitch voltage A
+        source: readme
+      cv_out_2:
+        label: Pitch
+        description: Quantised pitch voltage B
+        source: readme
+  switch_modes:
+    up: ''
+    middle: Enable chromatic quantisation
+    down: ''
+  leds:
+  - "* LED feedback for quantiser state"
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 34_dual_quant/README.md
+  - Click.h
+  - dual_quant_pitch.cpp
+  slug: 34-dual-quant
+  url: "/workshopsystem/program-cards/34-dual-quant/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/34_dual_quant.yml
+  metadata:
+    creator: Adrian Vos - with Vibe code support
+    language: C++
+    version: '1.0'
+    status: Beta
+- id: 37_compulidean
+  title: Compulidean
+  release: 37 / (see source repo)
+  summary: Generative Euclidean drum + sample player.
+  description: Generative Euclidean drum + sample player.
+  panel:
+    controls:
+      main:
+        label: Density
+        description: Control density multiplier of the first bank of Euclidean tracks
+          (kick, clap, snare, toms...), from 0x to 1.5x
+        source: readme
+      x:
+        label: Density
+        description: Control density multiplier of the second bank of Euclidian tracks
+          (hihats...), from 0x to 1.5x
+        source: readme
+      y:
+        label: Clock
+        description: Controls tempo of internal clock, from 30BPM to 180 (disabled
+          when slaved to external clock).
+        source: readme
+      z:
+        label: Density
+        description: Freeze the random seed, so same pattern will continue playing.
+          Fills and density still take effect.
+        source: readme
+    inputs:
+      audio_l:
+        label: CV
+        description: Bipolar CV controls shuffle amount (negative CV inverts the shuffle)
+        source: readme
+      audio_r:
+        label: Pitch
+        description: Bipolar CV controls sampleplayer pitch (negative lower, positive
+          higher)
+        source: readme
+      cv_1:
+        label: Density
+        description: Control density multiplier of the first bank of Euclidean tracks
+          (kick, clap, snare, toms...), from 0x to 1.5x
+        source: readme
+      cv_2:
+        label: Density
+        description: Control density multiplier of the second bank of Euclidian tracks
+          (hihats...), from 0x to 1.5x
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in audio.h: AudioOut1(buffer[read_buffer_id][bufferIndex]);'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in main.cpp: sw.AudioOut2(32767);'
+        source: code
+  switch_modes:
+    up: Freeze the random seed, so same pattern will continue playing. Fills and density
+      still take effect.
+    middle: ''
+    down: Mutes the sequencer so no new notes will play. LEDs will flash on the beat.
+  leds:
+  - Switch DOWN (mom) | Mutes the sequencer so no new notes will play. LEDs will flash
+    on the beat.
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 37_compulidean/README.md
+  - external:compulidian/README.md
+  - external:compulidian
+  - external:compulidian/add_git_branch.py
+  - external:compulidian/include/Config.h
+  - external:compulidian/include/cv_input.h
+  - external:compulidian/include/serial_debug.h
+  - external:compulidian/include/workshop_output.h
+  - external:compulidian/src/serial_debug.cpp
+  - https://github.com/doctea/Microlidian
+  - https://github.com/doctea/compulidian
+  - https://github.com/doctea/Compulidian/raw/refs/heads/main/firmware/firmware.uf2
+  slug: 37-compulidean
+  url: "/workshopsystem/program-cards/37-compulidean/"
+  tags:
+  - id: new
+    label: New
+  tag_ids:
+  - new
+  tag_labels:
+  - New
+  source_file: data/cards/37_compulidean.yml
+  metadata:
+    creator: Tristan Rowley
+    language: C++/Arduino, with vscode+platformio.
+    version: "(see source repo)"
+    status: Functional, but WIP
+- id: 38_od
+  title: Od
+  release: 38 / 1.0
+  summary: Loopable chaotic Lorenz attractor trajectories and zero-crossings as CV
+    and pulses, with sensitivity to initial conditions.
+  description: Loopable chaotic Lorenz attractor trajectories and zero-crossings as
+    CV and pulses, with sensitivity to initial conditions.
+  panel:
+    controls: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - When started, the program will light all 6 LEDs until boot is complete, and then
+    turn the LEDs off and begin the simulation. Note the current default
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 38_od/README.md
+  - external:mtmws_od/README.md
+  - external:mtmws_od
+  - external:mtmws_od/manifest.py
+  - external:mtmws_od/src/boot.py
+  - external:mtmws_od/src/looper.py
+  - external:mtmws_od/src/model.py
+  - external:mtmws_od/src/lorenz_system.py
+  - external:mtmws_od/src/main.py
+  - https://github.com/MJLMills/mtmws_od/releases
+  - https://github.com/MJLMills/mtmws_od/blob/main/docs/od.pdf
+  - https://github.com/MJLMills/mtmws_od
+  - https://github.com/MJLMills/pyworkshopsystem
+  slug: 38-od
+  url: "/workshopsystem/program-cards/38-od/"
+  tags:
+  - id: classic
+    label: Classic
+  tag_ids:
+  - classic
+  tag_labels:
+  - Classic
+  source_file: data/cards/38_od.yml
+  metadata:
+    creator: M. John Mills
+    language: MicroPython
+    version: '1.0'
+    status: Released
+- id: 39_knots
+  title: Knots
+  release: 39 / 0.2
+  summary: Six-engine oscillator firmware for the Music Thing Workshop System
+  description: Six-engine oscillator firmware for the Music Thing Workshop System
+  panel:
+    controls:
+      main:
+        label: Pitch
+        description: Used for tuning the main oscillator of all the engines. It's
+          a 10 octave span from 10Hz to 10KHz, clamped at either end so CV or MIDI
+          input won't push it past those minimum and maximum values.
+        source: readme
+      x:
+        label: Mode / Next
+        description: The X and Y trimmers adjust 2 parameters exposed by the engines.
+          These differ per engine and, in some cases, are different in Alt mode. The
+          parameters are musical to encourage their use. The X trimmer has an additional
+          function used in conjunction with the Z switch.
+        source: readme
+      y:
+        label: Mode / Next
+        description: The X and Y trimmers adjust 2 parameters exposed by the engines.
+          These differ per engine and, in some cases, are different in Alt mode. The
+          parameters are musical to encourage their use. The X trimmer has an additional
+          function used in conjunction with the Z switch.
+        source: readme
+      z:
+        label: Mode / Next
+        description: 'The Z switch does 4 things: 1. In the *middle* position, the
+          module is in the Normal mode, with normal outputs on Audio Out 1 + 2 2.
+          In the *up* position, the module is in the Alt mode, with alternative outputs
+          on Audio Out 1 + 2 3. Pushing the momentary switch *down* and returning
+          to the *middle* will move the engine to the next slot, and change the LED.
+          Note: the change happens when you release the Z switch, not wh'
+        source: readme
+    inputs:
+      audio_l:
+        label: Audio
+        description: 'Below the X and Y trimmers are CV modulation inputs. The inputs
+          can accept values from -6 V to 6 V. If there is a cable connected, the X
+          and Y trimmers become *attenuators* for the CV signal on the input cable.
+          These inputs run at control rate, not at the full audio rate. > Tip: The
+          Workshop System''s Slopes modules, when running in Loop mode with nothing
+          connected to the input, will output 0 V to 12 V. This is not id'
+        source: readme
+      audio_r:
+        label: Audio
+        description: 'Below the X and Y trimmers are CV modulation inputs. The inputs
+          can accept values from -6 V to 6 V. If there is a cable connected, the X
+          and Y trimmers become *attenuators* for the CV signal on the input cable.
+          These inputs run at control rate, not at the full audio rate. > Tip: The
+          Workshop System''s Slopes modules, when running in Loop mode with nothing
+          connected to the input, will output 0 V to 12 V. This is not id'
+        source: readme
+      cv_1:
+        label: Pitch
+        description: 'A 1 V per octave CV input connected to the main tuning. It works
+          relative to the Main knob position but doesn''t exceed the 10Hz - 10KHz
+          range limit. > Tip: It''s fun to connect the SineSquare Oscillators to this
+          input. However, there is no attenuator for it, but you can pass the oscillator''s
+          output through the Stompbox section and use the Blend knob to attenuate
+          the signal. CV In 1 runs at control rate - approx 1kHz'
+        source: readme
+      cv_2:
+        label: Gain
+        description: 'CV In 2 acts like a standard VCA for both outputs. The input
+          responds to signals in the 0-5 V range. Zero and below mutes both outputs.
+          5 V and above (up to the 6 V limit) sets unity gain for the outputs. It''s
+          also set to unity gain if nothing is plugged in. Note: the Ring Mod on the
+          Workshop System can also be used as a VCA, but then you don''t get stereo
+          and you no longer have a ring modulator. This frees it up for'
+        source: readme
+      pulse_1:
+        label: Mode / Next
+        description: When plugged in it overrides the Z up/middle position setting
+          and switches the module between Normal mode with a low input (0 V) and Alt
+          mode with a high input (5 V).
+        source: readme
+      pulse_2:
+        label: Mode / Next
+        description: 'When plugged in it overrides the Z momentary down/middle position
+          setting and advances to the next engine on each new rising edge (0 to 5
+          V). > Tip: Connecting the SineSquare Oscillators'' square outputs to these
+          Pulse inputs is some rhythmic fun!'
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in main.cpp: AudioOut1(int16_t(out1));'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in main.cpp: AudioOut2(int16_t(out2));'
+        source: code
+      cv_out_1:
+        label: Pitch
+        description: This passes the MIDI note value out in 1 V per octave format.
+          This is independent of the Main knob position or CV In 1 so it's a direct
+          MIDI to CV mapping. Handy for sending MIDI sequences to other oscillators.
+        source: readme
+      cv_out_2:
+        label: CV
+        description: CV Out 2 is a secret weapon! It is connected internally to MIDI
+          CC 74, so you can send MIDI Control Change messages from your DAW/MIDI sequencer
+          and control anything that accepts a -6 V to 6 V input. MIDI CC is limited
+          to 128 steps, so it might be a bit too jagged for precision requirements.
+          When the module restarts or the MIDI CC 74 value is set to 0, it will output
+          -6 V which can be very useful on the Workshop Syst
+        source: readme
+      pulse_out_1:
+        label: Gate
+        description: This follows the MIDI gate on/off, going high (5 V) while the
+          note is held.
+        source: readme
+      pulse_out_2:
+        label: Mode / Next
+        description: This is the other secret weapon. Pulse Out 2 is a clock output
+          that can drive sequencers, delays, or just make interesting rhythmic patterns.
+          The speed of the clock can be adjusted by holding the Z switch down and
+          turning the X trimmer. Once you've turned the X knob while holding Z down,
+          the engine slot won't advance when you release Z. The clock rate goes from
+          20 - 999 BPM. If there is a MIDI clock present at the US
+        source: readme
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - This shows the currently selected engine and flashes briefly when receiving MIDI
+    notes.
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 39_knots/README.md
+  - src/knots/src/main.cpp
+  - src/knots/src/wavetables/floatable_bank_4_16x256.h
+  - src/knots/src/wavetables/floatable_bank_1_16x256.h
+  - src/knots/src/core/shared_state.h
+  - src/knots/src/core/control_router.h
+  - src/knots/src/core/control_router.cpp
+  - src/knots/src/core/midi_worker.cpp
+  - src/knots/src/core/midi_worker.h
+  - src/knots/src/engines/floatable_engine.cpp
+  - src/knots/src/engines/din_sum_engine.h
+  - external:mtws/knots
+  - external:mtws/knots/src/main.cpp
+  - external:mtws/knots/src/wavetables/floatable_bank_4_16x256.h
+  - external:mtws/knots/src/wavetables/floatable_bank_1_16x256.h
+  - external:mtws/knots/src/core/shared_state.h
+  - external:mtws/knots/src/core/control_router.h
+  - external:mtws/knots/src/core/control_router.cpp
+  slug: 39-knots
+  url: "/workshopsystem/program-cards/39-knots/"
+  tags:
+  - id: new
+    label: New
+  tag_ids:
+  - new
+  tag_labels:
+  - New
+  source_file: data/cards/39_knots.yml
+  metadata:
+    creator: Jeff Fletcher
+    language: C++ (RPi Pico SDK / ComputerCard)
+    version: '0.2'
+    status: Released
+  videos:
+  - title: Knots demo
+    provider: youtube
+    id: mE8FjwyQ3GQ
+    url: https://youtu.be/mE8FjwyQ3GQ
+- id: 41_blackbird
+  title: Blackbird v1.1
+  release: 41 / 1.1
+  summary: A scriptable, live-codable, USB-serial-to-CV device implementing monome
+    crow's protocol
+  description: A scriptable, live-codable, USB-serial-to-CV device implementing monome
+    crow's protocol
+  panel:
+    controls:
+      main:
+        label: |-
+          Main Knob
+          Analog
+        description: Main Knob Analog Input
+        source: readme
+      x:
+        label: |-
+          X Knob
+          Analog
+        description: X Knob Analog Input
+        source: readme
+      y:
+        label: |-
+          Y Knob
+          Analog
+        description: Y Knob Analog Input
+        source: readme
+      z:
+        label: |-
+          3-Position Switch
+          Digita
+        description: 3-Position Switch Digital Input
+        source: readme
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: Read audio inputs and store raw values (NO floating point in
+          ISR)
+        source: code
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: Read audio inputs and store raw values (NO floating point in
+          ISR)
+        source: code
+      cv_1:
+        label: |-
+          CV
+          1
+        description: Pulse input clock division (for clock mode) CV input clock mode
+          tracking (input[1]/input[2] via Detect clock mode)
+        source: code
+      cv_2:
+        label: |-
+          CV
+          2
+        description: Pulse input clock division (for clock mode) CV input clock mode
+          tracking (input[1]/input[2] via Detect clock mode)
+        source: code
+      pulse_1:
+        label: |-
+          Pulse
+          1
+        description: Public wrappers for pulse input access (for Lua bindings)
+        source: code
+      pulse_2:
+        label: |-
+          Pulse
+          2
+        description: Public wrappers for pulse input access (for Lua bindings)
+        source: code
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in main.cpp: case 3: // Output 1 → AudioOut1 (audio outputs
+          use raw 12-bit values)'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: Output.lua returns the Output table - capture it Create output[1]
+          through output[4] instances using Output.new()
+        source: code
+      cv_out_1:
+        label: |-
+          CV
+          1
+        description: Output.lua returns the Output table - capture it Create output[1]
+          through output[4] instances using Output.new()
+        source: code
+      cv_out_2:
+        label: |-
+          CV
+          2
+        description: 'Used in main.cpp: case 2: // Output 4 → CVOut2 (use calibrated
+          millivolts function)'
+        source: code
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: "============================================================================
+          BLACKBIRD-SPECIFIC LUA API (bb namespace) ============================================================================
+          Pulse Output Functions (bb.pulseout[1] and bb.pulseout[2])"
+        source: code
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: "============================================================================
+          BLACKBIRD-SPECIFIC LUA API (bb namespace) ============================================================================
+          Pulse Output Functions (bb.pulseout[1] and bb.pulseout[2])"
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - "> Make sure you wait for blackbird to fully start up before attempting to upload
+    a lua script from druid. Startup is complete when welcome messages are printed
+    in druid and the bottom-left LED starts flashing. Sending commands before blackbird
+    is fully online can cause weirdness. > The WS computer's LEDs always show the
+    positive output voltages for each of the six outputs (negative voltages are not
+    shown)."
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 41_blackbird/README.md
+  - main.cpp
+  - util/raw_serial.py
+  - util/int_to_hex.py
+  - util/add_uf2_erase_block.py
+  - util/lua2header.py
+  - bbbowery/shiftregister_bb.lua
+  - bbbowery/boids_bb.lua
+  - bbbowery/cvdelay_bb.lua
+  - bbbowery/seqswitch_bb.lua
+  - bbbowery/quantizer_bb.lua
+  - https://github.com/monome/bowery
+  - https://github.com/dessertplanet
+  slug: 41-blackbird
+  url: "/workshopsystem/program-cards/41-blackbird/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/41_blackbird.yml
+  metadata:
+    creator: Dune Desormeaux
+    language: Pico SDK + Lua
+    version: '1.1'
+    status: Released
+    editor_url: https://dessertplanet.github.io/web-druid/
+- id: 42_backyard_rain
+  title: Backyard Rain Soundscape
+  release: 42 / (see source repo)
+  summary: Nature soundscape audio. A cozy rain ambience mix for background listening.
+  description: Nature soundscape audio. A cozy rain ambience mix for background listening.
+    You control the intensity. This card plays rain ambience which was recorded in
+    my backyard.
+  panel:
+    controls: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - "/ Rough LED brightness correction"
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 42_backyard_rain/README.md
+  - external:mtmws_cards/backyard_rain/README.md
+  - external:mtmws_cards/backyard_rain
+  - external:mtmws_cards/backyard_rain/build.rs
+  - external:mtmws_cards/backyard_rain/src/main.rs
+  - https://codeberg.org/briandorsey/mtmws_cards/src/branch/main/backyard_rain
+  slug: 42-backyard-rain
+  url: "/workshopsystem/program-cards/42-backyard-rain/"
+  tags:
+  - id: recommended
+    label: Recommended
+  - id: classic
+    label: Classic
+  tag_ids:
+  - recommended
+  - classic
+  tag_labels:
+  - Recommended
+  - Classic
+  source_file: data/cards/42_backyard_rain.yml
+  memory:
+    size: 16mb
+    requirement: required
+  metadata:
+    creator: Brian Dorsey
+    language: Rust (Embassy framework)
+    version: "(see source repo)"
+    status: Released
+- id: 47_NZT
+  title: Grain Noise and Tools (NZT)
+  release: 47 / 1.0.0
+  summary: Grain Noise and Noise Tools
+  description: Grain Noise and Noise Tools
+  panel:
+    controls:
+      main:
+        label: Density
+        description: controls the "density" of the noise
+        source: readme
+      x:
+        label: Seed
+        description: Controls the noise seed when Pulse In 1 is connected and CV In
+          2 isn't. (see GateIn 1)
+        source: readme
+      y:
+        label: Gain
+        description: Controls the gain applied to the value of CV In 1 (if connected)
+          that is added to the value of the main knob. Up to 3x gain is applied.
+        source: readme
+    inputs:
+      audio_l:
+        label: Noise
+        description: This signal is used as a ring modulator of the noise. Put a sine
+          wave here to mellow the noise sound somewhat.
+        source: readme
+      audio_r:
+        label: Noise
+        description: The internal noise source is replaced with the audio from this
+          input if connected.
+        source: readme
+      cv_1:
+        label: Density
+        description: CV in for modulating the noise density.
+        source: readme
+      cv_2:
+        label: |-
+          CV
+          2
+        description: 'Used in main.cpp: knobXVal = CVIn2() + 2047;'
+        source: code
+      pulse_1:
+        label: Seed
+        description: resets the seed of the noise generator. Connect the square wave
+          of an oscillator to create a noise oscillator (as long as density is high)
+          similar to what can be found in a Nord Modular G1.
+        source: readme
+    outputs:
+      audio_out_l:
+        label: Noise
+        description: the grain noise output
+        source: readme
+      audio_out_r:
+        label: Noise
+        description: the "opposite" grain noise output, if Audio Out 1 is dense this
+          is sparse and so on.
+        source: readme
+      cv_out_1:
+        label: CV
+        description: outputs a static ~-6V - useful for making a selfrunning slope
+          more suitable for input into the computers CV ins.
+        source: readme
+      cv_out_2:
+        label: Trigger
+        description: S&H output, updated every time there is a trigger into Pulse
+          In 2.
+        source: readme
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: regular gate thing
+        source: code
+      pulse_out_2:
+        label: |-
+          a short
+          pulse
+        description: Outputs a short pulse every 1.366 seconds or so. Useful for patching
+          into a pulseinput for drum sound design.
+        source: readme
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - 'Used in main.cpp: LedBrightness(0, main);'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 47_NZT/README.md
+  - external:ws/nzt/README.md
+  - external:ws/nzt
+  - external:ws/nzt/main.cpp
+  - https://github.com/kjnilsson/ws
+  slug: 47-nzt
+  url: "/workshopsystem/program-cards/47-nzt/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/47_NZT.yml
+  metadata:
+    creator: "@kjnilsson"
+    language: C++ (ComputerCard)
+    version: 1.0.0
+    status: Released
+- id: 50_flux
+  title: Flux
+  release: 50 / 1.0
+  summary: Effects, Synthesizer and Utility
+  description: Effects, Synthesizer and Utility
+  panel:
+    controls:
+      z:
+        label: |-
+          Mode Main
+          Knob
+        description: Mode Main Knob Knob X Knob Y
+        source: readme
+    inputs:
+      cv_1:
+        label: Effects X Y
+        description: Effects X and Y parameter modulation
+        source: readme
+      pulse_1:
+        label: Clock
+        description: Synth Gate and clock source for utilities
+        source: readme
+  switch_modes:
+    up: Synth Envelope (Decay) Pitch Timbre / Color
+    middle: Effect Wet/ Dry Parameter 1 (Time, Decay, etc) Parameter 2 (Tone, Feedback
+      etc)
+    down: ''
+  notes:
+  - Generated from README/metadata only; no local or fetched source was found for
+    this release.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 50_flux/README.md
+  - https://github.com/StoneRose35/cortexguitarfx/tree/rp2040_v1
+  - https://github.com/shorepine/amy/tree/main
+  - https://github.com/vincent-maurer/
+  - https://github.com/chrisgjohnson
+  slug: 50-flux
+  url: "/workshopsystem/program-cards/50-flux/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/50_flux.yml
+  metadata:
+    name: Flux
+    creator: Vincent Maurer (vincentmaurer.de)
+    language: C++ (RPi Pico SDK), C
+    version: '1.0'
+    status: Release
+    editor_url: https://vincentmaurer.de/flux/flux_manager.html
+- id: 51_grains
+  title: Grains
+  release: 51 / 1.0
+  summary: Granular Sampler and Effect
+  description: Granular Sampler and Effect
+  panel:
+    controls:
+      main:
+        label: Position
+        description: Position
+        source: readme
+      x:
+        label: Density
+        description: Density
+        source: readme
+      y:
+        label: Size Page 2
+        description: 'Size Page 2: Grain Tone'
+        source: readme
+      z:
+        label: |-
+          Momentary
+          pause.
+        description: Momentary pause.
+        source: readme
+    inputs:
+      audio_l:
+        label: Audio
+        description: Audio input for granular recording.
+        source: readme
+      audio_r:
+        label: Density
+        description: CV input for Grain Density.
+        source: readme
+      cv_1:
+        label: Pitch
+        description: 1V/Octave tracking for granular pitch.
+        source: readme
+      cv_2:
+        label: |-
+          Granular playhead
+          offset
+        description: Granular playhead offset.
+        source: readme
+      pulse_1:
+        label: Trigger
+        description: External grain spawn trigger.
+        source: readme
+      pulse_2:
+        label: |-
+          Toggles granular
+          buffer
+        description: Toggles granular buffer recording.
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Main stereo
+          output
+        description: Main stereo output (Mixed or Wet).
+        source: readme
+      audio_out_r:
+        label: |-
+          Main stereo
+          output
+        description: Main stereo output (Mixed or Wet).
+        source: readme
+      cv_out_1:
+        label: Length
+        description: Looping Ramp 0-5V synced to buffer length.
+        source: readme
+      cv_out_2:
+        label: CV
+        description: Random CV per grain (0-5V).
+        source: readme
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: 'Used in grains.cpp: PulseOut1(eoc);'
+        source: code
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: 'Used in grains.cpp: PulseOut2(mid);'
+        source: code
+  switch_modes:
+    up: Momentary pause.
+    middle: ''
+    down: Open the Slot Selection menu. Use the Main Knob to select a slot (1-16).
+  leds:
+  - 1. Ensure you're in freeze mode (LED 6 is ON). 3. LED 5 will be on to indicate
+    the Save Menu is active. 5. LEDs 1-4 display the slot number in 4-bit binary.
+    1. Ensure you're not in freeze mode (LED 6 is OFF). 3. LED 6 will be on to indicate
+    the Load Menu is active. 5. LEDs 1-4 display the slot number in 4-bit binary.
+    To enter Tape Mode, hold the momentary switch DOWN during the power-up sequence
+    (while the LEDs are c
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  - README points to external repositories; clone/fetch status should be checked if
+    this card needs final publication.
+  source:
+  - 51_grains/README.md
+  - grains.cpp
+  - https://github.com/vincent-maurer/
+  - https://github.com/chrisgjohnson
+  slug: 51-grains
+  url: "/workshopsystem/program-cards/51-grains/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/51_grains.yml
+  metadata:
+    name: Grains
+    creator: Vincent Maurer (vincentmaurer.de)
+    language: C++
+    version: '1.0'
+    status: Release
+    editor_url: https://vincentmaurer.de/grains/grains_manager.html
+- id: 53_glitter
+  title: Glitter
+  release: 53 / 0.1.0
+  summary: Granular Looping Sampler
+  description: Granular Looping Sampler
+  panel:
+    controls:
+      main:
+        label: |-
+          Fade between
+          plain
+        description: Fade between the plain loop (fully clockwise) and the granulated
+          output (fully anti-clockwise).
+        source: readme
+      x:
+        label: Pitch
+        description: Modify the chance of grains playing back at a different pitch.
+          Chance of octave variations increases from fully anti-clockwise to half
+          way. Chance of fifth variations increases from half way to fully clockwise.
+        source: readme
+      y:
+        label: Clock
+        description: Modify the maximum grain size. Clockwise is longer, anti-clockwise
+          is shorter.
+        source: readme
+      z:
+        label: |-
+          Switch up
+          or
+        description: Switch up or down to record to the loop.
+        source: readme
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in Glitter.cpp: audioL_ = AudioIn1(); // -2048 to 2047'
+        source: code
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in Glitter.cpp: audioR_ = AudioIn2(); // -2048 to 2047'
+        source: code
+      cv_1:
+        label: |-
+          Modify chance
+          grains
+        description: Modify the chance of the grains repeating themselves. Chance
+          is maximum at 0V and decreases with
+        source: readme
+      cv_2:
+        label: |-
+          Modify chance
+          grains
+        description: Modify the chance of the grains going to sleep. Chance is maximum
+          at 0V and decreases with
+        source: readme
+      pulse_1:
+        label: Clock
+        description: With a steady clock input the grains' length and position shall
+          be roughly quantised.
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: Update the read/write heads
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in Glitter.cpp: AudioOut2(mixOutR);'
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - 'LEDs: Each LED shows the current level of a grain''s output. Six LEDs, six grains
+    - nice!'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 53_glitter/README.md
+  - external:sdrjones_mtws/53_glitter/README.md
+  - external:sdrjones_mtws/README.md
+  - external:sdrjones_mtws/53_glitter
+  - external:sdrjones_mtws/53_glitter/main.cpp
+  - external:sdrjones_mtws/53_glitter/inc/Utils.h
+  - external:sdrjones_mtws/53_glitter/inc/HannWindow.h
+  - external:sdrjones_mtws/53_glitter/inc/PowerPan.h
+  - external:sdrjones_mtws/53_glitter/inc/Glitter.h
+  - external:sdrjones_mtws/53_glitter/src/Utils.cpp
+  - external:sdrjones_mtws
+  - https://github.com/sdrjones/mtws/releases/tag/glitter_v0.1.2-beta
+  - https://github.com/sdrjones/mtws/tree/main/53_glitter
+  slug: 53-glitter
+  url: "/workshopsystem/program-cards/53-glitter/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/53_glitter.yml
+  metadata:
+    creator: Steve Jones
+    language: Pico SDK 2.1.1
+    version: 0.1.0
+    status: Beta Test
+  videos:
+  - title: Glitter demo
+    provider: youtube
+    id: JW8Z_I-ub2A
+    url: https://youtu.be/JW8Z_I-ub2A
+- id: 55_fifths
+  title: Fifths
+  release: 55 / 1.0
+  summary: A quantizer/sequencer that can create harmony and nimbly traverse the circle
+    of fifths in attempts to make jazz
+  description: A quantizer/sequencer that can create harmony and nimbly traverse the
+    circle of fifths in attempts to make jazz
+  panel:
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: 2. Update pulse and counters 3. VCA calculation
+        source: code
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: If Audio2 is connected, treat as CV input vcaCV = virtualDetentedKnob((AudioIn2()
+          * vcaKnob >> 12) + 2048) - 2048;
+        source: code
+      cv_1:
+        label: |-
+          CV
+          1
+        description: 'Used in main.cpp: quant_input += CVIn1() * 1365 >> 12; // CV1
+          is up to 2 octaves transpose'
+        source: code
+      cv_2:
+        label: |-
+          CV
+          2
+        description: 'Used in main.cpp: key_index = CVIn2() * 13 >> 12;'
+        source: code
+      pulse_2:
+        label: |-
+          Pulse
+          2
+        description: 'Helper: Update pulse and counter logic'
+        source: code
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in main.cpp: AudioOut1(mainKnob - 2048);'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in main.cpp: AudioOut2(vcaOut);'
+        source: code
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: 'Used in main.cpp: PulseOut1(pulseIntCounter > 0);'
+        source: code
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: 'Used in main.cpp: PulseOut2(pulseSeqCounter > 0);'
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - 6. Output pulses and LED feedback
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - quantiser.h
+  - click.h
+  - main.cpp
+  slug: 55-fifths
+  url: "/workshopsystem/program-cards/55-fifths/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/55_fifths.yml
+  metadata:
+    creator: Dune Desormeaux
+    language: Pico SDK
+    version: '1.0'
+    status: Ready
+- id: 56_Krell
+  title: Krell
+  release: 56 / 1.0
+  summary: Krell
+  description: Krell
+  panel:
+    controls:
+      main:
+        label: |-
+          Global
+          Length
+        description: Overall chance of higher length envelopes for both channels.
+          Fully CCW this will produce quicker loops. Fully CW they will tend to be
+          longer, although they are still random.
+        source: readme
+      x:
+        label: Left Length
+        description: This controls the length of the envelopes for the left channel.
+        source: readme
+      y:
+        label: |-
+          Right
+          Length
+        description: This controls the length of the envelopes for the right channel.
+        source: readme
+    inputs:
+      cv_1:
+        label: CV
+        description: When plugged in the voltage will be sample and held on CV Out
+          1/2 and quantised to either octaves or a chromatic scale.
+        source: readme
+      cv_2:
+        label: CV
+        description: When plugged in the voltage will be sample and held on CV Out
+          1/2 and quantised to either octaves or a chromatic scale.
+        source: readme
+      pulse_1:
+        label: |-
+          Pulse
+          1
+        description: 'Used in Krell_1.0.lua: bb.pulsein[1]{ mode = ''change'', direction
+          = ''rising'' }'
+        source: code
+      pulse_2:
+        label: |-
+          Pulse
+          2
+        description: 'Used in Krell_1.0.lua: bb.pulsein[2]{ mode = ''change'', direction
+          = ''rising'' }'
+        source: code
+    outputs:
+      audio_out_l:
+        label: Envelope
+        description: These output looping AD envelopes.
+        source: readme
+      audio_out_r:
+        label: Envelope
+        description: These output looping AD envelopes.
+        source: readme
+      cv_out_1:
+        label: Pitch
+        description: These output pitch information. This is random and then quantised
+          to either octaves or a chromatic scale unless a cable is plugged into their
+          respective CV In
+        source: readme
+      cv_out_2:
+        label: Pitch
+        description: These output pitch information. This is random and then quantised
+          to either octaves or a chromatic scale unless a cable is plugged into their
+          respective CV In
+        source: readme
+      pulse_out_1:
+        label: End Pulse
+        description: These output pulses at the end of each cycle.
+        source: readme
+      pulse_out_2:
+        label: End Pulse
+        description: These output pulses at the end of each cycle.
+        source: readme
+  switch_modes:
+    up: Pitch outputs will be quantised to octaves.
+    middle: Pitch outputs are quantised to chromatic scale.
+    down: Each time you press down the range of random notes cycles between roughly
+      1-3 octaves.
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 56_Krell/README.md
+  - Krell_1.0.lua
+  slug: 56-krell
+  url: "/workshopsystem/program-cards/56-krell/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/56_Krell.yml
+  metadata:
+    creator: Benjamin Reily
+    language: Blackbird Lua
+    version: '1.0'
+    status: Mostly complete
+- id: 57_glitch
+  title: Glitch
+  release: 57 / 1.0.0
+  summary: Clock-synced beat-repeater with ratcheting, reversal and audio degradation
+  description: Clock-synced beat-repeater with ratcheting, reversal and audio degradation
+  panel:
+    inputs:
+      audio_l:
+        label: Audio In
+        description: Main audio input, continuously recorded into the circular buffer.
+        source: readme
+      pulse_1:
+        label: Clock
+        description: Rising edge sets the beat length for synced slice playback.
+        source: readme
+      pulse_2:
+        label: Gate
+        description: External glitch gate when the switch is in the middle position.
+        source: readme
+      cv_1:
+        label: Freeze
+        description: Comparator-style freeze input. Above about 0V stops recording
+          and loops the frozen buffer.
+        source: readme
+      cv_2:
+        label: Mod
+        description: Bipolar modulation for degradation amount and probability.
+        source: readme
+    outputs:
+      audio_out_l:
+        label: Glitch
+        description: Glitched output, or live pass-through when not glitching.
+        source: readme
+      audio_out_r:
+        label: Dry
+        description: Dry live pass-through of Audio In 1.
+        source: readme
+      pulse_out_1:
+        label: Slice
+        description: Sub-slice clock pulse at each ratchet boundary.
+        source: readme
+      pulse_out_2:
+        label: Clock
+        description: Mirror of Pulse In 1.
+        source: readme
+      cv_out_1:
+        label: Gate
+        description: High while glitching, low while passing through.
+        source: readme
+      cv_out_2:
+        label: Ramp
+        description: Descending ramp across each slice, useful for VCA fades.
+        source: readme
+    controls:
+      main:
+        label: Ratchet
+        description: Selects ratchet division zones and the hidden reverse/glitch
+          probability within each zone.
+        source: readme
+      x:
+        label: Crush
+        description: Bitcrush and sample-rate reduction amount for glitched slices.
+        source: readme
+      y:
+        label: Chance
+        description: Probability that degradation is applied at each slice boundary.
+        source: readme
+  switch_modes:
+    up: Probabilistic glitching at slice boundaries.
+    middle: External gate on Pulse In 2 controls glitching.
+    down: Momentary force-glitch for manual performance.
+  leds:
+  - LEDs 0-4 show the selected ratchet zone. LED 5 brightness shows the reverse/glitch
+    probability within that zone.
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 57_glitch/README.md
+  - external:uglifruit_Workshop_Computer/Demonstrations+HelloWorlds/PicoSDK/ComputerCard/examples/glitch
+  - external:uglifruit_Workshop_Computer/Demonstrations+HelloWorlds/PicoSDK/ComputerCard/examples/glitch/main.cpp
+  - https://github.com/Chysn/O_C-HemisphereSuite
+  - https://github.com/uglifruit/Workshop_Computer/releases/tag/glitch-v1.0.0
+  - https://github.com/uglifruit/Workshop_Computer/tree/main/Demonstrations%2BHelloWorlds/PicoSDK/ComputerCard/examples/glitch
+  slug: 57-glitch
+  url: "/workshopsystem/program-cards/57-glitch/"
+  tags:
+  - id: recommended
+    label: Recommended
+  tag_ids:
+  - recommended
+  tag_labels:
+  - Recommended
+  source_file: data/cards/57_glitch.yml
+  metadata:
+    name: Glitch
+    creator: Andy Jenkinson (uglifruit)
+    language: C++ (Pico SDK)
+    version: 1.0.0
+    status: Release
+- id: 69_trace
+  title: 69 - trace
+  release: 69 / 0.1
+  summary: Oscillograph stereo oscillator
+  description: Oscillograph stereo oscillator
+  panel:
+    controls:
+      main:
+        label: Pitch
+        description: Pitch (exponential), summed with CV In 1
+        source: readme
+      x:
+        label: Phase
+        description: 'Growth, depth of phase, summed with Audio In 1 ALT: attenuate
+          Audio In 1 when switch is up'
+        source: readme
+      y:
+        label: Audio
+        description: 'Depends on selected oscillator, summed with Audio In 2 ALT:
+          attenuate Audio In 2 when switch is up'
+        source: readme
+      z:
+        label: UP
+        description: 'UP: Enable ALT MID: Normal mode. DOWN: Move to next oscillator'
+        source: readme
+    inputs:
+      audio_l:
+        label: |-
+          Modulate
+          *Growth*
+        description: Modulate *Growth*
+        source: readme
+      audio_r:
+        label: |-
+          Modulate *Y
+          Knob*
+        description: Modulate *Y Knob*
+        source: readme
+      cv_1:
+        label: Pitch
+        description: Adds to the *Pitch* (not calibrated to 1V/OCT help on this maybe?)
+        source: readme
+      pulse_1:
+        label: |-
+          Rising edge
+          cycles
+        description: Rising edge cycles through osc within the same bank
+        source: readme
+    outputs:
+      audio_out_l:
+        label: Audio
+        description: Audio out horizontal channel - L
+        source: readme
+      audio_out_r:
+        label: Audio
+        description: Audio out vertical channel - R
+        source: readme
+      pulse_out_1:
+        label: |-
+          Fires when
+          switch
+        description: Fires when switch down toggled
+        source: readme
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - LED | Left collum indicate oscillator bank, right collum indicate index (top to
+    bottom) Use binary code for LED for maximum 8 banks of 8 oscillators
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 69_trace/README.md
+  - external:Trace-Workshop-Computer/README.md
+  - src/mesh_data.h
+  - src/oscillator.h
+  - src/main.cpp
+  - src/lookup_tables.h
+  - external:Trace-Workshop-Computer
+  - external:Trace-Workshop-Computer/util/wavtable_prep.py
+  - external:Trace-Workshop-Computer/util/mesh_prep.py
+  - external:Trace-Workshop-Computer/include/mesh_data.h
+  - external:Trace-Workshop-Computer/include/oscillator.h
+  - external:Trace-Workshop-Computer/include/lookup_tables.h
+  - external:Trace-Workshop-Computer/src/main.cpp
+  - https://github.com/indiepaleale/Trace-Workshop-Computer
+  slug: 69-trace
+  url: "/workshopsystem/program-cards/69-trace/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/69_trace.yml
+  metadata:
+    creator: Ruiyang Wang
+    language: C++ (ComputerCard)
+    version: '0.1'
+    status: Functional but WIP
+- id: 71_degenerator
+  title: Degenerator
+  release: 71 / 1.0
+  summary: Disintegrating Looper — capture audio loops and apply irreversible degradation
+    with saturation, filter drift, tape hiss, oxide shedding, bit crush, and bit rot
+  description: Disintegrating Looper — capture audio loops and apply irreversible
+    degradation with saturation, filter drift, tape hiss, oxide shedding, bit crush,
+    and bit rot
+  panel:
+    controls:
+      main:
+        label: Mix level /
+        description: Mix level (MIX) / Rate of change (DEGRADE). Full left freezes
+          state
+        source: readme
+      x:
+        label: |-
+          Harmonic
+          effects
+        description: 'Harmonic effects: Saturation → Filter Drift → Tape Hiss'
+        source: readme
+      y:
+        label: |-
+          Destructive
+          effects
+        description: 'Destructive effects: Oxide Shedding → Bit Crush → Bit Rot'
+        source: readme
+      z:
+        label: |-
+          Rec / Mix
+          / Degrade
+        description: Down = Record, Middle = Mix (overdub), Up = Degrade (irreversible)
+        source: readme
+    inputs:
+      audio_l:
+        label: |-
+          oscillator, a
+          microphone
+        description: an oscillator, a microphone, another module.
+        source: readme
+      audio_r:
+        label: Audio
+        description: Secondary audio input, mixes with Audio In 1 when connected
+        source: readme
+      cv_1:
+        label: |-
+          Adds voltage
+          Big
+        description: Adds voltage to the Big Knob
+        source: readme
+      cv_2:
+        label: |-
+          Adds voltage
+          Y
+        description: Adds voltage to the Y knob
+        source: readme
+      pulse_1:
+        label: Trigger
+        description: Record trigger, rising edge starts recording
+        source: readme
+      pulse_2:
+        label: Reset
+        description: Loop position reset, rising edge returns to start and resets
+          degradation
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Processed loop
+          output
+        description: Processed loop output
+        source: readme
+      audio_out_r:
+        label: Audio
+        description: Audio In 1 monitor, always carries whatever's connected to Audio
+          In 1
+        source: readme
+      cv_out_1:
+        label: |-
+          Loop position,
+          0V
+        description: Loop position, from 0V at start to ~+2V at end
+        source: readme
+      cv_out_2:
+        label: Envelope
+        description: Output envelope, CV proportional to output audio level
+        source: readme
+      pulse_out_1:
+        label: Clock
+        description: Loop boundary clock, pulse each time the loop wraps
+        source: readme
+      pulse_out_2:
+        label: |-
+          Record complete,
+          pulse
+        description: Record complete, pulse when recording finishes
+        source: readme
+  switch_modes:
+    up: DEGRADE Commit rate (quadratic) Selects harmonic degradation applied to buffer
+      Selects destructive degradation applied to buffer
+    middle: MIX Mix level (quadratic) Shapes incoming audio through harmonic effects
+      Shapes incoming audio through destructive effects
+    down: RECORD Not used — —
+  leds:
+  - 'LED | Meaning | |-----|---------| | LEDs 0-1 | Output level (brightness = amplitude)
+    | | LED 2 | Big Knob position | | LED 3 | Y Knob position (destructive effect)
+    | | LED 4 | Loop boundary, flashes each time the loop repeats | | LED 5 | Mode:
+    dim = MIX, bright = DEGRADE (intensity scales with knob)'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 71_degenerator/README.md
+  - external:Degenerator/README.md
+  - external:Degenerator
+  - external:Degenerator/main.cpp
+  - https://codeberg.org/johantv/Degenerator
+  slug: 71-degenerator
+  url: "/workshopsystem/program-cards/71-degenerator/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/71_degenerator.yml
+  metadata:
+    creator: Joep Vermaat
+    language: C++ (Pico SDK)
+    version: '1.1'
+    status: Released
+- id: 72_motorik
+  title: Motorik
+  release: 72 / 1.0
+  summary: Motorik drum machine — kick/snare/hihat with bass and melody CV, classic
+    Krautrock grooves
+  description: Motorik drum machine — kick/snare/hihat with bass and melody CV, classic
+    Krautrock grooves
+  panel:
+    controls:
+      main:
+        label: Audio
+        description: 'Texture / wash when Audio In 2 is disconnected — resonant low-pass
+          filter depth. Left = bright and dry, right = dark and washed out. When Audio
+          In 2 is patched, the Main knob instead controls decimation (sample rate
+          reduction): left = clean 48kHz, right = gritty crushed output down to ~200Hz.
+          Filter control moves to Audio In 2.'
+        source: readme
+      x:
+        label: |-
+          Pattern variation
+          —
+        description: 'Pattern variation — 0 = locked (exact repeat), full = ~6% chance
+          per step per voice to toggle bits each bar. Mutations are ephemeral: the
+          base pattern is restored at the start of each bar, so the groove breathes
+          without drifting.'
+        source: readme
+      y:
+        label: Trigger
+        description: at 0 no fills occur, at max a fill triggers roughly every other
+          bar. Fills restore the original pattern after one bar.
+        source: readme
+    inputs:
+      audio_l:
+        label: Length
+        description: Input Energy zone override (envelope follower). External audio
+          or CV dynamically layers voices — quiet/thin input = kick only, loud/dense
+          input = full pattern with double-time hihats. When nothing patched, the
+          Main knob in Z=Middle controls energy.
+        source: readme
+      audio_r:
+        label: Audio
+        description: Input Texture filter override (envelope follower). External audio
+          or CV drives the resonant low-pass wash — quiet/bright patches open up the
+          mix, loud/dark signals drown it in dub texture. When nothing's patched,
+          the Z=Up Main knob controls the filter.
+        source: readme
+      cv_1:
+        label: CV
+        description: Input Bass root transpose CV. Adds to the X knob root offset,
+          ±12 semitones range. Sequence chord changes from an external step sequencer.
+          Clamped to MIDI 24–60.
+        source: readme
+      cv_2:
+        label: CV
+        description: Input Bass pattern shift modulation. Adds to the X/Y knob shift
+          values, ±4 steps range. Slow LFOs or random CV create woozy, off-grid bass
+          timing.
+        source: readme
+      pulse_1:
+        label: Clock
+        description: Input External clock (rising edge). Disconnected → internal 120
+          BPM clock.
+        source: readme
+      pulse_2:
+        label: Trigger
+        description: Input Fill trigger (rising edge). Each pulse triggers a one-bar
+          fill. Works alongside probabilistic fills from the Y knob.
+        source: readme
+    outputs:
+      audio_out_l:
+        label: |-
+          Drum mix
+          spectral
+        description: Output Drum mix with spectral tilt, optionally filtered when
+          Z = Up
+        source: readme
+      audio_out_r:
+        label: |-
+          Same drum
+          mix
+        description: Output Same drum mix
+        source: readme
+      cv_out_1:
+        label: Pitch
+        description: Output Bass pitch CV (MIDI note scale, 0V during rests)
+        source: readme
+      cv_out_2:
+        label: Pitch
+        description: Output Bass mirror pitch CV (root + 12 semitones, 0V during rests)
+        source: readme
+      pulse_out_1:
+        label: Gate
+        description: Output Bass gate (high during notes, low during rests and retrigger
+          dip)
+        source: readme
+      pulse_out_2:
+        label: Gate
+        description: Output Bass mirror gate (same pattern, one octave up)
+        source: readme
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - LED | Function | |-----|----------| | 0–3 | Quarter-note beat position (0 = downbeat)
+    | | 4 | Bass note active | | 5 | Fill active
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 72_motorik/README.md
+  - external:motorik/README.md
+  - external:motorik
+  - external:motorik/generate_samples.py
+  - external:motorik/convert_samples.py
+  - external:motorik/main.cpp
+  - external:motorik/samples.h
+  - https://codeberg.org/johantv/motorik
+  slug: 72-motorik
+  url: "/workshopsystem/program-cards/72-motorik/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/72_motorik.yml
+  metadata:
+    name: Motorik
+    creator: Joep Vermaat
+    language: C++ (Pico SDK)
+    version: '1.0'
+    status: Released
+- id: 74_Wild_Pebble
+  title: Wild Pebble
+  release: 74 / 0.9
+  summary: Playable generative rhythm and melody organism inspired by Pet Rock.
+  description: Evolving rhythmic structures, quantised melodies, drum voices and modulation
+    voltages that slowly transform while staying musically connected.
+  panel:
+    controls:
+      main:
+        label: Clock
+        description: Internal clock speed. Ignored when an external clock is patched.
+        source: readme
+      x:
+        label: Density
+        description: Rhythmic density. CV In 1 modulates the trigger probability.
+        source: readme
+      y:
+        label: Mutation
+        description: 'Mutation intensity: melodic movement, scale changes and structural
+          instability. CV In 2 modulates the amount.'
+        source: readme
+    inputs:
+      pulse_1:
+        label: Clock
+        description: External clock input. Overrides the internal clock while active.
+        source: readme
+      pulse_2:
+        label: Freeze
+        description: Holds the current structure and disables mutation while high.
+        source: readme
+      cv_1:
+        label: Density CV
+        description: Modulates rhythmic density.
+        source: readme
+      cv_2:
+        label: Mutation CV
+        description: Modulates mutation amount.
+        source: readme
+    outputs:
+      pulse_out_1:
+        label: Rhythm 1
+        description: Primary rhythm stream, also driving melodic progression and kick
+          voice.
+        source: readme
+      pulse_out_2:
+        label: Rhythm 2
+        description: Derived companion rhythm stream for snare/percussion and correlated
+          variation.
+        source: readme
+      cv_out_1:
+        label: Pitch
+        description: Quantised melodic pitch output from evolving scale-constrained
+          note sequences.
+        source: readme
+      cv_out_2:
+        label: Energy
+        description: Smoothed energy/tension modulation output.
+        source: readme
+      audio_out_l:
+        label: Kick
+        description: Kick drum voice from the primary trigger stream.
+        source: readme
+      audio_out_r:
+        label: Snare
+        description: Snare and percussion voice from the companion trigger stream.
+        source: readme
+  switch_modes:
+    up: Stable melodic motion, restrained mutation and tighter rhythms.
+    middle: Balanced mutation, moderate swing and gradual harmonic drift.
+    down: Aggressive mutation, stronger swing, wider melodic jumps and denser companion
+      rhythms.
+  leds:
+  - Six LEDs visualise rhythm, density, mutation, energy, clock source and tension.
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 74_Wild_Pebble/README.md
+  - WildPebble.cpp
+  slug: 74-wild-pebble
+  url: "/workshopsystem/program-cards/74-wild-pebble/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/74_Wild_Pebble.yml
+  metadata:
+    creator: Adrian Vos with Vibecode support
+    language: C++
+    version: '0.9'
+    status: WIP but useable. Currently working on MIDI integration
+- id: 77_Placeholder
+  title: Placeholder
+  release: 77 / 0.0
+  summary: Reserved for secret project
+  description: Reserved for secret project
+  panel:
+    controls: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  notes:
+  - Generated from README/metadata only; no local or fetched source was found for
+    this release.
+  source: 
+  slug: 77-placeholder
+  url: "/workshopsystem/program-cards/77-placeholder/"
+  tags:
+  - id: updated
+    label: Updated
+  tag_ids:
+  - updated
+  tag_labels:
+  - Updated
+  source_file: data/cards/77_Placeholder.yml
+  metadata:
+    creator: None
+    language: None
+    version: '0.0'
+    status: None
+- id: 78_Talker
+  title: Talker
+  release: 78 / proof of concept
+  summary: Proof-of-concept LPC speech card that babbles random digits.
+  description: Proof-of-concept LPC speech card that babbles random digits.
+  panel:
+    controls:
+      main:
+        label: Pitch
+        description: controls speech pitch.
+        source: curated
+      x:
+        label: CV Depth
+        description: attenuverts CV In 1 before it is added to Main.
+        source: curated
+      y:
+        label: Speed
+        description: controls speaking speed, with CV In 2 added.
+        source: curated
+      z:
+        label: Run / Single
+        source: curated
+    inputs:
+      audio_l:
+        label: |-
+          Exciter
+          In
+        description: Replaces the pitched part of the LPC exciter when patched.
+        source: curated
+      cv_1:
+        label: |-
+          Pitch
+          CV
+        description: Pitch CV, attenuverted by X and added to Main.
+        source: curated
+      cv_2:
+        label: |-
+          Speed
+          CV
+        description: Speaking-speed CV, added to Y.
+        source: curated
+      pulse_1:
+        label: Trigger
+        description: Trigger a new random digit.
+        source: curated
+    outputs:
+      audio_out_l:
+        label: Speech
+        description: Speech output.
+        source: curated
+      audio_out_r:
+        label: Exciter
+        description: 'Raw LPC exciter: pitched and noise components before the filter
+          bank.'
+        source: curated
+      cv_out_1:
+        label: |-
+          Amp
+          CV
+        description: Exciter amplitude.
+        source: curated
+      cv_out_2:
+        label: |-
+          Pitch
+          CV
+        description: Exciter pitch.
+        source: curated
+      pulse_out_1:
+        label: |-
+          Word
+          Gate
+        description: Short trigger pulse when a new word starts.
+        source: curated
+  switch_modes:
+    up: Continuous babbling.
+    middle: Off.
+    down: Speak one new word.
+  leds:
+  - Left top LED follows speech signal level. Right top LED flashes with the new-word
+    trigger.
+  notes:
+  - Curated from README and referenced Talkie-style source behaviour.
+  source:
+  - 78_Talker/README.md
+  - external TalkiePCM/Talkie-derived source reference
+  slug: 78-talker
+  url: "/workshopsystem/program-cards/78-talker/"
+  tags:
+  - id: recommended
+    label: Recommended
+  tag_ids:
+  - recommended
+  tag_labels:
+  - Recommended
+  source_file: data/cards/78_Talker.yml
+  metadata:
+    creator: Chris Johnson
+    language: C++ (ComputerCard)
+    version: '0.1'
+    status: Proof of concept
+- id: 82_Computer_Grids
+  title: Computer Grids
+  release: 82 / 0.1.0
+  summary: Grids-inspired trigger sequencer with Web MIDI SysEx configuration.
+  description: Grids-inspired trigger sequencer with Web MIDI SysEx configuration.
+  panel:
+    controls:
+      main:
+        label: Fill
+        description: 'Middle: global fill macro. Up: lane 1 density. Alt: chaos/randomness.'
+        source: readme
+      x:
+        label: X / L2
+        description: 'Middle: pattern map X. Up: lane 2 density. Alt: internal BPM.'
+        source: readme
+      y:
+        label: Y / L3
+        description: 'Middle: pattern map Y. Up: lane 3 density. Alt: swing.'
+        source: readme
+    inputs:
+      pulse_1:
+        label: Clock
+        description: External clock input. Internal swing is ignored while clocked
+          externally.
+        source: readme
+      pulse_2:
+        label: Reset
+        description: Rising edge resets the pattern phase.
+        source: readme
+      cv_1:
+        label: Map CV
+        description: 'Assignable map modulation: X, Y or blended XY.'
+        source: readme
+      cv_2:
+        label: Fill CV
+        description: Adds to global fill or lane densities, depending on switch mode.
+        source: readme
+    outputs:
+      pulse_out_1:
+        label: Lane 1
+        description: Trigger lane 1.
+        source: readme
+      pulse_out_2:
+        label: Lane 2
+        description: Trigger lane 2.
+        source: readme
+      cv_out_1:
+        label: Lane 3
+        description: Trigger lane 3 as a digital pulse-style CV output.
+        source: readme
+      cv_out_2:
+        label: Aux
+        description: 'Configurable auxiliary output: accent, clock or lane 3 mirror.'
+        source: readme
+  switch_modes:
+    up: 'Per-lane density: Main controls lane 1, X lane 2, Y lane 3. Pattern map stays
+      where it was left in middle.'
+    middle: 'Normal mode: X/Y move around the Grids pattern map; Main sets global
+      fill.'
+    down: Short press taps tempo. Long press toggles the alt layer for chaos, BPM
+      and swing.
+  leds:
+  - 'LED 0: beat tick blink - LED 1: fill macro brightness (middle) or lane 1 density
+    (up) - LED 2: lane 1 trigger activity - LED 3: map X brightness (middle) or lane
+    2 density (up) - LED 4: lane 2 trigger activity - LED 5: lane 3/aux activity or
+    alt-layer indicator (middle); lane 3 density brightness (up)'
+  notes:
+  - Includes Web MIDI SysEx configuration and persistent flash settings.
+  source:
+  - 82_Computer_Grids/README.md
+  - GridsResources.h
+  - ConfigStore.h
+  - GridsResources.cpp
+  - GridsEngine.h
+  - GridsCard.cpp
+  - GridsEngine.cpp
+  - main.cpp
+  - ConfigStore.cpp
+  - GridsCard.h
+  - ComputerCardImpl.cpp
+  - https://github.com/pichenettes/eurorack/tree/master/grids
+  - https://github.com/philmillman
+  - https://github.com/dessertplanet/computercard-dev-env
+  slug: 82-computer-grids
+  url: "/workshopsystem/program-cards/82-computer-grids/"
+  tags:
+  - id: new
+    label: New
+  tag_ids:
+  - new
+  tag_labels:
+  - New
+  source_file: data/cards/82_Computer_Grids.yml
+  metadata:
+    creator: Phil Miller
+    language: C++
+    version: 0.1.0
+    status: Released
+    editor_url: https://computergrids.webmidi.cc/
+- id: 86_tesserae
+  title: Tesserae — Arpeggiated Harmonic Generator
+  release: 86 / 1.0
+  summary: Tesserae — Variable-voice (2-8) arpeggiated chord generator with 5 patterns,
+    10 scales, tap tempo, CV/audio transpose inputs, and dual CV + audio pitch outputs.
+    Inspired by Laurie Spiegel...
+  description: Tesserae — Variable-voice (2-8) arpeggiated chord generator with 5
+    patterns, 10 scales, tap tempo, CV/audio transpose inputs, and dual CV + audio
+    pitch outputs. Inspired by Laurie Spiegel's Music Mouse and Patchwork.
+  panel:
+    controls:
+      main:
+        label: |-
+          Function depends
+          on
+        description: Function depends on Z switch position (see below)
+        source: readme
+      x:
+        label: |-
+          Melody position
+          —
+        description: Melody position — selects base note in the current scale across
+          3 octaves
+        source: readme
+      y:
+        label: |-
+          Chord spacing
+          —
+        description: Chord spacing — how many scale degrees apart each voice is (1–5).
+          Also sets voice count when Z Down held (2–8).
+        source: readme
+      z:
+        label: |-
+          Position |
+          Mode
+        description: 'Position | Mode | Knob Main | Knob Y Up | Pattern select | Choose
+          arpeggio pattern (5 patterns) | — Centre | Root octave | Select root note
+          (C1–C7, logarithmic) | — Down (tap < 300ms) | Tap tempo | — | — Down (hold
+          >= 300ms) | Scale & voice select | Choose scale (10 scales) | Choose voice
+          count (2–8) Pattern select (Z Up): Knob Main sweeps through 5 arp patterns.
+          The selected pattern persists when the switch returns'
+        source: readme
+    inputs:
+      audio_l:
+        label: Pitch
+        description: Adds a semitone offset to the arpeggiated voice outputs (CV Out
+          1, Audio Out 1, Audio Out 2). Uses 1V/oct scaling (≈341 counts per octave,
+          ≈28 counts per semitone). Does not affect the root note (CV Out 2). Ideal
+          for vibrato, envelope-driven transposition, or sequenced pitch shifts from
+          an external LFO or EG.
+        source: readme
+      audio_r:
+        label: Pitch
+        description: Adds a semitone offset to the root note, which shifts the entire
+          harmonic framework — both the root (CV Out 2) and all derived chord notes.
+          Same 1V/oct scaling. Use for key changes or root modulation from external
+          CV.
+        source: readme
+      cv_1:
+        label: |-
+          Offsets melody
+          position
+        description: Offsets melody position (Knob X) when connected
+        source: readme
+      cv_2:
+        label: |-
+          Offsets chord
+          spacing
+        description: Offsets chord spacing (Knob Y) when connected
+        source: readme
+      pulse_1:
+        label: Clock
+        description: External clock — each rising edge advances one arpeggio step
+          (overrides internal clock when connected)
+        source: readme
+      pulse_2:
+        label: Reset
+        description: Reset — restarts arpeggio from step 0
+        source: readme
+    outputs:
+      audio_out_l:
+        label: Pitch
+        description: Same as CV Out 1 — current arpeggiated note, approximate 1V/oct
+          (uncalibrated audio DAC)
+        source: readme
+      audio_out_r:
+        label: Pitch
+        description: Previous arpeggiated note (the note before the current step),
+          approximate 1V/oct
+        source: readme
+      cv_out_1:
+        label: Pitch
+        description: Current arpeggiated chord note, calibrated 1V/oct
+        source: readme
+      cv_out_2:
+        label: Pitch
+        description: Root note (base melody pitch), always present, calibrated 1V/oct
+        source: readme
+      pulse_out_1:
+        label: Gate
+        description: Gate — high while the current arpeggio note is active (~50ms)
+        source: readme
+      pulse_out_2:
+        label: Trigger
+        description: Trigger — short pulse (~10ms) at the start of each arpeggio step
+        source: readme
+  switch_modes:
+    up: Pattern select Choose arpeggio pattern (5 patterns) —
+    middle: ''
+    down: ''
+  leds:
+  - LED | Function | |-----|----------| | LEDs 0–3 | Shows current voice index modulo
+    4 (one LED on at a time) | | LED 4 | On when scale/voice select mode is active
+    (Z Switch Down held) | | LED 5 | On when external clock is connected (Pulse In
+    1)
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 86_tesserae/README.md
+  - external:Tesserae/README.md
+  - external:Tesserae
+  - external:Tesserae/main.cpp
+  - https://codeberg.org/johantv/Tesserae
+  slug: 86-tesserae
+  url: "/workshopsystem/program-cards/86-tesserae/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/86_tesserae.yml
+  metadata:
+    creator: Joep Vermaat
+    language: C++ (Pico SDK)
+    version: '1.0'
+    status: released
+- id: 88_Blank
+  title: Blank
+  release: 88 / 0
+  summary: Reserved for blank 88 cards
+  description: Reserved for blank 88 cards
+  panel:
+    controls: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  notes:
+  - Generated from README/metadata only; no local or fetched source was found for
+    this release.
+  source: 
+  slug: 88-blank
+  url: "/workshopsystem/program-cards/88-blank/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/88_Blank.yml
+  metadata:
+    creator: Tom Whitwell
+    language: None
+    version: '0'
+    status: None
+- id: 98_duo_midi
+  title: Duo MIDI
+  release: 98 / 0.1
+  summary: A duophonic midi device/host interface
+  description: A duophonic midi device/host interface
+  panel:
+    controls:
+      main:
+        label: |-
+          Velocity sensitivity
+          .
+        description: Velocity sensitivity (scales envelope level by MIDI velocity).
+        source: readme
+      x:
+        label: Envelope
+        description: Envelope attack.
+        source: readme
+      y:
+        label: Envelope
+        description: Envelope release.
+        source: readme
+      z:
+        label: Up
+        description: 'Up: Duophonic (two voices, dynamically assigned). Middle: Monophonic
+          (both channels mirror the same note). Down: Toggles gate mode for pulse
+          outputs. Gate mode off (default): pulse outputs emit a 10ms trigger on voice
+          assignment. Gate mode on: pulse outputs behave like gates (high while the
+          voice is active). Note: Device/Host mode switching is automatic, but changing
+          it requires a Workshop Computer power cycle.'
+        source: readme
+    outputs:
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: 'Used in duo_midi.lua: bb.pulseout[1]:low()'
+        source: code
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: 'Used in duo_midi.lua: bb.pulseout[2]:low()'
+        source: code
+  switch_modes:
+    up: Duophonic (two voices, dynamically assigned).
+    middle: Monophonic (both channels mirror the same note).
+    down: Toggles gate mode for pulse outputs.
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 98_duo_midi/README.md
+  - duo_midi.lua
+  slug: 98-duo-midi
+  url: "/workshopsystem/program-cards/98-duo-midi/"
+  tags:
+  - id: updated
+    label: Updated
+  tag_ids:
+  - updated
+  tag_labels:
+  - Updated
+  source_file: data/cards/98_duo_midi.yml
+  metadata:
+    creator: Dune Desormeaux
+    language: Lua / Blackbird
+    version: '0.1'
+    status: Released
+- id: 99_toolbox
+  title: Toolbox
+  release: 99 / 0.1.1
+  summary: Mixer, VCA, noise, S&H, clock generator, etc.
+  description: Mixer, VCA, noise, S&H, clock generator, etc.
+  panel:
+    inputs:
+      audio_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in toolbox.cpp: a = AudioIn1();'
+        source: code
+      audio_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in toolbox.cpp: c = AudioIn2();'
+        source: code
+      cv_1:
+        label: |-
+          CV
+          1
+        description: 'Used in toolbox.cpp: int16_t cvOut1 = ((int32_t)CVIn1() * CVIn2())
+          >> 11;'
+        source: code
+      cv_2:
+        label: |-
+          CV
+          2
+        description: 'Used in toolbox.cpp: int16_t cvOut1 = ((int32_t)CVIn1() * CVIn2())
+          >> 11;'
+        source: code
+      pulse_2:
+        label: |-
+          Pulse
+          2
+        description: 'Used in toolbox.cpp: if (PulseIn2() || Disconnected(Pulse2))
+          {'
+        source: code
+    outputs:
+      audio_out_l:
+        label: |-
+          Audio
+          1
+        description: 'Used in toolbox.cpp: AudioOut1(audioOut1);'
+        source: code
+      audio_out_r:
+        label: |-
+          Audio
+          2
+        description: 'Used in toolbox.cpp: AudioOut2(noise());'
+        source: code
+      cv_out_1:
+        label: |-
+          CV
+          1
+        description: 'Used in toolbox.cpp: int16_t cvOut1 = ((int32_t)CVIn1() * CVIn2())
+          >> 11;'
+        source: code
+      cv_out_2:
+        label: |-
+          CV
+          2
+        description: 'Used in toolbox.cpp: CVOut2(shVal);'
+        source: code
+      pulse_out_1:
+        label: |-
+          Pulse
+          1
+        description: 'Used in toolbox.cpp: PulseOut1(true);'
+        source: code
+      pulse_out_2:
+        label: |-
+          Pulse
+          2
+        description: 'Used in toolbox.cpp: PulseOut2(true);'
+        source: code
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds:
+  - 'Used in toolbox.cpp: LedBrightness(0, cabs(audioOut1 << 1));'
+  notes:
+  - Generated from README plus raw source usage scan. Labels marked by code only should
+    be reviewed for musical wording.
+  source:
+  - 99_toolbox/README.md
+  - external:toolbox/README.md
+  - external:toolbox
+  - external:toolbox/toolbox.cpp
+  - https://github.com/divmod-audio/toolbox
+  slug: 99-toolbox
+  url: "/workshopsystem/program-cards/99-toolbox/"
+  tags: []
+  tag_ids: []
+  tag_labels: []
+  source_file: data/cards/99_toolbox.yml
+  metadata:
+    creator: divmod
+    language: C++ (ComputerCard)
+    version: 0.1.1
+    status: Released
