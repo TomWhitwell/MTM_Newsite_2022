@@ -1,9 +1,9 @@
 
 
 - order: 0.1
-  link: "https://www.schneiderskeller.co.uk/products/music-thing-modular-workshop-system-meetup"
-  text: "LONDON"
-  desc: "Workshop Meetup June 30th SchneidersKeller, free tickets here" 
+  link: "https://www.thonk.co.uk/shop/mtm-workshop-computer-assembled/"
+  text: "NEW"
+  desc: "Assembled Workshop Computer eurorack modules now available at Thonk" 
 
 
 - order: 01
@@ -13,17 +13,17 @@
 
 - order: 02
   link: "https://www.youtube.com/watch?v=D0H_VsJ15go"
-  text: "NEW"
+  text: "LUSH"
   desc: "DivKid's epic deep-dive into the Workshop Computer" 
 
 - order: 03
   link: "https://www.thonk.co.uk/shop/ryk-pgm-cards-mixed/"
-  text: "NEW"
+  text: "ACE"
   desc: "RYK Modular's incredible program cards for the Workshop Computer" 
 
 - order: 04
   link: "https://tomwhitwell.github.io/Workshop_Computer/index.html"
-  text: "NEW"
+  text: "HANDY"
   desc: "The big list of program cards for the Workshop Computer" 
         
 - order: 20
