@@ -1,0 +1,9 @@
+# Program card import source.
+#
+# While Workshop_Computer PR #177 is under review, this points at the PR head commit.
+# When that PR is merged, change `ref` to `main` and rerun:
+#   ruby scripts/import_program_cards.rb --source ../Workshop_Computer
+workshop_computer:
+  repo: "TomWhitwell/Workshop_Computer"
+  ref: "aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a"
+  live_ref_after_merge: "main"

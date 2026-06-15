@@ -6,8 +6,17 @@ layout: default
 {%- assign card_number = card.release | default: card.id | split: "/" | first | split: "_" | first | strip -%}
 {%- assign metadata = card.metadata -%}
 {%- assign summary = card.summary | default: card.description | strip_html -%}
-{%- assign source_url = "https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/" | append: card.id -%}
-{%- assign readme_url = "https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/" | append: card.id | append: "/README.md" -%}
+{%- if card.source_url -%}
+  {%- assign source_url = card.source_url -%}
+{%- else -%}
+  {%- assign source_url = "https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/" | append: card.id -%}
+{%- endif -%}
+{%- if card.readme_url -%}
+  {%- assign readme_url = card.readme_url -%}
+{%- else -%}
+  {%- assign readme_url = "https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/" | append: card.id | append: "/README.md" -%}
+{%- endif -%}
+{%- assign download_url = card.download_url | default: source_url -%}
 {%- assign default_discussion_url = "https://discord.com/channels/1210238368898879569/1484219323039092938" -%}
 {%- assign discussion_url = metadata.discussion_url | default: default_discussion_url -%}
 {%- assign first_video = card.videos | first -%}
@@ -37,7 +46,7 @@ layout: default
         {%- if card.memory and card.memory.size -%}<span>{{ card.memory.size | upcase }} card {{ card.memory.requirement | default: "supported" }}</span>{%- endif -%}
       </div>
       <div class="program-card-actions" aria-label="Card actions">
-        <a class="program-card-action program-card-action--download" href="{{ source_url }}">
+        <a class="program-card-action program-card-action--download" href="{{ download_url }}">
           <span>Download</span>
           {%- if metadata.version -%}<small>Firmware {{ metadata.version }}</small>{%- endif -%}
         </a>

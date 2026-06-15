@@ -1,0 +1,43 @@
+name: Update program card data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-program-cards:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Music Thing site
+        uses: actions/checkout@v4
+
+      - name: Read program card import source
+        run: |
+          echo "WORKSHOP_COMPUTER_REPO=$(ruby -ryaml -e 'c = YAML.load_file("_data/program_cards/import.yml"); puts c.dig("workshop_computer", "repo") || "TomWhitwell/Workshop_Computer"')" >> "$GITHUB_ENV"
+          echo "WORKSHOP_COMPUTER_REF=$(ruby -ryaml -e 'c = YAML.load_file("_data/program_cards/import.yml"); puts c.dig("workshop_computer", "ref") || "main"')" >> "$GITHUB_ENV"
+
+      - name: Check out Workshop Computer card data
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.WORKSHOP_COMPUTER_REPO }}
+          ref: ${{ env.WORKSHOP_COMPUTER_REF }}
+          path: _workshop_computer
+
+      - name: Import program card YAML
+        run: ruby scripts/import_program_cards.rb --source _workshop_computer
+
+      - name: Open update pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: program-cards/update-from-workshop-computer
+          title: Update program card data from Workshop_Computer
+          commit-message: Update program card data from Workshop_Computer
+          body: |
+            Automated refresh of `_data/program_cards/cards.yml` and generated card wrappers from `Workshop_Computer/releases/*/info.yaml`.
+
+            The source repo/ref is controlled by `_data/program_cards/import.yml`. While Workshop_Computer PR #177 is open it points at the PR head commit; after merge, change that file to `main`.
