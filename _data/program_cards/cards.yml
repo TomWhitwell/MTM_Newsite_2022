@@ -20,7 +20,7 @@
           Source (X)
         description: X knob position is sent to host as MIDI CC
         source: info.yaml
-      y:
+      "y":
         label: |-
           MIDI CC
           Source (Y)
@@ -149,7 +149,7 @@
         label: Loop Length
         description: Sets channel 1 sequence length; channel 2 length can be offset
         source: info.yaml
-      y:
+      "y":
         label: Div / Mult
         description: Sets channel 2 divide/multiply clock relationship
         source: info.yaml
@@ -288,7 +288,7 @@
         label: Offset
         description: Sets offset amount (or scale for CV In 1 modulation)
         source: info.yaml
-      y:
+      "y":
         label: VCA Depth
         description: Sets output/LED amplitude scaling (or scale for CV In 2 modulation)
         source: info.yaml
@@ -420,7 +420,7 @@
         label: Root Note
         description: Sets base/root pitch (summed with CV In 1)
         source: info.yaml
-      y:
+      "y":
         label: Chord Type
         description: Selects chord (summed with CV In 2)
         source: info.yaml
@@ -540,7 +540,7 @@
           Source (X)
         description: Sends configurable CC number (default CC2) in MIDI-enabled modes
         source: info.yaml
-      y:
+      "y":
         label: |-
           MIDI CC
           Source (Y)
@@ -670,7 +670,7 @@
         label: Chan A Rate
         description: Sets channel A trigger rate base (with CV In 1 modulation)
         source: info.yaml
-      y:
+      "y":
         label: Chan B Rate
         description: Sets channel B trigger rate base (with CV In 2 modulation)
         source: info.yaml
@@ -797,7 +797,7 @@
           Select
         description: Selects one of 6 stored user formulas
         source: info.yaml
-      y:
+      "y":
         label: Parameter 1
         source: info.yaml
       z:
@@ -939,7 +939,7 @@
           Comparator
           Scale
         source: info.yaml
-      y:
+      "y":
         label: |-
           Comparator
           Offset
@@ -1065,7 +1065,7 @@
         label: Timbre
         description: Braids timbre parameter
         source: info.yaml
-      y:
+      "y":
         label: Color
         description: Braids color parameter
         source: info.yaml
@@ -1335,7 +1335,7 @@
           Parameter X
         description: Primary per-algorithm shaping parameter
         source: info.yaml
-      y:
+      "y":
         label: |-
           Algorithm
           Parameter Y
@@ -1456,7 +1456,7 @@
           Duration
         description: Sets record-loop length
         source: info.yaml
-      y:
+      "y":
         label: Phase Offset
         description: Offsets read heads from record position
         source: info.yaml
@@ -1558,7 +1558,7 @@
           Playback
         description: Controls global playback gain layer
         source: info.yaml
-      y:
+      "y":
         label: |-
           Radiate
           Amount
@@ -1699,7 +1699,7 @@
           Transpose
         description: Adds semitone transpose to root pitch
         source: info.yaml
-      y:
+      "y":
         label: |-
           Progression
           Patt
@@ -1963,7 +1963,7 @@
         label: Base Pitch
         description: Fundamental pitch (or fine tune with CV1 connected)
         source: info.yaml
-      y:
+      "y":
         label: Damping
         description: Higher values increase resonance length
         source: info.yaml
@@ -2076,7 +2076,7 @@
         label: Delay Spread
         description: Left half selects delay offset, right half increases random spread
         source: info.yaml
-      y:
+      "y":
         label: Grain Size
         description: Sets grain length from very short to long windows
         source: info.yaml
@@ -2205,7 +2205,7 @@
           Amount
         description: Intensity of cross-modulation between LFO channels
         source: info.yaml
-      y:
+      "y":
         label: |-
           Neighbor
           Invert
@@ -2322,7 +2322,7 @@
           Attenuverter
         description: Sets output voltage or scales CVIn1
         source: info.yaml
-      y:
+      "y":
         label: |-
           CV2
           Attenuverter
@@ -2442,7 +2442,7 @@
           Primary
         description: X knob is generally owned by left utility
         source: info.yaml
-      y:
+      "y":
         label: |-
           Right
           Utility
@@ -2577,7 +2577,7 @@
         label: Scan
         description: Timbral scan parameter
         source: info.yaml
-      y:
+      "y":
         label: Basis
         description: Root pitch / frequency basis (also modulated by CV In 1)
         source: info.yaml
@@ -2708,7 +2708,7 @@
         label: Pitch Offset
         description: Pitch transpose offset summed with CV In 1
         source: info.yaml
-      y:
+      "y":
         label: |-
           Filter
           Resonance
@@ -2802,7 +2802,7 @@
         label: LFO Amount
         description: Amount of triangle LFO applied to wavetable position
         source: info.yaml
-      y:
+      "y":
         label: LFO Rate
         description: Frequency of wavetable modulation LFO
         source: info.yaml
@@ -2990,7 +2990,7 @@
         label: Tap 2 Offset
         description: Offsets tap 2 delay relative to tap 1
         source: info.yaml
-      y:
+      "y":
         label: |-
           Saturation
           Mix
@@ -3107,7 +3107,7 @@
         label: Step Pitch
         description: Pitch for selected edit step (with pickup)
         source: info.yaml
-      y:
+      "y":
         label: |-
           Step
           Velocity
@@ -3384,7 +3384,7 @@
         description: Engine-specific parameter 1 in Normal mode, or attenuation for
           AudioIn1 when patched
         source: info.yaml
-      y:
+      "y":
         label: |-
           Engine Macro
           Y
@@ -3505,7 +3505,7 @@
         description: Normalized analog knob value exposed to Lua; behavior depends
           on loaded script
         source: info.yaml
-      y:
+      "y":
         label: bb.knob.y
         description: Normalized analog knob value exposed to Lua; behavior depends
           on loaded script
@@ -3659,7 +3659,7 @@
         label: Bird Pitch
         description: Controls pitch with CVIn1 summed in
         source: info.yaml
-      y:
+      "y":
         label: |-
           Playback
           Time
@@ -3767,7 +3767,7 @@
         description: Controls noise seed when Pulse In 1 is used and CV In 2 is not
           connected
         source: info.yaml
-      y:
+      "y":
         label: CV In 1 Gain
         description: Gain for CV In 1 contribution added to Main density value
         source: info.yaml
@@ -3884,7 +3884,7 @@
           Parameter 1
         description: Effect time/decay/rate style parameter
         source: info.yaml
-      y:
+      "y":
         label: |-
           Effect
           Parameter 2
@@ -4020,7 +4020,7 @@
         label: Density
         description: Grain generation density
         source: info.yaml
-      y:
+      "y":
         label: Size
         description: Maximum grain size
         source: info.yaml
@@ -4246,7 +4246,7 @@
         label: Tape Depth
         description: Increases wow and pitch instability; also sets CV Out 1 attenuation
         source: info.yaml
-      y:
+      "y":
         label: Instability
         description: Increases flutter/transport roughness; also sets CV Out 2 attenuation
         source: info.yaml
@@ -4365,7 +4365,7 @@
         label: Loop Length
         description: Sets quantizer/sequencer loop length from 1 to 12 steps
         source: info.yaml
-      y:
+      "y":
         label: VCA Amount
         description: Controls input scaling; can be replaced by Audio In 2 control
         source: info.yaml
@@ -4488,7 +4488,7 @@
           Envelope
         description: Controls left channel envelope timing range
         source: info.yaml
-      y:
+      "y":
         label: |-
           Right
           Envelope
@@ -4693,7 +4693,7 @@
         label: Mod Depth
         description: LFO pitch/modulation depth amount
         source: info.yaml
-      y:
+      "y":
         label: Character
         description: Bipolar character shaping from lo-fi degradation to compression/saturation
           coloration
@@ -4817,7 +4817,7 @@
           Profile
         description: Selects one of five melodic transition profiles
         source: info.yaml
-      y:
+      "y":
         label: |-
           Percussion
           Profile
@@ -4939,7 +4939,7 @@
           Tempo
         description: Internal playback tempo control when external clock is not active
         source: info.yaml
-      y:
+      "y":
         label: |-
           Timestretch
           Amount
@@ -5065,7 +5065,7 @@
           Offset
         description: Base offset for oscillator modulation parameter 1
         source: info.yaml
-      y:
+      "y":
         label: |-
           Parameter 2
           Offset
@@ -5181,7 +5181,7 @@
         description: Crossfades through saturation, filter drift, and tape hiss zones
           for input processing
         source: info.yaml
-      y:
+      "y":
         label: |-
           Destructive
           Effect
@@ -5325,7 +5325,7 @@
           Transpose
         description: Semitone transpose offset for bass root/mirror pitch generation
         source: info.yaml
-      y:
+      "y":
         label: |-
           Fill
           Probability
@@ -5460,7 +5460,7 @@
         label: Density
         description: Trigger probability density control (modulated by CVIn1)
         source: info.yaml
-      y:
+      "y":
         label: Mutation
         description: Mutation intensity control (modulated by CVIn2)
         source: info.yaml
@@ -5691,7 +5691,7 @@
         label: Patt Map X
         description: Horizontal position on the Grids pattern map
         source: info.yaml
-      y:
+      "y":
         label: Patt Map Y
         description: Vertical position on the Grids pattern map
         source: info.yaml
@@ -5803,7 +5803,7 @@
           Melody
           Position
         source: info.yaml
-      y:
+      "y":
         label: |-
           Chord
           Spacing
@@ -5965,7 +5965,7 @@
           Envelope
           Attack
         source: info.yaml
-      y:
+      "y":
         label: |-
           Envelope
           Release
