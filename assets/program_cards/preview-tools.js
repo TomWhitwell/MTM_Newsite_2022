@@ -35,6 +35,11 @@
     return card.url || `/workshopsystem/program-cards/${slugify(card.title || card.id || 'card')}/`;
   }
 
+  function infoYamlUrl(card) {
+    const sourceFile = card.source_file || (card.id ? `releases/${card.id}/info.yaml` : '');
+    return `https://github.com/TomWhitwell/Workshop_Computer/blob/main/${sourceFile}`;
+  }
+
   function yamlLibrary() {
     if (!window.jsyaml) throw new Error('YAML parser unavailable. Check the js-yaml script loaded.');
     return window.jsyaml;
@@ -98,6 +103,7 @@
     return `<a class="program-card-tile${media ? ' program-card-tile--video' : ''}" href="${esc(cardUrl(card))}">
       ${media}
       <span class="program-card-tile__head"><span class="program-card-tile__title"><span class="program-card-tile__number">${esc(cardNumber(card))}</span><span class="program-card-tile__name">${esc(truncate(card.title || card.id || 'Untitled card', 48))}</span></span></span>
+      ${card.draft ? '<span class="program-card-draft-flag program-card-draft-flag--tile">Draft</span>' : ''}
       ${summary ? `<span class="program-card-tile__summary">${esc(truncate(summary, 190))}</span>` : ''}
       ${renderTags(card, tagConfig, options && options.hideTags)}
     </a>`;
@@ -184,8 +190,10 @@
     const switchMarkup = switchEntries.map(([key, value]) => `<p><strong>${esc(key.charAt(0).toUpperCase() + key.slice(1))}</strong> ${esc(truncate(value, 240))}</p>`).join('');
     const ledsMarkup = (card.leds || []).map((led) => `<p>${esc(truncate(led, 260))}</p>`).join('');
     const dataSources = card.source ? `<div class="program-card-data-sources"><details><summary>Data sources</summary><p>${card.source.map((item) => `<code title="${esc(item)}">${esc(truncate(item, 56))}</code>`).join(', ')}</p></details></div>` : '';
+    const draftBar = card.draft ? `<aside class="program-card-draft-bar" aria-label="Draft documentation notice"><div class="program-card-draft-bar__message"><strong>Draft:</strong> <span>This documentation is work in progress and has not yet been approved by the card designer.</span></div><details class="program-card-draft-bar__details"><summary>I'm the designer. How should I fix this?</summary><p>Check the generated documentation against the card, then edit <a href="${esc(infoYamlUrl(card))}">the relevant <code>info.yaml</code> file</a> in the Workshop Computer repo. When everything is accurate, set <code>draft: false</code> in that YAML and submit the change.</p></details></aside>` : '';
 
     return `<article class="program-cards program-card-page">
+      ${draftBar}
       <header class="program-card-hero"><div class="program-card-hero__main">${renderTags(card, tagConfig)}<h1><span class="program-card-page__number">${esc(cardNumber(card))}</span> ${esc(stripTags(card.title || card.id || 'Untitled card'))}</h1>${summary ? `<p>${esc(truncate(summary, 240))}</p>` : ''}<div class="program-card-hero__meta">${metadata.creator ? `<span>By ${esc(metadata.creator)}</span>` : ''}${card.memory && card.memory.size ? `<span>${esc(String(card.memory.size).toUpperCase())} card ${esc(card.memory.requirement || 'supported')}</span>` : ''}</div><div class="program-card-actions" aria-label="Card actions"><a class="program-card-action program-card-action--download" href="${esc(sourceUrl)}"><span>Download</span>${metadata.version ? `<small>Firmware ${esc(metadata.version)}</small>` : ''}</a>${metadata.editor_url ? `<a class="program-card-action program-card-action--editor" href="${esc(metadata.editor_url)}"><span>Launch web editor</span><small>${esc(metadata.editor_note || 'Configure this card in your browser')}</small></a>` : ''}</div><div class="program-card-hero__links" aria-label="Further card links"><a href="${esc(readmeUrl)}">Read more</a><a href="${esc(discussionUrl)}">Support &amp; questions</a></div></div><nav class="program-card-nav" aria-label="Program card navigation"><a href="/workshopsystem/program-cards/">Program cards</a><a href="/workshopsystem/program-cards/archive/">All cards</a></nav></header>
       ${firstVideo ? `<section class="program-card-demo"><a href="${esc(firstVideo.url)}"><span class="program-card-demo__media" aria-hidden="true"><img src="https://img.youtube.com/vi/${esc(firstVideo.id)}/hqdefault.jpg" alt="" loading="lazy"></span><span class="program-card-demo__text"><span>Watch</span><strong>${esc(firstVideo.title || 'Demo video')}</strong></span></a></section>` : ''}
       ${card.quick_start ? `<section class="program-card-quick-start"><h2>Quick start</h2><ol>${card.quick_start.map((step) => `<li>${esc(stripTags(step))}</li>`).join('')}</ol></section>` : ''}
