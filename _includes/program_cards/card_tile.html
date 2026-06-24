@@ -13,6 +13,7 @@
         <span class="program-card-tile__name">{{ card.title | strip_html | truncate: 48 }}</span>
       </span>
     </span>
+    {%- if card.draft -%}<span class="program-card-draft-flag program-card-draft-flag--tile">Draft</span>{%- endif -%}
     {%- assign card_summary = card.summary | default: card.description | strip_html -%}
     {%- if card_summary and card_summary != "" -%}
       <span class="program-card-tile__summary">{{ card_summary | truncate: 190 }}</span>

@@ -1,6 +1,7 @@
 # Generated from Workshop_Computer releases/*/info.yaml. Do not edit by hand; edit source YAML or curation files.
 - id: 00_Simple_MIDI
   title: Simple MIDI
+  draft: true
   release: 00 / 0.6.6
   summary: Takes USB midi, sends it to pulse and CV outputs, also sends knob positions
     and CV inputs back to the computer as CC values.
@@ -20,7 +21,7 @@
           Source (X)
         description: X knob position is sent to host as MIDI CC
         source: info.yaml
-      y:
+      "y":
         label: |-
           MIDI CC
           Source (Y)
@@ -93,9 +94,9 @@
   - cv
   - gate
   source_file: releases/00_Simple_MIDI/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/00_Simple_MIDI
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/00_Simple_MIDI/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/00_Simple_MIDI/uf2%20Installer/Simple_Midi_0_6_6.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/00_Simple_MIDI
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/00_Simple_MIDI/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/00_Simple_MIDI/uf2%20Installer/Simple_Midi_0_6_6.uf2
   metadata:
     creator: Tom Whitwell
     language: Arduino-Pico
@@ -108,6 +109,7 @@
       Hold the switch during boot to enter calibration mode for the two pitch/CV channels.
 - id: 02_comingsoon
   title: Coming Soon
+  draft: true
   release: 02 / 0.0
   summary: Reserved for upcoming project
   description: Reserved for upcoming project
@@ -124,9 +126,9 @@
   url: "/workshopsystem/program-cards/02-comingsoon/"
   tags: []
   source_file: releases/02_comingsoon/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/02_comingsoon
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/02_comingsoon/README.md
-  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/02_comingsoon
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/02_comingsoon
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/02_comingsoon/README.md
+  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/02_comingsoon
   metadata:
     creator: None
     language: None
@@ -134,6 +136,7 @@
     status: None
 - id: 03_Turing_Machine
   title: Turing Machine
+  draft: true
   release: 03 / 1.5.3
   summary: Turing Machine with tap tempo clock, 2 x pulse outputs, 4 x CV outputs
   description: Turing Machine with tap tempo clock, 2 x pulse outputs, 4 x CV outputs
@@ -149,7 +152,7 @@
         label: Loop Length
         description: Sets channel 1 sequence length; channel 2 length can be offset
         source: info.yaml
-      y:
+      "y":
         label: Div / Mult
         description: Sets channel 2 divide/multiply clock relationship
         source: info.yaml
@@ -255,9 +258,9 @@
   - clock
   - cv
   source_file: releases/03_Turing_Machine/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/03_Turing_Machine
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/03_Turing_Machine/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/03_Turing_Machine/Rev_1_5_UF2/TuringForWorkshop_1.5.3.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/03_Turing_Machine
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/03_Turing_Machine/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/03_Turing_Machine/Rev_1_5_UF2/TuringForWorkshop_1.5.3.uf2
   metadata:
     creator: Tom Whitwell
     language: C++ (ComputerCard)
@@ -273,6 +276,7 @@
       Audio/CV In 1 can reset sequences; Audio/CV In 2 can CV-switch between the two presets.
 - id: 04_BYO_Benjolin
   title: BYO Benjolin
+  draft: true
   release: 04 / 1.0
   summary: Rungler, Chaotic VCO, Noise Source, Turing Machine, Quantizer
   description: Rungler, Chaotic VCO, Noise Source, Turing Machine, Quantizer
@@ -288,7 +292,7 @@
         label: Offset
         description: Sets offset amount (or scale for CV In 1 modulation)
         source: info.yaml
-      y:
+      "y":
         label: VCA Depth
         description: Sets output/LED amplitude scaling (or scale for CV In 2 modulation)
         source: info.yaml
@@ -390,9 +394,9 @@
   - turing-machine
   - quantizer
   source_file: releases/04_BYO_Benjolin/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/04_BYO_Benjolin
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/04_BYO_Benjolin/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/04_BYO_Benjolin/UF2/byo_benjolin.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/04_BYO_Benjolin
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/04_BYO_Benjolin/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/04_BYO_Benjolin/UF2/byo_benjolin.uf2
   metadata:
     creator: Dune Desormeaux
     language: Pico SDK
@@ -405,6 +409,7 @@
       The card blends internal randomness with external modulation for probability, offset, and amplitude.
 - id: 05_chord_blimey
   title: Chord Blimey!
+  draft: true
   release: 05 / 0.9
   summary: Generates CV/Pulse arpeggios
   description: Generates CV/Pulse arpeggios
@@ -420,7 +425,7 @@
         label: Root Note
         description: Sets base/root pitch (summed with CV In 1)
         source: info.yaml
-      y:
+      "y":
         label: Chord Type
         description: Selects chord (summed with CV In 2)
         source: info.yaml
@@ -507,9 +512,9 @@
   - chord
   - generative
   source_file: releases/05_chord_blimey/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/05_chord_blimey
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/05_chord_blimey/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/05_chord_blimey/binaries/chord_blimey.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/05_chord_blimey
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/05_chord_blimey/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/05_chord_blimey/binaries/chord_blimey.uf2
   metadata:
     creator: Tom Waters
     language: C (RPi Pico SDK)
@@ -523,6 +528,7 @@
       Use switch gestures to set fixed step length and arpeggiator direction.
 - id: 06_usb_audio
   title: USB Audio & MIDI
+  draft: true
   release: 06 / 1.0
   summary: 6-Channel USB Audio & MIDI firmware with CV/Gate support
   description: 6-Channel USB Audio & MIDI firmware with CV/Gate support
@@ -540,7 +546,7 @@
           Source (X)
         description: Sends configurable CC number (default CC2) in MIDI-enabled modes
         source: info.yaml
-      y:
+      "y":
         label: |-
           MIDI CC
           Source (Y)
@@ -638,9 +644,9 @@
   - cv
   - gate
   source_file: releases/06_usb_audio/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/06_usb_audio
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/06_usb_audio/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/06_usb_audio/usb_audio_midi_interface.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/06_usb_audio
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/06_usb_audio/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/06_usb_audio/usb_audio_midi_interface.uf2
   metadata:
     creator: Vincent Maurer (vincentmaurer.de)
     language: C++ (RPi Pico SDK)
@@ -657,6 +663,7 @@
       Routing, channel count, sample rate, and CV/Pulse behaviors are configurable via the web interface and can be saved to flash.
 - id: 07_bumpers
   title: Bumpers
+  draft: true
   release: 07 / 1.0
   summary: "'Bouncing ball' style delay and trigger generators"
   description: "'Bouncing ball' style delay and trigger generators"
@@ -670,7 +677,7 @@
         label: Chan A Rate
         description: Sets channel A trigger rate base (with CV In 1 modulation)
         source: info.yaml
-      y:
+      "y":
         label: Chan B Rate
         description: Sets channel B trigger rate base (with CV In 2 modulation)
         source: info.yaml
@@ -768,9 +775,9 @@
   - generative
   - utility
   source_file: releases/07_bumpers/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/07_bumpers
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/07_bumpers/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/07_bumpers/build/bumpers.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/07_bumpers
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/07_bumpers/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/07_bumpers/build/bumpers.uf2
   metadata:
     creator: Chris Johnson
     language: C++ (ComputerCard)
@@ -783,6 +790,7 @@
       Patching audio input enables the delay processor; otherwise outputs act as trigger/CV generators.
 - id: '08_bytebeat'
   title: Bytebeat
+  draft: true
   release: '08 / 0.1'
   summary: Generates and mangles bytebeats
   description: Generates and mangles bytebeats
@@ -797,7 +805,7 @@
           Select
         description: Selects one of 6 stored user formulas
         source: info.yaml
-      y:
+      "y":
         label: Parameter 1
         source: info.yaml
       z:
@@ -908,9 +916,9 @@
   - noise
   - experimental
   source_file: releases/08_bytebeat/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/08_bytebeat
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/08_bytebeat/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/08_bytebeat/uf2%20Installer/08_bytebeat.ino.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/08_bytebeat
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/08_bytebeat/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/08_bytebeat/uf2%20Installer/08_bytebeat.ino.uf2
   metadata:
     creator: Matt Kuebrich
     language: C++/Arduino-Pico
@@ -924,6 +932,7 @@
       Built-in/user formula editing is available through the included browser tool (`bytebeat.html`).
 - id: '09_DivCom'
   title: DivCom
+  draft: true
   release: '09 / 0.1'
   summary: Comparator and VC clock divider, inspired by Serge NCOM
   description: Comparator and VC clock divider, inspired by Serge NCOM
@@ -939,7 +948,7 @@
           Comparator
           Scale
         source: info.yaml
-      y:
+      "y":
         label: |-
           Comparator
           Offset
@@ -1036,9 +1045,9 @@
   - logic
   - utility
   source_file: releases/09_DivCom/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/09_DivCom
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/09_DivCom/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/09_DivCom/dist/divcom-0.1.0.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/09_DivCom
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/09_DivCom/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/09_DivCom/dist/divcom-0.1.0.uf2
   metadata:
     creator: divmod
     language: C++ (RPi Pico SDK) compat. cmake.
@@ -1052,6 +1061,7 @@
       flip-flop, XOR, and counter CV outputs.
 - id: 10_twists
   title: Twists
+  draft: true
   release: 10 / 0.1
   summary: A port of Mutable Instruments Braids with a web editor
   description: A port of Mutable Instruments Braids with a web editor
@@ -1065,7 +1075,7 @@
         label: Timbre
         description: Braids timbre parameter
         source: info.yaml
-      y:
+      "y":
         label: Color
         description: Braids color parameter
         source: info.yaml
@@ -1120,9 +1130,9 @@
   - wavetable
   - midi-host
   source_file: releases/10_twists/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/10_twists
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/10_twists/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/10_twists/uf2%20Installer/twists.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/10_twists
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/10_twists/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/10_twists/uf2%20Installer/twists.uf2
   metadata:
     creator: Random Works
     language: C (RPi Pico SDK)
@@ -1135,6 +1145,7 @@
       configured oscillator model sets, and `twists.html` can be used over USB for shape selection/config.
 - id: 11_goldfish
   title: Goldfish
+  draft: true
   release: 11 / 1.0
   summary: Weird delay/looper for audio and CV
   description: Weird delay/looper for audio and CV
@@ -1222,9 +1233,9 @@
   - cv
   - glitch
   source_file: releases/11_goldfish/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/11_goldfish
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/11_goldfish/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/11_goldfish/UF2/goldfish.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/11_goldfish
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/11_goldfish/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/11_goldfish/UF2/goldfish.uf2
   metadata:
     creator: Dune Desormeaux
     language: Pico SDK
@@ -1237,6 +1248,7 @@
       playback position, and generated CV/pitch material.
 - id: 12_am_coupler
   title: AM Coupler
+  draft: true
   release: 12 / 1.0
   summary: AM radio transmitter / coupler
   description: AM radio transmitter / coupler
@@ -1301,9 +1313,9 @@
   - utility
   - sample-playback
   source_file: releases/12_am_coupler/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/12_am_coupler
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/12_am_coupler/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/12_am_coupler/build/am_coupler.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/12_am_coupler
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/12_am_coupler/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/12_am_coupler/build/am_coupler.uf2
   metadata:
     creator: Chris Johnson
     language: C++ (ComputerCard)
@@ -1316,6 +1328,7 @@
       and Y controls modulation amount. Switch (or `PulseIn1` gate when patched) controls RF on/off.
 - id: 13_noisebox
   title: Noisebox
+  draft: true
   release: 13 / 1.0
   summary: 13-algorithm noise synth with CV modulation, sample-and-hold, and crusher
     mode
@@ -1335,7 +1348,7 @@
           Parameter X
         description: Primary per-algorithm shaping parameter
         source: info.yaml
-      y:
+      "y":
         label: |-
           Algorithm
           Parameter Y
@@ -1424,9 +1437,9 @@
   - sample-and-hold
   - bitcrusher
   source_file: releases/13_noisebox/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/13_noisebox
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/13_noisebox/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/13_noisebox/13_noisebox.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/13_noisebox
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/13_noisebox/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/13_noisebox/13_noisebox.uf2
   metadata:
     creator: Eric Gao
     language: C++ (ComputerCard)
@@ -1441,6 +1454,7 @@
       or `PulseIn2` enables sample-rate/bit reduction.
 - id: 14_cvmod
   title: CVMod
+  draft: true
   release: 14 / 1.0
   summary: Quad CV delay inspired by Make Noise Multimod
   description: Quad CV delay inspired by Make Noise Multimod
@@ -1456,7 +1470,7 @@
           Duration
         description: Sets record-loop length
         source: info.yaml
-      y:
+      "y":
         label: Phase Offset
         description: Offsets read heads from record position
         source: info.yaml
@@ -1522,9 +1536,9 @@
   - modulation
   - looper
   source_file: releases/14_cvmod/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/14_cvmod
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/14_cvmod/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/14_cvmod/bin/cvmod.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/14_cvmod
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/14_cvmod/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/14_cvmod/bin/cvmod.uf2
   metadata:
     creator: Chris Johnson
     language: C++ (ComputerCard)
@@ -1538,7 +1552,8 @@
       Switch down (or `PulseIn1`) resets read-head position; switch up cycles motion function.
 - id: 15_MLRws
   title: MLRws
-  release: 15 / 1.1.1
+  draft: true
+  release: 15 / 1.1.5
   summary: A remix of monome's classic MLR sample cutting platform (grid controller
     encouraged but optional)
   description: A remix of monome's classic MLR sample cutting platform (grid controller
@@ -1558,7 +1573,7 @@
           Playback
         description: Controls global playback gain layer
         source: info.yaml
-      y:
+      "y":
         label: |-
           Radiate
           Amount
@@ -1663,13 +1678,13 @@
   - usb-host
   - grid-controller
   source_file: releases/15_MLRws/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/15_MLRws
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/15_MLRws/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/15_MLRws/UF2/MLRws.1.1.1.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/15_MLRws
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/15_MLRws/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/15_MLRws/UF2/MLRws.1.1.5.uf2
   metadata:
     creator: Dune Desormeaux
     language: Pico SDK
-    version: 1.1.1
+    version: 1.1.5
     status: Released
     license: GPL-3.0
     editor_url: https://dessertplanet.github.io/MLRws-web/
@@ -1682,6 +1697,7 @@
       reset/clocking and CV envelope/pitch triggers.
 - id: 18_chord_organ
   title: Chord Organ-ish
+  draft: true
   release: 18 / 0.1
   summary: Chord Organ-ish - 16 chords, 8 voices, 1V/oct root. Inspired by Music Thing
     Chord Organ.
@@ -1699,7 +1715,7 @@
           Transpose
         description: Adds semitone transpose to root pitch
         source: info.yaml
-      y:
+      "y":
         label: |-
           Progression
           Patt
@@ -1792,9 +1808,9 @@
   - progression
   - cv
   source_file: releases/18_chord_organ/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/18_chord_organ
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/18_chord_organ/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/18_chord_organ/build/chord_organ.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/18_chord_organ
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/18_chord_organ/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/18_chord_organ/build/chord_organ.uf2
   metadata:
     creator: jkeyworth
     language: Pico SDK (C++), ComputerCard
@@ -1808,6 +1824,7 @@
       Z up enables glide, Z middle disables glide. AudioIn1 acts as a VCA CV.
 - id: 20_reverb
   title: Reverb+
+  draft: true
   release: 20 / 1.5
   summary: Reverb effect, plus pulse/CV generators and MIDI-to-CV, configurable using
     web interface.
@@ -1930,9 +1947,9 @@
   - utility
   - clock
   source_file: releases/20_reverb/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/20_reverb
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/20_reverb/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/20_reverb/build/reverb_v1.5.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/20_reverb
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/20_reverb/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/20_reverb/build/reverb_v1.5.uf2
   metadata:
     creator: Chris Johnson
     language: C (RPi Pico SDK)
@@ -1948,6 +1965,7 @@
       Hold Z down while loading to restore default configuration.
 - id: 21_resonator
   title: Resonator
+  draft: true
   release: 21 / 1.1.1
   summary: Karplus-Strong based sympathetic resonator. Can be used for resonant droning
     as well as plucking sounds.
@@ -1963,7 +1981,7 @@
         label: Base Pitch
         description: Fundamental pitch (or fine tune with CV1 connected)
         source: info.yaml
-      y:
+      "y":
         label: Damping
         description: Higher values increase resonance length
         source: info.yaml
@@ -2040,9 +2058,9 @@
   - drone
   - plucked
   source_file: releases/21_resonator/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/21_resonator
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/21_resonator/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/21_resonator/build/resonator.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/21_resonator
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/21_resonator/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/21_resonator/build/resonator.uf2
   metadata:
     creator: Johan Eklund
     language: C++ (ComputerCard)
@@ -2058,6 +2076,7 @@
       PulseIn2 or short Z-down press advances chord mode; long Z-down hold resets progression defaults.
 - id: 22_sheep
   title: Sheep
+  draft: true
   release: 22 / 1.1
   summary: A time-stretching and pitch-shifting granular processor and digital degradation
     playground with 2 fidelity options.
@@ -2076,7 +2095,7 @@
         label: Delay Spread
         description: Left half selects delay offset, right half increases random spread
         source: info.yaml
-      y:
+      "y":
         label: Grain Size
         description: Sets grain length from very short to long windows
         source: info.yaml
@@ -2171,9 +2190,9 @@
   - pitch-shift
   - glitch
   source_file: releases/22_sheep/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/22_sheep
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/22_sheep/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/22_sheep/UF2/sheep_hifi.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/22_sheep
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/22_sheep/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/22_sheep/UF2/sheep_hifi.uf2
   metadata:
     creator: Dune Desormeaux
     language: Pico SDK
@@ -2187,6 +2206,7 @@
       Two firmware builds are provided in source comments: lo-fi longer buffer and hi-fi shorter buffer.
 - id: 23_SlowMod
   title: SlowMod
+  draft: true
   release: 23 / 0.1
   summary: Chaotic quad-LFO with VCAs
   description: Chaotic quad-LFO with VCAs
@@ -2205,7 +2225,7 @@
           Amount
         description: Intensity of cross-modulation between LFO channels
         source: info.yaml
-      y:
+      "y":
         label: |-
           Neighbor
           Invert
@@ -2286,9 +2306,9 @@
   - utility
   - cv
   source_file: releases/23_SlowMod/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/23_SlowMod
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/23_SlowMod/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/23_SlowMod/dist/slowmod-0.1.0.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/23_SlowMod
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/23_SlowMod/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/23_SlowMod/dist/slowmod-0.1.0.uf2
   metadata:
     creator: divmod
     language: C++ (RPi Pico SDK) compat. w/ cmake and Arduino IDE.
@@ -2303,6 +2323,7 @@
       PulseIn1 or Z up pauses motion; PulseIn2 or Z down randomizes phases.
 - id: 24_crafted_volts
   title: Crafted Volts
+  draft: true
   release: 24 / (see source repo)
   summary: Manually set control voltages (CV) with the input knobs and switch. It
     also attenuverts (attenuates and inverts) incoming voltages.
@@ -2322,7 +2343,7 @@
           Attenuverter
         description: Sets output voltage or scales CVIn1
         source: info.yaml
-      y:
+      "y":
         label: |-
           CV2
           Attenuverter
@@ -2408,9 +2429,9 @@
   - attenuverter
   - voltage-source
   source_file: releases/24_crafted_volts/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/24_crafted_volts
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/24_crafted_volts/README.md
-  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/24_crafted_volts
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/24_crafted_volts
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/24_crafted_volts/README.md
+  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/24_crafted_volts
   metadata:
     creator: Brian Dorsey
     language: Rust (Embassy framework)
@@ -2425,6 +2446,7 @@
       LEDs mirror output voltage levels in the same 2x3 physical layout as output jacks.
 - id: 25_utility_pair
   title: Utility Pair
+  draft: true
   release: 25 / 1.0
   summary: 25 small utilities, which can be combined in pairs
   description: 25 small utilities, which can be combined in pairs
@@ -2442,7 +2464,7 @@
           Primary
         description: X knob is generally owned by left utility
         source: info.yaml
-      y:
+      "y":
         label: |-
           Right
           Utility
@@ -2546,9 +2568,9 @@
   - modulation
   - effects
   source_file: releases/25_utility_pair/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/25_utility_pair
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/25_utility_pair/README.md
-  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/25_utility_pair
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/25_utility_pair
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/25_utility_pair/README.md
+  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/25_utility_pair
   metadata:
     creator: Chris Johnson
     language: C++ (ComputerCard)
@@ -2564,6 +2586,7 @@
       Specific jack behavior depends on the chosen utility pair.
 - id: 27_Siren
   title: Siren
+  draft: true
   release: 27 / 0.2
   summary: Multi-algorithm drone oscillator. Inspired by the Forge TME Vhikk X.
   description: Multi-algorithm drone oscillator. Inspired by the Forge TME Vhikk X.
@@ -2577,7 +2600,7 @@
         label: Scan
         description: Timbral scan parameter
         source: info.yaml
-      y:
+      "y":
         label: Basis
         description: Root pitch / frequency basis (also modulated by CV In 1)
         source: info.yaml
@@ -2669,9 +2692,9 @@
   - fixed-point
   - processor
   source_file: releases/27_Siren/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/27_Siren
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/27_Siren/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/27_Siren/build/siren.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/27_Siren
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/27_Siren/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/27_Siren/build/siren.uf2
   metadata:
     creator: Moses Hoyt
     language: C++ (ComputerCard / Pico SDK)
@@ -2691,6 +2714,7 @@
     id: DORHEYpUqWU
 - id: 28_eighties_bass
   title: Eighties Bass
+  draft: true
   release: 28 / 0.1
   summary: Bass-oriented complete monosynth voice consisting of five detuned saw wave
     oscillators with mixable white noise and adjustable resonant filter.
@@ -2708,7 +2732,7 @@
         label: Pitch Offset
         description: Pitch transpose offset summed with CV In 1
         source: info.yaml
-      y:
+      "y":
         label: |-
           Filter
           Resonance
@@ -2766,9 +2790,9 @@
   - detune
   - mozzi
   source_file: releases/28_eighties_bass/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/28_eighties_bass
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/28_eighties_bass/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/28_eighties_bass/build/28_eighties_bass.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/28_eighties_bass
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/28_eighties_bass/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/28_eighties_bass/build/28_eighties_bass.uf2
   metadata:
     creator: Tod Kurt (@todbot)
     language: Arduino (arduino-pico) with Mozzi 2
@@ -2786,6 +2810,7 @@
     id: nrKnOlx8B3g
 - id: 30_cirpy_wavetable
   title: Cirpy Wavetable
+  draft: true
   release: 30 / 0.1
   summary: Wavetable oscillator that using wavetables from Plaits, Braids, and Microwave,
   description: Wavetable oscillator that using wavetables from Plaits, Braids, and
@@ -2802,7 +2827,7 @@
         label: LFO Amount
         description: Amount of triangle LFO applied to wavetable position
         source: info.yaml
-      y:
+      "y":
         label: LFO Rate
         description: Frequency of wavetable modulation LFO
         source: info.yaml
@@ -2865,9 +2890,9 @@
   - lfo
   - pwm-audio
   source_file: releases/30_cirpy_wavetable/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/30_cirpy_wavetable
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/30_cirpy_wavetable/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/30_cirpy_wavetable/build/30_cirpy_wavetable.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/30_cirpy_wavetable
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/30_cirpy_wavetable/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/30_cirpy_wavetable/build/30_cirpy_wavetable.uf2
   metadata:
     creator: Tod Kurt (@todbot)
     language: CircuitPython
@@ -2886,6 +2911,7 @@
     id: Y7sOgAC92XU
 - id: 31_esp
   title: ESP
+  draft: true
   release: 31 / 1.0
   summary: A MS-20-style External Signal Processor that includes a preamp, bandpass
     filter, envelope follower, gate, and 1v/oct pitch outs.
@@ -2957,9 +2983,9 @@
   - gate-extractor
   - filter
   source_file: releases/31_esp/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/31_esp
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/31_esp/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/31_esp/UF2/ESP0.9.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/31_esp
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/31_esp/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/31_esp/UF2/ESP0.9.uf2
   metadata:
     creator: Ben Regnier
     language: C++ (ComputerCard)
@@ -2973,6 +2999,7 @@
       Audio Out 1 is post-gain signal and Audio Out 2 is bandpassed output.
 - id: 32_vink
   title: Vink
+  draft: true
   release: 32 / 1.1
   summary: Dual delay loops with sigmoid saturation for Jaap Vink / Roland Kayn style
     feedback patching
@@ -2990,7 +3017,7 @@
         label: Tap 2 Offset
         description: Offsets tap 2 delay relative to tap 1
         source: info.yaml
-      y:
+      "y":
         label: |-
           Saturation
           Mix
@@ -3074,9 +3101,9 @@
   - dual-tap
   - experimental
   source_file: releases/32_vink/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/32_vink
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/32_vink/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/32_vink/UF2/Vink1.1.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/32_vink
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/32_vink/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/32_vink/UF2/Vink1.1.uf2
   metadata:
     creator: Ben Regnier
     language: C++ (ComputerCard)
@@ -3094,6 +3121,7 @@
     id: X_Bcr_HS9XM
 - id: 33_drumdrum
   title: drumdrum
+  draft: true
   release: 33 / 1.2.0
   summary: DFAM-style 8-step sequencer
   description: DFAM-style 8-step sequencer
@@ -3107,7 +3135,7 @@
         label: Step Pitch
         description: Pitch for selected edit step (with pickup)
         source: info.yaml
-      y:
+      "y":
         label: |-
           Step
           Velocity
@@ -3194,9 +3222,9 @@
   - usb-host
   - webmidi
   source_file: releases/33_drumdrum/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/33_drumdrum
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/33_drumdrum/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/33_drumdrum/drumdrum.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/33_drumdrum
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/33_drumdrum/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/33_drumdrum/drumdrum.uf2
   metadata:
     creator: Moses Hoyt
     language: C++ (ComputerCard / Pico SDK)
@@ -3214,6 +3242,7 @@
       Pulse In 1 is external clock and Pulse In 2 resets to step 1.
 - id: 34_dual_quant
   title: DualQuant
+  draft: true
   release: 34 / 1.0
   summary: Dual quantised granular pitch shifter with calibrated 1V/oct CV outputs
   description: Dual quantised granular pitch shifter with calibrated 1V/oct CV outputs
@@ -3286,14 +3315,15 @@
   - quantizer
   - fixed-point
   source_file: releases/34_dual_quant/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/34_dual_quant
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/34_dual_quant/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/34_dual_quant/UF2/dual_quant_pitch.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/34_dual_quant
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/34_dual_quant/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/34_dual_quant/UF2/dual_quant_pitch.uf2
   metadata:
     creator: Adrian Vos
     language: C++ (ComputerCard / Pico SDK)
     version: 1.0
     status: Beta
+    license: MIT
   documentation:
     intro: |
       DualQuantPitch runs two independent granular pitch-shifted outputs from one shared circular buffer.
@@ -3301,8 +3331,115 @@
       CV In 1 and CV In 2 modulate pitch for outputs A and B respectively.
       Switch middle enables chromatic semitone quantization; other switch positions run continuously unquantized.
       The design intentionally favors gritty/lo-fi granular character over transparent pitch shifting. # certainty: medium (README is marked LLM output)
+- id: 35_FreqShift
+  title: FreqShift
+  draft: true
+  release: 35 / 1.1
+  summary: Dual Input Frequency Shifter for Feedback Experimentation
+  description: Dual Input Frequency Shifter for Feedback Experimentation
+  panel:
+    controls:
+      main:
+        label: Shift Amount
+        description: Narrower bipolar linear range (±440 Hz)
+        source: info.yaml
+      x:
+        label: |-
+          Feedback
+          Amount
+        description: Internal feedback amount
+        source: info.yaml
+      "y":
+        label: In Crossfade
+        description: Crossfade between audio inputs
+        source: info.yaml
+      z:
+        label: Mode
+        description: Selects alternate control modes.
+        source: info.yaml
+    inputs:
+      audio_l:
+        label: |-
+          Primary
+          Audio In
+        description: Primary audio input for frequency shifting
+        source: info.yaml
+      audio_r:
+        label: |-
+          Secondary
+          Audio In
+        description: Secondary audio input crossfaded with Audio In 1
+        source: info.yaml
+      cv_1:
+        label: Shift Mod
+        description: Shift modulation added to Main knob amount
+        source: info.yaml
+      cv_2:
+        label: |-
+          Feedback
+          Path Blend
+        description: Blends combined feedback path down/up balance
+        source: info.yaml
+    outputs:
+      audio_out_l:
+        label: |-
+          Low Sideband
+          Out
+        description: Lower sideband frequency-shifted output
+        source: info.yaml
+      audio_out_r:
+        label: |-
+          High
+          Sideband Out
+        description: Upper sideband frequency-shifted output
+        source: info.yaml
+      cv_out_1:
+        label: |-
+          -5V
+          Reference
+        description: Fixed -5V reference useful for CV In 2 patching
+        source: info.yaml
+      cv_out_2:
+        label: |-
+          +5V
+          Reference
+        description: Fixed +5V reference useful for CV In 2 patching
+        source: info.yaml
+  switch_modes:
+    up: 'Z up: MAIN: Shift Amount; X: Feedback Amount; Y: Input Crossfade.'
+    middle: 'Z middle: MAIN: Shift Amount; X: Feedback Amount; Y: Input Crossfade.'
+    down: ''
+  leds:
+  - 'Z any: Input Level A; Output Level; Positive Shift; Negative Shift; Upper Sideband;
+    Lower Sideband.'
+  source:
+  - releases/35_FreqShift/info.yaml
+  - releases/35_FreqShift/README.md
+  slug: 35-freqshift
+  url: "/workshopsystem/program-cards/35-freqshift/"
+  tags:
+  - frequency-shifter
+  - feedback
+  - experimental
+  - dual-sideband
+  source_file: releases/35_FreqShift/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/35_FreqShift
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/35_FreqShift/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/35_FreqShift/UF2/FreqShift_v1-1.uf2
+  metadata:
+    creator: Ben Regnier
+    language: C++ (ComputerCard)
+    version: 1.1
+    status: Functional
+  documentation:
+    intro: |
+      Dual-input frequency shifter designed for feedback patching and experimental use.
+      Main sets shift amount (center = 0 Hz). Switch up uses a wide log-scaled bipolar range (±7000 Hz);
+      middle uses a narrower linear range (±440 Hz). X sets internal feedback amount and Y crossfades the audio inputs.
+      CV In 1 modulates shift (added to Main). CV In 2 blends the combined feedback path.
 - id: 37_compulidean
   title: Compulidean
+  draft: true
   release: 37 / (see source repo)
   summary: Generative Euclidean drum + sample player.
   description: Generative Euclidean drum + sample player.
@@ -3319,9 +3456,9 @@
   url: "/workshopsystem/program-cards/37-compulidean/"
   tags: []
   source_file: releases/37_compulidean/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/37_compulidean
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/37_compulidean/README.md
-  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/37_compulidean
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/37_compulidean
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/37_compulidean/README.md
+  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/37_compulidean
   metadata:
     creator: Tristan Rowley
     language: C++/Arduino, with vscode+platformio.
@@ -3334,6 +3471,7 @@
       This release folder is a stub; code, full documentation, and UF2 downloads live in the external repository.
 - id: 38_od
   title: Od
+  draft: true
   release: 38 / 1.0
   summary: Loopable chaotic Lorenz attractor trajectories and zero-crossings as CV
     and pulses, with sensitivity to initial conditions.
@@ -3352,9 +3490,9 @@
   url: "/workshopsystem/program-cards/38-od/"
   tags: []
   source_file: releases/38_od/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/38_od
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/38_od/README.md
-  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/38_od
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/38_od
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/38_od/README.md
+  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/38_od
   metadata:
     creator: M. John Mills
     language: MicroPython
@@ -3368,6 +3506,7 @@
       This release folder is a stub; documentation and UF2 builds are maintained in the external repository.
 - id: 39_knots
   title: Knots
+  draft: true
   release: 39 / 0.2
   summary: Six-engine oscillator firmware for the Music Thing Workshop System
   description: Six-engine oscillator firmware for the Music Thing Workshop System
@@ -3384,7 +3523,7 @@
         description: Engine-specific parameter 1 in Normal mode, or attenuation for
           AudioIn1 when patched
         source: info.yaml
-      y:
+      "y":
         label: |-
           Engine Macro
           Y
@@ -3473,9 +3612,9 @@
   url: "/workshopsystem/program-cards/39-knots/"
   tags: []
   source_file: releases/39_knots/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/39_knots
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/39_knots/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/39_knots/uf2/knots.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/39_knots
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/39_knots/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/39_knots/uf2/knots.uf2
   metadata:
     creator: Jeff Fletcher
     language: C++ (RPi Pico SDK / ComputerCard)
@@ -3488,6 +3627,7 @@
       and Z handles mode switching, engine advance, and Pulse Out 2 clock configuration.
 - id: 41_blackbird
   title: Blackbird
+  draft: true
   release: 41 / 1.1
   summary: A scriptable, live-codable, USB-serial-to-CV device implementing monome
     crow's protocol
@@ -3505,7 +3645,7 @@
         description: Normalized analog knob value exposed to Lua; behavior depends
           on loaded script
         source: info.yaml
-      y:
+      "y":
         label: bb.knob.y
         description: Normalized analog knob value exposed to Lua; behavior depends
           on loaded script
@@ -3588,9 +3728,9 @@
   url: "/workshopsystem/program-cards/41-blackbird/"
   tags: []
   source_file: releases/41_blackbird/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/41_blackbird
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/41_blackbird/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/41_blackbird/UF2/blackbird.1.1.release.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/41_blackbird
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/41_blackbird/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/41_blackbird/UF2/blackbird.1.1.release.uf2
   metadata:
     creator: Dune Desormeaux
     language: Pico SDK + Lua
@@ -3606,6 +3746,7 @@
       then decides how outputs respond. LEDs always reflect positive output voltages on the six outputs.
 - id: 42_backyard_rain
   title: Backyard Rain
+  draft: true
   release: 42 / (see source repo)
   summary: Nature soundscape audio. A cozy rain ambience mix for background listening.
     You control the intensity. This card plays rain ambience which was recorded in
@@ -3626,9 +3767,9 @@
   url: "/workshopsystem/program-cards/42-backyard-rain/"
   tags: []
   source_file: releases/42_backyard_rain/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/42_backyard_rain
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/42_backyard_rain/README.md
-  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/42_backyard_rain
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/42_backyard_rain
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/42_backyard_rain/README.md
+  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/42_backyard_rain
   metadata:
     creator: Brian Dorsey
     language: Rust (Embassy framework)
@@ -3641,6 +3782,7 @@
       This release folder is a stub; docs and release UF2 files are maintained in the external repository.
 - id: 44_Birds
   title: Birds
+  draft: true
   release: 44 / 0.5.0
   summary: Two birds sing to each other controlled by a Turing-style shift register
     sequencer with clock in and CV/pulse out.
@@ -3659,7 +3801,7 @@
         label: Bird Pitch
         description: Controls pitch with CVIn1 summed in
         source: info.yaml
-      y:
+      "y":
         label: |-
           Playback
           Time
@@ -3736,9 +3878,9 @@
   url: "/workshopsystem/program-cards/44-birds/"
   tags: []
   source_file: releases/44_Birds/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/44_Birds
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/44_Birds/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/44_Birds/build/bird_card.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/44_Birds
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/44_Birds/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/44_Birds/build/bird_card.uf2
   metadata:
     creator: Tom Whitwell
     language: C++ (Pico SDK / ComputerCard)
@@ -3751,6 +3893,7 @@
       Z selects normal/wild/reseed modes, and Pulse In 1 can replace the internal clock.
 - id: 47_NZT
   title: NZT
+  draft: true
   release: 47 / 1.0.0
   summary: Grain Noise and Noise Tools
   description: Grain Noise and Noise Tools
@@ -3767,7 +3910,7 @@
         description: Controls noise seed when Pulse In 1 is used and CV In 2 is not
           connected
         source: info.yaml
-      y:
+      "y":
         label: CV In 1 Gain
         description: Gain for CV In 1 contribution added to Main density value
         source: info.yaml
@@ -3852,9 +3995,9 @@
   url: "/workshopsystem/program-cards/47-nzt/"
   tags: []
   source_file: releases/47_NZT/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/47_NZT
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/47_NZT/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/47_NZT/nzt.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/47_NZT
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/47_NZT/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/47_NZT/nzt.uf2
   metadata:
     creator: "@kjnilsson"
     language: C++ (ComputerCard)
@@ -3867,6 +4010,7 @@
       and optional audio-rate excitation via Pulse In 1. Audio Out 1/2 provide complementary dense/sparse textures.
 - id: 50_flux
   title: Flux
+  draft: true
   release: 50 / 1.0
   summary: Effects, Synthesizer and Utility
   description: Effects, Synthesizer and Utility
@@ -3884,7 +4028,7 @@
           Parameter 1
         description: Effect time/decay/rate style parameter
         source: info.yaml
-      y:
+      "y":
         label: |-
           Effect
           Parameter 2
@@ -3989,9 +4133,9 @@
   - utility
   - midi
   source_file: releases/50_flux/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/50_flux
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/50_flux/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/50_flux/build/flux_all_1-0_demoSample.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/50_flux
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/50_flux/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/50_flux/build/flux_all_1-0_demoSample.uf2
   metadata:
     creator: Vincent Maurer
     language: C++ (RP2040 Pico SDK)
@@ -4007,6 +4151,7 @@
       MIDI mappings, sample management, and saving patch-card style configurations.
 - id: 51_grains
   title: Grains
+  draft: true
   release: 51 / 1.0
   summary: Granular Sampler and Effect
   description: Granular Sampler and Effect
@@ -4020,7 +4165,7 @@
         label: Density
         description: Grain generation density
         source: info.yaml
-      y:
+      "y":
         label: Size
         description: Maximum grain size
         source: info.yaml
@@ -4113,9 +4258,9 @@
   - live-processing
   - tape-mode
   source_file: releases/51_grains/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/51_grains
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/51_grains/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/51_grains/build/grains.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/51_grains
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/51_grains/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/51_grains/build/grains.uf2
   metadata:
     creator: Vincent Maurer
     language: C++ (RP2040 Pico SDK)
@@ -4131,6 +4276,7 @@
       for scrub-style sample playback from the same slot system.
 - id: 53_glitter
   title: Glitter
+  draft: true
   release: 53 / 0.1.2-beta
   summary: Granular Looping Sampler
   description: Granular Looping Sampler
@@ -4206,9 +4352,9 @@
   - glitch
   - sampler
   source_file: releases/53_glitter/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/53_glitter
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/53_glitter/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/53_glitter/glitter_v0.1.2-beta.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/53_glitter
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/53_glitter/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/53_glitter/glitter_v0.1.2-beta.uf2
   metadata:
     creator: Steve Jones
     language: C++ (Pico SDK 2.1.1, UF2 release)
@@ -4229,6 +4375,7 @@
     id: JW8Z_I-ub2A
 - id: 54_Tapegrade
   title: Tapegrade
+  draft: true
   release: 54 / 0.8.0
   summary: Mono-input stereo cassette warble processor with wow, flutter, hiss, crackle,
     and tape wear morphing.
@@ -4246,7 +4393,7 @@
         label: Tape Depth
         description: Increases wow and pitch instability; also sets CV Out 1 attenuation
         source: info.yaml
-      y:
+      "y":
         label: Instability
         description: Increases flutter/transport roughness; also sets CV Out 2 attenuation
         source: info.yaml
@@ -4334,14 +4481,15 @@
   - modulation
   - lo-fi
   source_file: releases/54_Tapegrade/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/54_Tapegrade
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/54_Tapegrade/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/54_Tapegrade/UF2/Tapegrade.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/54_Tapegrade
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/54_Tapegrade/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/54_Tapegrade/UF2/Tapegrade.uf2
   metadata:
     creator: Adrian Vos
     language: C++ (RP2040 Pico SDK)
     version: 0.8.0
     status: WIP (functional)
+    license: MIT
   documentation:
     intro: |
       Tapegrade emulates cassette-style instability and wear from subtle movement to heavily damaged textures.
@@ -4350,6 +4498,7 @@
       Pulse In 1 injects temporary heavy damage, and Pulse In 2 forces strong crackle while high.
 - id: 55_fifths
   title: Fifths
+  draft: true
   release: 55 / 1.0
   summary: A quantizer/sequencer that can create harmony and nimbly traverse the circle
     of fifths in attempts to make jazz
@@ -4365,7 +4514,7 @@
         label: Loop Length
         description: Sets quantizer/sequencer loop length from 1 to 12 steps
         source: info.yaml
-      y:
+      "y":
         label: VCA Amount
         description: Controls input scaling; can be replaced by Audio In 2 control
         source: info.yaml
@@ -4454,9 +4603,9 @@
   - cv
   - generative
   source_file: releases/55_fifths/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/55_fifths
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/55_fifths/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/55_fifths/UF2/fifths.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/55_fifths
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/55_fifths/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/55_fifths/UF2/fifths.uf2
   metadata:
     creator: Dune Desormeaux
     language: C++ (RP2040 Pico SDK)
@@ -4471,6 +4620,7 @@
       an internal clock pulse plus a probabilistic sequence pulse stream.
 - id: 56_Krell
   title: Krell
+  draft: true
   release: 56 / 1.0
   summary: Krell
   description: Krell
@@ -4488,7 +4638,7 @@
           Envelope
         description: Controls left channel envelope timing range
         source: info.yaml
-      y:
+      "y":
         label: |-
           Right
           Envelope
@@ -4567,9 +4717,9 @@
   - envelopes
   - random-pitch
   source_file: releases/56_Krell/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/56_Krell
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/56_Krell/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/56_Krell/Krell_1.0.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/56_Krell
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/56_Krell/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/56_Krell/Krell_1.0.uf2
   metadata:
     creator: Benjamin Reily
     language: Blackbird Lua
@@ -4583,6 +4733,7 @@
       and switch down cycles note range between roughly one and three octaves.
 - id: 57_glitch
   title: Glitch
+  draft: true
   release: 57 / 1.4.0
   summary: Clock-synced beat-repeater with ratcheting, reversal and audio degradation
   description: Clock-synced beat-repeater with ratcheting, reversal and audio degradation
@@ -4660,9 +4811,9 @@
   - clocked
   - lo-fi
   source_file: releases/57_glitch/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/57_glitch
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/57_glitch/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/57_glitch/glitch.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/57_glitch
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/57_glitch/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/57_glitch/glitch.uf2
   metadata:
     creator: Andy Jenkinson (uglifruit)
     language: C++ (RP2040 Pico SDK)
@@ -4678,6 +4829,7 @@
       continues, and Audio Out 2 stays dry for parallel routing.
 - id: 58_LoChoVibes
   title: LoCho Vibes
+  draft: true
   release: 58 / 0.1.0
   summary: Stereo chorus and vibrato effect featuring triangle, sine, and slow drift
     LFO modes, modulation-based delay movement, and tape-style saturation.
@@ -4693,7 +4845,7 @@
         label: Mod Depth
         description: LFO pitch/modulation depth amount
         source: info.yaml
-      y:
+      "y":
         label: Character
         description: Bipolar character shaping from lo-fi degradation to compression/saturation
           coloration
@@ -4779,14 +4931,15 @@
   url: "/workshopsystem/program-cards/58-lochovibes/"
   tags: []
   source_file: releases/58_LoChoVibes/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/58_LoChoVibes
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/58_LoChoVibes/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/58_LoChoVibes/UF2/LoChoVibes%202.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/58_LoChoVibes
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/58_LoChoVibes/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/58_LoChoVibes/UF2/LoChoVibes.uf2
   metadata:
     creator: Adrian Vos
     language: C++
     version: 0.1.0
     status: released
+    license: MIT
   documentation:
     intro: |
       Stereo lo-fi chorus/vibrato with clockable LFO and character shaping.
@@ -4794,8 +4947,131 @@
       (lo-fi degradation <-> compression coloration). Switch up selects vibrato mode
       (fully wet), middle selects chorus mode (dry/wet blend), and a momentary move
       to down cycles LFO shape (triangle, sine, random drift).
+- id: 59_BitPhase
+  title: BitPhase
+  draft: true
+  release: 59 / 0.1.0
+  summary: Resonant 4-stage phaser for the Workshop Computer with deep notch filtering,
+    wide modulation sweeps, controllable resonance, tremolo blending, and digital
+    Burst-mode degradation.
+  description: Resonant 4-stage phaser for the Workshop Computer with deep notch filtering,
+    wide modulation sweeps, controllable resonance, tremolo blending, and digital
+    Burst-mode degradation.
+  panel:
+    controls:
+      main:
+        label: Rate
+        description: Speed of internal phaser and tremolo LFOs
+        source: info.yaml
+      x:
+        label: Sweep Depth
+        description: Phaser modulation depth
+        source: info.yaml
+      "y":
+        label: Resonance
+        description: Phaser feedback amount
+        source: info.yaml
+      z:
+        label: Rate
+        description: Speed of internal phaser and tremolo LFOs in Burst mode
+        source: info.yaml
+    inputs:
+      audio_l:
+        label: |-
+          Main Audio
+          In
+        description: Main audio input for the phaser engine
+        source: info.yaml
+      audio_r:
+        label: |-
+          Secondary
+          Audio In
+        description: Secondary audio input if used by firmware or patch
+        source: info.yaml
+      cv_1:
+        label: Rate CV
+        description: Modulates phaser and tremolo speed
+        source: info.yaml
+      cv_2:
+        label: Resonance CV
+        description: Modulates phaser feedback amount
+        source: info.yaml
+      pulse_1:
+        label: LFO Reset
+        description: Resets phaser LFO so sweep can be clock-synchronised
+        source: info.yaml
+    outputs:
+      audio_out_l:
+        label: |-
+          Processed
+          Out A
+        description: Dual mono output of processed signal
+        source: info.yaml
+      audio_out_r:
+        label: |-
+          Processed
+          Out B
+        description: Dual mono output of processed signal
+        source: info.yaml
+      cv_out_1:
+        label: |-
+          Phaser LFO
+          CV
+        description: Phaser LFO waveform output
+        source: info.yaml
+      cv_out_2:
+        label: |-
+          Tremolo LFO
+          CV
+        description: Tremolo LFO waveform output
+        source: info.yaml
+      pulse_out_1:
+        label: Burst Active
+        description: High while Burst mode is active
+        source: info.yaml
+      pulse_out_2:
+        label: |-
+          Phaser LFO
+          Phase
+        description: Phaser LFO phase indicator for synchronising external events
+        source: info.yaml
+  switch_modes:
+    up: 'Z up: MAIN: Rate; X: Sweep Depth; Y: Resonance.'
+    middle: 'Z middle: MAIN: Rate; X: Sweep Depth; Y: Resonance.'
+    down: 'Z down: MAIN: Rate; X: Sweep Depth; Y: Resonance.'
+  leds:
+  - 'Z any: Rate Position; Phaser LFO Position; Sweep Position; Burst Intensity; Burst
+    Mode Status; Pulse Input Monitor.'
+  source:
+  - releases/59_BitPhase/info.yaml
+  - releases/59_BitPhase/README.md
+  slug: 59-bitphase
+  url: "/workshopsystem/program-cards/59-bitphase/"
+  tags:
+  - effect
+  - phaser
+  - tremolo
+  - lo-fi
+  source_file: releases/59_BitPhase/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/59_BitPhase
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/59_BitPhase/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/59_BitPhase/uf2/BitPhase.uf2
+  metadata:
+    creator: Adrian Vos
+    language: C++ (Pico SDK)
+    version: 0.1.0
+    status: Beta
+    license: MIT
+  documentation:
+    intro: |
+      BitPhase combines a resonant 4-stage all-pass phaser, independent phaser and tremolo LFOs,
+      CV control of rate and resonance, and a Burst-mode digital degradation path.
+      Main controls LFO rate, X controls phaser sweep depth, and Y controls resonance/feedback.
+      Switch up is pure phaser, middle blends phaser with tremolo, and down enables Burst degradation.
+      Pulse In 1 resets the phaser LFO for clock-synchronised sweeps.
 - id: 60_markov
   title: Markov
+  draft: true
   release: 60 / 1.0.0
   summary: Dual generative Markov chain module — evolving melody (MarkoV) left side,
     rhythmic percussion patterns (MarkovPerc) right side, with internal synth voice
@@ -4817,7 +5093,7 @@
           Profile
         description: Selects one of five melodic transition profiles
         source: info.yaml
-      y:
+      "y":
         label: |-
           Percussion
           Profile
@@ -4901,9 +5177,9 @@
   url: "/workshopsystem/program-cards/60-markov/"
   tags: []
   source_file: releases/60_markov/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/60_markov
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/60_markov/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/60_markov/UF2/markov.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/60_markov
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/60_markov/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/60_markov/UF2/markov.uf2
   metadata:
     creator: Andy Jenkinson (uglifruit)
     language: C++ (Pico SDK)
@@ -4917,8 +5193,132 @@
       scale select while held (Z down). Pulse In 1 clocks both chains; CV Out 1 carries
       melody pitch, Pulse Out 1 emits pitch-change gate, Pulse Out 2 emits percussion
       triggers/ratchets/flams, and CV Out 2 carries percussion accent.
+- id: 64_voices_of_sid
+  title: Voices of SID
+  draft: true
+  release: 64 / 1.1
+  summary: Dual MOS 6581 SID emulation (reSID engine) with CV/gate control, stereo
+    output, waveform selection, and randomize
+  description: Dual MOS 6581 SID emulation (reSID engine) with CV/gate control, stereo
+    output, waveform selection, and randomize
+  panel:
+    controls:
+      main:
+        label: |-
+          Decay /
+          Release
+        description: Decay/release time (0–15, shared by both voices)
+        source: info.yaml
+      x:
+        label: |-
+          Filter
+          Resonance
+        description: SID filter resonance (0–15)
+        source: info.yaml
+      "y":
+        label: Pulse Width
+        description: Pulse width shared by both voices (minimum 40)
+        source: info.yaml
+      z:
+        label: Randomize
+        description: Hold to continuously randomize attack, sustain, waveforms, ring
+          mod, and sync
+        source: info.yaml
+    inputs:
+      cv_1:
+        label: |-
+          Voice 1
+          Pitch CV
+        description: 1V/oct pitch for SID1 lead voice and ring/sync carrier
+        source: info.yaml
+      cv_2:
+        label: |-
+          Voice 2
+          Pitch CV
+        description: 1V/oct pitch for SID2 second voice
+        source: info.yaml
+      pulse_1:
+        label: Voice 1 Gate
+        description: Gate for voice 1 (high = gate open)
+        source: info.yaml
+      pulse_2:
+        label: Voice 2 Gate
+        description: Gate for voice 2
+        source: info.yaml
+    outputs:
+      audio_out_l:
+        label: SID 1 Out
+        description: Left output — SID chip 1 (lead + ring-mod/sync carrier voices)
+        source: info.yaml
+      audio_out_r:
+        label: SID 2 Out
+        description: Right output — SID chip 2 (second voice)
+        source: info.yaml
+      cv_out_1:
+        label: |-
+          CV 1
+          Passthrough
+        description: 1:1 copy of CV In 1
+        source: info.yaml
+      cv_out_2:
+        label: |-
+          CV 2
+          Passthrough
+        description: 1:1 copy of CV In 2
+        source: info.yaml
+      pulse_out_1:
+        label: |-
+          Gate 1
+          Passthrough
+        description: 1:1 copy of Pulse In 1
+        source: info.yaml
+      pulse_out_2:
+        label: |-
+          Gate 2
+          Passthrough
+        description: 1:1 copy of Pulse In 2
+        source: info.yaml
+  switch_modes:
+    up: 'Z up: MAIN: Decay/Release; X: Voice 1 Waveform; Y: Voice 2 Waveform.'
+    middle: 'Z middle: MAIN: Decay/Release; X: Filter Resonance; Y: Pulse Width.'
+    down: 'Z down, hold: MAIN: Randomize.'
+  leds:
+  - 'Z up: Voice 1 Waveform Bit 0; Voice 1 Waveform Bit 1; Voice 1 Waveform Bit 2;
+    Voice 2 Waveform Bit 0; Voice 2 Waveform Bit 1; Voice 2 Waveform Bit 2.'
+  - 'Z middle: Gate 1 Active; Gate 2 Active; Voice 1 Waveform Bit 0; Voice 1 Waveform
+    Bit 1; Voice 1 Waveform Bit 2.'
+  source:
+  - releases/64_voices_of_sid/info.yaml
+  - releases/64_voices_of_sid/README.md
+  slug: 64-voices-of-sid
+  url: "/workshopsystem/program-cards/64-voices-of-sid/"
+  tags:
+  - synthesizer
+  - sid
+  - chiptune
+  - dual-voice
+  - cv-gate
+  source_file: releases/64_voices_of_sid/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/64_voices_of_sid
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/64_voices_of_sid/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/64_voices_of_sid/voices_of_sid.uf2
+  metadata:
+    creator: Joep Vermaat
+    language: C++ (Pico SDK)
+    version: 1.1
+    status: Released
+    license: MIT
+    repository: https://codeberg.org/johantv/voices-of-sid
+  documentation:
+    intro: |
+      Two emulated MOS 6581 SID chips run in parallel on separate audio outputs.
+      Switch middle is Play mode (CV/gate, Main = decay/release, X = resonance, Y = pulse width).
+      Switch up is Sound Edit (X/Y select waveforms for each voice; gates open for drone/tuning).
+      Hold switch down to randomize attack, sustain, waveforms, ring mod, and sync.
+      CV and pulse inputs pass through to outputs for chaining modules.
 - id: 66_stretchcore
   title: Stretchcore
+  draft: true
   release: 66 / 1.0
   summary: A card for playing and manipulating samples with tempo control, timestretch
     with browser-based audio loading (infinitedigits.com/stretchcore/)
@@ -4939,7 +5339,7 @@
           Tempo
         description: Internal playback tempo control when external clock is not active
         source: info.yaml
-      y:
+      "y":
         label: |-
           Timestretch
           Amount
@@ -5029,9 +5429,9 @@
   url: "/workshopsystem/program-cards/66-stretchcore/"
   tags: []
   source_file: releases/66_stretchcore/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/66_stretchcore
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/66_stretchcore/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/66_stretchcore/UF2/stretchcore.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/66_stretchcore
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/66_stretchcore/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/66_stretchcore/UF2/stretchcore.uf2
   metadata:
     creator: Infinite Digits
     language: C++ (Pico SDK)
@@ -5050,6 +5450,7 @@
       jumps (or loop start when CV2 is unpatched).
 - id: 69_trace
   title: Trace
+  draft: true
   release: 69 / 0.1
   summary: Oscillograph stereo oscillator
   description: Oscillograph stereo oscillator
@@ -5065,7 +5466,7 @@
           Offset
         description: Base offset for oscillator modulation parameter 1
         source: info.yaml
-      y:
+      "y":
         label: |-
           Parameter 2
           Offset
@@ -5140,9 +5541,9 @@
   url: "/workshopsystem/program-cards/69-trace/"
   tags: []
   source_file: releases/69_trace/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/69_trace
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/69_trace/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/69_trace/uf2/trace_v0.1.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/69_trace
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/69_trace/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/69_trace/uf2/trace_v0.1.uf2
   metadata:
     creator: Ruiyang Wang
     language: C++ (ComputerCard)
@@ -5158,6 +5559,7 @@
       cycle bank/index externally.
 - id: 71_degenerator
   title: Degenerator
+  draft: true
   release: 71 / 1.3
   summary: Degenerator — Disintegrating Looper. Capture audio loops and apply irreversible
     degradation with 6 algorithms (Saturation, Filter Drift, Tape Hiss, Oxide Shedding,
@@ -5181,7 +5583,7 @@
         description: Crossfades through saturation, filter drift, and tape hiss zones
           for input processing
         source: info.yaml
-      y:
+      "y":
         label: |-
           Destructive
           Effect
@@ -5286,9 +5688,9 @@
   url: "/workshopsystem/program-cards/71-degenerator/"
   tags: []
   source_file: releases/71_degenerator/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/71_degenerator
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/71_degenerator/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/71_degenerator/web/degenerator.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/71_degenerator
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/71_degenerator/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/71_degenerator/web/degenerator.uf2
   metadata:
     creator: Joep Vermaat
     language: C++ (Pico SDK)
@@ -5307,6 +5709,7 @@
       SLOT mode with flash save/load features; otherwise YOLO mode is instant-on.
 - id: 72_motorik
   title: Motorik
+  draft: true
   release: 72 / 1.0
   summary: Motorik drum machine — kick/snare/hihat with bass and melody CV, classic
     Krautrock grooves
@@ -5325,7 +5728,7 @@
           Transpose
         description: Semitone transpose offset for bass root/mirror pitch generation
         source: info.yaml
-      y:
+      "y":
         label: |-
           Fill
           Probability
@@ -5424,9 +5827,9 @@
   url: "/workshopsystem/program-cards/72-motorik/"
   tags: []
   source_file: releases/72_motorik/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/72_motorik
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/72_motorik/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/72_motorik/motorik.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/72_motorik
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/72_motorik/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/72_motorik/motorik.uf2
   metadata:
     creator: Joep Vermaat
     language: C++ (Pico SDK)
@@ -5444,9 +5847,11 @@
       root and mirrored (+12) bassline voices.
 - id: 74_Wild_Pebble
   title: Wild Pebble
-  release: 74 / 0.9
-  summary: Playable generative rhythm and melody organism inspired by Pet Rock
-  description: Playable generative rhythm and melody organism inspired by Pet Rock
+  draft: true
+  release: 74 / 1.0
+  summary: MIDI-clockable generative rhythm and melody organism inspired by Pet Rock
+  description: MIDI-clockable generative rhythm and melody organism inspired by Pet
+    Rock
   panel:
     controls:
       main:
@@ -5460,7 +5865,7 @@
         label: Density
         description: Trigger probability density control (modulated by CVIn1)
         source: info.yaml
-      y:
+      "y":
         label: Mutation
         description: Mutation intensity control (modulated by CVIn2)
         source: info.yaml
@@ -5541,14 +5946,14 @@
   url: "/workshopsystem/program-cards/74-wild-pebble/"
   tags: []
   source_file: releases/74_Wild_Pebble/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/74_Wild_Pebble
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/74_Wild_Pebble/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/74_Wild_Pebble/UF2/WildPebble.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/74_Wild_Pebble
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/74_Wild_Pebble/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/74_Wild_Pebble/UF2/WildPebble.uf2
   metadata:
     creator: Adrian Vos with Vibecode support
     language: C++
-    version: 0.9
-    status: WIP but useable. Currently working on MIDI integration
+    version: 1.0
+    status: Beta. USB MIDI clock input and sequencer note output tested
     license: GPL-3.0
   documentation:
     intro: |
@@ -5559,6 +5964,7 @@
       swing behavior. Pulse In 1 is external clock and Pulse In 2 freezes mutation while high.
 - id: 77_Placeholder
   title: Placeholder
+  draft: true
   release: 77 / 0.0
   summary: Reserved for secret project
   description: Reserved for secret project
@@ -5575,9 +5981,9 @@
   url: "/workshopsystem/program-cards/77-placeholder/"
   tags: []
   source_file: releases/77_Placeholder/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/77_Placeholder
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/77_Placeholder/README.md
-  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/77_Placeholder
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/77_Placeholder
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/77_Placeholder/README.md
+  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/77_Placeholder
   metadata:
     creator: None
     language: None
@@ -5585,6 +5991,7 @@
     status: None
 - id: 78_Talker
   title: Talker
+  draft: true
   release: 78 / 0.1
   summary: Proof of concept speech synthesizer, based on TalkiePCM, inspired by 1970s
     LPC speech synths.
@@ -5660,9 +6067,9 @@
   - lpc
   - audio-processing
   source_file: releases/78_Talker/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/78_Talker
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/78_Talker/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/78_Talker/uf2%20Installer/78_Talker.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/78_Talker
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/78_Talker/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/78_Talker/uf2%20Installer/78_Talker.uf2
   metadata:
     creator: Chris Johnson
     language: C++ (ComputerCard)
@@ -5676,6 +6083,7 @@
       set speaking speed. AudioOut1 is speech, AudioOut2 exposes the LPC exciter components.
 - id: 82_Computer_Grids
   title: Computer Grids
+  draft: true
   release: 82 / 0.1.0
   summary: Grids-inspired trigger sequencer with Web MIDI SysEx configuration.
   description: Grids-inspired trigger sequencer with Web MIDI SysEx configuration.
@@ -5691,7 +6099,7 @@
         label: Patt Map X
         description: Horizontal position on the Grids pattern map
         source: info.yaml
-      y:
+      "y":
         label: Patt Map Y
         description: Vertical position on the Grids pattern map
         source: info.yaml
@@ -5759,9 +6167,9 @@
   - trigger
   - midi-host
   source_file: releases/82_Computer_Grids/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/82_Computer_Grids
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/82_Computer_Grids/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/82_Computer_Grids/UF2/82_Computer_Grids.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/82_Computer_Grids
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/82_Computer_Grids/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/82_Computer_Grids/UF2/82_Computer_Grids.uf2
   metadata:
     creator: Phil Miller
     language: C++
@@ -5783,8 +6191,156 @@
   - title: Demo video
     url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
     id: dQw4w9WgXcQ
+- id: 84_CosmikC1zzl3
+  title: Cosmik C1ZZL3
+  draft: true
+  release: 84 / 1.0
+  summary: Stable phase-distortion synthesiser and Turing machine firmware with Web
+    MIDI custom envelopes, USB MIDI device/host operation, MIDI CC control, and optional
+    Turing MIDI output.
+  description: Stable phase-distortion synthesiser and Turing machine firmware with
+    Web MIDI custom envelopes, USB MIDI device/host operation, MIDI CC control, and
+    optional Turing MIDI output.
+  panel:
+    controls:
+      main:
+        label: Pitch
+        description: Oscillator pitch in synth mode
+        source: info.yaml
+      x:
+        label: |-
+          Phase
+          Distortion
+        description: Phase-distortion amount
+        source: info.yaml
+      "y":
+        label: |-
+          Waveform
+          Morph
+        description: Waveform selection/morph
+        source: info.yaml
+      z:
+        label: Detune
+        description: Oscillator 2 detune in performance edit
+        source: info.yaml
+    inputs:
+      audio_l:
+        label: Pitch CV
+        description: 1V/oct pitch modulation in PD synth mode
+        source: info.yaml
+      cv_1:
+        label: |-
+          Phase
+          Distortion
+        description: Adds phase-distortion amount in synth and Turing modes
+        source: info.yaml
+      cv_2:
+        label: |-
+          Wave Control
+          CV
+        description: Adds wave control in synth and Turing modes
+        source: info.yaml
+      pulse_1:
+        label: |-
+          Ext Turing
+          Clock
+        description: External Turing clock in switch-up mode
+        source: info.yaml
+      pulse_2:
+        label: |-
+          Envelope
+          Trig
+        description: Triggers selected envelope and oscillator sync in synth mode
+          when preset is active
+        source: info.yaml
+    outputs:
+      audio_out_l:
+        label: |-
+          Oscillator 1
+          / Turing
+        description: Oscillator 1 in synth mode; self-playing stepped oscillator 1
+          in Turing mode
+        source: info.yaml
+      audio_out_r:
+        label: |-
+          Oscillator 2
+          / Turing
+        description: Oscillator 2 in synth mode; self-playing stepped oscillator 2
+          in Turing mode
+        source: info.yaml
+      cv_out_1:
+        label: |-
+          Stepped
+          Turing CV
+        description: Scaled stepped Turing CV; continues updating in synth mode
+        source: info.yaml
+      cv_out_2:
+        label: |-
+          Smoothed
+          Turing CV
+        description: Smoothed Turing CV; continues updating in synth mode
+        source: info.yaml
+      pulse_out_1:
+        label: |-
+          Main Turing
+          Pulse
+        description: Main Turing pulse; continues updating in synth mode
+        source: info.yaml
+      pulse_out_2:
+        label: |-
+          Alternate
+          Turing Pulse
+        description: Alternate Turing bit pulse; continues updating in synth mode
+        source: info.yaml
+  switch_modes:
+    up: 'Z up: MAIN: Mutation; X: Sequence Length; Y: Clock Speed.'
+    middle: 'Z middle: MAIN: Pitch; X: Phase Distortion; Y: Waveform Morph.'
+    down: 'Z down, hold: MAIN: Detune; X: Ring Modulation; Y: Noise/Grit.'
+  leds:
+  - 'Z middle: Phase Distortion Amount; Waveform Position; Oscillator 2 Level; Ring
+    Modulation; Noise Amount; Switch Held Indicator.'
+  - 'Z up: Turing Bit 0; Turing Bit 1; Turing Bit 2; External Clock Follow; Sequence
+    Length; Turing Clock Step.'
+  notes:
+  - 'Web MIDI Envelope Editor: Browser editor for custom envelopes and performance
+    settings'
+  - |
+    MIDI CC1 controls phase distortion, CC20 detune, CC21 ring modulation, CC22 noise,
+    CC23 waveform, and CC24 Turing CV octave range.
+  source:
+  - releases/84_CosmikC1zzl3/info.yaml
+  - releases/84_CosmikC1zzl3/README.md
+  slug: 84-cosmikc1zzl3
+  url: "/workshopsystem/program-cards/84-cosmikc1zzl3/"
+  tags:
+  - synth
+  - midi
+  - web-midi
+  - turing-machine
+  - phase-distortion
+  source_file: releases/84_CosmikC1zzl3/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/84_CosmikC1zzl3
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/84_CosmikC1zzl3/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/84_CosmikC1zzl3/uf2/C1ZZL3.uf2
+  metadata:
+    creator: Adrian Vos
+    language: C++ (Pico SDK)
+    version: 1.0
+    status: Released
+    license: MIT
+    editor_url: https://soveda.github.io/CozmikC1zzl3/web-midi/editor/
+    editor_note: Configure this card in your browser
+  documentation:
+    intro: |
+      Phase-distortion synth card with Turing machine mode, USB MIDI, and browser envelope editor.
+      Switch middle is PD synth mode (Main = pitch, X = phase distortion, Y = waveform morph).
+      Hold switch down from middle for performance edit (detune, ring modulation, noise/grit) and save.
+      Switch up is Turing mode (Main = mutation, X = length, Y = clock speed).
+      Turing CV and pulse outputs continue running in synth mode.
+      Factory envelope presets are never overwritten; custom envelopes use separate browser-stored slots.
 - id: 86_tesserae
   title: Tesserae
+  draft: true
   release: 86 / 1.0
   summary: Tesserae — Variable-voice (2-8) arpeggiated chord generator with 5 patterns,
     10 scales, tap tempo, CV/audio transpose inputs, and dual CV + audio pitch outputs.
@@ -5803,7 +6359,7 @@
           Melody
           Position
         source: info.yaml
-      y:
+      "y":
         label: |-
           Chord
           Spacing
@@ -5907,9 +6463,9 @@
   - cv
   - utility
   source_file: releases/86_tesserae/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/86_tesserae
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/86_tesserae/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/86_tesserae/tesserae.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/86_tesserae
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/86_tesserae/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/86_tesserae/tesserae.uf2
   metadata:
     creator: Joep Vermaat
     language: C++ (Pico SDK)
@@ -5922,8 +6478,117 @@
       Variable-voice arpeggiated harmonic generator with 5 patterns and 10 scales. X sets melody
       position, Y sets chord spacing, and Main changes by Z mode (pattern select, root note, or held
       scale/voice selection). Supports tap tempo, external clock/reset, and dual transpose inputs.
+- id: 87_fr330hfr33
+  title: Fr330hfr33
+  draft: true
+  release: 87 / 0.9.1
+  summary: Hardware-tested acid bass synthesiser with saw or square oscillator, diode-style
+    filtering, accent, glide, distortion, USB MIDI, and a persistent editable sequencer.
+  description: Hardware-tested acid bass synthesiser with saw or square oscillator,
+    diode-style filtering, accent, glide, distortion, USB MIDI, and a persistent editable
+    sequencer.
+  panel:
+    controls:
+      main:
+        label: Cutoff
+        description: Filter cutoff in sequencer mode
+        source: info.yaml
+      x:
+        label: Resonance
+        description: Filter resonance in sequencer mode
+        source: info.yaml
+      "y":
+        label: |-
+          Decay /
+          Glide
+        description: Envelope decay and glide in sequencer mode
+        source: info.yaml
+      z:
+        label: Mode
+        description: Selects alternate control modes.
+        source: info.yaml
+    inputs:
+      cv_1:
+        label: Pitch CV
+        description: 1V/oct pitch input in switch-up CV/gate mode
+        source: info.yaml
+      pulse_1:
+        label: Gate In
+        description: External gate input in switch-up CV/gate mode
+        source: info.yaml
+      pulse_2:
+        label: |-
+          Clock /
+          Slide
+        description: External sequencer clock in switch-middle mode; manual glide
+          enable in CV/MIDI mode
+        source: info.yaml
+    outputs:
+      audio_out_l:
+        label: |-
+          Filtered
+          Voice
+        description: Enveloped post-filter acid bass voice
+        source: info.yaml
+      audio_out_r:
+        label: |-
+          Raw
+          Oscillator
+        description: Phase-aligned raw selected oscillator for blending with filtered
+          voice
+        source: info.yaml
+      cv_out_1:
+        label: Pitch Out
+        description: Calibrated 1V/oct output following currently played pitch
+        source: info.yaml
+      pulse_out_1:
+        label: Gate Out
+        description: Gate output following external, MIDI, or sequencer notes
+        source: info.yaml
+  switch_modes:
+    up: 'Z up: MAIN: Cutoff; X: Resonance; Y: Decay / Glide.'
+    middle: 'Z middle: MAIN: Cutoff; X: Resonance; Y: Decay / Glide.'
+    down: ''
+  leds:
+  - 'Z any: CV/MIDI Mode Indicator; Gate Follow; Sequencer Mode Indicator; Accent
+    Indicator; Battery Pull Indicator; Note Brightness / Filter Mode.'
+  notes:
+  - 'Fr330hfr33 Web MIDI Editor: Open web_config/Fr330hfr33.html in Chrome or Edge
+    to configure scale, patterns, and tempo'
+  - |
+    Four checksummed card-flash pattern slots and general editor settings persist across power cycles.
+    USB MIDI automatically operates as device or host according to Workshop Computer USB power role.
+  source:
+  - releases/87_fr330hfr33/info.yaml
+  - releases/87_fr330hfr33/README.md
+  slug: 87-fr330hfr33
+  url: "/workshopsystem/program-cards/87-fr330hfr33/"
+  tags:
+  - synth
+  - midi
+  - web-midi
+  - sequencer
+  - acid
+  source_file: releases/87_fr330hfr33/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/87_fr330hfr33
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/87_fr330hfr33/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/87_fr330hfr33/archive/0.9.0-rc1/Fr330hfr33-v0.9.0-rc1.uf2
+  metadata:
+    creator: Adrian Vos
+    language: C++ (Pico SDK)
+    version: 0.9.1
+    status: Stable
+  documentation:
+    intro: |
+      Acid bass voice with selectable saw/square oscillator, 18 or 24 dB diode-style filter, accent,
+      glide, distortion, USB MIDI device/host operation, and persistent editable sequencer.
+      Main controls filter cutoff, X controls resonance, and Y couples envelope decay with glide time.
+      Switch up is external CV/gate or USB MIDI mode; middle is generative sequencer mode;
+      momentary down simulates battery pull.
+      Web MIDI editor configures scale, root, accent probability, pattern lanes, and internal tempo.
 - id: 88_Blank
   title: Blank
+  draft: true
   release: 88 / 0
   summary: Reserved for blank 88 cards
   description: Reserved for blank 88 cards
@@ -5940,16 +6605,147 @@
   url: "/workshopsystem/program-cards/88-blank/"
   tags: []
   source_file: releases/88_Blank/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/88_Blank
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/88_Blank/README.md
-  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/88_Blank
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/88_Blank
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/88_Blank/README.md
+  download_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/88_Blank
   metadata:
     creator: Tom Whitwell
     language: None
     version: 0
     status: None
+- id: 91_chorgan
+  title: Chorgan
+  draft: true
+  release: 91 / 1.1.0
+  summary: 'Chorgan — 6-voice chord synthesizer with morphing timbre, chord extension
+    presets, and built-in chord sequencer. Two modes: normal (detune/chorus) and slew
+    (portamento chord changes). Inspired by the Music Thing Modular Chord Organ.'
+  description: 'Chorgan — 6-voice chord synthesizer with morphing timbre, chord extension
+    presets, and built-in chord sequencer. Two modes: normal (detune/chorus) and slew
+    (portamento chord changes). Inspired by the Music Thing Modular Chord Organ.'
+  panel:
+    controls:
+      main:
+        label: Timbre
+        description: Morphs waveform of all six voices (pulse → sine → saw → sine
+          → pulse)
+        source: info.yaml
+      x:
+        label: Root Pitch
+        description: Root pitch from C3 to C6, summed with CV In 1
+        source: info.yaml
+      "y":
+        label: Interval
+        description: Semitone interval between root and voice 2 (0–12)
+        source: info.yaml
+      z:
+        label: Mode
+        description: Selects alternate control modes.
+        source: info.yaml
+    inputs:
+      cv_1:
+        label: |-
+          Root Pitch
+          CV
+        description: Root pitch 1V/oct (0V = C4), summed with Knob X
+        source: info.yaml
+      cv_2:
+        label: |-
+          Timbre
+          Offset CV
+        description: Bipolar offset to Main knob timbre position
+        source: info.yaml
+      pulse_1:
+        label: |-
+          Preset
+          Advance
+        description: Rising edge advances chord extension preset
+        source: info.yaml
+      pulse_2:
+        label: |-
+          Chord Recall
+          Clock
+        description: Rising edge recalls next stored chord in sequencer
+        source: info.yaml
+    outputs:
+      audio_out_l:
+        label: |-
+          Six-Voice
+          Mix
+        description: Six-voice chord mix output
+        source: info.yaml
+      audio_out_r:
+        label: |-
+          Phase-Offset
+          Mix
+        description: Same voices with per-voice phase offsets for stereo width
+        source: info.yaml
+      pulse_out_1:
+        label: |-
+          Sub-Octave
+          Square
+        description: Square wave one octave below root
+        source: info.yaml
+      pulse_out_2:
+        label: |-
+          Chord Event
+          PWM
+        description: PWM envelope resetting on each chord event
+        source: info.yaml
+      cv_out_1:
+        label: |-
+          Voiced Pitch
+          CV
+        description: Root pitch plus voiced interval (1V/oct)
+        source: info.yaml
+      cv_out_2:
+        label: |-
+          Chord Event
+          Ramp
+        description: Unipolar downward ramp (+5V to 0V) on each chord event
+        source: info.yaml
+  switch_modes:
+    up: 'Z up: MAIN: Timbre; X: Root Pitch; Y: Interval.'
+    middle: 'Z middle: MAIN: Timbre; X: Root Pitch; Y: Interval.'
+    down: ''
+  leds:
+  - 'Z any: Interval Position A; Store/Recall Bit A; Interval Position B; Store/Recall
+    Bit B; Interval Position C; Preset Brightness.'
+  notes:
+  - |
+    Slew mode boots when Switch Down is held at power-on until LEDs flash.
+    Up to eight chords can be stored; storing more than eight overwrites from the beginning.
+  source:
+  - releases/91_chorgan/info.yaml
+  - releases/91_chorgan/README.md
+  slug: 91-chorgan
+  url: "/workshopsystem/program-cards/91-chorgan/"
+  tags:
+  - synthesizer
+  - chord
+  - sequencer
+  - polyphonic
+  - portamento
+  source_file: releases/91_chorgan/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/91_chorgan
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/91_chorgan/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/91_chorgan/chorgan.uf2
+  metadata:
+    creator: Andy Jenkinson (uglifruit)
+    language: C++ (Pico SDK / ComputerCard)
+    version: 1.1.0
+    status: released
+  documentation:
+    intro: |
+      Six-voice morphing chord synthesizer with built-in chord sequencer.
+      Knob X and CV In 1 set root pitch; Knob Y selects interval above root (0–12 semitones).
+      Main knob morphs all six voices through sine, triangle, saw, and narrow pulse; CV In 2 offsets timbre.
+      Tap Switch Down to cycle chord extension presets; hold one second to store a chord in the sequencer.
+      Pulse In 1 advances preset; Pulse In 2 recalls the next stored chord on rising edges.
+      Boot with Switch Down held for slew mode (portamento chord changes instead of detune).
 - id: 98_duo_midi
   title: Duo MIDI
+  draft: true
   release: 98 / 0.1
   summary: A duophonic midi device/host interface
   description: A duophonic midi device/host interface
@@ -5965,7 +6761,7 @@
           Envelope
           Attack
         source: info.yaml
-      y:
+      "y":
         label: |-
           Envelope
           Release
@@ -6055,9 +6851,9 @@
   - duophonic
   - blackbird
   source_file: releases/98_duo_midi/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/98_duo_midi
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/98_duo_midi/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/98_duo_midi/duo_midi.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/98_duo_midi
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/98_duo_midi/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/98_duo_midi/duo_midi.uf2
   metadata:
     creator: Dune Desormeaux
     language: Lua / Blackbird
@@ -6071,6 +6867,7 @@
       velocity, pitch bend, and mod wheel.
 - id: 99_toolbox
   title: Toolbox
+  draft: true
   release: 99 / 0.1.1
   summary: Mixer, VCA, noise, S&H, clock generator, etc.
   description: Mixer, VCA, noise, S&H, clock generator, etc.
@@ -6092,9 +6889,9 @@
   - clock
   - noise
   source_file: releases/99_toolbox/info.yaml
-  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/99_toolbox
-  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/99_toolbox/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/aa1503ab585f04f019c3f20f3ccfdd8fd4c6818a/releases/99_toolbox/dist/toolbox-0.1.1.uf2
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/99_toolbox
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/99_toolbox/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/99_toolbox/dist/toolbox-0.1.1.uf2
   metadata:
     creator: divmod
     language: C++ (ComputerCard)

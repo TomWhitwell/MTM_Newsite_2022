@@ -30,7 +30,10 @@ layout: default
               <span class="program-card-archive-row__summary">{{ card_summary | truncate: 120 }}</span>
             {%- endif -%}
           </span>
-          {%- include program_cards/tags.html card_id=card.id tags=card.tags -%}
+          <span class="program-card-archive-row__flags">
+            {%- if card.draft -%}<span class="program-card-draft-flag program-card-draft-flag--archive">Draft</span>{%- endif -%}
+            {%- include program_cards/tags.html card_id=card.id tags=card.tags -%}
+          </span>
         </a>
       {%- endfor -%}
     </div>

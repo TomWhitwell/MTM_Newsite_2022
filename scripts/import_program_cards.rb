@@ -28,6 +28,7 @@ KNOB_KEYS = %w[main x y].freeze
 Z_MODES = %w[up middle down].freeze
 
 options = {
+  site: ENV['MTM_NEWSITE_DIR'],
   source: ENV['WORKSHOP_COMPUTER_DIR'],
   output: '_data/program_cards/cards.yml',
   pages: '_program_cards',
@@ -38,6 +39,7 @@ options = {
 
 OptionParser.new do |opts|
   opts.banner = 'Usage: ruby scripts/import_program_cards.rb --source ../Workshop_Computer [options]'
+  opts.on('--site PATH', 'MTM_Newsite_2022 checkout to write generated data/pages into') { |v| options[:site] = v }
   opts.on('--source PATH', 'Workshop_Computer checkout containing releases/*/info.yaml') { |v| options[:source] = v }
   opts.on('--output PATH', 'cards.yml output path') { |v| options[:output] = v }
   opts.on('--pages PATH', '_program_cards output path') { |v| options[:pages] = v }
@@ -45,6 +47,8 @@ OptionParser.new do |opts|
   opts.on('--repo OWNER/REPO', 'GitHub repo used for generated links') { |v| options[:repo] = v }
   opts.on('--web-ref REF', 'GitHub ref used for generated source/raw links') { |v| options[:web_ref] = v }
 end.parse!
+
+site_root = options[:site] ? File.expand_path(options[:site]) : Dir.pwd
 
 def normalize_key(key)
   key.to_s.downcase.gsub(/[-_\s]/, '')
@@ -63,7 +67,7 @@ def field(hash, *names)
   nil
 end
 
-config_path = '_data/program_cards/import.yml'
+config_path = File.join(site_root, '_data/program_cards/import.yml')
 if File.exist?(config_path)
   config = YAML.load_file(config_path) || {}
   import_config = field(config, 'workshop_computer') || {}
@@ -81,6 +85,19 @@ pages_base = "https://tomwhitwell.github.io/Workshop_Computer"
 
 def slugify(value)
   value.to_s.downcase.gsub(/[^a-z0-9]+/, '-').gsub(/^-|-$/, '')
+end
+
+def truthy?(value)
+  case value
+  when true then true
+  when false, nil then false
+  else
+    %w[true yes y 1].include?(value.to_s.strip.downcase)
+  end
+end
+
+def site_path(site_root, path)
+  File.absolute_path(path.to_s.start_with?('/') ? path : File.join(site_root, path))
 end
 
 def card_number(id)
@@ -319,6 +336,7 @@ Dir.glob(File.join(source_root, 'releases', '*', 'info.yaml')).sort_by { |path| 
   normalized = {
     'id' => id,
     'title' => title,
+    'draft' => truthy?(field(info, 'draft', 'Draft')),
     'release' => release,
     'summary' => description,
     'description' => description,
@@ -376,11 +394,11 @@ end
 
 cards.sort_by! { |card| [card['id'].to_s[/^\d+/].to_i, card['id']] }
 
-output_path = File.expand_path(options[:output])
+output_path = site_path(site_root, options[:output])
 FileUtils.mkdir_p(File.dirname(output_path))
 File.write(output_path, "# Generated from Workshop_Computer releases/*/info.yaml. Do not edit by hand; edit source YAML or curation files.\n" + YAML.dump(cards).sub(/^---\n/, ''))
 
-pages_dir = File.expand_path(options[:pages])
+pages_dir = site_path(site_root, options[:pages])
 FileUtils.mkdir_p(pages_dir)
 cards.each do |card|
   page = <<~PAGE
@@ -395,7 +413,7 @@ cards.each do |card|
 end
 
 # Preserve the human-editable tag file, but append missing card IDs so moderators can curate without hunting exact IDs.
-tags_path = File.expand_path(options[:tags])
+tags_path = site_path(site_root, options[:tags])
 if File.exist?(tags_path)
   tag_text = File.read(tags_path)
   existing = tag_text.scan(/^\s{2}["']?([^"':\n]+)["']?:/).flatten

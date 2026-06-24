@@ -40,4 +40,4 @@ jobs:
           body: |
             Automated refresh of `_data/program_cards/cards.yml` and generated card wrappers from `Workshop_Computer/releases/*/info.yaml`.
 
-            The source repo/ref is controlled by `_data/program_cards/import.yml`. While Workshop_Computer PR #177 is open it points at the PR head commit; after merge, change that file to `main`.
+            The source repo/ref is controlled by `_data/program_cards/import.yml`.

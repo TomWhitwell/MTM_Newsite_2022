@@ -38,6 +38,7 @@ layout: default
 <article class="program-cards program-card-page">
   <header class="program-card-hero">
     <div class="program-card-hero__main">
+      {%- if card.draft -%}<div class="program-card-draft-flag program-card-draft-flag--page">Draft</div>{%- endif -%}
       {%- include program_cards/tags.html card_id=card.id tags=card.tags -%}
       <h1><span class="program-card-page__number">{{ card_number }}</span> {{ card.title | strip_html }}</h1>
       {%- if summary and summary != "" -%}<p>{{ summary | truncate: 240 }}</p>{%- endif -%}
