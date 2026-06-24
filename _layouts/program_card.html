@@ -36,9 +36,21 @@ layout: default
 {%- endif -%}
 
 <article class="program-cards program-card-page">
+  {%- if card.draft -%}
+    {%- assign info_yaml_url = "https://github.com/TomWhitwell/Workshop_Computer/blob/main/" | append: card.source_file -%}
+    <aside class="program-card-draft-bar" aria-label="Draft documentation notice">
+      <div class="program-card-draft-bar__message">
+        <strong>Draft:</strong>
+        <span>This documentation is work in progress and has not yet been approved by the card designer.</span>
+      </div>
+      <details class="program-card-draft-bar__details">
+        <summary>I'm the designer. How should I fix this?</summary>
+        <p>Check the generated documentation against the card, then edit <a href="{{ info_yaml_url }}">the relevant <code>info.yaml</code> file</a> in the Workshop Computer repo. When everything is accurate, set <code>draft: false</code> in that YAML and submit the change.</p>
+      </details>
+    </aside>
+  {%- endif -%}
   <header class="program-card-hero">
     <div class="program-card-hero__main">
-      {%- if card.draft -%}<div class="program-card-draft-flag program-card-draft-flag--page">Draft</div>{%- endif -%}
       {%- include program_cards/tags.html card_id=card.id tags=card.tags -%}
       <h1><span class="program-card-page__number">{{ card_number }}</span> {{ card.title | strip_html }}</h1>
       {%- if summary and summary != "" -%}<p>{{ summary | truncate: 240 }}</p>{%- endif -%}
