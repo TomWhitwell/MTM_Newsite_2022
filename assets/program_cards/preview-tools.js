@@ -58,6 +58,190 @@
     return value || {};
   }
 
+  // --- info.yaml -> normalized card (mirror of scripts/import_program_cards.rb) ---
+  var API_INPUT_KEYS = {
+    AudioIn1: 'audio_l', AudioIn2: 'audio_r',
+    CVIn1: 'cv_1', CVIn2: 'cv_2',
+    PulseIn1: 'pulse_1', PulseIn2: 'pulse_2'
+  };
+  var API_OUTPUT_KEYS = {
+    AudioOut1: 'audio_out_l', AudioOut2: 'audio_out_r',
+    CVOut1: 'cv_out_1', CVOut2: 'cv_out_2',
+    PulseOut1: 'pulse_out_1', PulseOut2: 'pulse_out_2'
+  };
+  var KNOB_KEYS = ['main', 'x', 'y'];
+  var Z_MODES = ['up', 'middle', 'down'];
+
+  function infoKey(key) { return String(key).toLowerCase().replace(/[-_\s]/g, ''); }
+  function infoField(hash) {
+    if (!hash || typeof hash !== 'object' || Array.isArray(hash)) return undefined;
+    for (var i = 1; i < arguments.length; i++) {
+      var name = arguments[i];
+      if (Object.prototype.hasOwnProperty.call(hash, name)) return hash[name];
+      var n = infoKey(name);
+      for (var k in hash) if (Object.prototype.hasOwnProperty.call(hash, k) && infoKey(k) === n) return hash[k];
+    }
+    return undefined;
+  }
+  function infoTruthy(v) {
+    if (v === true) return true;
+    if (v === false || v == null) return false;
+    return ['true', 'yes', 'y', '1'].indexOf(String(v).trim().toLowerCase()) !== -1;
+  }
+  function infoCardNumber(id) { return String(id).split('_')[0]; }
+  function titleizeId(id) {
+    return String(id).replace(/^\d+_?/, '').replace(/[_-]/g, ' ').split(/\s+/)
+      .filter(Boolean).map(function (w) { return w.charAt(0).toUpperCase() + w.slice(1); }).join(' ');
+  }
+  function compactPanelLabel(name) {
+    var text = String(name == null ? '' : name).trim().replace(/\s*\/\s*/g, ' / ');
+    if (!text) return '';
+    var repl = { External: 'Ext', Channel: 'Chan', Quantized: 'Quant', Modulation: 'Mod', Divide: 'Div', Multiply: 'Mult', Randomness: 'Random', Trigger: 'Trig', Output: 'Out', Input: 'In', 'Preset Select': 'Preset', Pattern: 'Patt' };
+    Object.keys(repl).forEach(function (from) {
+      text = text.replace(new RegExp('\\b' + from.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'ig'), repl[from]);
+    });
+    var words = text.split(/\s+/), lines = [], line = '';
+    words.forEach(function (w) {
+      var c = line ? line + ' ' + w : w;
+      if (c.length <= 12) line = c; else { if (line) lines.push(line); line = w; }
+    });
+    if (line) lines.push(line);
+    var two = lines.slice(0, 2).join('\n');
+    return two.length > 24 ? two.slice(0, 23).replace(/\s+$/, '') : two;
+  }
+  function normSocket(item) {
+    var name = infoField(item, 'name', 'Name') || infoField(item, 'id');
+    var out = { label: compactPanelLabel(name), description: String(infoField(item, 'description', 'Description') || '').trim(), source: 'info.yaml' };
+    var type = infoField(item, 'type');
+    if (type) out.type = type;
+    if (!out.description) delete out.description;
+    return out;
+  }
+  function normSocketList(items, mapping) {
+    var result = {};
+    (Array.isArray(items) ? items : []).forEach(function (item) {
+      var slot = mapping[String(infoField(item, 'id'))];
+      if (slot) result[slot] = normSocket(item);
+    });
+    return result;
+  }
+  function knobRows(info) {
+    var knobs = infoField(infoField(info, 'controls'), 'knobs');
+    if (Array.isArray(knobs)) return knobs;
+    if (knobs && typeof knobs === 'object') return [knobs]; // plain map form
+    return [];
+  }
+  function rowWhen(row) { var w = infoField(row, 'when'); return w && typeof w === 'object' ? w : {}; }
+  function rowContextLabel(row) {
+    var c = rowWhen(row), parts = [];
+    if (infoField(c, 'z')) parts.push('Z ' + infoField(c, 'z'));
+    if (infoField(c, 'layer')) parts.push(String(infoField(c, 'layer')));
+    if (infoField(c, 'gesture')) parts.push(String(infoField(c, 'gesture')));
+    return parts.length ? parts.join(', ') : 'Default';
+  }
+  function summarizeKnobRow(row) {
+    return KNOB_KEYS.map(function (key) {
+      var knob = infoField(row, key); if (!knob || typeof knob !== 'object') return null;
+      var name = infoField(knob, 'name'); return name ? key.toUpperCase() + ': ' + name : null;
+    }).filter(Boolean).join('; ');
+  }
+  function normalizeControls(info) {
+    var rows = knobRows(info);
+    var primary = rows.find(function (r) { var c = rowWhen(r); return String(infoField(c, 'z')) === 'middle' && !infoField(c, 'layer') && !infoField(c, 'gesture'); })
+      || rows.find(function (r) { return KNOB_KEYS.some(function (k) { var v = infoField(r, k); return v && typeof v === 'object'; }); });
+    var controls = {};
+    if (primary) KNOB_KEYS.forEach(function (key) {
+      var knob = infoField(primary, key); if (!knob || typeof knob !== 'object') return;
+      var name = infoField(knob, 'name'); if (!name) return;
+      controls[key] = { label: compactPanelLabel(name), description: String(infoField(knob, 'description') || '').trim(), source: 'info.yaml' };
+      if (!controls[key].description) delete controls[key].description;
+    });
+    var zRows = rows.filter(function (r) { return infoField(rowWhen(r), 'z'); });
+    var down = zRows.find(function (r) { return String(infoField(rowWhen(r), 'z')) === 'down' && infoField(r, 'main') && typeof infoField(r, 'main') === 'object'; });
+    if (down) {
+      var k = infoField(down, 'main');
+      controls.z = { label: compactPanelLabel(infoField(k, 'name')), description: String(infoField(k, 'description') || '').trim(), source: 'info.yaml' };
+      if (!controls.z.description) delete controls.z.description;
+    } else if (zRows.length) {
+      controls.z = { label: 'Mode', description: 'Selects alternate control modes.', source: 'info.yaml' };
+    }
+    return controls;
+  }
+  function normalizeSwitchModes(info) {
+    var rows = knobRows(info), modes = { up: '', middle: '', down: '' };
+    Z_MODES.forEach(function (mode) {
+      modes[mode] = rows.filter(function (r) { return String(infoField(rowWhen(r), 'z')) === mode; }).map(function (r) {
+        var s = summarizeKnobRow(r); return s ? rowContextLabel(r) + ': ' + s + '.' : null;
+      }).filter(Boolean).join(' ');
+    });
+    return modes;
+  }
+  function normalizeLeds(info) {
+    var rows = Array.isArray(infoField(infoField(info, 'controls'), 'leds')) ? infoField(infoField(info, 'controls'), 'leds') : [];
+    return rows.map(function (r) {
+      var items = Array.isArray(infoField(r, 'items')) ? infoField(r, 'items') : [];
+      if (!items.length) return null;
+      var names = items.map(function (i) { return infoField(i, 'name'); }).filter(Boolean).join('; ');
+      return names ? rowContextLabel(r) + ': ' + names + '.' : null;
+    }).filter(Boolean);
+  }
+  function youtubeId(url) {
+    if (!url) return null;
+    try {
+      var u = new URL(url), host = u.host.toLowerCase();
+      if (host.indexOf('youtu.be') !== -1) return u.pathname.split('/').filter(Boolean)[0];
+      if (host.indexOf('youtube.com') !== -1) {
+        if (u.pathname.indexOf('/embed/') !== -1 || u.pathname.indexOf('/shorts/') !== -1) return u.pathname.split('/').filter(Boolean).pop();
+        return u.searchParams.get('v');
+      }
+    } catch (e) { return null; }
+    return null;
+  }
+  function infoYamlToCard(info) {
+    info = info || {};
+    var id = String(info.id || infoField(info, 'Name', 'Title') || 'card');
+    var number = infoCardNumber(id);
+    var version = infoField(info, 'Version');
+    var description = String(infoField(info, 'Description') || '').trim();
+    var demo = infoField(info, 'demo-link');
+    var vid = youtubeId(demo);
+    var panel = infoField(info, 'panel') || {};
+    var meta = { creator: infoField(info, 'Creator'), language: infoField(info, 'Language'), version: version, status: infoField(info, 'Status'), license: infoField(info, 'License'), repository: infoField(info, 'repository'), contact: infoField(info, 'contact') };
+    Object.keys(meta).forEach(function (k) { if (meta[k] == null || meta[k] === '') delete meta[k]; });
+    var card = {
+      id: id, title: infoField(info, 'Name', 'Title') || titleizeId(id), draft: infoTruthy(infoField(info, 'draft', 'Draft')),
+      release: version ? number + ' / ' + version : number, summary: description, description: description,
+      panel: { controls: normalizeControls(info), inputs: normSocketList(infoField(panel, 'inputs'), API_INPUT_KEYS), outputs: normSocketList(infoField(panel, 'outputs'), API_OUTPUT_KEYS) },
+      switch_modes: normalizeSwitchModes(info), leds: normalizeLeds(info), tags: [], metadata: meta
+    };
+    var manual = infoField(info, 'manual');
+    if (manual && String(manual).trim()) card.documentation = { intro: manual };
+    if (demo && vid) card.videos = [{ title: 'Demo video', url: demo, id: vid }];
+    var warnings = [];
+    ['inputs', 'outputs'].forEach(function (group) {
+      var mapping = group === 'inputs' ? API_INPUT_KEYS : API_OUTPUT_KEYS;
+      (Array.isArray(panel[group]) ? panel[group] : []).forEach(function (item) {
+        var apiId = infoField(item, 'id');
+        if (apiId && !mapping[String(apiId)]) warnings.push('Unknown ' + group + ' id "' + apiId + '" (not a ComputerCard jack).');
+      });
+    });
+    if (!infoField(info, 'Name', 'Title')) warnings.push('Missing Name.');
+    if (!version) warnings.push('Missing Version.');
+    if (warnings.length) card.__warnings = warnings;
+    if (!Object.keys(card.panel.controls).length) delete card.panel.controls;
+    if (!Object.keys(card.panel.inputs).length) delete card.panel.inputs;
+    if (!Object.keys(card.panel.outputs).length) delete card.panel.outputs;
+    if (!card.leds.length) delete card.leds;
+    return card;
+  }
+
+  // Heuristic: a card already normalized by the importer (so Normalize is a no-op)
+  function isNormalizedCard(value) {
+    if (!value || typeof value !== 'object') return false;
+    if ('metadata' in value || 'release' in value || 'switch_modes' in value) return true;
+    return 'title' in value && !infoField(value, 'Name') && !infoField(value, 'Version');
+  }
+
   function assignedTags(card, tagConfig) {
     const assignments = (tagConfig && tagConfig.assignments) || {};
     return assignments[card.id] || card.tags || card.tag_labels || [];
@@ -226,7 +410,16 @@
   function showError(errorEl, error) {
     if (!errorEl) return;
     errorEl.hidden = !error;
+    errorEl.classList.remove('is-success', 'is-info');
     errorEl.textContent = error ? String(error.message || error) : '';
+  }
+
+  function showStatus(errorEl, message, kind) {
+    if (!errorEl) return;
+    errorEl.hidden = !message;
+    errorEl.classList.remove('is-success', 'is-info');
+    if (kind) errorEl.classList.add(kind === 'success' ? 'is-success' : 'is-info');
+    errorEl.textContent = message || '';
   }
 
   function setupCardPreview(options) {
@@ -237,12 +430,14 @@
     const select = root.querySelector('[data-card-select]');
     const preview = root.querySelector('[data-preview-output]');
     const error = root.querySelector('[data-preview-error]');
+    const normalizeBtn = root.querySelector('[data-normalize]');
     const cards = options.cards || [];
     const positions = options.positions || {};
     const tags = options.tags || {};
 
     function loadCard(card) {
       textarea.value = dumpYaml(card || cards[0] || {});
+      isNormalized = true;
       render();
     }
 
@@ -256,6 +451,26 @@
       }
     }
 
+    let isNormalized = false;
+
+    if (normalizeBtn) {
+      normalizeBtn.addEventListener('click', () => {
+        try {
+          if (isNormalized) { render(); showStatus(error, 'Already normalized — nothing to do.', 'info'); return; }
+          const card = infoYamlToCard(normaliseCard(parseYaml(textarea.value)));
+          const warnings = Array.isArray(card.__warnings) ? card.__warnings : [];
+          delete card.__warnings;
+          textarea.value = dumpYaml(card);
+          isNormalized = true;
+          render();
+          if (warnings.length) showError(error, new Error('Normalization warnings:\n- ' + warnings.join('\n- ')));
+          else showStatus(error, 'Normalized successfully.', 'success');
+        } catch (err) {
+          showError(error, err);
+        }
+      });
+    }
+
     cards.forEach((card, index) => {
       const option = document.createElement('option');
       option.value = String(index);
@@ -263,7 +478,7 @@
       select.appendChild(option);
     });
     select.addEventListener('change', () => loadCard(cards[Number(select.value)]));
-    textarea.addEventListener('input', render);
+    textarea.addEventListener('input', () => { isNormalized = false; render(); });
     loadCard(cards[0]);
   }
 
