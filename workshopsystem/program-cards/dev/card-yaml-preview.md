@@ -28,6 +28,9 @@ sitemap:
 
   <div class="program-card-preview-tool__panels" data-preview-panels>
     <section class="program-card-preview-tool__panel is-active" data-preview-panel="yaml">
+      <div class="program-card-preview-tool__actions">
+        <button type="button" data-normalize>Normalize</button>
+      </div>
       <pre class="program-card-preview-tool__error" data-preview-error hidden></pre>
       <textarea spellcheck="false" data-yaml-input aria-label="Program card YAML"></textarea>
     </section>
