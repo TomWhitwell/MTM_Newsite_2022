@@ -13,7 +13,7 @@ overlay: "NEW: "
 thonk-url: "https://www.thonk.co.uk/shop/goldfinger/" 
 yt:
 - 
-  link: "D0WOYAoWPU0"
+  link: "bHTZiNbk6FE"
   title: "DivKid's intro to Golfinger"
 
   
