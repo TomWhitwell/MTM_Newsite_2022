@@ -4,68 +4,63 @@ output: false
 permalink: /buy/
 title: Buy Music Thing Modular
 
-assembled:
-
+uk:
   - name: SchneidersKeller
     region: UK
     location: Denmark Street, London
-    url: https://www.schneiderskeller.co.uk/products/musicthing-modular-workshop-system
-    note: Assembled Workshop Systems available in-store and online.
+    url: "https://www.schneiderskeller.co.uk/collections/vendors?q=Music%20Thing%20Modular"
+    note: Assembled and DIY Workshop Systems instore and online.
 
   - name: Signal Sounds
     region: UK
     location: Glasgow
-    url: https://www.signalsounds.com/music-thing-modular-workshop-system-desktop-eurorack-synthesiser/
-    note: Assembled Workshop Systems available in-store and online.
+    url: "https://www.signalsounds.com/music-thing-modular/"
+    note: Assembled Workshop Systems instore and online.
 
-  - name: Perfect Circuit
-    region: US
-    location: California
-    url: https://www.perfectcircuit.com/music-thing-modular-workshop-system-assembled.html
-    note: Assembled Workshop Systems for US customers.
-
-  - name: SchneidersLaden
-    region: EU
-    location: Berlin
-    url: https://schneidersladen.de/en/music-thing-modular-workshop-system-assembled
-    note: Assembled Workshop Systems for EU customers.
-
-  - name: Soundgas 
+  - name: Thonk
     region: UK
-    location: Derbyshire
-    url: https://soundgas.com/products/music-thing-modular-workshop-system-desktop-eurorack-synthesiser
-    note: Assembled Workshop Systems and so much beautiful vintage gear.
+    location: Brighton
+    url: "https://www.thonk.co.uk/shop/workshop-system/"
+    note: Complete range of DIY kits, shipping worldwide.
 
-  - name: Thonk
-    region: Worldwide
-    location: Brighton, UK
-    url: mailto:support@thonk.co.uk ?subject=Assembled%20Workshop%20System%20query&body=Hi%2C%20I'm%20interested%20in%20buying%20a%20pre-assembled%20Workshop%20System%2C%20please%20tell%20me%20how%20that%20works.
-    note: Assembled systems are available on request.
-
-diy:
-  - name: Thonk
-    region: Worldwide
-    location: Brighton, UK
-    url: https://www.thonk.co.uk/workshopsystem/
-    note: Complete DIY kits, shipping worldwide.
-
-  - name: Perfect Circuit
-    region: US
-    location: California
-    url: https://www.perfectcircuit.com/music-thing-modular-workshop-system-diy-kit.html
-    note: Complete DIY kits for US customers.
+europe:
+  - name: Escape From Noise
+    region: Europe
+    location: Sweden
+    url: "https://escapefromnoise.com/search/music%20thing%20modular"
+    note: Assembled Workshop Systems and DIY kits
 
   - name: Exploding Shed
-    region: EU
-    location: Leipzig
-    url: https://www.exploding-shed.com/music-thing-modular-workshop-system/100949
-    note: Complete DIY kits for EU customers.
+    region: Europe
+    location: Germany
+    url: "https://www.exploding-shed.com/music-thing-modular/"
+    note: Wide range of Music Thing Modular DIY kits.
 
-  - name: SchneidersKeller
-    region: UK
-    location: Denmark Street, London
-    url: https://www.schneiderskeller.co.uk/
-    note: DIY kits available in person from their London store.
+  - name: SchneidersLaden
+    region: Europe
+    location: Germany
+    url: "https://schneidersladen.de/en/music-thing-modular"
+    note: Assembled Workshop Systems in store and online.
+
+  - name: Signal Sounds EU
+    region: Europe
+    location: Poland
+    url: "https://signalsounds.eu/music-thing-modular/"
+    note: Assembled Workshop Systems and DIY kits.
+
+  - name: Synthshop
+    region: Europe
+    location: Norway
+    url: "https://synthshop.no/collections/music-thing-modular"
+    note: Assembled Workshop Systems and DIY kits.
+
+us:
+  - name: Perfect Circuit
+    region: USA
+    location: California
+    url: "https://www.perfectcircuit.com/music-thing-modular"
+    note: Assembled Workshop Systems and DIY kits instore and online.
+
 ---
 
 <style>
@@ -213,26 +208,32 @@ diy:
 
   </div>
 
-  <div class="buy-choice">
-    <div class="buy-choice-box">
-      <h2>Want to play?</h2>
-      <p>Choose an assembled Workshop System. No soldering, just start making sound.</p>
-    </div>
-
-    <div class="buy-choice-box">
-      <h2>Want to build?</h2>
-      <p>Choose the DIY kit. It is well documented, a satisfying build and significantly cheaper.</p>
-    </div>
-  </div>
 
   <section class="buy-section">
-    <h2>Assembled Workshop Systems</h2>
+    <h2>UK</h2>
 
     <div class="dealer-list">
-      {% for dealer in page.assembled %}
+      {% for dealer in page.uk %}
       <a class="dealer-row" href="{{ dealer.url }}">
         <span class="dealer-name">{{ dealer.name }}</span>
-        <span class="dealer-place">{{ dealer.region }} · {{ dealer.location }}</span>
+        <span class="dealer-place">{{ dealer.location }}</span>
+        <span class="dealer-note">{{ dealer.note }}</span>
+        <span class="dealer-cta">Buy →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+
+
+  <section class="buy-section">
+    <h2>US</h2>
+
+    <div class="dealer-list">
+      {% for dealer in page.us %}
+      <a class="dealer-row" href="{{ dealer.url }}">
+        <span class="dealer-name">{{ dealer.name }}</span>
+        <span class="dealer-place">{{ dealer.location }}</span>
         <span class="dealer-note">{{ dealer.note }}</span>
         <span class="dealer-cta">Buy →</span>
       </a>
@@ -241,13 +242,13 @@ diy:
   </section>
 
   <section class="buy-section">
-    <h2>DIY Workshop System kits</h2>
+    <h2>Europe</h2>
 
     <div class="dealer-list">
-      {% for dealer in page.diy %}
+      {% for dealer in page.europe %}
       <a class="dealer-row" href="{{ dealer.url }}">
         <span class="dealer-name">{{ dealer.name }}</span>
-        <span class="dealer-place">{{ dealer.region }} · {{ dealer.location }}</span>
+        <span class="dealer-place">{{ dealer.location }}</span>
         <span class="dealer-note">{{ dealer.note }}</span>
         <span class="dealer-cta">Buy →</span>
       </a>
