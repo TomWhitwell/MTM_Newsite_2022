@@ -21,7 +21,7 @@
           Source (X)
         description: X knob position is sent to host as MIDI CC
         source: info.yaml
-      "y":
+      y:
         label: |-
           MIDI CC
           Source (Y)
@@ -102,8 +102,10 @@
     language: Arduino-Pico
     version: 0.6.6
     status: Working but simple
+    created: '2024-11-30'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       USB MIDI utility firmware for routing incoming MIDI notes to CV/Gate outputs.
       Knob and CV positions are transmitted back to the host as MIDI CC values.
       Hold the switch during boot to enter calibration mode for the two pitch/CV channels.
@@ -132,8 +134,10 @@
   metadata:
     creator: None
     language: None
-    version: 0.0
+    version: '0.0'
     status: None
+    created: '2026-05-08'
+    updated: '2026-06-24'
 - id: 03_Turing_Machine
   title: Turing Machine
   draft: true
@@ -152,7 +156,7 @@
         label: Loop Length
         description: Sets channel 1 sequence length; channel 2 length can be offset
         source: info.yaml
-      "y":
+      y:
         label: Div / Mult
         description: Sets channel 2 divide/multiply clock relationship
         source: info.yaml
@@ -266,35 +270,37 @@
     language: C++ (ComputerCard)
     version: 1.5.3
     status: Working but Simple
+    created: '2024-11-30'
+    updated: '2026-06-24'
     editor_url: https://www.musicthing.co.uk/web_config/turing.html
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       Dual Turing-style random sequencer with tap tempo or external clocking.
       Pulse In 1 overrides tap tempo as the main clock; Pulse In 2 can clock channel 2 independently.
       CV In 1 controls divide/multiply on channel 2, CV In 2 applies quantized pitch offset.
       Audio/CV In 1 can reset sequences; Audio/CV In 2 can CV-switch between the two presets.
 - id: 04_BYO_Benjolin
   title: BYO Benjolin
-  draft: true
-  release: 04 / 1.0
+  draft: false
+  release: 04 / 1.1
   summary: Rungler, Chaotic VCO, Noise Source, Turing Machine, Quantizer
   description: Rungler, Chaotic VCO, Noise Source, Turing Machine, Quantizer
   panel:
     controls:
       main:
-        label: |-
-          Turing
-          Probability
-        description: Sets probability/lock behavior for shift-register updates
+        label: Chaos
+        description: Lock (stable loop) through Chaos (random) probability that shift-register
+          cells change
         source: info.yaml
       x:
         label: Offset
-        description: Sets offset amount (or scale for CV In 1 modulation)
+        description: Sets output offset amount (or depth for Offset CV / CV In 1 modulation)
         source: info.yaml
-      "y":
-        label: VCA Depth
-        description: Sets output/LED amplitude scaling (or scale for CV In 2 modulation)
+      y:
+        label: Chaos VCA
+        description: Scales rungler output amplitude (or depth for VCA CV / CV In
+          2 modulation)
         source: info.yaml
       z:
         label: Mode
@@ -302,86 +308,76 @@
         source: info.yaml
     inputs:
       pulse_1:
-        label: |-
-          Forward
-          Clock
+        label: FWD Clk In
         description: Rising edge advances the shift register in the forward direction
         source: info.yaml
         type: pulse
       pulse_2:
-        label: |-
-          Reverse
-          Clock
+        label: Back Clk In
         description: Rising edge advances the shift register in the reverse direction
         source: info.yaml
         type: pulse
       audio_l:
-        label: |-
-          Ext Data
-          Source
-        description: External signal source for shift-register data in middle switch
-          mode
+        label: Data In
+        description: External data source for shift-register writes in Unlock (middle)
+          switch mode; normalled to internal noise
         source: info.yaml
         type: audio
       audio_r:
-        label: |-
-          Probability
-          Mod
-        description: Modulates Turing probability alongside the Main knob
+        label: Lock CV
+        description: Modulates the Chaos/Lock probability alongside the Chaos knob
         source: info.yaml
         type: cv
       cv_1:
-        label: Offset Mod
-        description: Modulates X/offset path used in rungler processing
+        label: Offset CV
+        description: Modulates the Offset amount used in rungler processing
         source: info.yaml
         type: cv
       cv_2:
-        label: VCA Mod
-        description: Modulates Y/VCA depth for LED/output scaling
+        label: VCA CV
+        description: Modulates the Chaos VCA depth for output scaling
         source: info.yaml
         type: cv
     outputs:
       audio_out_l:
-        label: |-
-          Rungler
-          Audio A
-        description: Audio-rate rungler output channel A
+        label: Raw Out 1
+        description: Audio-rate rungler output channel 1
         source: info.yaml
         type: audio
       audio_out_r:
-        label: |-
-          Rungler
-          Audio B
-        description: Audio-rate rungler output channel B
+        label: Raw Out 2
+        description: Audio-rate rungler output channel 2
         source: info.yaml
         type: audio
       cv_out_1:
-        label: Quant CV A
-        description: Quantized MIDI-note CV derived from channel A rungler state
+        label: Quant Out 1
+        description: Quantized MIDI-note CV derived from channel 1 rungler state
         source: info.yaml
         type: cv
       cv_out_2:
-        label: Quant CV B
-        description: Quantized MIDI-note CV derived from channel B rungler state
+        label: Quant Out 2
+        description: Quantized MIDI-note CV derived from channel 2 rungler state
         source: info.yaml
         type: cv
       pulse_out_1:
-        label: Bit Pulse A
-        description: Pulse output from shift-register bit state (channel A)
+        label: 1-Bit Out 1
+        description: Single-bit pulse output from the shift-register state (channel
+          1)
         source: info.yaml
         type: pulse
       pulse_out_2:
-        label: Bit Pulse B
-        description: Pulse output from shift-register bit state (channel B)
+        label: 1-Bit Out 2
+        description: Single-bit pulse output from the shift-register state (channel
+          2)
         source: info.yaml
         type: pulse
   switch_modes:
-    up: ''
-    middle: 'Z middle: MAIN: Turing Probability; X: Offset; Y: VCA Depth.'
-    down: ''
-  leds:
-  - 'Z middle: Shift Register Cell 1; Shift Register Cell 4; Shift Register Cell 2;
-    Shift Register Cell 5; Shift Register Cell 3; Shift Register Cell 6.'
+    up: 'Double Length: Toggles the write cell each clock, producing a stable loop
+      of double length'
+    middle: 'Unlock: Writes from the data input (or internal noise) when data exceeds
+      the Chaos threshold'
+    down: 'Write: Forces the write cell to a fixed value'
+  leds: []
   source:
   - releases/04_BYO_Benjolin/info.yaml
   - releases/04_BYO_Benjolin/README.md
@@ -396,17 +392,36 @@
   source_file: releases/04_BYO_Benjolin/info.yaml
   source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/04_BYO_Benjolin
   readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/04_BYO_Benjolin/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/04_BYO_Benjolin/UF2/byo_benjolin.uf2
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/04_BYO_Benjolin/UF2/byo_benjolin.1.1.uf2
   metadata:
     creator: Dune Desormeaux
     language: Pico SDK
-    version: 1.0
+    version: '1.1'
     status: Released
+    created: '2025-03-27'
+    updated: '2026-07-02'
+    contact:
+      email: dessertplanet.dune@gmail.com
+      social:
+        github: https://github.com/dessertplanet
+        instagram: https://instagram.com/dessertplanet_
+        youtube: https://www.youtube.com/@dessertplanet
+        discord: "@dessertplanet"
   documentation:
-    intro: |
+    intro: |-
       Chaotic Benjolin-inspired program combining rungler-style modulation, quantized CV, and pulse generation.
       Forward/back clocks can be driven from Pulse In 1 and Pulse In 2.
       The card blends internal randomness with external modulation for probability, offset, and amplitude.
+
+      The Z switch sets how shift-register cells are written on each clock:
+        - Up (Double Length): toggles the write cell each clock, producing a stable loop of double length.
+        - Middle (Unlock): writes from the data input (or internal noise) when data exceeds the Chaos threshold.
+        - Down (Write): forces the write cell to a fixed value.
+      The Chaos, Offset, and Chaos VCA knobs behave the same in all switch positions.
+  videos:
+  - title: Demo video
+    url: https://www.youtube.com/watch?v=YlDGwEaBheQ
+    id: YlDGwEaBheQ
 - id: 05_chord_blimey
   title: Chord Blimey!
   draft: true
@@ -425,7 +440,7 @@
         label: Root Note
         description: Sets base/root pitch (summed with CV In 1)
         source: info.yaml
-      "y":
+      y:
         label: Chord Type
         description: Selects chord (summed with CV In 2)
         source: info.yaml
@@ -518,10 +533,12 @@
   metadata:
     creator: Tom Waters
     language: C (RPi Pico SDK)
-    version: 0.9
+    version: '0.9'
     status: Mostly complete (for now)
+    created: '2024-11-30'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Trigger-driven chord arpeggiator for Workshop Computer.
       CV Out 1 outputs arpeggiated notes while Pulse Out 1 emits matching note triggers.
       Pulse Out 2 fires at end-of-cycle for chaining/looping; Audio Out 1/2 provide probabilistic random modulation voltages.
@@ -546,7 +563,7 @@
           Source (X)
         description: Sends configurable CC number (default CC2) in MIDI-enabled modes
         source: info.yaml
-      "y":
+      y:
         label: |-
           MIDI CC
           Source (Y)
@@ -650,13 +667,15 @@
   metadata:
     creator: Vincent Maurer (vincentmaurer.de)
     language: C++ (RPi Pico SDK)
-    version: 1.0
+    version: '1.0'
     status: Release
     license: GPL-3.0
+    created: '2024-11-30'
+    updated: '2026-06-24'
     editor_url: https://vincentmaurer.de/usb-audio/midi_config.html
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       Class-compliant USB composite firmware providing multichannel USB audio plus USB MIDI.
       Middle switch mode runs standard audio interface behavior; up switch mode enables configurable MIDI/CV/Gate mapping;
       down switch mode disables MIDI for audio-only operation.
@@ -677,7 +696,7 @@
         label: Chan A Rate
         description: Sets channel A trigger rate base (with CV In 1 modulation)
         source: info.yaml
-      "y":
+      y:
         label: Chan B Rate
         description: Sets channel B trigger rate base (with CV In 2 modulation)
         source: info.yaml
@@ -781,10 +800,12 @@
   metadata:
     creator: Chris Johnson
     language: C++ (ComputerCard)
-    version: 1.0
+    version: '1.0'
     status: Released
+    created: '2025-04-28'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Bouncing-ball trigger generator and multitap delay card.
       Trigger streams can be internally generated or externally clocked, with pulse outputs and related CV/audio outputs.
       Patching audio input enables the delay processor; otherwise outputs act as trigger/CV generators.
@@ -805,7 +826,7 @@
           Select
         description: Selects one of 6 stored user formulas
         source: info.yaml
-      "y":
+      y:
         label: Parameter 1
         source: info.yaml
       z:
@@ -922,10 +943,12 @@
   metadata:
     creator: Matt Kuebrich
     language: C++/Arduino-Pico
-    version: 0.1
+    version: '0.1'
     status: Functional but WIP
+    created: '2024-11-30'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Bytebeat generator with 36 built-in formulas across 6 banks plus 6 user formula slots.
       Main controls sample rate, X selects formula/bank or user slot, and Y controls parameter 1.
       Pulse In 1 resets/triggers and Pulse In 2 toggles reverse playback.
@@ -948,7 +971,7 @@
           Comparator
           Scale
         source: info.yaml
-      "y":
+      y:
         label: |-
           Comparator
           Offset
@@ -1051,11 +1074,13 @@
   metadata:
     creator: divmod
     language: C++ (RPi Pico SDK) compat. cmake.
-    version: 0.1
+    version: '0.1'
     status: Released
+    created: '2026-05-20'
+    updated: '2026-06-24'
     repository: https://github.com/divmod-audio/divcom
   documentation:
-    intro: |
+    intro: |-
       DivCom combines a comparator and a clock divider. The comparator compares `AudioIn1` against
       `Offset + Scale * AudioIn2`, while the divider counts incoming clocks and emits divided gates,
       flip-flop, XOR, and counter CV outputs.
@@ -1075,7 +1100,7 @@
         label: Timbre
         description: Braids timbre parameter
         source: info.yaml
-      "y":
+      y:
         label: Color
         description: Braids color parameter
         source: info.yaml
@@ -1136,39 +1161,56 @@
   metadata:
     creator: Random Works
     language: C (RPi Pico SDK)
-    version: 0.1
+    version: '0.1'
     status: Functional but WIP
+    created: '2024-11-30'
+    updated: '2026-07-02'
   documentation:
-    intro: |
+    intro: |-
       Twists is a Workshop Computer port of Mutable Instruments Braids. `CVIn1` and Main control pitch,
       `PulseIn1` triggers the envelope/strike, and X/Y shape timbre and color. Switch down toggles between
       configured oscillator model sets, and `twists.html` can be used over USB for shape selection/config.
 - id: 11_goldfish
   title: Goldfish
-  draft: true
-  release: 11 / 1.0
+  draft: false
+  release: 11 / 2.0
   summary: Weird delay/looper for audio and CV
   description: Weird delay/looper for audio and CV
   panel:
     controls:
       main:
-        label: Play Mode
-        description: Enter loop playback behavior
+        label: Time / Speed
+        description: Delay time in delay; playback speed and direction (full reverse
+          - stop at noon - full forward) in play; also crossfades the CV mix
+        source: info.yaml
+      x:
+        label: |-
+          Int Clock
+          Rate
+        description: Sets the internal clock rate; also attenuverts CV mix input 1
+          and maps playback position
+        source: info.yaml
+      y:
+        label: Clock Div
+        description: Sets the clock divider amount; also attenuverts CV mix input
+          2 and maps playback position
         source: info.yaml
       z:
-        label: Record Mode
-        description: Enter record behavior
+        label: Mode
+        description: Selects alternate control modes.
         source: info.yaml
     inputs:
       audio_l:
-        label: Audio In
-        description: Primary audio input for delay/record/play processing
+        label: |-
+          Left Audio
+          In
+        description: Left channel audio input for record/delay/play (true stereo)
         source: info.yaml
       audio_r:
         label: |-
-          Main
-          Parameter
-        description: Modulates Main control behavior in multiple modes
+          Right Audio
+          In
+        description: Right channel audio input for record/delay/play (true stereo)
         source: info.yaml
       cv_1:
         label: X Mod
@@ -1180,47 +1222,57 @@
         source: info.yaml
       pulse_1:
         label: |-
-          Clock / Step
-          Trig
-        description: Advances divider and timing events
+          Sample Trig
+          / clock
+        description: Advances divider, triggers S&H
         source: info.yaml
       pulse_2:
-        label: Reset Trig
-        description: Requests playback/reset actions on rising edge
+        label: |-
+          Reset / Rec
+          Gate
+        description: In play, a rising edge resets/cuts to the start position; when
+          patched in delay, gates recording (punch in on the rising edge, hand off
+          to play on the falling edge)
         source: info.yaml
     outputs:
       audio_out_l:
         label: |-
           Left Audio
           Out
-        description: Main processed audio channel
+        description: Left channel processed audio output
         source: info.yaml
       audio_out_r:
         label: |-
           Right Audio
           Out
-        description: Secondary processed audio channel
+        description: Right channel processed audio output (independent stereo channel)
         source: info.yaml
       cv_out_1:
         label: CV Mix Out
-        description: Mixed CV/noise output derived from X/Y/CV inputs
+        description: In delay/record, the live CV mix (from X/Y and the CV inputs);
+          in play, the recorded CV track
         source: info.yaml
       cv_out_2:
         label: Quant CV Out
-        description: MIDI-note quantized version of CV material
+        description: The CV output quantized to a major scale, sampled/held and latched
+          on each clock pulse
         source: info.yaml
       pulse_out_1:
-        label: Pulse A
+        label: |-
+          Internal
+          Clock Out
         description: Timed pulse output tied to clock/divider events
         source: info.yaml
       pulse_out_2:
-        label: Pulse B
+        label: |-
+          Clock
+          Divider Out
         description: Secondary timed pulse output tied to divider events
         source: info.yaml
   switch_modes:
-    up: 'Z up: MAIN: Delay Mode.'
-    middle: 'Z middle: MAIN: Play Mode.'
-    down: 'Z down: MAIN: Record Mode.'
+    up: 'Delay: Enter delay behavior'
+    middle: 'Play: Enter loop playback behavior'
+    down: 'Record: Enter record behavior (clears the loop and records fresh)'
   leds: []
   source:
   - releases/11_goldfish/info.yaml
@@ -1235,17 +1287,24 @@
   source_file: releases/11_goldfish/info.yaml
   source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/11_goldfish
   readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/11_goldfish/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/11_goldfish/UF2/goldfish.uf2
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/11_goldfish/UF2/goldfish.1.1.uf2
   metadata:
     creator: Dune Desormeaux
     language: Pico SDK
-    version: 1.0
-    status: Ready
+    version: '2.0'
+    status: Released
+    created: '2024-12-27'
+    updated: '2026-07-06'
   documentation:
-    intro: |
-      Goldfish is a multi-mode delay/looper with synchronized pulse/CV outputs. Switch selects record,
-      delay, and play behaviors; Pulse inputs provide clock/reset; and CV/audio inputs modulate delay time,
-      playback position, and generated CV/pitch material.
+    intro: |-
+      Goldfish is a multi-mode stereo delay/looper with synchronized pulse/CV outputs. The switch selects
+      record, delay, and play behaviors. Audio is streamed to flash (IMA-ADPCM), so loops/delays run from
+      ~55s on a 2MB card up to ~9min on 16MB. Pulse inputs provide clock/reset (and gated recording); the
+      CV/audio inputs modulate delay time, playback position and speed, and the generated CV/pitch material.
+  videos:
+  - title: Demo video
+    url: https://youtu.be/pdzMC6afrHY
+    id: pdzMC6afrHY
 - id: 12_am_coupler
   title: AM Coupler
   draft: true
@@ -1319,10 +1378,12 @@
   metadata:
     creator: Chris Johnson
     language: C++ (ComputerCard)
-    version: 1.0
+    version: '1.0'
     status: Released
+    created: '2025-05-25'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       AM Coupler generates a medium-wave AM carrier and modulates it with audio from `AudioIn1/2` (or an
       uploaded WAV when no audio inputs are patched). Main sets coarse carrier frequency, X + `CVIn1` fine tune,
       and Y controls modulation amount. Switch (or `PulseIn1` gate when patched) controls RF on/off.
@@ -1348,7 +1409,7 @@
           Parameter X
         description: Primary per-algorithm shaping parameter
         source: info.yaml
-      "y":
+      y:
         label: |-
           Algorithm
           Parameter Y
@@ -1443,11 +1504,13 @@
   metadata:
     creator: Eric Gao
     language: C++ (ComputerCard)
-    version: 1.0
+    version: '1.0'
     status: Released
     license: CC BY-NC-SA 3.0
+    created: '2025-08-08'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Noisebox selects among 13 noise algorithms with Main, with X/Y shaping the active algorithm.
       Main can be offset by `AudioIn1`, output level is VCA-controlled by `AudioIn2`, and switch down
       randomizes control offsets (hold to reset). `PulseIn1` clocks sample-and-hold behavior; switch up
@@ -1470,7 +1533,7 @@
           Duration
         description: Sets record-loop length
         source: info.yaml
-      "y":
+      y:
         label: Phase Offset
         description: Offsets read heads from record position
         source: info.yaml
@@ -1542,22 +1605,24 @@
   metadata:
     creator: Chris Johnson
     language: C++ (ComputerCard)
-    version: 1.0
+    version: '1.0'
     status: Released
     license: MIT
+    created: '2025-03-12'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       CVMod records one CV stream into a loop and reads it out through four moving heads. X + `CVIn1`
       sets loop duration, Main + `AudioIn2` sets head speed, and Y + `CVIn2` sets head phase offset.
       Switch down (or `PulseIn1`) resets read-head position; switch up cycles motion function.
 - id: 15_MLRws
   title: MLRws
-  draft: true
+  draft: false
   release: 15 / 1.1.5
   summary: A remix of monome's classic MLR sample cutting platform (grid controller
-    encouraged but optional)
+    encouraged but optional). Diagrams here are for Gridless mode.
   description: A remix of monome's classic MLR sample cutting platform (grid controller
-    encouraged but optional)
+    encouraged but optional). Diagrams here are for Gridless mode.
   panel:
     controls:
       main:
@@ -1568,15 +1633,11 @@
           state
         source: info.yaml
       x:
-        label: |-
-          Global
-          Playback
+        label: Mix Gain
         description: Controls global playback gain layer
         source: info.yaml
-      "y":
-        label: |-
-          Radiate
-          Amount
+      y:
+        label: Radiate
         description: Controls global radiate amount layer
         source: info.yaml
       z:
@@ -1635,8 +1696,8 @@
         source: info.yaml
       cv_out_2:
         label: |-
-          Trig
-          Envelope CV
+          ASR Envelope
+          CV
         description: Attack/decay CV envelope output
         source: info.yaml
       pulse_out_1:
@@ -1652,12 +1713,12 @@
         description: Trigger pulse when CV envelope reaches end
         source: info.yaml
   switch_modes:
-    up: 'Z up: MAIN: Selected Track Speed / Direction; X: Selected Track Level Slot;
-      Y: Selected Track Start Position.'
-    middle: 'Z middle: MAIN: Track Select / Turing Probability; X: Global Playback
-      Gain; Y: Radiate Amount.'
-    down: 'Z down: MAIN: Record-Hold / Reset Gesture; X: Input Gain; Y: CV2 Envelope
-      Attack.'
+    up: 'Track Mode: Locks the active track; knobs set that track''s speed/direction,
+      level slot, and start position'
+    middle: 'Global Mode: Knobs set global params — track select / turing probability,
+      playback gain, and radiate amount'
+    down: 'Reset / Record Arm: Tap resets the active track to its start position;
+      hold two seconds to arm recording; Y sets CV2 envelope attack'
   leds: []
   notes:
   - 'Monome grid (USB host): Direct grid controller input when device is connected
@@ -1687,14 +1748,101 @@
     version: 1.1.5
     status: Released
     license: GPL-3.0
+    created: '2026-05-26'
+    updated: '2026-07-04'
     editor_url: https://dessertplanet.github.io/MLRws-web/
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       MLRws is a six-track sample-cutting instrument with grid and gridless workflows. It supports on-card
       sample storage, recording/playback, and USB grid interaction. In gridless mode, Main/X/Y plus switch
       manage track selection, level/speed/start-position/radiate behavior, while pulse/CV I/O provides
       reset/clocking and CV envelope/pitch triggers.
+  videos:
+  - title: Demo video
+    url: https://youtu.be/fhHJykM1GWk
+    id: fhHJykM1GWk
+- id: 16_the_bells
+  title: The Bells
+  draft: true
+  release: 16 / 1.0.0
+  summary: Bellringing methods sequencer — 12 change-ringing methods with tempo and
+    jitter, quantised to six scales
+  description: Bellringing methods sequencer — 12 change-ringing methods with tempo
+    and jitter, quantised to six scales
+  panel:
+    controls:
+      main:
+        label: Tempo
+        description: Same as Play — Stop halts the sequence but tempo/jitter/tenor
+          remain live
+        source: info.yaml
+      x:
+        label: Jitter
+        description: Same as Play
+        source: info.yaml
+      y:
+        label: |-
+          Covering
+          Tenor
+        description: Same as Play
+        source: info.yaml
+      z:
+        label: |-
+          Method
+          Select
+        description: Chooses one of 12 change-ringing methods (see manual for full
+          list); takes effect at the next row boundary
+        source: info.yaml
+    outputs:
+      cv_out_1:
+        label: Pitch
+        description: Calibrated v/oct output, one bell at a time, quantised to the
+          active scale (tenor bell = root note)
+        source: info.yaml
+      pulse_out_1:
+        label: Bell Gate
+        description: "~10ms trigger pulse on each bell strike"
+        source: info.yaml
+  switch_modes:
+    up: 'Z up: MAIN: Tempo; X: Jitter; Y: Covering Tenor.'
+    middle: 'Z middle: MAIN: Tempo; X: Jitter; Y: Covering Tenor.'
+    down: 'Z down, hold: MAIN: Method Select; X: Clock Divide/Multiply; Y: Scale Select.'
+  leds: []
+  source:
+  - releases/16_the_bells/info.yaml
+  - releases/16_the_bells/README.md
+  slug: 16-the-bells
+  url: "/workshopsystem/program-cards/16-the-bells/"
+  tags:
+  - sequencer
+  - campanology
+  - permutation
+  - cv
+  - scale
+  - generative
+  source_file: releases/16_the_bells/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/16_the_bells
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/16_the_bells/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/16_the_bells/the_bells_ws.uf2
+  metadata:
+    creator: James Saunders
+    language: C++ (ComputerCard)
+    version: 1.0.0
+    status: Released
+    created: '2026-06-27'
+    updated: '2026-07-06'
+  documentation:
+    intro: |-
+      A bellringing methods sequencer: plays 12 traditional English change-ringing methods
+      (Plain Hunt Minimus through Plain Bob Triples, 4-7 bells), sending each row of the
+      method as a v/oct pitch sequence quantised to one of six scales, with a synchronised
+      gate pulse per bell strike. Intended to drive oscillators or other CV inputs that can
+      respond to permutation patterns.
+
+      Z switch selects mode: Up = Play, Middle = Stop, Down (hold) = Edit. While held down,
+      turning a knob selects that knob's edit-mode parameter (method / clock divide / scale);
+      releasing Z returns to Play/Stop with the new parameter applied.
 - id: 18_chord_organ
   title: Chord Organ-ish
   draft: true
@@ -1715,7 +1863,7 @@
           Transpose
         description: Adds semitone transpose to root pitch
         source: info.yaml
-      "y":
+      y:
         label: |-
           Progression
           Patt
@@ -1814,10 +1962,12 @@
   metadata:
     creator: jkeyworth
     language: Pico SDK (C++), ComputerCard
-    version: 0.1
+    version: '0.1'
     status: Working
+    created: '2026-02-15'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Chord voice generator with 16 chord types, root CV control, and selectable progression patterns.
       Main + CV1 select chord, X + CV2 set root pitch (1V/oct), and Y selects one of 9 progressions.
       PulseIn1 advances the progression and retriggers; PulseIn2 or Z-down cycles waveform.
@@ -1953,12 +2103,14 @@
   metadata:
     creator: Chris Johnson
     language: C (RPi Pico SDK)
-    version: 1.5
+    version: '1.5'
     status: Released
+    created: '2024-11-30'
+    updated: '2026-06-24'
     editor_url: https://www.musicthing.co.uk/web_config/reverb.html
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       Stereo reverb card with configurable utility routing for CV, pulse, clocks, Turing Machine, and Bernoulli gate.
       Top audio jacks are fixed to reverb I/O; most other controls and jacks are assignable in the web editor.
       Z up passes input normally, Z middle enables input noise gate, Z down freezes the reverb.
@@ -1981,7 +2133,7 @@
         label: Base Pitch
         description: Fundamental pitch (or fine tune with CV1 connected)
         source: info.yaml
-      "y":
+      y:
         label: Damping
         description: Higher values increase resonance length
         source: info.yaml
@@ -2066,18 +2218,20 @@
     language: C++ (ComputerCard)
     version: 1.1.1
     status: Released
+    created: '2026-01-12'
+    updated: '2026-06-24'
     editor_url: https://johaneklund.io/resonator
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       Four-string sympathetic resonator inspired by Rings/tanpura techniques.
       Feed audio to excite resonant strings, or trigger plucks with PulseIn1.
       X sets base pitch (or fine tune with CV1 connected), Y sets damping, Main sets wet/dry mix.
       PulseIn2 or short Z-down press advances chord mode; long Z-down hold resets progression defaults.
 - id: 22_sheep
   title: Sheep
-  draft: true
-  release: 22 / 1.1
+  draft: false
+  release: 22 / 1.2
   summary: A time-stretching and pitch-shifting granular processor and digital degradation
     playground with 2 fidelity options.
   description: A time-stretching and pitch-shifting granular processor and digital
@@ -2085,9 +2239,7 @@
   panel:
     controls:
       main:
-        label: |-
-          Grain
-          Playback
+        label: Grain Speed
         description: Bidirectional speed from reverse to forward, with center pause
           detent
         source: info.yaml
@@ -2095,13 +2247,13 @@
         label: Delay Spread
         description: Left half selects delay offset, right half increases random spread
         source: info.yaml
-      "y":
+      y:
         label: Grain Size
         description: Sets grain length from very short to long windows
         source: info.yaml
       z:
-        label: Loop Mod
-        description: Modulates looping grain playback around captured baseline
+        label: Mode
+        description: Selects alternate control modes.
         source: info.yaml
     inputs:
       audio_l:
@@ -2172,12 +2324,10 @@
         description: Probabilistic pulse stream influenced by X and grain size
         source: info.yaml
   switch_modes:
-    up: 'Z up: MAIN: Grain Playback Speed; X: Position or Spread; Y: Grain Size.'
-    middle: 'Z middle: MAIN: Grain Playback Speed; X: Delay Spread; Y: Grain Size.'
-    down: 'Z down: MAIN: Loop Modulation; X: Glitch Spread; Y: Loop Grain Size.'
-  leds:
-  - 'Z any: Audio Level Left; Audio Level Right; CV Out 1 Level; CV Out 2 Level; Pulse
-    Out 1 State; Pulse Out 2 State.'
+    up: 'Freeze: Freezes the buffer; grains play from the frozen audio'
+    middle: 'Normal: Continuously records the input into the circular buffer'
+    down: 'Glitch: Enables looping/glitch grain playback around a captured baseline'
+  leds: []
   source:
   - releases/22_sheep/info.yaml
   - releases/22_sheep/README.md
@@ -2192,18 +2342,24 @@
   source_file: releases/22_sheep/info.yaml
   source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/22_sheep
   readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/22_sheep/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/22_sheep/UF2/sheep_hifi.uf2
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/22_sheep/UF2/sheep_hifi.1.2.uf2
   metadata:
     creator: Dune Desormeaux
     language: Pico SDK
-    version: 1.1
+    version: '1.2'
     status: Released
+    created: '2025-07-13'
+    updated: '2026-07-04'
   documentation:
-    intro: |
+    intro: |-
       Granular buffer processor with triggerable grains, reverse/forward playback, loop/glitch mode, and freeze.
       Main controls grain speed or CV2 pitch attenuation, X controls delay spread (or CV1 attenuation), Y sets grain size.
       PulseIn1 triggers grains; PulseIn2 acts as a grain gate. Z up freezes buffer, Z middle runs normal mode, Z down enables loop/glitch behavior.
       Two firmware builds are provided in source comments: lo-fi longer buffer and hi-fi shorter buffer.
+  videos:
+  - title: Demo video
+    url: https://youtu.be/LfkgfMzVabg
+    id: LfkgfMzVabg
 - id: 23_SlowMod
   title: SlowMod
   draft: true
@@ -2225,7 +2381,7 @@
           Amount
         description: Intensity of cross-modulation between LFO channels
         source: info.yaml
-      "y":
+      y:
         label: |-
           Neighbor
           Invert
@@ -2312,11 +2468,13 @@
   metadata:
     creator: divmod
     language: C++ (RPi Pico SDK) compat. w/ cmake and Arduino IDE.
-    version: 0.1
+    version: '0.1'
     status: Released
+    created: '2025-01-20'
+    updated: '2026-06-24'
     repository: https://github.com/divmod-audio/slowmod
   documentation:
-    intro: |
+    intro: |-
       Four related LFO channels with cross-modulation and per-channel VCA behavior.
       Main sets global LFO rate from very slow to low audio range (AudioOut1 fastest, CVOut2 slowest).
       X sets cross-modulation intensity; Y crossfades each output with an inverted neighboring channel.
@@ -2343,7 +2501,7 @@
           Attenuverter
         description: Sets output voltage or scales CVIn1
         source: info.yaml
-      "y":
+      y:
         label: |-
           CV2
           Attenuverter
@@ -2437,9 +2595,11 @@
     language: Rust (Embassy framework)
     version: "(see source repo)"
     status: Released
+    created: '2025-01-20'
+    updated: '2026-06-24'
     repository: https://codeberg.org/briandorsey/mtmws_cards/src/branch/main/crafted_volts
   documentation:
-    intro: |
+    intro: |-
       CV utility for generating manual voltages and attenuverting incoming control signals.
       Main, X, and Y knobs each drive a paired output; patching into corresponding inputs replaces knob value and applies attenuverting.
       Pulse outputs follow Z switch state as complementary high/low gates.
@@ -2464,7 +2624,7 @@
           Primary
         description: X knob is generally owned by left utility
         source: info.yaml
-      "y":
+      y:
         label: |-
           Right
           Utility
@@ -2574,16 +2734,175 @@
   metadata:
     creator: Chris Johnson
     language: C++ (ComputerCard)
-    version: 1.0
+    version: '1.0'
     status: Released
     license: MIT
+    created: '2025-01-21'
+    updated: '2026-06-24'
     repository: https://github.com/chrisgjohnson/Utility-Pair
   documentation:
-    intro: |
+    intro: |-
       Utility Pair splits the card into independent left and right utility engines.
       Each side owns one knob/control and one column of input/output jacks, letting two utilities run at once.
       In the 2025 multi-pack firmware, hold Z down at power/reset to enter utility selection mode, then choose left and right utilities and start.
       Specific jack behavior depends on the chosen utility pair.
+- id: 26_clockwork
+  title: Clockwork
+  draft: false
+  release: 26 / 1.0.0
+  summary: 6-channel polyrhythmic clock, gate, and LFO/envelope generator inspired
+    by Pamela's Workout.
+  description: 6-channel polyrhythmic clock, gate, and LFO/envelope generator inspired
+    by Pamela's Workout.
+  panel:
+    controls:
+      main:
+        label: |-
+          Modifier /
+          Shape
+        description: Master modifier or waveform shape select depending on switch
+          tier
+        source: info.yaml
+      x:
+        label: |-
+          Steps /
+          Level
+        description: Euclidean steps or output level/delay depending on switch tier
+        source: info.yaml
+      y:
+        label: Context-dependent
+        description: Euclidean Fills (Steps > 0) or LFO Phase Offset (Steps = 0) depending
+          on switch tier
+        source: info.yaml
+      z:
+        label: |-
+          Mode
+          Selector
+        description: UP selects Sound Shape, MIDDLE selects Rhythm, DOWN (held) selects
+          Advanced settings
+        source: info.yaml
+    inputs:
+      audio_l:
+        label: |-
+          Modifier Mod
+          (Audio 1)
+        description: CV control over active channel modifier (speed division/multiplication)
+          or external Schmitt triggers
+        source: info.yaml
+      audio_r:
+        label: |-
+          Fills Mod
+          (Audio 2)
+        description: CV control over active channel Euclidean fills or external S&H
+          sampling source
+        source: info.yaml
+      cv_1:
+        label: |-
+          Wave Param
+          Mod
+        description: CV control over the active channel's wave parameter, or external
+          Delay/Math carrier input
+        source: info.yaml
+      cv_2:
+        label: |-
+          Probability
+          Mod
+        description: CV control over the active channel's trigger probability
+        source: info.yaml
+      pulse_1:
+        label: Clock Sync
+        description: External clock source sync input
+        source: info.yaml
+      pulse_2:
+        label: Reset In
+        description: Clock reset trigger or run gate
+        source: info.yaml
+    outputs:
+      audio_out_l:
+        label: |-
+          Out 1 (Audio
+          Out 1)
+        description: Channel 1 CV/Gate output (SPI DAC)
+        source: info.yaml
+      audio_out_r:
+        label: |-
+          Out 2 (Audio
+          Out 2)
+        description: Channel 2 CV/Gate output (SPI DAC)
+        source: info.yaml
+      cv_out_1:
+        label: |-
+          Out 3 (CV
+          Out 1)
+        description: Channel 3 CV/Gate output (PWM)
+        source: info.yaml
+      cv_out_2:
+        label: |-
+          Out 4 (CV
+          Out 2)
+        description: Channel 4 CV/Gate output (PWM)
+        source: info.yaml
+      pulse_out_1:
+        label: |-
+          Out 5 (Pulse
+          Out 1)
+        description: Channel 5 Digital Gate output (GPIO)
+        source: info.yaml
+      pulse_out_2:
+        label: |-
+          Out 6 (Pulse
+          Out 2)
+        description: Channel 6 Digital Gate output (GPIO)
+        source: info.yaml
+  switch_modes:
+    up: 'UP: Sound Shaping (MAIN: Waveform, X: Level/Delay, Y: Wave Parameter). A
+      short flick UP toggles Play/Pause.'
+    middle: 'MIDDLE: Rhythm & performance (MAIN: Modifier, X: Steps, Y: Fills [steps
+      > 0] or LFO Phase Offset [steps = 0]).'
+    down: 'DOWN (Momentary): Tap to cycle pages. Hold down to access Advanced settings
+      (MAIN: Loop length, X: Probability, Y: Step Offset [steps > 0] or Quantizer
+      Scale [steps = 0]).'
+  leds:
+  - 'Page display: active channel is lit (LED 0-5). On the GLOBAL page, all 6 LEDs
+    pulse gently.'
+  - 'LED layout on module: Top row (LED 0, 1 = bits 0-1); Middle row (LED 2, 3 = bits
+    2-3); Bottom row (LED 4, 5 = bits 4-5).'
+  - 'Analog shapes 3x2 matrix maps (Top/Mid/Bot): Gate [○○/○○/○○], Ratchet [●○/○○/○○],
+    Sine [○●/○○/○○], Triangle [●●/○○/○○], Saw ↑ [○○/●○/○○], Saw ↓ [●○/●○/○○], Trapezoid
+    [○●/●○/○○], Hump [●●/●○/○○], Envelope [○○/○●/○○], Log Env [●○/○●/○○], S&H [○●/○●/○○],
+    Smooth [●●/○●/○○], Delay [○○/●●/○○], Math [●○/●●/○○].'
+  - 'Digital shapes 3x2 matrix maps (Top/Mid/Bot): Gate [○○/○○/○○], Ratchet [●○/○○/○○],
+    Trigger [○●/○○/○○], Burst [●●/○○/○○], Random [○○/●○/○○], Utility [●○/●○/○○].'
+  source:
+  - releases/26_clockwork/info.yaml
+  - releases/26_clockwork/README.md
+  slug: 26-clockwork
+  url: "/workshopsystem/program-cards/26-clockwork/"
+  tags:
+  - clock
+  - trigger
+  - lfo
+  - envelope
+  - sequencer
+  - polyrhythm
+  - quantizer
+  source_file: releases/26_clockwork/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/26_clockwork
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/26_clockwork/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/26_clockwork/build/clockwork.uf2
+  metadata:
+    creator: Vincent Maurer
+    version: 1.0.0
+    created: '2026-06-30'
+    updated: '2026-06-30'
+    contact:
+      website: https://vincentmaurer.de
+    editor_url: https://vincentmaurer.de/clockwork/index.html
+    editor_note: Configure this card in your browser
+  videos:
+  - title: Demo video
+    url: https://www.youtube.com/watch?v=WFxAQ-dK7CM
+    id: WFxAQ-dK7CM
 - id: 27_Siren
   title: Siren
   draft: true
@@ -2600,7 +2919,7 @@
         label: Scan
         description: Timbral scan parameter
         source: info.yaml
-      "y":
+      y:
         label: Basis
         description: Root pitch / frequency basis (also modulated by CV In 1)
         source: info.yaml
@@ -2698,11 +3017,13 @@
   metadata:
     creator: Moses Hoyt
     language: C++ (ComputerCard / Pico SDK)
-    version: 0.2
+    version: '0.2'
     status: Functional but WIP
     license: MIT
+    created: '2026-03-25'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Siren is a drone source with 6 oscillator banks (SINE, CLST, DTON, ANLG, WSHP, WAVE).
       Use switch up for WARP/SPAN/MORPH and switch middle for SEED/SCAN/BASIS.
       Switch down (momentary) cycles banks with a smoothed crossfade.
@@ -2732,7 +3053,7 @@
         label: Pitch Offset
         description: Pitch transpose offset summed with CV In 1
         source: info.yaml
-      "y":
+      y:
         label: |-
           Filter
           Resonance
@@ -2796,10 +3117,12 @@
   metadata:
     creator: Tod Kurt (@todbot)
     language: Arduino (arduino-pico) with Mozzi 2
-    version: 0.1
+    version: '0.1'
     status: Functional but WIP
+    created: '2024-11-30'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Eighties Bass is a complete mono bass voice using 5 saw oscillators plus optional white noise.
       Main sets filter cutoff, X sets pitch offset, and Y sets resonance.
       Press switch down to cycle filter mode (LPF/BPF/HPF).
@@ -2827,7 +3150,7 @@
         label: LFO Amount
         description: Amount of triangle LFO applied to wavetable position
         source: info.yaml
-      "y":
+      y:
         label: LFO Rate
         description: Frequency of wavetable modulation LFO
         source: info.yaml
@@ -2896,10 +3219,12 @@
   metadata:
     creator: Tod Kurt (@todbot)
     language: CircuitPython
-    version: 0.1
+    version: '0.1'
     status: Functional but WIP
+    created: '2024-11-30'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       cirpy_wavetable loads WAV wavetables and plays them as a continuously running oscillator.
       Main sets wavetable position, X sets LFO modulation amount, and Y sets LFO rate.
       Switch down selects next wavetable file; switch up toggles CV pitch quantization.
@@ -2989,10 +3314,12 @@
   metadata:
     creator: Ben Regnier
     language: C++ (ComputerCard)
-    version: 1.0
+    version: '1.0'
     status: Released
+    created: '2025-11-24'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       ESP processes incoming audio through a gain stage and bandpass section, then derives envelope, gate, trigger, and pitch control signals.
       Main controls preamp gain, X sets lower cutoff, and Y sets upper cutoff.
       In switch middle, pitch updates are held unless gate is high; otherwise pitch tracks continuously.
@@ -3017,7 +3344,7 @@
         label: Tap 2 Offset
         description: Offsets tap 2 delay relative to tap 1
         source: info.yaml
-      "y":
+      y:
         label: |-
           Saturation
           Mix
@@ -3083,9 +3410,9 @@
         description: Pulse train based on tap 2 delay period
         source: info.yaml
   switch_modes:
-    up: 'Z up: MAIN: Base Delay Time; X: Tap 2 Offset; Y: Saturation Mix.'
-    middle: ''
-    down: ''
+    up: 'Split Routing: Independent input/output routing per tap'
+    middle: 'Shared Routing: Mixed dual-delay output on both outputs'
+    down: 'Shared Routing: Same routing behavior as middle'
   leds:
   - 'Default: Audio Out 1 Level; Audio Out 2 Level; Chaos CV A; Chaos CV B; Tap 1
     Pulse; Tap 2 Pulse.'
@@ -3107,10 +3434,12 @@
   metadata:
     creator: Ben Regnier
     language: C++ (ComputerCard)
-    version: 1.1
+    version: '1.1'
     status: Functional
+    created: '2025-11-24'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Vink provides two independently time-modulated delay taps with optional sigmoid saturation blend.
       Main controls base delay time, X controls tap 2 offset, and Y crossfades dry to saturated output.
       In switch up, outputs are split per tap; in middle/down, taps are mixed to mono on both outputs.
@@ -3135,7 +3464,7 @@
         label: Step Pitch
         description: Pitch for selected edit step (with pickup)
         source: info.yaml
-      "y":
+      y:
         label: |-
           Step
           Velocity
@@ -3231,10 +3560,12 @@
     version: 1.2.0
     status: Functional but WIP
     license: MIT
+    created: '2026-05-05'
+    updated: '2026-06-24'
     editor_url: https://mohoyt.com/drumdrum.html
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       drumdrum is an 8-step DFAM-inspired sequencer card.
       Switch up is play (tempo, length, VCO2 offset), switch middle is edit (step pitch and velocity),
       and switch down supports short press cursor advance / long press play-pause.
@@ -3242,7 +3573,7 @@
       Pulse In 1 is external clock and Pulse In 2 resets to step 1.
 - id: 34_dual_quant
   title: DualQuant
-  draft: true
+  draft: false
   release: 34 / 1.0
   summary: Dual quantised granular pitch shifter with calibrated 1V/oct CV outputs
   description: Dual quantised granular pitch shifter with calibrated 1V/oct CV outputs
@@ -3301,8 +3632,8 @@
     middle: 'Z middle: MAIN: Quantize Enable.'
     down: ''
   leds:
-  - 'Default: Quantized State.'
-  - 'Default: Unquantized State.'
+  - 'Quantized state: all LEDs on'
+  - 'Unquantized state: all LEDs off'
   source:
   - releases/34_dual_quant/info.yaml
   - releases/34_dual_quant/README.md
@@ -3319,18 +3650,9 @@
   readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/34_dual_quant/README.md
   download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/34_dual_quant/UF2/dual_quant_pitch.uf2
   metadata:
-    creator: Adrian Vos
-    language: C++ (ComputerCard / Pico SDK)
-    version: 1.0
-    status: Beta
-    license: MIT
-  documentation:
-    intro: |
-      DualQuantPitch runs two independent granular pitch-shifted outputs from one shared circular buffer.
-      Main sets global pitch offset, X sets output A offset, and Y sets output B offset.
-      CV In 1 and CV In 2 modulate pitch for outputs A and B respectively.
-      Switch middle enables chromatic semitone quantization; other switch positions run continuously unquantized.
-      The design intentionally favors gritty/lo-fi granular character over transparent pitch shifting. # certainty: medium (README is marked LLM output)
+    version: '1.0'
+    created: '2026-05-17'
+    updated: '2026-06-26'
 - id: 35_FreqShift
   title: FreqShift
   draft: true
@@ -3349,7 +3671,7 @@
           Amount
         description: Internal feedback amount
         source: info.yaml
-      "y":
+      y:
         label: In Crossfade
         description: Crossfade between audio inputs
         source: info.yaml
@@ -3429,14 +3751,66 @@
   metadata:
     creator: Ben Regnier
     language: C++ (ComputerCard)
-    version: 1.1
+    version: '1.1'
     status: Functional
+    created: '2026-06-14'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Dual-input frequency shifter designed for feedback patching and experimental use.
       Main sets shift amount (center = 0 Hz). Switch up uses a wide log-scaled bipolar range (±7000 Hz);
       middle uses a narrower linear range (±440 Hz). X sets internal feedback amount and Y crossfades the audio inputs.
       CV In 1 modulates shift (added to Main). CV In 2 blends the combined feedback path.
+- id: 36_GradualProcess
+  title: GradualProcess
+  draft: true
+  release: 36 / 1.0.0
+  summary: Three generative composition processes (Glass, Reich, Tintinnabuli) in
+    one card, chosen by Main's position at power-on
+  description: Three generative composition processes (Glass, Reich, Tintinnabuli)
+    in one card, chosen by Main's position at power-on
+  panel: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds: []
+  source:
+  - releases/36_GradualProcess/info.yaml
+  - releases/36_GradualProcess/README.md
+  slug: 36-gradualprocess
+  url: "/workshopsystem/program-cards/36-gradualprocess/"
+  tags:
+  - generative
+  - sequencer
+  - minimalism
+  - phase
+  - harmony
+  - multi-mode
+  source_file: releases/36_GradualProcess/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/36_GradualProcess
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/36_GradualProcess/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/36_GradualProcess/GradualProcess.uf2
+  metadata:
+    creator: James Saunders
+    language: C++ (ComputerCard)
+    version: 1.0.0
+    status: Released
+    created: '2026-07-04'
+    updated: '2026-07-06'
+  documentation:
+    intro: |-
+      A multi-process card: three independent generative composition processes live in one
+      firmware image, and which one runs is chosen by the Main knob's position at power-on
+      (or reset) — CCW third = Glass, middle third = Reich, CW third = Tintinnabuli. LEDs
+      briefly flash to confirm the selection (~0.5s) before it starts. The choice latches for
+      that session; to switch, set Main to a different zone and power-cycle/reset again.
+
+      All three processes share the same Z-switch convention (Up = Play, Middle = Stop, Down
+      held = Settings), the same 6-scale system (Major, Minor, Pentatonic Major, Pentatonic
+      Minor, Blues, Chromatic) on Y while Z is held, and the same 7-step clock divide/multiply
+      (/8 /4 /2 x1 x2 x4 x8) on X while Z is held — only the Play-mode controls and outputs
+      differ between them, described per-process below.
 - id: 37_compulidean
   title: Compulidean
   draft: true
@@ -3464,9 +3838,11 @@
     language: C++/Arduino, with vscode+platformio.
     version: "(see source repo)"
     status: Functional, but WIP
+    created: '2025-04-27'
+    updated: '2026-06-24'
     repository: https://github.com/doctea/compulidian
   documentation:
-    intro: |
+    intro: |-
       Drum-machine card built around Euclidean pattern generation and sample playback.
       This release folder is a stub; code, full documentation, and UF2 downloads live in the external repository.
 - id: 38_od
@@ -3496,12 +3872,14 @@
   metadata:
     creator: M. John Mills
     language: MicroPython
-    version: 1.0
+    version: '1.0'
     status: Released
     license: MIT
+    created: '2025-01-21'
+    updated: '2026-06-24'
     repository: https://github.com/MJLMills/mtmws_od
   documentation:
-    intro: |
+    intro: |-
       Simulates a Lorenz attractor to generate loopable CV and pulse signals.
       This release folder is a stub; documentation and UF2 builds are maintained in the external repository.
 - id: 39_knots
@@ -3523,7 +3901,7 @@
         description: Engine-specific parameter 1 in Normal mode, or attenuation for
           AudioIn1 when patched
         source: info.yaml
-      "y":
+      y:
         label: |-
           Engine Macro
           Y
@@ -3618,16 +3996,18 @@
   metadata:
     creator: Jeff Fletcher
     language: C++ (RPi Pico SDK / ComputerCard)
-    version: 0.2
+    version: '0.2'
     status: Released
+    created: '2026-03-22'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Six-engine oscillator card with Normal/Alt output modes, MIDI input, and clock/gate utilities.
       Main sets pitch, X/Y shape engine parameters, CV and pulse inputs modulate mode/slot behavior,
       and Z handles mode switching, engine advance, and Pulse Out 2 clock configuration.
 - id: 41_blackbird
   title: Blackbird
-  draft: true
+  draft: false
   release: 41 / 1.1
   summary: A scriptable, live-codable, USB-serial-to-CV device implementing monome
     crow's protocol
@@ -3645,7 +4025,7 @@
         description: Normalized analog knob value exposed to Lua; behavior depends
           on loaded script
         source: info.yaml
-      "y":
+      y:
         label: bb.knob.y
         description: Normalized analog knob value exposed to Lua; behavior depends
           on loaded script
@@ -3656,15 +4036,11 @@
         source: info.yaml
     inputs:
       cv_1:
-        label: |-
-          In[1] /
-          bb.connected.cv1
+        label: In[1]
         description: Script-readable CV input mapped to crow input[1]
         source: info.yaml
       cv_2:
-        label: |-
-          In[2] /
-          bb.connected.cv2
+        label: In[2]
         description: Script-readable CV input mapped to crow input[2]
         source: info.yaml
       audio_l:
@@ -3709,13 +4085,13 @@
         description: Digital pulse output for Lua-triggered actions
         source: info.yaml
   switch_modes:
-    up: ''
-    middle: 'Z middle: MAIN: bb.knob.main; X: bb.knob.x; Y: bb.knob.y.'
-    down: ''
-  leds:
-  - 'Z any: Output 1 Positive Voltage; Output 2 Positive Voltage; Output 3 Positive
-    Voltage; Output 4 Positive Voltage; Pulse Out 1 Positive Voltage; Pulse Out 2
-    Positive Voltage.'
+    up: 'position = up: Three-position switch state exposed to Lua; script decides
+      response'
+    middle: 'position = middle: Three-position switch state exposed to Lua; script
+      decides response'
+    down: 'position = down: Three-position switch state exposed to Lua; script decides
+      response'
+  leds: []
   notes:
   - 'crow-compatible serial host: USB serial protocol compatible with crow hosts (druid,
     norns, Max/MSP, pyserial)'
@@ -3734,16 +4110,22 @@
   metadata:
     creator: Dune Desormeaux
     language: Pico SDK + Lua
-    version: 1.1
+    version: '1.1'
     status: Released
     license: GPLv3 or later
+    created: '2025-11-10'
+    updated: '2026-07-04'
     editor_url: https://dessertplanet.github.io/web-druid/
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       Blackbird runs crow-compatible Lua scripts over USB serial and can also store scripts on card flash.
       Panel control behavior is script-defined: Lua code reads `bb.knob.*`, `bb.switch.position`, and inputs,
       then decides how outputs respond. LEDs always reflect positive output voltages on the six outputs.
+  videos:
+  - title: Demo video
+    url: https://youtu.be/V9HAspnpEWU
+    id: V9HAspnpEWU
 - id: 42_backyard_rain
   title: Backyard Rain
   draft: true
@@ -3775,11 +4157,280 @@
     language: Rust (Embassy framework)
     version: "(see source repo)"
     status: Released
+    created: '2025-01-20'
+    updated: '2026-06-24'
     repository: https://codeberg.org/briandorsey/mtmws_cards
   documentation:
-    intro: |
+    intro: |-
       Ambient backyard rain playback card with user-controlled intensity.
       This release folder is a stub; docs and release UF2 files are maintained in the external repository.
+- id: 43_Castle_Process
+  title: Castle Process
+  draft: false
+  release: 43 / 0.9.0
+  summary: Fort Processor-inspired harsh noise processor with chopped external audio
+    and a bass pulse voice
+  description: Fort Processor-inspired harsh noise processor with chopped external
+    audio and a bass pulse voice
+  panel:
+    controls:
+      main:
+        label: |-
+          Drive /
+          Voicing
+        description: Controls overall drive and voicing
+        source: info.yaml
+      x:
+        label: |-
+          Chopping /
+          Motion
+        description: Controls chopping behaviour and motion
+        source: info.yaml
+      y:
+        label: |-
+          Tuning /
+          Interaction
+        description: Controls tuning and internal interaction
+        source: info.yaml
+      z:
+        label: Mode
+        description: Up is fuller and more squarewave-forward, middle is the tighter
+          chopped default, and down is a momentary bend/chaos gesture while held.
+        source: info.yaml
+    inputs:
+      audio_l:
+        label: Audio In 1
+        description: Main external audio input to be broken up, gated, and forced
+          into the processor rather than passed through cleanly
+        source: info.yaml
+      cv_1:
+        label: CV 1
+        description: Internal control modulation input
+        source: info.yaml
+      cv_2:
+        label: CV 2
+        description: Internal control modulation input
+        source: info.yaml
+      pulse_1:
+        label: Bass Trig
+        description: External bass trigger input that takes over bass timing and suppresses
+          the internal bass trigger behaviour
+        source: info.yaml
+      pulse_2:
+        label: Pulse 2
+        description: Reserved for further interaction
+        source: info.yaml
+    outputs:
+      audio_out_l:
+        label: Chopped Out
+        description: Primary chopped external-input output
+        source: info.yaml
+      audio_out_r:
+        label: |-
+          Bass +
+          Texture
+        description: Bass-focused output with supporting noise texture
+        source: info.yaml
+      pulse_out_1:
+        label: |-
+          Bass
+          Activity
+        description: Bass activity pulse output
+        source: info.yaml
+      pulse_out_2:
+        label: Chop Pulse
+        description: Internal chop pulse output
+        source: info.yaml
+  switch_modes:
+    up: Alternate latched mode with a little more body and more squarewave colour.
+    middle: Default tighter and more direct chopped mode.
+    down: Momentary bend / chaos gesture while held for live performance accents.
+  leds:
+  - LED 0 follows input presence.
+  - LED 1 follows drive.
+  - LED 2 follows chopping.
+  - LED 3 follows tuning.
+  - LED 4 reflects output level.
+  - LED 5 shows switch state, with switch down driving it fully bright.
+  source:
+  - releases/43_Castle_Process/info.yaml
+  - releases/43_Castle_Process/README.md
+  slug: 43-castle-process
+  url: "/workshopsystem/program-cards/43-castle-process/"
+  tags:
+  - harsh-noise
+  - performance
+  - chopped-audio
+  - bass
+  - lo-fi
+  source_file: releases/43_Castle_Process/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/43_Castle_Process
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/43_Castle_Process/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/43_Castle_Process/uf2/CastleProcess.uf2
+  metadata:
+    creator: Adrian Vos
+    language: C++
+    version: 0.9.0
+    license: MIT
+    created: '2026-06-25'
+    updated: '2026-06-26'
+- id: 43_clockwork
+  title: Clockwork
+  draft: false
+  release: 43 / 1.0.0
+  summary: 6-channel polyrhythmic clock, gate, and LFO/envelope generator inspired
+    by Pamela's Workout.
+  description: 6-channel polyrhythmic clock, gate, and LFO/envelope generator inspired
+    by Pamela's Workout.
+  panel:
+    controls:
+      main:
+        label: |-
+          Modifier /
+          Shape
+        description: Master modifier or waveform shape select depending on switch
+          tier
+        source: info.yaml
+      x:
+        label: |-
+          Steps /
+          Level
+        description: Euclidean steps or output level/delay depending on switch tier
+        source: info.yaml
+      y:
+        label: Context-dependent
+        description: Euclidean Fills (Steps > 0) or LFO Phase Offset (Steps = 0) depending
+          on switch tier
+        source: info.yaml
+      z:
+        label: |-
+          Mode
+          Selector
+        description: UP selects Sound Shape, MIDDLE selects Rhythm, DOWN (held) selects
+          Advanced settings
+        source: info.yaml
+    inputs:
+      audio_l:
+        label: |-
+          Modifier Mod
+          (Audio 1)
+        description: CV control over active channel modifier (speed division/multiplication)
+          or external Schmitt triggers
+        source: info.yaml
+      audio_r:
+        label: |-
+          Fills Mod
+          (Audio 2)
+        description: CV control over active channel Euclidean fills or external S&H
+          sampling source
+        source: info.yaml
+      cv_1:
+        label: |-
+          Wave Param
+          Mod
+        description: CV control over the active channel's wave parameter, or external
+          Delay/Math carrier input
+        source: info.yaml
+      cv_2:
+        label: |-
+          Probability
+          Mod
+        description: CV control over the active channel's trigger probability
+        source: info.yaml
+      pulse_1:
+        label: Clock Sync
+        description: External clock source sync input
+        source: info.yaml
+      pulse_2:
+        label: Reset In
+        description: Clock reset trigger or run gate
+        source: info.yaml
+    outputs:
+      audio_out_l:
+        label: |-
+          Out 1 (Audio
+          Out 1)
+        description: Channel 1 CV/Gate output (SPI DAC)
+        source: info.yaml
+      audio_out_r:
+        label: |-
+          Out 2 (Audio
+          Out 2)
+        description: Channel 2 CV/Gate output (SPI DAC)
+        source: info.yaml
+      cv_out_1:
+        label: |-
+          Out 3 (CV
+          Out 1)
+        description: Channel 3 CV/Gate output (PWM)
+        source: info.yaml
+      cv_out_2:
+        label: |-
+          Out 4 (CV
+          Out 2)
+        description: Channel 4 CV/Gate output (PWM)
+        source: info.yaml
+      pulse_out_1:
+        label: |-
+          Out 5 (Pulse
+          Out 1)
+        description: Channel 5 Digital Gate output (GPIO)
+        source: info.yaml
+      pulse_out_2:
+        label: |-
+          Out 6 (Pulse
+          Out 2)
+        description: Channel 6 Digital Gate output (GPIO)
+        source: info.yaml
+  switch_modes:
+    up: 'UP: Sound Shaping (MAIN: Waveform, X: Level/Delay, Y: Wave Parameter). A
+      short flick UP toggles Play/Pause.'
+    middle: 'MIDDLE: Rhythm & performance (MAIN: Modifier, X: Steps, Y: Fills [steps
+      > 0] or LFO Phase Offset [steps = 0]).'
+    down: 'DOWN (Momentary): Tap to cycle pages. Hold down to access Advanced settings
+      (MAIN: Loop length, X: Probability, Y: Step Offset [steps > 0] or Quantizer
+      Scale [steps = 0]).'
+  leds:
+  - 'Page display: active channel is lit (LED 0-5). On the GLOBAL page, all 6 LEDs
+    pulse gently.'
+  - 'LED layout on module: Top row (LED 0, 1 = bits 0-1); Middle row (LED 2, 3 = bits
+    2-3); Bottom row (LED 4, 5 = bits 4-5).'
+  - 'Analog shapes 3x2 matrix maps (Top/Mid/Bot): Gate [○○/○○/○○], Ratchet [●○/○○/○○],
+    Sine [○●/○○/○○], Triangle [●●/○○/○○], Saw ↑ [○○/●○/○○], Saw ↓ [●○/●○/○○], Trapezoid
+    [○●/●○/○○], Hump [●●/●○/○○], Envelope [○○/○●/○○], Log Env [●○/○●/○○], S&H [○●/○●/○○],
+    Smooth [●●/○●/○○], Delay [○○/●●/○○], Math [●○/●●/○○].'
+  - 'Digital shapes 3x2 matrix maps (Top/Mid/Bot): Gate [○○/○○/○○], Ratchet [●○/○○/○○],
+    Trigger [○●/○○/○○], Burst [●●/○○/○○], Random [○○/●○/○○], Utility [●○/●○/○○].'
+  source:
+  - releases/43_clockwork/info.yaml
+  - releases/43_clockwork/README.md
+  slug: 43-clockwork
+  url: "/workshopsystem/program-cards/43-clockwork/"
+  tags:
+  - clock
+  - trigger
+  - lfo
+  - envelope
+  - sequencer
+  - polyrhythm
+  - quantizer
+  source_file: releases/43_clockwork/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/43_clockwork
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/43_clockwork/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/43_clockwork/build/clockwork.uf2
+  metadata:
+    creator: Vincent Maurer
+    version: 1.0.0
+    created: '2026-06-29'
+    updated: '2026-06-29'
+    contact:
+      website: https://vincentmaurer.de
+    editor_url: https://vincentmaurer.de/clockwork/index.html
+    editor_note: Configure this card in your browser
+  videos:
+  - title: Demo video
+    url: https://www.youtube.com/watch?v=WFxAQ-dK7CM
+    id: WFxAQ-dK7CM
 - id: 44_Birds
   title: Birds
   draft: true
@@ -3801,7 +4452,7 @@
         label: Bird Pitch
         description: Controls pitch with CVIn1 summed in
         source: info.yaml
-      "y":
+      y:
         label: |-
           Playback
           Time
@@ -3886,8 +4537,10 @@
     language: C++ (Pico SDK / ComputerCard)
     version: 0.5.0
     status: Beta
+    created: '2026-05-25'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Two interacting birds are generated from a Turing-style looped random sequencer.
       Main controls lock/change behavior, X shifts bird pitch, Y controls phrase speed,
       Z selects normal/wild/reseed modes, and Pulse In 1 can replace the internal clock.
@@ -3910,7 +4563,7 @@
         description: Controls noise seed when Pulse In 1 is used and CV In 2 is not
           connected
         source: info.yaml
-      "y":
+      y:
         label: CV In 1 Gain
         description: Gain for CV In 1 contribution added to Main density value
         source: info.yaml
@@ -4003,9 +4656,11 @@
     language: C++ (ComputerCard)
     version: 1.0.0
     status: Released
+    created: '2025-10-01'
+    updated: '2026-06-24'
     repository: https://github.com/kjnilsson/ws
   documentation:
-    intro: |
+    intro: |-
       Grain-noise generator and noise utility card with density control, seed modulation, CV utilities,
       and optional audio-rate excitation via Pulse In 1. Audio Out 1/2 provide complementary dense/sparse textures.
 - id: 50_flux
@@ -4028,7 +4683,7 @@
           Parameter 1
         description: Effect time/decay/rate style parameter
         source: info.yaml
-      "y":
+      y:
         label: |-
           Effect
           Parameter 2
@@ -4139,12 +4794,14 @@
   metadata:
     creator: Vincent Maurer
     language: C++ (RP2040 Pico SDK)
-    version: 1.0
+    version: '1.0'
     status: Released
+    created: '2026-04-03'
+    updated: '2026-06-24'
     editor_url: https://vincentmaurer.de/flux/flux_manager.html
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       Flux combines stereo effects, multiple synth engines, sample/granular playback, and utility generators
       on one Workshop Computer card. Switch up is synth mode, middle is effect mode, down-hold selects
       synth/effect, and double-down-hold enters performance controls. A web manager is used for CV/pulse routing,
@@ -4165,7 +4822,7 @@
         label: Density
         description: Grain generation density
         source: info.yaml
-      "y":
+      y:
         label: Size
         description: Maximum grain size
         source: info.yaml
@@ -4264,12 +4921,14 @@
   metadata:
     creator: Vincent Maurer
     language: C++ (RP2040 Pico SDK)
-    version: 1.0
+    version: '1.0'
     status: Released
+    created: '2026-05-14'
+    updated: '2026-06-24'
     editor_url: https://vincentmaurer.de/grains/grains_manager.html
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       Grains records and replays granular audio from a live buffer or stored sample slots. The interface is page-based:
       page 1 (position/density/size), page 2 (envelope/tone/pitch), page 3 (mix/spread/feedback-diffusion), and page 4
       (reverb). Flick/hold gestures control page changes, freeze, and load/save menus. Tape Mode is available at power-up
@@ -4361,9 +5020,11 @@
     version: 0.1.2-beta
     status: Beta
     license: MIT
+    created: '2025-04-04'
+    updated: '2026-06-24'
     repository: https://github.com/sdrjones/mtws/tree/main/53_glitter
   documentation:
-    intro: |
+    intro: |-
       Glitter continuously plays a 2-second stereo loop while up to six grains read random snippets from it.
       Switch up/down records into the loop (up for continuous record, down for punch-in style). Main blends
       plain loop vs granulated output, X controls repitch behavior in play and overdub balance in record, and
@@ -4375,7 +5036,7 @@
     id: JW8Z_I-ub2A
 - id: 54_Tapegrade
   title: Tapegrade
-  draft: true
+  draft: false
   release: 54 / 0.8.0
   summary: Mono-input stereo cassette warble processor with wow, flutter, hiss, crackle,
     and tape wear morphing.
@@ -4393,13 +5054,13 @@
         label: Tape Depth
         description: Increases wow and pitch instability; also sets CV Out 1 attenuation
         source: info.yaml
-      "y":
+      y:
         label: Instability
         description: Increases flutter/transport roughness; also sets CV Out 2 attenuation
         source: info.yaml
       z:
         label: Mode
-        description: Selects alternate control modes.
+        description: Selects clean, old, or damaged tape behaviour.
         source: info.yaml
     inputs:
       audio_l:
@@ -4465,10 +5126,15 @@
         description: CV In 2 passthrough scaled by Y knob
         source: info.yaml
   switch_modes:
-    up: ''
-    middle: ''
-    down: ''
-  leds: []
+    up: Brighter and more stable tape response.
+    middle: Darker tone with moderate hiss and instability.
+    down: Strong hiss, crackle, and unstable behavior.
+  leds:
+  - LED 1 follows modulated left delay movement.
+  - LED 2 follows instability.
+  - LED 3 follows modulated right delay movement.
+  - LED 4 follows wet/dry mix.
+  - LED 5 follows tape condition and damage state.
   source:
   - releases/54_Tapegrade/info.yaml
   - releases/54_Tapegrade/README.md
@@ -4485,21 +5151,13 @@
   readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/54_Tapegrade/README.md
   download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/54_Tapegrade/UF2/Tapegrade.uf2
   metadata:
-    creator: Adrian Vos
-    language: C++ (RP2040 Pico SDK)
     version: 0.8.0
-    status: WIP (functional)
-    license: MIT
-  documentation:
-    intro: |
-      Tapegrade emulates cassette-style instability and wear from subtle movement to heavily damaged textures.
-      Main controls wet/dry mix, X controls tape depth and CV1 attenuation, and Y controls instability and CV2 attenuation.
-      Switch positions choose clean/old/damaged tape base states, Audio In 2 morphs tape condition continuously,
-      Pulse In 1 injects temporary heavy damage, and Pulse In 2 forces strong crackle while high.
+    created: '2026-05-25'
+    updated: '2026-06-25'
 - id: 55_fifths
   title: Fifths
-  draft: true
-  release: 55 / 1.0
+  draft: false
+  release: 55 / 1.1
   summary: A quantizer/sequencer that can create harmony and nimbly traverse the circle
     of fifths in attempts to make jazz
   description: A quantizer/sequencer that can create harmony and nimbly traverse the
@@ -4514,8 +5172,8 @@
         label: Loop Length
         description: Sets quantizer/sequencer loop length from 1 to 12 steps
         source: info.yaml
-      "y":
-        label: VCA Amount
+      y:
+        label: VCA Att
         description: Controls input scaling; can be replaced by Audio In 2 control
         source: info.yaml
       z:
@@ -4531,7 +5189,7 @@
           when unpatched)
         source: info.yaml
       audio_r:
-        label: VCA Control
+        label: VCA CV
         description: Optional VCA/modulation control for input scaling
         source: info.yaml
       cv_1:
@@ -4539,9 +5197,7 @@
         description: Adds up to roughly two octaves of transpose before quantization
         source: info.yaml
       cv_2:
-        label: |-
-          Key Select
-          CV
+        label: Key CV
         description: Selects key index around the circle of fifths
         source: info.yaml
       pulse_1:
@@ -4587,9 +5243,9 @@
         description: Pulse stream from probabilistic/looped pulse sequencer
         source: info.yaml
   switch_modes:
-    up: ''
-    middle: ''
-    down: 'Z down, hold: X: Pulse Duration; Y: Pulse Probability Threshold.'
+    up: 'Write Mode: Favors live/write behavior over loop playback'
+    middle: 'Loop Mode: Starts in looping playback mode'
+    down: 'Tap/Shift Input: Tap tempo and hold gestures for alternate parameter editing'
   leds: []
   source:
   - releases/55_fifths/info.yaml
@@ -4605,19 +5261,25 @@
   source_file: releases/55_fifths/info.yaml
   source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/55_fifths
   readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/55_fifths/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/55_fifths/UF2/fifths.uf2
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/55_fifths/UF2/fifths.1.1.uf2
   metadata:
     creator: Dune Desormeaux
     language: C++ (RP2040 Pico SDK)
-    version: 1.0
+    version: '1.1'
     status: Released
+    created: '2025-05-24'
+    updated: '2026-07-04'
   documentation:
-    intro: |
+    intro: |-
       Fifths quantizes incoming or generated CV to keys arranged around the circle of fifths and outputs both
       a quantized note and an ambiguous third harmony voice. It can run from external clock (Pulse In 1) or internal
       tap-tempo clock, and can loop or write incoming material depending on switch state/toggles. Loop length is set by X,
       key center is selected by Main (or CV In 2), and CV In 1 transposes up to two octaves. Pulse outputs provide
       an internal clock pulse plus a probabilistic sequence pulse stream.
+  videos:
+  - title: Demo video
+    url: https://youtu.be/xdUCDX7FmOA
+    id: xdUCDX7FmOA
 - id: 56_Krell
   title: Krell
   draft: true
@@ -4638,7 +5300,7 @@
           Envelope
         description: Controls left channel envelope timing range
         source: info.yaml
-      "y":
+      y:
         label: |-
           Right
           Envelope
@@ -4723,10 +5385,12 @@
   metadata:
     creator: Benjamin Reily
     language: Blackbird Lua
-    version: 1.0
+    version: '1.0'
     status: Mostly complete
+    created: '2026-02-26'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Krell outputs two independent channels of random pitch CV and looping AD envelopes, each with pulse outputs
       at end of cycle. Main sets overall tendency toward longer/shorter envelopes, X sets left-channel envelope timing,
       and Y sets right-channel timing. Switch up quantizes pitch to octaves, middle uses chromatic quantization,
@@ -4820,16 +5484,18 @@
     version: 1.4.0
     status: Released
     license: MIT
+    created: '2026-05-20'
+    updated: '2026-06-24'
     repository: https://github.com/uglifruit/Workshop_Computer/tree/main/Demonstrations%2BHelloWorlds/PicoSDK/ComputerCard/examples/glitch
   documentation:
-    intro: |
+    intro: |-
       Glitch records into a shared 2.33-second circular buffer and runs in two power-on modes. Glitch mode loops
       ratcheted sub-slices with optional reverse, decimation, and bitcrush; Stutter mode slices beats, shuffles order,
       and can repeat slices before advancing. Pulse In 1 sets beat timing, CV In 1 freezes recording while playback
       continues, and Audio Out 2 stays dry for parallel routing.
 - id: 58_LoChoVibes
   title: LoCho Vibes
-  draft: true
+  draft: false
   release: 58 / 0.1.0
   summary: Stereo chorus and vibrato effect featuring triangle, sine, and slow drift
     LFO modes, modulation-based delay movement, and tape-style saturation.
@@ -4845,7 +5511,7 @@
         label: Mod Depth
         description: LFO pitch/modulation depth amount
         source: info.yaml
-      "y":
+      y:
         label: Character
         description: Bipolar character shaping from lo-fi degradation to compression/saturation
           coloration
@@ -4917,13 +5583,14 @@
     middle: 'Z middle: MAIN: Modulation Rate; X: Modulation Depth; Y: Character.'
     down: 'Z down, momentary: MAIN: LFO Shape Select.'
   leds:
-  - 'Z down, momentary: Shape Overlay Triangle A; Shape Overlay Triangle B; Shape
-    Overlay Sine A; Shape Overlay Sine B; Shape Overlay Random A; Shape Overlay Random
-    B.'
-  - 'Z middle: Rate; Depth; Lo-Fi Amount; Compression Amount; LFO Phase; Inverted
-    LFO Phase.'
-  - 'Z up: Rate; Depth; Lo-Fi Amount; Compression Amount; LFO Phase; Inverted LFO
-    Phase.'
+  - LED 1 follows clock / rate indication.
+  - LED 2 follows modulation activity and depth.
+  - LED 3 follows lo-fi amount.
+  - LED 4 follows compression amount.
+  - LED 5 follows shape animation A.
+  - LED 6 follows shape animation B.
+  - When the switch is tapped down, LEDs 1-2 show triangle, LEDs 3-4 show sine, and
+    LEDs 5-6 show random drift.
   source:
   - releases/58_LoChoVibes/info.yaml
   - releases/58_LoChoVibes/README.md
@@ -4935,21 +5602,12 @@
   readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/58_LoChoVibes/README.md
   download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/58_LoChoVibes/UF2/LoChoVibes.uf2
   metadata:
-    creator: Adrian Vos
-    language: C++
     version: 0.1.0
-    status: released
-    license: MIT
-  documentation:
-    intro: |
-      Stereo lo-fi chorus/vibrato with clockable LFO and character shaping.
-      Main controls modulation rate, X controls modulation depth, Y controls Character
-      (lo-fi degradation <-> compression coloration). Switch up selects vibrato mode
-      (fully wet), middle selects chorus mode (dry/wet blend), and a momentary move
-      to down cycles LFO shape (triangle, sine, random drift).
+    created: '2026-05-29'
+    updated: '2026-06-25'
 - id: 59_BitPhase
   title: BitPhase
-  draft: true
+  draft: false
   release: 59 / 0.1.0
   summary: Resonant 4-stage phaser for the Workshop Computer with deep notch filtering,
     wide modulation sweeps, controllable resonance, tremolo blending, and digital
@@ -4961,19 +5619,21 @@
     controls:
       main:
         label: Rate
-        description: Speed of internal phaser and tremolo LFOs
+        description: Speed of the internal phaser and tremolo LFOs
         source: info.yaml
       x:
         label: Sweep Depth
-        description: Phaser modulation depth
+        description: Phaser modulation depth from narrow movement to wide sweeping
+          notches
         source: info.yaml
-      "y":
+      y:
         label: Resonance
-        description: Phaser feedback amount
+        description: Phaser feedback amount from smooth phasing to edge-of-self-oscillation
         source: info.yaml
       z:
-        label: Rate
-        description: Speed of internal phaser and tremolo LFOs in Burst mode
+        label: Mode
+        description: Up is pure phaser, middle blends phaser with tremolo, and down
+          enables Burst degradation.
         source: info.yaml
     inputs:
       audio_l:
@@ -5036,12 +5696,17 @@
         description: Phaser LFO phase indicator for synchronising external events
         source: info.yaml
   switch_modes:
-    up: 'Z up: MAIN: Rate; X: Sweep Depth; Y: Resonance.'
-    middle: 'Z middle: MAIN: Rate; X: Sweep Depth; Y: Resonance.'
-    down: 'Z down: MAIN: Rate; X: Sweep Depth; Y: Resonance.'
+    up: Pure resonant 4-stage all-pass phaser with the cleanest signal path.
+    middle: Blends phasing with tremolo for animated pulsing movement.
+    down: Adds sample-and-hold reduction, bit-depth reduction, and unstable lo-fi
+      texture.
   leds:
-  - 'Z any: Rate Position; Phaser LFO Position; Sweep Position; Burst Intensity; Burst
-    Mode Status; Pulse Input Monitor.'
+  - LED 1 follows the rate position.
+  - LED 2 follows the phaser LFO position.
+  - LED 3 follows sweep position.
+  - LED 4 follows Burst intensity.
+  - LED 5 indicates Burst mode status.
+  - LED 6 monitors Pulse In 1.
   source:
   - releases/59_BitPhase/info.yaml
   - releases/59_BitPhase/README.md
@@ -5057,18 +5722,9 @@
   readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/59_BitPhase/README.md
   download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/59_BitPhase/uf2/BitPhase.uf2
   metadata:
-    creator: Adrian Vos
-    language: C++ (Pico SDK)
     version: 0.1.0
-    status: Beta
-    license: MIT
-  documentation:
-    intro: |
-      BitPhase combines a resonant 4-stage all-pass phaser, independent phaser and tremolo LFOs,
-      CV control of rate and resonance, and a Burst-mode digital degradation path.
-      Main controls LFO rate, X controls phaser sweep depth, and Y controls resonance/feedback.
-      Switch up is pure phaser, middle blends phaser with tremolo, and down enables Burst degradation.
-      Pulse In 1 resets the phaser LFO for clock-synchronised sweeps.
+    created: '2026-06-07'
+    updated: '2026-06-25'
 - id: 60_markov
   title: Markov
   draft: true
@@ -5093,7 +5749,7 @@
           Profile
         description: Selects one of five melodic transition profiles
         source: info.yaml
-      "y":
+      y:
         label: |-
           Percussion
           Profile
@@ -5185,8 +5841,10 @@
     language: C++ (Pico SDK)
     version: 1.0.0
     status: Released
+    created: '2026-05-30'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Dual Markov-chain generator with melody on voice A and rhythm/percussion on voice B.
       Knob X selects melodic transition profile, Knob Y selects percussion profile, and
       Main is switch-dependent: transpose (Z up), loop lock/mutate length (Z middle), or
@@ -5215,7 +5873,7 @@
           Resonance
         description: SID filter resonance (0–15)
         source: info.yaml
-      "y":
+      y:
         label: Pulse Width
         description: Pulse width shared by both voices (minimum 40)
         source: info.yaml
@@ -5305,12 +5963,14 @@
   metadata:
     creator: Joep Vermaat
     language: C++ (Pico SDK)
-    version: 1.1
+    version: '1.1'
     status: Released
     license: MIT
+    created: '2026-06-07'
+    updated: '2026-06-24'
     repository: https://codeberg.org/johantv/voices-of-sid
   documentation:
-    intro: |
+    intro: |-
       Two emulated MOS 6581 SID chips run in parallel on separate audio outputs.
       Switch middle is Play mode (CV/gate, Main = decay/release, X = resonance, Y = pulse width).
       Switch up is Sound Edit (X/Y select waveforms for each voice; gates open for drone/tuning).
@@ -5339,7 +5999,7 @@
           Tempo
         description: Internal playback tempo control when external clock is not active
         source: info.yaml
-      "y":
+      y:
         label: |-
           Timestretch
           Amount
@@ -5435,12 +6095,14 @@
   metadata:
     creator: Infinite Digits
     language: C++ (Pico SDK)
-    version: 1.0
+    version: '1.0'
     status: Ready%
+    created: '2026-06-02'
+    updated: '2026-07-02'
     editor_url: https://infinitedigits.co/stretchcore/
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       Mono sample-loop player with browser-loaded sample bank, tempo control, timestretch,
       and jump/selection gestures. Main knob targets playback position or sample index
       depending on switch gesture, X sets internal tempo when not externally clocked, and
@@ -5466,7 +6128,7 @@
           Offset
         description: Base offset for oscillator modulation parameter 1
         source: info.yaml
-      "y":
+      y:
         label: |-
           Parameter 2
           Offset
@@ -5547,11 +6209,13 @@
   metadata:
     creator: Ruiyang Wang
     language: C++ (ComputerCard)
-    version: 0.1
+    version: '0.1'
     status: Functional but WIP
+    created: '2026-01-18'
+    updated: '2026-06-24'
     repository: https://github.com/indiepaleale/Trace-Workshop-Computer
   documentation:
-    intro: |
+    intro: |-
       Oscillograph-focused dual-output oscillator bank for X/Y scope visuals. Main controls
       pitch (summed with CVIn1). X and Y control oscillator-specific modulation offsets in
       normal mode; with switch up they become attenuation controls for AudioIn1/AudioIn2
@@ -5583,7 +6247,7 @@
         description: Crossfades through saturation, filter drift, and tape hiss zones
           for input processing
         source: info.yaml
-      "y":
+      y:
         label: |-
           Destructive
           Effect
@@ -5678,7 +6342,7 @@
   notes:
   - 'Degenerator Manager: Browser tool at the Editor URL communicates over WebUSB
     for loop upload/download in flash slot workflows'
-  - |
+  - |-
     Browser host interaction requires WebUSB-compatible browsers (Chrome/Edge). Local serving
     from the project `web/` directory is also supported by the upstream project.
   source:
@@ -5694,14 +6358,16 @@
   metadata:
     creator: Joep Vermaat
     language: C++ (Pico SDK)
-    version: 1.3
+    version: '1.3'
     status: Released
     license: MIT
+    created: '2026-05-08'
+    updated: '2026-06-24'
     repository: https://codeberg.org/johantv/Degenerator
     editor_url: https://degenerator-web.netlify.app/
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       Irreversible layered looper with additive MIX and subtractive DEGRADE workflows.
       Z down is RECORD (and slot workflows in SLOT mode), Z middle is MIX, Z up is
       DEGRADE. Main controls mix/commit amount (full left freezes state), X selects
@@ -5728,7 +6394,7 @@
           Transpose
         description: Semitone transpose offset for bass root/mirror pitch generation
         source: info.yaml
-      "y":
+      y:
         label: |-
           Fill
           Probability
@@ -5833,12 +6499,14 @@
   metadata:
     creator: Joep Vermaat
     language: C++ (Pico SDK)
-    version: 1.0
+    version: '1.0'
     status: Released
     license: MIT
+    created: '2026-05-17'
+    updated: '2026-06-24'
     repository: https://codeberg.org/johantv/motorik
   documentation:
-    intro: |
+    intro: |-
       Generative motorik drum machine with synchronized two-voice bass CV/gate outputs.
       Z middle is main drum-performance mode (energy/transpose/fill), Z down is tilt and
       bass pattern shift, Z up is texture/decimation and variation/humanize. Pulse In 1
@@ -5847,7 +6515,7 @@
       root and mirrored (+12) bassline voices.
 - id: 74_Wild_Pebble
   title: Wild Pebble
-  draft: true
+  draft: false
   release: 74 / 1.0
   summary: MIDI-clockable generative rhythm and melody organism inspired by Pet Rock
   description: MIDI-clockable generative rhythm and melody organism inspired by Pet
@@ -5858,23 +6526,21 @@
         label: |-
           Internal
           Tempo
-        description: Internal clock speed with moderate swing profile when internally
-          clocked
+        description: Internal clock speed with variable swing profile according to
+          switch position when internally clocked
         source: info.yaml
       x:
         label: Density
         description: Trigger probability density control (modulated by CVIn1)
         source: info.yaml
-      "y":
+      y:
         label: Mutation
         description: Mutation intensity control (modulated by CVIn2)
         source: info.yaml
       z:
-        label: |-
-          Internal
-          Tempo
-        description: Internal clock speed with strongest swing profile when internally
-          clocked
+        label: Mode Select
+        description: Selects the overall behavior mode, shifting the card from restrained
+          to more animated swing and mutation
         source: info.yaml
     inputs:
       pulse_1:
@@ -5933,9 +6599,12 @@
           trigger stream
         source: info.yaml
   switch_modes:
-    up: 'Z up: MAIN: Internal Tempo; X: Density; Y: Mutation.'
-    middle: 'Z middle: MAIN: Internal Tempo; X: Density; Y: Mutation.'
-    down: 'Z down: MAIN: Internal Tempo; X: Density; Y: Mutation.'
+    up: 'Z up: Steady mode. Restrained mutation, tighter rhythms, and the calmest
+      phrasing feel.'
+    middle: 'Z middle: Drift mode. Balanced mutation, moderate swing, and gradual
+      harmonic movement.'
+    down: 'Z down: Surge mode. Strongest swing, wider melodic leaps, and the most
+      animated behavior.'
   leds:
   - 'Z any: Primary Trigger; Density Amount; Mutation Amount; Energy State; Clock
     Source; Tension State.'
@@ -5950,18 +6619,151 @@
   readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/74_Wild_Pebble/README.md
   download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/74_Wild_Pebble/UF2/WildPebble.uf2
   metadata:
-    creator: Adrian Vos with Vibecode support
-    language: C++
-    version: 1.0
-    status: Beta. USB MIDI clock input and sequencer note output tested
-    license: GPL-3.0
+    version: '1.0'
+    created: '2026-05-17'
+    updated: '2026-06-25'
+- id: 76_hot_fuzz
+  title: Hot Fuzz
+  draft: true
+  release: 76 / 1.0
+  summary: A stereo fuzz/distortion + resonant wah effects processor with manual and
+    auto-wah modes, built on fixed-point DSP.
+  description: A stereo fuzz/distortion + resonant wah effects processor with manual
+    and auto-wah modes, built on fixed-point DSP.
+  panel:
+    controls:
+      main:
+        label: Fuzz Blend
+        description: 0 = dry (bypass fuzz), 4095 = full fuzz wet
+        source: info.yaml
+      x:
+        label: Fuzz Drive
+        description: 0 = clean, 4095 = maximum fuzz
+        source: info.yaml
+      y:
+        label: |-
+          Wah Q /
+          Resonance
+        description: 0 = flat filter, 4095 = high resonance
+        source: info.yaml
+      z:
+        label: |-
+          Wah
+          Frequency /
+        description: Manual sweep (auto-wah off) or base frequency (auto-wah on).
+          Toggle auto-wah by double-tapping Down.
+        source: info.yaml
+    inputs:
+      audio_l:
+        label: |-
+          Left Audio
+          In
+        description: Left channel input (-2048..2047, 12-bit signed)
+        source: info.yaml
+      audio_r:
+        label: |-
+          Right Audio
+          In
+        description: Right channel input (-2048..2047, 12-bit signed)
+        source: info.yaml
+      cv_1:
+        label: |-
+          Wah CV
+          (optional)
+        description: Overrides wah cutoff in Up/Mid modes when connected
+        source: info.yaml
+      cv_2:
+        label: |-
+          Drive CV
+          (optional)
+        description: Adds to X pot drive value
+        source: info.yaml
+      pulse_1:
+        label: Fuzz Toggle
+        description: Rising edge toggles fuzz on/off (latched, Up/Mid modes only)
+        source: info.yaml
+      pulse_2:
+        label: |-
+          Auto-Wah
+          Toggle
+        description: Rising edge toggles auto-wah on/off (latched, any mode)
+        source: info.yaml
+    outputs:
+      audio_out_l:
+        label: |-
+          Left Audio
+          Out
+        description: Processed left channel (-2048..2047, 12-bit signed)
+        source: info.yaml
+      audio_out_r:
+        label: |-
+          Right Audio
+          Out
+        description: Processed right channel (-2048..2047, 12-bit signed)
+        source: info.yaml
+  switch_modes:
+    up: 'Z up: MAIN: Fuzz Type; X: Fuzz Drive; Y: Wah Q / Resonance.'
+    middle: 'Z middle: MAIN: Fuzz Blend; X: Fuzz Drive; Y: Wah Q / Resonance.'
+    down: 'Z down: MAIN: Wah Frequency / Auto-Wah Base; X: Dry / Wet Blend; Y: Wah
+      Q / Resonance.'
+  leds:
+  - 'Default: Fuzz Drive; Fuzz / Wah Blend; Wah Sweep; Wah Resonance; Envelope Level;
+    Fuzz Type.'
+  source:
+  - releases/76_hot_fuzz/info.yaml
+  - releases/76_hot_fuzz/README.md
+  slug: 76-hot-fuzz
+  url: "/workshopsystem/program-cards/76-hot-fuzz/"
+  tags:
+  - fuzz
+  - distortion
+  - wah
+  - filter
+  - effects-processor
+  - envelope-follower
+  source_file: releases/76_hot_fuzz/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/76_hot_fuzz
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/76_hot_fuzz/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/76_hot_fuzz/hot_fuzz.uf2
+  metadata:
+    creator: Joep Vermaat
+    language: C++ (ComputerCard)
+    version: '1.0'
+    status: Released
+    license: MIT
+    created: '2026-07-04'
+    updated: '2026-07-04'
+    repository: https://codeberg.org/johantv/hot-fuzz
   documentation:
-    intro: |
-      Generative rhythm/melody organism with coupled trigger streams, quantized melody CV,
-      internal kick/snare voices, and evolving energy/tension modulation. Main controls
-      internal tempo when no external clock is present, X controls rhythmic density, and Y
-      controls mutation amount. Switch up/middle/down sets increasingly active mutation and
-      swing behavior. Pulse In 1 is external clock and Pulse In 2 freezes mutation while high.
+    intro: |-
+      Hot Fuzz is a stereo fuzz/wah effects card. It combines a clipper (soft/hard/asymmetric/foldback)
+      with a resonant state-variable filter for the wah sweep, and supports both manual
+      and auto-wah modes.
+
+      Switch Up:   Fuzz + wah. Main pot selects fuzz type (4 zones: soft/hard/asym/fold,
+                   CCW to CW). X pot = fuzz drive.
+      Switch Mid:  Fuzz + wah blend. Main pot = dry/wet blend (CCW=dry, CW=full fuzz).
+                   X pot = drive.
+      Switch Down: Wah mode. Main pot = manual wah sweep (auto-wah off) or
+                   base frequency (auto-wah on). Toggle auto-wah by double-tapping
+                   Down (Mid→Down→Mid→Down within 0.5 s) or by sending a rising
+                   edge to Pulse2. LED 4 flashes to confirm.
+                   X pot = dry/wet blend.
+
+      Y pot:       Wah Q / resonance (0 = flat, 4095 = high resonance). Same in all modes.
+
+      Pulse1:      Rising edge toggles fuzz on/off (latched). Acts in Up/Mid modes
+                   only. When bypassed the wah still runs on the clean signal;
+                   LED 0 goes dark and flashes on toggle.
+      Pulse2:      Rising edge toggles auto-wah on/off (latched, any mode). Same
+                   effect as the double-tap Down gesture, but patchable from a
+                   gate or footswitch.
+
+      CV1 (optional): overrides wah cutoff when no pot controls it (Up/Mid modes).
+      CV2 (optional): adds to the X pot drive value.
+
+      Settings are not persisted — fuzz type, auto-wah state, and all settings
+      reset to defaults on power cycle.
 - id: 77_Placeholder
   title: Placeholder
   draft: true
@@ -5987,8 +6789,10 @@
   metadata:
     creator: None
     language: None
-    version: 0.0
+    version: '0.0'
     status: None
+    created: '2024-11-30'
+    updated: '2026-06-24'
 - id: 78_Talker
   title: Talker
   draft: true
@@ -5999,6 +6803,10 @@
     1970s LPC speech synths.
   panel:
     controls:
+      main:
+        label: 'false'
+        description: Speech generation is muted
+        source: info.yaml
       z:
         label: |-
           Single Word
@@ -6053,7 +6861,7 @@
         type: cv
   switch_modes:
     up: 'Z up: MAIN: Pitch; X: Pitch CV Attenuverter; Y: Babble Speed.'
-    middle: ''
+    middle: 'Z middle: MAIN: false.'
     down: 'Z down: MAIN: Single Word Trigger.'
   leds: []
   source:
@@ -6073,14 +6881,49 @@
   metadata:
     creator: Chris Johnson
     language: C++ (ComputerCard)
-    version: 0.1
+    version: '0.1'
     status: Proof of concept
     license: GPL-3.0
+    created: '2024-11-30'
+    updated: '2026-06-24'
   documentation:
-    intro: |
+    intro: |-
       Early proof-of-concept LPC speech card that babbles randomized words. Z switch sets continuous,
       off, or single-word behavior. Main + CVIn1 set pitch (with X as attenuverter), while Y + CVIn2
       set speaking speed. AudioOut1 is speech, AudioOut2 exposes the LPC exciter components.
+- id: 81_West_Coast_LPG
+  title: West Coast LPG
+  draft: false
+  release: 81 / 0.1
+  summary: Dual vactrol-emulating low-pass gate (combined VCA + low-pass filter) with
+    fast-attack/slow-decay 'plong', self-pinging percussion, and per-channel VCA/VCF/LPG
+    modes.
+  description: Dual vactrol-emulating low-pass gate (combined VCA + low-pass filter)
+    with fast-attack/slow-decay 'plong', self-pinging percussion, and per-channel
+    VCA/VCF/LPG modes.
+  panel: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds: []
+  source:
+  - releases/81_West_Coast_LPG/info.yaml
+  - releases/81_West_Coast_LPG/README.md
+  slug: 81-west-coast-lpg
+  url: "/workshopsystem/program-cards/81-west-coast-lpg/"
+  tags: []
+  source_file: releases/81_West_Coast_LPG/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/81_West_Coast_LPG
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/81_West_Coast_LPG/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/81_West_Coast_LPG/src/build/vactrol.uf2
+  metadata:
+    creator: Jason Moore
+    language: C++ (ComputerCard)
+    version: '0.1'
+    status: Working
+    created: '2026-06-25'
+    updated: '2026-06-25'
 - id: 82_Computer_Grids
   title: Computer Grids
   draft: true
@@ -6099,7 +6942,7 @@
         label: Patt Map X
         description: Horizontal position on the Grids pattern map
         source: info.yaml
-      "y":
+      y:
         label: Patt Map Y
         description: Vertical position on the Grids pattern map
         source: info.yaml
@@ -6176,6 +7019,8 @@
     version: 0.1.0
     status: Released
     license: GPL-3.0-or-later
+    created: '2026-03-24'
+    updated: '2026-06-24'
     contact:
       website: https://github.com/philmillman
       social:
@@ -6183,7 +7028,7 @@
     editor_url: https://tomwhitwell.github.io/Workshop_Computer/programs/82-computer-grids/web/index.html
     editor_note: Configure this card in your browser
   documentation:
-    intro: |
+    intro: |-
       Grids-inspired trigger sequencer for the Workshop Computer. Control pattern map and fill with knobs,
       or per-lane density when switch Z is **up**. Internal clock with swing, or follow external clock on **PulseIn1**.
       Configure and save settings via the Web MIDI SysEx editor (Chrome recommended).
@@ -6191,16 +7036,47 @@
   - title: Demo video
     url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
     id: dQw4w9WgXcQ
+- id: 83_Origami
+  title: Origami
+  draft: false
+  release: 83 / 0.1
+  summary: Dual oversampled wavefolder — triangle / sine / hard-clip folding with
+    bias (even-harmonic) control and CV over fold depth, band-limited via 4x oversampling.
+  description: Dual oversampled wavefolder — triangle / sine / hard-clip folding with
+    bias (even-harmonic) control and CV over fold depth, band-limited via 4x oversampling.
+  panel: {}
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds: []
+  source:
+  - releases/83_Origami/info.yaml
+  - releases/83_Origami/README.md
+  slug: 83-origami
+  url: "/workshopsystem/program-cards/83-origami/"
+  tags: []
+  source_file: releases/83_Origami/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/83_Origami
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/83_Origami/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/83_Origami/src/build/origami.uf2
+  metadata:
+    creator: Jason Moore
+    language: C++ (ComputerCard)
+    version: '0.1'
+    status: Working
+    created: '2026-06-30'
+    updated: '2026-06-30'
 - id: 84_CosmikC1zzl3
   title: Cosmik C1ZZL3
-  draft: true
-  release: 84 / 1.0
+  draft: false
+  release: 84 / 1.1
   summary: Stable phase-distortion synthesiser and Turing machine firmware with Web
-    MIDI custom envelopes, USB MIDI device/host operation, MIDI CC control, and optional
-    Turing MIDI output.
+    MIDI envelope readback, PD, detune, eight waveform families, hosted CZ patch import,
+    USB MIDI device/host operation, and optional Turing MIDI output.
   description: Stable phase-distortion synthesiser and Turing machine firmware with
-    Web MIDI custom envelopes, USB MIDI device/host operation, MIDI CC control, and
-    optional Turing MIDI output.
+    Web MIDI envelope readback, PD, detune, eight waveform families, hosted CZ patch
+    import, USB MIDI device/host operation, and optional Turing MIDI output.
   panel:
     controls:
       main:
@@ -6213,7 +7089,7 @@
           Distortion
         description: Phase-distortion amount
         source: info.yaml
-      "y":
+      y:
         label: |-
           Waveform
           Morph
@@ -6297,16 +7173,13 @@
     middle: 'Z middle: MAIN: Pitch; X: Phase Distortion; Y: Waveform Morph.'
     down: 'Z down, hold: MAIN: Detune; X: Ring Modulation; Y: Noise/Grit.'
   leds:
-  - 'Z middle: Phase Distortion Amount; Waveform Position; Oscillator 2 Level; Ring
-    Modulation; Noise Amount; Switch Held Indicator.'
-  - 'Z up: Turing Bit 0; Turing Bit 1; Turing Bit 2; External Clock Follow; Sequence
-    Length; Turing Clock Step.'
-  notes:
-  - 'Web MIDI Envelope Editor: Browser editor for custom envelopes and performance
-    settings'
-  - |
-    MIDI CC1 controls phase distortion, CC20 detune, CC21 ring modulation, CC22 noise,
-    CC23 waveform, and CC24 Turing CV octave range.
+  - 'In synth mode: LED 1 shows phase-distortion amount, LED 2 shows waveform position,
+    LED 3 shows oscillator 2 level, LED 4 shows ring modulation amount, LED 5 shows
+    noise amount, and LED 6 lights while the switch is held down.'
+  - 'In Turing mode: LEDs 1-3 show low bits of the Turing pattern, LED 4 follows Pulse
+    In 1, LED 5 shows sequence length, and LED 6 flashes on each Turing clock step.'
+  - 'In startup envelope selection: factory presets use the binary LED display, and
+    custom slots light LED 6 and use LEDs 1-3 for the custom slot number.'
   source:
   - releases/84_CosmikC1zzl3/info.yaml
   - releases/84_CosmikC1zzl3/README.md
@@ -6323,21 +7196,9 @@
   readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/84_CosmikC1zzl3/README.md
   download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/84_CosmikC1zzl3/uf2/C1ZZL3.uf2
   metadata:
-    creator: Adrian Vos
-    language: C++ (Pico SDK)
-    version: 1.0
-    status: Released
-    license: MIT
-    editor_url: https://soveda.github.io/CozmikC1zzl3/web-midi/editor/
-    editor_note: Configure this card in your browser
-  documentation:
-    intro: |
-      Phase-distortion synth card with Turing machine mode, USB MIDI, and browser envelope editor.
-      Switch middle is PD synth mode (Main = pitch, X = phase distortion, Y = waveform morph).
-      Hold switch down from middle for performance edit (detune, ring modulation, noise/grit) and save.
-      Switch up is Turing mode (Main = mutation, X = length, Y = clock speed).
-      Turing CV and pulse outputs continue running in synth mode.
-      Factory envelope presets are never overwritten; custom envelopes use separate browser-stored slots.
+    version: '1.1'
+    created: '2026-06-15'
+    updated: '2026-07-06'
 - id: 86_tesserae
   title: Tesserae
   draft: true
@@ -6359,7 +7220,7 @@
           Melody
           Position
         source: info.yaml
-      "y":
+      y:
         label: |-
           Chord
           Spacing
@@ -6469,123 +7330,127 @@
   metadata:
     creator: Joep Vermaat
     language: C++ (Pico SDK)
-    version: 1.0
+    version: '1.0'
     status: released
     license: MIT
+    created: '2026-05-08'
+    updated: '2026-06-24'
     repository: https://codeberg.org/johantv/Tesserae
   documentation:
-    intro: |
+    intro: |-
       Variable-voice arpeggiated harmonic generator with 5 patterns and 10 scales. X sets melody
       position, Y sets chord spacing, and Main changes by Z mode (pattern select, root note, or held
       scale/voice selection). Supports tap tempo, external clock/reset, and dual transpose inputs.
 - id: 87_fr330hfr33
   title: Fr330hfr33
-  draft: true
-  release: 87 / 0.9.1
-  summary: Hardware-tested acid bass synthesiser with saw or square oscillator, diode-style
-    filtering, accent, glide, distortion, USB MIDI, and a persistent editable sequencer.
-  description: Hardware-tested acid bass synthesiser with saw or square oscillator,
-    diode-style filtering, accent, glide, distortion, USB MIDI, and a persistent editable
-    sequencer.
+  draft: false
+  release: 87 / 0.9.3
+  summary: Hardware-tested acid bass synthesiser with selectable saw or square oscillator,
+    switchable 18 or 24 dB diode-style filtering, accent and glide, distortion, USB
+    MIDI device/host operation, and a persistent editable sequencer.
+  description: Hardware-tested acid bass synthesiser with selectable saw or square
+    oscillator, switchable 18 or 24 dB diode-style filtering, accent and glide, distortion,
+    USB MIDI device/host operation, and a persistent editable sequencer.
   panel:
     controls:
       main:
         label: Cutoff
-        description: Filter cutoff in sequencer mode
-        source: info.yaml
+        description: 'Sets the diode-style ladder filter resting cutoff with a curved
+          response: counter-clockwise is dark, the middle is broad and musical, and
+          clockwise is bright.'
+        source: curated
       x:
         label: Resonance
-        description: Filter resonance in sequencer mode
-        source: info.yaml
-      "y":
+        description: 'Uses a curved response: the lower range adds body, the upper
+          range becomes nasal and acid-like, and the final part of travel reaches
+          firm self-oscillation. Broad diode-pair saturation keeps the oscillation
+          round, while X adds only a small amount of extra filter-envelope sweep.'
+        source: curated
+      y:
         label: |-
           Decay /
           Glide
-        description: Envelope decay and glide in sequencer mode
-        source: info.yaml
+        description: Couples envelope decay and pitch glide. Counter-clockwise gives
+          short notes with nearly immediate pitch changes; selected slides are already
+          obvious around noon, while clockwise gives longer notes, a longer downward
+          filter sweep, and exaggerated slides.
+        source: curated
       z:
-        label: Mode
-        description: Selects alternate control modes.
-        source: info.yaml
+        label: |-
+          CV /
+          Sequence /
+        description: Up selects external CV/gate or USB MIDI control, middle selects
+          the random sequencer, and holding down simulates pulling the batteries.
+        source: curated
     inputs:
       cv_1:
         label: Pitch CV
-        description: 1V/oct pitch input in switch-up CV/gate mode
+        description: 1V/oct pitch input in switch-up CV/gate mode.
         source: info.yaml
       pulse_1:
         label: Gate In
-        description: External gate input in switch-up CV/gate mode
+        description: External gate input in switch-up CV/gate mode.
         source: info.yaml
       pulse_2:
         label: |-
           Clock /
           Slide
-        description: External sequencer clock in switch-middle mode; manual glide
-          enable in CV/MIDI mode
+        description: External sequencer clock in switch-middle mode. In switch-up
+          CV/MIDI mode, holding this input high manually enables glide for pitch changes.
         source: info.yaml
     outputs:
       audio_out_l:
         label: |-
           Filtered
           Voice
-        description: Enveloped post-filter acid bass voice
+        description: Enveloped post-filter acid bass voice.
         source: info.yaml
       audio_out_r:
-        label: |-
-          Raw
-          Oscillator
-        description: Phase-aligned raw selected oscillator for blending with filtered
-          voice
+        label: Raw Osc
+        description: Phase-aligned raw selected oscillator for blending with the filtered
+          voice.
         source: info.yaml
       cv_out_1:
         label: Pitch Out
-        description: Calibrated 1V/oct output following currently played pitch
+        description: Calibrated 1V/oct output following the currently played pitch.
         source: info.yaml
       pulse_out_1:
         label: Gate Out
-        description: Gate output following external, MIDI, or sequencer notes
+        description: Gate output following external, MIDI, or sequencer notes.
         source: info.yaml
   switch_modes:
-    up: 'Z up: MAIN: Cutoff; X: Resonance; Y: Decay / Glide.'
-    middle: 'Z middle: MAIN: Cutoff; X: Resonance; Y: Decay / Glide.'
-    down: ''
+    up: External CV/gate or USB MIDI mode. CV In 1 controls pitch, Pulse In 1 controls
+      gate, and holding Pulse In 2 high enables manual glide; overlapping MIDI notes
+      glide automatically without retriggering the envelope.
+    middle: History-aware generative sequencer that avoids recent repeats, favors
+      nearby scale motion, and occasionally makes wider or octave jumps. Pulse In
+      2 supplies an exact external clock; otherwise the configured internal tempo
+      or optional MIDI clock can use adjustable swing.
+    down: Momentary battery pull. The gate falls, the current VCA level is held briefly,
+      then pitch, filter, resonance, and both audio outputs collapse with the virtual
+      supply.
   leds:
-  - 'Z any: CV/MIDI Mode Indicator; Gate Follow; Sequencer Mode Indicator; Accent
-    Indicator; Battery Pull Indicator; Note Brightness / Filter Mode.'
-  notes:
-  - 'Fr330hfr33 Web MIDI Editor: Open web_config/Fr330hfr33.html in Chrome or Edge
-    to configure scale, patterns, and tempo'
-  - |
-    Four checksummed card-flash pattern slots and general editor settings persist across power cycles.
-    USB MIDI automatically operates as device or host according to Workshop Computer USB power role.
+  - LEDs 1, 3, and 5 indicate switch-up CV/MIDI mode, switch-middle sequencer mode,
+    and switch-down battery-pull mode respectively.
+  - LED 2 follows the current gate, with a dim idle level.
+  - LED 4 indicates accented notes.
+  - In sequencer mode LED 3 pulses one to four times to identify the active pattern
+    slot.
+  - LED 6 displays note brightness, or stays fully lit in 18 dB three-pole mode.
   source:
   - releases/87_fr330hfr33/info.yaml
   - releases/87_fr330hfr33/README.md
   slug: 87-fr330hfr33
   url: "/workshopsystem/program-cards/87-fr330hfr33/"
-  tags:
-  - synth
-  - midi
-  - web-midi
-  - sequencer
-  - acid
+  tags: []
   source_file: releases/87_fr330hfr33/info.yaml
   source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/87_fr330hfr33
   readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/87_fr330hfr33/README.md
-  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/87_fr330hfr33/archive/0.9.0-rc1/Fr330hfr33-v0.9.0-rc1.uf2
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/87_fr330hfr33/uf2/Fr330hfr33-v0.9.3.uf2
   metadata:
-    creator: Adrian Vos
-    language: C++ (Pico SDK)
-    version: 0.9.1
-    status: Stable
-  documentation:
-    intro: |
-      Acid bass voice with selectable saw/square oscillator, 18 or 24 dB diode-style filter, accent,
-      glide, distortion, USB MIDI device/host operation, and persistent editable sequencer.
-      Main controls filter cutoff, X controls resonance, and Y couples envelope decay with glide time.
-      Switch up is external CV/gate or USB MIDI mode; middle is generative sequencer mode;
-      momentary down simulates battery pull.
-      Web MIDI editor configures scale, root, accent probability, pattern lanes, and internal tempo.
+    version: 0.9.3
+    created: '2026-06-21'
+    updated: '2026-07-02'
 - id: 88_Blank
   title: Blank
   draft: true
@@ -6611,11 +7476,135 @@
   metadata:
     creator: Tom Whitwell
     language: None
-    version: 0
+    version: '0'
     status: None
+    created: '2024-11-30'
+    updated: '2026-06-24'
+- id: 90_Pantograph
+  title: Pantograph
+  draft: false
+  release: 90 / 1.0
+  summary: Trace and record CV — record knob movements, loop them at bipolar speed
+  description: Trace and record CV — record knob movements, loop them at bipolar speed
+  panel:
+    controls:
+      main:
+        label: Speed
+        description: Playback speed, bipolar — centre = freeze, left = reverse, right
+          = faster
+        source: info.yaml
+      x:
+        label: Trace X
+        description: Performance value in Live/Record; playback depth (attenuation)
+          in Play
+        source: info.yaml
+      y:
+        label: Trace Y
+        description: Performance value in Live/Record; playback depth (attenuation)
+          in Play
+        source: info.yaml
+      z:
+        label: Mode
+        description: Selects alternate control modes.
+        source: info.yaml
+    inputs:
+      cv_1:
+        label: X Mod
+        description: Live CV summed onto the CV1 output
+        source: info.yaml
+      cv_2:
+        label: Y Mod
+        description: Live CV summed onto the CV2 output
+        source: info.yaml
+      pulse_1:
+        label: Trig
+        description: 'When patched, Play (Middle) becomes a one-shot: each rising
+          edge retriggers. Unpatched = loop.'
+        source: info.yaml
+      pulse_2:
+        label: "(unused)"
+        description: Not used
+        source: info.yaml
+      audio_l:
+        label: "(unused)"
+        description: Not used
+        source: info.yaml
+      audio_r:
+        label: "(unused)"
+        description: Not used
+        source: info.yaml
+    outputs:
+      cv_out_1:
+        label: Trace X CV
+        description: Trace X playback
+        source: info.yaml
+      cv_out_2:
+        label: Trace Y CV
+        description: Trace Y playback
+        source: info.yaml
+      pulse_out_1:
+        label: End of cycle
+        description: Trigger on every trace wraparound
+        source: info.yaml
+      pulse_out_2:
+        label: Contour Gate
+        description: Gates high on trace X's recorded shape
+        source: info.yaml
+      audio_out_l:
+        label: "(unused)"
+        description: Not used
+        source: info.yaml
+      audio_out_r:
+        label: "(unused)"
+        description: Not used
+        source: info.yaml
+  switch_modes:
+    up: 'Live: Audition — X/Y play live to the CV outs, CV-in summed on top'
+    middle: 'Play: Loop the recorded trace at Main-knob speed; X/Y knobs used to attenuate'
+    down: 'Record: Hold to record a fresh trace; release to Middle to loop it'
+  leds:
+  - 'Live: two 3-LED level bars (brightness = |output| per X/Y).'
+  - 'Record: buffer-fill gauge (LEDs fill 1->6 as recording approaches the ~75s cap).'
+  - 'Play: a moving position dot — reverses and freezes with speed,'
+  - and holds on the last LED when a trigger finishes.
+  source:
+  - releases/90_Pantograph/info.yaml
+  - releases/90_Pantograph/README.md
+  slug: 90-pantograph
+  url: "/workshopsystem/program-cards/90-pantograph/"
+  tags:
+  - cv
+  - recorder
+  - looper
+  - lfo
+  - envelope
+  - modulation
+  source_file: releases/90_Pantograph/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/90_Pantograph
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/90_Pantograph/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/90_Pantograph/build/pantograph.uf2
+  metadata:
+    creator: Kenny Shen
+    language: Pico SDK
+    version: '1.0'
+    status: Ready
+    created: '2026-07-04'
+    updated: '2026-07-04'
+  documentation:
+    intro: |-
+      Pantograph lets you trace a performance on the X and Y knobs (e.g. oscillator pitch + filter
+      cutoff), record it, then loop it back out the two CV outputs at variable speeds.
+
+      Switch UP auditions live; hold DOWN to record (monitored, so you hear it as you play);
+      release to MIDDLE and it loops exactly that length. The Main
+      knob sets playback speed: centre = freeze, left = reverse, right = faster.
+
+      Patch a gate into PULSE IN 1 and MIDDLE becomes a triggered enveloped; unpatched it free-loops.
+      PULSE OUT 1 fires a trigger at the end of a recording.
+      PULSE OUT 2 runs a gate from the shape of the recording.
 - id: 91_chorgan
   title: Chorgan
-  draft: true
+  draft: false
   release: 91 / 1.1.0
   summary: 'Chorgan — 6-voice chord synthesizer with morphing timbre, chord extension
     presets, and built-in chord sequencer. Two modes: normal (detune/chorus) and slew
@@ -6634,7 +7623,7 @@
         label: Root Pitch
         description: Root pitch from C3 to C6, summed with CV In 1
         source: info.yaml
-      "y":
+      y:
         label: Interval
         description: Semitone interval between root and voice 2 (0–12)
         source: info.yaml
@@ -6654,6 +7643,20 @@
           Timbre
           Offset CV
         description: Bipolar offset to Main knob timbre position
+        source: info.yaml
+      audio_l:
+        label: |-
+          Slew Speed
+          CV
+        description: 0V=instant, +5V=approx 1 min glide; negative shortens slew in
+          slew mode
+        source: info.yaml
+      audio_r:
+        label: |-
+          Chord
+          Inversion CV
+        description: Bipolar +/-6 octave inversion steps; shifts lowest/highest voice
+          up or down
         source: info.yaml
       pulse_1:
         label: |-
@@ -6712,7 +7715,7 @@
   - 'Z any: Interval Position A; Store/Recall Bit A; Interval Position B; Store/Recall
     Bit B; Interval Position C; Preset Brightness.'
   notes:
-  - |
+  - |-
     Slew mode boots when Switch Down is held at power-on until LEDs flash.
     Up to eight chords can be stored; storing more than eight overwrites from the beginning.
   source:
@@ -6735,17 +7738,459 @@
     language: C++ (Pico SDK / ComputerCard)
     version: 1.1.0
     status: released
+    created: '2026-06-21'
+    updated: '2026-06-27'
   documentation:
-    intro: |
+    intro: |-
       Six-voice morphing chord synthesizer with built-in chord sequencer.
       Knob X and CV In 1 set root pitch; Knob Y selects interval above root (0–12 semitones).
       Main knob morphs all six voices through sine, triangle, saw, and narrow pulse; CV In 2 offsets timbre.
+      Audio In 1 controls slew speed (0V=instant, +5V=approx 1 min glide). Audio In 2 shifts chord voicing through octave inversions (bipolar, +/-6 steps).
       Tap Switch Down to cycle chord extension presets; hold one second to store a chord in the sequencer.
       Pulse In 1 advances preset; Pulse In 2 recalls the next stored chord on rising edges.
       Boot with Switch Down held for slew mode (portamento chord changes instead of detune).
+- id: 93_Turing_Matrix
+  title: Turing Matrix
+  draft: false
+  release: 93 / 0.1.0-beta
+  summary: Turing Machine sequencer with a switchable mixer layer inspired by the
+    Music Thing Modular Turing Machine and Vactrol Mix combination
+  description: Turing Machine sequencer with a switchable mixer layer inspired by
+    the Music Thing Modular Turing Machine and Vactrol Mix combination
+  panel:
+    controls:
+      main:
+        label: |-
+          Random /
+          Write Mixer
+        description: Drives the main Turing machine write behavior in middle mode
+          and sets mixer lag in up mode
+        source: info.yaml
+      x:
+        label: |-
+          Loop Length
+          Mixer Depth
+        description: Sets channel 1 sequence length in middle mode and mixer depth
+          1 in up mode
+        source: info.yaml
+      y:
+        label: |-
+          Div / Mult
+          Mixer Depth
+        description: Sets channel 2 divide/multiply clock relationship in middle mode
+          and mixer depth 2 in up mode
+        source: info.yaml
+      z:
+        label: |-
+          Tap Tempo /
+          Mode
+        description: Tap switch sets internal BPM when no external clock is present;
+          switch position selects the active layer
+        source: info.yaml
+    inputs:
+      pulse_1:
+        label: Ext Clock 1
+        description: Replaces tap tempo and drives the main Turing clock
+        source: info.yaml
+        type: pulse
+      pulse_2:
+        label: Ext Clock 2
+        description: Independently clocks channel 2 when patched
+        source: info.yaml
+        type: pulse
+      cv_1:
+        label: CV In 1
+        description: Divide/multiply modulation in middle mode; mix input 1 in up
+          mode
+        source: info.yaml
+        type: cv
+      cv_2:
+        label: CV In 2
+        description: Pitch offset in middle mode; mix input 2 in up mode
+        source: info.yaml
+        type: cv
+      audio_l:
+        label: Audio Out 1
+        description: Audio pass-through in middle mode; mixed audio output 1 in up
+          mode
+        source: info.yaml
+        type: audio
+      audio_r:
+        label: Audio Out 2
+        description: Audio pass-through in middle mode; mixed audio output 2 in up
+          mode
+        source: info.yaml
+        type: audio
+    outputs:
+      pulse_out_1:
+        label: Chan 1 Pulse
+        description: Clock or Turing-bit pulse behavior depending on pulse mode configuration
+        source: info.yaml
+        type: pulse
+      pulse_out_2:
+        label: Chan 2 Pulse
+        description: Clock or Turing-bit pulse behavior depending on pulse mode configuration
+        source: info.yaml
+        type: pulse
+      cv_out_1:
+        label: |-
+          Chan 1 Quant
+          CV
+        description: Quantized pitch CV in middle mode; crossfaded CV output 1 in
+          up mode
+        source: info.yaml
+        type: cv
+      cv_out_2:
+        label: |-
+          Chan 2 Quant
+          CV
+        description: Quantized pitch CV in middle mode; crossfaded CV output 2 in
+          up mode
+        source: info.yaml
+        type: cv
+      audio_out_l:
+        label: |-
+          Audio Out 1
+          Pass-through
+        description: Audio pass-through in middle mode; mixed audio output 1 in up
+          mode
+        source: info.yaml
+        type: audio
+      audio_out_r:
+        label: |-
+          Audio Out 2
+          Pass-through
+        description: Audio pass-through in middle mode; mixed audio output 2 in up
+          mode
+        source: info.yaml
+        type: audio
+  switch_modes:
+    up: 'Z up: MAIN: Mixer Lag; X: Mix Depth 1; Y: Mix Depth 2. Mixer mode active.'
+    middle: 'Z middle: MAIN: Randomness / Write; X: Loop Length; Y: Div / Mult. Turing
+      mode active.'
+    down: 'Z down, momentary: MAIN: Tap Tempo.'
+  leds:
+  - 'Z middle: Channel 1 DAC Level; Channel 2 DAC Level; Channel 1 Turing Level; Channel
+    2 Turing Level; Pulse 1 Activity; Pulse 2 Activity.'
+  - 'Z up: Mixer position 1; Mixer position 2; Mix depth 1; Mix depth 2; Pulse 1 Activity;
+    Pulse 2 Activity.'
+  source:
+  - releases/93_Turing_Matrix/info.yaml
+  - releases/93_Turing_Matrix/README.md
+  slug: 93-turing-matrix
+  url: "/workshopsystem/program-cards/93-turing-matrix/"
+  tags:
+  - sequencer
+  - turing-machine
+  - random
+  - clock
+  - cv
+  - mixer
+  source_file: releases/93_Turing_Matrix/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/93_Turing_Matrix
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/93_Turing_Matrix/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/93_Turing_Matrix/uf2/TuringMatrix.uf2
+  metadata:
+    version: 0.1.0-beta
+    created: '2026-06-26'
+    updated: '2026-07-02'
+    editor_url: https://tomwhitwell.github.io/Workshop_Computer/programs/93-turing-matrix/web/index.html
+    editor_note: Configure this card in your browser
+- id: 95_offair2
+  title: OffAir
+  draft: false
+  release: 95 / 1.0.1
+  summary: OffAir — AM/Shortwave/Longwave radio simulator. Tune between two Stations
+    and interference with authentic heterodyne whistles, SSB pitch-shift detuning,
+    AM envelope detection, swelling per-band static, and triggerable Insta-ference
+    one-shots. Baked recordings or live audio inputs become the Stations.
+  description: OffAir — AM/Shortwave/Longwave radio simulator. Tune between two Stations
+    and interference with authentic heterodyne whistles, SSB pitch-shift detuning,
+    AM envelope detection, swelling per-band static, and triggerable Insta-ference
+    one-shots. Baked recordings or live audio inputs become the Stations.
+  panel:
+    controls:
+      main:
+        label: Tuning
+        description: Scans across the dial (sums with CV In 1)
+        source: info.yaml
+      x:
+        label: Brightness
+        description: IF bandwidth — capture width + audio brightness (CCW narrow/muffled,
+          CW wide/bright)
+        source: info.yaml
+      y:
+        label: Noise Level
+        description: Static floor (silent fully CCW); slowly swells and swishes, heaviest
+          on LW
+        source: info.yaml
+      z:
+        label: Cycle Band
+        description: Tap to cycle AM → SW → LW, re-randomising the layout each time
+        source: info.yaml
+    inputs:
+      audio_l:
+        label: Station 1 In
+        description: Station 1 source (live audio, in audio-input mode)
+        source: info.yaml
+        type: audio
+      audio_r:
+        label: Station 2 In
+        description: Station 2 source (live audio, in audio-input mode)
+        source: info.yaml
+        type: audio
+      cv_1:
+        label: Tuner
+        description: Tuning offset added to the Main knob (1:1, ±5V ≈ ±half the dial)
+        source: info.yaml
+        type: cv
+      cv_2:
+        label: Noise
+        description: Adds to the Knob Y noise level (voltage-controlled static)
+        source: info.yaml
+        type: cv
+      pulse_1:
+        label: |-
+          Shuffle
+          Signals
+        description: Rising edge re-randomises the Station/interference layout. In
+          audio-input mode with Switch Up it is the Morse In key instead.
+        source: info.yaml
+        type: pulse
+      pulse_2:
+        label: Insta-ference
+        description: Rising edge fires a one-shot event from the curated Insta-ference
+          bank
+        source: info.yaml
+        type: pulse
+    outputs:
+      cv_out_1:
+        label: |-
+          Signal
+          Strength
+        description: Envelope that rises as you tune onto a Station
+        source: info.yaml
+        type: cv
+      cv_out_2:
+        label: |-
+          Station 1 CV
+          Offset
+        description: Station 1's offset from the Main knob — slew into CV In 1 to
+          tune onto Station 1
+        source: info.yaml
+        type: cv
+      audio_out_l:
+        label: Out
+        description: Full mix — tuned audio, whistles, static, Insta-ference
+        source: info.yaml
+        type: audio
+      audio_out_r:
+        label: Just Noise
+        description: Noise / static only
+        source: info.yaml
+        type: audio
+      pulse_out_1:
+        label: |-
+          Station 1
+          Tuned Gate
+        description: HIGH while tuned to Station 1
+        source: info.yaml
+        type: pulse
+      pulse_out_2:
+        label: |-
+          Station 2
+          Tuned Gate
+        description: HIGH while tuned to Station 2
+        source: info.yaml
+        type: pulse
+  switch_modes:
+    up: 'Z up, hold: MAIN: Dead-air / Morse.'
+    middle: ''
+    down: 'Z down, momentary: MAIN: Cycle Band.'
+  leds:
+  - 'Z any: Station 1 signal strength; Station 2 signal strength; SW band; LW band;
+    Tuning position.'
+  source:
+  - releases/95_offair2/info.yaml
+  - releases/95_offair2/README.md
+  slug: 95-offair2
+  url: "/workshopsystem/program-cards/95-offair2/"
+  tags:
+  - radio
+  - sampler
+  - noise
+  - effect
+  - generative
+  source_file: releases/95_offair2/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/95_offair2
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/95_offair2/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/95_offair2/offair.uf2
+  metadata:
+    creator: Andy Jenkinson (uglifruit)
+    language: C++ (Pico SDK / ComputerCard)
+    version: 1.0.1
+    status: released
+    license: CC BY-SA 4.0
+    created: '2026-06-27'
+    updated: '2026-07-02'
+    repository: https://github.com/uglifruit/Workshop_Computer
+  documentation:
+    intro: |-
+      Tune across a virtual shortwave band with the Main knob. Two Stations (live audio
+      inputs, or baked recordings in baked-in audio mode) plus three interference signals
+      are scattered across the dial and re-randomised on each band change. Approaching a
+      Station you hear a sliding heterodyne whistle, the audio pulls into tune and the
+      static ducks away; off-tune it pitch-shifts (SW/LW) or distorts (AM). Knob X sets IF
+      bandwidth/brightness, Knob Y the noise level. Tap Switch Down to cycle AM/SW/LW.
+      Hold Switch Up for dead-air (baked-in mode) or a Pulse In 1-keyed morse Station 2
+      (audio-input mode). Pulse In 2 fires curated "Insta-ference" one-shots.
+- id: 96_cathode
+  title: Cathode Ray
+  draft: false
+  release: 96 / 1.2.0
+  summary: Composite video synthesiser (PAL + NTSC builds) — oscilloscope, etch-a-sketch
+    & spectrum analyser, greyscale via dithering, performance effects, 8 alt-boot
+    screensaver/game modes
+  description: Composite video synthesiser (PAL + NTSC builds) — oscilloscope, etch-a-sketch
+    & spectrum analyser, greyscale via dithering, performance effects, 8 alt-boot
+    screensaver/game modes
+  panel:
+    inputs:
+      audio_l:
+        label: Scope In
+        description: Oscilloscope trace / spectrum source (gain via Knob Y). In FourTrig
+          alt-mode, a trigger input (top-left quadrant)
+        source: info.yaml
+      audio_r:
+        label: |-
+          Trig
+          (FourTrig)
+        description: Unused in the main synth. In FourTrig alt-mode, a trigger input
+          (top-right quadrant)
+        source: info.yaml
+      cv_1:
+        label: Draw X
+        description: Etch-a-sketch X axis (scaled/offset by Knob X), sampled at 48kHz
+        source: info.yaml
+      cv_2:
+        label: Draw Y
+        description: Etch-a-sketch Y axis (scaled/offset by Knob Y), sampled at 48kHz
+        source: info.yaml
+      pulse_1:
+        label: Trig 1
+        description: Configurable performance trigger (default cycle FX; set to CLS
+          to clear)
+        source: info.yaml
+      pulse_2:
+        label: Trig 2
+        description: Configurable performance trigger (default invert while held)
+        source: info.yaml
+    outputs:
+      pulse_out_1:
+        label: |-
+          Video DAC
+          bit 0
+        description: Composite video via 1kΩ (black pedestal); summed into RCA centre
+          pin
+        source: info.yaml
+      pulse_out_2:
+        label: |-
+          Video DAC
+          bit 1
+        description: Composite video via 220Ω (white step); summed into RCA centre
+          pin
+        source: info.yaml
+      cv_out_1:
+        label: Alt-boot CV
+        description: Alt-boot only — mode-dependent (Patchteroids pitch / Boing height
+          / etc). Unused in the main synth.
+        source: info.yaml
+      cv_out_2:
+        label: |-
+          Alt-boot
+          Trig
+        description: Alt-boot only — mode-dependent event pulse (hit / bounce / crash
+          / reached exit). Unused in the main synth.
+        source: info.yaml
+  switch_modes:
+    up: ''
+    middle: ''
+    down: ''
+  leds: []
+  source:
+  - releases/96_cathode/info.yaml
+  - releases/96_cathode/README.md
+  slug: 96-cathode
+  url: "/workshopsystem/program-cards/96-cathode/"
+  tags:
+  - video
+  - composite
+  - oscilloscope
+  - visualiser
+  - performance
+  source_file: releases/96_cathode/info.yaml
+  source_url: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/96_cathode
+  readme_url: https://github.com/TomWhitwell/Workshop_Computer/blob/main/releases/96_cathode/README.md
+  download_url: https://raw.githubusercontent.com/TomWhitwell/Workshop_Computer/main/releases/96_cathode/cathode_ray.uf2
+  metadata:
+    creator: Andy Jenkinson (uglifruit)
+    language: C++ (RP2040 Pico SDK)
+    version: 1.2.0
+    status: Released
+    license: MIT
+    created: '2026-06-30'
+    updated: '2026-07-02'
+    repository: https://github.com/TomWhitwell/Workshop_Computer/tree/main/releases/96_cathode
+  documentation:
+    intro: |-
+      Cathode Ray turns the Workshop Computer into a 1-bit composite video synthesiser.
+      Wire a two-resistor DAC from Pulse Out 1 (1kΩ) and Pulse Out 2 (220Ω) into an RCA
+      centre pin (grounds common) and connect to any composite-input TV/monitor. PAL by
+      default; flash cathode_ray_ntsc.uf2 for NTSC (US) displays.
+
+      The Main knob picks the mode across three zones: lower = etch-a-sketch (draw with
+      CV In 1/2 as X/Y), middle = oscilloscope (Audio In 1 traces, sweep speed slow→fast),
+      upper = spectrum analyser (24-band, Audio In 1). Greyscale (5 levels) is produced by a
+      2×2 spatial dither into the 1-bit picture.
+
+      Switch MIDDLE = phosphor fade / persistence, UP = static / clean. Knob X/Y are
+      multi-function (CV scale / position offset / scope gain & baseline / spectrum gain &
+      rotate) with pickup hysteresis.
+
+      Three independent performance-trigger sources — Switch DOWN, Pulse In 1, Pulse In 2 —
+      each runs a configurable behaviour (invert, clear, cycle/random effect, or one fixed
+      effect: strobe / fade / fade-to-white / snow / swap / corrupt / roll). Hold Switch
+      DOWN and twist Main/X/Y to open the on-screen config menu and assign each source.
+
+      Hold Switch DOWN at power-on for ALT-BOOT mode: a selector of screensaver / performance
+      hybrids that also protect a CRT from burn-in. Switch UP shows the selector (Main knob
+      scrolls through the modes, with on-screen input/output help); Switch MIDDLE or DOWN
+      plays the shown mode. Modes:
+       • COMET — a round comet with a phosphor tail (Main/CV1 = speed, Y/CV2 = tail length).
+       • PATCHTEROIDS — patch-controlled Asteroids. Main (+ CV In 1) steers, PU1 / Switch DOWN
+         fire. CV Out 1 = pitch (+1 semitone per hit, arpeggiates down on a crash), CV Out 2 =
+         gate per hit.
+       • BOING — Amiga-style tilted rotating checkered ball. Knob X / CV1 = spin & kick impulse,
+         Main / CV2 = bounce efficiency, Knob Y = horizontal speed, PU1 / DOWN = kick.
+         CV Out 1 = height, CV Out 2 = trigger on each floor bounce.
+       • STARFIELD — fly through space. Main = speed, X/CV1 = horizontal turn, Y/CV2 = vertical.
+       • RADAR — a radar scope. Main aims a turret, PU1 / DOWN fires a ballistic missile (hold =
+         range); PU2 (CV1 sets radius) drops fading target blocks. CV Out 2 = pulse on a hit.
+       • LUNAR — Lunar Lander. Main / CV1 rotate, PU1 / DOWN thrust; land gently on the pad
+         (narrows each stage) avoiding drifting UFOs. CV Out 1 = altitude, CV Out 2 = crash.
+       • 3DMAZE — first-person wireframe maze. Main turns, PU1 / DOWN walks; Knob X / CV1 =
+         hands-free auto-run. Find the glowing white EXIT panel on a wall (reaching it flashes and
+         generates a new maze). CV Out 2 = pulse when you reach the exit.
+       • FOURTRIG — a trigger-driven visual drum machine. Audio In 1, Audio In 2, Pulse In 1 and
+         Pulse In 2 are all triggers; each stamps a decaying "thing" (thick 2×2 strokes) into one
+         screen quadrant. Knob X = bank (icons first, words last: shapes / music-hits / symbols /
+         words / emphasis), Knob Y (+ CV In 2) = the set of four, Main (+ CV In 1) = CHAOS (jitter/
+         swap placement, grow + vary size, and past ~50% a rising chance of a per-hit random VFX from
+         the full set incl. flip-180). Hold Switch DOWN for a momentary held VFX. CV Out 2 = pulse on
+         every trigger.
 - id: 98_duo_midi
   title: Duo MIDI
-  draft: true
+  draft: false
   release: 98 / 0.1
   summary: A duophonic midi device/host interface
   description: A duophonic midi device/host interface
@@ -6755,36 +8200,28 @@
         label: |-
           Velocity
           Sensitivity
+        description: Scales envelope sustain by MIDI velocity
         source: info.yaml
       x:
-        label: |-
-          Envelope
-          Attack
+        label: Env Attack
+        description: Sets ASR attack time
         source: info.yaml
-      "y":
-        label: |-
-          Envelope
-          Release
+      y:
+        label: Env Release
+        description: Sets ASR release time
         source: info.yaml
       z:
-        label: |-
-          Trig / Gate
-          Mode Toggle
-        description: Toggles pulse outputs between 10ms trigger and sustained gate
-          behavior
+        label: Mode
+        description: Selects alternate control modes.
         source: info.yaml
     inputs:
       pulse_1:
-        label: |-
-          Voice 1
-          Envelope
+        label: Env1 Gate
         description: Toggles AudioOut1 envelope state and refreshes envelope parameters
         source: info.yaml
         type: pulse
       pulse_2:
-        label: |-
-          Voice 2
-          Envelope
+        label: Env 2 Gate
         description: Toggles AudioOut2 envelope state and refreshes envelope parameters
         source: info.yaml
         type: pulse
@@ -6832,10 +8269,10 @@
         source: info.yaml
         type: pulse
   switch_modes:
-    up: 'Z up: MAIN: Velocity Sensitivity; X: Envelope Attack; Y: Envelope Release.'
-    middle: 'Z middle: MAIN: Velocity Sensitivity; X: Envelope Attack; Y: Envelope
-      Release.'
-    down: 'Z down: MAIN: Trigger/Gate Mode Toggle.'
+    up: 'Duophonic: Duophonic voice allocation across the two voices'
+    middle: 'Mirrored Mono: Both voices mirror the same mono note'
+    down: 'Trigger/Gate Toggle: Toggles pulse outputs between 10ms trigger and sustained
+      gate behavior'
   leds: []
   notes:
   - 'MIDI device/host: Receives MIDI note, velocity, pitch bend, and mod wheel; script
@@ -6857,11 +8294,13 @@
   metadata:
     creator: Dune Desormeaux
     language: Lua / Blackbird
-    version: 0.1
+    version: '0.1'
     status: Released
+    created: '2026-01-09'
+    updated: '2026-07-04'
   documentation:
-    intro: |
-      Duophonic MIDI-to-CV/envelope card running a Blackbird Lua script. Z up is duophonic voice
+    intro: |-
+      Duophonic MIDI-to-CV card running a Blackbird Lua script. Z up is duophonic voice
       allocation, Z middle is mirrored mono, and Z down toggles pulse outputs between trigger and gate
       mode. Main sets velocity sensitivity; X and Y set envelope attack and release. Receives MIDI note,
       velocity, pitch bend, and mod wheel.
@@ -6897,9 +8336,11 @@
     language: C++ (ComputerCard)
     version: 0.1.1
     status: Released
+    created: '2025-10-01'
+    updated: '2026-06-24'
     repository: https://github.com/divmod-audio/toolbox
   documentation:
-    intro: |
+    intro: |-
       Utility-focused card inspired by the 0-Coast utility section. Includes a mixer/VCA with
       attenuverter, secondary VCA, sample-and-hold, clock generation with probability, and selectable
       noise types.

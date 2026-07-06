@@ -36,8 +36,8 @@ layout: default
 {%- endif -%}
 
 <article class="program-cards program-card-page">
+  {%- assign info_yaml_url = "https://github.com/TomWhitwell/Workshop_Computer/blob/main/" | append: card.source_file -%}
   {%- if card.draft -%}
-    {%- assign info_yaml_url = "https://github.com/TomWhitwell/Workshop_Computer/blob/main/" | append: card.source_file -%}
     <aside class="program-card-draft-bar" aria-label="Draft documentation notice">
       <div class="program-card-draft-bar__message">
         <strong>Draft:</strong>
@@ -170,6 +170,8 @@ layout: default
         {%- if metadata.creator -%}<div><dt>Creator</dt><dd>{{ metadata.creator }}</dd></div>{%- endif -%}
         {%- if metadata.language -%}<div><dt>Language</dt><dd>{{ metadata.language }}</dd></div>{%- endif -%}
         {%- if metadata.version -%}<div><dt>Version</dt><dd>{{ metadata.version }}</dd></div>{%- endif -%}
+        {%- if metadata.updated and metadata.updated != "n/a" -%}<div><dt>Updated</dt><dd>{{ metadata.updated }}</dd></div>{%- endif -%}
+        {%- if metadata.created and metadata.created != "n/a" -%}<div><dt>Created</dt><dd>{{ metadata.created }}</dd></div>{%- endif -%}
         {%- if card.memory and card.memory.size -%}<div><dt>Card memory</dt><dd>{{ card.memory.size | upcase }} {{ card.memory.requirement | default: "supported" }}</dd></div>{%- endif -%}
         <div><dt>Read more</dt><dd><a href="{{ readme_url }}">README in the Workshop Computer repo</a></dd></div>
         <div><dt>Source</dt><dd><a href="{{ source_url }}">Release folder on GitHub</a></dd></div>
