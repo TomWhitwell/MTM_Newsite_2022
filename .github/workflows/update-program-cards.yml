@@ -59,8 +59,8 @@ jobs:
 
           puts "WORKSHOP_COMPUTER_REPO=#{repo}"
           puts "WORKSHOP_COMPUTER_REF=#{ref}"
+          warn "Importing #{repo}@#{ref}"
           RUBY
-          echo "Importing ${WORKSHOP_COMPUTER_REPO}@${WORKSHOP_COMPUTER_REF}"
 
       - name: Check out Workshop Computer card data
         uses: actions/checkout@v4

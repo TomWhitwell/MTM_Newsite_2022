@@ -636,9 +636,13 @@ end
 
 cards.sort_by! { |card| [card['id'].to_s[/^\d+/].to_i, card['id']] }
 
+def stable_yaml(value)
+  YAML.dump(value).sub(/^---\n/, '').gsub(/^(\s*)y:/, '\1"y":')
+end
+
 output_path = site_path(site_root, options[:output])
 FileUtils.mkdir_p(File.dirname(output_path))
-File.write(output_path, "# Generated from Workshop_Computer releases/*/info.yaml. Do not edit by hand; edit source YAML or curation files.\n" + YAML.dump(cards).sub(/^---\n/, ''))
+File.write(output_path, "# Generated from Workshop_Computer releases/*/info.yaml. Do not edit by hand; edit source YAML or curation files.\n" + stable_yaml(cards))
 
 pages_dir = site_path(site_root, options[:pages])
 FileUtils.mkdir_p(pages_dir)
