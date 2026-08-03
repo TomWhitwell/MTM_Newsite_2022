@@ -1,10 +1,10 @@
 ---
 layout: page
-title: How to install cards
+title: How to install program cards
 permalink: /workshopsystem/program-cards/install/
 ---
 
-There are three ways to write blank program cards. 
+There are three ways to write blank program cards for the Workshop Computer.  
 
 ## The quick way 
 
