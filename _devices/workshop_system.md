@@ -2,7 +2,7 @@
 layout: documentation
 permalink: /workshopsystem/
  
-order: -1
+order: 0.4
 title:  "Workshop System: The Complete Modular Synth"
 module-name: "Workshop System"
 designed: "October 2024" 
