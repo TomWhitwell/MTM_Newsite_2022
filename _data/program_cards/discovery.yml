@@ -23,104 +23,86 @@
 #
 # Card IDs must match `_data/program_cards/cards.yml`.
 page:
-  title: "Program Cards"
-  intro: ""
-
+  title: Program Cards
+  intro: ''
 embeds:
   computer_program_cards:
-    title: "Try new cards"
-    link_text: "Explore all cards"
-    link: "/workshopsystem/program-cards/"
+    title: Try new cards
+    link_text: Explore all cards
+    link: /workshopsystem/program-cards/
     cards:
-      - "39_knots"
-      - "71_degenerator"
-      - "82_Computer_Grids"
-
+      - 39_knots
+      - 71_degenerator
+      - 82_Computer_Grids
 hero:
-  title: "Included cards"
+  title: Included cards
   featured:
-    - "03_Turing_Machine"
-    - "20_reverb"
-    - "00_Simple_MIDI"
-
+    - 03_Turing_Machine
+    - 20_reverb
+    - 00_Simple_MIDI
 shelves:
-
-  - id: "start-here"
-    title: "Try these first"
-    layout: "video-lead"
+  - id: start-here
+    title: Try these first
+    layout: video-lead
     cards:
-      - "39_knots"
-      - "71_degenerator"
-      - "25_utility_pair"
-      - "04_BYO_Benjolin"
-
-
-  - id: "recommended"
-    title: "Recommended"
-    layout: "list"
+      - 15_MLRws
+      - 71_degenerator
+      - 25_utility_pair
+      - 04_BYO_Benjolin
+  - id: recommended
+    title: Recommended
+    layout: list
     cards_from_tags:
-      - "recommended"
+      - recommended
     hide_tags:
-      - "recommended"
+      - recommended
     limit: 6
-
-
-  - id: "demo-videos"
-    title: "Essentials"
-    layout: "video-strip"
+  - id: demo-videos
+    title: Essentials
+    layout: video-strip
     cards:
-      - "30_cirpy_wavetable"
-      - "07_bumpers"
-      - "28_eighties_bass"
-      - "14_cvmod"
-
-
-  - id: "new"
-    title: "New"
-    layout: "list"
+      - 30_cirpy_wavetable
+      - 26_clockwork
+      - 28_eighties_bass
+      - 41_blackbird
+  - id: new
+    title: New
+    layout: list
     cards_from_tags:
-      - "new"
+      - new
     hide_tags:
-      - "new"
+      - new
     limit: 6
-
-
-  - id: "make-sound"
-    title: "Make sound"
+  - id: make-sound
+    title: Make sound
     cards:
-      - "10_twists"
-      - "27_Siren"
-      - "28_eighties_bass"
-      - "30_cirpy_wavetable"
-      - "78_Talker"
-      - "08_bytebeat"
-
-
-  - id: "external-audio"
-    title: "Process audio"
+      - 10_twists
+      - 27_Siren
+      - 28_eighties_bass
+      - 30_cirpy_wavetable
+      - 78_Talker
+      - 08_bytebeat
+  - id: external-audio
+    title: Process audio
     cards:
-      - "20_reverb"
-      - "53_glitter"
-      - "71_degenerator"
-      - "14_cvmod"
-      - "12_am_coupler"
-
-
-
-  - id: "strange"
-    title: "Strange"
+      - 20_reverb
+      - 53_glitter
+      - 71_degenerator
+      - 14_cvmod
+      - 12_am_coupler
+  - id: strange
+    title: Strange
     cards_from_tags:
-      - "wild"
+      - wild
     hide_tags:
-      - "wild"
+      - wild
     limit: 3
-
-
-  - id: "deep-cuts"
-    title: "Deep cuts"
+  - id: deep-cuts
+    title: Deep cuts
     cards:
-      - "42_backyard_rain"
-      - "47_NZT"
-      - "69_trace"
-      - "38_od"
-      - "24_crafted_volts"
+      - 42_backyard_rain
+      - 47_NZT
+      - 69_trace
+      - 38_od
+      - 24_crafted_volts
+
