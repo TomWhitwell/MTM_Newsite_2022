@@ -289,3 +289,78 @@ assignments:
 
   # 96 Cathode Ray
   "96_cathode": []
+
+  # 02 Patcher+
+  "02_PatcherPlus": []
+
+  # 17 COMET
+  "17_COMET": []
+
+  # 19 Cellular Automata Sequencer
+  "19_CA_Sequencer": []
+
+  # 29 XHT Card
+  "29_XHT": []
+
+  # 45 Bends
+  "45_bends": []
+
+  # 48 Two Tracks
+  "48_two_tracks": []
+
+  # 49 Tape Bias
+  "49_Tape_Bias": []
+
+  # 52 F1shnet
+  "52_F1shnet": []
+
+  # 61 ZX
+  "61_ZX_Spectrum": []
+
+  # 62 BioMimicry
+  "62_BioMimicry": []
+
+  # 63 NIBBLE
+  "63_Nibble": []
+
+  # 67 Fragments
+  "67_Fragments": []
+
+  # 73 VSS
+  "73_VSS": []
+
+  # 75 Turing Clouds
+  "75_Turing_Clouds": []
+
+  # 85 PlantHolder
+  "85_plant_holder": []
+
+  # 89 Lockstep
+  "89_Lockstep": []
+
+  # 94 Ouroboros
+  "94_Ouroboros": []
+
+  # 97 Alloy
+  "97_alloy": []
+
+  # 101 C1ZZL3 Gnarly
+  "101_Gnarly_C1ZZL3": []
+
+  # 303 Acid
+  "303_acid": []
+
+  # 355 RYK 355 Pitch to Voltage / 350 Vocoder
+  "355_RYK_Pitch-Vocoder": []
+
+  # 433 433 Sense of Space
+  "433_sense_of_space": []
+
+  # 666 WS-DOOM
+  "666_ws_doom": []
+
+  # 877 RYK B77 Tape Sampler
+  "877_RYK_Tape-Sampler": []
+
+  # 910 RYK 910 Pitched Delay
+  "910_RYK_Pitched-Delay": []
