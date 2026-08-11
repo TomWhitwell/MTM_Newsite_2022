@@ -163,7 +163,8 @@ In [this section of the build video](https://www.youtube.com/watch?v=-fjmAFyHc2Y
 {% include linkedHeading.html heading="Understanding switches" level=3 %}
 {% include documentation_image.html filename="images/WS_switches.jpg" caption="Three types of switches, make sure you know which is which" %}
 
-* There are three types of toggle switch in the workshop system 
+* There are three types of toggle switch in the workshop system
+* Each switch comes with two nuts. One goes behind the panel, the other in front of the panel. So put one onto the switch before you assemble the system - as shown in the picture above. This makes the switch toggle feel slightly shorter in relation to the panel. It is NOT critical. If you forget to do it, I don't recommend opening up your system to add them. 
 * Two of them **look exactly the same but are very different so really please don't mix them up**
 	* **ON-ON** switches have two positions. They're always at an angle. They're only in the Filter module. They're a bit annoying to fit through the panel. It doesn't matter which way round you put them. 
 	* **ON-OFF-ON** switches have three positions: Up, Middle, Down. It doesn't matter which way round you put them. 
