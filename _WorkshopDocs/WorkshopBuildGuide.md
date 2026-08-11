@@ -161,7 +161,7 @@ In [this section of the build video](https://www.youtube.com/watch?v=-fjmAFyHc2Y
 * Please put the right pot of the right value in the right spot!
 
 {% include linkedHeading.html heading="Understanding switches" level=3 %}
-{% include documentation_image.html filename="images/WS_switches.jpg" caption="Three types of switches, make sure you know which is which" %}
+{% include documentation_image.html filename="images/WS_switches.jpg" caption="Three types of switches, make sure you know which is which. Add one nut to each before you assemble the system." %}
 
 * There are three types of toggle switch in the workshop system
 * Each switch comes with two nuts. One goes behind the panel, the other in front of the panel. So put one onto the switch before you assemble the system - as shown in the picture above. This makes the switch toggle feel slightly shorter in relation to the panel. It is NOT critical. If you forget to do it, I don't recommend opening up your system to add them. 
