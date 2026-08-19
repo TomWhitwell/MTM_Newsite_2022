@@ -2,7 +2,7 @@
 layout: documentation
 permalink: /workshopsystem/
  
-order: -1
+order: 0.4
 title:  "Workshop System: The Complete Modular Synth"
 module-name: "Workshop System"
 designed: "October 2024" 
@@ -75,7 +75,7 @@ At present, it is available as a DIY kit from [Thonk](https://www.thonk.co.uk/wo
 
 Workshop Systems are also available pre-assembled from [Signal Sounds](https://www.signalsounds.com/music-thing-modular-workshop-system-desktop-eurorack-synthesiser/) in Glasgow, [Perfect Circuit](https://www.perfectcircuit.com/music-thing-modular-workshop-system-assembled.html) in California and [SchneidersLaden](https://schneidersladen.de/en/music-thing-modular-workshop-system-assembled) in Berlin, and on request from Thonk. 
 
- <a href="https://www.thonk.co.uk/workshopsystem/" class="buy-btn">BUY NOW</a>&nbsp;&nbsp;
+ <a href="https://www.musicthing.co.uk/buy/" class="buy-btn">BUY NOW</a>&nbsp;&nbsp;
  <a href="/Workshop_System_Build_Guide/" class="buy-btn">Build Guide</a>  
  
  
@@ -85,8 +85,9 @@ Workshop Systems are also available pre-assembled from [Signal Sounds](https://w
 
 
 To find out more about the Workshop System:  
-* **[Workshop System Quick Start Guide](/Workshop_Quick_Start/)** 
-* **[Computer and Program Card Guide](/Computer_Program_Cards/)** 
+* **[Workshop System Quick Start Guide](/Workshop_Quick_Start/)**
+* **[NEW: Find the latest Program Cards](https://computer.musicthing.co.uk/index.html)**
+* **[Workshop Computer Guide](/Computer_Program_Cards/)** 
 * **[Build and construction Guide](/Workshop_System_Build_Guide/)**   
 * **[Calibration Guide](/Workshop_System_Calibration/)**  
 * **[Try the Workshop System NOW in your browser](https://vincentmaurer.de/patch-notes/)** 

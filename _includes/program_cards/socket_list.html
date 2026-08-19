@@ -1,0 +1,19 @@
+{%- assign title = include.title -%}
+{%- assign sockets = include.sockets -%}
+{%- assign socket_positions = include.positions -%}
+{%- if sockets -%}
+  <section class="program-card-section">
+    <h3>{{ title }}</h3>
+    <div class="program-card-socket-list">
+      {%- for pos in socket_positions -%}
+        {%- assign socket = sockets[pos.key] -%}
+        {%- if socket and socket.description or socket.label -%}
+          <div class="program-card-socket">
+            <strong>{{ socket.label | default: pos.name | strip_html }}</strong>
+              <p>{{ socket.description | default: socket.label | strip_html | truncate: 220 }}</p>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </section>
+{%- endif -%}

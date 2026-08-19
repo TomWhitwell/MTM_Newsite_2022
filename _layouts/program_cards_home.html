@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{%- assign config = site.data.program_cards.discovery -%}
+<div class="program-cards">
+  <header class="program-cards__title">
+    <div class="program-cards__identity">
+      <span class="program-cards__identity-mark" aria-hidden="true"></span>
+      <h1>{{ config.page.title | default: page.title }}</h1>
+    </div>
+    <nav class="program-cards__links" aria-label="Program card links">
+      <a href="{{ '/workshopsystem/program-cards/archive/' | relative_url }}">All cards</a>
+      <a href="{{ '/workshopsystem/program-cards/install/' | relative_url }}">Installation</a>
+      <a href="https://github.com/TomWhitwell/Workshop_Computer">Make a card</a>
+    </nav>
+  </header>
+
+  {%- if config.hero and config.hero.featured -%}
+    {%- include program_cards/shelf.html title=config.hero.title intro=config.hero.text cards=config.hero.featured featured=true -%}
+  {%- endif -%}
+
+  {%- for shelf in config.shelves -%}
+    {%- include program_cards/shelf.html shelf=shelf -%}
+  {%- endfor -%}
+</div>

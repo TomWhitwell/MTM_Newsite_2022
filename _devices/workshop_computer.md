@@ -1,9 +1,8 @@
 ---
 layout: module
-order: 0
+order: 0.5
 permalink: /Workshop-Computer/
 
-overlay: "NEW: "
 title:  "Music Thing Modular Workshop Computer Eurorack"
 module-name: "Workshop Computer"
 designed: "2026"

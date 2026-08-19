@@ -85,6 +85,25 @@ collections:
     output: true
   WorkshopDocs:
     output: true
+  program_cards:
+    output: true
+    permalink: /workshopsystem/program-cards/:name/
+
+defaults:
+  - scope:
+      path: "workshopsystem/program-cards"
+    values:
+      hide: true
+      noindex: true
+      sitemap:
+        exclude: "yes"
+  - scope:
+      type: "program_cards"
+    values:
+      hide: true
+      noindex: true
+      sitemap:
+        exclude: "yes"
     
 
 markdown: kramdown

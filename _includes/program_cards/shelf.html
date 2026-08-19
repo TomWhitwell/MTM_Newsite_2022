@@ -1,0 +1,65 @@
+{%- assign all_cards = site.data.program_cards.cards -%}
+{%- assign tag_config = site.data.program_cards.tags -%}
+{%- assign shelf = include.shelf -%}
+{%- assign title = include.title | default: shelf.title -%}
+{%- assign intro = include.intro | default: shelf.intro -%}
+{%- assign explicit_cards = include.cards | default: shelf.cards -%}
+{%- assign tag_cards = shelf.cards_from_tags -%}
+{%- assign hide_tags = include.hide_tags | default: shelf.hide_tags -%}
+{%- assign shelf_layout = include.layout | default: shelf.layout -%}
+{%- assign show_video = false -%}
+{%- if shelf_layout contains "video" -%}
+  {%- assign show_video = true -%}
+{%- endif -%}
+{%- assign limit = shelf.limit | default: include.limit | default: 999 -%}
+
+<section class="program-card-shelf{% if include.featured %} program-card-shelf--featured{% endif %}{% if shelf_layout %} program-card-shelf--{{ shelf_layout | slugify }}{% endif %}">
+  <header class="program-card-shelf__header">
+    <h2>{{ title }}</h2>
+    {%- if intro -%}<p>{{ intro }}</p>{%- endif -%}
+  </header>
+  <div class="program-card-grid{% if include.featured %} program-card-grid--featured{% endif %}{% if shelf_layout %} program-card-grid--{{ shelf_layout | slugify }}{% endif %}">
+    {%- if explicit_cards -%}
+      {%- for card_id in explicit_cards -%}
+        {%- assign card = all_cards | where: "id", card_id | first -%}
+        {%- include program_cards/card_tile.html card=card hide_tags=hide_tags show_video=show_video -%}
+      {%- endfor -%}
+    {%- elsif tag_cards -%}
+      {%- assign shown = 0 -%}
+      {%- assign seen = "" -%}
+      {%- for card in all_cards -%}
+        {%- assign show_card = false -%}
+        {%- for tag in tag_cards -%}
+          {%- assign tag_id = tag | slugify -%}
+          {%- assign assigned_tags = tag_config.assignments[card.id] | default: card.tag_labels -%}
+          {%- for assigned_tag in assigned_tags -%}
+            {%- assign assigned_tag_id = assigned_tag | slugify -%}
+            {%- if assigned_tag_id == tag_id -%}
+              {%- assign show_card = true -%}
+            {%- endif -%}
+            {%- for available_tag in tag_config.available_tags -%}
+              {%- assign available_id = available_tag.id | slugify -%}
+              {%- assign available_label = available_tag.label | slugify -%}
+              {%- if assigned_tag_id == available_id or assigned_tag_id == available_label -%}
+                {%- if tag_id == available_id or tag_id == available_label -%}
+                  {%- assign show_card = true -%}
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+          {%- if card.tag_ids contains tag_id -%}
+            {%- assign show_card = true -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- assign seen_token = "|" | append: card.id | append: "|" -%}
+        {%- unless seen contains seen_token -%}
+          {%- if show_card and shown < limit -%}
+            {%- include program_cards/card_tile.html card=card hide_tags=hide_tags show_video=show_video -%}
+            {%- assign shown = shown | plus: 1 -%}
+            {%- assign seen = seen | append: seen_token -%}
+          {%- endif -%}
+        {%- endunless -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </div>
+</section>
