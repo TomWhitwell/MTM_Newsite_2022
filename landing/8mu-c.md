@@ -4,125 +4,81 @@ title: 8mu landing C
 permalink: /landing/8mu-c/
 ---
 
-<article class="lp-page lp-page--8mu lp-playdate">
-  <nav class="lp-topbar" aria-label="Landing page navigation">
+<article class="sale-page sale-page--8mu">
+  <nav class="sale-nav" aria-label="Landing page navigation">
     <a href="/landing/">All prototypes</a>
-    <a href="#moves">Moves</a>
-    <a href="#games">Games</a>
-    <a href="#build">Build</a>
-    <a class="lp-topbar__cta" href="#buy">Buy now</a>
+    <a href="#kit">Kit</a>
+    <a href="#editor">Editor</a>
+    <a href="#open">Open</a>
+    <a class="sale-nav__buy" href="#buy">Buy now</a>
   </nav>
 
-  <section class="lp-playdate__hero">
-    <div>
-      <p class="lp-kicker">Format C / inspired by Panic's Playdate launch</p>
-      <h1>8mu has eight faders. Also, you can turn it over.</h1>
-      <p>This version is deliberately bright and playful. The whole page treats 8mu as a tiny object with one memorable trick, then uses that trick to pull people into the sensible MIDI-controller story.</p>
-      <div class="lp-actions">
-        <a class="lp-button" href="#buy">Buy 8mu</a>
-        <a class="lp-button lp-button--secondary" href="#moves">Try the moves</a>
-      </div>
-    </div>
+  <section class="sale-hero sale-hero--center">
+    <p class="sale-kicker">Build and editor page</p>
+    <h1>Build 8mu, then set it up in the browser.</h1>
+    <p class="sale-lede">This version is for buyers who want to know exactly what the kit involves and how flexible the controller is after it is built.</p>
+  </section>
+
+  <section id="kit" class="sale-section sale-section--image">
     <img src="/images/landing-prototypes/8mu-panel.png" alt="8mu panel">
-  </section>
-
-  <section id="moves" class="lp-playdate__moves">
-    <div><span>01</span><strong>Slide</strong><p>Faders, because the old ideas are often still the right ideas.</p></div>
-    <div><span>02</span><strong>Lift</strong><p>Raise the front and open a filter. It looks stupid until it sounds good.</p></div>
-    <div><span>03</span><strong>Rotate</strong><p>Turn your hand and push delay feedback. Try not to overdo it. You will overdo it.</p></div>
-    <div><span>04</span><strong>Flip</strong><p>Turn it over to change something dramatic. Or map it to nothing, which is sometimes wiser.</p></div>
-  </section>
-
-  <section id="games" class="lp-playdate__gameboard">
-    <p class="lp-kicker">Three tiny games that are actually sales demos</p>
-    <h2>If the page can make people imagine playing, it has done more than list features.</h2>
-    <div class="lp-game-cards">
-      <div><strong>The One-Handed Mix</strong><p>Eight faders for eight loops. Tilt forward for reverb. Flip to mute everything except the one thing you forgot was brilliant.</p></div>
-      <div><strong>The Classroom MIDI Race</strong><p>Map one fader each. First person to make a parameter move on screen wins absolutely nothing, but now everyone understands CC messages.</p></div>
-      <div><strong>The Stuck-To-A-Synth Patch</strong><p>Put 8mu on top of a small synth with a gel pad. Four faders become filter, envelope and effects. The other four are for bad decisions.</p></div>
-    </div>
-  </section>
-
-  <section class="lp-playdate__moves">
-    <div><span>A</span><strong>desk mode</strong><p>Flat on the table, boring in the best possible way. Faders control things. Nothing flies across the room.</p></div>
-    <div><span>B</span><strong>hand mode</strong><p>Hold it and map tilt to one expressive thing. Do not map tilt to eight expressive things unless you enjoy chaos.</p></div>
-    <div><span>C</span><strong>stuck mode</strong><p>Gel pad on a synth, keyboard or little case. Suddenly the host instrument has eight more controls.</p></div>
-    <div><span>D</span><strong>workshop mode</strong><p>Pass it around. Everyone understands faders. Then the accelerometer gets a laugh and the MIDI lesson sneaks in.</p></div>
-  </section>
-
-  <section class="lp-band lp-band--dark">
-    <div class="lp-placeholder lp-placeholder--video">
-      <strong>Video placeholder: 20 second object demo</strong>
-      <span>Borrow the rhythm of a toy commercial, but make it Music Thing: one table, one hand, one small controller changing sound in obviously different ways. No lifestyle haze. The joke is that it is genuinely useful.</span>
-    </div>
-    <div class="lp-section-copy">
-      <p class="lp-kicker">The serious point underneath</p>
-      <h2>Small controllers become good when they are always there.</h2>
-      <p>8mu should look like something you can leave on a keyboard, throw in a bag, lend to someone at a workshop, or stick next to a laptop. The more available it is, the more it gets used.</p>
-    </div>
-  </section>
-
-  <section class="lp-section">
-    <p class="lp-kicker">Storyboard for product photography</p>
-    <h2>This format needs images that make the object look mischievous and useful.</h2>
-    <div class="lp-game-cards">
-      <div><strong>Photo 1: scale</strong><p>8mu in a hand, not beautifully floating in space. People need to feel how small it is immediately.</p></div>
-      <div><strong>Photo 2: consequence</strong><p>Fader moving, Ableton macro or synth parameter changing in the same shot. The product has to be seen doing something.</p></div>
-      <div><strong>Photo 3: the flip</strong><p>Hand turning it over with a caption like "yes, this can send MIDI too". This is the memorable bit.</p></div>
-    </div>
-  </section>
-
-  <section class="lp-playdate__gameboard">
-    <p class="lp-kicker">Make it a tiny challenge</p>
-    <h2>Three demos that could live as short clips.</h2>
-    <div class="lp-game-cards">
-      <div><strong>Map it in 60 seconds</strong><p>Open editor, choose a CC, move a fader, hear a filter move. Sell confidence, not depth.</p></div>
-      <div><strong>One hand, eight sends</strong><p>Use it as a performance mixer for a small set. The win is not technical. The win is reaching without thinking.</p></div>
-      <div><strong>Turn it over</strong><p>Map inversion to a dramatic but reversible change. The viewer remembers the product because the gesture is visual.</p></div>
-    </div>
-  </section>
-
-  <section id="build" class="lp-playdate__strip">
-    <div><strong>DIY kit</strong><span>Populated board, solder the faders, assemble the panels.</span></div>
-    <div><strong>Web editor</strong><span>Set CCs, channels, banks and MIDI type without code.</span></div>
-    <div><strong>Open firmware</strong><span>Only go there if you want to. Nobody is forcing you.</span></div>
-  </section>
-
-  <section class="lp-band lp-band--yellow">
-    <div class="lp-section-copy">
-      <p class="lp-kicker">The slightly serious educational bit</p>
-      <h2>8mu is a very good object for explaining MIDI because it is not abstract.</h2>
-      <p>A fader sends a number. A channel decides where the number goes. A CC decides what the number means. A bank changes the whole set of decisions. That is most of the practical idea, and 8mu puts it under your fingers.</p>
-    </div>
-    <div class="lp-placeholder">
-      <strong>Workshop image placeholder</strong>
-      <span>Table with three 8mus, laptops, one hardware synth, hands pointing at the editor. This should feel like "I could teach with this", not like a corporate training stock photo.</span>
-    </div>
-  </section>
-
-  <section class="lp-section lp-section--split-list">
     <div>
-      <p class="lp-kicker">The back of the toy box</p>
-      <h2>The boring list still needs to be here.</h2>
+      <p class="sale-kicker">The kit</p>
+      <h2>The PCB is already populated and programmed.</h2>
+      <p>The build is not a full electronics project from bare board. The main job is soldering the faders and assembling the panels. Show the parts laid out plainly.</p>
+      <ul class="sale-list">
+        <li>Populated PCB</li>
+        <li>Faders and caps</li>
+        <li>Front and back panels</li>
+        <li>Screws and hardware</li>
+        <li>Build guide link</li>
+      </ul>
     </div>
-    <ul class="lp-checks">
-      <li>Eight faders</li>
-      <li>Four buttons</li>
-      <li>Eight banks</li>
-      <li>Accelerometer gesture channels</li>
-      <li>USB-C MIDI and power</li>
-      <li>3.5mm TRS MIDI output</li>
-      <li>Browser editor</li>
-      <li>DIY kit with populated board</li>
-    </ul>
   </section>
 
-  <section id="buy" class="lp-final-cta">
-    <p class="lp-kicker">8mu</p>
-    <h2>A useful little object with one excellent party trick.</h2>
-    <div class="lp-actions">
-      <a class="lp-button" href="https://www.thonk.co.uk/shop/music-thing-8mu/">Buy from Thonk</a>
-      <a class="lp-button lp-button--secondary" href="https://tomwhitwell.github.io/Smith-Kakehashi/">Launch the editor</a>
+  <section class="sale-grid sale-grid--three">
+    <div><h2>1. Check the board</h2><p>Connect over USB and confirm the firmware is running before assembly.</p></div>
+    <div><h2>2. Align the faders</h2><p>Fit the faders through the PCB and panel before soldering.</p></div>
+    <div><h2>3. Solder and assemble</h2><p>Solder the fader pins, fit the panels and caps, then configure in the editor.</p></div>
+  </section>
+
+  <section id="editor" class="sale-section sale-section--split">
+    <div>
+      <p class="sale-kicker">Editor</p>
+      <h2>Set up banks without code.</h2>
     </div>
+    <div>
+      <p>The editor is a major part of the product. Show it clearly, with a fader moving on screen as the physical fader moves.</p>
+      <ul class="sale-list">
+        <li>Choose CC numbers</li>
+        <li>Choose MIDI channels</li>
+        <li>Turn outputs off by setting channel zero</li>
+        <li>Export and import settings</li>
+        <li>Configure TRS MIDI type</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="open" class="sale-section sale-section--split">
+    <div>
+      <p class="sale-kicker">Open hardware</p>
+      <h2>Use the editor first. Hack later if you want to.</h2>
+    </div>
+    <div>
+      <p>Most people will never need to change the firmware. But 8mu is open and can be reprogrammed for people who want to use it as a small controller platform.</p>
+      <p>Keep this calm: open-source is a benefit, not a requirement.</p>
+    </div>
+  </section>
+
+  <section class="sale-faq">
+    <h2>Build questions</h2>
+    <details open><summary>Is this a beginner kit?</summary><p>The active electronics are already fitted. The faders still need careful soldering, so it is best for someone willing to read the guide and work slowly.</p></details>
+    <details><summary>What if a fader does not work?</summary><p>Point people to troubleshooting, checking solder joints, and retailer support.</p></details>
+    <details><summary>Can settings be backed up?</summary><p>Yes. Export the current bank from the editor.</p></details>
+  </section>
+
+  <section id="buy" class="sale-final">
+    <h2>8mu DIY kit</h2>
+    <p>Build the controller, then set up the MIDI map you need.</p>
+    <a class="sale-button" href="https://www.thonk.co.uk/shop/music-thing-8mu/">Buy from Thonk</a>
   </section>
 </article>

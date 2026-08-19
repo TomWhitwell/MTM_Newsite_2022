@@ -14,6 +14,18 @@ thonk-url: "https://www.thonk.co.uk/shop/startup/?utm_source=MTM&utm_campaign=St
 size: "4 HP"
 depth: "25 mm"
 supply: "40 mA"
+buy:
+  diy:
+    label: "DIY kit"
+    text: "A dense but very doable kit, with the tiny parts already fitted."
+    thonk_url: "https://www.thonk.co.uk/shop/startup/?utm_source=MTM&utm_campaign=Startup"
+    dealers: true
+    dealers_url: "/buy/#startup-kit"
+  assembled:
+    label: "Assembled"
+    text: "Test case: no Thonk link here, only the dealer route."
+    dealers: true
+    dealers_url: "/buy/#startup-assembled"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-startup-grey-panel"
 schematic: "/collateral/Startup-schematic.pdf"
 manual-url: "/collateral/Startup_Rev1_Manual.pdf"
@@ -45,4 +57,3 @@ which describes recording an entire band album acoustically with one microphone,
 
 
 ---
-

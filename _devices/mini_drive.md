@@ -15,7 +15,29 @@ depth: "25 mm"
 supply: "40 mA"
 schematic: "collateral/mini_drive_Rev1_Schematic.pdf"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-mini-drive"
+buy:
+  diy:
+    label: "DIY kit"
+    text: "A quick, satisfying build, and a good first Music Thing kit."
+    thonk_url: "https://www.thonk.co.uk/shop/mini-drive/?utm_source=MTM&utm_campaign=Minidrive"
+    dealers: false
 
+buyer-box:
+- label: "What it is"
+  text: "A 4HP overdrive based on a Minimoog feedback trick."
+- label: "Best for"
+  text: "Saturation, feedback patches and a first DIY build."
+- label: "Start here"
+  text: "One input, one output, turn the knob."
+- label: "Probably not for"
+  text: "Clean gain or precise tone-shaping."
+quick-links:
+- label: "Hear it"
+  url: "#videos"
+- label: "Build it"
+  url: "https://www.youtube.com/watch?v=6JpLiar90WE"
+- label: "Patch it"
+  url: "https://youtu.be/skCWKC8ckVU?t=163"
 yt:
 - 
   link: "yrwLULspzpE"
@@ -47,4 +69,3 @@ pars:
 - "With any feedback patch, phase is important. If the signal gets quieter when gain is increased, it’s probably because the signals are 180° out of phase. To correct this, reverse the phase using an inverter, or an attenuverter (like those in MakeNoise Maths). Alternatively, try routing it through another module to see what happens."
 
 ---
-

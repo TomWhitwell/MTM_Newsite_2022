@@ -7,42 +7,146 @@
 
     {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
+    <main class="page-content module-page" aria-label="Content">
       <div class="wrapper">
-      
-    {% if page.wide-image == "true" %}
+{% if page.buyer-box or page.quick-links or page.buy %}
+{% assign enhanced_module_page = true %}
+{% else %}
+{% assign enhanced_module_page = false %}
+{% endif %}
+
+    {% if page.wide-image == "true" or enhanced_module_page %}
     {% else %}
     <div class="img-normal" aria-label="Image of {{page.module-name}} by Music Thing Modular" style="background-image: url({{page.image | relative_url }});">    </div>
     {% endif %}
 
     
 
-      
-    
-      <h1>{{page.pars.size}} things to know about {{page.module-name}}</h1><p></p>
+{% if page.buyer-box or page.quick-links or page.buy %}
+<section class="module-opening" aria-label="{{ page.module-name }} introduction">
+  <aside class="module-opening__rail" aria-label="{{ page.module-name }} buying information">
+    {% if page.buy %}
+    {% assign buy_panel_id = page.module-name | slugify | append: "-buy-panel" %}
+    {% if page.buy.microtext %}
+    {% assign buy_microtext = page.buy.microtext %}
+    {% elsif page.buy.diy and page.buy.assembled %}
+    {% assign buy_microtext = "DIY kit / assembled" %}
+    {% elsif page.buy.diy %}
+    {% assign buy_microtext = page.buy.diy.label | default: "DIY kit" %}
+    {% elsif page.buy.assembled %}
+    {% assign buy_microtext = page.buy.assembled.label | default: "Assembled" %}
+    {% endif %}
+    <div class="product-buy-menu" data-buy-menu>
+      <button class="product-buy-menu__button" type="button" aria-expanded="false" aria-controls="{{ buy_panel_id }}">
+        <span class="product-buy-menu__button-label">BUY</span>
+        {% if buy_microtext %}<span class="product-buy-menu__microtext">{{ buy_microtext }}</span>{% endif %}
+      </button>
+      <div class="product-buy-menu__panel" id="{{ buy_panel_id }}">
+        {% if page.buy.diy %}
+        {% assign diy_label = page.buy.diy.label | default: "DIY: Build it yourself" %}
+        {% assign diy_text = page.buy.diy.text | default: "The kit version, for people who want to solder it together." %}
+        {% assign diy_dealers_url = page.buy.diy.dealers_url | default: page.buy.dealers_url | default: "/buy/" %}
+        {% assign diy_thonk_label = page.buy.diy.thonk_label | default: page.buy.thonk_label | default: "Thonk" %}
+        {% assign diy_dealers_label = page.buy.diy.dealers_label | default: page.buy.dealers_label | default: "Dealers" %}
+        <section class="product-buy-menu__path">
+          <h2>{{ diy_label }}</h2>
+          <p>{{ diy_text }}</p>
+          <p class="product-buy-menu__links">
+            {% if page.buy.diy.thonk_url %}<a href="{{ page.buy.diy.thonk_url }}">{{ diy_thonk_label }}</a>{% endif %}
+            {% if page.buy.diy.dealers or page.buy.diy.dealers_url %}<a href="{{ diy_dealers_url }}">{{ diy_dealers_label }}</a>{% endif %}
+          </p>
+        </section>
+        {% endif %}
 
-    {% if page.wide-image == "true" %}
+        {% if page.buy.assembled %}
+        {% assign assembled_label = page.buy.assembled.label | default: "Assembled" %}
+        {% assign assembled_text = page.buy.assembled.text | default: "Ready-made, tested, and ready to put in a case." %}
+        {% assign assembled_dealers_url = page.buy.assembled.dealers_url | default: page.buy.dealers_url | default: "/buy/" %}
+        {% assign assembled_thonk_label = page.buy.assembled.thonk_label | default: page.buy.thonk_label | default: "Thonk" %}
+        {% assign assembled_dealers_label = page.buy.assembled.dealers_label | default: page.buy.dealers_label | default: "Dealers" %}
+        <section class="product-buy-menu__path">
+          <h2>{{ assembled_label }}</h2>
+          <p>{{ assembled_text }}</p>
+          <p class="product-buy-menu__links">
+            {% if page.buy.assembled.thonk_url %}<a href="{{ page.buy.assembled.thonk_url }}">{{ assembled_thonk_label }}</a>{% endif %}
+            {% if page.buy.assembled.dealers or page.buy.assembled.dealers_url %}<a href="{{ assembled_dealers_url }}">{{ assembled_dealers_label }}</a>{% endif %}
+          </p>
+        </section>
+        {% endif %}
+      </div>
+    </div>
+    {% elsif page.buy-options or page.thonk-url or page.manual-url %}
+    <div class="product-intro__buy">
+      {% if page.buy-options %}
+        {% for option in page.buy-options %}
+        <a class="product-intro__buy-link{% if forloop.first %} product-intro__buy-link--primary{% endif %}" href="{{ option.url }}">
+          <strong>{{ option.label }}</strong>
+          {% if option.text %}<span>{{ option.text }}</span>{% endif %}
+        </a>
+        {% endfor %}
+      {% else %}
+        {% if page.thonk-url %}
+        <a class="product-intro__buy-link product-intro__buy-link--primary" href="{{page.thonk-url}}">
+          <strong>
+          {% if page.thonk-button %}
+          {{page.thonk-button}}
+          {% else %}
+          Available from Thonk
+          {% endif %}
+          </strong>
+        </a>
+        {% endif %}
+
+        {% if page.manual-url %}
+        <a class="product-intro__buy-link" href="{{page.manual-url}}">
+          <strong>
+          {% if page.manual-text %}
+          {{page.manual-text}}
+          {% else %}
+          Download Manual
+          {% endif %}
+          </strong>
+        </a>
+        {% endif %}
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% assign opening_image = page.opening-image | default: page.image %}
+    <div class="module-opening__image-frame{% if page.opening-image-rotate %} module-opening__image-frame--rotated{% endif %}">
+      <img class="module-opening__image{% if page.opening-image-rotate %} module-opening__image--rotated{% endif %}" alt="Image of {{page.module-name}} by Music Thing Modular" src="{{opening_image | relative_url }}">
+    </div>
+
+  </aside>
+
+  <div class="module-opening__main">
+    <h1>{{page.pars.size}} things to know about {{page.module-name}}</h1>
+  </div>
+</section>
+{% else %}
+      <h1>{{page.pars.size}} things to know about {{page.module-name}}</h1><p></p>
+{% endif %}
+
+    {% if page.wide-image == "true" and enhanced_module_page == false %}
 
    <br> <img style="width: 100%" alt="Image of {{page.module-name}} by Music Thing Modular" src={{page.image | relative_url }}>  <br>  <br>
 
     {% else %}
     {% endif %}
 
+{% unless page.buyer-box or page.quick-links or page.buy %}
+<p>
+{% if page.size %}
+{{page.size}} | 
+{% endif %}
 
-      
-      <p>
-      
-      {% if page.size %}
-      {{page.size}} | 
-      {% endif %}
-      
-      {% if page.depth %}
-      {{page.depth}} deep | 
-      {% endif %}
-    
-      {% if page.supply %}
-      {{page.supply}}
-            {% endif %}
+{% if page.depth %}
+{{page.depth}} deep | 
+{% endif %}
+
+{% if page.supply %}
+{{page.supply}}
+{% endif %}
 
 {% if page.designed %}
 <br>Designed {{page.designed}}
@@ -52,9 +156,6 @@ Updated {{page.updated}}
 <br>
 {% endif %}
 
-
-
-
 {% if page.mgrid %}
 <br> <a href="{{page.mgrid}}">Modular Grid</a> |
 {% endif %}
@@ -63,24 +164,19 @@ Updated {{page.updated}}
 {% endif %}
 
 {% unless page.hide-design %}
-
-
 {% if page.github %}
 <br><a href="{{page.github}}">Github</a> |
 {% else %}
 <br><a href="mailto:tom@musicthing.co.uk?subject=Please send me {{page.module-name}} Design Files">Request Design Files</a> |
 {% endif %}
 
-
-
 {% if page.schematic %}
 <a href="{{page.schematic | relative_url }}">Schematic</a> 
 {% else %}
 <a href="mailto:tom@musicthing.co.uk?subject=Please send me a {{page.module-name}} Schematic">Request Schematic</a> 
 {% endif %}
-
 {% endunless %}
-      
+
 {% if page.thonk-url %}
 <br><br><a href="{{page.thonk-url}}" class="buy-btn">
 {% if page.thonk-button %}
@@ -90,7 +186,6 @@ Available from Thonk
 {% endif %}
 </a>
 {% endif %}
-      
 
 {% if page.manual-url %}
 <br><br><a href="{{page.manual-url}}" class="buy-btn">
@@ -101,7 +196,8 @@ Download Manual
 {% endif %}
 </a>
 {% endif %}
-      
+</p>
+{% endunless %}
 
 
 
@@ -111,19 +207,104 @@ Download Manual
 {% endfor %} 
    </ol>     
         {{ content }}
+
+{% if page.buyer-box or page.quick-links or page.buy %}
+{% if page.yt %}
+<section class="module-videos" id="videos" aria-label="{{ page.module-name }} videos">
+  <h2>Videos</h2>
+  <div class="module-video-strip">
+    {% for youtubes in page.yt %}
+    <figure class="module-video-card">
+      <iframe src="https://www.youtube.com/embed/{{youtubes.link}}" title="{{youtubes.title}}" loading="lazy" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <figcaption>{{ youtubes.title }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="module-resources" aria-label="{{ page.module-name }} resources">
+  <h2>Resources</h2>
+  <p class="module-resources__links">
+    {% if page.quick-links %}
+      {% for link in page.quick-links %}
+        {% unless forloop.first %}
+        <a href="{{ link.url }}">{{ link.label }}</a>
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+    {% if page.mgrid %}<a href="{{page.mgrid}}">Modular Grid</a>{% endif %}
+    {% if page.manual-url %}
+    <a href="{{page.manual-url}}">
+      {% if page.manual-text %}
+      {{page.manual-text}}
+      {% else %}
+      Download Manual
+      {% endif %}
+    </a>
+    {% endif %}
+    {% unless page.hide-design %}
+      {% if page.github %}
+      <a href="{{page.github}}">Github</a>
+      {% else %}
+      <a href="mailto:tom@musicthing.co.uk?subject=Please send me {{page.module-name}} Design Files">Request Design Files</a>
+      {% endif %}
+
+      {% if page.schematic %}
+      <a href="{{page.schematic | relative_url }}">Schematic</a>
+      {% else %}
+      <a href="mailto:tom@musicthing.co.uk?subject=Please send me a {{page.module-name}} Schematic">Request Schematic</a>
+      {% endif %}
+    {% endunless %}
+  </p>
+
+  <p class="module-resources__specs">
+    {% if page.size %}<span>{{page.size}}</span>{% endif %}
+    {% if page.depth %}<span>{{page.depth}} deep</span>{% endif %}
+    {% if page.supply %}<span>{{page.supply}}</span>{% endif %}
+    {% if page.designed %}<span>Designed {{page.designed}}{% if page.designed and page.updated %}; updated {{page.updated}}{% endif %}</span>{% endif %}
+  </p>
+</section>
+{% endif %}
         
       
-      
+{% unless page.buyer-box or page.quick-links or page.buy %}
       <a id="videos"> </a>
       {% for youtubes in page.yt %}  
       <br>{{youtubes.title}}</br>
 <P>    <iframe class="iframe" src="https://www.youtube.com/embed/{{youtubes.link}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </p>
        {% endfor %}
+{% endunless %}
       </div>
     </main>
 
     {%- include footer.html -%}
+
+    <script>
+      document.querySelectorAll("[data-buy-menu]").forEach(function(menu) {
+        var button = menu.querySelector(".product-buy-menu__button");
+        if (!button) return;
+
+        function setOpen(open) {
+          menu.classList.toggle("is-open", open);
+          button.setAttribute("aria-expanded", open ? "true" : "false");
+        }
+
+        button.addEventListener("click", function(event) {
+          event.stopPropagation();
+          setOpen(!menu.classList.contains("is-open"));
+        });
+
+        document.addEventListener("click", function(event) {
+          if (!menu.contains(event.target)) setOpen(false);
+        });
+
+        document.addEventListener("keydown", function(event) {
+          if (event.key === "Escape") setOpen(false);
+        });
+      });
+    </script>
 
   </body>
 

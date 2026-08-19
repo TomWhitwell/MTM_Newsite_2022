@@ -4,145 +4,97 @@ title: Radio Music landing C
 permalink: /landing/radio-music-c/
 ---
 
-<article class="lp-page lp-page--radio lp-notebook">
-  <nav class="lp-topbar" aria-label="Landing page navigation">
+<article class="sale-page sale-page--radio">
+  <nav class="sale-nav" aria-label="Landing page navigation">
     <a href="/landing/">All prototypes</a>
-    <a href="#banks">Banks</a>
-    <a href="#cards">Cards</a>
-    <a href="#fieldwork">Fieldwork</a>
-    <a class="lp-topbar__cta" href="#buy">Buy now</a>
+    <a href="#choose">Choose</a>
+    <a href="#compare">Compare</a>
+    <a href="#questions">Questions</a>
+    <a class="sale-nav__buy" href="#buy">Buy now</a>
   </nav>
 
-  <section class="lp-notebook__cover">
+  <section class="sale-hero sale-hero--center">
+    <p class="sale-kicker">Buying guide page</p>
+    <h1>Radio Music, Radio Remote, or another sampler?</h1>
+    <p class="sale-lede">This page is for people who are interested but unsure what to buy. It makes the tradeoffs explicit.</p>
+  </section>
+
+  <section id="choose" class="sale-choices">
     <div>
-      <p class="lp-kicker">Format C / inspired by Field Notes product pages</p>
-      <h1>Radio Music Sample Card No. 01</h1>
-      <p>A page that sells Radio Music by selling the lovely little ritual around it: collecting sounds, naming banks, making a card, patching it, hearing what happens.</p>
-      <div class="lp-actions">
-        <a class="lp-button" href="#buy">Buy Radio Music</a>
-        <a class="lp-button lp-button--secondary" href="#cards">Make a card</a>
-      </div>
+      <h2>Radio Music</h2>
+      <p>Choose this if you want the smallest, simplest version: a 4HP sample player with Station, Start/Pitch and Reset.</p>
+      <ul class="sale-list">
+        <li>Smallest rack footprint</li>
+        <li>Lower cost</li>
+        <li>Good for prepared banks</li>
+        <li>Works with CV and triggers</li>
+      </ul>
+      <a class="sale-button" href="#buy">Choose Radio Music</a>
     </div>
-    <figure>
-      <img src="/images/landing-prototypes/radio-music-panel.png" alt="Radio Music panel">
-      <figcaption>4HP. One SD card. Potentially a very large number of small private radio stations.</figcaption>
-    </figure>
-  </section>
-
-  <section class="lp-notebook__toc">
-    <div><span>01</span><strong>Find sounds</strong><p>Walks, tapes, archives, drum hits, loops, mistakes, weather, voices.</p></div>
-    <div><span>02</span><strong>Name banks</strong><p>Sixteen little shelves. Do not call them all "samples". That is how joy dies.</p></div>
-    <div><span>03</span><strong>Patch reset</strong><p>Let the modular ask for the next moment. This is where recordings become instruments.</p></div>
-    <div><span>04</span><strong>Add Remote</strong><p>When you want the sample window and speed under your fingers.</p></div>
-  </section>
-
-  <section id="banks" class="lp-notebook__spread">
-    <div class="lp-notebook__page">
-      <p class="lp-kicker">Bank examples</p>
-      <h2>Do not sell "up to 16 banks". Sell the first four banks someone will actually make.</h2>
-      <ol class="lp-notebook__list">
-        <li><strong>0 Shortwave kitchen</strong><span>Voices, static, room tone, a kettle, someone outside moving bins.</span></li>
-        <li><strong>1 Drum things</strong><span>Not a drum kit. A drawer, a radiator, a little synth tick, one sensible kick.</span></li>
-        <li><strong>2 Long walks</strong><span>Ten-minute files that turn into texture when Station is slowly modulated.</span></li>
-        <li><strong>3 One good chord</strong><span>The same chord copied badly through tape, phone speaker, cassette and room.</span></li>
-      </ol>
-    </div>
-    <div class="lp-notebook__page lp-notebook__page--dark">
-      <p class="lp-kicker">Image placeholder</p>
-      <h2>Photograph the card like a record collection.</h2>
-      <p>Show a microSD card, handwritten bank list, laptop folder and the module. The important thing is that the viewer immediately starts naming their own banks in their head.</p>
-    </div>
-  </section>
-
-  <section id="cards" class="lp-section">
-    <p class="lp-kicker">Sample card recipes</p>
-    <h2>Three starter cards that could ship as downloads, videos or blog posts.</h2>
-    <div class="lp-recipe-grid">
-      <div><strong>The Radiophonic Card</strong><p>Numbers stations, test tones, speech fragments, BBC-ish room sounds, one long drone. Sell this as "instant 1970s educational anxiety".</p></div>
-      <div><strong>The Pocket Drum Card</strong><p>Folders called kick_next, snare_next and "things that might be hats". Shows random and sequential folders without sounding like a manual.</p></div>
-      <div><strong>The Places Card</strong><p>One bank per place: train, beach, underpass, hotel room. The page can say: modular is allowed to remember where you went.</p></div>
-    </div>
-  </section>
-
-  <section class="lp-notebook__spread">
-    <div class="lp-notebook__page">
-      <p class="lp-kicker">Inside cover notes</p>
-      <h2>What to record when you think you have nothing worth recording.</h2>
-      <ol class="lp-notebook__list">
-        <li><strong>One minute of room</strong><span>The boring sound of where you are. Later, in a patch, it becomes the sound of being there.</span></li>
-        <li><strong>A machine starting</strong><span>Printer, kettle, tape deck, washing machine, extractor fan. Anything with a beginning and a little mechanical complaint.</span></li>
-        <li><strong>Someone saying a number</strong><span>Names and numbers work absurdly well in Radio Music because the brain cannot stop listening for meaning.</span></li>
-        <li><strong>A chord through a speaker</strong><span>Not a clean sample. A chord through a phone, a radio, a hallway, a cheap amp. The room is the point.</span></li>
-      </ol>
-    </div>
-    <div class="lp-notebook__page">
-      <p class="lp-kicker">Why this sells</p>
-      <h2>The product page becomes a prompt book.</h2>
-      <p>A normal product page says "supports WAV and AIFF". This page says: here are things you can record today. That is much more dangerous commercially, because the visitor starts doing the product in their head before they have bought it.</p>
-      <p>The tone should be generous and slightly conspiratorial: you already have enough interesting sound around you; this is the little module that gives it somewhere useful to go.</p>
-    </div>
-  </section>
-
-  <section id="fieldwork" class="lp-notebook__manifesto">
     <div>
-      <p class="lp-kicker">Fieldwork, but not precious</p>
-      <h2>You do not need a perfect recorder or a grant from an arts council.</h2>
-      <p>Use your phone. Use a cheap recorder. Use a recording you made by accident. Radio Music is quite forgiving because the patch is going to do something to it anyway. The point is to have your sounds in the rack, not to win a location-recording award.</p>
+      <h2>Radio Music + Remote</h2>
+      <p>Choose this if you want to control speed, loop points and modes while playing.</p>
+      <ul class="sale-list">
+        <li>Faders for speed and loop window</li>
+        <li>Mode changes without editing settings</li>
+        <li>Better for performance</li>
+        <li>Remote connects over USB-C</li>
+      </ul>
+      <a class="sale-button" href="#buy">Choose the pair</a>
     </div>
-    <div class="lp-notebook__stamp">keep the bad takes</div>
-  </section>
-
-  <section class="lp-section">
-    <p class="lp-kicker">Patch diary</p>
-    <h2>Three entries from the page, written like someone actually used it.</h2>
-    <div class="lp-recipe-grid">
-      <div><strong>Tuesday, 11:14</strong><p>Clock into Reset, Station around 10 o'clock, bank 2 is a bus ride. Every fourth trigger catches the brakes and it sounds like the patch is trying to leave.</p></div>
-      <div><strong>Thursday, 22:03</strong><p>One folder of single-cycle-ish tones, one folder of voice fragments. Station CV from a slow random voltage. Not musical in the normal sense. Better.</p></div>
-      <div><strong>Sunday, 16:40</strong><p>Radio Remote start and end faders around a piano note recorded on a phone. Tape mode backwards. It becomes an instrument nobody would design on purpose.</p></div>
-    </div>
-  </section>
-
-  <section class="lp-band lp-band--dark">
-    <div class="lp-placeholder lp-placeholder--video">
-      <strong>Video placeholder: making a card in ten minutes</strong>
-      <span>Screen recording plus table shot. Make four bank folders, drag in real files, put the card in the module, patch a clock. The point is speed and permission: this does not need a perfect sample pack.</span>
-    </div>
-    <div class="lp-section-copy">
-      <p class="lp-kicker">Proof of ease</p>
-      <h2>Show the preparation without making it look like homework.</h2>
-      <p>The visual trick is to make the SD card feel like a cassette, not a spreadsheet. A few handwritten labels, a few folders, a few sounds, then straight into the rack.</p>
-    </div>
-  </section>
-
-  <section class="lp-section lp-section--faq">
-    <p class="lp-kicker">Notebook FAQ</p>
-    <h2>The questions this format should answer in the margins.</h2>
-    <details open><summary>What if my recordings are messy?</summary><p>Good. Clean samples are useful, but Radio Music is very good at things with edges, pauses, bumps, rooms and mistakes.</p></details>
-    <details><summary>What if I do not make field recordings?</summary><p>Use old project exports, voice memos, YouTube-safe source material, drum hits, synth notes, public-domain archives, anything. The field can be your hard drive.</p></details>
-    <details><summary>Why not just use a sampler with a screen?</summary><p>You should, if you want editing. This is for when you want recorded sound to become patch material, selected and interrupted by voltage.</p></details>
-  </section>
-
-  <section class="lp-section lp-section--split-list">
     <div>
-      <p class="lp-kicker">Specifications, written on the back cover</p>
-      <h2>Facts for people who have stopped daydreaming and are checking the fit.</h2>
+      <h2>Another sampler</h2>
+      <p>Choose a screen-based sampler if you need editing, slicing, project memory or detailed waveform control.</p>
+      <ul class="sale-list">
+        <li>Better for precise sample editing</li>
+        <li>Better for project recall</li>
+        <li>Usually larger and more complex</li>
+        <li>Less immediate as a radio-like source</li>
+      </ul>
+      <a class="sale-button sale-button--secondary" href="#questions">Keep reading</a>
     </div>
-    <ul class="lp-checks">
-      <li>4HP Eurorack module</li>
-      <li>WAV, AIFF and legacy RAW files</li>
-      <li>microSD cards up to 2TB</li>
-      <li>16 banks, random and sequential folders</li>
-      <li>Station CV, Start/Pitch CV and Reset</li>
-      <li>Optional Radio Remote over USB-C</li>
-    </ul>
   </section>
 
-  <section id="buy" class="lp-final-cta">
-    <p class="lp-kicker">Radio Music</p>
-    <h2>Make the SD card you wish already existed.</h2>
-    <div class="lp-actions">
-      <a class="lp-button" href="#">Buy now placeholder</a>
-      <a class="lp-button lp-button--secondary" href="#">Download sample-card template placeholder</a>
+  <section id="compare" class="sale-table">
+    <h2>Comparison</h2>
+    <table>
+      <thead><tr><th>Need</th><th>Radio Music</th><th>With Remote</th></tr></thead>
+      <tbody>
+        <tr><td>Play long recordings</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Trigger one-shots</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Move loop points by hand</td><td>Limited</td><td>Yes</td></tr>
+        <tr><td>Change modes live</td><td>Limited</td><td>Yes</td></tr>
+        <tr><td>Smallest setup</td><td>Yes</td><td>Remote sits outside the rack</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="sale-section sale-section--image">
+    <img src="/images/landing-prototypes/radio-music-panel.png" alt="Radio Music panel">
+    <div>
+      <h2>Start with the module if you are unsure.</h2>
+      <p>Radio Music stands on its own. Radio Remote is an expansion, not a requirement. That is a better sales position: buy the small module first, add the faders when you know you want them.</p>
     </div>
+  </section>
+
+  <section class="sale-section sale-section--image">
+    <div>
+      <h2>Add Remote if you want to perform settings.</h2>
+      <p>The strongest reason to buy the pair is not more features. It is that important controls are visible and under your fingers.</p>
+    </div>
+    <img src="/images/landing-prototypes/radio-remote-panel.png" alt="Radio Remote panel">
+  </section>
+
+  <section id="questions" class="sale-faq">
+    <h2>Questions before buying</h2>
+    <details open><summary>Can I add Remote later?</summary><p>Yes. Treat it as a normal upgrade path.</p></details>
+    <details><summary>What changed from the old Radio Music?</summary><p>Modern file support, better audio, lower latency, larger cards, card reader mode, no Teensy 3.2 dependency, and Remote support.</p></details>
+    <details><summary>What goes in the buy box?</summary><p>Price, stock, kit contents, build difficulty, required tools, SD card notes, retailer link and manual link.</p></details>
+  </section>
+
+  <section id="buy" class="sale-final">
+    <h2>Choose your setup</h2>
+    <a class="sale-button" href="#">Buy Radio Music</a>
+    <a class="sale-button sale-button--secondary" href="#">Buy the pair</a>
   </section>
 </article>

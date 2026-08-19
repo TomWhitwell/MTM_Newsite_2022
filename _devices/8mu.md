@@ -8,12 +8,21 @@ module-name: "8mu"
 designed: "April 2019 - February 2023" 
 image: "/images/8mu_900_card.png"
 wide-image: "true" 
+opening-image: "/images/8mu_900.png"
+opening-image-rotate: true
 excerpt: "is a hackable midi controller that's smaller than a credit card" 
 # overlay: "NEW "
 thonk-url: "https://www.thonk.co.uk/shop/music-thing-8mu/" 
 # size: "18 HP"
 # depth: "24 mm"
 # supply: "52 mA"
+buy:
+  dealers_url: "/buy/#8mu"
+  diy:
+    label: "DIY kit"
+    text: "Solder the faders, assemble the case, then set it up in the web editor."
+    thonk_url: "https://www.thonk.co.uk/shop/music-thing-8mu/"
+    dealers: true
 # mgrid: "https://www.modulargrid.net/e/music-thing-modular-control"
 github: "https://github.com/TomWhitwell/8mu_Public"
 schematic: "/collateral/8mu_schematic.pdf"
@@ -54,4 +63,3 @@ pars:
 - "8mu is 81 x 47mm. The body is 13mm tall, or 24mm with the faders and fader caps. It weighs 65g. So it's smaller than a credit card, but not thinner." 
 
 ---
-
