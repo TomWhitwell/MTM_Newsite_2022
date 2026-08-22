@@ -1,7 +1,12 @@
 - order: 0.02
-  link: "https://www.eventbrite.co.uk/e/thingking-with-the-workshop-system-pauline-oliveros-tickets-1991930604058?aff=instaLIB"
-  text: "BOOK NOW"
-  desc: "Online Workshop: Thingking with the Workshop System: Pauline Oliveros"
+  link: "https://youtu.be/Vp3Dgo2UvIk?si=qCvX4Hor9MANCZBI"
+  text: "WATCH"
+  desc: "Shared Air: Collaborative Workshop System album"
+
+- order: 0.025
+  link: "https://musicthingmodular.bandcamp.com/album/thingking-1-shared-air"
+  text: "DOWNLOAD"
+  desc: "Shared Air: Collaborative Workshop System album"
 
 - order: 0.01
   link: "https://www.musicthing.co.uk/buy"
