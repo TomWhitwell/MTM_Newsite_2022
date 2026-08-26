@@ -10,12 +10,12 @@
     <main class="page-content module-page" aria-label="Content">
       <div class="wrapper">
 {% if page.buyer-box or page.quick-links or page.buy %}
-{% assign enhanced_module_page = true %}
+{% assign has_module_opening = true %}
 {% else %}
-{% assign enhanced_module_page = false %}
+{% assign has_module_opening = false %}
 {% endif %}
 
-    {% if page.wide-image == "true" or enhanced_module_page %}
+    {% if page.wide-image == "true" or has_module_opening %}
     {% else %}
     <div class="img-normal" aria-label="Image of {{page.module-name}} by Music Thing Modular" style="background-image: url({{page.image | relative_url }});">    </div>
     {% endif %}
@@ -24,7 +24,28 @@
 
 {% if page.buyer-box or page.quick-links or page.buy %}
 <section class="module-opening" aria-label="{{ page.module-name }} introduction">
-  <aside class="module-opening__rail" aria-label="{{ page.module-name }} buying information">
+  <aside class="module-opening__rail{% if page.opening-image-wide %} module-opening__rail--wide{% endif %}{% if page.opening-image-widest %} module-opening__rail--widest{% endif %}{% if page.opening-image-compact %} module-opening__rail--compact-image{% endif %}" aria-label="{{ page.module-name }} buying information">
+    {% capture product_summary_box %}
+      {% if page.product-summary %}
+      <section class="product-summary" aria-label="{{ page.module-name }} summary">
+        {% if page.product-summary.intro %}
+        <p class="product-summary__intro">{{ page.product-summary.intro }}</p>
+        {% endif %}
+
+        <ul class="product-summary__list">
+          {% for item in page.product-summary.bullets %}
+          <li>{{ item }}</li>
+          {% endfor %}
+          {% unless page.product-summary.auto_facts == false %}
+            {% if page.size %}<li>{{ page.size }}</li>{% endif %}
+            {% if page.depth %}<li>{{ page.depth }} deep</li>{% endif %}
+            {% if page.supply %}<li>{{ page.supply }}</li>{% endif %}
+            {% if page.designed %}<li>Designed {{ page.designed }}{% if page.designed and page.updated %} Updated {{ page.updated }}{% endif %}</li>{% endif %}
+          {% endunless %}
+        </ul>
+      </section>
+      {% endif %}
+    {% endcapture %}
     {% if page.buy %}
     {% assign buy_panel_id = page.module-name | slugify | append: "-buy-panel" %}
     {% if page.buy.microtext %}
@@ -112,94 +133,103 @@
     </div>
     {% endif %}
 
-    {% assign opening_image = page.opening-image | default: page.image %}
-    <div class="module-opening__image-frame{% if page.opening-image-rotate %} module-opening__image-frame--rotated{% endif %}">
-      <img class="module-opening__image{% if page.opening-image-rotate %} module-opening__image--rotated{% endif %}" alt="Image of {{page.module-name}} by Music Thing Modular" src="{{opening_image | relative_url }}">
-    </div>
+    {% unless page.product-summary-position == "below-image" %}
+    {{ product_summary_box }}
+    {% endunless %}
+
+    {% if page.opening-image-full-width %}
+      {% if page.product-summary-position == "below-image" %}
+      {{ product_summary_box }}
+      {% endif %}
+    {% endif %}
+
+    {% unless page.opening-image-full-width %}
+      {% assign opening_image = page.opening-image | default: page.image %}
+      <div class="module-opening__image-frame{% if page.opening-image-rotate %} module-opening__image-frame--rotated{% endif %}">
+        <img class="module-opening__image{% if page.opening-image-rotate %} module-opening__image--rotated{% endif %}" alt="Image of {{page.module-name}} by Music Thing Modular" src="{{opening_image | relative_url }}">
+      </div>
+
+      {% if page.product-summary-position == "below-image" %}
+      {{ product_summary_box }}
+      {% endif %}
+    {% endunless %}
 
   </aside>
 
   <div class="module-opening__main">
     <h1>{{page.pars.size}} things to know about {{page.module-name}}</h1>
+    {% unless page.product-summary %}
+    <div class="module-topblock" aria-label="{{ page.module-name }} quick facts">
+      {% if page.size or page.depth or page.supply or page.designed %}
+      <p class="module-topblock__facts">
+        {% if page.size %}<span>{{page.size}}</span>{% endif %}
+        {% if page.depth %}<span>{{page.depth}} deep</span>{% endif %}
+        {% if page.supply %}<span>{{page.supply}}</span>{% endif %}
+        {% if page.designed %}<span>Designed {{page.designed}}{% if page.designed and page.updated %} Updated {{page.updated}}{% endif %}</span>{% endif %}
+      </p>
+      {% endif %}
+      <p class="module-topblock__links">
+        {% if page.manual-url %}<a href="{{page.manual-url}}">{% if page.manual-text %}{{page.manual-text}}{% else %}Download Manual{% endif %}</a>{% endif %}
+        {% if page.yt %}<a href="#videos">Videos</a>{% endif %}
+        {% if page.mgrid %}<a href="{{page.mgrid}}">Modular Grid</a>{% endif %}
+        {% unless page.hide-design %}
+          {% if page.github %}<a href="{{page.github}}">Github</a>{% else %}<a href="mailto:tom@musicthing.co.uk?subject=Please send me {{page.module-name}} Design Files">Request Design Files</a>{% endif %}
+          {% if page.schematic %}<a href="{{page.schematic | relative_url }}">Schematic</a>{% else %}<a href="mailto:tom@musicthing.co.uk?subject=Please send me a {{page.module-name}} Schematic">Request Schematic</a>{% endif %}
+        {% endunless %}
+      </p>
+    </div>
+    {% endunless %}
   </div>
 </section>
+{% if page.opening-image-full-width %}
+  {% assign full_opening_image = page.opening-image | default: page.image %}
+  <div class="module-opening__full-image-frame">
+    <img alt="Image of {{page.module-name}} by Music Thing Modular" src="{{full_opening_image | relative_url }}">
+  </div>
+{% endif %}
 {% else %}
-      <h1>{{page.pars.size}} things to know about {{page.module-name}}</h1><p></p>
+      <h1>{{page.pars.size}} things to know about {{page.module-name}}</h1>
+      {% unless page.product-summary %}
+      <div class="module-topblock" aria-label="{{ page.module-name }} quick facts">
+        {% if page.size or page.depth or page.supply or page.designed %}
+        <p class="module-topblock__facts">
+          {% if page.size %}<span>{{page.size}}</span>{% endif %}
+          {% if page.depth %}<span>{{page.depth}} deep</span>{% endif %}
+          {% if page.supply %}<span>{{page.supply}}</span>{% endif %}
+          {% if page.designed %}<span>Designed {{page.designed}}{% if page.designed and page.updated %} Updated {{page.updated}}{% endif %}</span>{% endif %}
+        </p>
+        {% endif %}
+        <p class="module-topblock__links">
+          {% if page.thonk-url %}<a href="{{page.thonk-url}}">{% if page.thonk-button %}{{page.thonk-button}}{% else %}Available from Thonk{% endif %}</a>{% endif %}
+          {% if page.manual-url %}<a href="{{page.manual-url}}">{% if page.manual-text %}{{page.manual-text}}{% else %}Download Manual{% endif %}</a>{% endif %}
+          {% if page.yt %}<a href="#videos">Videos</a>{% endif %}
+          {% if page.mgrid %}<a href="{{page.mgrid}}">Modular Grid</a>{% endif %}
+          {% unless page.hide-design %}
+            {% if page.github %}<a href="{{page.github}}">Github</a>{% else %}<a href="mailto:tom@musicthing.co.uk?subject=Please send me {{page.module-name}} Design Files">Request Design Files</a>{% endif %}
+            {% if page.schematic %}<a href="{{page.schematic | relative_url }}">Schematic</a>{% else %}<a href="mailto:tom@musicthing.co.uk?subject=Please send me a {{page.module-name}} Schematic">Request Schematic</a>{% endif %}
+          {% endunless %}
+        </p>
+      </div>
+      {% endunless %}
 {% endif %}
 
-    {% if page.wide-image == "true" and enhanced_module_page == false %}
+    {% if page.wide-image == "true" and has_module_opening == false %}
 
    <br> <img style="width: 100%" alt="Image of {{page.module-name}} by Music Thing Modular" src={{page.image | relative_url }}>  <br>  <br>
 
     {% else %}
     {% endif %}
 
-{% unless page.buyer-box or page.quick-links or page.buy %}
-<p>
-{% if page.size %}
-{{page.size}} | 
+{% if page.actions and page.actions.enabled != false and page.actions.items %}
+<nav class="module-actions" aria-label="{{ page.module-name }} actions">
+  {% if page.actions.label %}<p class="module-actions__label">{{ page.actions.label }}</p>{% endif %}
+  <p class="module-actions__links">
+    {% for action in page.actions.items %}
+    <a href="{{ action.url | relative_url }}">{{ action.label }}</a>
+    {% endfor %}
+  </p>
+</nav>
 {% endif %}
-
-{% if page.depth %}
-{{page.depth}} deep | 
-{% endif %}
-
-{% if page.supply %}
-{{page.supply}}
-{% endif %}
-
-{% if page.designed %}
-<br>Designed {{page.designed}}
-{% if page.designed and page.updated %}
-Updated {{page.updated}}
-{% endif %}
-<br>
-{% endif %}
-
-{% if page.mgrid %}
-<br> <a href="{{page.mgrid}}">Modular Grid</a> |
-{% endif %}
-{% if page.yt %}
-<a href="#videos">Videos</a>
-{% endif %}
-
-{% unless page.hide-design %}
-{% if page.github %}
-<br><a href="{{page.github}}">Github</a> |
-{% else %}
-<br><a href="mailto:tom@musicthing.co.uk?subject=Please send me {{page.module-name}} Design Files">Request Design Files</a> |
-{% endif %}
-
-{% if page.schematic %}
-<a href="{{page.schematic | relative_url }}">Schematic</a> 
-{% else %}
-<a href="mailto:tom@musicthing.co.uk?subject=Please send me a {{page.module-name}} Schematic">Request Schematic</a> 
-{% endif %}
-{% endunless %}
-
-{% if page.thonk-url %}
-<br><br><a href="{{page.thonk-url}}" class="buy-btn">
-{% if page.thonk-button %}
-{{page.thonk-button}}
-{% else %}
-Available from Thonk
-{% endif %}
-</a>
-{% endif %}
-
-{% if page.manual-url %}
-<br><br><a href="{{page.manual-url}}" class="buy-btn">
-{% if page.manual-text %}
-{{page.manual-text}}
-{% else %}
-Download Manual
-{% endif %}
-</a>
-{% endif %}
-</p>
-{% endunless %}
-
-
 
 <ol>
 {% for pars in page.pars %} 
@@ -208,21 +238,58 @@ Download Manual
    </ol>     
         {{ content }}
 
-{% if page.buyer-box or page.quick-links or page.buy %}
 {% if page.yt %}
 <section class="module-videos" id="videos" aria-label="{{ page.module-name }} videos">
   <h2>Videos</h2>
-  <div class="module-video-strip">
-    {% for youtubes in page.yt %}
-    <figure class="module-video-card">
-      <iframe src="https://www.youtube.com/embed/{{youtubes.link}}" title="{{youtubes.title}}" loading="lazy" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      <figcaption>{{ youtubes.title }}</figcaption>
-    </figure>
-    {% endfor %}
+  <div class="module-carousel" data-module-carousel>
+    <button class="module-carousel__button module-carousel__button--prev" type="button" data-carousel-prev aria-label="Previous videos">‹</button>
+    <div class="module-video-strip" data-carousel-strip>
+      {% for youtubes in page.yt %}
+      <figure class="module-video-card">
+        <iframe src="https://www.youtube.com/embed/{{youtubes.link}}" title="{{youtubes.title}}" loading="lazy" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <figcaption>{{ youtubes.title }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+    <button class="module-carousel__button module-carousel__button--next" type="button" data-carousel-next aria-label="Next videos">›</button>
   </div>
 </section>
 {% endif %}
 
+{% if page.gallery and page.gallery.enabled != false and page.gallery.images %}
+<section class="module-gallery" id="gallery" aria-label="{{ page.module-name }} image gallery">
+  <h2>{{ page.gallery.title | default: "Images" }}</h2>
+  <div class="module-carousel" data-module-carousel>
+    <button class="module-carousel__button module-carousel__button--prev" type="button" data-carousel-prev aria-label="Previous images">‹</button>
+    <div class="module-gallery-strip" data-carousel-strip>
+      {% for gallery_item in page.gallery.images %}
+        {% assign gallery_image = gallery_item.image | default: gallery_item.src %}
+        {% assign gallery_thumb = gallery_item.thumb | default: gallery_image %}
+        {% assign gallery_full = gallery_item.full | default: gallery_image %}
+        {% assign gallery_alt = gallery_item.alt | default: gallery_item.caption | default: page.module-name %}
+        <figure class="module-gallery-card">
+          <button class="module-gallery-card__button" type="button" data-gallery-trigger data-gallery-full="{{ gallery_full | relative_url }}" data-gallery-alt="{{ gallery_alt | escape }}" data-gallery-caption="{{ gallery_item.caption | escape }}">
+            <picture>
+              {% if gallery_item.webp %}<source srcset="{{ gallery_item.webp | relative_url }}" type="image/webp">{% endif %}
+              <img src="{{ gallery_thumb | relative_url }}" alt="{{ gallery_alt | escape }}" loading="lazy">
+            </picture>
+          </button>
+          {% if gallery_item.caption %}<figcaption>{{ gallery_item.caption }}</figcaption>{% endif %}
+        </figure>
+      {% endfor %}
+    </div>
+    <button class="module-carousel__button module-carousel__button--next" type="button" data-carousel-next aria-label="Next images">›</button>
+  </div>
+</section>
+
+<dialog class="module-gallery-dialog" data-gallery-dialog aria-label="{{ page.module-name }} expanded image">
+  <button class="module-gallery-dialog__close" type="button" data-gallery-close aria-label="Close image">Close</button>
+  <img class="module-gallery-dialog__image" data-gallery-image alt="">
+  <p class="module-gallery-dialog__caption" data-gallery-caption></p>
+</dialog>
+{% endif %}
+
+{% if page.buyer-box or page.quick-links or page.buy %}
 <section class="module-resources" aria-label="{{ page.module-name }} resources">
   <h2>Resources</h2>
   <p class="module-resources__links">
@@ -262,20 +329,10 @@ Download Manual
     {% if page.size %}<span>{{page.size}}</span>{% endif %}
     {% if page.depth %}<span>{{page.depth}} deep</span>{% endif %}
     {% if page.supply %}<span>{{page.supply}}</span>{% endif %}
-    {% if page.designed %}<span>Designed {{page.designed}}{% if page.designed and page.updated %}; updated {{page.updated}}{% endif %}</span>{% endif %}
+    {% if page.designed %}<span>Designed {{page.designed}}{% if page.designed and page.updated %} Updated {{page.updated}}{% endif %}</span>{% endif %}
   </p>
 </section>
 {% endif %}
-        
-      
-{% unless page.buyer-box or page.quick-links or page.buy %}
-      <a id="videos"> </a>
-      {% for youtubes in page.yt %}  
-      <br>{{youtubes.title}}</br>
-<P>    <iframe class="iframe" src="https://www.youtube.com/embed/{{youtubes.link}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</p>
-       {% endfor %}
-{% endunless %}
       </div>
     </main>
 
@@ -304,6 +361,81 @@ Download Manual
           if (event.key === "Escape") setOpen(false);
         });
       });
+
+      document.querySelectorAll("[data-module-carousel]").forEach(function(carousel) {
+        var strip = carousel.querySelector("[data-carousel-strip]");
+        var previous = carousel.querySelector("[data-carousel-prev]");
+        var next = carousel.querySelector("[data-carousel-next]");
+        if (!strip || !previous || !next) return;
+
+        function updateButtons() {
+          var maxScroll = strip.scrollWidth - strip.clientWidth;
+          var hasOverflow = maxScroll > 2;
+          previous.hidden = !hasOverflow || strip.scrollLeft <= 2;
+          next.hidden = !hasOverflow || strip.scrollLeft >= maxScroll - 2;
+        }
+
+        function scrollByPage(direction) {
+          strip.scrollBy({
+            left: direction * Math.max(strip.clientWidth * 0.82, 220),
+            behavior: "smooth"
+          });
+        }
+
+        previous.addEventListener("click", function() {
+          scrollByPage(-1);
+        });
+
+        next.addEventListener("click", function() {
+          scrollByPage(1);
+        });
+
+        strip.addEventListener("scroll", updateButtons);
+        window.addEventListener("resize", updateButtons);
+        updateButtons();
+        window.setTimeout(updateButtons, 300);
+      });
+
+      (function() {
+        var dialog = document.querySelector("[data-gallery-dialog]");
+        if (!dialog) return;
+
+        var image = dialog.querySelector("[data-gallery-image]");
+        var caption = dialog.querySelector("[data-gallery-caption]");
+        var close = dialog.querySelector("[data-gallery-close]");
+
+        function closeDialog() {
+          if (typeof dialog.close === "function" && dialog.open) {
+            dialog.close();
+          } else {
+            dialog.removeAttribute("open");
+          }
+        }
+
+        document.querySelectorAll("[data-gallery-trigger]").forEach(function(trigger) {
+          trigger.addEventListener("click", function() {
+            image.src = trigger.getAttribute("data-gallery-full");
+            image.alt = trigger.getAttribute("data-gallery-alt") || "";
+            caption.textContent = trigger.getAttribute("data-gallery-caption") || "";
+
+            if (typeof dialog.showModal === "function") {
+              dialog.showModal();
+            } else {
+              dialog.setAttribute("open", "open");
+            }
+          });
+        });
+
+        close.addEventListener("click", closeDialog);
+
+        dialog.addEventListener("click", function(event) {
+          if (event.target === dialog) closeDialog();
+        });
+
+        document.addEventListener("keydown", function(event) {
+          if (event.key === "Escape") closeDialog();
+        });
+      })();
     </script>
 
   </body>

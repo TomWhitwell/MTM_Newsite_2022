@@ -2,15 +2,29 @@
 layout: module
 permalink: /Goldfinger/
 
-order: 0.35
+order: 2
 title:  "Touch-sensitive matrix mixer"
 module-name: "Goldfinger"
 designed: "2026"
 image: "/images/goldfinger-900.png" 
 wide-image: "true" 
+opening-image: "/images/goldfinger-900.png"
+opening-image-widest: true
+opening-image-compact: true
 excerpt: "is a matrix mixer you play with your finger" 
-overlay: "NEW: "
+# overlay: "NEW "
 thonk-url: "https://www.thonk.co.uk/shop/goldfinger/" 
+buy:
+  assembled:
+    label: "Pre-assembled"
+    text: "No soldering or construction required."
+    thonk_url: "https://www.thonk.co.uk/shop/goldfinger/"
+product-summary:
+  auto_facts: true
+  bullets:
+    - "Desktop passive matrix mixer"
+    - "Six bidirectional jacks"
+    - "Pure gold touch surface"
 yt:
 - 
   link: "bHTZiNbk6FE"
@@ -33,4 +47,3 @@ pars:
   "One or more persons during a certain period drop their relations, their work and leisure activities, and all their other usual motives for movement and action, and let themselves be drawn by the attractions of the terrain and the encounters they find there." Let yourself be drawn by the attractions! 
   
 ---
-

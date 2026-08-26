@@ -1,6 +1,6 @@
 ---
 layout: module
-permalink: /Radio-Music/
+permalink: /Radio-Music-v1/
 
 order: 14
 designed: 2014

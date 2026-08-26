@@ -2,10 +2,12 @@
 layout: module
 permalink: /8mu_page/
  
-order: 15
+order: 0.3
 title:  "8mu Midi Controller DIY"
 module-name: "8mu"
-designed: "April 2019 - February 2023" 
+designed: "2019-2023"
+updated: 2026 
+overlay: "BACK "
 image: "/images/8mu_900_card.png"
 wide-image: "true" 
 opening-image: "/images/8mu_900.png"
@@ -23,6 +25,27 @@ buy:
     text: "Solder the faders, assemble the case, then set it up in the web editor."
     thonk_url: "https://www.thonk.co.uk/shop/music-thing-8mu/"
     dealers: true
+product-summary:
+  auto_facts: true
+  bullets:
+    - "81 x 47 x 13mm body"
+    - "26mm high with fader caps and feet"
+    - "65g"
+    - "USB-C and TRS MIDI"
+    - "Web editor"
+actions:
+  enabled: true
+  label: "Start here"
+  items:
+    -
+      label: "Quick Start PDF"
+      url: "/collateral/8mu_quickstart.pdf"
+    -
+      label: "Documentation"
+      url: "/8mu"
+    -
+      label: "Launch Editor"
+      url: "https://tomwhitwell.github.io/Smith-Kakehashi/"
 # mgrid: "https://www.modulargrid.net/e/music-thing-modular-control"
 github: "https://github.com/TomWhitwell/8mu_Public"
 schematic: "/collateral/8mu_schematic.pdf"
