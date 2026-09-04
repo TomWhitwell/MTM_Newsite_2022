@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    {% assign system = page %}
+
+    <main class="page-content system-product" aria-label="Content">
+      <div class="wrapper">
+        <header class="system-product__header">
+          <div class="system-product__title-block">
+            <h1>{{ system.product_name | default: page.title }}</h1>
+            {% if system.intro %}
+            <div class="system-product__intro">
+              {% for paragraph in system.intro %}
+              <p>{{ paragraph }}</p>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+
+          {% include buy_paths.html buy=system.buy %}
+          {% include action_strip.html actions=system.actions label="Workshop System actions" class="system-product__actions" %}
+
+          {% if system.hero %}
+          {% include responsive_image.html image=system.hero.image webp=system.hero.webp alt=system.hero.alt width=system.hero.width height=system.hero.height class="system-product__hero" %}
+          {% endif %}
+        </header>
+
+        {% include doc_links.html docs=system.docs %}
+
+        <article class="system-product__body">
+          {{ content }}
+        </article>
+
+        {% include video_carousel.html videos=system.videos label="Workshop System videos" class="system-product__videos" %}
+        {% include media_gallery.html gallery=system.gallery fallback_alt=system.product_name label="Workshop System image gallery" dialog_label="Workshop System expanded image" dialog_id="workshop-system-gallery" class="system-product__gallery" %}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+    <script>
+      document.querySelectorAll("[data-module-carousel]").forEach(function(carousel) {
+        var strip = carousel.querySelector("[data-carousel-strip]");
+        var previous = carousel.querySelector("[data-carousel-prev]");
+        var next = carousel.querySelector("[data-carousel-next]");
+        if (!strip || !previous || !next) return;
+
+        function updateButtons() {
+          var maxScroll = strip.scrollWidth - strip.clientWidth;
+          var hasOverflow = maxScroll > 2;
+          previous.hidden = !hasOverflow || strip.scrollLeft <= 2;
+          next.hidden = !hasOverflow || strip.scrollLeft >= maxScroll - 2;
+        }
+
+        function scrollByPage(direction) {
+          strip.scrollBy({
+            left: direction * Math.max(strip.clientWidth * 0.82, 220),
+            behavior: "smooth"
+          });
+        }
+
+        previous.addEventListener("click", function() {
+          scrollByPage(-1);
+        });
+
+        next.addEventListener("click", function() {
+          scrollByPage(1);
+        });
+
+        strip.addEventListener("scroll", updateButtons);
+        window.addEventListener("resize", updateButtons);
+        updateButtons();
+        window.setTimeout(updateButtons, 300);
+      });
+
+      document.querySelectorAll("[data-gallery-dialog]").forEach(function(dialog) {
+        var image = dialog.querySelector("[data-gallery-image]");
+        var caption = dialog.querySelector("[data-gallery-caption]");
+        var close = dialog.querySelector("[data-gallery-close]");
+        var dialogId = dialog.getAttribute("data-gallery-dialog");
+        if (!image || !caption || !close || !dialogId) return;
+
+        function closeDialog() {
+          if (typeof dialog.close === "function" && dialog.open) {
+            dialog.close();
+          } else {
+            dialog.removeAttribute("open");
+          }
+        }
+
+        document.querySelectorAll('[data-gallery-dialog-target="' + dialogId + '"]').forEach(function(trigger) {
+          trigger.addEventListener("click", function() {
+            image.src = trigger.getAttribute("data-gallery-full");
+            image.alt = trigger.getAttribute("data-gallery-alt") || "";
+            caption.textContent = trigger.getAttribute("data-gallery-caption") || "";
+
+            if (typeof dialog.showModal === "function") {
+              dialog.showModal();
+            } else {
+              dialog.setAttribute("open", "open");
+            }
+          });
+        });
+
+        close.addEventListener("click", closeDialog);
+
+        dialog.addEventListener("click", function(event) {
+          if (event.target === dialog) closeDialog();
+        });
+
+        document.addEventListener("keydown", function(event) {
+          if (event.key === "Escape") closeDialog();
+        });
+      });
+    </script>
+
+  </body>
+
+</html>

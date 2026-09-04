@@ -463,6 +463,127 @@ table {
     }
 }
 
+.documentation-hero-image {
+    margin: 0 0 1.5em 0;
+    max-width: 760px;
+
+    img {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    figcaption {
+        color: lighten($text-color, 28%);
+        font-size: 0.78em;
+        line-height: 1.35;
+        margin-top: 0.55em;
+    }
+}
+
+.documentation-video {
+    aspect-ratio: 16 / 9;
+    background: #111;
+    margin: 0.4em 0 1.35em 0;
+    max-width: 760px;
+
+    iframe {
+        border: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.documentation-parent {
+    display: block;
+    margin: 0 0 0.7em 0;
+}
+
+.documentation-parent-link {
+    color: lighten($text-color, 48%);
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.documentation-parent-link:hover {
+    color: $link-color;
+    text-decoration: none;
+}
+
+.documentation-page--compact {
+    font-size: 17px;
+    font-weight: 450;
+    line-height: 1.56;
+
+    p,
+    li,
+    td,
+    th {
+        font-size: 17px;
+        font-weight: 450;
+        line-height: 1.56;
+    }
+
+    p,
+    ul,
+    ol,
+    table {
+        margin-bottom: 1.15em;
+    }
+
+    li {
+        padding-bottom: 0.22em;
+    }
+
+    blockquote {
+        border-left: 2px solid lighten($text-color, 66%);
+        color: lighten($text-color, 28%);
+        font-size: 14.5px;
+        font-weight: 430;
+        font-style: normal;
+        letter-spacing: 0;
+        line-height: 1.5;
+        margin: 1.45em 0;
+        padding: 0.05em 0 0.05em 1em;
+    }
+
+    blockquote p {
+        font-size: 14.5px;
+        font-weight: 430;
+        line-height: 1.5;
+        margin-bottom: 0.65em;
+    }
+
+    h1 {
+        color: $text-color;
+        display: block;
+        font-size: 30px;
+        font-weight: 650;
+        line-height: 1.05;
+        margin-bottom: 0.8em;
+    }
+
+    h2,
+    h3 {
+        color: $text-color;
+        font-weight: 650;
+        line-height: 1.15;
+        margin-bottom: 0.55em;
+        margin-top: 1.65em;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}
+
 
 .floating-book {
     position: fixed;

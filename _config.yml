@@ -80,6 +80,8 @@ collections:
     output: true
   WorkshopDocs:
     output: true
+  RadioMusicDocs:
+    output: true
 
 defaults:
   - scope:

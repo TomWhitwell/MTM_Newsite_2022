@@ -1,0 +1,11 @@
+{% assign image_src = include.image | default: include.filename %}
+{% assign image_webp = include.webp %}
+{% assign image_alt = include.alt | default: include.caption | default: "Image" %}
+{% assign image_class = include.class | default: "responsive-image" %}
+<figure class="{{ image_class }}">
+  <picture>
+    {% if image_webp %}<source srcset="{{ image_webp | relative_url }}" type="image/webp">{% endif %}
+    <img src="{{ image_src | relative_url }}" alt="{{ image_alt | escape }}"{% if include.width %} width="{{ include.width }}"{% endif %}{% if include.height %} height="{{ include.height }}"{% endif %} loading="lazy">
+  </picture>
+  {% if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>

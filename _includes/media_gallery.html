@@ -1,0 +1,37 @@
+{% assign gallery = include.gallery %}
+{% if gallery and gallery.enabled != false and gallery.images %}
+{% assign dialog_id = include.dialog_id | default: "gallery" %}
+{% assign gallery_id = include.id | default: "gallery" %}
+{% assign gallery_label = include.label | default: "Image gallery" %}
+{% assign dialog_label = include.dialog_label | default: "Expanded image" %}
+<section class="module-gallery{% if include.class %} {{ include.class }}{% endif %}" id="{{ gallery_id }}" aria-label="{{ gallery_label }}">
+  <h2>{{ gallery.title | default: "Images" }}</h2>
+  <div class="module-carousel" data-module-carousel>
+    <button class="module-carousel__button module-carousel__button--prev" type="button" data-carousel-prev aria-label="Previous images">‹</button>
+    <div class="module-gallery-strip" data-carousel-strip>
+      {% for gallery_item in gallery.images %}
+        {% assign gallery_image = gallery_item.image | default: gallery_item.src %}
+        {% assign gallery_thumb = gallery_item.thumb | default: gallery_image %}
+        {% assign gallery_full = gallery_item.full | default: gallery_image %}
+        {% assign gallery_alt = gallery_item.alt | default: gallery_item.caption | default: include.fallback_alt %}
+        <figure class="module-gallery-card">
+          <button class="module-gallery-card__button" type="button" data-gallery-trigger data-gallery-full="{{ gallery_full | relative_url }}" data-gallery-alt="{{ gallery_alt | escape }}" data-gallery-caption="{{ gallery_item.caption | escape }}" data-gallery-dialog-target="{{ dialog_id }}">
+            <picture>
+              {% if gallery_item.webp %}<source srcset="{{ gallery_item.webp | relative_url }}" type="image/webp">{% endif %}
+              <img src="{{ gallery_thumb | relative_url }}" alt="{{ gallery_alt | escape }}" loading="lazy">
+            </picture>
+          </button>
+          {% if gallery_item.caption %}<figcaption>{{ gallery_item.caption }}</figcaption>{% endif %}
+        </figure>
+      {% endfor %}
+    </div>
+    <button class="module-carousel__button module-carousel__button--next" type="button" data-carousel-next aria-label="Next images">›</button>
+  </div>
+</section>
+
+<dialog class="module-gallery-dialog" data-gallery-dialog="{{ dialog_id }}" aria-label="{{ dialog_label }}">
+  <button class="module-gallery-dialog__close" type="button" data-gallery-close aria-label="Close image">Close</button>
+  <img class="module-gallery-dialog__image" data-gallery-image alt="">
+  <p class="module-gallery-dialog__caption" data-gallery-caption></p>
+</dialog>
+{% endif %}

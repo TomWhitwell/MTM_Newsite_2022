@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {%- include head.html -%}
+
   <body>
 
     {%- include header.html -%}
-</body>
-<body_doc>
 
-    <main class="page-content" aria-label="Content">
+    <main class="page-content documentation-page {{ page.body_class }}" aria-label="Content">
       <div class="wrapper">
+        {% assign documentation_parent_url = page.parent_url %}
+        {% assign documentation_parent_label = page.parent_label %}
+        {% if documentation_parent_url == nil %}
+          {% if page.collection == "RadioMusicDocs" %}
+            {% assign documentation_parent_url = "/Radio-Music/" %}
+            {% assign documentation_parent_label = "Radio Music" %}
+          {% elsif page.collection == "WorkshopDocs" %}
+            {% assign documentation_parent_url = "/workshopsystem/" %}
+            {% assign documentation_parent_label = "Workshop System" %}
+          {% endif %}
+        {% endif %}
+
+        {% if documentation_parent_url %}
+          <nav class="documentation-parent" aria-label="Parent page">
+            <a class="documentation-parent-link" href="{{ documentation_parent_url | relative_url }}">{{ documentation_parent_label }}</a>
+          </nav>
+        {% endif %}
 
         {{ content }}
       </div>
@@ -16,30 +32,29 @@
 
     {%- include footer.html -%}
 
-  </body_doc>
+    <div class="lightbox-overlay" id="lightbox">
+      <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+      <img src="" alt="Expanded view" id="lightbox-img">
+    </div>
 
-<div class="lightbox-overlay" id="lightbox">
-    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-    <img src="" alt="Expanded view" id="lightbox-img">
-</div>
-
-<script>
-    function openLightbox(imgSrc) {
+    <script>
+      function openLightbox(imgSrc) {
         document.getElementById("lightbox-img").src = imgSrc;
         document.getElementById("lightbox").style.display = "flex";
-    }
+      }
 
-    function closeLightbox() {
+      function closeLightbox() {
         document.getElementById("lightbox").style.display = "none";
-    }
+      }
 
-    // New function to conditionally open lightbox based on screen size
-    function conditionalOpenLightbox(imgSrc) {
-        if (window.innerWidth > 768) { // Only open lightbox on screens wider than 768px
-            openLightbox(imgSrc);
+      function conditionalOpenLightbox(imgSrc) {
+        if (window.innerWidth > 768) {
+          openLightbox(imgSrc);
         }
-    }
-</script>
- {% include yt_embed.html %}
+      }
+    </script>
+    {% include yt_embed.html %}
+
+  </body>
 
 </html>

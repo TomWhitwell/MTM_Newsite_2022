@@ -1,0 +1,12 @@
+{% assign actions = include.actions %}
+{% if actions and actions.enabled != false and actions.items %}
+{% assign action_label = include.label | default: "Actions" %}
+<nav class="module-actions{% if include.class %} {{ include.class }}{% endif %}" aria-label="{{ action_label }}">
+  {% if actions.label %}<p class="module-actions__label">{{ actions.label }}</p>{% endif %}
+  <p class="module-actions__links">
+    {% for action in actions.items %}
+    <a href="{{ action.url | relative_url }}">{{ action.label }}</a>
+    {% endfor %}
+  </p>
+</nav>
+{% endif %}
