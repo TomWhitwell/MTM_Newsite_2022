@@ -3,6 +3,11 @@
   text: "NEW"
   desc: "Exclusive events for Workshop System owners"
 
+- order: 0.01
+  link: "https://preview.mailerlite.io/forms/1972910/197335146835216212/share"
+  text: "NEW"
+  desc: "PATCH ESSENTIALS: Get to know the WS by building useful sounds"
+
 - order: 0.025
   link: "https://musicthingmodular.bandcamp.com/album/thingking-1-shared-air"
   text: "DOWNLOAD"
