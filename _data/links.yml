@@ -1,24 +1,29 @@
-- order: 0.02
+- order: 3
   link: "https://www.eventbrite.com/o/121463763996"
   text: "NEW"
   desc: "Exclusive events for Workshop System owners"
 
 - order: 0.01
+  link: "https://www.eventbrite.com/e/thingking-with-the-workshop-system-mylar-melodies-turing-card-masterclass-tickets-1999279126687"
+  text: "NEW"
+  desc: "Thingking #2: Mylar Melodies' Turing Card Masterclass: Oct 2nd 2026"
+
+- order: 0.5
   link: "https://preview.mailerlite.io/forms/1972910/197335146835216212/share"
   text: "NEW"
   desc: "PATCH ESSENTIALS: Get to know the WS by building useful sounds"
 
-- order: 0.025
+- order: 02
   link: "https://musicthingmodular.bandcamp.com/album/thingking-1-shared-air"
   text: "DOWNLOAD"
   desc: "Shared Air: Collaborative Workshop System album"
 
-- order: 0.01
+- order: 01
   link: "https://www.musicthing.co.uk/buy"
   text: "BUY"
   desc: "Worldwide stockists for DIY, pre-built, Workshop System and modules"
 
-- order: 0.5
+- order: 01
   link: "https://www.musicthing.co.uk/Goldfinger/"
   text: "NEW"
   desc: "Goldfinger is a matrix mixer you play with your finger" 
