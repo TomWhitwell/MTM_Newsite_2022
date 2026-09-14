@@ -87,6 +87,7 @@ Workshop Systems are also available pre-assembled from [Signal Sounds](https://w
 To find out more about the Workshop System:  
 * **[Workshop System Quick Start Guide](/Workshop_Quick_Start/)**
 * **[NEW: Find the latest Program Cards](https://computer.musicthing.co.uk/index.html)**
+* **[NEW: Patch Essentials - get to know the Workshop System](https://preview.mailerlite.io/forms/1972910/197335146835216212/share)**
 * **[Workshop Computer Guide](/Computer_Program_Cards/)** 
 * **[Build and construction Guide](/Workshop_System_Build_Guide/)**   
 * **[Calibration Guide](/Workshop_System_Calibration/)**  
