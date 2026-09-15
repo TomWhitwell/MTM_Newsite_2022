@@ -1,6 +1,6 @@
 ---
 layout: module
-permalink: /8mu_page/
+permalink: /8mu/
  
 order: 0.3
 title:  "8mu Midi Controller DIY"
