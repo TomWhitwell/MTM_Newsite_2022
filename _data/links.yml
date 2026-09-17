@@ -1,22 +1,17 @@
-- order: 3
-  link: "https://www.eventbrite.co.uk/e/thingking-with-the-workshop-system-mylar-melodies-turing-card-masterclass-tickets-1999279126687?aff=instaLIB"
-  text: "Live online workshops"
-  desc: " for Workshop System owners"
+- order: 00
+  link: "https://www.thonk.co.uk/brand/music-thing-modular/"
+  text: "BUY"
+  desc: "Radio Music mk2 + Radio Remote + 8mu"
 
-- order: 0.01
+- order: 01
   link: "https://www.eventbrite.co.uk/e/thingking-with-the-workshop-system-mylar-melodies-turing-card-masterclass-tickets-1999279126687?aff=instaLIB"
   text: "NEW"
   desc: "Thingking #2: Mylar Melodies' Turing Card Masterclass: Oct 2nd 2026"
 
-- order: 0.5
+- order: 015
   link: "https://preview.mailerlite.io/forms/1972910/197335146835216212/share"
   text: "NEW"
   desc: "PATCH ESSENTIALS: Get to know the WS by building useful sounds"
-
-- order: 02
-  link: "https://musicthingmodular.bandcamp.com/album/thingking-1-shared-air"
-  text: "DOWNLOAD"
-  desc: "Shared Air: Collaborative Workshop System album"
 
 - order: 01
   link: "https://www.musicthing.co.uk/buy"
@@ -32,11 +27,6 @@
   link: "https://www.youtube.com/watch?v=D0H_VsJ15go"
   text: "LUSH"
   desc: "DivKid's epic deep-dive into the Workshop Computer" 
-
-- order: 03
-  link: "https://www.thonk.co.uk/shop/ryk-pgm-cards-mixed/"
-  text: "ACE"
-  desc: "RYK Modular's incredible program cards for the Workshop Computer" 
 
 - order: 04
   link: "https://computer.musicthing.co.uk/"
@@ -62,11 +52,6 @@
   link: "https://workshopsystem.substack.com/"
   text: "Substack"
   desc: "Workshop System Monthly Newsletter" 
-
-- order: 130
-  link: "https://www.lulu.com/shop/oliver-divmod/patch-the-random/paperback/product-zmynwem.html?page=1&pageSize=4"
-  text: "Read"
-  desc: "Patch The Random v2 by Oliver/divmod" 
 
 - order: 140
   link: "https://www.instagram.com/thesynthshed/?hl=en-gb"
