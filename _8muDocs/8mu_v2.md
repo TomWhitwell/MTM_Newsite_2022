@@ -142,6 +142,7 @@ output: false
 * The Editor lets you configure your 8mu in a browser, and monitor the outputs from faders and accelerometer channels in real time. 
 * The browser (Chrome) talks to the 8mu via old-fashioned sysex messages, so it takes a second or two to connect, and to update when you change banks. 
 * Important: You can turn off channels by changing the channel number to Zero. 
+* Having trouble? In late 2026 [Chrome had a MIDI bug](https://help.morningstar.io/en/article/web-midi-issues-after-a-chrome-update-release-l4yu91/) that is now fixed. 
 
 
 {% include linkedHeading.html heading="Banks " level=3 %}
