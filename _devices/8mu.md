@@ -88,7 +88,7 @@ pars:
 - "8mu comes as a DIY kit. The PCB is populated and programmed, you need to solder on the faders and assemble the whole thing. Kits come with both the standard and <a href=/Radio/>Radio Remote</a> front panels." 
 - "8mu gets power and sends data by USB-C. Only standard USB data lines are used, so it should work on any USB computer with an adaptor." 
 - There are two versions of 8mu. 8mu sold after Summer 2026 are V2. Next to the USB connector, it says 8mu v2. There are no functional differences. You can <a href="https://tomwhitwell.github.io/Smith-Kakehashi/">update the firmware on a v1</a> so it will work as a Radio Remote. 
-- "If you have the original 8mu kit, the <a href=/8mu_docs/>v1 documentation is still here</a>."
+- "If you have the original 8mu kit, the <a href=/8mu_v1_docs/>v1 documentation is still here</a>."
 - "8mu has a 3.5mm hardware MIDI output, which can be Type A or Type B. Change between A and B in the editor, click Edit Config and the settings tab will appear."
 - "8mu has a quick start guide printed on the back, or <a href=/collateral/8mu_quickstart.pdf>here's a quickstart PDF</a>"
 - "8mu has a web editor where you can edit all the settings. The browser (Chrome) talks to the 8mu via old-fashioned sysex messages."

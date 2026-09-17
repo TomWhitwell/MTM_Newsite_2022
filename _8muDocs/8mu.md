@@ -1,7 +1,7 @@
 ---
 
 layout: documentation
-permalink: /8mu_docs/
+permalink: /8mu_v1_docs/
 output: false
 
 
@@ -381,4 +381,3 @@ Firmware:
 
 
  
-

@@ -2,6 +2,9 @@
 
 layout: documentation
 permalink: /8mu_v2_docs/
+redirect_from:
+  - /8mu_docs/
+  - /8mu_docs
 output: false
 
 

@@ -6,6 +6,9 @@ order: 3
 title: "Radio Music Suggested Audio"
 description: "Listen to and download the suggested audio collection for Radio Music."
 body_class: radio-music-audio
+noindex: true
+sitemap:
+  exclude: "yes"
 ---
 
 <article class="sound-library">
