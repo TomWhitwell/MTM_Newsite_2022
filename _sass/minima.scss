@@ -1,11 +1,19 @@
 @charset "utf-8";
 
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/inter-latin-wght-normal.woff2") format("woff2");
+}
+
 // Define defaults for each variable.
 
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 $base-font-size:   18px !default;
-$base-font-weight: 700 !default;
+$base-font-weight: 600 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
 
@@ -53,7 +61,5 @@ $on-laptop:        800px !default;
   "minima/syntax-highlighting",
   "minima/landing",
   "minima/video",
-  "minima/gallery", 
-  "minima/split-block",
-  "minima/program-cards"
+  "minima/gallery"
 ;

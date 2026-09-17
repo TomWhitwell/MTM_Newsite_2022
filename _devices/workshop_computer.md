@@ -15,7 +15,6 @@ side-desc: "Programmable music computer"
 size: "8 HP"
 depth: "25 mm"
 supply: "175 mA"
-
 sitemap:
     priority: 0.7
     changefreq: 'monthly'
@@ -32,7 +31,7 @@ yt:
   title: "Goldfish is a fun experimental lofi looper"
 
 - 
-  link: "https://youtu.be/nO9igi1O2u8"
+  link: "nO9igi1O2u8"
   title: "Build a Workshop Computer in real time with Tom" 
   
 
@@ -65,5 +64,3 @@ pars:
 
 
 ---
-
-

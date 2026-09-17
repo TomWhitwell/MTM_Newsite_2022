@@ -130,7 +130,7 @@ The Workshop System has 14 modules:
 * **Stereo In** takes a 3.5mm stereo input and boosts it to modular level. 
 * **Ring Mod** is a great-sounding ring modulator, connected to the two sines. It also works as a simple VCA. 
 * **Stompbox** is an interface for guitar pedals, with blend and feedback controls to make boring pedals more interesting. There's a 9v power outlet for pedals below this module. 
-* **Amplifier** contains two simple circuits. One is connected to a piezo contact mic behind the panel, the other is the transistor-based input circuit from a MiniMoog. In other words, a [Mikrophonie](/mikrophonie) and a [Mini Drive](/Mini-Drive). 
+* **Amplifier** contains two simple circuits. One is connected to a piezo contact mic behind the panel, the other is the transistor-based input circuit from a MiniMoog. In other words, a [Mikrophonie](/Mikrophonie) and a [Mini Drive](/Mini-Drive). 
 * **4 Voltages** is a minimum viable keyboard: four voltage outputs, one knob, four pushbuttons. More fun to play with than to explain. 
 * **Mix** a simple output mixer, with two stereo channels, two mono channels and a powerful headphone amp / line out. 
 * **PSU** behind the panel is a power supply that runs on USB-C PD power or professional 15-25v barrel connectors. It works from battery powerbanks and laptop adaptors, most likely something you've already got at home. 

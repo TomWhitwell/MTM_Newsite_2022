@@ -26,7 +26,7 @@
   z-index: 1;
 }
 
-/* Content layer – full height, overlay aligned to bottom */
+/* Content layer - full height, overlay aligned to bottom */
 
 .landing-hero__content {
   position: relative;
@@ -87,7 +87,6 @@
 .landing-hero__button {
   display: inline-block;
   a { color: #ffffff; text-decoration: none; }
-  
 }
 
 .landing-hero__button--secondary {
@@ -113,25 +112,24 @@
   padding: $spacing-unit * 2 0;
 }
 
-
-.landing-hero__form{
+.landing-hero__form {
   margin-top: 1rem;
   display: grid;
   gap: 0.75rem;
   max-width: 26rem;
 }
 
-.landing-hero__form-field{
+.landing-hero__form-field {
   display: grid;
   gap: 0.35rem;
 }
 
-.landing-hero__label{
+.landing-hero__label {
   font-size: 0.95rem;
   opacity: 0.9;
 }
 
-.landing-hero__input{
+.landing-hero__input {
   padding: 0.6rem 0.7rem;
   border-radius: 0.4rem;
   border: 1px solid rgba(255,255,255,0.2);
@@ -139,34 +137,32 @@
   color: inherit;
 }
 
-.landing-hero__checkbox{
+.landing-hero__checkbox {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
   font-size: 0.9rem;
 }
 
-.landing-hero__checkbox-input{
+.landing-hero__checkbox-input {
   margin-top: 0.15rem;
 }
 
-.landing-hero__email-row{
+.landing-hero__email-row {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.landing-hero__label--inline{
+.landing-hero__label--inline {
   margin: 0;
   white-space: nowrap;
 }
 
-.landing-hero__input--inline{
+.landing-hero__input--inline {
   flex: 1;
   min-width: 12rem;
 }
-
-
 
 /* Responsive */
 
@@ -190,7 +186,7 @@
     display: block;
   }
 
-  /* Put the hero image AFTER the overlay */
+  /* Put the hero image after the overlay */
   .landing-hero__bg {
     order: 2;
 
@@ -223,7 +219,3 @@
     text-align: center;
   }
 }
-
-
-
-

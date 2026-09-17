@@ -1,0 +1,15 @@
+{% assign docs = include.docs %}
+{% if docs and docs.items %}
+{% assign docs_heading = docs.heading | default: "Guides" %}
+<section class="system-doc-links" aria-label="{{ docs_heading }}">
+  <h2>{{ docs_heading }}</h2>
+  <div class="system-doc-links__grid">
+    {% for doc in docs.items %}
+    <a class="system-doc-links__item" href="{{ doc.url | relative_url }}">
+      <strong>{{ doc.label }}</strong>
+      {% if doc.text %}<span>{{ doc.text }}</span>{% endif %}
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

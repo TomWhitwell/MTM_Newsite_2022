@@ -45,4 +45,3 @@ which describes recording an entire band album acoustically with one microphone,
 
 
 ---
-

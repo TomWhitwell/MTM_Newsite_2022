@@ -2,21 +2,33 @@
 layout: module
 permalink: /Goldfinger/
 
-order: 0.35
+order: 2
 title:  "Touch-sensitive matrix mixer"
 module-name: "Goldfinger"
 designed: "2026"
 image: "/images/goldfinger-900.png" 
 wide-image: "true" 
 excerpt: "is a matrix mixer you play with your finger" 
-overlay: "NEW: "
+# overlay: "NEW "
 thonk-url: "https://www.thonk.co.uk/shop/goldfinger/" 
 yt:
 - 
   link: "bHTZiNbk6FE"
   title: "DivKid's intro to Golfinger"
 
-  
+gallery:
+  enabled: true
+  title: "Images"
+  images:
+    -
+      image: "/images/MTM_goldfinger.png"
+      webp: "/images/MTM_goldfinger.webp"
+      alt: "Music Thing Modular Goldfinger"
+      caption: "Goldfinger with friends"
+
+
+
+
 pars:
 - "Goldfinger is a matrix mixer. It’s made of gold. You play it with your finger."
 - "It takes a little while to learn. The map is a grid of finger-sized regions containing all the possible combinations of signals. It’s easier to navigate by ear than by eye."
@@ -33,4 +45,3 @@ pars:
   "One or more persons during a certain period drop their relations, their work and leisure activities, and all their other usual motives for movement and action, and let themselves be drawn by the attractions of the terrain and the encounters they find there." Let yourself be drawn by the attractions! 
   
 ---
-

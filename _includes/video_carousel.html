@@ -1,0 +1,21 @@
+{% assign videos = include.videos.items | default: include.videos %}
+{% if videos %}
+{% assign video_id = include.id | default: "videos" %}
+{% assign video_label = include.label | default: "Videos" %}
+{% assign video_heading = include.videos.heading | default: include.heading | default: "Videos" %}
+<section class="module-videos{% if include.class %} {{ include.class }}{% endif %}" id="{{ video_id }}" aria-label="{{ video_label }}">
+  <h2>{{ video_heading }}</h2>
+  <div class="module-carousel" data-module-carousel>
+    <button class="module-carousel__button module-carousel__button--prev" type="button" data-carousel-prev aria-label="Previous videos">‹</button>
+    <div class="module-video-strip" data-carousel-strip>
+      {% for video in videos %}
+      <figure class="module-video-card">
+        <iframe src="https://www.youtube.com/embed/{{ video.link }}" title="{{ video.title }}" loading="lazy" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <figcaption>{{ video.title }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+    <button class="module-carousel__button module-carousel__button--next" type="button" data-carousel-next aria-label="Next videos">›</button>
+  </div>
+</section>
+{% endif %}

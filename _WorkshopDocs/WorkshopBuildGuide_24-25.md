@@ -41,7 +41,7 @@ NB: This is the build guide for kits bought BEFORE July 2025. [For newer kits, u
 
 
 {% include linkedHeading.html heading="TL;DR Summary for new or nervous builders " level=2 %}  
-* If you've never soldered before, practise on something else — I always recommend [8mu](https://www.musicthing.co.uk/8mu_page/) or [Mikrophonie](https://www.musicthing.co.uk/Mikrophonie/).
+* If you've never soldered before, practise on something else — I always recommend [8mu](/8mu/) or [Mikrophonie](https://www.musicthing.co.uk/Mikrophonie/).
 * If you're comfortable soldering but are a new builder, start by [watching the build video above](https://www.youtube.com/watch?v=M3mMAsjv3QE). It's me (Tom, Music Thing Designer) talking through the entire build process in real time. Maybe the closest thing you can get to an online build workshop. 
 * That video is the same length as Gladiator or Pulp Fiction, but not quite as dramatic. 
 * If you're uncertain about anything, ask for help before soldering, not after. 
@@ -282,4 +282,3 @@ If something isn't working...
 * **A module behaves strangely: too loud, out of control** Sometimes this is a sign that a potentiometer pin hasn't been soldered, or is short-circuited. 
 * **A module is silent or doesn't pass audio** This can happen when an input or output socket either isn't soldered or is short-circuited to ground by a blobby solder joint. 
 * **The PSU makes a whining noise** This is a sign there is a major short-circuit somewhere in the power circuitry, so a module is pulling much too much power. If you have a eurorack power cable, you can power up each module individually, to identify the culprit. 
-

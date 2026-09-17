@@ -15,7 +15,6 @@ depth: "25 mm"
 supply: "40 mA"
 schematic: "collateral/mini_drive_Rev1_Schematic.pdf"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-mini-drive"
-
 yt:
 - 
   link: "yrwLULspzpE"
@@ -47,4 +46,3 @@ pars:
 - "With any feedback patch, phase is important. If the signal gets quieter when gain is increased, it’s probably because the signals are 180° out of phase. To correct this, reverse the phase using an inverter, or an attenuverter (like those in MakeNoise Maths). Alternatively, try routing it through another module to see what happens."
 
 ---
-

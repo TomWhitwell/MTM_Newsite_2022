@@ -1,0 +1,22 @@
+{% assign buy = include.buy %}
+{% if buy and buy.paths %}
+{% assign buy_heading = buy.heading | default: "Buy" %}
+<section class="system-buy" aria-label="{{ buy_heading }}">
+  <h2>{{ buy_heading }}</h2>
+  <div class="system-buy__paths">
+    {% for path in buy.paths %}
+    <section class="system-buy__path">
+      <h3>{{ path.label }}</h3>
+      {% if path.text %}<p>{{ path.text }}</p>{% endif %}
+      {% if path.dealers %}
+      <p class="system-buy__dealers">
+        {% for dealer in path.dealers %}
+        <a href="{{ dealer.url }}">{{ dealer.label }}</a>
+        {% endfor %}
+      </p>
+      {% endif %}
+    </section>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
