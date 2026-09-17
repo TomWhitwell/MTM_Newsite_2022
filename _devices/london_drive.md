@@ -13,13 +13,6 @@ thonk-url: "https://www.thonk.co.uk/shop/london-drive/"
 size: "4 HP"
 depth: "25 mm"
 supply: "40 mA"
-buy:
-  assembled:
-    label: "Assembled only"
-    text: "Test case: assembled path without a DIY option."
-    thonk_url: "https://www.thonk.co.uk/shop/london-drive/"
-    dealers: true
-    dealers_url: "/buy/#london-drive"
 schematic: "collateral/london_drive_Rev1_Schematic.pdf"
 mgrid: "https://www.modulargrid.net/e/music-thing-modular-mini-drive"
 yt:

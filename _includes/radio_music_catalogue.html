@@ -1,0 +1,64 @@
+<section class="rights-notice" aria-labelledby="rights-heading">
+  <h2 id="rights-heading">{{ site.data.radio_music.page.rights_heading }}</h2>
+  <ul>
+    {% for item in site.data.radio_music.page.rights_notes %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="catalogue" aria-label="Sound banks">
+
+  {% for bank in site.data.radio_music.banks %}
+  <details class="sound-bank">
+    <summary>
+      <span class="bank-number">{{ bank.number }}</span>
+      <span class="bank-leds" aria-label="Bank {{ bank.number }} in binary">
+        {% for led in bank.leds %}<span class="bank-led{% if led %} is-on{% endif %}" aria-hidden="true"></span>{% endfor %}
+      </span>
+      <span class="bank-title-group">
+        <strong>{{ bank.name }}</strong>
+        <span>{{ bank.file_count }} {% if bank.file_count == 1 %}sound{% else %}sounds{% endif %}</span>
+      </span>
+      <span class="bank-toggle" aria-hidden="true"></span>
+    </summary>
+
+    <div class="sound-bank__body">
+      <p class="bank-description">{{ bank.description }}</p>
+      {% if bank.settings_note != empty %}<p class="bank-settings">{{ bank.settings_note }}</p>{% endif %}
+      <div class="track-list">
+        {% for track in bank.tracks %}
+        {% assign preview_path = track.audio_path | remove_first: '/assets/radio-music/previews' %}
+        <article class="track" data-track data-audio="{{ site.data.radio_music.page.preview_base_url }}{{ preview_path | escape }}" data-title="{{ track.title | escape }}">
+          <button class="track-play" type="button" aria-label="Play {{ track.title | escape }}">
+            <span class="track-play__icon" aria-hidden="true"></span>
+          </button>
+          <div class="track-main">
+            <div class="track-heading">
+              <h3><span class="track-number">{{ track.sequence }}</span> {{ track.title }}</h3>
+              <span class="track-duration">{{ track.duration }}</span>
+            </div>
+            <button class="spectrogram" type="button" style="width: {{ track.width_percent }}%" aria-label="Seek within {{ track.title | escape }}">
+              <img src="{{ track.spectrogram_path | relative_url }}" width="{{ track.spectrogram_width }}" height="56" loading="lazy" decoding="async" alt="Spectrogram of {{ track.title | escape }}">
+              <span class="spectrogram__cursor" aria-hidden="true"></span>
+            </button>
+            {% if track.description != empty %}<p class="track-description">{{ track.description }}</p>{% endif %}
+            <p class="track-meta">
+              <span>{{ track.sample_rate }}</span>
+              <span>{{ track.channel_label }}</span>
+              <span>{{ track.bit_depth_label }}</span>
+              {% if track.legacy_filename != empty %}<span>Originally {{ track.legacy_filename }}</span>{% endif %}
+              {% if track.source_url != empty %}<a href="{{ track.source_url | escape }}">Source</a>{% endif %}
+            </p>
+            {% if track.rights != empty %}<p class="track-rights">Rights/licence: {{ track.rights }}</p>{% endif %}
+            {% if track.notes != empty %}<p class="track-notes">{{ track.notes }}</p>{% endif %}
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+  {% endfor %}
+</section>
+
+<audio data-library-audio preload="metadata"></audio>

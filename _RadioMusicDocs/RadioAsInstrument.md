@@ -11,7 +11,7 @@ body_class: "documentation-page--compact"
 
 ---
 
-{% include linkedHeading.html heading="Radio as Instrument" level=1 %}
+{% include linkedHeading.html heading="Radio as Instrument" level=2 %}
 
 <figure class="documentation-hero-image">
   <img src="/images/radio-music-docs/cage.jpg" alt="John Cage performing Variations VII in 1966">

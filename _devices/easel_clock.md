@@ -8,23 +8,9 @@ module-name: "Easel Clock"
 designed: 2021
 image: "/images/easel-clock_900_L.png" 
 wide-image: "true" 
-opening-image: "/images/easel-clock_900_L.png"
-opening-image-full-width: true
 excerpt: "gets clocks in and out of a Buchla Music Easel" 
 thonk-url: "https://www.thonk.co.uk/product-category/mtm-music-easel/" 
 thonk-button: "BUY"
-buy:
-  assembled:
-    label: "Ready-assembled"
-    text: "No build required."
-    thonk_url: "https://www.thonk.co.uk/product-category/mtm-music-easel/"
-product-summary:
-  auto_facts: true
-  bullets:
-    - "Buchla Music Easel program-card format"
-    - "Clock input and output"
-    - "3.5mm clock sockets"
-    - "Grayhill switches"
 # size: "n/a"
 # depth: "n/a"
 # supply: "n/a"

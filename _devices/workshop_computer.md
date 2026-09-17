@@ -15,38 +15,9 @@ side-desc: "Programmable music computer"
 size: "8 HP"
 depth: "25 mm"
 supply: "175 mA"
-buy:
-  dealers_url: "/buy/#workshop-computer"
-  diy:
-    label: "DIY kit"
-    text: "Build it yourself. The small surface-mount parts are already fitted."
-    thonk_url: "https://www.thonk.co.uk/shop/workshop-eurorack-computer/"
-    dealers: true
-  assembled:
-    label: "Assembled module"
-    text: "Ready-made and tested, for people who want to start patching."
-    thonk_url: "https://www.thonk.co.uk/shop/mtm-workshop-computer-assembled/"
-    dealers: true
-
 sitemap:
     priority: 0.7
     changefreq: 'monthly'
-buyer-box:
-- label: "What it is"
-  text: "A Eurorack computer that runs tiny program cards."
-- label: "Best for"
-  text: "People who want one module to become lots of different musical tools."
-- label: "Comes with"
-  text: "Reverb+, Turing Machine and Simple MIDI."
-- label: "Probably not for"
-  text: "Someone who wants one fixed, labelled function."
-quick-links:
-- label: "Watch DivKid"
-  url: "#videos"
-- label: "Build it"
-  url: "https://youtu.be/nO9igi1O2u8"
-- label: "Program cards"
-  url: "https://tomwhitwell.github.io/Workshop_Computer/index.html"
 yt:
 - 
   link: "D0H_VsJ15go"

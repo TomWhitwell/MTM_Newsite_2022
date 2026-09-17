@@ -1,0 +1,85 @@
+.radio-music-audio {
+  --rm-ink: #111;
+  --rm-muted: #777;
+  --rm-line: #dedede;
+  --rm-soft: #f6f6f6;
+  --rm-red: #d62431;
+  --rm-blue: #333c8f;
+  color: var(--rm-ink);
+  font-weight: 520;
+}
+
+.radio-music-audio .wrapper { max-width: 840px; }
+.radio-music-audio .eyebrow { margin: 0 0 7px; color: var(--rm-muted); font-size: 13px; font-weight: 650; letter-spacing: 0; text-transform: none; }
+.radio-music-audio .sound-library__intro { max-width: 720px; margin-bottom: 24px; }
+.radio-music-audio .sound-library h1 { display: block; margin: 0 0 6px; color: $brand-color; font-size: clamp(38px, 6vw, 56px); font-weight: 650; line-height: 1; letter-spacing: 0; }
+.radio-music-audio .sound-library__lede { margin: 0 0 14px; max-width: 680px; font-size: 20px; font-weight: 650; line-height: 1.32; }
+.radio-music-audio .sound-library__summary { margin: 0; color: var(--rm-muted); font-size: 14px; font-weight: 600; }
+.radio-music-audio .library-downloads { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+.radio-music-audio .library-download { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 10px 13px 9px; border: 2px solid var(--rm-blue); color: var(--rm-blue); line-height: 1.2; }
+.radio-music-audio .library-download:hover { background: var(--rm-blue); color: #fff; text-decoration: none; }
+.radio-music-audio .library-download.is-pending { border-color: var(--rm-line); color: var(--rm-muted); }
+.radio-music-audio .library-download strong { font-size: 15px; }
+.radio-music-audio .library-download span { font-size: 11px; font-weight: 520; }
+.radio-music-audio .legacy-download { margin: 10px 0 0; color: var(--rm-muted); font-size: 12px; font-weight: 520; }
+.radio-music-audio .legacy-download span { margin: 0 5px; color: #bbb; }
+.radio-music-audio .rights-notice { margin: 0 0 28px; padding: 16px 0 17px; border-top: 1px solid var(--rm-line); border-bottom: 1px solid var(--rm-line); background: transparent; }
+.radio-music-audio .rights-notice h2 { margin: 0 0 10px; font-size: 17px; font-weight: 650; }
+.radio-music-audio .rights-notice ul { column-gap: 32px; column-count: 2; margin: 0; padding-left: 1.15em; color: #333; font-size: 13px; font-weight: 450; line-height: 1.42; list-style-position: outside; }
+.radio-music-audio .rights-notice li { break-inside: avoid; }
+.radio-music-audio .rights-notice li + li { margin-top: 6px; }
+.radio-music-audio .sound-bank { border-top: 1px solid var(--rm-line); }
+.radio-music-audio .rights-notice + .catalogue .sound-bank:first-child { border-top: 0; }
+.radio-music-audio .sound-bank:last-of-type { border-bottom: 1px solid var(--rm-line); }
+.radio-music-audio .sound-bank > summary { display: grid; grid-template-columns: 34px 74px minmax(0, 1fr) 28px; align-items: center; gap: 12px; min-height: 70px; cursor: pointer; list-style: none; }
+.radio-music-audio .sound-bank > summary::-webkit-details-marker { display: none; }
+.radio-music-audio .sound-bank > summary:hover .bank-title-group strong { color: var(--rm-red); }
+.radio-music-audio .bank-number { color: var(--rm-muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.radio-music-audio .bank-leds { display: flex; gap: 5px; }
+.radio-music-audio .bank-led { flex: none; box-sizing: border-box; width: 13px; height: 13px; border: 2px solid #aaa; border-radius: 50%; background: transparent; }
+.radio-music-audio .bank-led.is-on { border-color: var(--rm-red); background: var(--rm-red); box-shadow: 0 0 0 2px rgba(214,36,49,.09); }
+.radio-music-audio .bank-title-group { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
+.radio-music-audio .bank-title-group strong { font-size: 19px; transition: color .15s ease; }
+.radio-music-audio .bank-title-group > span { color: var(--rm-muted); font-size: 12px; font-weight: 520; white-space: nowrap; }
+.radio-music-audio .bank-toggle { position: relative; display: block; width: 28px; height: 28px; border: 2px solid var(--rm-red); border-radius: 50%; }
+.radio-music-audio .bank-toggle::before, .radio-music-audio .bank-toggle::after { content: ""; position: absolute; top: 50%; left: 50%; width: 12px; height: 2px; background: var(--rm-red); transform: translate(-50%,-50%); }
+.radio-music-audio .bank-toggle::after { transform: translate(-50%,-50%) rotate(90deg); }
+.radio-music-audio .sound-bank[open] .bank-toggle { background: var(--rm-red); }
+.radio-music-audio .sound-bank[open] .bank-toggle::before { background: #fff; }
+.radio-music-audio .sound-bank[open] .bank-toggle::after { display: none; }
+.radio-music-audio .sound-bank__body { padding: 0 0 34px 132px; }
+.radio-music-audio .bank-description { max-width: 620px; margin: 0 0 13px; font-size: 15px; font-weight: 520; }
+.radio-music-audio .bank-settings { display: inline-block; margin: 0 0 22px; padding: 5px 8px; background: #fff0f1; color: #7b1d25; font-size: 12px; font-weight: 650; }
+.radio-music-audio .track-list { border-top: 1px solid var(--rm-line); }
+.radio-music-audio .track { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 14px; padding: 20px 0 19px; border-bottom: 1px solid var(--rm-line); }
+.radio-music-audio .track-play { display: grid; place-items: center; width: 34px; height: 34px; margin-top: 1px; padding: 0; border: 2px solid var(--rm-ink); border-radius: 50%; background: transparent; color: var(--rm-ink); cursor: pointer; }
+.radio-music-audio .track-play:hover, .radio-music-audio .track-play:focus-visible, .radio-music-audio .track.is-playing .track-play { border-color: var(--rm-red); color: var(--rm-red); outline: none; }
+.radio-music-audio .track-play__icon { width: 0; height: 0; margin-left: 3px; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 9px solid currentColor; }
+.radio-music-audio .track.is-playing .track-play__icon { width: 9px; height: 11px; margin-left: 0; border: 0; border-right: 3px solid currentColor; border-left: 3px solid currentColor; }
+.radio-music-audio .track-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 8px; }
+.radio-music-audio .track-heading h3 { margin: 0; font-size: 15px; line-height: 1.3; }
+.radio-music-audio .track-number, .radio-music-audio .track-duration { color: var(--rm-muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.radio-music-audio .spectrogram { position: relative; display: block; max-width: 100%; height: 56px; margin: 0 0 10px; padding: 0; overflow: hidden; border: 0; background: transparent; cursor: crosshair; }
+.radio-music-audio .spectrogram img { display: block; width: 100%; height: 56px; object-fit: fill; }
+.radio-music-audio .spectrogram__cursor { position: absolute; inset: 0 auto 0 0; width: 2px; background: var(--rm-red); opacity: 0; transform: translateX(-1px); }
+.radio-music-audio .track.is-playing .spectrogram__cursor { opacity: 1; }
+.radio-music-audio .track-description { margin: 0 0 6px; font-size: 13px; font-weight: 520; line-height: 1.4; }
+.radio-music-audio .track-meta, .radio-music-audio .track-rights, .radio-music-audio .track-notes { margin: 0; color: var(--rm-muted); font-size: 11px; font-weight: 520; line-height: 1.45; }
+.radio-music-audio .track-meta { display: flex; flex-wrap: wrap; gap: 2px 0; }
+.radio-music-audio .track-meta > *:not(:last-child)::after { content: "·"; margin: 0 7px; color: #bbb; }
+.radio-music-audio .track-rights, .radio-music-audio .track-notes { margin-top: 4px; }
+
+@media (max-width: 700px) {
+  .radio-music-audio .sound-library__lede { font-size: 18px; }
+  .radio-music-audio .library-downloads { grid-template-columns: 1fr; }
+  .radio-music-audio .library-download { display: flex; width: 100%; }
+  .radio-music-audio .rights-notice ul { column-count: 1; }
+  .radio-music-audio .sound-bank > summary { grid-template-columns: 25px 66px minmax(0,1fr) 28px; gap: 8px; }
+  .radio-music-audio .bank-title-group { display: block; }
+  .radio-music-audio .bank-title-group strong, .radio-music-audio .bank-title-group > span { display: block; }
+  .radio-music-audio .bank-title-group strong { font-size: 16px; }
+  .radio-music-audio .bank-led { width: 11px; height: 11px; }
+  .radio-music-audio .sound-bank__body { padding-left: 0; }
+  .radio-music-audio .track { grid-template-columns: 34px minmax(0,1fr); gap: 10px; }
+  .radio-music-audio .track-description { font-size: 12px; }
+}

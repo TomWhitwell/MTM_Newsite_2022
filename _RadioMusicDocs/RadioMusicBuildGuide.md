@@ -6,47 +6,34 @@ page-name: "Radio Music Build Guide"
 permalink: "/Radio_Music_Build_Guide/"
 order: 0
 title: "Radio Music Build Guide"
-description: "Build guide placeholder for Radio Music and Radio Remote."
+description: "Build guide for Radio Music mk2"
 
 ---
 
-{% include linkedHeading.html heading="Radio Music Build Guide" level=1 %}
+{% include linkedHeading.html heading="Radio Music Mk2 Build Guide" level=1 %}  
 
-Video placeholder: add the build video at the top of this page when it is ready.
+<div class="documentation-video">
+  <iframe src="https://www.youtube.com/embed/PEzlkrnwKC8" title="Radio Music build guide" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
-This page is a placeholder for the Radio Music build guide.
+<br>
+Radio Music is a 4hp Eurorack module that you can build yourself in an hour or so. The video above shows a complete end-to-end build with full instructions. 
+- The single PCB is pre-populated with 90 tiny components. Your job is to attach the power header and interface elements: pots, buttons, sockets, LEDs and the SD Card holder.
+- It's not a difficult project, but the density of the board means it probably shouldn't be the first thing you ever solder. If you also bought a Radio Remote, build that first. 
+- A few parts of the build are slightly counter-intuitive, so please watch the video carefully. If anything is unclear, contact [support@thonk.co.uk](mailto:support@thonk.co.uk?subject=Radio%20Music%20Build%20Advice), send photos.  
+- NB: This is the build guide for Radio Music kits bought in 2026 and after. [For older kits, use this version.](/Radio-Music-v1/)
 
-The format should probably follow the Workshop System build guide, but a little more deliberately:
 
-* A video at the top for people who want to watch the whole build first.
-* A short "before you start" section with tools, time, and things to check.
-* A contents list.
-* One build stage per heading.
-* One or more pictures directly beside the step they explain.
-* Short troubleshooting notes at the point where the mistake is likely to happen.
+<picture>
+  <source srcset="/images/Adafruit_Joints.webp" type="image/webp">
+  <img src="/images/Adafruit_Joints.jpg" 
+       alt="Music Thing Workshop System being played in Cornwall"
+       width="900" height="900" loading="lazy" style="width: 100%; height: auto;">
+</picture>
 
-{% include linkedHeading.html heading="Suggested structure" level=2 %}
 
-1. What you need
-1. Before you solder
-1. Identify the parts
-1. Prepare the panel
-1. Fit the sockets
-1. Fit the pots and switches
-1. Fit the LEDs
-1. Add the SD card socket and hardware
-1. Check before power
-1. First power-up
-1. SD card and first sound
-1. Troubleshooting
-
-{% include linkedHeading.html heading="Image placeholders" level=2 %}
-
-* Image placeholder: all parts laid out before the build.
-* Image placeholder: PCB and panel orientation.
-* Image placeholder: socket placement.
-* Image placeholder: pot and switch placement.
-* Image placeholder: LED orientation.
-* Image placeholder: finished module from front.
-* Image placeholder: finished module from back.
-
+{% include linkedHeading.html heading="What you need to know about soldering before you start" level=2 %}  
+* To build Radio Music you'll need to make about 45 through-hole solder joints. 
+* Your joints don't have to be perfect, but for the module to work, they should all look like one of the 'OK' joints in the image above. 
+* Here is a good seven-minute [video introduction to soldering from Curious Inventor](https://www.youtube.com/watch?v=IpkkfK937mU). 
+* I recommend Adafruit's fantastic [Guide To Excellent Soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering). The image comes from the [common problems](https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems) page. 

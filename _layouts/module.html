@@ -9,7 +9,7 @@
 
     <main class="page-content module-page" aria-label="Content">
       <div class="wrapper">
-{% if page.buyer-box or page.quick-links or page.buy %}
+{% if page.product-rail == true or page.product-rail == "true" %}
 {% assign has_module_opening = true %}
 {% else %}
 {% assign has_module_opening = false %}
@@ -22,7 +22,7 @@
 
     
 
-{% if page.buyer-box or page.quick-links or page.buy %}
+{% if has_module_opening %}
 <section class="module-opening" aria-label="{{ page.module-name }} introduction">
   <aside class="module-opening__rail{% if page.opening-image-wide %} module-opening__rail--wide{% endif %}{% if page.opening-image-widest %} module-opening__rail--widest{% endif %}{% if page.opening-image-compact %} module-opening__rail--compact-image{% endif %}" aria-label="{{ page.module-name }} buying information">
     {% capture product_summary_box %}
@@ -73,7 +73,13 @@
           <h2>{{ diy_label }}</h2>
           <p>{{ diy_text }}</p>
           <p class="product-buy-menu__links">
-            {% if page.buy.diy.thonk_url %}<a href="{{ page.buy.diy.thonk_url }}">{{ diy_thonk_label }}</a>{% endif %}
+            {% if page.buy.diy.thonk_links %}
+              {% for thonk_link in page.buy.diy.thonk_links %}
+                <a href="{{ thonk_link.url }}">{{ thonk_link.label }}</a>
+              {% endfor %}
+            {% elsif page.buy.diy.thonk_url %}
+              <a href="{{ page.buy.diy.thonk_url }}">{{ diy_thonk_label }}</a>
+            {% endif %}
             {% if page.buy.diy.dealers or page.buy.diy.dealers_url %}<a href="{{ diy_dealers_url }}">{{ diy_dealers_label }}</a>{% endif %}
           </p>
         </section>
@@ -89,7 +95,13 @@
           <h2>{{ assembled_label }}</h2>
           <p>{{ assembled_text }}</p>
           <p class="product-buy-menu__links">
-            {% if page.buy.assembled.thonk_url %}<a href="{{ page.buy.assembled.thonk_url }}">{{ assembled_thonk_label }}</a>{% endif %}
+            {% if page.buy.assembled.thonk_links %}
+              {% for thonk_link in page.buy.assembled.thonk_links %}
+                <a href="{{ thonk_link.url }}">{{ thonk_link.label }}</a>
+              {% endfor %}
+            {% elsif page.buy.assembled.thonk_url %}
+              <a href="{{ page.buy.assembled.thonk_url }}">{{ assembled_thonk_label }}</a>
+            {% endif %}
             {% if page.buy.assembled.dealers or page.buy.assembled.dealers_url %}<a href="{{ assembled_dealers_url }}">{{ assembled_dealers_label }}</a>{% endif %}
           </p>
         </section>
@@ -189,7 +201,6 @@
 {% endif %}
 {% else %}
       <h1>{{page.pars.size}} things to know about {{page.module-name}}</h1>
-      {% unless page.product-summary %}
       <div class="module-topblock" aria-label="{{ page.module-name }} quick facts">
         {% if page.size or page.depth or page.supply or page.designed %}
         <p class="module-topblock__facts">
@@ -210,7 +221,6 @@
           {% endunless %}
         </p>
       </div>
-      {% endunless %}
 {% endif %}
 
     {% if page.wide-image == "true" and has_module_opening == false %}

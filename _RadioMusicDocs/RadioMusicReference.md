@@ -13,13 +13,11 @@ body_class: "documentation-page--compact"
 
 {% include linkedHeading.html heading="Radio Music Reference Guide" level=1 %}
 
-This guide is based on the current Radio Music RP2040 firmware notes: `README.md`, `SETTINGS.md`, `LEDS.md` and the stable parts of `SPEC.md`.
-
 {% include linkedHeading.html heading="What Radio Music is" level=2 %}
 
 Radio Music is a 4HP Eurorack sample playback module. It plays audio files from a microSD card, but behaves a bit like a radio: the STATION control moves between files, and in the default mode files keep advancing in the background even when they are not selected.
 
-Radio Music mk2 is a new hardware and firmware version of the original 2014 Radio Music. It adds Radio Remote support, higher quality playback, lower latency, larger SD card support, more playback modes, a calibrated 1V/oct pitch input, and no longer depends on the Teensy 3.2.
+Radio Music mk2 is a completely revised version of the original 2014 Radio Music with new hardware and firmware. It adds Radio Remote support, higher quality playback, lower latency, larger SD card support, more playback modes, a calibrated 1V/oct pitch input, and no longer depends on the Teensy 3.2.
 
 {% include linkedHeading.html heading="Front panel controls" level=2 %}
 
@@ -92,7 +90,7 @@ The motion button can map the orientation and acceleration of Radio Remote to pi
 
 {% include linkedHeading.html heading="Loop controls" level=3 %}
 
-The START and END sliders set a loop window. If START is fully left and END is at either edge, or if START and END match exactly, the whole sample plays.
+The START and END sliders set a loop window. If START is fully left and END is at either edge, or if START and END match exactly, the whole sample plays. For long files, it is often hard to set the sliders close enough to capture a short loop. 
 
 If START is to the right of END, playback is reversed.
 
@@ -122,7 +120,7 @@ The RESET button between the START and END sliders restarts the sample from the 
 
 `tunerMode` sets how Radio Music moves between stations:
 
-* `0`: sharp mode. A single station is selected, with crossfades between stations.
+* `0`: sharp mode. A single station is selected, with short crossfades between stations.
 * `1`: soft mode. The control fades continuously between adjacent stations, so two samples can play at once.
 * `2`: radio mode. Analogue radio-style tuning, with stations appearing at particular positions and noise between them.
 

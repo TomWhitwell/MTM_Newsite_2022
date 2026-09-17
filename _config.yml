@@ -53,6 +53,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 exclude:
   - .DS_Store
@@ -64,8 +65,6 @@ exclude:
   - README.md
   - install-mac.sh
   - scripts/
-  - cache/
-  - landing-captures/
   - node_modules/
   - vendor/
 
@@ -81,6 +80,8 @@ collections:
   WorkshopDocs:
     output: true
   RadioMusicDocs:
+    output: true
+  8muDocs:
     output: true
 
 defaults:

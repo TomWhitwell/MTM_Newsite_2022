@@ -8,24 +8,9 @@ module-name: "Easel Proto"
 designed: 2022
 image: "/images/protoboard_600.png" 
 wide-image: "true" 
-opening-image: "/images/protoboard_600.png"
-opening-image-widest: true
-opening-image-compact: true
 excerpt: "is a DIY-friendly prototype card for the Buchla Music Easel" 
 thonk-url: "https://www.thonk.co.uk/shop/music-thing-modular-easel-proto//" 
 thonk-button: "BUY"
-buy:
-  diy:
-    label: "DIY kit"
-    text: "A starter kit for Buchla Music Easel program-card experiments."
-    thonk_url: "https://www.thonk.co.uk/shop/music-thing-modular-easel-proto//"
-product-summary:
-  auto_facts: true
-  bullets:
-    - "Buchla Music Easel program-card format"
-    - "45 signals on the card connector"
-    - "Space for banana jacks, switches and pots"
-    - "PDF guide"
 # size: "n/a"
 # depth: "n/a"
 # supply: "n/a"

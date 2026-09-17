@@ -8,29 +8,27 @@ module-name: "Goldfinger"
 designed: "2026"
 image: "/images/goldfinger-900.png" 
 wide-image: "true" 
-opening-image: "/images/goldfinger-900.png"
-opening-image-widest: true
-opening-image-compact: true
 excerpt: "is a matrix mixer you play with your finger" 
 # overlay: "NEW "
 thonk-url: "https://www.thonk.co.uk/shop/goldfinger/" 
-buy:
-  assembled:
-    label: "Pre-assembled"
-    text: "No soldering or construction required."
-    thonk_url: "https://www.thonk.co.uk/shop/goldfinger/"
-product-summary:
-  auto_facts: true
-  bullets:
-    - "Desktop passive matrix mixer"
-    - "Six bidirectional jacks"
-    - "Pure gold touch surface"
 yt:
 - 
   link: "bHTZiNbk6FE"
   title: "DivKid's intro to Golfinger"
 
-  
+gallery:
+  enabled: true
+  title: "Images"
+  images:
+    -
+      image: "/images/MTM_goldfinger.png"
+      webp: "/images/MTM_goldfinger.webp"
+      alt: "Music Thing Modular Goldfinger"
+      caption: "Goldfinger with friends"
+
+
+
+
 pars:
 - "Goldfinger is a matrix mixer. It’s made of gold. You play it with your finger."
 - "It takes a little while to learn. The map is a grid of finger-sized regions containing all the possible combinations of signals. It’s easier to navigate by ear than by eye."
