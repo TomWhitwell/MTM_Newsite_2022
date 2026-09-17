@@ -160,7 +160,7 @@ pars:
 - "When Radio Remote is plugged in, the START/PITCH knob on Radio Music is ignored. The Remote takes over the performance controls and makes several settings immediately playable." 
 - "If you already have an 8mu MIDI controller, you can <a href=https://tomwhitwell.github.io/Smith-Kakehashi/>update the firmware</a> so it will work as a Radio Remote, and you can <a href=https://www.thonk.co.uk/shop/8mu-radio-remote-panel/>buy a Radio Remote panel from Thonk</a>. " 
 - "Like mk1, Radio Music mk2 is designed to be hackable, with alternative firmware development actively encouraged. It runs on the same RP2040 processor as Workshop Computer and 8mu. I'll soon be sharing documentation and Hello World files demonstrating file access and playback." 
-- "Sadly it is not possible to update a mk1 Radio Music to add the features in mk2, or to use Radio Remote with mk1 as it has no USB-C port. <a href=/Radio-Music-v1/>Mk1 documentation is here</a>." 
+- "Sadly it is not possible to update a mk1 Radio Music to add the features in mk2, or to use Radio Remote with mk1 as it has no USB-C port. However, SD Cards from mk1 are fully compatible with mk2, so all your old .raw and .wav files will play happily. <a href=/Radio-Music-v1/>Mk1 documentation is here</a>." 
 - "Radio Music mk2 is a collaboration between Tom Whitwell of Music Thing Modular and Chris Johnson of Plus Minus Audio."
 
 ---
