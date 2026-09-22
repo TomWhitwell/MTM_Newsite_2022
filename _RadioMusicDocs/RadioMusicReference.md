@@ -13,6 +13,8 @@ body_class: "documentation-page--compact"
 
 {% include linkedHeading.html heading="Radio Music Reference Guide" level=1 %}
 
+[settings.txt reference](#settings-txt-reference)
+
 {% include linkedHeading.html heading="What Radio Music is" level=2 %}
 
 Radio Music is a 4HP Eurorack sample playback module. It plays audio files from a microSD card, but behaves a bit like a radio: the STATION control moves between files, and in the default mode files keep advancing in the background even when they are not selected.
@@ -237,85 +239,7 @@ For example, a file ending `skip1.wav` ignores the next reset after it starts.
   <figcaption style="text-align: center;">Skipping reset pulses with a filename</figcaption>
 </figure>
 
-{% include linkedHeading.html heading="settings.txt" level=2 %}
-
-On startup, or when a new SD card is inserted, Radio Music looks for `settings.txt` in the root folder of the card. If it does not exist, the module creates one with default settings.
-
-Each bank can also have its own `settings.txt` inside the bank folder. Bank settings inherit from the root settings file, so a bank-specific file often needs only the few settings that are different.
-
-Settings lines use this format:
-
-```text
-settingName = value
-```
-
-Notes:
-
-* Values are whole numbers.
-* Text after `#` is ignored as a comment.
-* Whitespace is ignored.
-* Setting names are not case-sensitive.
-* The format is backwards compatible with settings files from the original Radio Music firmware.
-
-This:
-
-```text
-Start Pot immediate = 1  # start knob scrubs through sample
-```
-
-does the same as this:
-
-```text
-STARTPOTIMMEDIATE=1
-```
-
-{% include linkedHeading.html heading="Common settings" level=3 %}
-
-| Setting | Values |
-|---|---|
-| `tunerMode` | `0` sharp, `1` soft, `2` radio |
-| `loopMode` | `0` off, `1` forward loop, `2` ping-pong |
-| `speedMode` | `0` tape, `1` notes, `2` 90s |
-| `pulseMode` | `0` reset input, positive values multiply, negative values divide |
-| `crossfadeTime` | Crossfade time in milliseconds. Default `25` |
-| `fadeMode` | `0` constant power, `1` linear |
-| `showMeter` | `0` bank number, `1` VU meter, `2` sample progress |
-| `meterHide` | Time in ms to show bank number after bank change. Default `2000` |
-| `highQuality` | `0` low quality, `1` 24-bit/96kHz cubic interpolation |
-| `radioStart` | `0` reset on station change, `1` radio-style background advance |
-
-{% include linkedHeading.html heading="Immediate response settings" level=3 %}
-
-These decide whether controls take effect immediately, or wait until RESET.
-
-| Setting | Default |
-|---|---|
-| `stationPotImmediate` | `1` |
-| `stationCVImmediate` | `1` |
-| `startPotImmediate` | `0` |
-| `startCVImmediate` | `0` |
-| `pitchPotImmediate` | `1` |
-| `pitchCVImmediate` | `1` |
-
-{% include linkedHeading.html heading="Pitch and speed settings" level=3 %}
-
-| Setting | Meaning |
-|---|---|
-| `pitchKnobLinearSpeedMin` / `pitchKnobLinearSpeedMax` | Tape and 90s mode speed range from the knob, in percent of original speed. Default `-100` to `100` |
-| `pitchCVLinearSpeedMin` / `pitchCVLinearSpeedMax` | Tape and 90s mode speed range from CV, in percent of original speed. Default `-100` to `100` |
-| `pitchKnobMin` / `pitchKnobMax` | Notes mode knob range in semitones. Default `-12` to `12` |
-| `quantisePitchPot` | Quantise pitch knob in notes mode |
-| `quantisePitchCV` | Quantise pitch CV in notes mode |
-| `startCVDivider` | Quantises start positions. Default `2`, giving 512 steps |
-
-{% include linkedHeading.html heading="Radio tuner settings" level=3 %}
-
-| Setting | Meaning |
-|---|---|
-| `minRadioStationStrength` | Minimum strength of distant signals in radio mode. Range `0` to `256`, default `128` |
-| `ssbEffect` | Approximate single side band pitch shift effect. `0` off, `1` on |
-| `whistleVol` | Heterodyne whistle level, `0` to `100`, default `50` |
-| `noiseVol` | Background noise level, `0` to `100`, default `50` |
+<div style="clear: both;"></div>
 
 {% include linkedHeading.html heading="LED indicators" level=2 %}
 
@@ -400,3 +324,377 @@ To enter firmware update mode:
 1. Connect a computer to the front-panel USB socket.
 1. A drive called `RPI-RP2` should appear.
 1. Drag the Radio Music `.uf2` firmware file onto the drive.
+
+{% include linkedHeading.html heading="settings.txt reference" level=2 %}
+
+On startup, or when a new SD card is inserted, the RM2 looks for a file called `settings.txt` in the top-level folder of the SD card, and creates it with default settings if it does not exist.
+
+Each sample bank can have its own settings, controlled by a `settings.txt` file in the bank folder. Any settings not specified in a bank settings file are inherited from the top-level settings file. This means a bank settings file will often contain only one or two lines — just the settings that differ from the defaults.
+
+
+### File Format
+The `settings.txt` file is made up of lines of the form
+```
+<setting> = <value>
+```
+where `<value>` is a whole number.
+
+- Any text on a line after a `#` is is ignored
+- Whitespace is ignored, even within words
+- Text is not case-sensitive
+
+This means that 
+
+`Start Pot immediate = 1  # start knob scrubs through sample`
+
+does the same as
+
+`STARTPOTIMMEDIATE=1`.
+
+The file format and supported values are backwards compatible with `settings.txt` files written for the original Radio Music (both original 2014 and revised 2017 firmware).
+
+### Settings:
+
+This section describes all the setting names and their corresponding values.
+
+The main `tunerMode`, `speedMode`, `loopMode` and `pulseMode` settings are overridden by the bottom four sliders of the Radio Remote, if these are moved away from their default left-most positions.
+
+
+### Tuner settings:
+#### `tunerMode`
+Sets the way in which the transition between samples occurs as the STATION knob is turned:
+- `0 `= 'sharp': samples switch discretely, crossfading over a time set by `crossfadeTime` **[default]**
+- `1` = 'soft': continuous fading between adjacent samples in the bank. Two samples playing at once
+- `2` = radio noise emulation mode: emulation of analogue radio tuning, with samples/stations emerging from noise
+
+Sharp tuner mode (`tunerMode = 0`) is a refinement of the behaviour of the original Radio Music. As the 'standard' Radio Music behaviour, it is the mode for which most other settings are optimised.
+
+Radio tuner mode (`tunerMode = 2`) has several further customisation options:
+
+#### `minRadioStationStrength`
+In 'Radio' tuner mode, sets the minimum strength of distant signals. Range is any integer `0` to `256`, where
+- `0` = Stations randomly distributed between inaudible and full strength.
+- `256` = All stations at full strength.
+At low values of `minRadioStationStrength` many of the samples in the bank become very quiet and distorted, contributing to the character of the noise as the STATION tuning is adjusted. **Default is `128`**.
+
+#### `ssbEffect`
+Setting to `1` enables an approximate single side band (SSB) pitch shift effect (in truth, closer to ring modulation than true SSB pitch shifting). **Default is `0`, off**.
+
+#### `whistleVol`
+Volume of heterodyne whistle effect, a sine wave that drops to zero frequency as a station is exactly tuned. Range `0` to `100`, **default is `50`**.
+
+#### `noiseVol`
+Volume of the background noise/hiss in radio tuner mode. Range `0` to `100`, **default is `50`**.
+
+
+
+
+### Speed/pitch response:
+
+#### `speedMode`
+The main control that sets the way in which the playback speed of samples occurs:
+- `0` = tape mode: continuous linear speed control, including 'through zero' speed to backwards playback
+- `1` = notes mode: exponential pitch control
+- `2` = '90s mode: timestretch effect
+
+90s speed mode is not available in the 'soft' or 'radio' tuner modes.
+
+#### Speed/pitch response – notes mode:
+Pitches from pitch knob and 1 volt-per-octave CV are summed.
+ 
+#### `pitchKnobMin`, `pitchKnobMax`
+Playback speed, in notes mode, at leftmost/rightmost positions of pitch knob. Specified in (integer) semitones. Range -48 to +24.
+Default is `pitchKnobMin = -12`, `pitchKnobMax = 12`
+
+#### `quantisePitchPot`
+- `0` = pitch-mode knob is not quantised
+- `1` = pitch-mode knob is quantised
+(Does nothing when the Radio Remote is plugged in)
+
+#### `quantisePitchCV`
+- `0` = 1V/octave pitch-mode CV is not quantised
+- `1` = 1V/octave pitch-mode CV is quantised
+
+
+#### Speed/pitch response – tape and 90s modes
+Speeds from pitch knob and CV are summed. If no jack is plugged into the START/Pitch CV jack, only the knob is used.
+
+#### `pitchKnobLinearSpeedMin`, `pitchKnobLinearSpeedMax`
+Playback speed, in tape mode and '90s mode, at leftmost/rightmost positions of pitch knob. Specified in percent of original speed. Range -400 to +400. **Default is `-100` to `+100`**.
+
+#### `pitchCVLinearSpeedMin`, `pitchCVLinearSpeedMax`
+Playback speed, in tape mode and '90s mode, for min and max CV input (0-5V). Specified in percent of original speed. Range -400 to +400. **Default is `-100` to `+100`**. 
+
+
+
+### Loop settings:
+
+#### `loopMode`
+Sets the way in which samples loop.
+- `0` = files do not loop. Playback ceases on reaching the end of a file, and is restarted only by changing station/bank, or by a reset.
+- `1` = files play and on reaching the end loop back to their start point. Unless changed by `disableRadioStart`  **[default]**
+- `2` = ping-pong (boustrophedon) looping; playing alternately forwards then backwards
+
+### RESET jack settings:
+
+#### `pulseMode`
+- When set to `0` **[default]**, the RESET jack is an input that retriggers the sample on a rising edge (or pauses the sample, if `resetJackPauses` is 1)
+- When set to a nonzero number, the RESET jack is an output, producing a sequence of pulses synchronised to the sample playback.
+    - A value of `1` outputs a pulse at the start of the audio file
+    - A value greater than `1` multiplies the pulse frequency by that number. (`2` produces one pulse at the start, one half-way through the file, `3` produces pulses at 0, 33% and 66% of the way through the file, etc.)
+    - A negative value divides the pulse frequency, producing pulses at the start of the file. (`-2` produces a pulse every second loop, `-3` every third, etc.)
+	
+Pulse outputs are not available in the soft or radio tuner modes.
+    
+#### `pulseOutDividesCustomLoop`
+- `0` = Pulse output locations are relative to the entire length of the current audio file. **[default]**
+- `1` = Pulse output locations are relative to the loop selected by the START/END sliders on the Radio Remote
+
+#### `resetJackPauses`
+- `0`: Rising edge on RESET jack resets audio sample to START position **[default]**
+- `1`: High value on RESET jack pauses audio, using the same method as the pause button on the Radio Remote, namely
+    - If `speedMode=0` (tape), speed slews to zero
+	- If `speedMode=1` (nodes), speed goes to zero immediately, maintaining DC output of signal
+	- If `speedMode=2` ('90s), advance rate is frozen, but playback continues 
+
+#### `resetDelay`
+Sets the delay in µs before responding to a rising edge on the RESET jack. **Default = 0µs**.
+
+This setting can be useful if the STATION CV and RESET jack are connected to analogue pitch and digital gate signals of a sequencer or CV keyboard. Such devices produce a stepped pitch CV with a gate signal that rises during (or even before) the steps in the pitch CV. Delaying the RESET signal gives the new CV a chance to stabilise before the sample is triggered.
+
+### Immediacy options:
+Turning a knob or changing a CV input for the STATION, START and pitch controls either update the playback immediately, or only when the sample is reset through the button or RESET jack.
+
+In the default configuration, STATION and pitch controls act immediately, whereas changes of the START position only occur at a reset. 
+
+#### `stationPotImmediate`
+- `0` = Station knob only updated on reset
+- `1` = Station knob updates immediately (default)
+
+#### `stationCVImmediate`
+- `0` = Station CV only updated on reset
+- `1` = Station CV updates immediately (default)
+
+#### `startPotImmediate`
+- `0` = When in START mode, START knob only updated on reset (default)
+- `1` = When in START mode, START knob updates immediately
+
+#### `startCVImmediate`
+- `0` = When in START mode, START CV only updated on reset (default)
+- `1` = When in START mode, START CV updates immediately
+
+#### `pitchPotImmediate`
+- `0` = When in Pitch mode, Pitch knob only updated on reset
+- `1` = When in Pitch mode, Pitch knob updates immediately (default)
+
+#### `pitchCVImmediate`
+- `0` = When in Pitch mode, Pitch CV only updated on reset
+- `1` = When in Pitch mode, Pitch CV updates immediately (default)
+
+### START response
+
+#### `startCVDivider`
+Internally, the START position resulting from the knob and CV are represented by 1024 steps covering the entire length of the sample. The START position can be quantised by rounding down the position to the nearest multiple of `startCVDivider`. For example if `startCVDivider = 5` only start positions 0, 5, 10, 15, ... are used. 
+
+The default value is `2`, which compared to a value of `1` reduces the chance of noise causing unwanted restarting of the sample if the START control has immediate response (i.e. if `startCVImmediate` or `startPotImmediate` are set to `1`).
+
+Large values mean that the sample can only be restarted at discrete points. For example `startCVDivider=256` only allows restarts at the start of the file, or at 1/4, 1/2, or 3/4 of the way through. This can be useful for synchronising with drum loops, etc.
+
+Despite its name, `startCVDivider` applies to the sum of CV and knob positions, not to the CV alone.
+
+
+#### `radioStart`
+In the default loop mode `1`, controls the behaviour of files when
+- `0` = The play position is reset (to a position determined by the start knob/slider and CV) when the STATION is changed.
+- `1` = The play position in audio files advances even if they are not the selected station (like tuning a radio) **[default]**
+
+### Fade settings:
+
+#### `crossfadeTime`
+Crossfade time in milliseconds (**default = 25ms**).
+
+
+Shorter times lead to faster but potentially 'clicky' transition between samples. Longer times (up to 60000ms = 1 minute) are possible, but the 'soft' tuner mode is often better suited to such long transitions
+
+
+#### `fadeMode`
+Sets the manner in which crossfades and 'soft' `tunerMode` fading occurs:
+- `0` = constant power: best for almost all audio signals **[default]**
+- `1` = linear: for correlated signals such as wavetables, envelopes, etc.
+
+### LED UI options:
+#### `showMeter`
+During playback:
+- `0` = show bank number always
+- `1` = show audio VU meter **[default]**
+- `2` = show progress through file (useful for short loops)
+
+#### `meterHide`
+Even when `showMeter` is not set to show the bank number, the bank number is displayed while the bank is being changed, and for a short time after. This option sets the time after a bank change for which the bank number remains displayed, in ms. **Default = 2000**
+
+### Misc:
+
+
+#### `highQuality`
+- `0`: 8-bit ~20kHz audio with zero-order-hold interpolation. Adds a bit of cheap '80s sampling grit (aliasing and quantisation noise, smoothed over by an emulated post-DAC filter).
+- `1`: 24-bit 96kHz audio with cubic interpolation **[default]**
+
+#### `reselectSubdirOnStationChange`
+- `1` = sub-folders are reselected on station change.
+- `0` = sub-folders are reselected only on reset button/trigger
+
+
+### Default `settings.txt`
+
+```
+# Radio Music v2 settings file
+
+
+# Loop mode: 0 = files do not loop
+#            1 = files loop and play in background (radio mode)
+#            2 = ping-pong looping
+loopMode = 1
+
+
+# Crossfade time in ms
+crossfadeTime = 25
+
+
+# Tuner mode: 0 = 'sharp' switch with crossfade
+#             1 = 'smooth' continuous fade
+#             2 = radio noise emulation mode
+tunerMode = 0
+
+
+# Minimum radio station strength (0-256).
+# In 'Radio' tuner mode, sets strength of distant signals.
+# 0 = Stations randomly distributed between inaudible and full strength.
+# 256 = All stations at full strength.
+# 
+minRadioStationStrength = 128
+
+
+# Radio mode single side band (SSB) pitch shift effect (0=off, 1=on).
+ssbEffect = 0
+
+
+# Radio mode whistle volume (0-100).
+whistleVol = 50
+
+
+# Radio mode noise volume (0-100).
+noiseVol = 50
+
+
+# Speed mode: 0 = 'tape mode' - continuous linear speed control, including negative speed
+#             1 = 'notes mode' - exponential pitch control
+#             2 = '90s mode' - timestretch effect
+speedMode = 0
+
+
+# Fade mode: 0 = constant power (best for almost all audio)
+#            1 = linear (for correlated signals: wavetables, envelopes, LFOs etc.)
+fadeMode = 0
+
+
+# Pulse out mode: 0 = off (reset in); positive number = multiplier; negative number = divisor
+pulseMode = 0
+
+
+# 0 = Station knob only updated on reset; 1 = station knob updates immediately
+stationPotImmediate = 1
+
+
+# 0 = Station CV only updated on reset; 1 = station knob updates immediately
+stationCVImmediate = 1
+
+
+# 0 = When in start mode, Start/pitch knob only updated on reset; 1 =  knob updates immediately
+startPotImmediate = 0
+
+
+# 0 = When in start mode, start/pitch CV only updated on reset; 1 = CV updates immediately
+startCVImmediate = 0
+
+
+# 0 = When in pitch mode, Start/pitch knob only updated on reset; 1 =  knob updates immediately
+pitchPotImmediate = 1
+
+
+# 0 = When in pitch mode, start/pitch CV only updated on reset; 1 = CV updates immediately
+pitchCVImmediate = 1
+
+
+# Divisor for quantisation of the Start CV and knob:
+#  1 = 1024 steps
+#  2 = 512 steps
+#  3 = 341 steps
+#  4 = 256 steps
+#  8 = 128 steps, etc.
+startCVDivider = 2
+
+
+# Playback speed, in tape mode and '90s mode, at leftmost/rightmost positions of pitch knob
+# Specified in percent of original speed. Range -400 to +400.
+# Speeds from pitch knob and CV are summed.
+pitchKnobLinearSpeedMin = -100
+pitchKnobLinearSpeedMax = 100
+
+
+# Playback speed, in tape mode and '90s mode, for min and max CV input
+# Specified in percent of original speed. Range -400 to +400.
+# Speeds from pitch knob and CV are summed.
+pitchCVLinearSpeedMin = -100
+pitchCVLinearSpeedMax = 100
+
+
+# Playback speed, in notes mode, at leftmost/rightmost positions of pitch knob
+# Specified in (integer) semitones. Range -48 to +24.
+# Pitches from pitch knob and 1 volt-per-octave CV are summed.
+pitchKnobMin = -12
+pitchKnobMax = 12
+
+
+# Quantise pitch-mode knob to equal-temperament semitones
+# 1 = quantise, 0 = no quantise
+quantisePitchPot = 1
+
+
+# Quantise pitch-mode CV to equal-temperament semitones
+# 1 = quantise, 0 = no quantise
+quantisePitchCV = 1
+
+
+# LED behaviour: 0 = show bank number
+#                1 = show audio VU meter (default)
+#                2 = show progress through file
+showMeter = 1
+
+
+# Time after bank change that bank number is displayed (ms)
+# Default = 2000
+meterHide = 2000
+
+
+# Audio quality mode: 0 = 8-bit, ~20kHz, zero-order-hold interpolation; 1 = 24-bit, 96kHz, cubic interpolation
+highQuality = 1
+
+
+# 1 = pulse output divides time between 8mu start/end sliders. 0 = pulse output divides entire file length
+pulseOutDividesCustomLoop = 1
+
+
+# 1 = sub-folders are reselected on station change. 0 = sub-folders are reselected only on reset button/trigger
+reselectSubdirOnStationChange = 0
+
+
+# Delay in us before responding to reset jack (0-1000000).
+resetDelay = 0
+
+
+# 1 = reset jack (in input mode) pauses audio while high, instead of resetting on rising edge. Default 0.
+resetJackPauses = 0
+
+# 0 = on STATION change, files start playing from START knob+cv position. 1 = radio-style emulation of stations continuing to play while not selected. Default 1.
+radioStart = 1
+```
