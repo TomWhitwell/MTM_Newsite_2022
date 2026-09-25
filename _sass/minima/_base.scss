@@ -698,6 +698,78 @@ table.build-check-table {
     }
 }
 
+.radio-music-build-guide {
+    h3 {
+        border-top: 1px solid $grey-color-light;
+        margin-top: 2em;
+        padding-top: 0.65em;
+    }
+
+    .radio-build-photo-row {
+        display: flex;
+        gap: 10px;
+        margin: 0.7em 0 1.9em;
+        max-width: 760px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scroll-snap-type: x proximity;
+        scrollbar-width: thin;
+    }
+
+    .radio-build-photo-row--mixed {
+        max-width: 760px;
+    }
+
+    .radio-build-photo-row figure {
+        background: #f7f7f7;
+        flex: 0 0 138px;
+        margin: 0;
+        padding: 7px;
+        scroll-snap-align: start;
+    }
+
+    .radio-build-photo-row img {
+        cursor: zoom-in;
+        display: block;
+        width: 100%;
+        height: 210px;
+        object-fit: contain;
+    }
+
+    .radio-build-photo--wide {
+        flex-basis: 260px;
+    }
+
+    .radio-build-photo-row figcaption {
+        color: lighten($text-color, 28%);
+        font-size: 12.5px;
+        font-weight: 500;
+        line-height: 1.25;
+        margin-top: 7px;
+    }
+}
+
+@include media-query($on-palm) {
+    .radio-music-build-guide {
+        .radio-build-photo-row,
+        .radio-build-photo-row--mixed {
+            max-width: 100%;
+        }
+
+        .radio-build-photo-row figure {
+            flex-basis: 122px;
+        }
+
+        .radio-build-photo--wide {
+            flex-basis: 220px;
+        }
+
+        .radio-build-photo-row img {
+            height: 185px;
+        }
+    }
+}
+
 
 .floating-book {
     position: fixed;
