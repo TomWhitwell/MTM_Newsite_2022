@@ -287,9 +287,16 @@ CV calibration mode is entered by holding the START knob while powering up. The 
 
 {% include linkedHeading.html heading="1V/oct calibration" level=2 %}
 
-The START CV input can be calibrated for accurate 1V/oct response in notes mode.
+The START CV input can be calibrated for accurate 1V/oct response in 🎵 notes mode.
 
-You need a trusted voltage source that can output steady voltages in the 0-5V range.
+NB: Calibration means that when the module is in pitch mode, and in notes 🎵 mode it responds to 1 v/oct pitch voltages in the START input. In Tape or 90s mode, voltages in Start input have a much bigger effect, definitely not v/oct. 
+
+There are three ways to get into notes 🎵 mode. 
+1. Edit settings.txt in the top level of the SD card to put the whole device into notes 🎵 mode all the time.
+2. Use the remote control to enter notes 🎵 mode
+3. Put a settings.txt into any folders that you want to operate in notes 🎵 mode. You just need the line `speedMode = 1` in a file called settings.txt in the folder. 
+
+To calibrate the START input You need a trusted voltage source that can output steady voltages in the 0-5V range.
 
 1. Enter calibration mode by holding START while powering up, or by holding START while removing and reinserting the SD card.
 1. The four LEDs flash to confirm calibration mode.
