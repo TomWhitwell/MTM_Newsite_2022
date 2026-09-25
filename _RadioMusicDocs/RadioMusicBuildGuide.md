@@ -24,6 +24,7 @@ Radio Music is a 4hp Eurorack module that you can build yourself in an hour or s
 - A few parts of the build are slightly counter-intuitive, so please watch the video or read the text below carefully. If anything is unclear, contact [support@thonk.co.uk](mailto:support@thonk.co.uk?subject=Radio%20Music%20Build%20Advice), send photos.  
 - NB: This is the build guide for Radio Music kits bought in 2026 and after. [For older kits, use this version.](/Radio-Music-v1/)
 
+Once you're finished, use the [Radio Music testing guide](/Radio_Music_Testing_Guide/) to check the controls, sockets, LEDs and SD card playback.
 
 <picture>
   <source srcset="/images/Adafruit_Joints.webp" type="image/webp">
@@ -267,6 +268,6 @@ Add the power cable. You're done.
   });
 </script>
 
-{% include linkedHeading.html heading="After the build" level=2 %}
+{% include linkedHeading.html heading="Testing" level=2 %}
 
-Once the module is assembled, use the [Radio Music testing guide](/Radio_Music_Testing_Guide/) to check the controls, sockets, LEDs and SD card playback.
+Once you're finished, use the [Radio Music testing guide](/Radio_Music_Testing_Guide/) to check the controls, sockets, LEDs and SD card playback.
