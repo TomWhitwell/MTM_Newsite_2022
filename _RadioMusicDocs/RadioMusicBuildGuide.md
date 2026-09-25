@@ -36,4 +36,8 @@ Radio Music is a 4hp Eurorack module that you can build yourself in an hour or s
 * To build Radio Music you'll need to make about 45 through-hole solder joints. 
 * Your joints don't have to be perfect, but for the module to work, they should all look like one of the 'OK' joints in the image above. 
 * Here is a good seven-minute [video introduction to soldering from Curious Inventor](https://www.youtube.com/watch?v=IpkkfK937mU). 
-* I recommend Adafruit's fantastic [Guide To Excellent Soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering). The image comes from the [common problems](https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems) page. 
+* I recommend Adafruit's fantastic [Guide To Excellent Soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering). The image comes from the [common problems](https://learn.adafruit.com/adafruit-guide-excellent-soldering/common-problems) page.
+
+{% include linkedHeading.html heading="After the build" level=2 %}
+
+Once the module is assembled, use the [Radio Music testing guide](/Radio_Music_Testing_Guide/) to check the controls, sockets, LEDs and SD card playback.

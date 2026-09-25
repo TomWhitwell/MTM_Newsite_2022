@@ -385,6 +385,52 @@ table {
   }
 }
 
+table.build-check-table {
+  width: auto;
+  max-width: 430px;
+  margin: 0.45em 0 1.45em 0;
+  border: 0;
+  border-top: 1px solid $grey-color-light;
+  border-bottom: 1px solid $grey-color-light;
+  background: transparent;
+  color: lighten($text-color, 12%);
+  font-size: 0.98em;
+  font-weight: 600;
+  line-height: 1.22;
+
+  tr:nth-child(even) {
+    background: transparent;
+  }
+
+  td {
+    border: 0;
+    padding: 0.28em 0.35em 0.28em 0;
+    vertical-align: top;
+  }
+
+  tr + tr td {
+    border-top: 1px solid lighten($grey-color-light, 4%);
+  }
+
+  .build-check-mark {
+    width: 1.2em;
+    color: lighten($text-color, 35%);
+    font-weight: 650;
+    text-align: left;
+    font-size: 0.9em;
+    white-space: nowrap;
+  }
+
+  .build-check-note {
+    color: lighten($text-color, 25%);
+    font-size: 0.7em;
+    font-weight: 425;
+    max-width: 390px;
+    padding-top: 0.45em;
+    padding-bottom: 0.45em;
+  }
+}
+
 /* Added 27-10-24 */
 
 /* Lightbox overlay */
@@ -602,6 +648,53 @@ table {
 
     h3 {
         font-size: 20px;
+    }
+}
+
+.radio-music-testing-guide {
+    p,
+    li {
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    > p:first-of-type {
+        color: lighten($text-color, 18%);
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 1.35;
+        max-width: 720px;
+    }
+
+    h3 {
+        border-top: 1px solid $grey-color-light;
+        color: $text-color;
+        font-size: 23px;
+        font-weight: 680;
+        line-height: 1.12;
+        margin-top: 1.75em;
+        padding-top: 0.55em;
+    }
+
+    h3 + ul {
+        margin-top: 0.35em;
+    }
+
+    .build-check-table {
+        margin-top: 0.75em;
+        margin-bottom: 1.8em;
+    }
+
+    .build-check-table td {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.25;
+    }
+
+    .build-check-table .build-check-note {
+        font-size: 13px;
+        font-weight: 430;
+        line-height: 1.25;
     }
 }
 
