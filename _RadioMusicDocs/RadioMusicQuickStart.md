@@ -17,6 +17,8 @@ Radio Music is not a complicated module.
 It's a simple way to play audio files from your Eurorack modular. 
 
 There is a lot of depth beneath the surface, which you can learn about in the [reference guide](/Radio_Music_Reference). 
+
+I think [Dot's Quick Start Video](https://www.youtube.com/watch?v=k-bY68FHgl4) is a great way to get to know the module. 
  
 <figure class="documentation-image">
   <img src="/images/radio-music-docs/quickstart.svg" alt="Radio Music quick start diagram" style="width: 100%;">
