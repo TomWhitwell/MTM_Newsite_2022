@@ -83,6 +83,9 @@ actions:
 
 yt:
 - 
+  link: "k-bY68FHgl4"
+  title: "Mk2 Quick Start guide from Dots "
+- 
   link: "9g2Q0esgBuk"
   title: "Perfect introduction to DIY Eurorack via Radio Music by MylarMelodies for Future Music"
 - 
@@ -91,9 +94,6 @@ yt:
 - 
   link: "kxZYSldx5PU"
   title: "Tom showing an wonky prototype at Bristronica 2025"
-- 
-  link: "2hgJmGDVoO0"
-  title: "Study for dual Radio Music, beautiful ambient from Morn Valley, with potplants. "
 
 gallery:
   enabled: true
