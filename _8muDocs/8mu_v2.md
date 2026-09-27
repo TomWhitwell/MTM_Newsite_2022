@@ -136,12 +136,10 @@ output: false
 * 8mu sends out MIDI data over USB. Your DAW (or a browser, or pD or whatever) can pick up that MIDI data. 
 * If you want to change how the data is used, you make changes in your DAW - you'll have to read the manual for that. For example, in Ableton Live, you need to go to Settings / MIDI / MIDI Ports and check 'Remote' next to Music Thing M0 Plus. 
 * If you want to change how the data is sent, you make changes in the [16n/16nx/8mu editor](https://16n-faderbank.github.io/editor/) where you can configure which controls are sent on which CC and channel.
-* By default, the 8mu sends a lot of data from faders and the accelerometer. You might want to go to the editor now and turn off a few channels (set them to Channel Zero). 
- 
+
 {% include linkedHeading.html heading="The Editor " level=3 %} 
 * The Editor lets you configure your 8mu in a browser, and monitor the outputs from faders and accelerometer channels in real time. 
 * The browser (Chrome) talks to the 8mu via old-fashioned sysex messages, so it takes a second or two to connect, and to update when you change banks. 
-* Important: You can turn off channels by changing the channel number to Zero. 
 * Having trouble? In late 2026 [Chrome had a MIDI bug](https://help.morningstar.io/en/article/web-midi-issues-after-a-chrome-update-release-l4yu91/) that is now fixed. 
 
 
@@ -155,7 +153,6 @@ output: false
 * The current bank remains between power cycles. If you move to bank 4, then never change bank, the device will always be in bank 4. 
 * To move or copy a bank, use the editor to "Export current config" of that bank. This downloads a little local file. Then switch banks, and import that configuration. 
 
-TIP: You might want to go to the Editor and set up some banks with different settings - for example, turn off some of the gesture channels by setting the channel to zero. this makes the 8mu a bit more manageable in use. 
 
 {% include linkedHeading.html heading="MIDI Learn mode  " level=3 %}
 * The accelerometer channels send a lot of data as the device moves. This makes it really annoying to use MIDI learn, for example [creating custom MIDI mappings on Ableton](https://help.ableton.com/hc/en-us/articles/360000038859-Making-custom-MIDI-Mappings). 
