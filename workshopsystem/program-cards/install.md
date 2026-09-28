@@ -27,11 +27,13 @@ There are three ways to write blank program cards for the Workshop Computer.
 - Hold down the top button, then tap and release the bottom button next to the Program Card slot. If it doesn't appear, turn the Workshop System off and on and try again. 
 - A folder called RPI-RP2 will appear on your desktop
 - Drag the relevant .uf2 file onto the folder. The folder will disappear, and the firmware is updated. 
+- IMPORTANT: On a Mac, you'll see an error message "Disk Not Ejected Properly". You can ignore that message, it happens when the card has been correctly written.  
 
 ## The 'I can't pull the knob off my Computer' way 
 
 - While connected by USB, remove the program card and press reset or cycle power with an empty slot.
 - You’ll see an RPI-RP2 folder appear on your desktop.
-- Now, insert the card you want to write. Do not press the little button!
+- Now, insert the card you want to write. ***Do not*** press the little button!
 - Drop the .uf2 file onto the folder, and it should write as normal.
+- IMPORTANT: On a Mac, you'll see an error message "Disk Not Ejected Properly". You can ignore that message, it happens when the card has been correctly written. 
 
