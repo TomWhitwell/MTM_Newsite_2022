@@ -86,14 +86,14 @@ yt:
   link: "k-bY68FHgl4"
   title: "Mk2 Quick Start guide from Dots "
 - 
-  link: "9g2Q0esgBuk"
-  title: "Perfect introduction to DIY Eurorack via Radio Music by MylarMelodies for Future Music"
+  link: "x6SwcnFTfQQ"
+  title: "Molten Modular's build video and deep dive"
 - 
   link: "BWyyNX0D1H8"
   title: "Chris Carter's Rig Rundown"
 - 
-  link: "kxZYSldx5PU"
-  title: "Tom showing an wonky prototype at Bristronica 2025"
+  link: "9g2Q0esgBuk"
+  title: "Perfect introduction to DIY Eurorack via Radio Music by MylarMelodies for Future Music"
 
 gallery:
   enabled: true
