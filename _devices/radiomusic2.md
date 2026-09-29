@@ -89,6 +89,9 @@ yt:
   link: "x6SwcnFTfQQ"
   title: "Molten Modular's build video and deep dive"
 - 
+  link: "DvNuW1ZYhxo"
+  title: "Wirebaby's build video first patch"
+- 
   link: "BWyyNX0D1H8"
   title: "Chris Carter's Rig Rundown"
 - 
