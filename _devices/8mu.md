@@ -7,12 +7,12 @@ redirect_from:
   - /8mu_page
   - /8mu.html
  
-order: 0.3
+order: 1.1
 title:  "8mu Midi Controller DIY"
 module-name: "8mu"
 designed: "2019-2023"
 updated: 2026 
-overlay: "BACK "
+#overlay: "BACK "
 image: "/images/8mu_900_card.png"
 wide-image: "true" 
 opening-image: "/images/8mu_900.png"

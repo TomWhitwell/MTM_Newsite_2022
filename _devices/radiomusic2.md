@@ -8,7 +8,7 @@ redirect_from:
   - /RadioMusic/
   - /RadioMusic
 
-order: 0
+order: 1
 designed: 2014
 updated: 2026
 title:  "Radio Music mk2 Eurorack Sample Player"
