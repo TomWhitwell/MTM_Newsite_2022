@@ -64,13 +64,13 @@ actions:
 docs:
   heading: "Find out more:"
   items:
-    - label: "Workshop System Quick Start Guide"
+    - label: "Quick Start Guide"
       url: "/Workshop_Quick_Start/"
-      text: "Power, first patches, and what everything does."
+      text: "What it does, what you need, your first patches."
     - label: "Build Guide"
       url: "/Workshop_System_Build_Guide/"
       text: "Can you really do it yourself? Almost certainly."
-    - label: "Workshop Computer Guide"
+    - label: "Computer Guide"
       url: "/Computer_Program_Cards/"
       text: "How Computer and the tiny Program Cards work."
     - label: "Latest Program Cards"
@@ -79,9 +79,6 @@ docs:
     - label: "NEW: Patch Essentials"
       url: "https://preview.mailerlite.io/forms/1972910/197335146835216212/share"
       text: "Get to know your System by building useful sounds"
-    - label: "Calibration Guide"
-      url: "/Workshop_System_Calibration/"
-      text: "If you really want everything to play in tune."
     - label: "Virtual Workshop System"
       url: "https://vincentmaurer.de/patch-notes/"
       text: "Play a Workshop System in your browser."
@@ -91,8 +88,13 @@ docs:
     - label: "Workshop Notes"
       url: "https://workshopsystem.substack.com/"
       text: "Monthly email updates from Tom."
+    - label: "What would SOMEONE LIKE ME<br>do with a modular synth? "
+      url: "/collateral/WhatWouldSomeoneLikeMeDoWithATinyModularSynth_book.pdf"
     - label: "Workshop System Discord"
       url: "/discord/"
+
+
+
 
 videos:
   heading: "Videos"
@@ -107,25 +109,49 @@ gallery:
     -
       image: "/images/MTM_Workshop-System-composition-2.jpg"
       webp: "/images/MTM_Workshop-System-composition-2.webp"
-      alt: "Music Thing Workshop System Computer section"
-      caption: "Computer section"
+      alt: "Music Thing Workshop System in context"
+      caption: "Workshop System and friends"
+    -
+      image: "/images/MTM_Workshop-System-composition-1.jpg"
+      webp: "/images/MTM_Workshop-System-composition-1.webp"
+      alt: "Workshop System and friends"
+      caption: "Workshop System and more friends"
     -
       image: "/images/MTM_Workshop-System-detail_2.jpg"
       webp: "/images/MTM_Workshop-System-detail_2.webp"
       alt: "Music Thing Workshop System detail"
-      caption: "Workshop System detail"
+      caption: "Filter outputs"
     -
       image: "/images/MTM_Workshop-System-detail_1.jpg"
       webp: "/images/MTM_Workshop-System-detail_1.webp"
       alt: "Music Thing Workshop System Computer and program cards"
-      caption: "Computer and program cards"
+      caption: "Workshop Computer"
     -
-      image: "/images/MTM_Workshop-System-standing-patched.jpg"
-      webp: "/images/MTM_Workshop-System-standing-patched.webp"
-      alt: "Music Thing Workshop System standing patched"
-      caption: "Patched in the case"
+      image: "/images/MTM_Workshop-System-stompbox_overhead.jpg"
+      webp: "/images/MTM_Workshop-System-stompbox_overhead.webp"
+      alt: "Music Thing Workshop System with a guitar pedal"
+      caption: "Patching guitar pedals into the system "
+    -
+      image: "/images/MTM_Workshop-System-detail_4.jpg"
+      webp: "/images/MTM_Workshop-System-detail_4.webp"
+      alt: "Contact Mic and Ring Mod sections"
+      caption: "Contact Mic and Ring Mod sections"
+    -
+      image: "/images/MTM_Workshop-System-detail_3.jpg"
+      webp: "/images/MTM_Workshop-System-detail_3.webp"
+      alt: "Workshop System Oscillators"
+      caption: "Workshop System Oscillators"
 
-
+    -
+      image: "/images/MTM_Workshop-System-case_open-straight_on.jpg"
+      webp: "/images/MTM_Workshop-System-case_open-straight_on.webp"
+      alt: "Workshop System in the case"
+      caption: "Workshop System in the case"
+    -
+      image: "/images/MTM_Workshop-System-case_closed-3-4.jpg"
+      webp: "/images/MTM_Workshop-System-case_closed-3-4.webp"
+      alt: "Workshop System Case"
+      caption: "Workshop System Case Closed"
 
 
 ---
@@ -153,9 +179,9 @@ The Workshop System was designed to be useful and open:
 
 The Workshop System has 14 modules:    
 * **2 x SineSquare Oscillators** Simple vintage-style oscillators made of 1970s tech.  
-* **2 x Humpback Filters** Similarly vintage-style filters, designed by [Philip Goulding of God's Box](https://godsbox.co.uk/humpback.html).  
+* **2 x Humpback Filters** Similarly vintage-style filters, designed by Philip Goulding of God's Box.  
 * **2 x Slopes** These work as attack/decay envelopes, LFOs and portamento generators.  
-* **Computer**  Is a multi-function module with knobs, a switch and audio, CV and pulse ins and outs. Initially, the system comes with a USB MIDI card, a Turing Machine sequencer and a Reverb card. A community of programmers are creating more cards. 
+* **Computer**  Is a multi-function module with knobs, a switch and audio, CV and pulse ins and outs. Initially, the system comes with a USB MIDI card, a Turing Machine sequencer, a Reverb card and a blank card. [computer.musicthing.co.uk](https://computer.musicthing.co.uk/) is a fast expanding collection of free program cards to download. 
 * **Stereo In** takes a 3.5mm stereo input and boosts it to modular level. 
 * **Ring Mod** is a great-sounding ring modulator, connected to the two sines. It also works as a simple VCA. 
 * **Stompbox** is an interface for guitar pedals, with blend and feedback controls to make boring pedals more interesting. There's a 9v power outlet for pedals below this module. 
@@ -164,12 +190,17 @@ The Workshop System has 14 modules:
 * **Mix** a simple output mixer, with two stereo channels, two mono channels and a powerful headphone amp / line out. 
 * **PSU** behind the panel is a power supply that runs on USB-C PD power or professional 15-25v barrel connectors. It works from battery powerbanks and laptop adaptors, most likely something you've already got at home.
 
+{% include responsive_image.html image="/images/MTM_Workshop-System-composition-2.jpg" webp="/images/MTM_Workshop-System-composition-2.webp" alt="Music Thing Workshop System and friends" width=900 height=900 class="system-product__story-image" %}
+
+
 {% include linkedHeading.html heading="Workshop System FAQ " level=3 %}
 
 * **Does it come with the case?** Yes
 * **Can I take it out of the case?** Yes
+* **Does it need a power supply?** Yes, it needs a USB-C supply that can give 15 Volts. [Details](/Workshop_Quick_Start/#power-supply). 
 * **Does it need patch cables to work?** Yes, it makes no sound at all before being patched. 
-* **How hard is it to build?** All the active components (chips, transistors, resistors etc) are already installed. The Thonk Kit contains four PCBs that need to be populated with Pots, Switches, LEDs, power headers and sockets. Then all the hardware — nuts, knobs, spacers - needs to be installed. It's fairly time consuming, maybe 1-4 hours, but not difficult for anyone who has soldered a few kits before. If you made a Mikrophonie or 8mu and enjoyed the process, you will enjoy this. If you've made a Turing Machine, you're almost over-qualified. If you've never soldered anything before, this probably isn't the best way to start. Instead, look out for a build workshop, or get in touch if you'd like to organise one. 
+* **Do I have to build it myself?** No, pre-assembled kits are available from [Thonk](https://www.thonk.co.uk/shop/mtm-workshop-assembled/) and [dealers worldwide](/buy/). 
+* **How hard is it to build?** If you've ever soldered before, you can do it. The [Build Guide](/Workshop_System_Build_Guide/) includes a real-time video to show what you need to do in 3-4 hours. 
 * **Is it Eurorack compatible?** Yes, you can remove the back panel PSU and put it in a Euro case - 42hp, around 250mA current draw. 
 * **How do the program cards work?** The microcontroller in Computer is an RP2040, the same as a Raspberry Pi Pico. The program cards are the entire flash memory for the Computer, so there is no firmware on the device itself. They can be programmed in C/C++ (Pico SDK), Arduino Pico, Circuit Python or anything else that works on RP2040. Program cards can be re-programmed or updated over USB with a simple drag-and-drop process. You're welcome to sell or give away any code you create, and can make your own custom cards if you want. 
 * **Is there any normalisation?** There is minimal normalisation built in - the two oscillators cross-modulate, and are patched to the Ring Mod, and the top filter High/Band Pass flows into the bottom filter input. So you need a lot of patch cables. However, all the normalisation points are clearly marked on the back of the PCBs, so it's easy to add your own (removable) normalisation connections with wire and solder.
