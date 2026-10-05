@@ -163,7 +163,7 @@ The Workshop System is an analogue modular synth and a powerful audio computer.
 
 It was designed for the [Dyski Sound Maps Residency](https://dyski.co/Port-Navas-Sessions) in April 2024 — played above by [Jess Borders](https://www.instagram.com/thinkofasoftcarpet/), picture by [Hannah de Oliveira Whitlock](https://hannahdeoliveirawhitlock.com/). 
 
-(By the way, you can subscribe to the [Dyski mailing list here](https://dyski.co/Subscribe) if you want to know about future events including Sound Maps 2025.) 
+(By the way, you can subscribe to the [Dyski mailing list here](https://dyski.co/Subscribe) if you want to know about future events.) 
 
 The Workshop System was designed to be useful and open: 
 * A genre-neutral toolkit, a little box of ways to make and manipulate music and sound. 
