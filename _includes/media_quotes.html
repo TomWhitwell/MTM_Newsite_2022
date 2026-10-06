@@ -1,0 +1,23 @@
+{% assign quotes = include.quotes %}
+{% if quotes and quotes.items %}
+<section class="system-media-quotes" aria-label="{{ quotes.heading | default: 'Press quotes' }}">
+  {% if quotes.heading %}
+  <h2>{{ quotes.heading }}</h2>
+  {% endif %}
+  <div class="system-media-quotes__grid">
+    {% for item in quotes.items %}
+    <figure class="system-media-quotes__item">
+      <figcaption>
+        <a href="{{ item.url }}">{{ item.source }}</a>
+        {% if item.context %}
+        <span>{{ item.context }}</span>
+        {% endif %}
+      </figcaption>
+      <blockquote>
+        <p><span aria-hidden="true">“</span>{{ item.quote }}<span aria-hidden="true">”</span></p>
+      </blockquote>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
