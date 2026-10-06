@@ -32,6 +32,27 @@ intro:
   - "Music Thing Modular Workshop System is a complete modular synth. It is slightly smaller than a hardback book. It comes in a foam-lined hard case."
   - "At present, it is available as an <a href=\"https://www.thonk.co.uk/shop/mtm-workshop-assembled/\">Assembled unit</a> or <a href=\"https://www.thonk.co.uk/shop/workshop-system/\">DIY kit</a> from Thonk in Brighton, and from <a href=\"/buy/\">retailers around the world</a>."
 
+media_quotes:
+  items:
+    - quote: "Fabulous in almost every way. A triumph. Powerful, highly flexible and excellent value for money."
+      source: "Sound on Sound"
+      url: "https://www.soundonsound.com/reviews/music-thing-modular-workshop-system"
+    - quote: "I’m a classically trained musician, and I’ve lost hours to this thing. It’s like being a kid again."
+      source: "Financial Times"
+      url: "https://www.ft.com/content/d69bc1c2-c01a-4f8c-82a1-912e1fc50183"
+    - quote: "Checks all the boxes: compact, affordable, deep enough to grow my skills but not overwhelming."
+      source: "MusicTech"
+      url: "https://musictech.com/guides/buyers-guide/musictech-favourite-gear-of-the-decade-so-far/"
+    - quote: "There’s an incredible generosity in the way knowledge and tools are shared."
+      source: "Gareth Jones"
+      url: "https://www.soundonsound.com/people/modular-profile-gareth-jones"
+    - quote: "It does a lot, but it’s manageably small, without option paralysis. Plus it’s not three grand."
+      source: "Mylar Melodies"
+      url: "https://www.youtube.com/watch?v=ABbWmZOtmig"
+    - quote: "It’s open, hackable, and full of ideas that can inspire more."
+      source: "Peter Kirn, CDM"
+      url: "https://cdm.link/diy-world-of-music-thing-workshop-system/"
+
 buy:
   heading: "Buy"
   paths:
@@ -202,5 +223,5 @@ The Workshop System has 14 modules:
 * **Do I have to build it myself?** No, pre-assembled kits are available from [Thonk](https://www.thonk.co.uk/shop/mtm-workshop-assembled/) and [dealers worldwide](/buy/). 
 * **How hard is it to build?** If you've ever soldered before, you can do it. The [Build Guide](/Workshop_System_Build_Guide/) includes a real-time video to show what you need to do in 3-4 hours. 
 * **Is it Eurorack compatible?** Yes, you can remove the back panel PSU and put it in a Euro case - 42hp, around 250mA current draw. 
-* **How do the program cards work?** The microcontroller in Computer is an RP2040, the same as a Raspberry Pi Pico. The program cards are the entire flash memory for the Computer, so there is no firmware on the device itself. They can be programmed in C/C++ (Pico SDK), Arduino Pico, Circuit Python or anything else that works on RP2040. Program cards can be re-programmed or updated over USB with a simple drag-and-drop process. You're welcome to sell or give away any code you create, and can make your own custom cards if you want. 
-* **Is there any normalisation?** There is minimal normalisation built in - the two oscillators cross-modulate, and are patched to the Ring Mod, and the top filter High/Band Pass flows into the bottom filter input. So you need a lot of patch cables. However, all the normalisation points are clearly marked on the back of the PCBs, so it's easy to add your own (removable) normalisation connections with wire and solder.
+* **How do the program cards work?** Put in a card (you get at least four with the system) and tap the little button to load the program. It might be effects, sounds, sequencers or something much stranger. There are hundreds of free programs you can write onto blank cards. 
+* **Is there any normalisation?** A little - the two oscillators cross-modulate, and are patched to the Ring Mod, and the top filter High/Band Pass flows into the bottom filter input. 
