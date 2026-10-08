@@ -15,6 +15,8 @@ https://www.youtube.com/watch?v=FebtWwpal5A
 
 {% include linkedHeading.html heading="A quick note on calibration" level=3 %}  
 
+*** NB: The Calibration Process is different if you are using the new (October 2026) MIDI card. This page is out of date, updated documentation is coming soon ***
+
 The original Workshop Systems used at the [Dyski workshop](https://dyski.co/Port-Navas-Sessions) had no calibration at all. No way to fine-tune the oscillators or play MIDI notes in tune. I liked the purity of that, but realised it was silly. It's nice to [play melodic sequences](https://www.instagram.com/p/DCTmBretEFf/) on the system, and I look forward to people using it in that way.  
 
 Calibration is necessary because oscillators and even computers are made of physical objects - resistors and capacitors and transistors - that are imperfect little lumps of matter. A computer can send the number 261,200 to an output, but it takes resistors and amplifiers to turn that into 0 Volts. That's where the calibration comes in. 
