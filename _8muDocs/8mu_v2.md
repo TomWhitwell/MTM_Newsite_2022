@@ -33,6 +33,7 @@ output: false
 * The PCB is pre-populated with 70 surface-mount components.
 * Your job is to solder the eight through-hole faders, then put the front and back panels together with quite a few small screws.
 * It's a good first DIY project. not much soldering but a quick satisfying build.
+* You'll need a USB-C cable to communicate with 8mu. Any data cable will work, but **power only** cables that are occasionally shipped with battery-powered devices will not work.  
 
 <picture>
   <source srcset="/images/Adafruit_Joints.webp" type="image/webp">
