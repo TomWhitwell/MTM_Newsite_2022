@@ -180,6 +180,11 @@
   flex: 1;
 }
 
+.home,
+.home h1 {
+  font-weight: 600;
+}
+
 .page-heading {
   @include relative-font-size(2);
 }
