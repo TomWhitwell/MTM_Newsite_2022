@@ -273,6 +273,7 @@ If something isn't working...
 * **Slopes don't loop** If neither Slope loops, this is a sign that the USB power supply is not giving 15 volts, just 5 Volts or 9 Volts. Check with another supply. 
 * **Sometimes the Slope LEDs flicker when I touch the switch** I'm not completely sure why this happens, but it's normal.  
 * **An LED doesn't light** Most likely that LED is not properly soldered, or has been soldered the wrong way around. Inverted LEDs in Slopes behave very oddly. 
+* **Computer doesn't do anything** Computer won't do anything - no LEDs - until you put in one of the program cards. Turing card will immediately produce a pattern of LEDs, Reverb+ card is fun for testing sound in and out.  
 * **Computer won't connect to a computer** Before doing anything else, ensure that your USB-C cable can pass data. Some cables only pass power. 
 * **A module behaves strangely: too loud, out of control** Sometimes this is a sign that a potentiometer pin hasn't been soldered, or is short-circuited. 
 * **A module is silent or doesn't pass audio** This can happen when an input or output socket either isn't soldered or is short-circuited to ground by a blobby solder joint. 
