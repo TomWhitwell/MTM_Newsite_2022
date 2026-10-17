@@ -454,8 +454,8 @@ Sets the way in which samples loop.
 Pulse outputs are not available in the soft or radio tuner modes.
     
 #### `pulseOutDividesCustomLoop`
-- `0` = Pulse output locations are relative to the entire length of the current audio file. **[default]**
-- `1` = Pulse output locations are relative to the loop selected by the START/END sliders on the Radio Remote
+- `0` = Pulse output locations are relative to the entire length of the current audio file. 
+- `1` = Pulse output locations are relative to the loop selected by the START/END sliders on the Radio Remote **[default]**
 
 #### `resetJackPauses`
 - `0`: Rising edge on RESET jack resets audio sample to START position **[default]**
