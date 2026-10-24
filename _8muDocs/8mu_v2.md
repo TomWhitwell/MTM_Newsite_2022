@@ -123,7 +123,7 @@ output: false
 * Attach the rubber fader caps. Lightly squeeze the rubber caps between your fingers for 20-30 seconds. This warms them up and makes them more malleable to get on the faders.
 * The 8mu was designed to be hand-held, but here are a few ideas about mounting your 8mu. 
     * Use stick-on rubber feet if you're putting it on something that might scratch
-    * [Non-slip silicone gel pads](https://www.amazon.co.uk/DyNamic-Transparent-Silicone-Multifunction-Non-Slip/dp/B07HCFHMFM) work well for safe semi permanent mounting on keyboards, desks or walls. 
+    * Non-slip silicone gel pads work well for safe semi permanent mounting on keyboards, desks or walls. 
     * Velcro tape works for stompbox-style mounting 
 * That's it, make yourself a cup of tea to celebrate. 
 
@@ -192,11 +192,11 @@ output: false
     * The accelerometer channels will send midi whenever you move the device. If you're not using them, you can turn them off (turn the channels to 0) in the editor. Or you can use [MIDI Learn Mode](#midi-learn-mode) to temporarily turn off the accelerometer channels. 
     * When using the editor, the board may send midi 'refresh' signals and lots of Sysex every so often, so don't use the editor while setting up MIDI learn. 
 * **Dead faders**: Dead faders - where a fader output is stuck on high, or low, or in the middle - can caused by soldering problems. To troubleshoot a dead channel...
-  * Then [reset the 8mu settings](#resetting-8mu) by holding down ABCD at startup
-  * Then check the 8mu isn't in [MIDI learn mode](#midi-learn-mode) - with 4 of the LEDs flashing. 
+  * Then reset the 8mu settings by holding down ABCD at startup
+  * Then check the 8mu isn't in - with 4 of the LEDs flashing. 
   * **Then** you can be confident it might be hardware, so remove the USB cable, take off the back panel and carefully check your soldering
-    * [Re-read the instructions](#6-now-it-s-time-to-solder) and ensure the pins on the ends of each fader are properly soldered. The pins are quite large, so you might need to hold your soldering iron to them for 5 seconds to properly melt the solder and have it flow into the hole. 
-    * Ensure you've [trimmed the board](#7-tidy-up-the-back-of-the-board) and folded down the clips. 
+    * Re-read the instructions and ensure the pins on the ends of each fader are properly soldered. The pins are quite large, so you might need to hold your soldering iron to them for 5 seconds to properly melt the solder and have it flow into the hole. 
+    * Ensure you've trimmed the board and folded down the clips. 
     * Test the board again with the editor. If you still have problems and you're a Thonk Customer, [contact Thonk support](mailto:support@thonk.co.uk) to ask for help. 
 * **Dead buttons** If you have a dead button, it's likely to be a hardware issue, so [contact Thonk support](mailto:support@thonk.co.uk) to ask for help. 
 
