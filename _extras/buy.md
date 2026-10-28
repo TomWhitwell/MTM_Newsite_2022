@@ -20,7 +20,7 @@ uk:
   - name: Thonk
     region: UK
     location: Brighton
-    url: "https://www.thonk.co.uk/shop/workshop-system/"
+    url: "https://www.thonk.co.uk/brand/music-thing-modular/"
     note: Complete range of DIY kits, shipping worldwide.
 
 europe:
