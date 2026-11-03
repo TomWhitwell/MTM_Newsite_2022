@@ -79,7 +79,7 @@ To hold everything in place I use the four Thonkiconn sockets to lift up the boa
 
 Then solder just one pin and check the power header is flush and well aligned. If not, re-heat the pin (make sure you're not holding that pin with your finger!) and slot it into place. 
 
-At this stage, you can also add the optional 4-pin expansion header if it comes with your kit. It won't do anything until I think of something to do with that header. 
+DON'T WORRY if your kit doesn’t have an Expansion Header - it doesn’t do anything right now and any future expander will come with a spare header.
 
 
 <div class="radio-build-photo-row">
