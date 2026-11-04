@@ -1,3 +1,10 @@
+
+- order: 0.01
+  link: "https://museumofsynthesisers.org.uk/events/up-close-with-music-thing-modular"
+  text: "LONDON EVENT"
+  desc: "Intro to Modular with Tom Whitwell, Sunday 22nd November, Dalston"
+
+
 - order: 01.5
   link: "https://www.thonk.co.uk/brand/music-thing-modular/"
   text: "BUY"
