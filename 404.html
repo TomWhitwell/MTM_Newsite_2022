@@ -3,6 +3,28 @@ permalink: /404.html
 layout: default
 ---
 
+<script type="application/json" id="case-page-paths">
+{%- assign candidates = site.html_pages -%}
+{%- for collection in site.collections -%}
+  {%- if collection.output -%}
+    {%- assign candidates = candidates | concat: collection.docs -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign static_html = site.static_files | where: 'extname', '.html' -%}
+{%- assign candidates = candidates | concat: static_html -%}
+{%- assign separator = '' -%}
+[
+{%- for candidate in candidates -%}
+  {%- assign path = candidate.url | default: candidate.path -%}
+  {%- unless path == nil or path == '/404.html' or candidate.published == false or candidate.hide or candidate.noindex or candidate.redirect -%}
+    {{- separator -}}{{- path | relative_url | jsonify | replace: '<', '\u003c' -}}
+    {%- assign separator = ',' -%}
+  {%- endunless -%}
+{%- endfor -%}
+]
+</script>
+<script src="{{ '/assets/case-recovery.js' | relative_url }}" defer></script>
+
 <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
