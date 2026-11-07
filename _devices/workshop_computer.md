@@ -1,6 +1,6 @@
 ---
 layout: module
-order: 0.5
+order: 1
 permalink: /Workshop-Computer/
 
 title:  "Music Thing Modular Workshop Computer Eurorack"

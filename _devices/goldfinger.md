@@ -2,7 +2,7 @@
 layout: module
 permalink: /Goldfinger/
 
-order: 2
+order: 1.9
 title:  "Touch-sensitive matrix mixer"
 module-name: "Goldfinger"
 designed: "2026"
@@ -15,6 +15,17 @@ yt:
 - 
   link: "bHTZiNbk6FE"
   title: "DivKid's intro to Golfinger"
+  
+- 
+  link: "fT_p0c9KCx0"
+  title: "Karlheinz Essl: Touch Controlled Modular Synth"
+
+- 
+  link: "qw9-nhwpJe4"
+  title: "Karlheinz Essl: Foldinger"
+  
+  
+
 
 gallery:
   enabled: true
