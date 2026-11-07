@@ -17,12 +17,20 @@ yt:
   title: "DivKid's intro to Golfinger"
   
 - 
+  link: "aV5Djos7hYg"
+  title: "Bay Mud: My Fingers Complete a Synth Patch"
+
+- 
+  link: "I2S3M9uKGEI"
+  title: "Ludotex: Goldfinger into Marbles and Vhikk"
+  
+- 
   link: "fT_p0c9KCx0"
   title: "Karlheinz Essl: Touch Controlled Modular Synth"
-
 - 
   link: "qw9-nhwpJe4"
   title: "Karlheinz Essl: Foldinger"
+  
   
   
 
