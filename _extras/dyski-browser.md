@@ -6,6 +6,7 @@ title: Housel Bay File Server
 <script>
   window.R2_CONFIG = {
     WORKER:       "https://list-files-dyski.tom-whitwell.workers.dev",
+    PUBLIC_BASE:  "https://pub-a055774c9c7f4566bcd93fa062da454f.r2.dev",
     START_PREFIX: ""
   };
 </script>
@@ -233,7 +234,7 @@ body{
     <h1>Housel Bay File Server</h1>
     <a href="#upload" class="btn-cta">UPLOAD</a>
     <p class="meta topnote">
-  The files on the SD card on the radios are in <strong>SD/</strong><br>Your uploads go into <strong>incoming/</strong><br> You can use <strong>Replace</strong> to update an existing file.
+  Your uploads go into <strong>incoming/</strong><br> You can use <strong>Replace</strong> to update an existing file.
 </p>
 
   </div>
@@ -247,13 +248,14 @@ body{
   </div>
   <div class="rule"></div>
 
+  <p id="empty-list" class="muted" hidden></p>
   <ul id="items" class="items"></ul>
   <div class="pager"><button id="more" class="btn">More</button></div>
 
   <div id="upload" class="upload">
     <h3>Upload</h3>
     <div class="box">
-      <p class="muted">Drop your file here or choose one.<br>All uploads go to <strong>incoming/</strong>. <br>Please add your name and a description. <br>Use <strong>replace</strong> to change a file after you've uploaded it (it works but doesn't give any feedback).</p>
+      <p class="muted">Choose a file to upload.<br>All uploads go to <strong>incoming/</strong>. <br>Please add your name and a description. <br>Use <strong>replace</strong> to change a file after you've uploaded it.</p>
       <form id="up" enctype="multipart/form-data" class="row">
         <label class="btn">Choose file <input type="file" name="file" required hidden></label>
         <span id="fileName" class="muted">No file chosen</span>
@@ -274,17 +276,12 @@ body{
   </div>
 </div>
 
-<form action="https://list-files-dyski.tom-whitwell.workers.dev/manifest/rebuild" method="post" target="_blank">
-  <button type="submit">Rebuild</button>
-</form>
-
-
-
 <script>
 (() => {
   const cfg = window.R2_CONFIG || {};
   const API = cfg.WORKER;
   const FILE = API + "/file";
+  const publicBase = cfg.PUBLIC_BASE;
   const META = API + "/meta/set";
   const REPLACE = API + "/replace";
 
@@ -311,7 +308,7 @@ const EDITABLE_PREFIXES = ["incoming/"];
   function esc(s){ return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;"); }
 
   // UI helpers
-  function pill(label, pref, cls=""){ return `<a href="#" class="pill ${cls}" data-prefix="${pref}">${label}</a>`; }
+  function pill(label, pref, cls=""){ return `<a href="#" class="pill ${cls}" data-prefix="${esc(pref)}">${esc(label)}</a>`; }
 
   function renderPillNav(prefix, folders){
     const nav = qs("#pillnav"); if (!nav) return;
@@ -326,7 +323,10 @@ const EDITABLE_PREFIXES = ["incoming/"];
     // children
     const kids = (folders||[]);
     if (kids.length) html += `<span class="dash">—</span>`;
-    kids.forEach(f => { html += pill(f.prefix, f.prefix); });
+    kids.forEach(f => {
+      const label = f.prefix === "2025 files/" ? "2025 files" : f.prefix;
+      html += pill(label, f.prefix);
+    });
     nav.innerHTML = html;
     nav.querySelectorAll('[data-prefix]').forEach(a => a.onclick = (e)=>{ e.preventDefault(); load(a.dataset.prefix || ""); });
   }
@@ -337,7 +337,7 @@ function itemHTML(f){
   const meta = [ humanSize(f.size||0), (f.uploader ? `Uploaded by ${f.uploader}` : "Uploaded"), fmtDatePretty(f.uploaded||f.updated) ].join(" | ");
   const v = encodeURIComponent(f.rev || f.updated || f.uploaded || "1");
   const playUrl = `${FILE}?key=${encodeURIComponent(f.key)}&v=${v}`;
-  const dlUrl   = `${f.url}${f.url.includes("?") ? "&" : "?"}v=${v}`;
+  const dlUrl = `${publicBase}/${f.key.split("/").map(encodeURIComponent).join("/")}?v=${v}`;
 
   // 👇 Only incoming/ files are editable
   const isEditable = EDITABLE_PREFIXES.some(p => f.key.startsWith(p));
@@ -353,9 +353,9 @@ function itemHTML(f){
       </div>
       <div class="actions">
         ${pillKind==="AUDIO" ? `<button class="btn btn-sm" data-play="${playUrl}">▶</button>` : ""}
-        <a class="btn btn-sm btn-download" href="${dlUrl}" download>Download</a>
-        ${isEditable ? `<button class="btn btn-sm" data-edit="${f.key}">Edit</button>` : ""}
-        ${isEditable ? `<button class="btn btn-sm" data-replace="${f.key}">Replace</button>` : ""}
+        <a class="btn btn-sm btn-download" href="${esc(dlUrl)}" download>Download</a>
+        ${isEditable ? `<button class="btn btn-sm" data-edit="${esc(f.key)}">Edit</button>` : ""}
+        ${isEditable ? `<button class="btn btn-sm" data-replace="${esc(f.key)}">Replace</button>` : ""}
       </div>
     </li>
   `;
@@ -382,6 +382,9 @@ function itemHTML(f){
     const ul = qs("#items");
     const visible = ordered.slice(0, displayCount);
     ul.innerHTML = visible.map(itemHTML).join("");
+    const emptyList = qs("#empty-list");
+    emptyList.hidden = visible.length > 0;
+    emptyList.textContent = currentPrefix ? "No files in this folder." : "No uploads yet.";
     const hasMoreLocally = displayCount < ordered.length;
     qs("#more").style.display = (hasMoreLocally || !!cursor) ? "inline-block" : "none";
     wireRowEvents();
@@ -525,14 +528,11 @@ function itemHTML(f){
       const uploader = qs("#uploader").value.trim();
       const desc = qs("#desc").value.trim();
       const file = fileInput.files[0];
-      const name = "incoming/" + file.name.replace(/^\/+/, "");
-      const renamed = new File([file], name, { type: file.type });
-
       const prog=qs("#progress"), bar=qs("#bar"); prog.style.display="block"; bar.style.width="0%"; setStatus("Uploading…");
       const xhr=new XMLHttpRequest(); xhr.open("POST", `${API}/upload`, true);
       xhr.upload.onprogress = ev => { if(ev.lengthComputable) bar.style.width = Math.round((ev.loaded/ev.total)*100)+"%"; };
 
-      const fd = new FormData(); fd.append("file", renamed); fd.append("description", desc); fd.append("uploader", uploader);
+      const fd = new FormData(); fd.append("file", file); fd.append("description", desc); fd.append("uploader", uploader);
       xhr.onload = async ()=>{
         try{
           const ok = xhr.status >= 200 && xhr.status < 300;

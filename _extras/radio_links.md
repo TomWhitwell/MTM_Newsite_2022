@@ -12,7 +12,7 @@ permalink: /RadioLinks/
   }
 </style>
  
-# Links for Radio Music November 2025 
+# Links for Radio Music November 2026
 
 
 _"Radio—the world’s cheapest, lightest, most powerful synthesizer. Like a Cagean jukebox, the dense emporium of New York airwaves"_ (from Semi-Conducting by Nicolas Collins).
@@ -60,7 +60,7 @@ Main thing I've learned is that environment is really important - In South Londo
 
 **Filters** - these are just like synth filters - preset low-pass filters - sometimes called Bandwith / BW. 
 
-##Things I've used: 
+## Things I've used:
 
 
 ### ATS-20+
